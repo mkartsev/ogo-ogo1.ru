@@ -1,0 +1,202 @@
+include ../button/button
+include ../photo-slider/photo-slider
+include ../svg-icon/svg-icon
+include ../stars/stars
+
+//-
+  var question = {
+    author: "Мария",
+    photo: "",
+    date: "2024-09-13T15:52:57+03:00",
+    text: "Это ростест или евротест?",
+    replies: []
+  }
+
+  var reply = {
+    author: "ОГО!",
+    photo: "/assets/img/ogo40x40.jpg",
+    date: "2024-09-13T15:52:57+03:00",
+    text: "Ростест, как и все товары, продающиеся в нашем магазине."
+  }
+
+mixin product-badges(badges)
+  .product-badges&attributes(attributes)
+    each badge in badges
+      +product-badge(badge)
+    block
+
+mixin product-badge(badge)
+  -
+    let baseClass = "product-badges__item badge"
+    let classes = [baseClass]
+
+    classes.push("text-bg-" + badge.variant)
+
+    if (badge.tooltip)
+      classes.push("js-tooltip")
+      attributes["data-tooltip-content"] = badge.tooltip
+
+  span(class= classes)&attributes(attributes)= badge.text
+
+mixin product-delivery()
+  .product-delivery&attributes(attributes)
+    .product-delivery__variant
+      .product-delivery__header
+        +svg-icon("ui--spinner", "md").spin.text-primary
+        span.product-delivery__title Проверяем наличие товара и стоимость доставки. <br> Нам потребуется пара секунд
+
+mixin product-preview(product)
+  .product-preview
+    a(href="#").product-preview__title= product.title
+    .product-preview__remarks.js-configurator-warning-wrapper(style="display: none")
+      .js-configurator-warning-message Не совместим с <a href="#">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue</a>
+
+    .product-preview__images
+      +photo-slider()
+
+    .product-preview__footer
+      .product-preview__params
+        .product-preview__avail
+          if (product.availability.available)
+            span.product-preview__available.js-tooltip(data-tooltip-content= product.availability.content)= product.availability.title
+          else
+            span.product-preview__notavailable= product.availability.title
+
+        .product-preview__artikul= "Арт. " + product.id
+
+        //- В превью 8 параметров, а в карточке 4
+        ul.product-preview__params-list
+          each prop in product.props
+            li.product-preview__params-item
+              span.product-preview__params-label= prop.key + ": "
+              span.product-preview__params-value= prop.value
+          each prop in product.props
+            li.product-preview__params-item
+              span.product-preview__params-label= prop.key + ": "
+              span.product-preview__params-value= prop.value
+
+      .product-preview__price-wrapper
+        if product.availability.available
+          .product-preview__price
+            div(class=`product-preview__price-${product.price_old ? "new" : "current"}`)= product.price + " ₽" 
+
+          if product.price_old
+            .product-preview__old
+              div.product-preview__price-old= product.price_old + " ₽"
+              if product.price_note
+                div.product-preview__price-note= product.price_note
+
+        .product-preview__bonus
+          if product.availability.available
+            +svg-icon("ui--bonus-sm", "sm")
+            = product.bonus + " бонуса"
+
+      .product-preview__controls
+        if product.availability.available
+          if product.inCart
+            +button(tag="a" href="/cart.html" variant="success sm" text="В корзине" class="product-preview__buy" icon="ui--check-sm")
+          else
+            +button(tag="a" href="#" variant="primary sm" text="Купить" class="product-preview__buy js-add-to-cart" icon="ui--shopping-cart-sm" data-id=product.id)
+            +button(tag="a" href=process.env.FAST_BUY_FORM_URL variant="link sm" text="Быстрый заказ" class="product-preview__fastbuy js-fast-buy-popup" icon="ui--like-sm" data-id=product.id)
+
+        +button(type="button" variant="link sm" class="js-tooltip js-add-to-list" icon="ui--heart" iconSize="sm" data-id=product.id data-list="favorites" data-action="add" data-tooltip-content="В избранное")
+        +button(type="button" variant="link sm" class="js-tooltip js-add-to-list" icon="ui--comparison" iconSize="sm" data-id=product.id data-list="comparison" data-action="ADD_TO_COMPARE_LIST" data-tooltip-content="В сравнение")
+
+mixin product-question(question)
+  article.product-question&attributes(attributes)
+    header.product-question__author
+      if (author.photo)
+        picture.product-question__author-image
+          img(src=question.photo alt=question.author)
+      else
+        span.product-question__author-placeholder= question.author.charAt(0)
+        span.product-question__author-name= question.author
+      time(class="product-question__pubdate" datetime=question.date pubdate)= formatDate(question.date)
+    section.product-question__body= question.text
+    if (question.replies.length > 0)
+      section.product-question__replies
+
+mixin product-reply(reply)
+  article.product-reply
+    header.product-reply__author
+      if (author.photo)
+        picture.product-reply__author-image
+          img(src=reply.photo alt=reply.author)
+      else
+        span.product-reply__author-placeholder= reply.author.charAt(0)
+        span.product-reply__author-name= reply.author
+      time(class="product-reply__pubdate" datetime=reply.date pubdate)= formatDate(reply.date)
+    section.product-reply__body= reply.text
+
+mixin product-rating()
+  .product-rating&attributes(attributes)
+    .row.g-3.g-lg-4
+      .col-12.col-md-6.col-lg-12
+        .product-rating__score
+        +stars(5, {size: "lg"}).my-3
+        p.m-0.fs-5.text-dark.text-center Cредняя оценка на основании 5 отзывов покупателей
+      .col-12.col-md-6.col-lg-12
+        ul.product-rating__stats
+          li.product-rating__stats-row
+            span.product-rating__stats-key 5
+            progress(value="50" max=100).product-rating__stats-progress
+            span.product-rating__stats-value 50%
+          li.product-rating__stats-row
+            span.product-rating__stats-key 4
+            progress(value="30" max=100).product-rating__stats-progress
+            span.product-rating__stats-value 30%
+          li.product-rating__stats-row
+            span.product-rating__stats-key 3
+            progress(value="10" max=100).product-rating__stats-progress
+            span.product-rating__stats-value 10%
+          li.product-rating__stats-row
+            span.product-rating__stats-key 2
+            progress(value="10" max=100).product-rating__stats-progress
+            span.product-rating__stats-value 10%
+          li.product-rating__stats-row
+            span.product-rating__stats-key 1
+            progress(value="0" max=100).product-rating__stats-progress
+            span.product-rating__stats-value 0%
+
+mixin product-review()
+  article.product-review&attributes(attributes)
+    header.product-review__author
+      span.product-review__author-placeholder
+      img(src="" alt="").product-review__author-image
+      span.product-review__author-name
+      time(time="" pubdate).product-review__pubdate
+    section.product-review__rating
+      .product-review__external
+        img(src="/assets/img/icons/yamarket.svg" alt="Отзыв на яндекс маркете")
+      +stars(5)
+    section.product-review__body
+      .product-review__pros
+      .product-review__cons
+      .product-review__text
+
+mixin product-slider-thumbs(images)
+  .product-slider__thumbs.swiper&attributes(attributes)
+    .swiper-wrapper
+      each image in images
+        .product-slider__thumbs-slide.swiper-slide
+          img(src=image loading="lazy" alt="")
+    .product-slider__thumbs-prev.swiper-button-prev
+    .product-slider__thumbs-next.swiper-button-next
+
+mixin product-slider-images(images)
+  .product-slider__images.swiper&attributes(attributes)
+    .swiper-wrapper
+      each item in images
+        if (item.type == "image")
+          a(href=item["2x"] data-fancybox="product-slider-images" data-caption="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)").product-slider__images-slide.swiper-slide
+            img(
+              srcset=`${item["2x"]} 1000w, ${item["src"]} 500w`
+              sizes="(min-device-pixel-ratio: 2) 100%, 100%"
+              src=item["src"]
+              loading="lazy"
+              alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)"
+            )
+        else if (item.type == "video")
+          a(href=item.src data-fancybox="product-slider-images").product-slider__images-slide.swiper-slide
+            iframe(src=item.src, width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+    .product-slider__images-pagination.swiper-pagination

@@ -1,0 +1,171 @@
+// Настройки бутстрапа
+@import "settings";
+
+// Переменные, миксины, функции...
+@import "helpers/animations";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/utils";
+@import "helpers/variables";
+
+// Библиотеки
+@import "vendor/libs";
+
+// Основное
+@import "base/general";
+@import "base/fonts";
+@import "base/typography";
+
+// Компоненты
+@import "../../components/accordion/accordion";
+@import "../../components/adult/adult";
+@import "../../components/badge/badge";
+@import "../../components/banner-tile/banner-tile";
+@import "../../components/brands-slider/brands-slider";
+@import "../../components/breadcrumbs/breadcrumbs";
+@import "../../components/burger-button/burger-button";
+@import "../../components/button/button";
+@import "../../components/callout/callout";
+@import "../../components/cart/cart";
+@import "../../components/catalog/catalog";
+@import "../../components/categories-grid/categories-grid";
+@import "../../components/category-tile/category-tile";
+@import "../../components/checklist/checklist";
+@import "../../components/checkout/checkout";
+@import "../../components/configurator/configurator";
+@import "../../components/compare/compare";
+@import "../../components/countdown/countdown";
+@import "../../components/events/events";
+@import "../../components/fields/fields";
+@import "../../components/filters/filters";
+@import "../../components/footer/footer";
+@import "../../components/forms/forms";
+@import "../../components/gaming/gaming";
+@import "../../components/header/header";
+@import "../../components/hero-slider/hero-slider";
+@import "../../components/hero/hero";
+@import "../../components/job/job";
+@import "../../components/listing/listing";
+@import "../../components/main-banners/main-banners";
+@import "../../components/maps/maps";
+@import "../../components/nav-tabs/nav-tabs";
+@import "../../components/news-card/news-card";
+@import "../../components/news-slider/news-slider";
+@import "../../components/notfound/notfound";
+@import "../../components/pagination/pagination";
+@import "../../components/pay-systems/pay-systems";
+@import "../../components/pay-type/pay-type";
+@import "../../components/pickup-map/pickup-map";
+@import "../../components/photo-slider/photo-slider";
+@import "../../components/popup/popup";
+@import "../../components/preloader/preloader";
+@import "../../components/product/product";
+@import "../../components/product-card/product-card";
+@import "../../components/products-slider/products-slider";
+@import "../../components/props-list/props-list";
+@import "../../components/share-buttons/share-buttons";
+@import "../../components/shop-card/shop-card";
+@import "../../components/shop-slider/shop-slider";
+@import "../../components/shop-thumbs/shop-thumbs";
+@import "../../components/shops-map/shops-map";
+@import "../../components/sidebar/sidebar";
+@import "../../components/slide-menu/slide-menu";
+@import "../../components/social-buttons/social-buttons";
+@import "../../components/stars/stars";
+@import "../../components/svg-icon/svg-icon";
+@import "../../components/tables/tables";
+@import "../../components/tabs/tabs";
+@import "../../components/tags/tags";
+@import "../../components/tooltip-icon/tooltip-icon";
+@import "../../components/tooltip/tooltip";
+@import "../../components/user-list/user-list";
+// @import "demo/demo";
+
+.site-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: map-get($container-max-widths, "xl");
+  margin: 0 auto;
+  flex: 1 1 100%;
+}
+
+.main {
+  display: flex;
+  flex: 1 1 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.page {
+  &-title {
+    margin: $spacer 0 $spacer * 1.5;
+  }
+}
+
+.content {
+  width: 100%;
+  outline: 1px solid var(--light, $light);
+  background: var(--white, $white);
+
+  &-header {
+    @extend .container-fluid;
+    margin-top: $spacer;
+    margin-bottom: $spacer;
+  }
+
+  &-section {
+    @extend .container-fluid;
+    margin-bottom: $spacer * 3;
+
+    &__header {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $spacer;
+
+      .content-section__title {
+        margin-bottom: 0;
+      }
+    }
+
+    &__title {
+      margin-bottom: $spacer;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: $spacer * 4;
+    }
+  }
+}
+
+.article {
+  padding: $spacer 0;
+}
+
+.container,
+.container-fluid {
+  max-width: map-get($container-max-widths, "xl");
+  padding-right: rem(20);
+  padding-left: rem(20);
+  @include media-breakpoint-up(xs) {
+    max-width: map-get($container-max-widths, "xl");
+  }
+  @include media-breakpoint-up(sm) {
+    max-width: map-get($container-max-widths, "xl");
+  }
+  @include media-breakpoint-up(md) {
+    max-width: map-get($container-max-widths, "xl");
+    padding-right: rem(16);
+    padding-left: rem(16);
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: map-get($container-max-widths, "xl");
+    padding-right: rem(40);
+    padding-left: rem(40);
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: map-get($container-max-widths, "xl");
+  }
+}

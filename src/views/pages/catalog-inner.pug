@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+include ../../components/hero-slider/hero-slider
+include ../../components/categories-grid/categories-grid
+
+append vars
+  -
+    page.name  = "catalog-inner"
+    page.title = "Каталог без сайдбара"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    +categories-grid(cols_sm=2, cols_md=3, cols_lg=4)
+
+  section.content-section.p-0
+    +hero-slider()
+
+  section.content-section.fs-5
+    p
+      strong На сайте ОГО! вы можете:
+
+    ul
+      li Купить климатическую технику в интернет-магазине в Москве с доставкой
+      li Узнать стоимость климатической техники: самая выгодная цена
+
+    p Доверие покупателей — 5 звезд на Яндекс.Маркет.
+
+    p Продажа климатической техники с возможностью накопления бонусов в программе лояльности.

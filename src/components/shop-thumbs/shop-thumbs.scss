@@ -1,0 +1,32 @@
+.shop-thumbs {
+  margin-top: 32px;
+
+  &:not(.swiper-initialized) .shop-thumbs__slide {
+    display: none
+  }
+
+  .shop-thumbs__prev,
+  .shop-thumbs__next {
+    color: var(--body-color, $body-color);
+    background: var(--gray-100, $gray-100);
+
+    &.swiper-button-disabled {
+      opacity: 0.35;
+    }
+
+    &:not(.swiper-button-disabled):hover {
+      color: var(--primary, $primary);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 102px;
+
+    .shop-thumbs__prev,
+    .shop-thumbs__next {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+  }
+}

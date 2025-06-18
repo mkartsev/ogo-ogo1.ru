@@ -1,0 +1,13 @@
+include ../svg-icon/svg-icon
+
+mixin share-buttons(link)
+  .share-buttons
+    +share-button('ВКонтакте', '/assets/img/icons/vk.svg')
+
+    if (link)
+      +share-button('Скопировать ссылку', '/assets/img/icons/copy-link.svg')(class="js-copy-link" data-copy-link-tooltip="Ссылка скопирована")
+
+mixin share-button(title, image)
+  a(href="#").share-button&attributes(attributes)
+    img(src= image, class="share-button__img" alt= title)
+    span= title

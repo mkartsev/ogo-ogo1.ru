@@ -1,0 +1,22 @@
+mixin shops-map-item(title, address, phone, hours)
+  div(class="shops-map__item")&attributes(attributes)
+    .ymap__balloon.d-none
+      .ymap__balloon-title= title
+      .ymap__balloon-address= address.title
+      .ymap__balloon-description= address.description
+      .ymap__balloon-phone= phone
+      .ymap__balloon-hours= hours
+
+    span.shops-map__item-title
+      +svg-icon("ui--location")
+      span= title
+
+    span.shops-map__item-address= address.title
+
+    ul.shops-map__item-stations
+      each station in address.stations
+        li.shops-map__item-station
+          +svg-icon(station.icon, "sm")(style="color: " + station.color)
+          span= station.title
+
+    span.shops-map__item-hours= hours

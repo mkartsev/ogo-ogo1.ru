@@ -1,0 +1,50 @@
+extends ../layouts/default
+
+include ../../components/hero/hero
+
+append vars
+  -
+    page.name  = "corporate"
+    page.title = "Корпоративным клиентам"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    +hero("/assets/img/content/banner-corp.jpg", "/assets/img/content/banner-corp-small.jpg")
+
+    p Мы предлагаем выгодные условия для сотрудничества и индивидуальное обслуживание клиентов.
+    p Чтобы сделать заказ для компании, добавьте товары в корзину. При оформлении заказа выберете «Юридическое лицо» в качестве получателя и заполните реквизиты организации. Личный кабинет будет автоматически создан после оформления заказа и в дальнейшем не потребуется заполнять данные заново.
+    p.mb-4 Также вы можете отправить перечень необходимых товаров на электронную почту <a href="mailto:corp@ogo1.ru">corp@ogo1.ru</a>. Укажите в письме реквизиты организации для оформления счета.
+
+    h2.content-section__title Удобный сервис
+
+    .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-3.g-lg-4.mb-5
+      .col
+        span.checklist-item.checked Персональный менеджер для каждого клиента
+      .col
+        span.checklist-item.checked Доставка заказа в любую точку РФ через транспортную компанию
+      .col
+        span.checklist-item.checked Сборка компьютеров и серверов по вашему запросу
+      .col
+        span.checklist-item.checked Широкий ассортимент и низкие цены
+      .col
+        span.checklist-item.checked Только сертифицированный товар
+      .col
+        span.checklist-item.checked Поставка товара под заказ
+
+    h2.content-section__title Свяжитесь с нами
+    ul.list-unstyled.lh-lg.mb-4
+      li Корпоративная почта: <a href="#">corp@ogo1.ru</a>
+      li Контактный центр: <a href="tel:+7 495 133 79 84">+7 495 133 79 84</a>
+      li Часы работы: по будням 10:00 - 19:00 МСК
+
+    ul.list-unstyled.lh-lg.fs-4
+      li ООО «Гриффин Технолоджи»
+      li 196240, г. Санкт-Петербург, вн.тер.г. Муниципальный округ Новоизмайловское, ул. Варшавская, д.71, к.2, Литера А, кв.17
+      li ИНН 7733765116
+      li ОГРН 1117746304884

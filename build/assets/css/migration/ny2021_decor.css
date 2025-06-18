@@ -1,0 +1,119 @@
+.b-plate-product__icon--discount {
+  color: #fff !important;
+  width: 40px !important;
+  height: 49px !important;
+  margin-left: -3px;
+  line-height: 60px !important;
+  background-color: transparent !important;
+  background: url('../img/decor/ball2.png')no-repeat center !important;
+}
+.b-news-slider__slider {
+  padding-top: 7px;
+}
+.b-news-slider__slide-wrap {
+  position: relative;
+}
+.b-news-slider__slide-wrap:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 40px;
+  background: url('../img/decor/snowhat.png')no-repeat top center / contain;
+  z-index: 1;
+}
+.b-news-slider__slide-wrap:after {
+  top: -10px;
+  width: 103%;
+  left: -1.5%;
+  background-image: url('../img/decor/snowhat@2x.png');
+}
+.b-news-slider__slider .slick-list{
+  margin-top: -10px;
+  padding-top: 10px;
+}
+@media screen and (min-width: 1040px) {
+  .b-news-slider__slide-wrap:after {
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 670px) and (max-width: 780px) {
+  .b-news-slider__slide-wrap:after {
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 650px) {
+  .b-news-slider__slide-wrap:after  {
+    background-size: contain;
+  }
+  
+}
+.b-smart-filter {
+  position: relative;
+  margin-top: 10px;
+  background: #fff;
+}
+.b-smart-filter:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  top: -10px;
+  left: 0;
+  height: 40px;
+  background: url('../img/decor/snowhat.png')no-repeat top center / contain;
+  z-index: 1;
+}
+.b-smart-filter__params-name {
+  background: #fff;
+  z-index: 2;
+}
+.b-smart-filter__params-item._opened:nth-child(2), .b-smart-filter__params-item._opened:nth-child(3) {
+  position: relative;
+  padding-bottom: 30px;
+}
+.b-smart-filter__params-item._opened:nth-child(2):after, .b-smart-filter__params-item._opened:nth-child(3):after {
+  position: absolute;
+    content: '';
+    width: 60px;
+    height: 49px;
+    bottom: 0;
+    right: 10px;
+    background: url('../img/decor/caramel.png')no-repeat center;
+}
+.b-smart-filter__params-item._no-decor:after {
+  display: none !important;
+}
+.b-filter-scale .ui-slider-handle {
+  width: 20px !important;
+  height: 26px !important;
+  margin: -16px 0 0 0 !important;
+  background: url('../img/decor/ball.png')no-repeat center;
+  background-color: transparent !important;
+}
+.c-catalog__cols {
+  background: url('../img/decor/santa.png')no-repeat right 40px bottom #f8f8f8;
+}
+.c-catalog__title {
+  position: relative;
+}
+.c-catalog__title:after {
+  position: absolute;
+  content: '';
+  width: 89px;
+  height: 94px;
+  right: 20px;
+  bottom: -15px;
+  background: url('../img/decor/snowman.png')no-repeat right bottom;
+  z-index: 1;
+}
+.shops__info-count {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 12px !important;
+  color: #fff !important;
+  /*line-height: 65px !important;*/
+  background: url('../img/decor/ball3.png')no-repeat center / contain  !important;
+  border: none !important;
+}

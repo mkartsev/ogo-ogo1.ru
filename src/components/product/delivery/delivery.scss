@@ -1,0 +1,58 @@
+.product-delivery {
+  b,
+  strong {
+    font-weight: 600;
+  }
+  &__body {
+    padding: 0 $spacer $spacer $spacer * 2.75;
+    font-size: var(--font-size-root, $font-size-root);
+  }
+
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding: $spacer;
+    gap: $spacer * 0.75;
+    font-size: var(--font-size-root, $font-size-root);
+  }
+
+  &__variant {
+    display: block;
+    border: 1px solid var(--gray-200, $gray-200);
+    &:not(:last-child) {
+      margin-bottom: $spacer;
+    }
+  }
+
+  &__type,
+  &__payment,
+  &__date {
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: $spacer * 0.5;
+    }
+  }
+
+  &__type {
+    font-size: var(--font-size-root, $font-size-root);
+  }
+
+  &__payment {
+    color: var(--gray-500, $gray-500);
+    font-size: var(--font-size-sm, $font-size-sm);
+  }
+
+  &__date {
+    font-size: var(--font-size-sm, $font-size-sm);
+  }
+
+  a.product-delivery__header {
+    color: var(--body-color);
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+}

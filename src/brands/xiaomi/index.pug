@@ -1,0 +1,455 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "xiaomi"
+    page.title = "Бренд-зона Xiaomi"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.xiaomi
+    nav.xiaomi-nav
+      img.xiaomi-logo(src="./img/logo.png" alt="Xiaomi")
+      ul
+        li
+          a(href="#") Мобильная техника
+          ul
+            li
+              a(href="#") Смартфоны
+            li
+              a(href="#") Умные часы
+            li
+              a(href="#") Умные часы
+            li
+              a(href="#") Фитнес-браслеты
+        li
+          a(href="#") Умные устройства
+          ul
+            li
+              a(href="#") Роутеры
+            li
+              a(href="#") Системы управления
+            li
+              a(href="#") Датчики
+            li
+              a(href="#") IP-камеры
+            li
+              a(href="#") Освещение
+            li
+              a(href="#") Медиаплееры
+        li
+          a(href="#") Умная бытовая техника
+          ul
+            li
+              a(href="#") Техника для дома
+            li
+              a(href="#") Климатическая техника
+            li
+              a(href="#") Техника для кухни
+            li
+              a(href="#") Красота и здоровье
+            li
+              a(href="#") Роботы пылесосы
+        li
+          a(href="#") Аудио и аксессуары
+          ul
+            li
+              a(href="#") Наушники
+            li
+              a(href="#") Беспроводные наушники
+            li
+              a(href="#") Колонки
+            li
+              a(href="#") Внешние аккумуляторы
+            li
+              a(href="#") Беспроводные ЗУ
+            li
+              a(href="#") Рюкзаки для ноутбуков
+
+    section.xiaomi-slider
+      h2.text-center [Стандартный слайдер]
+
+    section.xiaomi-category
+      .xiaomi-category__hero
+        h2.xiaomi-category__title Мобильная техника
+        img.xiaomi-category__image(src="./img/mobile-devices.jpg" alt="Мобильная техника")
+      .xiaomi-category__grid
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-3.png" alt="Смартфоны")
+            span.xiaomi-card__title Смартфоны
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-1.png" alt="Умные часы")
+            span.xiaomi-card__title Умные часы
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-2.png" alt="Фитнес-браслеты")
+            span.xiaomi-card__title Фитнес-браслеты
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91.png" alt="Планшеты")
+            span.xiaomi-card__title Планшеты
+
+    section.xiaomi-category
+      .xiaomi-category__hero
+        h2.xiaomi-category__title Умные устройства
+        img.xiaomi-category__image(src="./img/smart-devices.jpg" alt="Умные устройства")
+      .xiaomi-category__grid
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 92.png" alt="Роутеры")
+            span.xiaomi-card__title Роутеры
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-9.png" alt="Системы управления")
+            span.xiaomi-card__title Системы управления
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-12.png" alt="Датчики")
+            span.xiaomi-card__title Датчики
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-4.png" alt="IP-камеры")
+            span.xiaomi-card__title IP-камеры
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-6.png" alt="Освещение")
+            span.xiaomi-card__title Освещение
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-8.png" alt="Медиаплееры")
+            span.xiaomi-card__title Медиаплееры
+
+    section.xiaomi-category
+      .xiaomi-category__hero
+        h2.xiaomi-category__title Умная бытовая техника
+        img.xiaomi-category__image(src="./img/home-devices.jpg" alt="Умная бытовая техника")
+      .xiaomi-category__grid
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 92-1.png" alt="Техника для дома")
+            span.xiaomi-card__title Техника для дома
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-10.png" alt="Климатическая техника")
+            span.xiaomi-card__title Климатическая техника
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-13.png" alt="Техника для кухни")
+            span.xiaomi-card__title Техника для кухни
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-5.png" alt="Красота и здоровье")
+            span.xiaomi-card__title Красота и здоровье
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-7.png" alt="Роботы-пылесосы")
+            span.xiaomi-card__title Роботы-пылесосы
+
+    section.xiaomi-category
+      .xiaomi-category__hero
+        h2.xiaomi-category__title Аудио и аксессуары
+        img.xiaomi-category__image(src="./img/audio-devices.jpg" alt="Аудио и аксессуары")
+      .xiaomi-category__grid
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 92-2.png" alt="Наушники")
+            span.xiaomi-card__title Наушники
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-11.png" alt="Беспроводные наушники")
+            span.xiaomi-card__title Беспроводные наушники
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 91-14.png" alt="Колонки")
+            span.xiaomi-card__title Колонки
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 92-3.png" alt="Внешние аккумуляторы")
+            span.xiaomi-card__title Внешние аккумуляторы
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 92-4.png" alt="Беспроводные ЗУ")
+            span.xiaomi-card__title Беспроводные ЗУ
+        .cell
+          a.xiaomi-card(href="#")
+            img.xiaomi-card__image(src="./img/Rectangle 92-5.png" alt="Рюкзаки для ноутбуков")
+            span.xiaomi-card__title Рюкзаки для ноутбуков
+
+    section.xiaomi-section
+      .xiaomi-review-slider.swiper
+        .xiaomi-review-slider__header
+          h3.xiaomi-section__title Обзоры
+          .xiaomi-review-slider__arrows
+            .xiaomi-review-slider__prev.swiper-button-prev
+            .xiaomi-review-slider__next.swiper-button-next
+        .swiper-wrapper
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_pad-5/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/67c/67c9fae51bf6628d7f11d850876abf1d.jpg" alt="Xiaomi Pad 5" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_pad-5/") Xiaomi Pad 5
+                .xiaomi-review__tagline.
+
+                  Играйте на полную, работайте с удобством
+
+                ul.xiaomi-review__desc
+                  li Дисплей WQHD+ 120 Гц
+                  li 4 динамика с эффектом погружения
+                  li Qualcomm® Snapdragon™ 860
+                  li Аккумулятор 8720 мАч
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_pad-5/") Подробнее
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_RedmiBuds3Pro/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/35a/35ae2f1e972a091b0fab504698d60792.jpg" alt="Redmi Buds 3 Pro" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_RedmiBuds3Pro/") Redmi Buds 3 Pro
+                .xiaomi-review__tagline.
+
+                  Звук, который вам нужен
+
+                ul.xiaomi-review__desc
+                  li Интеллектуальное шумоподавление 35 дБ
+                  li Возможность подключения к двум устройствам
+                  li Беспроводная зарядка
+                  li До 28 часов работы от аккумулятора
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_RedmiBuds3Pro/") Подробнее
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-robot-vacuum-mop/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/5e7/5e7b7e8a333cab423a8348c3fccb0d7b.jpg" alt="Mi Robot Vacuum-Mop" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-robot-vacuum-mop/") Mi Robot Vacuum-Mop
+                .xiaomi-review__tagline.
+
+                  Робот-пылесос с функцией влажной уборки Mi
+
+                ul.xiaomi-review__desc
+                  li Динамическая визуальная навигация
+                  li Сверхмощное всасывание 2500 Па
+                  li Большой пылесборник емкостью 600 мл
+                  li Резервуар для воды с интеллектуальным управлением
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-robot-vacuum-mop/") Подробнее
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_redmi-10/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/eb9/eb9425e94a1337413eb205d8a3688fd5.jpg" alt="Redmi 10" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_redmi-10/") Redmi 10
+                .xiaomi-review__tagline.
+
+                  На уровень выше!
+
+                ul.xiaomi-review__desc
+                  li Система из четырех камер на базе ИИ с разрешением 50 МП
+                  li Дисплей 90 Гц FHD+
+                  li Процессор Helio G88+
+                  li Длительное время работы от аккумулятора
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_redmi-10/") Подробнее
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-smart-band-6/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/7dc/7dc72e83aa704963d576b283f48f67f1.jpg" alt="Mi Smart Band 6" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-smart-band-6/") Mi Smart Band 6
+                .xiaomi-review__tagline.
+
+                  На шаг впереди
+
+                ul.xiaomi-review__desc
+                  li Бренд №1 среди фитнес-браслетов в мире.
+                  li Дисплей AMOLED
+                  li 30 режимов упражнений
+                  li Время работы от аккумулятора в течение 14 дней
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-smart-band-6/") Подробнее
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_11t-pro/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/df9/df953dbbab4b9755f60c457e244afb09.jpg" alt="Xiaomi 11T Pro" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_11t-pro/") Xiaomi 11T Pro
+                .xiaomi-review__tagline.
+
+                  Создавайте «Киномагию»
+
+                ul.xiaomi-review__desc
+                  li Профессиональная камера 108 Мп
+                  li Зарядка Xiaomi HyperCharge 120 Вт
+                  li Дисплей AMOLED 120 Гц, поддержка Dolby Vision®
+                  li Флагманский Qualcomm® Snapdragon™ 888
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_11t-pro/") Подробнее
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-smart-band-6/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/7dc/7dc72e83aa704963d576b283f48f67f1.jpg" alt="Mi Smart Band 6" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-smart-band-6/") Mi Smart Band 6
+                .xiaomi-review__tagline.
+
+                  На шаг впереди
+
+                ul.xiaomi-review__desc
+                  li Бренд №1 среди фитнес-браслетов в мире.
+                  li Дисплей AMOLED
+                  li 30 режимов упражнений
+                  li Время работы от аккумулятора в течение 14 дней
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_mi-smart-band-6/") Подробнее
+          .swiper-slide
+            article.xiaomi-review
+              header.xiaomi-review__header
+                a.xiaomi-review__image-wrapper(href="https://ogo1.ru/brands/xiaomi/xiaomi_11t-pro/")
+                  img.xiaomi-review__image(src="https://ogo1.ru/upload/iblock/df9/df953dbbab4b9755f60c457e244afb09.jpg" alt="Xiaomi 11T Pro" loading="lazy")
+              section.xiaomi-review__body
+                h4.xiaomi-review__title
+                  a(href="https://ogo1.ru/brands/xiaomi/xiaomi_11t-pro/") Xiaomi 11T Pro
+                .xiaomi-review__tagline.
+
+                  Создавайте «Киномагию»
+
+                ul.xiaomi-review__desc
+                  li Профессиональная камера 108 Мп
+                  li Зарядка Xiaomi HyperCharge 120 Вт
+                  li Дисплей AMOLED 120 Гц, поддержка Dolby Vision®
+                  li Флагманский Qualcomm® Snapdragon™ 888
+              footer.xiaomi-review__footer
+                .xiaomi-review__price.
+
+
+                .xiaomi-review__actions
+                  a.xiaomi-btn.xiaomi-btn--gray(href="https://ogo1.ru/brands/xiaomi/xiaomi_11t-pro/") Подробнее
+
+    section.xiaomi-section
+      .xiaomi-video-slider.swiper
+        .xiaomi-video-slider__header
+          h3.xiaomi-section__title Видео
+          .xiaomi-video-slider__arrows
+            .xiaomi-video-slider__prev.swiper-button-prev
+            .xiaomi-video-slider__next.swiper-button-next
+        .swiper-wrapper.xiaomi-gallery
+          .swiper-slide
+            a.xiaomi-video.xiaomi-gallery-item(href="#" data-src="https://www.youtube.com/watch?v=EvpmYXnWgTE&mute=0" data-poster="https://img.youtube.com/vi/EvpmYXnWgTE/maxresdefault.jpg")
+              .xiaomi-video__preview-wrapper
+                img.xiaomi-video__preview(src="https://ogo1.ru/brands/xiaomi/img/video_Xiaomi_Pad_5.jpg" alt="Xiaomi Pad 5 - возможности для творчества и работы | Обзор от Алины Cripsy")
+                span.xiaomi-video__play
+              span.xiaomi-video__title Xiaomi Pad 5 - возможности для творчества и работы | Обзор от Алины Cripsy
+          .swiper-slide
+            a.xiaomi-video.xiaomi-gallery-item(href="#" data-src="https://www.youtube.com/watch?v=lfH4ViphpBI&mute=0" data-poster="https://img.youtube.com/vi/lfH4ViphpBI/maxresdefault.jpg")
+              .xiaomi-video__preview-wrapper
+                img.xiaomi-video__preview(src="https://ogo1.ru/brands/xiaomi/img/video_Xiaomi_11T.jpg" alt="Xiaomi 11T - Возможности камеры | Обзор от Алины Cripsy")
+                span.xiaomi-video__play
+              span.xiaomi-video__title Xiaomi 11T - Возможности камеры | Обзор от Алины Cripsy
+          .swiper-slide
+            a.xiaomi-video.xiaomi-gallery-item(href="#" data-src="https://www.youtube.com/watch?v=WloAOYXQA-I&mute=0" data-poster="https://img.youtube.com/vi/WloAOYXQA-I/maxresdefault.jpg")
+              .xiaomi-video__preview-wrapper
+                img.xiaomi-video__preview(src="https://ogo1.ru/brands/xiaomi/img/video_Xiaomi_11T_Pro.jpg" alt="В поисках эмоций с Xiaomi 11T Pro")
+                span.xiaomi-video__play
+              span.xiaomi-video__title В поисках эмоций с Xiaomi 11T Pro
+          .swiper-slide
+            a.xiaomi-video.xiaomi-gallery-item(href="#" data-src="https://www.youtube.com/watch?v=UZgCIlRhQ84&mute=0" data-poster="https://img.youtube.com/vi/UZgCIlRhQ84/maxresdefault.jpg")
+              .xiaomi-video__preview-wrapper
+                img.xiaomi-video__preview(src="https://ogo1.ru/brands/xiaomi/img/video_Mi_Smart_Speaker.jpg" alt="Представляем Mi Smart Speaker")
+                span.xiaomi-video__play
+              span.xiaomi-video__title Представляем Mi Smart Speaker
+          .swiper-slide
+            a.xiaomi-video.xiaomi-gallery-item(href="#" data-src="https://www.youtube.com/watch?v=rFB57Jj9cFU&mute=0" data-poster="https://img.youtube.com/vi/rFB57Jj9cFU/maxresdefault.jpg")
+              .xiaomi-video__preview-wrapper
+                img.xiaomi-video__preview(src="https://ogo1.ru/brands/xiaomi/img/video_Xiaomi_11_Lite_5G_NE.jpg" alt="Представляем Xiaomi 11 Lite 5G NE")
+                span.xiaomi-video__play
+              span.xiaomi-video__title Представляем Xiaomi 11 Lite 5G NE
+          .swiper-slide
+            a.xiaomi-video.xiaomi-gallery-item(href="#" data-src="https://www.youtube.com/watch?v=LZi_iqowWCQ&mute=0" data-poster="https://img.youtube.com/vi/LZi_iqowWCQ/maxresdefault.jpg")
+              .xiaomi-video__preview-wrapper
+                img.xiaomi-video__preview(src="https://ogo1.ru/brands/xiaomi/img/video_Mi_Smart_Band_6.jpg" alt="Mi Smart Band 6 — Главные особенности | Алина Cripsy")
+                span.xiaomi-video__play
+              span.xiaomi-video__title Mi Smart Band 6 — Главные особенности | Алина Cripsy
+
+    section.xiaomi-section
+      h3.xiaomi-section__title О компании Xiaomi
+      .tabs
+        ul.tabs-nav
+          li
+            a(href="#tab1") История
+          li
+            a(href="#tab2") Миссия
+          li
+            a(href="#tab3") Достижения
+      .tabs-content
+        #tab1.tab-content
+          .tab-data
+            p Компания Xiaomi была основана в 2010 году группой энтузиастов из Пекина во главе с Лэй Цзюнем. Первым детищем компании стала MIUI – специальная версия операционной системы Android, которая поразила пользователей беспрецедентно широкой функциональностью, скрывающейся за минималистичным дизайном.
+            p Вокруг MIUI сформировалось огромное сообщество поклонников, которое очень скоро переросло в глобальную армию Mi фанов. В адрес основателей Xiaomi поступало огромное количество просьб выйти на рынок аппаратных устройств, и в 2011 году компания пошла на встречу пользователям, выпустив свой первый смартфон Mi 1.
+            p Очень скоро компания начала завоевывать все новые сегменты рынка, и в настоящий момент ее модельный ряд насчитывает тысячи наименований продукции: фитнес-браслеты, электросамокаты, роботы-пылесосы, системы умного дома, ноутбуки, малую и крупную бытовую технику и многое-многое другое.
+            p В 2020 году Xiaomi отметила свое первое десятилетие, и за этот короткий путь ей удалось сделать невероятно много: как в контексте финансовых показателей, так и в деле завоевания любви пользователей. «Маленькое зернышко» (а именно так переводится с китайского название компании) проросло и превратилось в настоящий сад инноваций.
+          .tab-image
+            img(src="./img/history.jpg", alt)
+        #tab2.tab-content
+          .tab-data
+            p Миссия
+          .tab-image
+            img(src="https://placekitten.com/385/294", alt)
+        #tab3.tab-content
+          .tab-data
+            p Достижения
+          .tab-image
+            img(src="https://placekitten.com/385/294", alt)

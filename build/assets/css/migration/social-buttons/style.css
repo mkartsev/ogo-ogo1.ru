@@ -1,0 +1,15 @@
+.social-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+}
+.social-button {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+}
+.social-button__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}

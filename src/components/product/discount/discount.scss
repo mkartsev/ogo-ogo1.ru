@@ -1,0 +1,48 @@
+.product-discount {
+  display: flex;
+  flex-flow: row wrap;
+  gap: $spacer * 0.5;
+  padding: $spacer;
+  border: 1px solid var(--gray-200, $gray-200);
+
+  &__button {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    height: 48px;
+    padding: 7px 0 7px 40px;
+    color: var(--body-color);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    border: 1px solid var(--info, $info);
+    &:before {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      background-image: url("data:image/svg+xml;utf8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0Z' fill='%2329B6F6'/><path d='M15 5.5L13.15 15.05C13.15 15.05 13.05 15.5 12.55 15.5C12.25 15.5 12.1 15.35 12.1 15.35L8 12L6 11L3.45 10.3C3.45 10.3 3 10.15 3 9.8C3 9.5 3.45 9.35 3.45 9.35L14.1 5.1C14.1 5.1 14.45 5 14.65 5C14.8 5 14.95 5.05 14.95 5.25C15 5.4 15 5.5 15 5.5Z' fill='white'/><path d='M9.4998 13.25L7.7998 14.95C7.7998 14.95 7.7498 15 7.6498 15C7.5998 15 7.5998 15 7.5498 15L8.0498 12L9.4998 13.25Z' fill='%23B0BEC5'/><path d='M12.95 7.09999C12.85 6.99999 12.7 6.94999 12.6 7.04999L6 11C6 11 7.05 13.95 7.2 14.45C7.35 14.95 7.5 14.95 7.5 14.95L8 11.95L12.9 7.39999C13 7.34999 13.05 7.19999 12.95 7.09999Z' fill='%23CFD8DC'/></svg>");
+    }
+
+    &:hover {
+      color: var(--info, $info);
+      border-color: var(--info, $info);
+    }
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+    font-size: var(--font-size-root, $font-size-root);
+  }
+
+  &__desc {
+    display: block;
+    width: 100%;
+    font-size: var(--font-size-sm, $font-size-sm);
+    font-weight: 300;
+  }
+}

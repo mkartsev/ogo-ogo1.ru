@@ -1,0 +1,6 @@
+.text-black {
+  color: var(--color-black, #212121)
+}
+.text-medium-gray {
+  color: var(--color-medium-gray, #9e9e9e)
+}

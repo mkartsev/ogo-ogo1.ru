@@ -1,0 +1,53 @@
+include ../svg-icon/svg-icon
+
+mixin pay-type()
+  -
+    var params = {};
+    const uniqId = (prefix = "field") => prefix + '-' + Math.random().toString(36).substr(2, 9)
+    attributes.id = attributes.id ? attributes.id : (attributes.title || attributes.placeholder) ? uniqId() : false
+
+    Object.assign(params, attributes);
+
+    delete attributes.type
+    delete attributes.id
+    delete attributes.name
+    delete attributes.title
+    delete attributes.icon
+    delete attributes.desc
+    delete attributes.logo
+
+  .pay-type&attributes(attributes)
+    case params.type
+      when "radio"
+        input(type="radio" class="pay-type__input" id=params.id name=params.name)
+        label(for= params.id).pay-type__inner
+          if params.icon
+            span.pay-type__icon
+              +svg-icon(params.icon)
+          span.pay-type__title= params.title
+
+          if params.logo
+            - var logo = params.logo.replace(" ", "").split(",").map(String)
+              span.pay-type__logo
+                for item in logo
+                  img(src=item, alt="").pay-type__logo-item
+
+          if params.desc
+            span.pay-type__desc= params.desc
+
+      when "link"
+        a(href="#").pay-type__inner
+          if params.icon
+            span.pay-type__icon
+              +svg-icon(params.icon)
+
+          span.pay-type__title= params.title
+
+          if params.logo
+            - var logo = params.logo.replace(" ", "").split(",").map(String)
+              span.pay-type__logo
+                for item in logo
+                  img(src=item, alt="").pay-type__logo-item
+
+          if params.desc
+            span.pay-type__desc= params.desc

@@ -1,0 +1,108 @@
+include ../category-tile/category-tile
+
+mixin categories-grid(cols_sm, cols_md, cols_lg)
+  -
+    var params = {
+      cols_sm: attributes.cols_sm || 2,
+      cols_md: attributes.cols_md || 3,
+      cols_lg: attributes.cols_lg || 6
+    };
+
+    Object.assign(params, attributes);
+
+    delete attributes.cols_sm
+    delete attributes.cols_md
+    delete attributes.cols_lg
+
+    var categories = [
+      { title: "Планшеты", img: "/assets/img/content/category-tile-5.png", variant: null, isAdult: false },
+      { title: "Акустика, наушники, гарнитуры", img: "/assets/img/content/category-tile-6.png", variant: null, isAdult: false },
+      { title: "Сетевое оборудование", img: "/assets/img/content/category-tile-7.png", variant: null, isAdult: false },
+      { title: "Внешние накопители данных", img: "/assets/img/content/category-tile-8.png", variant: null, isAdult: false },
+      //- { title: "Телевизоры", img: "/assets/img/content/category-tile-9.png", variant: null, isAdult: false },
+      { title: "Мониторы", img: "/assets/img/content/category-tile-10.png", variant: null, isAdult: false },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true }
+    ]
+
+  div(class=`row g-3 g-lg-4 row-cols-${params.cols_sm} row-cols-md-${params.cols_md} row-cols-lg-${params.cols_lg}`)
+    for category in categories
+      .col
+        +category-tile(category.title, category.img, category.variant, category.isAdult)
+
+mixin categories-grid--adult(cols_sm, cols_md, cols_lg)
+  -
+    var params = {
+      cols_sm: attributes.cols_sm || 2,
+      cols_md: attributes.cols_md || 3,
+      cols_lg: attributes.cols_lg || 6
+    };
+
+    Object.assign(params, attributes);
+
+    delete attributes.cols_sm
+    delete attributes.cols_md
+    delete attributes.cols_lg
+
+    var categories = [
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: null, isAdult: true }
+    ]
+
+  div(class=`row g-3 g-lg-4 row-cols-${params.cols_sm} row-cols-md-${params.cols_md} row-cols-lg-${params.cols_lg}`)
+    for category in categories
+      .col
+        +category-tile(category.title, category.img, category.variant, category.isAdult)
+
+mixin categories-grid--large(cols_sm, cols_md, cols_lg)
+  -
+    var params = {
+      cols_sm: attributes.cols_sm || 2,
+      cols_md: attributes.cols_md || 2,
+      cols_lg: attributes.cols_lg || 4
+    };
+
+    Object.assign(params, attributes);
+
+    delete attributes.cols_sm
+    delete attributes.cols_md
+    delete attributes.cols_lg
+
+    var categories = [
+      { title: "Смартфоны", img: "/assets/img/content/category-tile-1.jpg", variant: "large", isAdult: false },
+      { title: "Комплектующие для ПК", img: "/assets/img/content/category-tile-2.jpg", variant: "large", isAdult: false },
+      { title: "Ноутбуки", img: "/assets/img/content/category-tile-3.jpg", variant: "large", isAdult: false },
+      { title: "Печать и сканирование", img: "/assets/img/content/category-tile-4.jpg", variant: "large", isAdult: false },
+      { title: "Детские товары", img: "/assets/img/content/category-tile-5.jpg", variant: "large", isAdult: false },
+      { title: "Сад и дача", img: "/assets/img/content/category-tile-6.jpg", variant: "large", isAdult: false },
+      { title: "Техника для дома", img: "/assets/img/content/category-tile-7.jpg", variant: "large", isAdult: false },
+      { title: "Товары для красоты", img: "/assets/img/content/category-tile-8.jpg", variant: "large", isAdult: false },
+      { title: "Товары 18+", img: "/assets/img/content/category-tile-11.png", variant: "large", isAdult: true }
+    ]
+
+  div(class=`row g-3 g-lg-4 row-cols-${params.cols_sm} row-cols-md-${params.cols_md} row-cols-lg-${params.cols_lg}`)
+    for category in categories
+      .col
+        +category-tile(category.title, category.img, category.variant, category.isAdult)
+
+mixin categories-grid--columns()
+  mixin nested-category(items)
+    ul
+      each item in items
+        if item.title
+          li
+            a(href=item.url)= item.title
+            if item.sub && item.sub.length
+              +nested-category(item.sub)
+
+  .categories-grid.categories-grid--columns
+    each item in catalog.catalog
+      .categories-grid__item
+        +category-tile(item.title, "https://placehold.jp/552x606.png", "wide", false).category-tile--wide.mb-3
+        .categories-grid__sub
+          if item.sub
+            +nested-category(item.sub)

@@ -1,0 +1,17 @@
+.stars {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: $spacer * 0.25;
+  color: var(--gray-400, $gray-400);
+
+  &__item {
+    display: inline-flex;
+    line-height: 1;
+    &.is-active {
+      color: var(--warning, $warning);
+    }
+  }
+}

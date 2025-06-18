@@ -1,0 +1,132 @@
+include ../fields/fields
+
+mixin filters-group(title)
+  fieldset.filters-group.js-accordion-item&attributes(attributes)
+    .filters-group__header.js-accordion-header
+      span.filters-group__title= title
+    .filters-group__body.js-accordion-body
+      block
+
+mixin filters()
+  .filters.js-accordion&attributes(attributes)
+    +filters-group("Цена").is-active
+      div.d-flex.justify-content-between.align-items-center
+        div.position-relative.flex-fill
+          input(type="number" class="form-control text-end pe-5 js-input-numbers js-min" inputmode="numeric" name="arrFilter[PRICE][LEFT]" id="filters-price-min" value="2000" min="100" max="100000" pattern="[\d.,]+" data-name="arrFilter[PRICE][LEFT]")
+          span.position-absolute.top-50.end-0.translate-middle-y.input-group-text.p-2.text-dark.bg-transparent.border-0 ₽
+        span.input-group-text.px-1.text-dark.bg-white.border-0 —
+        div.position-relative.flex-fill
+          input(type="number" class="form-control text-end pe-5 js-input-numbers js-max" inputmode="numeric" name="arrFilter[PRICE][RIGHT]" id="filters-price-max" value="50000" min="100" max="100000" pattern="/[\d.,]/" data-name="arrFilter[PRICE][RIGHT]")
+          span.position-absolute.top-50.end-0.translate-middle-y.input-group-text.p-2.text-dark.bg-transparent.border-0 ₽
+
+      div(class="mt-4 mb-3 js-range-slider" data-range-min="filters-price-min" data-range-max="filters-price-max" data-step="100")
+
+    +filters-group("Диагональ").is-active
+      div.d-flex.justify-content-between.align-items-center
+        div.position-relative.flex-fill
+          input(type="number" class="form-control text-end pe-5 js-input-numbers js-min" inputmode="numeric" name="arrFilter[DIAG][LEFT]" id="filters-diag-min" value="2.1" min="0.1" max="20" pattern="/[\d.,]/" data-name="arrFilter[DIAG][LEFT]")
+          span.position-absolute.top-50.end-0.translate-middle-y.input-group-text.p-2.text-dark.bg-transparent.border-0 ″
+        span.input-group-text.px-1.text-dark.bg-white.border-0 —
+        div.position-relative.flex-fill
+          input(type="number" class="form-control text-end pe-5 js-input-numbers js-max" inputmode="numeric" name="arrFilter[DIAG][RIGHT]" id="filters-diag-max" value="6.8" min="0.1" max="20" pattern="/[\d.,]/" data-name="arrFilter[DIAG][RIGHT]")
+          span.position-absolute.top-50.end-0.translate-middle-y.input-group-text.p-2.text-dark.bg-transparent.border-0 ″
+
+      div(class="mt-4 mb-3 js-range-slider" data-range-min="filters-diag-min" data-range-max="filters-diag-max" data-step="0.1")
+
+    +filters-group("Вес").is-active
+      div.d-flex.justify-content-between.align-items-center
+        div.position-relative.flex-fill
+          input(type="number" class="form-control text-end pe-5 js-input-numbers js-min" inputmode="numeric" name="arrFilter[WEIGHT][LEFT]" id="filters-weight-min" value="5.55" min="0.01" max="20" pattern="/[\d.,]/" data-name="arrFilter[WEIGHT][LEFT]")
+          span.position-absolute.top-50.end-0.translate-middle-y.input-group-text.p-2.text-dark.bg-transparent.border-0 кг.
+        span.input-group-text.px-1.text-dark.bg-white.border-0 —
+        div.position-relative.flex-fill
+          input(type="number" class="form-control text-end pe-5 js-input-numbers js-max" inputmode="numeric" name="arrFilter[WEIGHT][RIGHT]" id="filters-weight-max" value="15.99" min="0.01" max="20" pattern="/[\d.,]/" data-name="arrFilter[WEIGHT][RIGHT]")
+          span.position-absolute.top-50.end-0.translate-middle-y.input-group-text.p-2.text-dark.bg-transparent.border-0 кг.
+
+      div(class="mt-4 mb-3 js-range-slider" data-range-min="filters-weight-min" data-range-max="filters-weight-max" data-step="0.01")
+
+    +filters-group("Показывать товары").is-active
+      +field(type="radio" label="Совместимые" name="arrFilter[compatible][]" id="filters-input-1" value="true" checked)
+      +field(type="radio" label="Все" name="arrFilter[compatible][]" id="filters-input-2" value="false")
+
+    +filters-group("Комплектующие для ПК")
+      +field(type="checkbox" label="Блоки питания" name="arrFilter[][]" id="filters-input-3" value="")
+      +field(type="checkbox" label="Видеокарты" name="arrFilter[][]" id="filters-input-4" value="" disabled)
+      +field(type="checkbox" label="Процессоры" name="arrFilter[][]" id="filters-input-5" value="")
+      +field(type="checkbox" label="Оперативная память" name="arrFilter[][]" id="filters-input-6" value="" disabled)
+      +field(type="checkbox" label="Материнские платы" name="arrFilter[][]" id="filters-input-7" value="")
+      +field(type="checkbox" label="Корпуса для компьютеров" name="arrFilter[][]" id="filters-input-8" value="")
+      +field(type="checkbox" label="Аксессуары для корпусов" name="arrFilter[][]" id="filters-input-9" value="")
+      +field(type="checkbox" label="Кулеры для процессоров" name="arrFilter[][]" id="filters-input-10" value="")
+      +field(type="checkbox" label="Системы охлаждения компьютера" name="arrFilter[][]" id="filters-input-11" value="")
+      +field(type="checkbox" label="Аксессуары для охлаждения ПК" name="arrFilter[][]" id="filters-input-12" value="")
+      +field(type="checkbox" label="Жесткие диски" name="arrFilter[][]" id="filters-input-13" value="")
+      +field(type="checkbox" label="SSD" name="arrFilter[][]" id="filters-input-14" value="")
+      +field(type="checkbox" label="Звуковые карты" name="arrFilter[][]" id="filters-input-15" value="")
+      +field(type="checkbox" label="Карты видеозахвата" name="arrFilter[][]" id="filters-input-16" value="")
+      +field(type="checkbox" label="Wi-Fi адаптеры и карты" name="arrFilter[][]" id="filters-input-17" value="")
+      +field(type="checkbox" label="Контроллеры" name="arrFilter[][]" id="filters-input-18" value="")
+      +field(type="checkbox" label="Оптические приводы" name="arrFilter[][]" id="filters-input-19" value="")
+      +field(type="checkbox" label="Кард-ридеры" name="arrFilter[][]" id="filters-input-20" value="")
+      +field(type="checkbox" label="Салазки для HDD/SSD" name="arrFilter[][]" id="filters-input-21" value="")
+      +field(type="checkbox" label="Салазки (Optibay)" name="arrFilter[][]" id="filters-input-22" value="")
+      +field(type="checkbox" label="Термопаста" name="arrFilter[][]" id="filters-input-23" value="")
+      +field(type="checkbox" label="Внутренние кабели для ПК" name="arrFilter[][]" id="filters-input-24" value="")
+      +field(type="checkbox" label="Флоппи дисководы" name="arrFilter[][]" id="filters-input-25" value="")
+
+    +filters-group("Настольные компьютеры")
+      +field(type="checkbox" label="Настольные ПК" name="arrFilter[][]" id="filters-input-26" value="")
+      +field(type="checkbox" label="Моноблоки" name="arrFilter[][]" id="filters-input-27" value="")
+      +field(type="checkbox" label="Сборные платформы" name="arrFilter[][]" id="filters-input-28" value="")
+
+    +filters-group("Ноутбуки")
+      +field(type="checkbox" label="Ноутбуки" name="arrFilter[][]" id="filters-input-29" value="")
+      +field(type="checkbox" label="Сумки для ноутбуков" name="arrFilter[][]" id="filters-input-30" value="")
+      +field(type="checkbox" label="Охлаждающие подставки" name="arrFilter[][]" id="filters-input-31" value="")
+      +field(type="checkbox" label="Столы для ноутбуков" name="arrFilter[][]" id="filters-input-32" value="")
+      +field(type="checkbox" label="Оперативная память SO-DIMM" name="arrFilter[][]" id="filters-input-33" value="")
+      +field(type="checkbox" label="SSD для ноутбуков" name="arrFilter[][]" id="filters-input-34" value="")
+      +field(type="checkbox" label="Жесткие диски для ноутбуков" name="arrFilter[][]" id="filters-input-35" value="")
+      +field(type="checkbox" label="Салазки (Optibay)" name="arrFilter[][]" id="filters-input-36" value="")
+      +field(type="checkbox" label="Адаптеры питания" name="arrFilter[][]" id="filters-input-37" value="")
+      +field(type="checkbox" label="Чистящие средства" name="arrFilter[][]" id="filters-input-38" value="")
+      +field(type="checkbox" label="Другое" name="arrFilter[][]" id="filters-input-39" value="")
+
+    +filters-group("Сетевое оборудование")
+      +field(type="checkbox" label="Wi-Fi роутеры" name="arrFilter[][]" id="filters-input-40" value="")
+      +field(type="checkbox" label="Точки доступа" name="arrFilter[][]" id="filters-input-41" value="")
+      +field(type="checkbox" label="Powerline адаптеры" name="arrFilter[][]" id="filters-input-42" value="")
+      +field(type="checkbox" label="Wi-Fi повторители" name="arrFilter[][]" id="filters-input-43" value="")
+      +field(type="checkbox" label="Wi-Fi адаптеры" name="arrFilter[][]" id="filters-input-44" value="")
+      +field(type="checkbox" label="Wi-Fi антенны" name="arrFilter[][]" id="filters-input-45" value="")
+      +field(type="checkbox" label="Wi-Fi карты" name="arrFilter[][]" id="filters-input-46" value="")
+      +field(type="checkbox" label="Сетевые карты" name="arrFilter[][]" id="filters-input-47" value="")
+      +field(type="checkbox" label="Сетевые хранилища (NAS)" name="arrFilter[][]" id="filters-input-48" value="")
+      +field(type="checkbox" label="3G/4G модемы и роутеры" name="arrFilter[][]" id="filters-input-49" value="")
+      +field(type="checkbox" label="Коммутаторы (Свитчи)" name="arrFilter[][]" id="filters-input-50" value="")
+      +field(type="checkbox" label="Проводные маршрутизаторы" name="arrFilter[][]" id="filters-input-51" value="")
+      +field(type="checkbox" label="Патч-корды" name="arrFilter[][]" id="filters-input-52" value="")
+      +field(type="checkbox" label="Сетевые кабели в бухтах" name="arrFilter[][]" id="filters-input-53" value="")
+      +field(type="checkbox" label="Коннекторы" name="arrFilter[][]" id="filters-input-54" value="")
+      +field(type="checkbox" label="Патч-панели и стойки" name="arrFilter[][]" id="filters-input-55" value="")
+      +field(type="checkbox" label="Сетевые розетки" name="arrFilter[][]" id="filters-input-56" value="")
+      +field(type="checkbox" label="Материалы для монтажа" name="arrFilter[][]" id="filters-input-57" value="")
+      +field(type="checkbox" label="Инструменты для монтажа" name="arrFilter[][]" id="filters-input-58" value="")
+      +field(type="checkbox" label="Трансиверы" name="arrFilter[][]" id="filters-input-59" value="")
+
+    +filters-group("Программное обеспечение")
+      +field(type="checkbox" label="Антивирусы" name="arrFilter[][]" id="filters-input-60" value="")
+      +field(type="checkbox" label="Операционные системы" name="arrFilter[][]" id="filters-input-61" value="")
+      +field(type="checkbox" label="Офисные пакеты" name="arrFilter[][]" id="filters-input-62" value="")
+
+    +filters-group("Майнинг")
+      +field(type="checkbox" label="Оборудование для майнинга" name="arrFilter[][]" id="filters-input-63" value="")
+      +field(type="checkbox" label="Видеокарты для майнинга" name="arrFilter[][]" id="filters-input-64" value="")
+
+    +filters-group("Серверное оборудование")
+      +field(type="checkbox" label="Процессоры для серверов" name="arrFilter[][]" id="filters-input-65" value="")
+      +field(type="checkbox" label="Серверные жесткие диски" name="arrFilter[][]" id="filters-input-66" value="")
+      +field(type="checkbox" label="Корпуса" name="arrFilter[][]" id="filters-input-67" value="")
+      +field(type="checkbox" label="Оперативная память для серверов" name="arrFilter[][]" id="filters-input-68" value="")
+      +field(type="checkbox" label="Серверные платформы" name="arrFilter[][]" id="filters-input-69" value="")
+      +field(type="checkbox" label="Аксессуары серверов" name="arrFilter[][]" id="filters-input-70" value="")

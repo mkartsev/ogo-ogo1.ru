@@ -1,0 +1,129 @@
+extends ../layouts/default
+
+include ../../components/checkout/checkout
+include ../../components/pay-type/pay-type
+include ../../components/product-card/product-card
+include ../../components/news-slider/news-slider
+
+append vars
+  -
+    page.name  = "order-done"
+    page.title = "Заказ оформлен"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+    payTypes = [
+      { type: "link", title: "Банковской картой", desc: "Банковской картой, системой быстрых платежей, частями или в кредит", logo: "/assets/img/icons/card.svg" },
+      { type: "link", title: "При получении", desc: "Наличными или банковской картой", logo: "/assets/img/icons/wallet.png" },
+      { type: "link", title: "ЮMoney", desc: "Картой онлайн, в кредит или электронными деньгами", logo: "/assets/img/icons/youmoney.png" },
+      { type: "link", title: "Система быстрых платежей", desc: "", logo: "/assets/img/icons/sbp.png" },
+      { type: "link", title: "Кредит со Сбером", desc: "", logo: "/assets/img/icons/sber.png" },
+      { type: "link", title: "Яндекс Пэй", desc: "Картой Пэй или частями со Сплит", logo: "/assets/img/icons/yapay.png, /assets/img/icons/split.png" },
+      { type: "link", title: "Тинькофф кредит", desc: "", logo: "/assets/img/icons/tinkoff.png "}
+    ]
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section.checkout-page
+    h2.content-section__title Васисуалий Андреевич Лоханкин, спасибо за ваш заказ!
+
+    .checkout-success
+      .checkout-success__text
+        p Номер заказа: <b>2156845</b>
+        p В ближайшее время Ваш заказ будет подтвержден по телефону или SMS сообщением.
+        p Также Вы будете оперативно получать SMS-сообщения об изменениях статуса заказа.<br>Подробная информация о заказе отправлена на адрес <b>a.ivanov@ogo1.ru</b>
+
+      .checkout-success__image
+        img(src="/assets/img/content/checkout-success.png")
+
+    .row
+      .col-lg-5
+        .row.row-cols-1.g-3
+          each type in payTypes
+            .col
+              +pay-type(type= type.type title= type.title, desc= type.desc, logo= type.logo)
+
+    hr
+
+    .row
+      .col-lg-8
+        .row.row-cols-1.row-cols-lg-2.g-3
+          each type in payTypes
+            .col
+              +pay-type(type= type.type title= type.title, desc= type.desc, logo= type.logo)
+
+    .checkout-order__items
+      .checkout-order__item
+        +product-card(variant="checkout", product=products[0])
+      .checkout-order__item
+        +product-card(variant="checkout", product=products[1])
+      .checkout-order__item
+        +product-card(variant="checkout", product=products[2])
+
+    .checkout-order__items
+      .checkout-order__total
+        .checkout-order__total-info
+          .checkout-order__total-title <b>Доставка CDEK: </b>Москва, ул Мира, д. 1, корп. 1, квар. 1
+          .checkout-order__total-date <b>Дата получения заказа: </b>В четверг, 30.01.2025 с 10 до 19
+        .checkout-order__total-price бесплатно
+
+      .checkout-order__total
+        .checkout-order__total-info
+          .checkout-order__total-title <b>Ожидаемая пошлина</b>
+        .checkout-order__total-price 1 000 ₽
+
+      .checkout-order__total
+        .checkout-order__total-info
+          .checkout-order__total-title <b>Скидка</b>
+        .checkout-order__total-price.checkout-order__total-discount -1 000 ₽
+
+      .checkout-order__overall
+        .checkout-order__overall-title Итоговая стоимость:
+        .checkout-order__overall-subtitle Наличными или картой при получении
+        .checkout-order__overall-price-wrapper
+          .checkout-order__overall-price
+            |8&nbsp;990&nbsp;₽
+          .checkout-order__overall-bonus
+            +svg-icon("ui--bonus-sm", "sm")
+            |24 бонуса
+
+
+  section.content-section
+    .content-section__header
+      h2.content-section__title Новости и акции
+      +button(tag="a" variant="sm" href="/news.html" text="Посмотреть всё" iconRight="ui--arrow-right")
+    +news-slider()
+
+  section.content-section
+    h2.content-section__title Вам может понравиться
+    nav.tags.mb-3
+      -
+        const uniqueCategories = Object.values(
+          products.reduce((acc, { category }) => {
+            acc[category.id] = acc[category.id] || { ...category, count: 0 };
+            acc[category.id].count++;
+            return acc;
+          }, {})
+        );
+
+      ul.tags-list.js-slider-filter(data-slider-id="recommendations")
+        li.tags-item
+          a(href="#" data-filter="all").tags-link.is-active Все
+        each category in uniqueCategories
+          li.tags-item
+            a(href="#" data-filter=category.id).tags-link= category.title
+
+    div(class="products-slider swiper" id="recommendations" data-swiper='{"loop": false}')
+      .products-slider__wrapper.swiper-wrapper
+        each product in products
+          .products-slider__slide.swiper-slide(data-section= product.category.id)
+            +product-card(variant="default", product=product)
+      .products-slider__pagination.swiper-pagination
+
+  section.content-section
+    .alert.alert-light.p-4.fs-4
+      h3 Остались вопросы или нашли ошибку?
+      div Позвоните по номеру: <a href="tel:+7 495 133-79-84">+7 495 133-79-84</a><br>Мы работаем ежедневно с 10:00 до 22:00

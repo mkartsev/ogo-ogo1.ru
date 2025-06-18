@@ -1,0 +1,65 @@
+extends ../layouts/default
+
+include ../../components/brands-grid/brands-grid
+include ../../components/categories-grid/categories-grid
+
+append vars
+  -
+    page.name  = "catalog"
+    page.title = "Каталог"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    .row
+      .col-md-4.col-lg-3.d-none.d-md-block
+        nav.catalog-page__nav
+          ul
+            li.catalog-page__nav-item
+              span.catalog-page__nav-link
+                span Бренд-зона Samsung
+
+            li.catalog-page__nav-item
+              span.catalog-page__nav-link
+                span Бренд-зона Xiaomi
+
+            li.catalog-page__nav-item.has-child
+              span.catalog-page__nav-link
+                span Мобильные телефоны и смартфоны
+                +svg-icon("ui--chevron-down")
+
+              .catalog-page__nav-sub
+                ul
+                  li
+                    a(href="/market/smartfony/") Смартфоны
+                  li
+                    a(href="/market/chekhly_dlya_smartfonov/") Чехлы для смартфонов
+                  li
+                    a(href="/market/zashchitnye_stekla_dlya_smartfonov/") Защитные стекла для смартфонов
+                  li
+                    a(href="/market/ochki_virtualnoy_realnosti/") Очки виртуальной реальности
+
+            li.catalog-page__nav-item.has-child
+              span.catalog-page__nav-link
+                span Планшеты
+                +svg-icon("ui--chevron-down")
+
+              .catalog-page__nav-sub
+                ul
+                  li
+                    a(href="/market/smartfony/") Планшеты
+                  li
+                    a(href="/market/chekhly_dlya_smartfonov/") Электронные книги
+                  li
+                    a(href="/market/zashchitnye_stekla_dlya_smartfonov/") Чехлы для планшетов
+                  li
+                    a(href="/market/ochki_virtualnoy_realnosti/") Защитные стекла для планшетов
+
+      .col-md-8.col-lg-9
+        +brands-grid().mb-3
+        +categories-grid(cols_sm=2, cols_md=3, cols_lg=3)

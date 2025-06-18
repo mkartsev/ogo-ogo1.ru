@@ -1,0 +1,275 @@
+extends ../../views/layouts/default
+
+//- include ../../components/products-slider/products-slider
+
+append vars
+  -
+    page.name  = "lego"
+    page.title = "Бренд-зона Lego"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.lego
+    section.lego-section.welcome
+
+    section.lego-section.series
+      ul.lego-grid-6-cols.series-grid#series-grid
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/all.jpg" alt="Все серии")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/city.jpg" alt="City")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/minecraft.jpg" alt="Minecraft")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/technic.jpg" alt="Technic")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/duplo.jpg" alt="Duplo©")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/ninjago.jpg" alt="Ninjago")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/friends.jpg" alt="Friends")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/super mario.jpg" alt="Super Mario")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/star wars.jpg" alt="Star Wars")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/vidiyo.jpg" alt="Vidiyo")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/creator.jpg" alt="Creator")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/harry potter.jpg" alt="Harry Potter")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/dots.jpg" alt="Dots")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/disney.jpg" alt="Disney")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/speed champions.jpg" alt="Speed Champions")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/classic.jpg" alt="Classic")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/super heroes marvel.jpg" alt="Marvel")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/minions.jpg" alt="Minions")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/trolls.jpg" alt="Trolls")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/super heroes dc.jpg" alt="DC")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/mindstorms.jpg" alt="Mindstorms")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/boost.jpg" alt="Boost")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/series/movie.jpg" alt="Movie")
+        // <li class="cell"><a href="#" class="lego-card"><img src="./img/series/all-small.jpg" alt="Все серии"></a></li>
+
+    .lego-divider.age
+      span Возрастные категории
+
+    section.lego-section.age
+      ul.lego-grid-6-cols.age-grid#age-grid
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/age/1.5+.jpg" alt="1.5+ года")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/age/4+.jpg" alt="4+ года")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/age/6+.jpg" alt="6+ года")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/age/9+.jpg" alt="9+ лет")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/age/13+.jpg" alt="13+ лет")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/age/adult.jpg" alt="Взрослым")
+
+    .lego-divider
+
+    section.lego-section.interest
+      ul.lego-grid-4-cols.interest-grid#interest-grid
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/cars.jpg" alt="Машинки")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/games.jpg" alt="Игры")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/animals.jpg" alt="Животные")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/preschool.jpg" alt="Дошкольный выбор")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/buildings.jpg" alt="Здания")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/music.jpg" alt="Музыка")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/reallife-heroes.jpg" alt="Герои из реальной жизни")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/ninja.jpg" alt="Ниндзя и драконы")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/space.jpg" alt="Космос и роботы")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/minifigures.jpg" alt="Мини куклы")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/kids-art.jpg" alt="Детское творчество")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/superheroes.jpg" alt="Супергерои")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/harry-potter.jpg" alt="Гарри Поттер")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/dino.jpg" alt="Динозавры")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/princess.jpg" alt="Принцессы")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/interest/programming.jpg" alt="Программирование")
+        // <li class="cell"><a href="#" class="lego-card"><img src="./img/interest/all.jpg" alt="Все по интересам"></a></li>
+
+    .lego-divider
+
+    section.lego-section.collections
+      ul.lego-grid-4-cols.collections-grid#collections-grid
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/collections/adult.png" alt="Взрослым")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/collections/new.jpg" alt="Новые поступления")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/collections/discount.jpg" alt="Скидки")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/collections/hits.jpg" alt="Хиты продаж")
+
+    .lego-divider
+
+    section.lego-section.common
+      | [стандартный слайдер]
+
+    .lego-divider.hits
+      span Хиты продаж
+
+    section.lego-section.common
+      | [слайдер товаров]
+      //- +products-slider()
+
+    .lego-divider
+
+    section.lego-section.info
+      ul.lego-grid-2-cols.info-grid
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/info/starwars.jpg" alt="Star Wars")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/info/storage.jpg" alt="Системы хранения")
+
+    .lego-divider
+
+    section.lego-section.info
+      ul.lego-grid-2-cols.info-grid
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/about/social-game.jpg" alt="Социальная игра")
+        li.cell
+          a.lego-card(href="#")
+            img(src="./img/about/creation.jpg" alt="Творчество")
+
+    .lego-divider.parameters
+      span Подбор по параметрам
+
+    section.lego-section.common.px-0
+      | [Страница каталога с товаром и фильтрами]
+
+    .lego-divider
+
+    section.lego-section.links
+      .lego-callout
+        span.lego-title Все категории и темы
+        ul.lego-list
+          li
+            a(href="#") Architecture
+          li
+            a(href="#") City
+          li
+            a(href="#") Creator
+          li
+            a(href="#") Creator Expert
+          li
+            a(href="#") DC Comics Super Heroes
+          li
+            a(href="#") Disney
+          li
+            a(href="#") DUPLO©
+          li
+            a(href="#") Friends
+          li
+            a(href="#") Marvel Super Heroes
+          li
+            a(href="#") Mindstorm©
+          li
+            a(href="#") Minecraft
+          li
+            a(href="#") Minifigures
+          li
+            a(href="#") Niniago©
+          li
+            a(href="#") Speed Champions
+          li
+            a(href="#") Star Wars©
+          li
+            a(href="#") Technic
+          li
+            a(href="#") Ideas
+
+    footer.lego-section.copyright
+      | © 2021 LEGO, логотип LEGO, Minifigure, DUPLO, логотип DUPLO, NINJAGO, логотип NINJAGO, логотип FRIENDS, логотип HIDDEN SIDE, логотип MINIFIGURES ( минифигурки), MINDSTORMS и логотип MINDSTORMS являются торговыми марками корпорации LEGO Group. ©2020 The LEGO Group. Все права защищены.
+

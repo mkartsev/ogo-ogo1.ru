@@ -1,0 +1,121 @@
+include ../button/button
+include ../fields/fields
+
+mixin compare-controls(category)
+  - const idsToRemove = category.filter(el => el.id).map(el => Number(el.id)).join(',');
+
+  //- Элементы управления для фильтрации
+  .compare-props__controls&attributes(attributes)
+    form.form.form-compare-controls
+      +field(type="checkbox" label="Показать только отличия" class="mb-0" controlClass="js-compare-filter-props" id=`${category[0].category.id}-diff` name=`${category[0].category.id}-filter` data-filterby="same")
+      +button(tag="a" href="/market/" + category[0].category.id variant="sm" text="Добавить товары" class="me-auto text-info" icon="ui--plus")
+      +button(type="button" variant="sm" text="Очистить категорию" class="text-primary js-compare-clear-category" icon="ui--trash" data-action="DELETE_FROM_COMPARE_RESULT" data-id=idsToRemove)
+
+mixin compare-table(products)
+  -
+    // Функция для проверки, все ли элементы массива одинаковые
+    function allEqual(arr) {
+      return arr.every(val => val === arr[0]);
+    }
+
+    // Функция для получения уникальных групп из всех продуктов
+    function getUniqueGroups(products) {
+      const allGroups = new Set();
+      products.forEach(product => {
+        product.param.full.forEach(param => {
+          allGroups.add(param.type);
+        });
+      });
+      return Array.from(allGroups);
+    }
+
+    // Функция для получения значения свойства продукта
+    function getPropertyValue(product, groupName, propertyKey) {
+      const param = product.param.full.find(p => p.type === groupName && p.key === propertyKey);
+      return param ? param.value : '';
+    }
+
+    // Получаем все уникальные группы
+    const groups = getUniqueGroups(products);
+
+  table
+    //- Перебор групп свойств
+    each group in groups
+      -
+        // Получаем все уникальные свойства для данной группы
+        const groupKeys = new Set();
+        products.forEach(product => {
+          product.param.full.filter(p => p.type === group).forEach(p => groupKeys.add(p.key));
+        });
+        const uniqueKeys = Array.from(groupKeys);
+
+      tbody.compare-props__group
+        //- Заголовок группы
+        tr.compare-props__group-title
+          th= group
+
+        //- Перебор свойств в группе
+        each key in uniqueKeys
+          -
+            const propertyValues = products.map(product => getPropertyValue(product, group, key));
+            const isPropertySame = allEqual(propertyValues);
+
+          //- Название свойства
+          tr.compare-props__prop-title(class=isPropertySame ? 'same' : '')
+            th= key
+            - for (var i = 0; i < products.length - 1; i++)
+              th
+
+          //- Значения свойства для каждого продукта
+          tr.compare-props__prop-row(class=isPropertySame ? 'same' : '')
+            each product in products
+              - const value = getPropertyValue(product, group, key);
+              td= value
+
+//- mixin compare-table(category)
+//-   -
+//-     // Функция для проверки, все ли элементы массива одинаковые
+//-     function allEqual(arr) {
+//-       return arr.every(val => val === arr[0]);
+//-     }
+
+//-     // Функция для получения значения свойства продукта
+//-     function getPropertyValue(product, groupName, propertyKey) {
+//-       const group = product.props.find(g => g.group === groupName);
+//-       if (!group) return '';
+//-       const property = group.items.find(item => item.key === propertyKey);
+//-       return property ? property.value : '';
+//-     }
+
+//-   table
+//-     //- Перебор групп свойств
+//-     each product in category
+//-       -
+//-         const groupValues = product.map(product => {
+//-           const groupProps = product.param.full.find(g => g.group === group.group);
+//-           return groupProps ? groupProps.items.map(item => item.value).join(',') : '';
+//-         });
+
+//-         let isGroupSame = allEqual(groupValues);
+
+//-       tbody.compare-props__group(class=isGroupSame ? 'same' : '')
+//-         //- Заголовок группы
+//-         tr.compare-props__group-title
+//-           th= group.group
+
+//-         //- Перебор свойств в группе
+//-         each property in group.items
+//-           - var propertyValues = products.map(product => getPropertyValue(product, group.group, property.key));
+//-           - var isPropertySame = allEqual(propertyValues);
+
+//-           //- Название свойства
+//-           tr.compare-props__prop-title(class=isPropertySame ? 'same' : '')
+//-             th= property.key
+//-             - for (var i = 0; i < products.length-1; i++)
+//-               th
+
+//-           //- Значения свойства для каждого продукта
+//-           tr.compare-props__prop-row(class=isPropertySame ? 'same' : '')
+//-             each product in products
+//-               - var value = getPropertyValue(product, group.group, property.key);
+//-               td= value

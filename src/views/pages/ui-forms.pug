@@ -1,0 +1,108 @@
+extends ../layouts/default
+
+include ../../components/forms/forms
+include ../../components/category-tile/category-tile
+
+append vars
+  -
+    template.cleanHeader = true
+    template.showFooter = false
+    page.name  = "ui-fields"
+    page.title = "Поля и формы"
+    page.showBreadcrumbs = false
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    style.
+      .nav-pills > .nav-link { text-align: left !important }
+      .nav-pills > .nav-link:not(.active):hover { background: #f1f1f1 }
+
+    mixin tab-pill(id, title, isActive)
+      button(class=`nav-link ${isActive ? "active" : ""}` id=`ui-nav-${id}-tab` data-bs-toggle="pill", data-bs-target=`#ui-nav-${id}`, type="button" role="tab", aria-controls=`ui-nav-${id}`, aria-selected= isActive ? true : false)= title
+
+    mixin tab-pane(id, title, isActive)
+      div(class=`tab-pane fade${isActive ? " show active" : ""}` id=`ui-nav-${id}` role="tabpanel" aria-labelledby=`ui-nav-${id}-tab`)
+        h2.content-section__title= title
+        block
+
+    .row.g-3-g-lg-4
+      .col-12.col-md-3(style="@media screen and (min-width: 1024px) { position: sticky; top: 1rem; align-self: flex-start }")
+        .nav.nav-pills.nav-justified.flex-column#ui-nav-tab(role="tablist" aria-orientation="vertical")
+          +tab-pill("searchbox", "Поиск", true)
+          +tab-pill("city", "Выбрать город", false)
+          +tab-pill("question", "Отправить вопрос", false)
+          +tab-pill("callback", "Заказать звонок", false)
+          +tab-pill("complain", "Пожаловаться", false)
+          +tab-pill("auth", "Логин", false)
+          +tab-pill("registration", "Регистрация", false)
+          +tab-pill("recovery", "Восстановить пароль", false)
+          +tab-pill("supplier", "Поставщикам", false)
+          +tab-pill("adult", "Возраст 18+", false)
+          +tab-pill("service-check", "Гарантия", false)
+          +tab-pill("fast-buy", "Купить в 1 клик", false)
+          +tab-pill("user-wish", "Здесь нет того, что мне нужно", false)
+
+      .col-12.col-md-9
+        .tab-content#ui-nav-tabContent
+          +tab-pane("searchbox", "Поиск", true)
+            +form-searchbox()
+
+          +tab-pane("city", "Выбрать город", false)
+            .alert.alert-info Выберите Москву для удачного выполнения, иначе ошибка в консоли
+            +form-city()
+
+          +tab-pane("question", "Отправить вопрос", false)
+            .alert.alert-info Имя для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-question" data-values='{"name": "user"}'>user</span>
+            +form-question()
+
+          +tab-pane("callback", "Заказать звонок", false)
+            .alert.alert-info Имя для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-callback" data-values='{"name": "user"}'>user</span>
+            +form-callback()
+
+          +tab-pane("complain", "Пожаловаться", false)
+            .alert.alert-info Имя для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-complain" data-values='{"name": "user"}'>user</span>
+            +form-complain()
+
+          +tab-pane("auth", "Логин", false)
+            //- .alert.alert-info Пароль для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-auth" data-values='{"USER_PASSWORD": "123"}'>123</span>
+            .alert.alert-info На этой форме ошибка по таймауту
+            +form-auth()
+
+          +tab-pane("registration", "Регистрация", false)
+            .alert.alert-info Имя для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-registration" data-values='{"REGISTER[FIRST_NAME]": "user"}'>user</span>
+            +form-registration()
+
+          +tab-pane("recovery", "Восстановить пароль", false)
+            .alert.alert-info Email для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-recovery" data-values='{"USER_EMAIL": "user@user.com"}'>user@user.com</span>
+            +form-recovery()
+
+          +tab-pane("supplier", "Поставщикам", false)
+            .alert.alert-info Имя для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-supplier" data-values='{"name": "user"}'>user</span>
+            +form-supplier()
+
+          +tab-pane("adult", "Возраст 18+", false)
+            .alert.alert-info
+              div Кнопка подтверждения должна быть внутри формы <code class="badge bg-dark">.js-adult-form</code>
+              div Для теста можно <a href="#" class="js-populate-form" data-form="form-adult" data-values='{"CONFIRM_ADULT": "false"}'>поставить</a>
+                | значение скрытого инпута <code class="badge bg-dark">CONFIRM_ADULT=false</code>
+                | тогда мок-сервис отправит <code class="badge bg-dark">{result: "error"}</code> и будет переход на главную страницу
+            +form-adult()
+            hr
+            .row.g-3.g-lg-4
+              .col-12.col-md-4.col-lg-3
+                +category-tile("Товары 18+", "/assets/img/content/category-tile-11.png", null, true)
+
+          +tab-pane("service-check", "Проверить гарантию", false)
+            .alert.alert-info ID для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-service-check" data-values='{"id": "ОБ000001287"}'>ОБ000001287</span>
+            +form-service-check()
+
+          +tab-pane("fast-buy", "Купить в 1 клик", false)
+            .alert.alert-info Имя для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-fast-buy" data-values='{"name": "user"}'>user</span>
+            +form-fast-buy()
+
+          +tab-pane("user-wish", "Здесь нет того, что мне нужно", false)
+            .alert.alert-info Текст для удачного выполнения: <span class="badge bg-primary js-populate-form" data-form="form-user-wish" data-values='{"PRODUCT_REQUEST": "test"}'>test</span>
+            +form-user-wish()

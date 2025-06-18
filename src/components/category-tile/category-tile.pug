@@ -1,0 +1,5 @@
+mixin category-tile(title, img, variant, isAdult)
+  a(href="#" class="category-tile" + (variant ? ` category-tile--${variant}` : "") + (isAdult ? " js-adult-block" : ""))&attributes(attributes)
+    .category-tile__img
+      img(src= img, alt= title)
+    span.category-tile__title= title

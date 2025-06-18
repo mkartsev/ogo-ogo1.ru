@@ -1,0 +1,102 @@
+.burger-button {
+  display: inline-flex;
+  position: relative;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 2.5rem;
+  min-width: 3rem;
+  color: var(--color-white, #fff);
+  font-size: 0;
+  background: var(--color-primary, #DC3E48);
+  border-radius: 0;
+  border: none
+}
+.burger-button__loading {
+  display: none;
+  animation: spin 1.5s infinite linear;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  color: var(--color-white, #fff);
+}
+.burger-button__icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 16px;
+  color: var(--color-white, #fff);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.burger-button__icon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  left: 0;
+  border-radius: 2px;
+  background-color: currentColor;
+  transition: all 0.5s;
+  transition: top 0.15s 0.15s, transform 0.15s;
+}
+.burger-button__icon span:first-child {
+  top: 1px;
+}
+.burger-button__icon span:nth-child(2) {
+  top: 7px;
+}
+.burger-button__icon span:nth-child(3) {
+  top: 13px;
+}
+.burger-button__icon:focus {
+  outline: 0;
+}
+.burger-button.is-active .burger-button__icon span:first-child {
+  top: 7px;
+  transform: rotate(45deg);
+  transition: top 0.15s, transform 0.15s 0.15s;
+}
+.burger-button.is-active .burger-button__icon span:nth-child(2),
+.burger-button.is-active .burger-button__icon span:nth-child(3) {
+  top: 7px;
+  transform: rotate(-45deg);
+  transition: top 0.15s, transform 0.15s 0.15s;
+}
+.burger-button.is-active .burger-button__loading,
+.burger-button.is-loading .burger-button__icon {
+  display: none;
+}
+.burger-button.is-loading .burger-button__loading {
+  display: initial;
+}
+.burger-button:hover {
+  cursor: pointer;
+  color: var(--color-white);
+  background-color: var(--color-primary-hover, #cd2530);
+}
+.burger-button:active,
+.burger-button:focus {
+  color: var(--color-white, #fff);
+}
+.burger-button:after {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+}
+@media print, screen and (min-width: 1024px) {
+  .burger-button {
+    width: auto;
+    padding: 0 15px 0 45px;
+    font-size: 100%;
+  }
+  .burger-button__icon,
+  .burger-button__loading {
+    left: 15px;
+  }
+}

@@ -1,0 +1,80 @@
+//- Компонент для нативных или кастомных (с собственным оформлением и дополнительным функционалом) селектов
+  Можно использовать любые стандартные атрибуты тега select, плюс:
+  - placeholder: подсказка, когда ни один пункт не выбран
+  - options: объект-массив с данными для тегов option
+  - selected: value выбранного (selected) пункта option; для мультиселекта это массив из всех выбранных значений
+  - data-prefix: префикс для заголовка кнопки селекта. Можно использовать, например, для реализации селекторов сортировки данных: "Сортировать по: Популярности" (здесь "Сортировать по:" и есть такой префикс)
+
+  Для инициализации кастомного селекта добавить класс "js-select"
+
+  Пример:
+  -
+    var optionsCities = [
+      {value: "moscow", text: "Москва", data: {"order": "desc"}},
+      {value: "piter", text: "Санкт-Петербург", data: {"order": "asc"}}
+    ]
+  +select(name="cities" id="form-order-cities" placeholder="Выберите город" selected="moscow" options=optionsCities).js-select
+
+mixin select()
+  -
+    var params = Object.assign({}, attributes);
+    var { placeholder, options, selected, variant, class: customClass, ...attrs } = params;
+    const baseClass = "form-select"
+    var classes = [baseClass];
+
+    const stringToArray = str => str ? str.split(" ").filter(v => v.length) : []
+
+    if (variant) {
+      let variants = stringToArray(variant);
+      variants.forEach(v => classes.push(`${baseClass}-${v}`));
+    }
+
+    if (customClass) {
+      classes.push(...stringToArray(customClass));
+    }
+
+    attrs.class = classes.join(" ");
+
+  select()&attributes(attrs)
+    if placeholder
+      option(value="" disabled selected hidden)= placeholder
+
+    if Array.isArray(options)
+      each option in options
+        -
+          var isSelected = Array.isArray(selected) ? selected.includes(option.value) : option.value === selected;
+          var optionAttrs = {
+            value: option.value,
+            selected: isSelected || undefined,
+            ...Object.entries(option.data || {}).reduce((acc, [key, value]) => {
+              acc[`data-${key}`] = value;
+              return acc;
+            }, {})
+          };
+        option&attributes(optionAttrs)= option.text
+
+//- mixin select()
+//-   -
+//-     var params = {};
+//-     Object.assign(params,attributes);
+
+//-     delete attributes.placeholder
+//-     delete attributes.options
+//-     delete attributes.selected
+
+//-   select()&attributes(attributes)
+//-     - if (params.placeholder)
+//-       option(value="" disabled selected hidden)!= params.placeholder
+
+//-     - if (Array.isArray(params.options))
+//-       each option, num in params.options
+//-         - if (Array.isArray(params.selected))
+//-           - if (option.value && (params.selected.indexOf(option.value) > -1 || option.value == params.value))
+//-             option(value=option.value, selected="")!= option.text
+//-           - else
+//-             option(value=option.value)!= option.text
+//-         - else
+//-           - if (option.value && (option.value == params.selected || option.value == params.value))
+//-             option(value=option.value, selected="")!= option.text
+//-           - else
+//-             option(value=option.value)!= option.text

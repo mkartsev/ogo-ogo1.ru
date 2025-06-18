@@ -1,0 +1,36 @@
+include ../banner-tile/banner-tile
+
+mixin main-banners--slider()
+  -
+    var slides = [
+      { title: "Здесь покупают геймеры", img: "/assets/img/content/banner-tile-1.jpg"},
+      { title: "Брендзона Samsung", img: "/assets/img/content/banner-tile-2.jpg"},
+      { title: "Xiaomi", img: "/assets/img/content/banner-tile-3.jpg"},
+      { title: "Бренд-зона HEDDA", img: "/assets/img/content/banner-tile-4.jpg"},
+      { title: "Конфигуратор ПК", img: "/assets/img/content/banner-tile-5.jpg"},
+      { title: "LEGO", img: "/assets/img/content/banner-tile-6.jpg"}
+    ]
+
+  .main-banners&attributes(attributes)
+    .main-banners-slider.swiper
+      .main-banners-slider__wrapper.swiper-wrapper
+        each slide in slides
+          .main-banners-slider__slide.swiper-slide
+            +banner-tile(slide.title, slide.img)
+            //- .swiper-lazy-preloader
+      .main-banners-slider__pagination.swiper-pagination
+
+mixin main-banners--grid()
+  -
+    var slides = [
+      { title: "Здесь покупают геймеры", img: "/assets/img/content/banner-tile-1.jpg"},
+      { title: "Брендзона Samsung", img: "/assets/img/content/banner-tile-2.jpg"},
+      { title: "Xiaomi", img: "/assets/img/content/banner-tile-3.jpg"},
+      { title: "Бренд-зона HEDDA", img: "/assets/img/content/banner-tile-4.jpg"}
+    ]
+
+  .main-banners&attributes(attributes)
+    .main-banners-grid
+      each slide in slides
+        .main-banners-grid__cell
+          +banner-tile(slide.title, slide.img)

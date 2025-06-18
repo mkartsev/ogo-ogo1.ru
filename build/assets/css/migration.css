@@ -1,0 +1,38 @@
+/* Сейчаc именно такой порядок в template */
+@import "migration/optimize.css";
+@import "migration/global.css";
+@import "migration/fonts.css";
+@import "migration/components.css";
+@import "migration/block.css";
+@import "migration/adaptive.css";
+@import "migration/reset.css";
+
+@import "migration/bundles/catalog.css";
+@import "migration/bundles/main-page.css";
+@import "migration/element_feedback.css";
+@import "migration/element_questions.css";
+@import "migration/gaming.css";
+@import "migration/8mar_decor.css";
+@import "migration/23fev_decor.css";
+@import "migration/23fev_decor.css";
+@import "migration/hero-style.css";
+@import "migration/normalize.css";
+@import "migration/ny2021_decor.css";
+@import "migration/questions.css";
+@import "migration/timer.css";
+@import "migration/tooltips.css";
+
+/* @import "migration/burger-button/style.css"; убрать при интеграции */
+/* @import "migration/footer/style.css"; убрать при интеграции */
+/* @import "migration/footer-feature/style.css"; убрать при интеграции*/
+/* @import "migration/pay-systems/style.css"; убрать при интеграции*/
+/* @import "migration/social-buttons/style.css"; убрать при интеграции*/
+/* @import "migration/utilities/font-size.css"; убрать при интеграции */
+/* @import "migration/utilities/line-height.css"; убрать при интеграции */
+/* @import "migration/utilities/margin.css"; убрать при интеграции */
+/* @import "migration/utilities/order.css"; убрать при интеграции */
+/* @import "migration/utilities/padding.css"; убрать при интеграции*/
+/* @import "migration/grid.css"; убрать при интеграции */
+/* @import "migration/header_menu.css"; убрать при интеграции */
+/* @import "migration/utilities.css"; убрать при интеграции */
+/* @import "migration/visibility.css"; убрать при интеграции */

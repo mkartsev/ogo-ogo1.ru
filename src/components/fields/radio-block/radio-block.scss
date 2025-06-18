@@ -1,0 +1,101 @@
+.field {
+  $block: &;
+
+  &--type-radio-block {
+    display: flex;
+    width: auto;
+    margin-bottom: $spacer * 0.5;
+    transition: all 0.2s ease;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input {
+      @include element-invisible;
+    }
+
+    #{$block}__label {
+      display: flex;
+      flex-flow: row nowrap;
+      flex: 1 0 100%;
+      align-items: center;
+      position: relative;
+      margin: 0;
+      padding: $spacer $spacer $spacer $spacer * 3.5;
+      border: 1px solid var(--border-color, $border-color);
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--primary, $primary);
+
+        #{$block}__check {
+          border-color: var(--primary, $primary);
+        }
+      }
+    }
+
+    #{$block}__caption {
+      flex: 0 1 auto;
+    }
+
+    #{$block}__check {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: $spacer;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      background-color: var(--white, $white);
+      border: 1px solid var(--gray-300, $gray-300);
+      border-radius: var(--border-radius-pill, $border-radius-pill);
+      transform: translateY(-50%);
+      transition: all 0.2s ease;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+    }
+
+    #{$block}__label:has(input:checked) {
+      // border-color: var(--primary, $primary);
+
+      #{$block}__check {
+        &:before {
+          background: var(--primary, $primary);
+          box-shadow: 2px 2px 4px rgba(var(--black, $black), 0.25);
+        }
+      }
+    }
+
+    #{$block}__label:has(input:disabled) {
+      cursor: not-allowed;
+      opacity: 0.6;
+      background: var(--gray-200, $gray-200);
+
+      #{$block}__check {
+        border-color: var(--gray-300, $gray-300);
+        &:before {
+          background: transparent;
+        }
+      }
+    }
+
+    #{$block}__label:has(input:checked:disabled) {
+      border-color: var(--gray-200, $gray-200);
+
+      #{$block}__check {
+        border-color: var(--primary, $primary);
+        &:before {
+          background: var(--primary, $primary);
+        }
+      }
+    }
+  }
+}

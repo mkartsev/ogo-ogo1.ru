@@ -1,0 +1,18 @@
+include ../button/button
+include ../product-card/product-card
+
+mixin cart-dropdown()
+  .cart-dropdown&attributes(attributes)
+    .cart-dropdown__content
+      +product-card(variant="cart-dropdown", product=products[0])
+      +product-card(variant="cart-dropdown", product=products[1])
+      +product-card(variant="cart-dropdown", product=products[2])
+      +product-card(variant="cart-dropdown", product=products[3])
+    .cart-dropdown__footer.p-3
+      .row.g-3
+        .col
+          | Итоговая сумма:
+        .col.text-end
+          | 0 000 000 ₽
+        .col-sm-12
+          +button(tag="a" href="/cart.html" variant="primary" text="Перейти к оформлению" class="w-100")

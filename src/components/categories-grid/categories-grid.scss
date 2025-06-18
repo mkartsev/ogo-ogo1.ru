@@ -1,0 +1,52 @@
+.categories-grid {
+  &__item {
+    break-inside: avoid;
+  }
+
+  &__sub {
+    list-style: none;
+    padding: 0;
+    a {
+      color: var(--body-color, $body-color);
+      &:hover {
+        color: var(--link-color, $link-color);
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    > ul {
+      > li {
+        margin: 0;
+        padding: 0 0 $spacer*2 0;
+        > a {
+          font-size: 1.0625rem;
+          font-weight: 600;
+          line-height: 1;
+        }
+        > ul {
+          > li {
+            > a {
+              font-size: 0.9375rem;
+              line-height: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--columns {
+    columns: 1;
+    column-gap: $spacer * 1.5;
+
+    @include media-breakpoint-up(md) {
+      columns: 2;
+    }
+    @include media-breakpoint-up(lg) {
+      columns: 3;
+    }
+  }
+}

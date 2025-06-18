@@ -1,0 +1,68 @@
+.pay-type {
+  height: 100%;
+  &__inner {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex: 1 0 100%;
+    width: 100%;
+    height: 100%;
+    gap: $spacer * 0.5; //8px
+    padding: $spacer;
+    color: var(--body-color, $body-color);
+    border: 1px solid var(--gray-300, $gray-300);
+    border-radius: $border-radius-sm;
+    user-select: none;
+  }
+
+  &__title {
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-weight: 600;
+  }
+
+  &__input {
+    @include element-invisible();
+  }
+
+  &__icon {
+    display: inline-flex;
+    flex: 0 0 24px;
+    max-width: 24px;
+    max-height: 24px;
+  }
+
+  &__logo {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    gap: $spacer * 0.25; //4px
+    margin-left: auto;
+
+    &-item {
+      display: block;
+      max-height: 24px;
+    }
+  }
+
+  &__desc {
+    flex: 1 1 100%;
+    width: 100%;
+    color: var(--gray-500, $gray-500);
+    font-size: var(--font-size-sm, $font-size-sm);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &:hover &__inner {
+    cursor: pointer;
+    color: var(--body-color, $body-color);
+    border-color: var(--gray-500, $gray-500);
+  }
+
+  &:active &__inner,
+  input:checked + &__inner {
+    border-color: var(--primary, $primary);
+    outline: 1px solid var(--primary, $primary);
+  }
+}

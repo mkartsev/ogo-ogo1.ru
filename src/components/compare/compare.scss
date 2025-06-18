@@ -1,0 +1,118 @@
+.compare {
+  &-data {
+    position: relative;
+    &.ps {
+      .ps__rail-x {
+        top: 260px;
+        bottom: unset !important;
+      }
+    }
+  }
+
+  &-items,
+  &-props {
+    table {
+      width: auto;
+    }
+    th,
+    td {
+      min-width: 240px;
+      width: 240px;
+      max-width: 240px;
+      vertical-align: top;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+    th {
+      font-weight: normal;
+      text-align: left;
+    }
+  }
+
+  &-items {
+    @include custom-scrollbar(8px);
+    position: sticky;
+    top: 0;
+    margin-bottom: $spacer;
+    padding-bottom: $spacer;
+    background: var(--white, $white);
+    overflow: auto;
+    z-index: 2;
+
+    &__group {
+      tr {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+      td,
+      th {
+        display: inline-flex;
+        padding: 0 4px;
+      }
+    }
+  }
+
+  &-props {
+    overflow: auto;
+    background: var(--white, $white);
+
+    // спрячем скроллбар, но возможность прокрутки останется
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__group {
+      &-title {
+        td,
+        th {
+          padding-top: 1rem;
+          padding-bottom: 0;
+          &:first-child {
+            position: sticky;
+            left: 0;
+            font-weight: bolder;
+            z-index: 1;
+          }
+          &:nth-child(even) {
+            background: var(--gray-100);
+          }
+        }
+      }
+    }
+
+    &__prop-title {
+      color: var(--gray-500, $gray-500);
+      font-size: var(--font-size-root, $font-size-root);
+      font-weight: normal;
+      text-align: left;
+      td,
+      th {
+        padding-top: 1rem;
+        padding-bottom: 0;
+        padding-left: $spacer;
+        &:first-child {
+          position: sticky;
+          left: 0;
+          z-index: 1;
+        }
+        &:nth-child(even) {
+          background: var(--gray-100);
+        }
+      }
+    }
+
+    &__prop-row {
+      td,
+      th {
+        word-break: break-word;
+        padding: $spacer * 0.25 $spacer; //4px 16px
+        &:nth-child(even) {
+          background: var(--gray-100);
+        }
+      }
+    }
+  }
+}

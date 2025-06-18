@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Бренд-зона Xiaomi</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header">
+        <a class="header-banner d-none d-lg-block" href="#"><img class="header-banner__img" src="/assets/img/content/header-banner.jpg" alt="Продукты Honor для успешного учебного года!" /></a>
+        <div class="header-top container">
+          <div class="header-top-left">
+            <a class="header-city js-city-popup" href="/ajax/new/select_city_popup.php">
+              <div class="header-city__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location-sm"></use></svg>
+              </div>
+              <span class="header-city__text">Москва</span>
+            </a>
+            <nav class="header-nav">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Доставка и оплата</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Гарантия и возврат</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Адреса магазинов</a></li>
+                <li class="header-nav__item"><a class="header-nav__link js-supplier-popup" href="/mocks/supplier">Поставщикам</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-top-right">
+            <a class="header-phone" href="tel:88002509045">
+              <div class="header-phone__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone-sm"></use></svg>
+              </div>
+              <span class="header-phone__text">8 800 250-90-45</span>
+            </a>
+            <div class="header-worktime"><span class="header-worktime__text">10:00 - 20:00</span></div>
+          </div>
+        </div>
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">онлайн гипермаркет</span>
+            </a>
+          </div>
+          <div class="header-bottom-center">
+            <button class="btn btn-primary burger-button js-button-catalog" type="button">
+              <i class="burger-button__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </i>
+              <i class="burger-button__loading">
+                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--spinner"></use></svg>
+              </i>
+              <span class="burger-button__text">Каталог</span>
+            </button>
+            <div class="header-search">
+              <form class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate>
+                <p class="form-error text-danger fw-bold" style="display: none"></p>
+                <fieldset class="position-relative">
+                  <input class="form-control" type="search" placeholder="Поиск товаров" name="q" autocomplete="off" />
+                  <button class="btn btn-link position-absolute top-50 end-0 translate-middle-y" type="submit">
+                    <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="header-bottom-right">
+            <div class="header-toolbar">
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link js-auth-popup" href="/ajax/new/authform.php">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                  </div>
+                  <span class="header-toolbar__link-text">Вход</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/compare.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-compare-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Сравнение</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/wishlist.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-favorite-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Избранное</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex js-cart-dropdown" data-products="" data-basketItems="[]">
+                <a class="header-toolbar__link" href="/cart.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-cart-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Корзина</span>
+                </a>
+                <div class="cart-dropdown">
+                  <div class="cart-dropdown__content">
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="389198">
+                          <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__discount product-card__badge badge text-bg-warning">-10%</div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="1" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-new">620 220 ₽</div></div>
+                        <div class="product-card__old"><div class="product-card__price-old">630 220 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="389198" data-tooltip-content="Удалить" onclick='cart.remove("389198")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391062">
+                          <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="2" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">534 000 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391062" data-tooltip-content="Удалить" onclick='cart.remove("391062")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391065">
+                          <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                      </div>
+                      <div class="product-card__availability">
+                        <span class="product-card__availability-title text-dark">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong-sm"></use></svg>
+                          Нет в наличии
+                        </span>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391065" data-tooltip-content="Удалить" onclick='cart.remove("391065")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="390124">
+                          <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                      </div>
+                      <div class="product-card__badges"><span class="product-card__badge badge text-bg-danger">В выбранном регионе товар не продается и будет удален из корзины</span></div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="390124" data-tooltip-content="Удалить" onclick='cart.remove("390124")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-dropdown__footer p-3">
+                    <div class="row g-3">
+                      <div class="col">Итоговая сумма:</div>
+                      <div class="col text-end">0 000 000 ₽</div>
+                      <div class="col-sm-12"><a class="btn btn-primary w-100" href="/cart.html" role="button">Перейти к оформлению</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-toolbar__item d-md-none">
+                <a class="header-toolbar__link" href="tel:88002509045">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog" data-src="/ajax/catalog.php"></div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header">
+            <nav class="breadcrumbs js-breadcrumbs" id="breadcrumbs" aria-label="breadcrumb">
+              <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Главная</span></a>
+                  <meta property="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Каталог</span></a>
+                  <meta property="position" content="2" />
+                </li>
+                <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem" aria-current="page">
+                  <span property="item" typeof="WebPage"><span property="name">Бренд-зона Xiaomi</span></span>
+                  <meta property="position" content="2" />
+                </li>
+              </ol>
+            </nav>
+            <h1 class="page-title js-page-title">Бренд-зона Xiaomi</h1>
+          </header>
+          <section class="xiaomi">
+            <nav class="xiaomi-nav">
+              <img class="xiaomi-logo" src="./img/logo.png" alt="логотип Xiaomi" />
+              <ul>
+                <li>
+                  <a href="#">Мобильная техника</a>
+                  <ul>
+                    <li><a href="#">Смартфоны</a></li>
+                    <li><a href="#">Умные часы</a></li>
+                    <li><a href="#">Умные часы</a></li>
+                    <li><a href="#">Фитнес-браслеты</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Умные устройства</a>
+                  <ul>
+                    <li><a href="#">Роутеры</a></li>
+                    <li><a href="#">Системы управления</a></li>
+                    <li><a href="#">Датчики</a></li>
+                    <li><a href="#">IP-камеры</a></li>
+                    <li><a href="#">Освещение</a></li>
+                    <li><a href="#">Медиаплееры</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Умная бытовая техника</a>
+                  <ul>
+                    <li><a href="#">Техника для дома</a></li>
+                    <li><a href="#">Климатическая техника</a></li>
+                    <li><a href="#">Техника для кухни</a></li>
+                    <li><a href="#">Красота и здоровье</a></li>
+                    <li><a href="#">Роботы пылесосы</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Аудио и аксессуары</a>
+                  <ul>
+                    <li><a href="#">Наушники</a></li>
+                    <li><a href="#">Беспроводные наушники</a></li>
+                    <li><a href="#">Колонки</a></li>
+                    <li><a href="#">Внешние аккумуляторы</a></li>
+                    <li><a href="#">Беспроводные ЗУ</a></li>
+                    <li><a href="#">Рюкзаки для ноутбуков</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <section class="xiaomi-hero">
+              <picture class="xiaomi-hero__image">
+                <source media="(max-width: 640px)" srcset="./img/hero-small.jpg" />
+                <source media="(min-width: 641px)" srcset="./img/hero.jpg" />
+                <img src="./img/hero.jpg" alt="Redmi Buds 3 Pro" />
+              </picture>
+              <div class="xiaomi-hero-content">
+                <h2 class="xiaomi-hero__title">Redmi Buds 3 Pro</h2>
+                <h3 class="xiaomi-hero__subtitle">Звук, который вам нужен</h3>
+                <div class="xiaomi-hero__desc">Интеллектуальное шумоподавление 35 дБ* | Возможность подключения к двум устройствам | Беспроводная зарядка | До 28 часов работы от аккумулятора</div>
+                <div class="xiaomi-hero__price">5 990 ₽</div>
+                <a class="xiaomi-btn xiaomi-btn--black xiaomi-hero__button" href="#">Купить</a>
+              </div>
+              <div class="xiaomi-hero-footer">
+                <div class="xiaomi-hero__smalltext">
+                  Только в мобильных телефонах Redmi компании Xiaomi предусмотрена функция адаптивного шумоподавления ИИ. Совместимые модели будут опубликованы позднее. Для того чтобы воспользоваться данной функцией, пользователям необходимо обновить
+                  операционную систему своего телефона до последней версии MIUI.
+                </div>
+              </div>
+            </section>
+            <section class="xiaomi-advantages">
+              <div class="xiaomi-advantages-grid">
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Активное шумоподавление 35 дБ</span>
+                  <span class="xiaomi-advantage__subtitle">Доступны 3 настройки для регулировки*</span>
+                </div>
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Быстрая зарядка</span>
+                  <span class="xiaomi-advantage__subtitle">До трех часов работы после десяти минут зарядки</span>
+                </div>
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Интеллектуальное подключение к двум устройствам</span>
+                  <span class="xiaomi-advantage__subtitle">Совместимость с несколькими системами</span>
+                </div>
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Беспроводная зарядка</span>
+                  <span class="xiaomi-advantage__subtitle">Зарядка начинается, когда футляр находится в пределах досягаемости</span>
+                </div>
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Автоматическая калибровка шумоподавления ИИ</span>
+                  <span class="xiaomi-advantage__subtitle">Регулировка глубины адаптивного шумоподавления*</span>
+                </div>
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Режим двойного отслеживания внешнего шума</span>
+                  <span class="xiaomi-advantage__subtitle">Возможность свободно разговаривать, не снимая наушники</span>
+                </div>
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Композитный драйвер с диафрагмой 9 мм</span>
+                  <span class="xiaomi-advantage__subtitle">Откалибровано в лаборатории звука Xiaomi</span>
+                </div>
+                <div class="xiaomi-advantage">
+                  <span class="xiaomi-advantage__title">Использование с зарядным футляром до 28 часова</span>
+                  <span class="xiaomi-advantage__subtitle">Время работы аккумулятора до 6 часов на одном заряде</span>
+                </div>
+              </div>
+              <div class="xiaomi-advantages-smalltext">
+                Только в мобильных телефонах Redmi компании Xiaomi предусмотрена функция адаптивного шумоподавления ИИ. Совместимые модели будут опубликованы позднее. Для того чтобы воспользоваться данной функцией, пользователям необходимо обновить
+                операционную систему своего телефона до последней версии MIUI.
+                <br />
+                * Только мобильные телефоны Redmi и Xiaomi поддерживают переключение в двойном режиме восприятия внешних звуков. Совместимые модели будут опубликованы последовательно. Для того чтобы воспользоваться данной функцией, пользователям необходимо
+                обновить операционную систему своего телефона до последней версии MIUI.
+                <br />
+                * Только телефоны Xiaomi и Redmi поддерживают 3 режима регулировки. Адаптированные модели будут выпускаться партиями, и их необходимо будет обновить до последней версии MIUI.
+              </div>
+            </section>
+            <section class="xiaomi-section">
+              <span class="h2">Стандартный слайдер</span>
+              <section class="xiaomi-section">
+                <div class="xiaomi-features">
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_1.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Глубокое шумоподавление 35 дБ. Наслаждайтесь миром с меньшим количеством фонового шума</span>
+                      <span class="xiaomi-feature__desc">
+                        В наушниках используется технология двойного активного шумоподавления с двумя микрофонами: один отслеживает внешний шум, а второй применяется для обратной связи. Они эффективно подавляют внешний шум и уменьшают избыточный шум в
+                        ушном канале. Глубина шумоподавления может достигать 35 дБ.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_2.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Автоматическая калибровка шумоподавления c ИИ</span>
+                      <span class="xiaomi-feature__desc">Алгоритм ИИ оценивает обстановку на основе уровня внешнего шума и привычек пользователя. Настройте глубину шумоподавления в зависимости от окружающей среды.</span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_3.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Три микрофона для отсечения шумов при вызовах. Чистый звук в шумной обстановке</span>
+                      <span class="xiaomi-feature__desc">
+                        Три микрофона вместе с алгоритмом шумоподавления при вызовах, который реализуется с помощью нейросетевой модели, могут точно улавливать голоса людей и при этом эффективно снижать фоновые внешние шумы. Технология обеспечивает чистоту
+                        звука без помех во время общения в шумной обстановке.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_4.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Режим двойного отслеживания внешнего шума</span>
+                      <span class="xiaomi-feature__desc">
+                        Позволяет слышать внешние звуки без необходимости извлекать наушники из ушей. В режиме восприятия внешних звуков вы по-прежнему сможете четко слышать внешние звуки без необходимости извлекать наушники из ушей. Переключитесь в режим
+                        усиления голоса для более четкого звучания голоса. Вы можете спокойно общаться с другом, не снимая наушники.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_5.jpg" alt="Redmi Buds 3 Pro}" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Композитный драйвер с диафрагмой 9 мм. Более детализированный звук</span>
+                      <span class="xiaomi-feature__desc">
+                        Композитный драйвер с диафрагмой 9 мм обеспечивает превосходное качество звука. После профессиональной калибровки в лаборатории звука Xiaomi высокочастотный звук становится чистым и не искаженным, а низкочастотный звук — насыщенным
+                        и чистым, с более утонченным качеством звучания.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_6.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">28 часов работы от аккумулятора. Наслаждайтесь музыкой в течение долгого времени</span>
+                      <span class="xiaomi-feature__desc">
+                        Благодаря встроенному чипу с низким энергопотреблением наушники могут работать до 6 часов* на одной зарядке. Благодаря зарядному футляру наушники могут работать до 28 часов. Таким образом, вы можете наслаждаться музыкой часами
+                        напролет.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_7.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Поддерживает быструю зарядку и беспроводную зарядку</span>
+                      <span class="xiaomi-feature__desc">
+                        Благодаря быстрой зарядке наушники заряжаются всего за 10 минут, а затем позволяют слушать музыку в течение 3 часов. Если аккумулятор разряжается, сделайте небольшой перерыв и дайте ему зарядиться. Зарядный футляр также поддерживает
+                        беспроводную зарядку Qi, что делает процесс зарядки очень удобным.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_8.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Возможность одновременного подключения к двум устройствам</span>
+                      <span class="xiaomi-feature__desc">
+                        Интеллектуальное переключение между развлечениями и работой Текст: Одни и те же наушники могут быть подключены одновременно к двум устройствам, работающим на таких платформах, как Android, iOS и Windows, что позволяет легко
+                        переключаться между развлечениями и работой. Сопряжение с Bluetooth осуществляется путем открытия коробки наушников рядом с телефоном или быстрого нажатия на всплывающее окно*, что позволяет воспользоваться новым быстрым способом
+                        подключения.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_9.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Коснитесь дважды, чтобы ответить на звонок</span>
+                      <span class="xiaomi-feature__desc">Коснитесь тыльной стороны наушников для переключения режимов, включения паузы, возобновления воспроизведения музыки и т. д. Также поддерживается функция голосового управления.</span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_10.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Обнаружение наушника в ухе</span>
+                      <span class="xiaomi-feature__desc">При извлечении наушников происходит автоматическая приостановка воспроизведения музыки. Воспроизведение музыки возобновляется, если снова надеть наушники.</span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_11.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Защита от воды IPX4</span>
+                      <span class="xiaomi-feature__desc">
+                        Всесторонняя защита корпуса от пота и брызг. Тестирование влагостойкости по стандарту IPX4. В соответствии со степенью защиты корпуса (IP-код) GB/T 4208-2017, он прошел тест, проведенный Suzhou Institute of Product Quality
+                        Supervision and Inspection. Номер отчета об испытании: WPHE210546. Результат испытаний показал, что он соответствует стандарту GB/T 4208-2017.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_12.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Сменные силиконовые амбушюры в комплекте</span>
+                      <span class="xiaomi-feature__desc">На выбор предлагается три размера амбушюр на усмотрение пользователя, включая большой, средний и маленький, обеспечивая более комфортное использование.</span>
+                    </div>
+                  </div>
+                  <div class="xiaomi-feature">
+                    <div class="xiaomi-feature-image"><img src="https://ogo1.ru/upload/news-image/xiaomi/488х488_13.jpg" alt="Redmi Buds 3 Pro" /></div>
+                    <div class="xiaomi-feature-content">
+                      <span class="xiaomi-feature__title">Сменные силиконовые амбушюры в комплекте</span>
+                      <span class="xiaomi-feature__desc">Вы можете определить местоположение наушников с помощью звукового сигнала в радиусе действия подключения Bluetooth.</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="xiaomi-section">
+                <div class="xiaomi-stats">
+                  <div class="xiaomi-stat">
+                    <div class="xiaomi-stat__icon">☼</div>
+                    <span class="xiaomi-stat__title">Стандартная мощность всасывания</span>
+                    <span class="xiaomi-stat__main">65</span>
+                    <span class="xiaomi-stat__sub">Минут</span>
+                  </div>
+                  <div class="xiaomi-stat">
+                    <div class="xiaomi-stat__icon">☼</div>
+                    <span class="xiaomi-stat__title">Удаление въевшихся загрязнений</span>
+                    <span class="xiaomi-stat__main">30</span>
+                    <span class="xiaomi-stat__sub">Минут</span>
+                  </div>
+                  <div class="xiaomi-stat">
+                    <div class="xiaomi-stat__icon">☼</div>
+                    <span class="xiaomi-stat__title">Полная выходная мощность</span>
+                    <span class="xiaomi-stat__main">10</span>
+                    <span class="xiaomi-stat__sub">Минут</span>
+                  </div>
+                  <div class="xiaomi-stat">
+                    <div class="xiaomi-stat__icon">☼</div>
+                    <span class="xiaomi-stat__title">Стандартная мощность всасывания</span>
+                    <span class="xiaomi-stat__main">65</span>
+                    <span class="xiaomi-stat__sub">Минут</span>
+                  </div>
+                  <div class="xiaomi-stat">
+                    <div class="xiaomi-stat__icon">☼</div>
+                    <span class="xiaomi-stat__title">Удаление въевшихся загрязнений</span>
+                    <span class="xiaomi-stat__main">30</span>
+                    <span class="xiaomi-stat__sub">Минут</span>
+                  </div>
+                  <div class="xiaomi-stat">
+                    <div class="xiaomi-stat__icon">☼</div>
+                    <span class="xiaomi-stat__title">Полная выходная мощность</span>
+                    <span class="xiaomi-stat__main">10</span>
+                    <span class="xiaomi-stat__sub">Минут</span>
+                  </div>
+                </div>
+              </section>
+              <section class="xiaomi-section narrow">
+                <a class="xiaomi-video" href="#">
+                  <div class="xiaomi-video__preview-wrapper">
+                    <img class="xiaomi-video__preview" src="./img/video.jpg" alt />
+                    <span class="xiaomi-video__play"></span>
+                  </div>
+                </a>
+              </section>
+              <section class="xiaomi-section"><span class="h2">Карточки товаров</span></section>
+            </section>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-lg-4">
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-1.svg" alt="Самовывоз сегодня" />
+                  <span class="footer-feature__title">Самовывоз сегодня</span>
+                  <span class="footer-feature__subtitle">из магазина с 10:00 до 22:00</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-2.svg" alt="Официальная гарантия" />
+                  <span class="footer-feature__title">Официальная гарантия</span>
+                  <span class="footer-feature__subtitle">на 30 225 товаров в наличии</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-3.svg" alt="Удобная доставка" />
+                  <span class="footer-feature__title">Удобная доставка</span>
+                  <span class="footer-feature__subtitle">днём и вечером ежедневно</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-4.svg" alt="Высокий рейтинг" />
+                  <span class="footer-feature__title">Высокий рейтинг</span>
+                  <span class="footer-feature__subtitle">на Я.Маркете с 2010 года</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row g-3 g-lg-4">
+              <div class="col-sm-12 col-md-4 col-lg-3 order-1">
+                <p class="mb-0"><strong>Служба поддержки</strong></p>
+                <p class="mb-2"><a class="footer-phone text-body text-decoration-none" href="tel:+7 495 133-79-84">+7 495 133-79-84</a></p>
+                <ul class="list-unstyled">
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#callback-tab-pane">Заказать звонок</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane">Задать вопрос</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#complain-tab-pane">Пожаловаться</a></li>
+                </ul>
+                <p class="footer-copyright d-none d-lg-block">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-2">
+                <p class="mb-1"><strong>Покупателям</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/news.html">Новости и акции</a></li>
+                  <li><a href="/shops.html">Адреса магазинов</a></li>
+                  <li><a href="/delivery.html">Доставка и самовывоз</a></li>
+                  <li><a href="/service.html">Гарантия и возврат</a></li>
+                  <li><a href="/bonus.html">Бонусная программа</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-3">
+                <p class="mb-1"><strong>Информация</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/job.html">Вакансии</a></li>
+                  <li><a href="/corporate.html">Корпоративным клиентам</a></li>
+                  <li><a class="js-supplier-popup" href="/ajax/new/supplier_inquiry_form.php">Поставщикам</a></li>
+                  <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-4 order-5 order-md-4 d-lg-none">
+                <p class="footer-copyright mt-4">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-3 order-4 order-md-5">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Подписывайтесь</strong></p>
+                    <div class="social-buttons mb-4">
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Принимаем к оплате</strong></p>
+                    <div class="pay-systems">
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mastercard_logo.png" alt="Mastercard" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/visa_logo.png" alt="Visa" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mir_logo.png" alt="МИР" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/sbercredit_logo.png" alt="Сберкредит" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-toolbar d-md-none">
+        <div class="container p-0">
+          <div class="row row-cols-5 g-0">
+            <div class="col">
+              <span class="footer-toolbar__item is-active">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Главная</span>
+              </span>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-catalog" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Каталог</span>
+              </button>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item" href="/cart.html">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                  <span class="fs-6 badge rounded-pill position-absolute top-0 end-0 bg-primary js-cart-counter hidden"></span>
+                </div>
+                <span class="footer-toolbar__item-text">Корзина</span>
+              </a>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item js-auth-popup" href="/ajax/new/authform.php">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Войти</span>
+              </a>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-sidebar" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Еще</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

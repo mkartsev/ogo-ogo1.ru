@@ -1,0 +1,2685 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Дизайн система</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header header--clean">
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">библиотека компонентов</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header"><h1 class="page-title js-page-title">Дизайн система</h1></header>
+          <section class="content-section">
+            <style>
+              .nav-pills > .nav-link {
+                text-align: left !important;
+              }
+              .nav-pills > .nav-link:not(.active):hover {
+                background: #f1f1f1;
+              }
+            </style>
+            <p>
+              Набор компонентов для проектирования пользовательского интерфейса: кнопки, поля ввода, переключатели, списки, иконки, таблицы, правила построения тирографики, цветовой палитры, сеток и отступов. Одна из основных задач — привести сайт к единой
+              стилистике и создать базу паттернов, которые привычны и понятны пользователям. Библиотека компонентов упрощает процесс проектирования и разработки интерфейсов, позволяет сократить время и улучшить качество работы.
+            </p>
+            <hr />
+            <div class="row g-3-g-lg-4">
+              <div class="col-12 col-md-3" style="position: sticky; top: 1rem; align-self: flex-start">
+                <div class="nav nav-pills nav-justified flex-column" id="ui-nav-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link" id="ui-nav-colors-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-colors" type="button" role="tab" aria-controls="ui-nav-colors">Цветовая палитра</button>
+                  <button class="nav-link" id="ui-nav-grid-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-grid" type="button" role="tab" aria-controls="ui-nav-grid">Модуль и сетка</button>
+                  <button class="nav-link" id="ui-nav-icons-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-icons" type="button" role="tab" aria-controls="ui-nav-icons">Иконки</button>
+                  <button class="nav-link" id="ui-nav-inputs-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-inputs" type="button" role="tab" aria-controls="ui-nav-inputs">Поля ввода</button>
+                  <button class="nav-link" id="ui-nav-buttons-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-buttons" type="button" role="tab" aria-controls="ui-nav-buttons">Кнопки</button>
+                  <button class="nav-link" id="ui-nav-checkbox-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-checkbox" type="button" role="tab" aria-controls="ui-nav-checkbox">Чекбоксы</button>
+                  <button class="nav-link active" id="ui-nav-radiobutton-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-radiobutton" type="button" role="tab" aria-controls="ui-nav-radiobutton" aria-selected>Радиокнопки</button>
+                  <button class="nav-link" id="ui-nav-tabs-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-tabs" type="button" role="tab" aria-controls="ui-nav-tabs">Табы</button>
+                  <button class="nav-link" id="ui-nav-pagination-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-pagination" type="button" role="tab" aria-controls="ui-nav-pagination">Пагинация</button>
+                  <button class="nav-link" id="ui-nav-breadcrumbs-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-breadcrumbs" type="button" role="tab" aria-controls="ui-nav-breadcrumbs">Хлебные крошки</button>
+                  <button class="nav-link" id="ui-nav-tables-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-tables" type="button" role="tab" aria-controls="ui-nav-tables">Таблицы</button>
+                  <button class="nav-link" id="ui-nav-accordion-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-accordion" type="button" role="tab" aria-controls="ui-nav-accordion">Аккордеон</button>
+                  <button class="nav-link" id="ui-nav-tooltip-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-tooltip" type="button" role="tab" aria-controls="ui-nav-tooltip">Тултипы</button>
+                  <button class="nav-link" id="ui-nav-popup-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-popup" type="button" role="tab" aria-controls="ui-nav-popup">Всплывающее окно</button>
+                  <button class="nav-link" id="ui-nav-progress-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-progress" type="button" role="tab" aria-controls="ui-nav-progress">Индикатор прогресса</button>
+                  <button class="nav-link" id="ui-nav-badge-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-badge" type="button" role="tab" aria-controls="ui-nav-badge">Бейджи</button>
+                  <button class="nav-link" id="ui-nav-toast-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-toast" type="button" role="tab" aria-controls="ui-nav-toast">Тостер</button>
+                </div>
+              </div>
+              <div class="col-12 col-md-9">
+                <div class="tab-content" id="ui-nav-tabContent">
+                  <div class="tab-pane fade" id="ui-nav-colors" role="tabpanel" aria-labelledby="ui-nav-colors-tab"><h2 class="content-section__title">Цветовая палитра</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-grid" role="tabpanel" aria-labelledby="ui-nav-grid-tab"><h2 class="content-section__title">Модуль и сетка</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-icons" role="tabpanel" aria-labelledby="ui-nav-icons-tab">
+                    <h2 class="content-section__title">Иконки</h2>
+                    <h3>Интерфейс</h3>
+                    <div class="row row-cols-2 row-cols-md-4 row-cols-xl-5 mb-3">
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--adult"></use></svg>
+                          <div class="text-center">ui--adult</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--alt-burger-fill"></use></svg>
+                          <div class="text-center">ui--alt-burger-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--alt-burger"></use></svg>
+                          <div class="text-center">ui--alt-burger</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--airplane-fill"></use></svg>
+                          <div class="text-center">ui--airplane-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-down"></use></svg>
+                          <div class="text-center">ui--arrow-down</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-left"></use></svg>
+                          <div class="text-center">ui--arrow-left</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-right"></use></svg>
+                          <div class="text-center">ui--arrow-right</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-up"></use></svg>
+                          <div class="text-center">ui--arrow-up</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--attachment"></use></svg>
+                          <div class="text-center">ui--attachment</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bell"></use></svg>
+                          <div class="text-center">ui--bell</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bento-fill"></use></svg>
+                          <div class="text-center">ui--bento-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bento"></use></svg>
+                          <div class="text-center">ui--bento</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus"></use></svg>
+                          <div class="text-center">ui--bonus</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--calendar"></use></svg>
+                          <div class="text-center">ui--calendar</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--card"></use></svg>
+                          <div class="text-center">ui--card</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chat"></use></svg>
+                          <div class="text-center">ui--chat</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--check"></use></svg>
+                          <div class="text-center">ui--check</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down"></use></svg>
+                          <div class="text-center">ui--chevron-down</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                          <div class="text-center">ui--chevron-left</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-right"></use></svg>
+                          <div class="text-center">ui--chevron-right</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-up"></use></svg>
+                          <div class="text-center">ui--chevron-up</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--clock"></use></svg>
+                          <div class="text-center">ui--clock</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison-fill"></use></svg>
+                          <div class="text-center">ui--comparison-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                          <div class="text-center">ui--comparison</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--copy-link"></use></svg>
+                          <div class="text-center">ui--copy-link</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--copy"></use></svg>
+                          <div class="text-center">ui--copy</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--correct"></use></svg>
+                          <div class="text-center">ui--correct</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                          <div class="text-center">ui--cross</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--decrease"></use></svg>
+                          <div class="text-center">ui--decrease</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--delivery"></use></svg>
+                          <div class="text-center">ui--delivery</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--dislike"></use></svg>
+                          <div class="text-center">ui--dislike</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--document"></use></svg>
+                          <div class="text-center">ui--document</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--dot"></use></svg>
+                          <div class="text-center">ui--dot</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--download"></use></svg>
+                          <div class="text-center">ui--download</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--edit"></use></svg>
+                          <div class="text-center">ui--edit</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-close"></use></svg>
+                          <div class="text-center">ui--eye-close</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-open"></use></svg>
+                          <div class="text-center">ui--eye-open</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--filter"></use></svg>
+                          <div class="text-center">ui--filter</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--gear"></use></svg>
+                          <div class="text-center">ui--gear</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--gift"></use></svg>
+                          <div class="text-center">ui--gift</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart-fill"></use></svg>
+                          <div class="text-center">ui--heart-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                          <div class="text-center">ui--heart</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home"></use></svg>
+                          <div class="text-center">ui--home</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--increase"></use></svg>
+                          <div class="text-center">ui--increase</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill"></use></svg>
+                          <div class="text-center">ui--info-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info"></use></svg>
+                          <div class="text-center">ui--info</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--like"></use></svg>
+                          <div class="text-center">ui--like</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                          <div class="text-center">ui--location</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--log-in"></use></svg>
+                          <div class="text-center">ui--log-in</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--log-out"></use></svg>
+                          <div class="text-center">ui--log-out</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--mail"></use></svg>
+                          <div class="text-center">ui--mail</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-burger"></use></svg>
+                          <div class="text-center">ui--menu-burger</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog"></use></svg>
+                          <div class="text-center">ui--menu-catalog</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more"></use></svg>
+                          <div class="text-center">ui--menu-more</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus"></use></svg>
+                          <div class="text-center">ui--minus</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--packman"></use></svg>
+                          <div class="text-center">ui--packman</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                          <div class="text-center">ui--phone</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--pick-up"></use></svg>
+                          <div class="text-center">ui--pick-up</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus"></use></svg>
+                          <div class="text-center">ui--plus</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--print"></use></svg>
+                          <div class="text-center">ui--print</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--question-fill"></use></svg>
+                          <div class="text-center">ui--question-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--question"></use></svg>
+                          <div class="text-center">ui--question</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--refresh"></use></svg>
+                          <div class="text-center">ui--refresh</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--route"></use></svg>
+                          <div class="text-center">ui--route</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                          <div class="text-center">ui--search</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--send"></use></svg>
+                          <div class="text-center">ui--send</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--setting"></use></svg>
+                          <div class="text-center">ui--setting</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--share"></use></svg>
+                          <div class="text-center">ui--share</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shield"></use></svg>
+                          <div class="text-center">ui--shield</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag-fill"></use></svg>
+                          <div class="text-center">ui--shopping-bag-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                          <div class="text-center">ui--shopping-bag</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-cart"></use></svg>
+                          <div class="text-center">ui--shopping-cart</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--sorting"></use></svg>
+                          <div class="text-center">ui--sorting</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--spinner"></use></svg>
+                          <div class="text-center">ui--spinner</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-fill"></use></svg>
+                          <div class="text-center">ui--star-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                          <div class="text-center">ui--star</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--transport"></use></svg>
+                          <div class="text-center">ui--transport</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--trash"></use></svg>
+                          <div class="text-center">ui--trash</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                          <div class="text-center">ui--user</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wallet"></use></svg>
+                          <div class="text-center">ui--wallet</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--warning-fill"></use></svg>
+                          <div class="text-center">ui--warning-fill</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--warning"></use></svg>
+                          <div class="text-center">ui--warning</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--windows"></use></svg>
+                          <div class="text-center">ui--windows</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong"></use></svg>
+                          <div class="text-center">ui--wrong</div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3>Интерфейс маленькие</h3>
+                    <div class="row row-cols-2 row-cols-md-4 row-cols-xl-5 mb-3">
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--adult-sm"></use></svg>
+                          <div class="text-center">ui--adult-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--alt-burger-fill-sm"></use></svg>
+                          <div class="text-center">ui--alt-burger-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--alt-burger-sm"></use></svg>
+                          <div class="text-center">ui--alt-burger-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--airplane-fill-sm"></use></svg>
+                          <div class="text-center">ui--airplane-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-down-sm"></use></svg>
+                          <div class="text-center">ui--arrow-down-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-left-sm"></use></svg>
+                          <div class="text-center">ui--arrow-left-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-right-sm"></use></svg>
+                          <div class="text-center">ui--arrow-right-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-up-sm"></use></svg>
+                          <div class="text-center">ui--arrow-up-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--attachment-sm"></use></svg>
+                          <div class="text-center">ui--attachment-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bell-sm"></use></svg>
+                          <div class="text-center">ui--bell-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bento-fill-sm"></use></svg>
+                          <div class="text-center">ui--bento-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bento-sm"></use></svg>
+                          <div class="text-center">ui--bento-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                          <div class="text-center">ui--bonus-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--calendar-sm"></use></svg>
+                          <div class="text-center">ui--calendar-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--card-sm"></use></svg>
+                          <div class="text-center">ui--card-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chat-sm"></use></svg>
+                          <div class="text-center">ui--chat-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--check-sm"></use></svg>
+                          <div class="text-center">ui--check-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                          <div class="text-center">ui--chevron-down-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left-sm"></use></svg>
+                          <div class="text-center">ui--chevron-left-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-right-sm"></use></svg>
+                          <div class="text-center">ui--chevron-right-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-up-sm"></use></svg>
+                          <div class="text-center">ui--chevron-up-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--clock-sm"></use></svg>
+                          <div class="text-center">ui--clock-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison-fill-sm"></use></svg>
+                          <div class="text-center">ui--comparison-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison-sm"></use></svg>
+                          <div class="text-center">ui--comparison-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--copy-link-sm"></use></svg>
+                          <div class="text-center">ui--copy-link-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--copy-sm"></use></svg>
+                          <div class="text-center">ui--copy-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--correct-sm"></use></svg>
+                          <div class="text-center">ui--correct-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross-sm"></use></svg>
+                          <div class="text-center">ui--cross-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--decrease-sm"></use></svg>
+                          <div class="text-center">ui--decrease-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--delivery-sm"></use></svg>
+                          <div class="text-center">ui--delivery-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--dislike-sm"></use></svg>
+                          <div class="text-center">ui--dislike-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--document-sm"></use></svg>
+                          <div class="text-center">ui--document-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--dot-sm"></use></svg>
+                          <div class="text-center">ui--dot-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--download-sm"></use></svg>
+                          <div class="text-center">ui--download-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--edit-sm"></use></svg>
+                          <div class="text-center">ui--edit-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-close-sm"></use></svg>
+                          <div class="text-center">ui--eye-close-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-open-sm"></use></svg>
+                          <div class="text-center">ui--eye-open-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--filter-sm"></use></svg>
+                          <div class="text-center">ui--filter-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--gear-sm"></use></svg>
+                          <div class="text-center">ui--gear-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--gift-sm"></use></svg>
+                          <div class="text-center">ui--gift-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart-fill-sm"></use></svg>
+                          <div class="text-center">ui--heart-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart-sm"></use></svg>
+                          <div class="text-center">ui--heart-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home-sm"></use></svg>
+                          <div class="text-center">ui--home-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--increase-sm"></use></svg>
+                          <div class="text-center">ui--increase-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill-sm"></use></svg>
+                          <div class="text-center">ui--info-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-sm"></use></svg>
+                          <div class="text-center">ui--info-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--like-sm"></use></svg>
+                          <div class="text-center">ui--like-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location-sm"></use></svg>
+                          <div class="text-center">ui--location-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--log-in-sm"></use></svg>
+                          <div class="text-center">ui--log-in-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--log-out-sm"></use></svg>
+                          <div class="text-center">ui--log-out-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--mail-sm"></use></svg>
+                          <div class="text-center">ui--mail-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-burger-sm"></use></svg>
+                          <div class="text-center">ui--menu-burger-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog-sm"></use></svg>
+                          <div class="text-center">ui--menu-catalog-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more-sm"></use></svg>
+                          <div class="text-center">ui--menu-more-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                          <div class="text-center">ui--minus-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--packman-sm"></use></svg>
+                          <div class="text-center">ui--packman-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone-sm"></use></svg>
+                          <div class="text-center">ui--phone-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--pick-up-sm"></use></svg>
+                          <div class="text-center">ui--pick-up-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                          <div class="text-center">ui--plus-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--print-sm"></use></svg>
+                          <div class="text-center">ui--print-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--question-fill-sm"></use></svg>
+                          <div class="text-center">ui--question-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--question-sm"></use></svg>
+                          <div class="text-center">ui--question-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--refresh-sm"></use></svg>
+                          <div class="text-center">ui--refresh-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--route-sm"></use></svg>
+                          <div class="text-center">ui--route-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search-sm"></use></svg>
+                          <div class="text-center">ui--search-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--send-sm"></use></svg>
+                          <div class="text-center">ui--send-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--setting-sm"></use></svg>
+                          <div class="text-center">ui--setting-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--share-sm"></use></svg>
+                          <div class="text-center">ui--share-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shield-sm"></use></svg>
+                          <div class="text-center">ui--shield-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag-fill-sm"></use></svg>
+                          <div class="text-center">ui--shopping-bag-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag-sm"></use></svg>
+                          <div class="text-center">ui--shopping-bag-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-cart-sm"></use></svg>
+                          <div class="text-center">ui--shopping-cart-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--sorting-sm"></use></svg>
+                          <div class="text-center">ui--sorting-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-fill-sm"></use></svg>
+                          <div class="text-center">ui--star-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                          <div class="text-center">ui--star-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--transport-sm"></use></svg>
+                          <div class="text-center">ui--transport-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--trash-sm"></use></svg>
+                          <div class="text-center">ui--trash-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user-sm"></use></svg>
+                          <div class="text-center">ui--user-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wallet-sm"></use></svg>
+                          <div class="text-center">ui--wallet-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--warning-fill-sm"></use></svg>
+                          <div class="text-center">ui--warning-fill-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--warning-sm"></use></svg>
+                          <div class="text-center">ui--warning-sm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon svg-icon--sm mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong-sm"></use></svg>
+                          <div class="text-center">ui--wrong-sm</div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3>Категории</h3>
+                    <div class="row row-cols-2 row-cols-md-4 row-cols-xl-4 mb-3">
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--import"></use></svg>
+                          <div class="text-center">categories--import</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--portable_tehnika_i_foto"></use></svg>
+                          <div class="text-center">categories--portable_tehnika_i_foto</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--computer"></use></svg>
+                          <div class="text-center">categories--computer</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--dlja-gejmerov"></use></svg>
+                          <div class="text-center">categories--dlja-gejmerov</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--piriferiya"></use></svg>
+                          <div class="text-center">categories--piriferiya</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--televizoru"></use></svg>
+                          <div class="text-center">categories--televizoru</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--office"></use></svg>
+                          <div class="text-center">categories--office</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--tekhnika_dlya_doma"></use></svg>
+                          <div class="text-center">categories--tekhnika_dlya_doma</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--kuhnya"></use></svg>
+                          <div class="text-center">categories--kuhnya</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--krasota_i_zdorovie"></use></svg>
+                          <div class="text-center">categories--krasota_i_zdorovie</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--medicine_i_zdorovie"></use></svg>
+                          <div class="text-center">categories--medicine_i_zdorovie</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--remont_i_dacha"></use></svg>
+                          <div class="text-center">categories--remont_i_dacha</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--instrumenty_i_materialy"></use></svg>
+                          <div class="text-center">categories--instrumenty_i_materialy</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--electrika_i_remont"></use></svg>
+                          <div class="text-center">categories--electrika_i_remont</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--vse_dlya_doma"></use></svg>
+                          <div class="text-center">categories--vse_dlya_doma</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--bytovaya_khimiya_i_produkty"></use></svg>
+                          <div class="text-center">categories--bytovaya_khimiya_i_produkty</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--zdorove_i_uhod"></use></svg>
+                          <div class="text-center">categories--zdorove_i_uhod</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--detskiye-tovary"></use></svg>
+                          <div class="text-center">categories--detskiye-tovary</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--sport_turizm"></use></svg>
+                          <div class="text-center">categories--sport_turizm</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--avto"></use></svg>
+                          <div class="text-center">categories--avto</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--dlya_dvoih"></use></svg>
+                          <div class="text-center">categories--dlya_dvoih</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--tovary_dlya_prazdnika"></use></svg>
+                          <div class="text-center">categories--tovary_dlya_prazdnika</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#categories--produkty"></use></svg>
+                          <div class="text-center">categories--produkty</div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3>Конфигуратор</h3>
+                    <div class="row row-cols-2 row-cols-md-4 row-cols-xl-5 mb-3">
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--blok-pitaniya"></use></svg>
+                          <div class="text-center">configurator--blok-pitaniya</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--dvd"></use></svg>
+                          <div class="text-center">configurator--dvd</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--jesky-disk"></use></svg>
+                          <div class="text-center">configurator--jesky-disk</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--korpus-pc"></use></svg>
+                          <div class="text-center">configurator--korpus-pc</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--kuler"></use></svg>
+                          <div class="text-center">configurator--kuler</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--materinskaya-plata"></use></svg>
+                          <div class="text-center">configurator--materinskaya-plata</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--operativnaya-pamyat"></use></svg>
+                          <div class="text-center">configurator--operativnaya-pamyat</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--os"></use></svg>
+                          <div class="text-center">configurator--os</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--processor"></use></svg>
+                          <div class="text-center">configurator--processor</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--ssd"></use></svg>
+                          <div class="text-center">configurator--ssd</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column align-items-center p-3">
+                          <svg class="svg-icon mb-3"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--videokarta"></use></svg>
+                          <div class="text-center">configurator--videokarta</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-inputs" role="tabpanel" aria-labelledby="ui-nav-inputs-tab">
+                    <h2 class="content-section__title">Поля ввода</h2>
+                    <p>
+                      Используйте текстовое поле когда нужно предоставить возможность пользователю ввести данные и нельзя предложить ему готовый список для выбора. Текстовые поля обычно используются в формах и диалогах, но так же могут быть частью поиска,
+                      фильтров, вызываться для быстрого изменения текстового значения.
+                    </p>
+                    <form method="POST" action="">
+                      <div class="row row-cols-2 row-cols-lg-3 g-3 g-lg-4">
+                        <div class="col">
+                          <div class="field field--type-text field--icon mb-3">
+                            <label class="field__label" for="demo-city">Город</label>
+                            <div class="field__field">
+                              <input class="form-control js-select-city" type="text" id="demo-city" name="demo-city" placeholder="Начните вводить название…" spellcheck="false" inputmode="search" data-src="/ajax/new/getCities.php" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="demo-name">Имя</label>
+                            <div class="field__field"><input class="form-control" type="text" id="demo-name" name="demo-name" placeholder="Ваше имя" required="required" data-msg-required="Укажите имя" /></div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-select">
+                            <label class="field__label" for="demo-select">Тема сообщения</label>
+                            <div class="field__field">
+                              <select class="form-select" id="demo-select" name="demo-select" required="required" data-msg-required="Выберите тему обращения">
+                                <option value="" disabled selected hidden>Тема сообщения</option>
+                                <option value="5">Задать вопрос о товаре</option>
+                                <option value="3">Предложение о поставке товара</option>
+                                <option value="2">Рекламное предложение</option>
+                                <option value="11">Обратный звонок</option>
+                                <option value="1">О магазине</option>
+                                <option value="53">Информация о соискателе от работодателя</option>
+                                <option value="6">Сообщить об ошибке</option>
+                                <option value="26">Пожаловаться</option>
+                                <option value="4">Работа в ОГО!</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-tel field--icon">
+                            <label class="field__label" for="demo-phone">
+                              Телефон
+                              <span class="js-tooltip field__tooltip" data-tooltip-content="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-tippy-placement="top">
+                                <span class="tooltip-icon badge rounded-pill bg-light">?</span>
+                              </span>
+                            </label>
+                            <div class="field__field">
+                              <input
+                                class="form-control"
+                                type="tel"
+                                id="demo-phone"
+                                name="demo-phone"
+                                placeholder="+7 (___) ___-__-__"
+                                inputmode="numeric"
+                                required="required"
+                                data-rule-phone="true"
+                                data-msg-required="Укажите телефон"
+                                data-msg-phone="Введите корректный номер телефона" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-email">
+                            <label class="field__label" for="demo-email">Электронная почта</label>
+                            <div class="field__field">
+                              <input class="form-control" type="email" name="demo-email" id="demo-email" required="required" data-rule-email="true" data-msg-required="Укажите email" data-msg-phone="Введите корректный адрес почты" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-textarea">
+                            <label class="field__label" for="demo-textarea">Сообщение</label>
+                            <div class="field__field"><textarea class="form-control" rows="3" id="demo-textarea" name="demo-textarea" required="required"></textarea></div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-password mb-3">
+                            <label class="field__label" for="demo-password">Придумайте пароль</label>
+                            <div class="field__field">
+                              <input class="form-control" type="password" id="demo-password" name="demo-password" required="required" data-msg-required="Укажите пароль" />
+                              <button class="btn field__show-password" type="button" title="Показать/Скрыть пароль">
+                                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-close"></use></svg><svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-open"></use></svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="field field--type-password">
+                            <label class="field__label" for="demo-password-2">Повторите пароль</label>
+                            <div class="field__field">
+                              <input class="form-control" type="password" id="demo-password-2" name="demo-passwrod2" required="required" data-msg-required="Повторите пароль" data-rule-equalTo="#demo-password" data-msg-equalTo="Пароли не совпадают" />
+                              <button class="btn field__show-password" type="button" title="Показать/Скрыть пароль">
+                                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-close"></use></svg><svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-open"></use></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-datepicker field--icon">
+                            <label class="field__label" for="demo-datepicker">Дата рождения</label>
+                            <div class="field__field">
+                              <input
+                                class="form-control js-datepicker js-input-mask"
+                                type="text"
+                                value="06.03.2024"
+                                id="demo-datepicker"
+                                name="demo-datepicker"
+                                placeholder="__.__.____"
+                                required="required"
+                                data-msg-required="Укажите дату рождения"
+                                data-inputmask="'mask': '99.99.9999'" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--calendar"></use></svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="field field--type-file">
+                            <label class="field__label" for="demo-file">Прикрепить файл</label>
+                            <div class="field__field">
+                              <input class="js-input-file" data-button-caption="Загрузить документ" data-remove-caption="Удалить документ" type="file" id="demo-file" name="demo-file" required="required" data-msg-required="Добавьте файл/скриншот" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="btn-group mt-4 g-3">
+                            <button class="btn btn-primary" type="submit">Отправить</button>
+                            <button class="btn btn-secondary" type="reset">Сбросить</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-buttons" role="tabpanel" aria-labelledby="ui-nav-buttons-tab">
+                    <h2 class="content-section__title">Кнопки</h2>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                      </button>
+                      <button class="btn btn-success" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                      </button>
+                      <button class="btn btn-info" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                      </button>
+                      <button class="btn btn-warning" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                      </button>
+                      <button class="btn btn-danger" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-secondary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-tertiary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-success btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-info btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-warning btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-danger btn-sm" type="button">Кнопка</button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary" type="button">Кнопка</button>
+                      <button class="btn btn-secondary" type="button">Кнопка</button>
+                      <button class="btn btn-tertiary" type="button">Кнопка</button>
+                      <button class="btn btn-success" type="button">Кнопка</button>
+                      <button class="btn btn-info" type="button">Кнопка</button>
+                      <button class="btn btn-warning" type="button">Кнопка</button>
+                      <button class="btn btn-danger" type="button">Кнопка</button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-secondary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-tertiary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-success btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-info btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-warning btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-danger btn-lg" type="button">Кнопка</button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-primary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-primary btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-primary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-outline-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-primary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-primary btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-secondary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-outline-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-secondary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-secondary btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-tertiary btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-outline-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-tertiary btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-tertiary btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-success btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-outline-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-success btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-success btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-info btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-outline-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-info btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-info btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-warning btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-outline-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-warning btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-warning btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-danger btn-sm" type="button">Кнопка</button>
+                      <button class="btn btn-outline-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-danger btn-sm" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-danger btn-sm" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-primary" type="button">Кнопка</button>
+                      <button class="btn btn-primary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-primary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-primary" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-primary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-primary" type="button">Кнопка</button>
+                      <button class="btn btn-outline-primary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-primary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-primary" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-secondary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary" type="button">Кнопка</button>
+                      <button class="btn btn-secondary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-secondary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-secondary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-secondary" type="button">Кнопка</button>
+                      <button class="btn btn-outline-secondary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-secondary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-secondary" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary" type="button">Кнопка</button>
+                      <button class="btn btn-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-tertiary" type="button">Кнопка</button>
+                      <button class="btn btn-outline-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-tertiary" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-tertiary" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-success" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success" type="button">Кнопка</button>
+                      <button class="btn btn-success" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-success" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-success" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-success" type="button">Кнопка</button>
+                      <button class="btn btn-outline-success" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-success" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-success" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-info" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info" type="button">Кнопка</button>
+                      <button class="btn btn-info" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-info" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-info" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-info" type="button">Кнопка</button>
+                      <button class="btn btn-outline-info" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-info" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-info" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-warning" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning" type="button">Кнопка</button>
+                      <button class="btn btn-warning" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-warning" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-warning" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-warning" type="button">Кнопка</button>
+                      <button class="btn btn-outline-warning" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-warning" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-warning" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-danger" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger" type="button">Кнопка</button>
+                      <button class="btn btn-danger" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-danger" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-danger" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-danger" type="button">Кнопка</button>
+                      <button class="btn btn-outline-danger" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-danger" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-danger" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-primary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-primary btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-primary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-outline-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-primary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-primary btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-secondary btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-secondary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-outline-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-secondary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-secondary btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-tertiary btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-outline-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-tertiary btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-tertiary btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-success btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-success btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-outline-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-success btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-success btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-info btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-info btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-outline-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-info btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-info btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-warning btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-warning btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-outline-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-warning btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-warning btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-danger btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                    <div class="mb-1">
+                      <button class="btn btn-outline-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-danger btn-lg" type="button">Кнопка</button>
+                      <button class="btn btn-outline-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                      </button>
+                      <button class="btn btn-outline-danger btn-lg" type="button">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--star-sm"></use></svg>
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                      <button class="btn btn-outline-danger btn-lg" type="button">
+                        Кнопка
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-down-sm"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-checkbox" role="tabpanel" aria-labelledby="ui-nav-checkbox-tab">
+                    <h2 class="content-section__title">Чекбоксы</h2>
+                    <h3>Чекбоксы блоками</h3>
+                    <div class="field field--type-checkbox-block">
+                      <label class="field__label">
+                        <input type="checkbox" id="ui-checkbox-block-1" name="ui-checkbox-block" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Театральная аллея, д.3, стр.1</span>
+                      </label>
+                    </div>
+                    <div class="field field--type-checkbox-block">
+                      <label class="field__label">
+                        <input type="checkbox" id="ui-checkbox-block-2" name="ui-checkbox-block" checked="checked" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Золоторожский Вал, д. 8</span>
+                      </label>
+                    </div>
+                    <div class="field field--type-checkbox-block field--disabled">
+                      <label class="field__label">
+                        <input type="checkbox" id="ui-checkbox-block-3" name="ui-checkbox-block" disabled="disabled" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Волоколамское шоссе, д.10, стр.3</span>
+                      </label>
+                    </div>
+                    <div class="field field--type-checkbox-block field--disabled">
+                      <label class="field__label">
+                        <input type="checkbox" id="ui-checkbox-block-4" name="ui-checkbox-block" checked="checked" disabled="disabled" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Москва, Красная площадь, д.1</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show active" id="ui-nav-radiobutton" role="tabpanel" aria-labelledby="ui-nav-radiobutton-tab">
+                    <h2 class="content-section__title">Радиокнопки</h2>
+                    <h3>Радиокнопки блоками</h3>
+                    <div class="field field--type-radio-block">
+                      <label class="field__label">
+                        <input type="radio" id="ui-radio-block-1" name="ui-radio-block" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Театральная аллея, д.3, стр.1</span>
+                      </label>
+                    </div>
+                    <div class="field field--type-radio-block">
+                      <label class="field__label">
+                        <input type="radio" id="ui-radio-block-2" name="ui-radio-block" checked="checked" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Золоторожский Вал, д. 8</span>
+                      </label>
+                    </div>
+                    <div class="field field--type-radio-block field--disabled">
+                      <label class="field__label">
+                        <input type="radio" id="ui-radio-block-3" name="ui-radio-block" disabled="disabled" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Волоколамское шоссе, д.10, стр.3</span>
+                      </label>
+                    </div>
+                    <div class="field field--type-radio-block field--disabled">
+                      <label class="field__label">
+                        <input type="radio" id="ui-radio-block-4" name="ui-radio-block" checked="checked" disabled="disabled" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">Москва, Москва, Красная площадь, д.1</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-tabs" role="tabpanel" aria-labelledby="ui-nav-tabs-tab"><h2 class="content-section__title">Табы</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-pagination" role="tabpanel" aria-labelledby="ui-nav-pagination-tab"><h2 class="content-section__title">Пагинация</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-breadcrumbs" role="tabpanel" aria-labelledby="ui-nav-breadcrumbs-tab">
+                    <h2 class="content-section__title">Хлебные крошки</h2>
+                    <nav class="breadcrumbs" id="breadcrumbs" aria-label="breadcrumb">
+                      <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                          <a href="/" property="item" typeof="WebPage"><span property="name">Главная</span></a>
+                          <meta property="position" content="1" />
+                        </li>
+                        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                          <a href="/" property="item" typeof="WebPage"><span property="name">Каталог</span></a>
+                          <meta property="position" content="2" />
+                        </li>
+                        <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem" aria-current="page">
+                          <span property="item" typeof="WebPage"><span property="name">Дизайн система</span></span>
+                          <meta property="position" content="2" />
+                        </li>
+                      </ol>
+                    </nav>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-tables" role="tabpanel" aria-labelledby="ui-nav-tables-tab"><h2 class="content-section__title">Таблицы</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-accordion" role="tabpanel" aria-labelledby="ui-nav-accordion-tab">
+                    <h2 class="content-section__title">Аккордеон</h2>
+                    <p>Представляет собой вертикально сложенный список элементов. Каждый элемент может быть «развёрнут» или «раскрыт», чтобы показать содержание, связанное с этим элементом.</p>
+                    <div class="accordion js-accordion" data-single>
+                      <div class="accordion-item js-accordion-item">
+                        <div class="accordion-header js-accordion-header"><span>Кладовщик магазина (м. Площадь Ильича)</span></div>
+                        <div class="accordion-body js-accordion-body">
+                          <h4>Обязанности</h4>
+                          <ul>
+                            <li>Приём и отгрузка товара;</li>
+                            <li>Выдача товара клиентам, оформление гарантийных документов;</li>
+                            <li>Поддержание порядка на складе;</li>
+                            <li>Участие в проведении инвентаризации.</li>
+                          </ul>
+                          <h4>Требования</h4>
+                          <ul>
+                            <li>Опрятный внешний вид и доброжелательность;</li>
+                            <li>Желательно иметь представление о технике в целом.</li>
+                          </ul>
+                          <h4>Условия</h4>
+                          <ul>
+                            <li>Место работы: м. Площадь Ильича;</li>
+                            <li>Заработная плата: 50 000 руб. в месяц на руки;</li>
+                            <li>Испытательный срок: 3 месяца;</li>
+                            <li>Своевременная выплата заработной платы;</li>
+                            <li>Отпуск 4 недели в год;</li>
+                            <li>График работы: сменный 4/3 с 10.00-22.00;</li>
+                            <li>Переработки оплачиваем.</li>
+                          </ul>
+                          <a class="btn btn-primary mb-3 js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane" data-form='{"theme":4, "comment":"Кладовщик магазина (м. Площадь Ильича)"}'>Отправить резюме</a>
+                        </div>
+                      </div>
+                      <div class="accordion-item js-accordion-item" disabled>
+                        <div class="accordion-header js-accordion-header"><span>Кладовщик склада техники</span></div>
+                        <div class="accordion-body js-accordion-body">
+                          <h4>Обязанности</h4>
+                          <ul>
+                            <li>Прием нового товара;</li>
+                            <li>Распределение товара на складе;</li>
+                            <li>Сбор товара по накладным;</li>
+                            <li>Проведение периодических инвентаризаций.</li>
+                          </ul>
+                          <h4>Требования</h4>
+                          <ul>
+                            <li>Опыт работы не требуется;</li>
+                            <li>Желательно иметь представление о технике в целом.</li>
+                          </ul>
+                          <h4>Условия</h4>
+                          <ul>
+                            <li>Заработная плата от 55 000 рублей;</li>
+                            <li>Своевременные выплаты;</li>
+                            <li>Чистый, оборудованный, комфортный и теплый склад;</li>
+                            <li>Подработки оплачиваются в повышенном размере;</li>
+                            <li>Доплаты за выслугу лет;</li>
+                            <li>Испытательный срок 3 месяца;</li>
+                            <li>Оплачиваемый отпуск: 4 недели в год;</li>
+                            <li>Место работы: ст. м. Кантемировская и ст. м. Чертановская;</li>
+                            <li>График: 4/3 с 8.00 до 20.00, плавающие выходные.</li>
+                          </ul>
+                          <a class="btn btn-primary mb-3 js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane" data-form='{"theme":4, "comment":"Кладовщик склада техники"}'>Отправить резюме</a>
+                        </div>
+                      </div>
+                      <div class="accordion-item js-accordion-item">
+                        <div class="accordion-header js-accordion-header"><span>Кладовщик магазина (м. Динамо)</span></div>
+                        <div class="accordion-body js-accordion-body">
+                          <h4>Обязанности</h4>
+                          <ul>
+                            <li>Приём и отгрузка товара;</li>
+                            <li>Выдача товара клиентам, оформление гарантийных документов;</li>
+                            <li>Поддержание порядка на складе;</li>
+                            <li>Участие в проведении инвентаризации.</li>
+                          </ul>
+                          <h4>Требования</h4>
+                          <ul>
+                            <li>Опрятный внешний вид и доброжелательность;</li>
+                            <li>Желательно иметь представление о технике в целом.</li>
+                          </ul>
+                          <h4>Условия</h4>
+                          <ul>
+                            <li>Место работы: м. Динамо;</li>
+                            <li>Заработная плата: 50 000 руб. в месяц на руки;</li>
+                            <li>Испытательный срок: 3 месяца;</li>
+                            <li>Своевременная выплата заработной платы;</li>
+                            <li>Отпуск 4 недели в год;</li>
+                            <li>График работы: сменный 4/3 с 10.00-22.00;</li>
+                            <li>Переработки оплачиваем.</li>
+                          </ul>
+                          <a class="btn btn-primary mb-3 js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane" data-form='{"theme":4, "comment":"Кладовщик магазина (м. Динамо)"}'>Отправить резюме</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-tooltip" role="tabpanel" aria-labelledby="ui-nav-tooltip-tab"><h2 class="content-section__title">Тултипы</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-popup" role="tabpanel" aria-labelledby="ui-nav-popup-tab"><h2 class="content-section__title">Всплывающее окно</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-progress" role="tabpanel" aria-labelledby="ui-nav-progress-tab"><h2 class="content-section__title">Индикатор прогресса</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-badge" role="tabpanel" aria-labelledby="ui-nav-badge-tab"><h2 class="content-section__title">Бейджи</h2></div>
+                  <div class="tab-pane fade" id="ui-nav-toast" role="tabpanel" aria-labelledby="ui-nav-toast-tab"><h2 class="content-section__title">Тостер</h2></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

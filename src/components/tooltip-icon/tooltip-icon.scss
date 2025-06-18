@@ -1,0 +1,15 @@
+.tooltip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // border-radius: 50%;
+  // background-color: var(--gray-300, $gray-300);
+  // color: var(--white, $white);
+  &:hover {
+    color: var(--primary, $primary);
+    // background-color: var(--primary, $primary);
+  }
+  .svg-icon {
+    flex: 0 0 auto;
+  }
+}

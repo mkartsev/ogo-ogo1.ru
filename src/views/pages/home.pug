@@ -1,0 +1,56 @@
+extends ../layouts/default
+
+include ../../components/brands-slider/brands-slider
+include ../../components/configurator/configurator
+include ../../components/categories-grid/categories-grid
+include ../../components/hero-slider/hero-slider
+include ../../components/main-banners/main-banners
+include ../../components/news-slider/news-slider
+include ../../components/shop-card/shop-card
+include ../../components/shops-slider/shops-slider
+
+append vars
+  -
+    page.name  = "index"
+    page.title = "Главная"
+    page.showHeader = false
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section.p-0
+    +hero-slider()
+
+  section.content-section
+    +main-banners--slider()
+
+  section.content-section
+    .row.g-3.g-lg-4
+      .col-12.col-md-6.col-lg-4
+        a(href="#").category-tile.category-tile--gaming
+          img(src="/assets/img/logo-gaming.png" alt="").category-tile__logo
+          .category-tile__img
+            img(src="/assets/img/content/category-tile-gaming.jpg" alt="")
+          span.category-tile__title ЗДЕСЬ ПОКУПАЮТ ГЕЙМЕРЫ
+
+      .col-12.col-md-6.col-lg-8
+        +configurator-tile()
+
+  section.content-section
+    .content-section__header
+      h2.content-section__title Новости и акции
+      +button(tag="a" href="/news.html" variant="sm" text="Посмотреть всё" iconRight="ui--arrow-right")
+
+    +news-slider()
+
+  section.content-section
+    +categories-grid--large()
+
+  section.content-section
+    h2.content-section__title Официальные бренд-зоны
+    +brands-slider()
+
+  section.content-section
+    h2.content-section__title Наши магазины
+    +shops-slider()

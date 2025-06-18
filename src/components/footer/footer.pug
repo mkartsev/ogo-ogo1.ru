@@ -1,0 +1,121 @@
+include ../pay-systems/pay-systems
+include ../social-buttons/social-buttons
+include ../svg-icon/svg-icon
+
+mixin footer-feature(title, subtitle, image)
+  .footer-feature&attributes(attributes)
+    img(src="/assets/img/" + image, class="footer-feature__img" alt=title)
+    span.footer-feature__title= title
+    span.footer-feature__subtitle= subtitle
+
+mixin footer-toolbar()
+  .footer-toolbar&attributes(attributes)
+    .container.p-0
+      .row.row-cols-5.g-0
+        .col
+          span.footer-toolbar__item.is-active
+            .footer-toolbar__item-icon
+              +svg-icon("ui--home")
+            span.footer-toolbar__item-text Главная
+        .col
+          button(type="button").footer-toolbar__item.js-button-catalog
+            .footer-toolbar__item-icon
+              +svg-icon("ui--menu-catalog")
+            span.footer-toolbar__item-text Каталог
+        .col
+          a(href="/cart.html").footer-toolbar__item
+            .footer-toolbar__item-icon
+              +svg-icon("ui--shopping-bag")
+              span.fs-6.badge.rounded-pill.position-absolute.top-0.end-0.bg-primary.js-cart-counter.hidden
+            span.footer-toolbar__item-text Корзина
+        .col
+          a(href=process.env.AUTH_URL).footer-toolbar__item.js-auth-popup
+            .footer-toolbar__item-icon
+              +svg-icon("ui--user")
+            span.footer-toolbar__item-text Войти
+        .col
+          button(type="button").footer-toolbar__item.js-button-sidebar
+            .footer-toolbar__item-icon
+              +svg-icon("ui--menu-more")
+            span.footer-toolbar__item-text Еще
+
+mixin footer()
+  footer.footer&attributes(attributes)
+    .footer-top
+      .container
+        .row.row-cols-1.row-cols-md-2.row-cols-xl-4.g-3.g-lg-4
+          .col
+            +footer-feature('Самовывоз сегодня', 'из магазина с 10:00 до 22:00', 'footer-feature-1.svg')
+          .col
+            +footer-feature('Официальная гарантия', 'на 30 225 товаров в наличии', 'footer-feature-2.svg')
+          .col
+            +footer-feature('Удобная доставка', 'днём и вечером ежедневно', 'footer-feature-3.svg')
+          .col
+            +footer-feature('Высокий рейтинг', 'на Я.Маркете с 2010 года', 'footer-feature-4.svg')
+
+    .footer-bottom
+      .container
+        .row.g-3.g-lg-4
+          .col-sm-12.col-md-4.col-lg-3.order-1
+            p.mb-0
+              strong Служба поддержки
+            p.mb-2
+              a(href="tel:+7 495 133-79-84").footer-phone.text-body.text-decoration-none +7 495 133-79-84
+            ul.list-unstyled
+              li
+                a(href=process.env.FEEDBACK_FORM_URL data-show-tab="#callback-tab-pane").text-decoration-none.js-feedback-popup Заказать звонок
+              li
+                a(href=process.env.FEEDBACK_FORM_URL data-show-tab="#question-tab-pane").text-decoration-none.js-feedback-popup Задать вопрос
+              li
+                a(href=process.env.FEEDBACK_FORM_URL data-show-tab="#complain-tab-pane").text-decoration-none.js-feedback-popup Пожаловаться
+            p.footer-copyright.d-none.d-lg-block
+              | © 2010–2023
+              br
+              | ООО «Гриффин Технолоджи»
+              br
+              | ОГРН: 1117746304884
+          .col-sm-12.col-md-4.col-lg-3.order-2
+            p.mb-1
+              strong Покупателям
+            ul.footer-links
+              li
+                a(href="/news.html") Новости и акции
+              li
+                a(href="/shops.html") Адреса магазинов
+              li
+                a(href="/delivery.html") Доставка и самовывоз
+              li
+                a(href="/service.html") Гарантия и возврат
+              li
+                a(href="/bonus.html") Бонусная программа
+          .col-sm-12.col-md-4.col-lg-3.order-3
+            p.mb-1
+              strong Информация
+            ul.footer-links
+              li
+                a(href="/job.html") Вакансии
+              li
+                a(href="/corporate.html") Корпоративным клиентам
+              li
+                a(href=process.env.SUPPLIER_FORM_URL).js-supplier-popup Поставщикам
+              li
+                a(href="#") Политика конфиденциальности
+          .col-12.col-md-4.order-5.order-md-4.d-lg-none
+            p.footer-copyright.mt-4
+              | © 2010–2023
+              br
+              | ООО «Гриффин Технолоджи»
+              br
+              | ОГРН: 1117746304884
+          .col-sm-12.col-md-8.col-lg-3.order-4.order-md-5
+            .row
+              .col-12.col-md-6.col-lg-12
+                p.mb-2
+                  strong Подписывайтесь
+                +social-buttons(class="mb-4")
+              .col-12.col-md-6.col-lg-12
+                p.mb-2
+                  strong Принимаем к оплате
+                +pay-systems()
+
+  +footer-toolbar().d-md-none

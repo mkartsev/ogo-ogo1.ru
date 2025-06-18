@@ -1,0 +1,11 @@
+mixin social-buttons()
+  .social-buttons&attributes(attributes)
+    +social-button('vk', 'vk.svg')
+    +social-button('telegram', 'tg.svg')
+    +social-button('google', 'google.svg')
+    +social-button('tinkoffId', 'tinkoffId.svg')
+    +social-button('yandex', 'yandex.svg')
+
+mixin social-button(title, image)
+  a(href="#").social-button&attributes(attributes)
+    img(src="/assets/img/icons/" + image, class="social-button__img" alt= title)

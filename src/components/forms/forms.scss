@@ -1,0 +1,77 @@
+.form {
+  &-control {
+    &:hover:not(:focus) {
+      border-color: var(--gray-400, $gray-400);
+    }
+  }
+
+  // &-checkout-contacts,
+  // &-checkout-delivery {
+  //   border: 1px solid var(--border-color, $border-color);
+  //   padding: $spacer;
+  // }
+
+  &-compare-controls {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: $spacer;
+  }
+
+  &-filters {
+    position: relative;
+  }
+
+  &-question {
+    fieldset {
+      padding: 0;
+    }
+  }
+
+  &-service-check {
+    margin: 0 rem(-20);
+    padding: rem(20);
+    background: var(--secondary, $secondary);
+
+    @include media-breakpoint-up(md) {
+      margin: 0 rem(-16);
+      padding: rem(16);
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+      padding: rem(32) 0;
+    }
+  }
+
+  &-error {
+    display: none;
+    padding: $spacer;
+    background: var(--primary-bg-subtle);
+    border-radius: var(--border-radius);
+  }
+}
+
+/* old styles override start */
+input[type="search"] {
+  box-sizing: border-box !important;
+}
+input.form-control,
+textarea.form-control {
+  width: unset;
+  width: 100%;
+  font-weight: unset;
+  font-weight: $input-font-weight;
+  font-size: unset;
+  @include font-size($input-font-size);
+  line-height: unset;
+  line-height: $input-line-height;
+  padding: unset;
+  padding: $input-padding-y $input-padding-x;
+  border: unset;
+  border: $input-border-width solid $input-border-color;
+  box-shadow: unset;
+  @include box-shadow($input-box-shadow);
+}
+
+/* old styles override end */

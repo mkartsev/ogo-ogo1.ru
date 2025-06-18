@@ -1,0 +1,17 @@
+mixin brands-grid()
+  -
+    var brands = [
+      { title: "Samsung", img: "/assets/img/icons/samsung.png" },
+      { title: "Lego", img: "/assets/img/icons/lego.png" },
+      { title: "Xiaomi", img: "/assets/img/icons/xiaomi.png" },
+      { title: "Funko", img: "/assets/img/icons/funko.png" },
+      { title: "Zuru", img: "/assets/img/icons/zuru.png" },
+      { title: "Hedda", img: "/assets/img/icons/thermos.png" }
+    ];
+
+  .brands-grid()&attributes(attributes)
+    .row.g-3.g-lg-4.row-cols-sm-2.row-cols-lg-4
+      each brand in brands
+        .col
+          a.brands-slide.js-tooltip(href="#", data-tooltip-content="<div style='text-align: center'>Реклама<br>Рекламодатель ООО “Гриффин Технолоджи”<br>XXXXXXXX</div>")
+            img(src= brand.img, alt= brand.title).brands-slide__img

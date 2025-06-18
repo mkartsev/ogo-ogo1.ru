@@ -1,0 +1,17 @@
+extends base
+
+include ../../components/breadcrumbs/breadcrumbs
+
+append vars
+
+block page
+  main.main
+    article.content
+      if page.showHeader
+        header.content-header
+          if page.showBreadcrumbs
+            +breadcrumbs().js-breadcrumbs
+          if page.showTitle
+            h1.page-title.js-page-title= page.title
+
+      block content

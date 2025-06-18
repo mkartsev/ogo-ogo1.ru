@@ -1,0 +1,279 @@
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/CeraPro-Regular.eot');
+  src: local('Cera Pro Regular'), local('CeraPro-Regular'),
+      url('../fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/CeraPro-Regular.woff') format('woff'),
+      url('../fonts/CeraPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/CeraPro-Medium.eot');
+  src: local('Cera Pro Medium'), local('CeraPro-Medium'),
+      url('../fonts/CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/CeraPro-Medium.woff') format('woff'),
+      url('../fonts/CeraPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/CeraPro-Bold.eot');
+  src: local('Cera Pro Bold'), local('CeraPro-Bold'),
+      url('../fonts/CeraPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/CeraPro-Bold.woff') format('woff'),
+      url('../fonts/CeraPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/CeraPro-Black.eot');
+  src: local('Cera Pro Black'), local('CeraPro-Black'),
+      url('../fonts/CeraPro-Black.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/CeraPro-Black.woff') format('woff'),
+      url('../fonts/CeraPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+.lego {
+  font-family: 'Cera Pro';
+}
+
+.lego-divider {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/navigation/divider.jpg');
+}
+.lego-divider span {
+  display: block;
+  min-width: 35%; /*320px;*/
+  max-height: 44px;
+  padding: 9px 14px;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 4px solid #000;
+  background: #fff;
+}
+/*
+.lego-divider.age {
+  background-image: url('../img/navigation/age.jpg');
+}
+.lego-divider.hits {
+  background-image: url('../img/navigation/hits.jpg');
+}
+.lego-divider.parameters {
+  background-image: url('../img/navigation/parameters.jpg');
+}
+*/
+.lego-section {
+  padding: 35px;
+}
+.lego-section.links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  margin-top: 24px;
+  background: url('../img/links/all.jpg')no-repeat center / contain;
+}
+.lego-section.copyright {
+  max-width: 50%;
+  color: #9A9A9A;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.lego-section.welcome {
+  height: 200px;
+  background: url('../img/welcome/welcome.jpg')no-repeat center / cover;
+}
+.lego-grid-2-cols,
+.lego-grid-4-cols,
+.lego-grid-6-cols {
+  display: grid;
+  grid-gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0 !important;
+}
+.lego-grid-2-cols {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(195px, 1fr);
+}
+.lego-grid-4-cols {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(238px, 1fr);
+}
+.lego-grid-6-cols {
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(155px, 1fr);
+}
+.lego-grid-2-cols .cell,
+.lego-grid-4-cols .cell,
+.lego-grid-6-cols .cell {
+  display: block;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: visible;
+}
+
+.series-grid .cell:first-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.series-grid .cell:nth-child(n+11),
+.interest-grid .cell:nth-child(n+4) {
+  display: none;
+}
+.series-grid .cell:last-child,
+.interest-grid .cell:last-child {
+  display: block;
+}
+.lego-callout {
+  padding: 30px 100px;
+  background: #fff;
+  border: 7px solid #000;
+}
+.lego-card {
+  display: flex;
+  width: 100%;
+}
+.lego-card img {
+  width: 100%;
+}
+.lego-list {
+  margin: 0;
+  padding: 0;
+  columns: 4;
+  column-gap: 20px;
+  list-style: none;
+}
+.lego-list li {
+  margin: 0;
+  font-family: 'Cera Pro';
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+.lego-list li a {
+  color: #000;
+  text-decoration: none;
+}
+.lego-list li a:hover {
+  text-decoration: underline;
+}
+.lego-title {
+  display: block;
+  margin-bottom: 24px;
+  margin-left: -3px;
+  font-family: 'Cera Pro';
+  /*font-size: 52px;*/
+  font-size: calc(24px + 28 * (100vw / 1280));
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1280px) {
+  .lego-callout {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  .lego-divider span {
+    min-width: 360px;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .lego-section {
+    padding: 24px 15px;
+  }
+  .lego-section.copyright {
+    max-width: 100%;
+  }
+  .lego-callout {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .lego-list {
+    columns: 5;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lego-section {
+    padding: 14px;
+  }
+  .lego-section.links {
+    min-height: 525px;
+    margin-top: 24px;
+    background: url('../img/links/all-small.jpg')no-repeat center / contain;
+  }
+  .lego-section.welcome {
+    height: 220px;
+    background: url('../img/welcome/welcome-small.jpg')no-repeat center / cover;
+  }
+  .lego-grid-2-cols {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(130px, 1fr);
+  }
+  .lego-grid-4-cols,
+  .lego-grid-6-cols {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(155px, 1fr);
+  }
+
+  .lego-divider {
+    background: url('../img/navigation/divider-small.jpg');
+  }
+  .lego-divider span {
+    min-width: 320px;
+    font-size: 16px;
+  }
+  /*
+  .lego-divider.age {
+    background: url('../img/navigation/age-small.jpg'), url('../img/navigation/divider-small.jpg');
+    background-repeat: no-repeat, repeat-x;
+    background-position: center, center;
+  }
+  .lego-divider.hits {
+    background-image: url('../img/navigation/hits-small.jpg'), url('../img/navigation/divider-small.jpg');
+    background-repeat: no-repeat, repeat-x;
+    background-position: center, center;
+  }
+  .lego-divider.parameters {
+    background: url('../img/navigation/parameters-small.jpg'), url('../img/navigation/divider-small.jpg');
+    background-repeat: no-repeat, repeat-x;
+    background-position: center, center;
+  }
+  */
+  .lego-callout {
+    max-width: 75%;
+    padding: 24px 14px;
+  }
+  .lego-title {
+    /*font-size: 24px;*/
+    font-size: calc(24px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
+    letter-spacing: 4px;
+  }
+  .lego-list {
+    columns: 1;
+  }
+  .lego-list li {
+    text-align: center;
+  }
+}

@@ -1,0 +1,10 @@
+.js-adult-block {
+  picture,
+  img,
+  .category-preview {
+    filter: blur(30px);
+    transition: none !important;
+    transform: translate3d(0,0,0) !important;
+    backface-visibility: hidden;
+  }
+}

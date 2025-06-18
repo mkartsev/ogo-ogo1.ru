@@ -1,0 +1,96 @@
+extends layouts/default
+
+append vars
+  -
+    template.cleanHeader = true
+    template.showFooter = false
+    page.name  = "index"
+    page.title = "Все страницы"
+    page.showTitle = false
+    page.showBreadcrumbs = false
+
+prepend scripts
+  //- Скрипты для страницы
+
+mixin page(filename, title, ready = true)
+  p
+    a(href=filename, class= ready ? "text-success is-ready" : "text-danger in-progress")!= title
+
+block content
+  style.
+    .in-progress:before,
+    .is-ready:before {
+      content: ''; display: inline-block; vertical-align: text-bottom; width: 18px; height: 18px; margin-right: 8px; background-size: 18px;
+    }
+    .in-progress:before {background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23DC3E48" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.167a6.833 6.833 0 1 0 0 13.666A6.833 6.833 0 0 0 8 1.167ZM.167 8a7.833 7.833 0 1 1 15.666 0A7.833 7.833 0 0 1 .167 8ZM8 3.1a.5.5 0 0 1 .5.5v4.09l2.657 1.33a.5.5 0 1 1-.447.894L7.776 8.447A.5.5 0 0 1 7.5 8V3.6a.5.5 0 0 1 .5-.5Z" clip-rule="evenodd"/></svg>');}
+    .is-ready:before {background-size: 18px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%237CB342" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.781 1.758a6.833 6.833 0 1 0 4.052 6.246v-.675a.5.5 0 1 1 1 0v.675a7.834 7.834 0 1 1-4.645-7.16.5.5 0 1 1-.407.914Zm4.906.026a.5.5 0 0 1 0 .707L8.354 9.83a.5.5 0 0 1-.708 0l-2.2-2.2a.5.5 0 1 1 .708-.706L8 8.77l6.98-6.987a.5.5 0 0 1 .707 0Z" clip-rule="evenodd"/></svg>');}
+
+  section.content-section
+    .row.g-3.g-lg-4
+      .col-12.col-md-6.col-lg-3
+        h2.content-section__title Основные страницы
+        +page("home.html", "Главная страница", true)
+        +page("auth.html", "Авторизация", true)
+        +page("registration.html", "Регистрация", true)
+        +page("404.html", "Страница не найдена", true)
+        +page("catalog.html", "Каталог", true)
+        +page("catalog-inner.html", "Каталог без сайдбара", true)
+        +page("market.html", "Каталог в 3 уровня", true)
+        +page("search.html", "Поиск", true)
+        +page("listing.html", "Листинг", true)
+        +page("product.html", "Страница товара", true)
+        +page("cart.html", "Корзина", true)
+        +page("order.html", "Чекаут", true)
+        +page("order-done.html", "Заказ оформлен", true)
+        +page("compare.html", "Сравнение", true)
+        +page("favorites.html", "Избранное", true)
+        +page("configurator.html", "Конфигуратор", true)
+        +page("events.html", "Конструктор новостей", true)
+        +page("shops.html", "Адреса магазинов", true)
+        +page("shops-inner.html", "Страница магазина", true)
+        +page("delivery.html", "Доставка", true)
+        +page("foreign.html", "Международная доставка", true)
+        +page("service.html", "Гарантия", true)
+        +page("corporate.html", "Корпоративным клиентам", true)
+        +page("news.html", "Новости и акции", true)
+        +page("privacy.html", "Политика конфиденциальности", true)
+        +page("oferta.html", "Публичная оферта", true)
+        +page("bonus.html", "Бонусная программа", true)
+        +page("job.html", "Вакансии", true)
+
+      .col-12.col-md-6.col-lg-3
+        h2.content-section__title Бренд зоны
+        +page("/brands/funko/index.html", "Funko", true)
+        +page("/brands/hedda/index.html", "Hedda", true)
+        +page("/brands/hedda/inner.html", "Hedda Внутренняя", true)
+        +page("/brands/hedda/layer.html", "Hedda Второй слой", true)
+        +page("/brands/inglesina/index.html", "Inglesina", true)
+        +page("/brands/inglesina/showroom.html", "Inglesina Шоурум", true)
+        +page("/brands/lego/index.html", "Lego", true)
+        +page("/brands/samsung/index.html", "Samsung", true)
+        +page("/brands/samsung/service.html", "Samsung Сервис", true)
+        +page("/brands/seni/index.html", "Seni", true)
+        +page("/brands/tangle/index.html", "Tangle Teezer", true)
+        +page("/brands/thermos/index.html", "Thermos", true)
+        +page("/brands/xiaomi/index.html", "Xiaomi", true)
+        +page("/brands/xiaomi/content.html", "Xiaomi Контент", true)
+        +page("/brands/zuru/index.html", "Zuru", true)
+
+      .col-12.col-md-6.col-lg-3
+        h2.content-section__title Личный кабинет
+        +page("/personal.html", "Начальная", false)
+        +page("/personal-orders.html", "Заказы", false)
+        +page("/personal-bonus.html", "Бонусы", false)
+        +page("/personal-profile.html", "Учетные данные", false)
+        +page("/personal-addresses.html", "Адреса", false)
+        +page("/personal-legal.html", "Юр. лицо", false)
+        +page("/personal-configurations.html", "Конфигурации", false)
+        +page("/personal-reviews.html", "Отзывы", false)
+        +page("/personal-questions.html", "Вопросы и ответы", false)
+
+
+      .col-12.col-md-6.col-lg-3
+        h2.content-section__title UI Элементы
+        +page("ui.html", "Дизайн система", true)
+        +page("ui-components.html", "Компоненты", true)
+        +page("ui-forms.html", "Формы", true)

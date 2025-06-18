@@ -1,0 +1,24 @@
+mixin photo-slider(array)
+  -
+    var slides = array || [
+      "/assets/img/content/products/product-full-1.jpg",
+      "/assets/img/content/products/product-full-2.jpg",
+      "/assets/img/content/products/product-full-3.jpg",
+      "/assets/img/content/products/product-full-4.jpg",
+      "/assets/img/content/products/product-full-5.jpg",
+      "/assets/img/content/products/product-full-6.jpg",
+      "/assets/img/content/products/product-full-7.jpg",
+      "/assets/img/content/products/product-full-8.jpg",
+      "/assets/img/content/products/product-full-9.jpg",
+      "/assets/img/content/products/product-full-10.jpg",
+      "/assets/img/content/products/product-full-11.jpg",
+    ]
+
+  .photo-slider.swiper&attributes(attributes)
+    .photo-slider__wrapper.swiper-wrapper
+      each slide in slides
+        .photo-slider__slide.swiper-slide
+          img(src= slide).photo-slider__image
+    .photo-slider__prev.swiper-button-prev
+    .photo-slider__next.swiper-button-next
+    .photo-slider__pagination.swiper-pagination

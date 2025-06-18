@@ -1,0 +1,15 @@
+.social-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  gap: rem(8);
+}
+.social-button {
+  display: inline-flex;
+  max-width: rem(32);
+  max-height: rem(32);
+  &__img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

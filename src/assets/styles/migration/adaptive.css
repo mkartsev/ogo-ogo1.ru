@@ -1,0 +1,242 @@
+@media screen and (max-width: 425px) {
+  .b-enter-modal__right-col {
+    padding-left: 0px;
+  }
+  .b-registration-modal__main {
+    margin-right: 50px;
+  }
+  .b-simple-form.iblock>p {
+    font-size: 14px;
+  }
+  .b-enter-modal__register-btn {
+    float: left;
+  }
+
+  .b-simple-form.iblock>h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+/* Фиксы ЛК */
+@media screen and (max-width: 425px) {
+  .b-bonus-card__field-input_right {
+    text-align: left;
+  }
+  
+  .profSave {
+    width: 100%;
+  }
+  
+  /* Фикс формы входа для мобильных платформ до 425px */
+  .b-enter-modal__header {
+    padding-right: 0px;
+  }
+
+  .b-enter-modal__register-btn {
+    float: right;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .b-product-price__art{
+    padding-left: 20px;
+  padding-right: 20px;
+  }
+  .full-width {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h2, .h2 {
+    font-size: 150%;
+  }
+  .c-header {
+    margin-bottom: 20px;
+  }
+  .c-header._mobile-fixed {
+    padding-top: 60px;
+    margin-bottom: 0;
+  }
+  .c-main-page__categories-holder {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .c-main-page__shops {
+    height: auto;
+    padding: 15% 20px;
+  }
+  .c-search__caption {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+  .c-search__input-holder {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .c-search__categories {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .c-news__header, .c-news__main-holder, .c-news-conditions{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .c-news__news-list-holder {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .c-news__list-col {
+    width: 50%;
+  }
+  .c-news .b-promo-block5__header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .c-contacts-list__detail-card .b-shop-card__header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .c-contacts-list__detail-card .b-shop-card__cols {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .c-contacts-list__main-holder {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .c-news__list-col {
+    width: 100%;
+  }
+  .b-feedback-product__cols{
+    flex-wrap: wrap;
+  }
+  #prod-3 .b-feedback-product__contact-col{
+    width: 100%;
+
+  }
+  #prod-3 .b-feedback-product__content-col{
+	width: 100%;
+    text-align: left;
+  }
+  h1, .h1 {
+    margin-bottom: 20px;
+    font-size: 150%;
+  }
+  h1:last-child, .h1:last-child {
+    margin-bottom: 0;
+  }
+  h2, .h2 {
+    margin-bottom: 30px;
+    font-size: 137.5%;
+  }
+  h2:last-child, .h2:last-child {
+    margin-bottom: 0;
+  }
+  .c-catalog__additional{
+    margin-top: 30px;
+  }
+  .b-product-price__art{
+      margin-bottom: 15px;
+        display: block;
+  text-align: center;
+  }
+  
+
+  /* .full-width {
+    padding-left: 10px;
+    padding-right: 10px;
+  } */
+  table.table {
+    display: none;
+  }
+  .mobile-hide {
+    display: none;
+  }
+  
+  .c-main-page__shops {
+    height: auto;
+    padding: 60px 20px;
+    font-size: 12px;
+  }
+  .c-search__caption {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .c-search__input-holder {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .c-search__categories {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .c-news__header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .c-news .b-news-plate__caption {
+    font-size: 18px;
+  }
+  .c-contacts-list__detail-card .b-shop-card__header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .c-contacts-list__detail-card .b-shop-card__cols {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .c-contacts-list__switcher {
+    display: none;
+  }
+  .fancybox-inner .b-questions-answer-modal {
+    min-width: 280px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  .c-main-page__categories-holder {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .c-news__header, .c-news__main-holder, .c-news-conditions {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .c-news .b-promo-block5__header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .c-news__news-list-holder {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fancybox-wrap {
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    margin-bottom: 0;
+	  position: fixed !important;
+    overflow: auto !important;
+  }
+  .fancybox-skin {
+    min-height: 100% !important;
+  }
+  .fancybox-inner {
+    width: 100% !important;
+  }
+  .fancybox-close {
+    font-size: 15px;
+  }
+}

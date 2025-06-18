@@ -1,0 +1,9 @@
+include ../product-card/product-card
+
+mixin products-slider()
+  .products-slider.swiper&attributes(attributes)
+    .products-slider__wrapper.swiper-wrapper
+      for product in products
+        .products-slider__slide.swiper-slide(data-section= product.category.title)
+          +product-card(variant="default", product=product)
+    .products-slider__pagination.swiper-pagination

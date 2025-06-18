@@ -1,0 +1,152 @@
+.funko h2 {
+  margin-top: 42px;
+  margin-bottom: 22px;
+  line-height: 40px;
+}
+.funko-logo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 24px auto;
+}
+.funko-logo img {
+  max-width: 230px;
+}
+.funko-grid {
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 15px 15px;
+  margin: 0;
+}
+.funko-card {
+  grid-column: span 2;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  aspect-ratio: 390 / 320;
+}
+.funko-card__img {
+  object-fit: cover;
+}
+.funko-card__img img {
+  display: block;
+  width: 100%;
+}
+.funko-card--med,
+.funko-card--big {
+  grid-column: span 3;
+  aspect-ratio: 595 / 320;
+}
+.funko-big-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 14px;
+  margin: 42px 0 0;
+}
+.funko-categories {
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 16px 18px;
+  margin: 0;
+}
+.funko-category {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  aspect-ratio: 185 / 136;
+}
+.funko-category__img {
+  object-fit: cover;
+}
+.funko-category__img img {
+  display: block;
+  width: 100%;
+}
+.funko-banner {
+  margin: 40px 0 0 0;
+}
+.funko-header__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.funko-header__img img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.funko-button {
+  margin: 32px 40px;
+  background: #3076BA;
+}
+
+.funko-button a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 12px;
+}
+@media screen and (max-width: 1040px) {
+  .funko-logo {
+    margin: 12px auto;
+  }
+  .funko h2 {
+    margin-bottom: 5px;
+    margin-top: 22px;
+  }
+  .funko-grid {
+    padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .funko-categories {
+    padding: 0 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  .funko-category {
+    aspect-ratio: 245 / 181;
+  }
+  .funko-card,
+  .funko-card--med {
+    grid-column: span 1;
+    aspect-ratio: 164 / 115;
+  }
+  .funko-card--big {
+    grid-column: span 2;
+    aspect-ratio: 67 / 23;
+  }
+  .funko-banner {
+    margin: 30px 0 0 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .funko-categories {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .funko-banner {
+    margin: 20px 0 0 0;
+  }
+  .funko-button {
+    margin: 20px;
+  }
+  .funko-button a {
+    padding: 7px;
+  }
+}

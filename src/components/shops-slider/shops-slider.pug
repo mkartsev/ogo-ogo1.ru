@@ -1,0 +1,11 @@
+include ../shop-card/shop-card
+
+mixin shops-slider()
+  .shops-slider.swiper&attributes(attributes)
+    .shops-slider__wrapper.swiper-wrapper
+      each shop in shops
+        .shops-slider__slide.swiper-slide
+          +shop-card(shop)
+    .shops-slider__prev.swiper-button-prev
+    .shops-slider__next.swiper-button-next
+    .shops-slider__pagination.swiper-pagination

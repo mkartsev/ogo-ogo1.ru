@@ -1,0 +1,35 @@
+mixin brands-slider()
+  -
+    var slides = [
+      { title: "Samsung", img: "/assets/img/icons/samsung.png" },
+      { title: "Lego", img: "/assets/img/icons/lego.png" },
+      { title: "Xiaomi", img: "/assets/img/icons/xiaomi.png" },
+      { title: "Funko", img: "/assets/img/icons/funko.png" },
+      { title: "Zuru", img: "/assets/img/icons/zuru.png" },
+      { title: "Hedda", img: "/assets/img/icons/thermos.png" },
+      { title: "Seni", img: "/assets/img/icons/seni.png" },
+      { title: "Tangle teezer", img: "/assets/img/icons/tangle.png" },
+      { title: "Samsung", img: "/assets/img/icons/samsung.png" },
+      { title: "Lego", img: "/assets/img/icons/lego.png" },
+      { title: "Xiaomi", img: "/assets/img/icons/xiaomi.png" },
+      { title: "Funko", img: "/assets/img/icons/funko.png" },
+      { title: "Zuru", img: "/assets/img/icons/zuru.png" },
+      { title: "Hedda", img: "/assets/img/icons/thermos.png" },
+      { title: "Seni", img: "/assets/img/icons/seni.png" },
+      { title: "Tangle teezer", img: "/assets/img/icons/tangle.png" }
+    ];
+
+  .brands-slider.swiper
+    .swiper-wrapper
+      .swiper-slide
+        a.brands-slide.js-tooltip(href="#", data-tooltip-content="<div style='text-align: center'>Реклама<br>Рекламодатель ООО “Гриффин Технолоджи”<br>XXXXXXXX</div>")
+          img(src="/assets/img/icons/samsung.png", class="brands-slide__img", alt="Samsung")
+
+      each slide in slides
+        .swiper-slide
+          a(href="#").brands-slide
+            img(src= slide.img, alt= slide.title).brands-slide__img
+
+    .brands-slider__prev.swiper-button-prev
+    .brands-slider__next.swiper-button-next
+    .brands-slider__pagination.swiper-pagination

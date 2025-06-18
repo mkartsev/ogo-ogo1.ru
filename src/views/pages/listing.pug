@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+include ../../components/hero/hero
+include ../../components/listing/listing
+
+append vars
+  -
+    page.name  = "listing"
+    page.title = "Листинг товаров"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section.mb-0.p-0
+    +hero("/assets/img/content/hero-slim.jpg", "/assets/img/content/hero-slim-small.jpg", "/catalog.html").m-0
+
+  section.content-section.mb-0.p-0
+    +listing-section(filters=true, pagination=true, columns=3, tags=true)

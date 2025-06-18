@@ -1,0 +1,248 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "xiaomi-inner"
+    page.title = "Бренд-зона Xiaomi"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.xiaomi
+
+    nav.xiaomi-nav
+      img.xiaomi-logo(src="./img/logo.png" alt="логотип Xiaomi")
+      ul
+        li
+          a(href="#") Мобильная техника
+          ul
+            li
+              a(href="#") Смартфоны
+            li
+              a(href="#") Умные часы
+            li
+              a(href="#") Умные часы
+            li
+              a(href="#") Фитнес-браслеты
+        li
+          a(href="#") Умные устройства
+          ul
+            li
+              a(href="#") Роутеры
+            li
+              a(href="#") Системы управления
+            li
+              a(href="#") Датчики
+            li
+              a(href="#") IP-камеры
+            li
+              a(href="#") Освещение
+            li
+              a(href="#") Медиаплееры
+        li
+          a(href="#") Умная бытовая техника
+          ul
+            li
+              a(href="#") Техника для дома
+            li
+              a(href="#") Климатическая техника
+            li
+              a(href="#") Техника для кухни
+            li
+              a(href="#") Красота и здоровье
+            li
+              a(href="#") Роботы пылесосы
+        li
+          a(href="#") Аудио и аксессуары
+          ul
+            li
+              a(href="#") Наушники
+            li
+              a(href="#") Беспроводные наушники
+            li
+              a(href="#") Колонки
+            li
+              a(href="#") Внешние аккумуляторы
+            li
+              a(href="#") Беспроводные ЗУ
+            li
+              a(href="#") Рюкзаки для ноутбуков
+
+    section.xiaomi-hero
+      picture.xiaomi-hero__image
+        source(media="(max-width: 640px)" srcset="./img/hero-small.jpg")
+        source(media="(min-width: 641px)" srcset="./img/hero.jpg")
+        img(src="./img/hero.jpg" alt="Redmi Buds 3 Pro")
+
+      .xiaomi-hero-content
+        h2.xiaomi-hero__title Redmi Buds 3 Pro
+        h3.xiaomi-hero__subtitle Звук, который вам нужен
+        .xiaomi-hero__desc Интеллектуальное шумоподавление 35 дБ* | Возможность подключения к двум устройствам | Беспроводная зарядка | До 28 часов работы от аккумулятора
+        .xiaomi-hero__price 5 990 ₽
+        a.xiaomi-btn.xiaomi-btn--black.xiaomi-hero__button(href="#") Купить
+      .xiaomi-hero-footer
+        .xiaomi-hero__smalltext Только в мобильных телефонах Redmi компании Xiaomi предусмотрена функция адаптивного шумоподавления ИИ. Совместимые модели будут опубликованы позднее. Для того чтобы воспользоваться данной функцией, пользователям необходимо обновить операционную систему своего телефона до последней версии MIUI.
+
+    section.xiaomi-advantages
+      .xiaomi-advantages-grid
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Активное шумоподавление 35 дБ
+          span.xiaomi-advantage__subtitle Доступны 3 настройки для регулировки*
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Быстрая зарядка
+          span.xiaomi-advantage__subtitle До трех часов работы после десяти минут зарядки
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Интеллектуальное подключение к двум устройствам
+          span.xiaomi-advantage__subtitle Совместимость с несколькими системами
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Беспроводная зарядка
+          span.xiaomi-advantage__subtitle Зарядка начинается, когда футляр находится в пределах досягаемости
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Автоматическая калибровка шумоподавления ИИ
+          span.xiaomi-advantage__subtitle Регулировка глубины адаптивного шумоподавления*
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Режим двойного отслеживания внешнего шума
+          span.xiaomi-advantage__subtitle Возможность свободно разговаривать, не снимая наушники
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Композитный драйвер с диафрагмой 9 мм
+          span.xiaomi-advantage__subtitle Откалибровано в лаборатории звука Xiaomi
+        .xiaomi-advantage
+          span.xiaomi-advantage__title Использование с зарядным футляром до 28 часова
+          span.xiaomi-advantage__subtitle Время работы аккумулятора до 6 часов на одном заряде
+      .xiaomi-advantages-smalltext
+        | Только в мобильных телефонах Redmi компании Xiaomi предусмотрена функция адаптивного шумоподавления ИИ. Совместимые модели будут опубликованы позднее. Для того чтобы воспользоваться данной функцией, пользователям необходимо обновить операционную систему своего телефона до последней версии MIUI.
+        br
+        | * Только мобильные телефоны Redmi и Xiaomi поддерживают переключение в двойном режиме восприятия внешних звуков. Совместимые модели будут опубликованы последовательно. Для того чтобы воспользоваться данной функцией, пользователям необходимо обновить операционную систему своего телефона до последней версии MIUI.
+        br
+        | * Только телефоны Xiaomi и Redmi поддерживают 3 режима регулировки. Адаптированные модели будут выпускаться партиями, и их необходимо будет обновить до последней версии MIUI.
+
+    section.xiaomi-section
+      span.h2 Стандартный слайдер
+      section.xiaomi-section
+        .xiaomi-features
+          //- БЛОК ПРЕИМУЩЕСТВА, ДОБАВИТЬ ПО ЖЕЛАНИЮ
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_1.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Глубокое шумоподавление 35 дБ. Наслаждайтесь миром с меньшим количеством фонового шума
+              span.xiaomi-feature__desc В наушниках используется технология двойного активного шумоподавления с двумя микрофонами: один отслеживает внешний шум, а второй применяется для обратной связи. Они эффективно подавляют внешний шум и уменьшают избыточный шум в ушном канале. Глубина шумоподавления может достигать 35 дБ.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_2.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Автоматическая калибровка шумоподавления c ИИ
+              span.xiaomi-feature__desc Алгоритм ИИ оценивает обстановку на основе уровня внешнего шума и привычек пользователя. Настройте глубину шумоподавления в зависимости от окружающей среды.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_3.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Три микрофона для отсечения шумов при вызовах. Чистый звук в шумной обстановке
+              span.xiaomi-feature__desc Три микрофона вместе с алгоритмом шумоподавления при вызовах, который реализуется с помощью нейросетевой модели, могут точно улавливать голоса людей и при этом эффективно снижать фоновые внешние шумы. Технология обеспечивает чистоту звука без помех во время общения в шумной обстановке.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_4.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Режим двойного отслеживания внешнего шума
+              span.xiaomi-feature__desc Позволяет слышать внешние звуки без необходимости извлекать наушники из ушей. В режиме восприятия внешних звуков вы по-прежнему сможете четко слышать внешние звуки без необходимости извлекать наушники из ушей. Переключитесь в режим усиления голоса для более четкого звучания голоса. Вы можете спокойно общаться с другом, не снимая наушники.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_5.jpg" alt="Redmi Buds 3 Pro}")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Композитный драйвер с диафрагмой 9 мм. Более детализированный звук
+              span.xiaomi-feature__desc Композитный драйвер с диафрагмой 9 мм обеспечивает превосходное качество звука. После профессиональной калибровки в лаборатории звука Xiaomi высокочастотный звук становится чистым и не искаженным, а низкочастотный звук — насыщенным и чистым, с более утонченным качеством звучания.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_6.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title 28 часов работы от аккумулятора. Наслаждайтесь музыкой в течение долгого времени
+              span.xiaomi-feature__desc Благодаря встроенному чипу с низким энергопотреблением наушники могут работать до 6 часов* на одной зарядке. Благодаря зарядному футляру наушники могут работать до 28 часов. Таким образом, вы можете наслаждаться музыкой часами напролет.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_7.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Поддерживает быструю зарядку и беспроводную зарядку
+              span.xiaomi-feature__desc Благодаря быстрой зарядке наушники заряжаются всего за 10 минут, а затем позволяют слушать музыку в течение 3 часов. Если аккумулятор разряжается, сделайте небольшой перерыв и дайте ему зарядиться. Зарядный футляр также поддерживает беспроводную зарядку Qi, что делает процесс зарядки очень удобным.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_8.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Возможность одновременного подключения к двум устройствам
+              span.xiaomi-feature__desc Интеллектуальное переключение между развлечениями и работой Текст: Одни и те же наушники могут быть подключены одновременно к двум устройствам, работающим на таких платформах, как Android, iOS и Windows, что позволяет легко переключаться между развлечениями и работой. Сопряжение с Bluetooth осуществляется путем открытия коробки наушников рядом с телефоном или быстрого нажатия на всплывающее окно*, что позволяет воспользоваться новым быстрым способом подключения.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_9.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Коснитесь дважды, чтобы ответить на звонок
+              span.xiaomi-feature__desc Коснитесь тыльной стороны наушников для переключения режимов, включения паузы, возобновления воспроизведения музыки и т. д. Также поддерживается функция голосового управления.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_10.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Обнаружение наушника в ухе
+              span.xiaomi-feature__desc При извлечении наушников происходит автоматическая приостановка воспроизведения музыки. Воспроизведение музыки возобновляется, если снова надеть наушники.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_11.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Защита от воды IPX4
+              span.xiaomi-feature__desc Всесторонняя защита корпуса от пота и брызг. Тестирование влагостойкости по стандарту IPX4. В соответствии со степенью защиты корпуса (IP-код) GB/T 4208-2017, он прошел тест, проведенный Suzhou Institute of Product Quality Supervision and Inspection. Номер отчета об испытании: WPHE210546. Результат испытаний показал, что он соответствует стандарту GB/T 4208-2017.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_12.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Сменные силиконовые амбушюры в комплекте
+              span.xiaomi-feature__desc На выбор предлагается три размера амбушюр на усмотрение пользователя, включая большой, средний и маленький, обеспечивая более комфортное использование.
+          .xiaomi-feature
+            .xiaomi-feature-image
+              img(src="https://ogo1.ru/upload/news-image/xiaomi/488х488_13.jpg" alt="Redmi Buds 3 Pro")
+            .xiaomi-feature-content
+              span.xiaomi-feature__title Сменные силиконовые амбушюры в комплекте
+              span.xiaomi-feature__desc Вы можете определить местоположение наушников с помощью звукового сигнала в радиусе действия подключения Bluetooth.
+      section.xiaomi-section
+        .xiaomi-stats
+          .xiaomi-stat
+            .xiaomi-stat__icon ☼
+            span.xiaomi-stat__title Стандартная мощность всасывания
+            span.xiaomi-stat__main 65
+            span.xiaomi-stat__sub Минут
+          .xiaomi-stat
+            .xiaomi-stat__icon ☼
+            span.xiaomi-stat__title Удаление въевшихся загрязнений
+            span.xiaomi-stat__main 30
+            span.xiaomi-stat__sub Минут
+          .xiaomi-stat
+            .xiaomi-stat__icon ☼
+            span.xiaomi-stat__title Полная выходная мощность
+            span.xiaomi-stat__main 10
+            span.xiaomi-stat__sub Минут
+          .xiaomi-stat
+            .xiaomi-stat__icon ☼
+            span.xiaomi-stat__title Стандартная мощность всасывания
+            span.xiaomi-stat__main 65
+            span.xiaomi-stat__sub Минут
+          .xiaomi-stat
+            .xiaomi-stat__icon ☼
+            span.xiaomi-stat__title Удаление въевшихся загрязнений
+            span.xiaomi-stat__main 30
+            span.xiaomi-stat__sub Минут
+          .xiaomi-stat
+            .xiaomi-stat__icon ☼
+            span.xiaomi-stat__title Полная выходная мощность
+            span.xiaomi-stat__main 10
+            span.xiaomi-stat__sub Минут
+      section.xiaomi-section.narrow
+        a.xiaomi-video(href="#")
+          .xiaomi-video__preview-wrapper
+            img.xiaomi-video__preview(src="./img/video.jpg", alt)
+            span.xiaomi-video__play
+      section.xiaomi-section
+        span.h2 Карточки товаров

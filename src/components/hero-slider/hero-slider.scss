@@ -1,0 +1,27 @@
+.hero-slider {
+  &__wrapper {
+    aspect-ratio: 5 / 4;
+  }
+
+  &__slide > a {
+    height: 100%;
+  }
+  &__slide > a,
+  &__slide > a picture,
+  &__slide > a source,
+  &__slide > a img {
+    display: block;
+    width: 100%;
+    user-select: none;
+  }
+
+  // &.swiper-initialized {
+  //   height: auto;
+  // }
+
+  @include media-breakpoint-up(md) {
+    &__wrapper {
+      aspect-ratio: 128 / 35;
+    }
+  }
+}

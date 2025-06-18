@@ -1,0 +1,24 @@
+extends ../layouts/default
+
+include ../../components/news-card/news-card
+include ../../components/pagination/pagination
+
+append vars
+  -
+    page.name  = "news"
+    page.title = "Новости и акции"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-3.g-lg-4
+      for item in news
+        .col
+          +news-card(item)
+
+    +pagination().mt-6

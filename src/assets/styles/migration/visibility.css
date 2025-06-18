@@ -1,0 +1,103 @@
+/* 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 640px,
+  lg: 1024px,
+  xl: 1280px
+);
+*/
+@media print, screen and (max-width: 479px) {
+  .hide-for-xsmall-only,
+  .hide-for-xs-only {
+    display: none!important
+  }
+}
+@media screen and (max-width: 0em), screen and (min-width: 480px) {
+  .show-for-xsmall-only,
+  .show-for-xs-only {
+    display: none!important
+  }
+}
+@media print, screen and (max-width: 639px) {
+  .hide-for-small-only,
+  .hide-for-sm-only {
+    display: none!important
+  }
+}
+@media screen and (max-width: 0em), screen and (min-width: 640px) {
+  .show-for-small-only,
+  .show-for-sm-only {
+    display: none!important
+  }
+}
+@media print, screen and (min-width: 640px) {
+  .hide-for-medium,
+  .hide-for-md {
+    display: none!important
+  }
+}
+@media screen and (max-width: 639px) {
+  .show-for-medium,
+  .show-for-md {
+    display: none!important
+  }
+}
+@media print, screen and (min-width: 640px) and (max-width: 1023px) {
+  .hide-for-medium-only {
+    display: none!important
+  }
+}
+@media screen and (max-width: 639px), screen and (min-width: 1024px) {
+  .show-for-medium-only {
+    display: none!important
+  }
+}
+@media print, screen and (min-width: 1024px) {
+  .hide-for-large,
+  .hide-for-lg {
+    display: none!important
+  }
+}
+@media screen and (max-width: 1023px) {
+  .show-for-large,
+  .show-for-lg {
+    display: none!important
+  }
+}
+@media print, screen and (min-width: 1024px) and (max-width: 1279px) {
+  .hide-for-large-only,
+  .hide-for-lg-only {
+    display: none!important
+  }
+}
+@media screen and (max-width: 1023px), screen and (min-width: 1280px) {
+  .show-for-large-only,
+  .show-for-lg-only {
+    display: none!important
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hide-for-xlarge,
+  .hide-for-xl {
+    display: none!important
+  }
+}
+@media screen and (max-width: 1279px) {
+  .show-for-xlarge,
+  .show-for-xl {
+    display: none!important
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hide-for-xlarge-only,
+  .hide-for-xl-only {
+    display: none!important
+  }
+}
+@media screen and (max-width: 1279px) {
+  .show-for-xlarge-only,
+  .show-for-xl-only {
+    display: none!important
+  }
+}

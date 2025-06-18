@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Все страницы</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header header--clean">
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">библиотека компонентов</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header"></header>
+          <style>
+            .in-progress:before,
+            .is-ready:before {
+              content: "";
+              display: inline-block;
+              vertical-align: text-bottom;
+              width: 18px;
+              height: 18px;
+              margin-right: 8px;
+              background-size: 18px;
+            }
+            .in-progress:before {
+              background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23DC3E48" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.167a6.833 6.833 0 1 0 0 13.666A6.833 6.833 0 0 0 8 1.167ZM.167 8a7.833 7.833 0 1 1 15.666 0A7.833 7.833 0 0 1 .167 8ZM8 3.1a.5.5 0 0 1 .5.5v4.09l2.657 1.33a.5.5 0 1 1-.447.894L7.776 8.447A.5.5 0 0 1 7.5 8V3.6a.5.5 0 0 1 .5-.5Z" clip-rule="evenodd"/></svg>');
+            }
+            .is-ready:before {
+              background-size: 18px;
+              background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%237CB342" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.781 1.758a6.833 6.833 0 1 0 4.052 6.246v-.675a.5.5 0 1 1 1 0v.675a7.834 7.834 0 1 1-4.645-7.16.5.5 0 1 1-.407.914Zm4.906.026a.5.5 0 0 1 0 .707L8.354 9.83a.5.5 0 0 1-.708 0l-2.2-2.2a.5.5 0 1 1 .708-.706L8 8.77l6.98-6.987a.5.5 0 0 1 .707 0Z" clip-rule="evenodd"/></svg>');
+            }
+          </style>
+          <section class="content-section">
+            <div class="row g-3 g-lg-4">
+              <div class="col-12 col-md-6 col-lg-3">
+                <h2 class="content-section__title">Основные страницы</h2>
+                <p><a class="text-success is-ready" href="home.html">Главная страница</a></p>
+                <p><a class="text-success is-ready" href="auth.html">Авторизация</a></p>
+                <p><a class="text-success is-ready" href="registration.html">Регистрация</a></p>
+                <p><a class="text-success is-ready" href="404.html">Страница не найдена</a></p>
+                <p><a class="text-success is-ready" href="catalog.html">Каталог</a></p>
+                <p><a class="text-success is-ready" href="catalog-inner.html">Каталог без сайдбара</a></p>
+                <p><a class="text-success is-ready" href="market.html">Каталог в 3 уровня</a></p>
+                <p><a class="text-success is-ready" href="search.html">Поиск</a></p>
+                <p><a class="text-success is-ready" href="listing.html">Листинг</a></p>
+                <p><a class="text-success is-ready" href="product.html">Страница товара</a></p>
+                <p><a class="text-success is-ready" href="cart.html">Корзина</a></p>
+                <p><a class="text-success is-ready" href="order.html">Чекаут</a></p>
+                <p><a class="text-success is-ready" href="order-done.html">Заказ оформлен</a></p>
+                <p><a class="text-success is-ready" href="compare.html">Сравнение</a></p>
+                <p><a class="text-success is-ready" href="favorites.html">Избранное</a></p>
+                <p><a class="text-success is-ready" href="configurator.html">Конфигуратор</a></p>
+                <p><a class="text-success is-ready" href="events.html">Конструктор новостей</a></p>
+                <p><a class="text-success is-ready" href="shops.html">Адреса магазинов</a></p>
+                <p><a class="text-success is-ready" href="shops-inner.html">Страница магазина</a></p>
+                <p><a class="text-success is-ready" href="delivery.html">Доставка</a></p>
+                <p><a class="text-success is-ready" href="foreign.html">Международная доставка</a></p>
+                <p><a class="text-success is-ready" href="service.html">Гарантия</a></p>
+                <p><a class="text-success is-ready" href="corporate.html">Корпоративным клиентам</a></p>
+                <p><a class="text-success is-ready" href="news.html">Новости и акции</a></p>
+                <p><a class="text-success is-ready" href="privacy.html">Политика конфиденциальности</a></p>
+                <p><a class="text-success is-ready" href="oferta.html">Публичная оферта</a></p>
+                <p><a class="text-success is-ready" href="bonus.html">Бонусная программа</a></p>
+                <p><a class="text-success is-ready" href="job.html">Вакансии</a></p>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <h2 class="content-section__title">Бренд зоны</h2>
+                <p><a class="text-success is-ready" href="/brands/funko/index.html">Funko</a></p>
+                <p><a class="text-success is-ready" href="/brands/hedda/index.html">Hedda</a></p>
+                <p><a class="text-success is-ready" href="/brands/hedda/inner.html">Hedda Внутренняя</a></p>
+                <p><a class="text-success is-ready" href="/brands/hedda/layer.html">Hedda Второй слой</a></p>
+                <p><a class="text-success is-ready" href="/brands/inglesina/index.html">Inglesina</a></p>
+                <p><a class="text-success is-ready" href="/brands/inglesina/showroom.html">Inglesina Шоурум</a></p>
+                <p><a class="text-success is-ready" href="/brands/lego/index.html">Lego</a></p>
+                <p><a class="text-success is-ready" href="/brands/samsung/index.html">Samsung</a></p>
+                <p><a class="text-success is-ready" href="/brands/samsung/service.html">Samsung Сервис</a></p>
+                <p><a class="text-success is-ready" href="/brands/seni/index.html">Seni</a></p>
+                <p><a class="text-success is-ready" href="/brands/tangle/index.html">Tangle Teezer</a></p>
+                <p><a class="text-success is-ready" href="/brands/thermos/index.html">Thermos</a></p>
+                <p><a class="text-success is-ready" href="/brands/xiaomi/index.html">Xiaomi</a></p>
+                <p><a class="text-success is-ready" href="/brands/xiaomi/content.html">Xiaomi Контент</a></p>
+                <p><a class="text-success is-ready" href="/brands/zuru/index.html">Zuru</a></p>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <h2 class="content-section__title">Личный кабинет</h2>
+                <p><a class="text-danger in-progress" href="/personal.html">Начальная</a></p>
+                <p><a class="text-danger in-progress" href="/personal-orders.html">Заказы</a></p>
+                <p><a class="text-danger in-progress" href="/personal-bonus.html">Бонусы</a></p>
+                <p><a class="text-danger in-progress" href="/personal-profile.html">Учетные данные</a></p>
+                <p><a class="text-danger in-progress" href="/personal-addresses.html">Адреса</a></p>
+                <p><a class="text-danger in-progress" href="/personal-legal.html">Юр. лицо</a></p>
+                <p><a class="text-danger in-progress" href="/personal-configurations.html">Конфигурации</a></p>
+                <p><a class="text-danger in-progress" href="/personal-reviews.html">Отзывы</a></p>
+                <p><a class="text-danger in-progress" href="/personal-questions.html">Вопросы и ответы</a></p>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <h2 class="content-section__title">UI Элементы</h2>
+                <p><a class="text-success is-ready" href="ui.html">Дизайн система</a></p>
+                <p><a class="text-success is-ready" href="ui-components.html">Компоненты</a></p>
+                <p><a class="text-success is-ready" href="ui-forms.html">Формы</a></p>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

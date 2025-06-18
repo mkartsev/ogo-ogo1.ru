@@ -1,0 +1,21 @@
+.checklist {
+  &-item {
+    position: relative;
+    display: block;
+    padding-left: 34px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-size: 24px;
+      background: url('../img/icons/unchecked.svg') no-repeat center center / contain;
+    }
+
+    &.checked:before {
+      background: url('../img/icons/checked.svg') no-repeat center center / contain;
+    }
+  }
+}

@@ -1,0 +1,389 @@
+include ../button/button
+include ../popup/popup
+include ../product-card/product-card
+
+mixin checkout-alert()
+  .alert.alert-light.fs-4.ps-6.position-relative
+    +svg-icon("ui--info-fill", "sm")(class="position-absolute ms-3 top-50 start-0 translate-middle-y text-info")
+    block
+
+mixin checkout-alerts()
+  .checkout-alerts&attributes(attributes)
+    +checkout-alert()
+      |Стоимость товаров из-за рубежа превышает 200€, заказ облагается пошлиной.
+      a(href="#popup-foreign-overpriced" data-fancybox) Подробнее
+      +popup-foreign-overpriced()
+
+    +checkout-alert()
+      |Некоторые из товаров в корзине находятся на складе в Москве.<br>Они приедут к вам быстрее, если оформить отдельный заказ на товары из-за рубежа.
+
+    +checkout-alert()
+      |В корзине более трёх одинаковых товаров из-за рубежа.
+      a(href="#popup-foreign-many" data-fancybox) Подробнее
+      +popup-foreign-many()
+
+mixin checkout-steps(options = {})
+  - let step = options.step
+  .checkout-steps&attributes(attributes)
+    .checkout-steps__item(class= step == 1 ? 'is-active' : '')
+      span.d-none.d-md-inline Корзина
+      span.d-md-none Шаг 1
+    .checkout-steps__item(class= step == 2 ? 'is-active' : '')
+      span.d-none.d-md-inline Получатель
+      span.d-md-none Шаг 2
+    .checkout-steps__item(class= step == 3 ? 'is-active' : '')
+      span.d-none.d-md-inline Получение
+      span.d-md-none Шаг 3
+    .checkout-steps__item(class= step == 4 ? 'is-active' : '')
+      span.d-none.d-md-inline Подтверждение
+      span.d-md-none Шаг 4
+
+mixin checkout-tabs(tabs)
+  .btn-group&attributes(attributes)
+    each tab in tabs
+      +button(variant="outline-info" text=tab.name class=`${tab.active ? " active" : ""}`)
+
+mixin checkout-total()
+  .checkout-total__row
+    .checkout-total__row-title Стоимость товаров
+    .checkout-total__row-value 47 790 ₽
+  .checkout-total__row
+    .checkout-total__row-title Скидка
+    .checkout-total__row-value.text-primary -2 340 ₽
+  .checkout-total__price
+    span.checkout-total__price-title Итоговая стоимость:
+    span.checkout-total__price-value 47 790 ₽
+  .checkout-total__bonus
+    +svg-icon("ui--bonus", "xs").text-info
+    | 120 бонусов
+  +button(variant="primary" class="checkout-total__btn w-100 mt-5 mb-3" text="Оформить заказ")
+  .form-text Наличие в магазинах, доступные способы доставки и оплаты можно выбрать на следующем этапе
+
+mixin checkout-total-items()
+  .checkout-total__items&attributes(attributes)
+    each product in products
+      +product-card(variant="cart-total", product=product)
+
+mixin checkout-sidebar(options = {})
+  - let showItems = options.showItems
+  .checkout-sidebar&attributes(attributes)
+    p.checkout-sidebar__title= showItems ? "Состав заказа" : "Ваш заказ"
+    if (showItems)
+      +checkout-total-items()
+    +checkout-total()
+
+mixin checkout-delivery-points(points)
+  .checkout-delivery__points&attributes(attributes)
+    each point in points
+      +checkout-delivery-point(point)
+
+mixin checkout-delivery-point(point)
+  -
+    const SELECTED_DELIVERY_ID = {
+      "DELIVERY": "6f9d6ff2ee8182eec6c3135045c9c856",
+      "PICKUP": "24f7073611cf1217ced9544d0e72d71a"
+    }
+
+    let baseClass = "checkout-delivery__point"
+    let classes = [baseClass]
+    classes.push("checkout-delivery__point--" + point.type.toLowerCase())
+
+    let isChecked = Object.values(SELECTED_DELIVERY_ID).includes(point.ID);
+
+    if (isChecked)
+      classes.push("checked")
+
+    var ogo = {
+      "type": "OGO",
+      "coords": [
+        "55.7932",
+        "37.559724"
+      ],
+      "title": "Театральная аллея, д.3, стр.1",
+      "pointType": "Гипермаркеты ОГО!",
+      "metro": "Динамо",
+      "metroColor": "#4BAF4F",
+      "worktime": "Ежедневно 10:00 - 22:00",
+      "payment": {
+        "PRIVATE": "При получении",
+        "LEGAL": ""
+      },
+      "date": "доставим сегодня к 20:00",
+      "options": [
+      {
+        "SELECTED": true,
+        "value": "сегодня после 20:00",
+        "timestamp": "1735146000"
+        },
+      {
+        "SELECTED": false,
+        "value": "завтра после 10:00",
+        "timestamp": "1735196400"
+        }
+      ],
+      "price": "0",
+      "deliveryID": "120",
+      "timestamp": 1735146000,
+      "DELIVERY_TYPE": "ogopickup",
+      "uidstore": "66170b46-eb94-11e1-9f21-003048d9cfd1",
+      "uidsection": "66170b45-eb94-11e1-9f21-003048d9cfd1",
+      "item_stock_uid": "{\"1649628\":\"654b664f-d33b-4d87-a21b-a86ccb5156ad\"}",
+      "cityid": "none",
+      "address": "Театральная аллея, д. 3, стр. 1",
+      "seeMoreLink": "\/ajax\/new\/storeDetail.php?storeCode=dinamo",
+      "storeLink": "\/shops\/dinamo\/",
+      "ID": "6f9d6ff2ee8182eec6c3135045c9c856",
+      "dateText": "<b>Сегодня<\/b> 25.12",
+      "dateAfter": "после 25 декабря",
+      "RANDOM_KEY": "Yx4N4F3A48",
+      "signedData": "a:25:{s:4:\"type\";s:3:\"OGO\";s:6:\"coords\";a:2:{i:0;s:7:\"55.7932\";i:1;s:9:\"37.559724\";}s:5:\"title\";s:49:\"Театральная аллея, д.3, стр.1\";s:9:\"pointType\";s:32:\"Гипермаркеты ОГО!\";s:5:\"metro\";s:12:\"Динамо\";s:10:\"metroColor\";s:7:\"#4BAF4F\";s:8:\"worktime\";s:32:\"Ежедневно 10:00 - 22:00\";s:7:\"payment\";a:2:{s:7:\"PRIVATE\";s:25:\"При получении\";s:5:\"LEGAL\";s:0:\"\";}s:4:\"date\";s:40:\"доставим сегодня к 20:00\";s:7:\"options\";a:2:{i:0;a:3:{s:8:\"SELECTED\";b:1;s:5:\"value\";s:31:\"сегодня после 20:00\";s:9:\"timestamp\";s:10:\"1735146000\";}i:1;a:3:{s:8:\"SELECTED\";b:0;s:5:\"value\";s:29:\"завтра после 10:00\";s:9:\"timestamp\";s:10:\"1735196400\";}}s:5:\"price\";s:1:\"0\";s:10:\"deliveryID\";s:3:\"120\";s:9:\"timestamp\";i:1735146000;s:13:\"DELIVERY_TYPE\";s:9:\"ogopickup\";s:8:\"uidstore\";s:36:\"66170b46-eb94-11e1-9f21-003048d9cfd1\";s:10:\"uidsection\";s:36:\"66170b45-eb94-11e1-9f21-003048d9cfd1\";s:14:\"item_stock_uid\";s:50:\"{\"1649628\":\"654b664f-d33b-4d87-a21b-a86ccb5156ad\"}\";s:6:\"cityid\";s:4:\"none\";s:7:\"address\";s:51:\"Театральная аллея, д. 3, стр. 1\";s:11:\"seeMoreLink\";s:42:\"\/ajax\/new\/storeDetail.php?storeCode=dinamo\";s:9:\"storeLink\";s:14:\"\/shops\/dinamo\/\";s:2:\"ID\";s:32:\"6f9d6ff2ee8182eec6c3135045c9c856\";s:8:\"dateText\";s:27:\"<b>Сегодня<\/b> 25.12\";s:9:\"dateAfter\";s:28:\"после 25 декабря\";s:10:\"RANDOM_KEY\";s:10:\"Yx4N4F3A48\";}.48a82675ca0f5a52146adcf24fc74647b06a039797ce1ee1c486de39c88dbaab"
+    }
+
+    var pvz = {
+      "DELIVERY_TYPE": "СДЭК",
+      "PERIOD_DELIVERY": "2-3",
+      "type": "PVZ",
+      "API_CODE": "TVR48",
+      "coords": [
+        "56.840631",
+        "35.912893"
+      ],
+      "title": "Тверской проспект, 13",
+      "pointType": "Терминалы CDEK",
+      "metro": "",
+      "worktime": "Пн-Пт 09:00-21:00, Сб 09:00-17:00",
+      "payment": {
+        "PRIVATE": "Банковский перевод<br>Онлайн",
+        "LEGAL": "Безналичный расчет"
+      },
+      "date": "02.01",
+      "options": null,
+      "deliveryID": "99",
+      "serviceUID": "9b813e58-7c20-11e2-a59f-003048d9cfd0",
+      "price": "435&nbsp;₽",
+      "note": "Войти в отделение банка Совкомбанк через центральный вход, на 1 этаже расположен постамат.",
+      "timestamp": 1735765200,
+      "uidstore": "e64b3c86-2dbc-11df-bca8-003048d9cfd1",
+      "uidsection": "e64b3c85-2dbc-11df-bca8-003048d9cfd1",
+      "cityid": "245",
+      "address": "Тверской проспект, 13",
+      "ID": "24f7073611cf1217ced9544d0e72d71a",
+      "PRICE_VALUE": "435",
+      "dateText": "Четверг 02.01",
+      "dateAfter": "после 02 января",
+      "RANDOM_KEY": "OCr3z4oBsr",
+      "signedData": "a:26:{s:13:\"DELIVERY_TYPE\";s:8:\"СДЭК\";s:15:\"PERIOD_DELIVERY\";s:3:\"2-3\";s:4:\"type\";s:3:\"PVZ\";s:8:\"API_CODE\";s:5:\"TVR48\";s:6:\"coords\";a:2:{i:0;s:9:\"56.840631\";i:1;s:9:\"35.912893\";}s:5:\"title\";s:37:\"Тверской проспект, 13\";s:9:\"pointType\";s:23:\"Терминалы CDEK\";s:5:\"metro\";s:0:\"\";s:8:\"worktime\";s:39:\"Пн-Пт 09:00-21:00, Сб 09:00-17:00\";s:7:\"payment\";a:2:{s:7:\"PRIVATE\";s:51:\"Банковский перевод<br>Онлайн\";s:5:\"LEGAL\";s:35:\"Безналичный расчет\";}s:4:\"date\";s:5:\"02.01\";s:7:\"options\";N;s:10:\"deliveryID\";s:2:\"99\";s:10:\"serviceUID\";s:36:\"9b813e58-7c20-11e2-a59f-003048d9cfd0\";s:5:\"price\";s:12:\"435&nbsp;₽\";s:4:\"note\";s:165:\"Войти в отделение банка Совкомбанк через центральный вход, на 1 этаже расположен постамат.\";s:9:\"timestamp\";i:1735765200;s:8:\"uidstore\";s:36:\"e64b3c86-2dbc-11df-bca8-003048d9cfd1\";s:10:\"uidsection\";s:36:\"e64b3c85-2dbc-11df-bca8-003048d9cfd1\";s:6:\"cityid\";s:3:\"245\";s:7:\"address\";s:37:\"Тверской проспект, 13\";s:2:\"ID\";s:32:\"24f7073611cf1217ced9544d0e72d71a\";s:11:\"PRICE_VALUE\";s:3:\"435\";s:8:\"dateText\";s:20:\"Четверг 02.01\";s:9:\"dateAfter\";s:26:\"после 02 января\";s:10:\"RANDOM_KEY\";s:10:\"OCr3z4oBsr\";}.8716df1d71fb69c8232feb486c356d59fa4243a51022d9ee75b8baead9490367"
+    }
+
+  div(class= classes)&attributes(attributes)
+    if point.type == "OGO"
+      +field(type="radio" name="checkout-delivery-ogo" checked=isChecked).checkout-delivery__point-radio
+      .checkout-delivery__point-content
+        .checkout-delivery__point-info
+          if point.metro
+            .checkout-delivery__point-metro
+              span(style={'background-color': point.metroColor}).checkout-delivery__point-metro-icon
+              =point.metro
+          .checkout-delivery__point-title.hidden-default= point.title
+          .checkout-delivery__point-worktime.hidden-default= point.worktime
+          .checkout-delivery__point-payment.hidden-default!= point.payment.PRIVATE
+
+        .checkout-delivery__point-date-group
+          select()
+            for option in point.options
+              option(selected= option.SELECTED)= option.value
+
+    else if point.type == "PVZ"
+      +field(type="radio" name="checkout-delivery-pvz" checked=isChecked).checkout-delivery__point-radio
+      .checkout-delivery__point-content
+        .checkout-delivery__point-info
+          .checkout-delivery__point-type= point.pointType
+          .checkout-delivery__point-title= point.title
+        .checkout-delivery__point-payment-info
+          .checkout-delivery__point-price= point.PRICE_VALUE + " ₽"
+          .checkout-delivery__point-date!= point.dateAfter
+      .checkout-delivery__point-desc
+        .checkout-delivery__point-payment!= point.payment.PRIVATE
+        .checkout-delivery__point-text= point.note
+
+mixin checkout-delivery-service(isChecked)
+  .checkout-delivery__service(class= isChecked ? "checked" : "")
+    .checkout-delivery__service-info
+      .checkout-delivery__service-title Служба КурьерСервисЭкспресс
+      .checkout-delivery__service-payment Банковский перевод <br> Онлайн
+    .checkout-delivery__service-options.delivery-service-slider.swiper
+      .checkout-delivery__service-option.swiper-slide
+        .checkout-delivery__service-day Ожидаемая дата доставки
+          b 31.01
+        .checkout-delivery__service-price 654&nbsp;₽
+      .checkout-delivery__service-option.swiper-slide(class= isChecked ? "checked" : "")
+        .checkout-delivery__service-day Ожидаемая дата доставки
+          b 1.02
+        .checkout-delivery__service-price 654&nbsp;₽
+      .checkout-delivery__service-option.swiper-slide
+        .checkout-delivery__service-day Ожидаемая дата доставки
+          b 2.02
+        .checkout-delivery__service-price 654&nbsp;₽
+      .checkout-delivery__service-option.swiper-slide
+        .checkout-delivery__service-day Ожидаемая дата доставки
+          b 2.02
+        .checkout-delivery__service-price 654&nbsp;₽
+      .checkout-delivery__service-option.swiper-slide
+        .checkout-delivery__service-day Ожидаемая дата доставки
+          b 2.02
+        .checkout-delivery__service-price 654&nbsp;₽
+      .checkout-delivery__service-option.swiper-slide
+        .checkout-delivery__service-day Ожидаемая дата доставки
+          b 2.02
+        .checkout-delivery__service-price 654&nbsp;₽
+
+mixin checkout-requisites()
+  .checkout-requisites&attributes(attributes)
+    h4.mb-2 Заказ получит
+    .checkout-requisites__item.checkout-requisites__item--simple
+      .checkout-requisites__item__header
+        .checkout-requisites__item__title Михаил
+        .checkout-requisites__item__info-wrapper
+          .checkout-requisites__item__info.checkout-requisites__item__info--sm
+            .checkout-requisites__item__info-text +7 (915) 367-73-43
+          .checkout-requisites__item__info.checkout-requisites__item__info--sm
+            .checkout-requisites__item__info-text mkartsev0@gmail.com
+          .checkout-requisites__item__info.checkout-requisites__item__info--delivery
+            .checkout-requisites__item__info-text <b>Самовывоз:</b> Гипермаркеты ОГО!  Театральная аллея, д.3, стр.1
+            .checkout-requisites__item__info-date 30.01 после 15:00
+            .checkout-requisites__item__info-text <b>Доставка:</b> стоимость и способ доставки будут уточнены позднее
+
+    .js-accordion
+      .checkout-requisites__item.js-accordion-item
+        .checkout-requisites__item__header.js-accordion-header
+          .checkout-requisites__item__title Организация
+          .checkout-requisites__item__info-wrapper
+            .checkout-requisites__item__info.checkout-requisites__item__info--sm
+              .checkout-requisites__item__info-text +7 (915) 367-73-43
+            .checkout-requisites__item__info.checkout-requisites__item__info--sm
+              .checkout-requisites__item__info-text mkartsev0@gmail.com
+        .checkout-requisites__item__body.js-accordion-body
+          .checkout-requisites__item__info-wrapper
+            .checkout-requisites__item__info
+              .checkout-requisites__item__info-title Контактное лицо
+              .checkout-requisites__item__info-text Михаил
+            .checkout-requisites__item__info.checkout-requisites__item__info--sm
+              .checkout-requisites__item__info-title ИНН
+              .checkout-requisites__item__info-text 111111111111
+            .checkout-requisites__item__info.checkout-requisites__item__info--sm
+              .checkout-requisites__item__info-title КПП
+              .checkout-requisites__item__info-text 2222222222222222222222222222222222
+            .checkout-requisites__item__info
+              .checkout-requisites__item__info-title Название организации
+              .checkout-requisites__item__info-text Организация
+            .checkout-requisites__item__info
+              .checkout-requisites__item__info-title Юридический адрес
+              .checkout-requisites__item__info-text Юридический адрес
+            .checkout-requisites__item__info
+              .checkout-requisites__item__info-title Фактический адрес
+              .checkout-requisites__item__info-text Фактический адрес
+            .checkout-requisites__item__info
+              .checkout-requisites__item__info-title Название банка
+              .checkout-requisites__item__info-text Название банка
+            .checkout-requisites__item__info.checkout-requisites__item__info--sm
+              .checkout-requisites__item__info-title Расчетный счет
+              .checkout-requisites__item__info-text 33333333333333333333
+            .checkout-requisites__item__info.checkout-requisites__item__info--sm
+              .checkout-requisites__item__info-title Корреспондентский счет
+              .checkout-requisites__item__info-text 44444444444444444444
+
+mixin checkout-select-city()
+  .checkout-select-city&attributes(attributes)
+    .row
+      .col-12.col-lg-5
+        h4.mb-2 Населенный пункт
+        .dropdown
+          +button(variant="outline-info sm" text="Москва" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="inside outside" role="button" type="button")
+          .dropdown-menu.mt-1
+            input(type="hidden" :name="" :value="currentcity.FIAS")
+            input(type="text" placeholder="Ваш город..." data-src=process.env.GET_CITIES_URL).form-control-sm.w-100.border-top-0.border-start-0.border-end-0.shadow-none.js-select-city
+            ul.checkout-select-city-predefined.list-unstyled
+              li
+                a(href="#" class="dropdown-item fs-4") Москва
+              li
+                a(href="#" class="dropdown-item fs-4") Санкт-Петербург
+              li
+                a(href="#" class="dropdown-item fs-4") Челябинск
+              li
+                a(href="#" class="dropdown-item fs-4") Екатеринбург
+              li
+                a(href="#" class="dropdown-item fs-4") Казань
+              li
+                a(href="#" class="dropdown-item fs-4") Новосибирск
+              li
+                a(href="#" class="dropdown-item fs-4") Уфа
+
+mixin checkout-order()
+  .checkout-order&attributes(attributes)
+    h4.mb-2 Ваш заказ
+    .checkout-order__items
+      each product in products
+        .checkout-order__item
+          +product-card(variant="checkout", product=product)
+
+    .checkout-order__items
+      .checkout-order__total
+        .checkout-order__total-info
+          .checkout-order__total-title <b>Доставка CDEK: </b>Москва, ул Мира, д. 1, корп. 1, квар. 1
+          .checkout-order__total-date <b>Дата получения заказа: </b>В четверг, 30.01.2025 с 10 до 19
+        .checkout-order__total-price бесплатно
+
+      .checkout-order__total
+        .checkout-order__total-info
+          .checkout-order__total-title <b>Доставка:</b> стоимость и способ доставки будут уточнены позднее
+        .checkout-order__total-price 0 ₽
+
+      .checkout-order__total
+        .checkout-order__total-info
+          .checkout-order__total-title <b>Ожидаемая пошлина</b>
+        .checkout-order__total-price 1 000 ₽
+
+      .checkout-order__total
+        .checkout-order__total-info
+          .checkout-order__total-title <b>Скидка</b>
+        .checkout-order__total-price.checkout-order__total-discount -1 000 ₽
+
+      .checkout-order__overall
+        .checkout-order__overall-title Итоговая стоимость:
+        .checkout-order__overall-price-wrapper
+          .checkout-order__overall-price
+            |8&nbsp;990&nbsp;₽
+          .checkout-order__overall-bonus
+            +svg-icon("ui--bonus-sm", "sm")
+            |24 бонуса
+
+    .checkout-order__info
+      .row.mb-3
+        .col-lg-5
+          .row.row-cols-1.g-3
+            .col
+              +pay-type(type="radio" title="Онлайн" id="pay-online" icon="ui--card" desc="Банковской картой, системой быстрых платежей, частями или в кредит" name="PAY_TYPE")
+            .col
+              +pay-type(type="radio" title="При получении" id="pay-cash" icon="ui--wallet" desc="Наличными или банковской картой" name="PAY_TYPE")
+            .col
+              +pay-type(type="radio" title="Банковский перевод" id="pay-invoice" desc="Выставим счет для оплаты через перевод в банке" name="PAY_TYPE")
+
+      .row.mb-3
+        .col-sm-12.col-md-6.col-lg-3.mb-3.mb-md-0
+          +field(type="text" label="У меня есть промокод" controlClass="form-control-sm" placeholder="Введите промокод")
+        .col-sm-12.col-md-4.col-lg-2.pt-md-4
+          +button(variant="secondary" text="Применить" class="w-100")
+        .col-12
+          .form-text.text-info Промокод успешно применен!
+          .form-text.text-danger Такого промокода не существует.
+
+      .row.mb-3
+        .col-md-10.col-lg-6
+          +field(type="textarea" label="Комментарий к заказу" controlClass="form-control-sm" placeholder="Оставьте ваш комментарий")
+
+      .row.mb-3
+        .col.col-lg-8
+          +checkout-alerts()
+
+      +button(variant="primary" class="w-100 w-lg-auto mt-5 mb-3" text="Подтвердить")
+      .form-text Нажимая эту кнопку, вы подтверждаете заказ

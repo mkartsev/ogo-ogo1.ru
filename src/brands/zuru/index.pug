@@ -1,0 +1,70 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "zuru"
+    page.title = "Бренд-зона Zuru"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.zuru
+    .zuru-logo
+      img(src="./img/logo.png", alt)
+    .zuru-banner
+      .h2.text-center [стандартный баннер]
+    .zuru-grid
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru01.jpg")
+          img(src="./img/zuru01.jpg", alt="ZURU X-Shot")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru02.jpg")
+          img(src="./img/zuru02.jpg", alt="ZURU Metal machines")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru03.jpg")
+          img(src="./img/zuru03.jpg", alt="ZURU Sparkle girls")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru04.jpg")
+          img(src="./img/zuru04.jpg", alt="ZURU COCO Surprise")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru05.jpg")
+          img(src="./img/zuru05.jpg", alt="ZURU Rainbocorns")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru06.jpg")
+          img(src="./img/zuru06.jpg", alt="ZURU 5 Surprise")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru07.jpg")
+          img(src="./img/zuru07.jpg", alt="ZURU Robo alive")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru08.jpg")
+          img(src="./img/zuru08.jpg", alt="ZURU Pets alive")
+      a.zuru-card(href="#")
+        picture.zuru-card__img
+          source(srcset="img/zuru09.jpg")
+          img(src="./img/zuru09.jpg", alt="ZURU Smashers")
+    h2.text-center Выбор по категориям
+    .zuru-categories
+      a.zuru-category.zuru-category--boys(href="#")
+        img.zuru-category__img(src="./img/zuru-category01.png")
+        span.zuru-category__title Мальчикам
+      a.zuru-category.zuru-category--girls(href="#")
+        img.zuru-category__img(src="./img/zuru-category02.png")
+        span.zuru-category__title Девочкам
+      a.zuru-category.zuru-category--puffy(href="#")
+        img.zuru-category__img(src="./img/zuru-category03.png")
+        span.zuru-category__title Мягкие игрушки

@@ -1,0 +1,113 @@
+.slide-menu {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: transform .15s ease-in, height .1s ease-in;
+  will-change: transform, height;
+  /* scroll-behavior: smooth */
+  ul {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%
+    }
+
+    li {
+      margin: 0;
+      padding: 0 1.25rem;
+      background: var(--white, $white);
+
+      > a {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        padding: 8px 40px 8px 0;
+        color: var(--body-color, $body-color);
+        line-height: 40px;
+        outline: 0;
+        border-bottom: 1px solid var(--gray-100, $gray-100);
+        background: var(--white, $white);
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+          color: var(--primary, $primary)
+        }
+
+        &.has-img {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 3px
+        }
+
+        &.slide-menu__backlink {
+          width: 100%;
+          padding: 8px 0 8px 40px;
+          color: var(--gray-400, $gray-400);
+          font-size: var(--font-size-sm, $font-size-sm);
+
+          &:hover {
+            color: var(--primary, $primary);
+            cursor: pointer
+          }
+
+          &:after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: url('data:image/svg+xml; utf8, <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve"><path fill="%239a9a9a" d="M16.7,2c0.2,0,0.3,0.1,0.4,0.2c0.2,0.2,0.2,0.6,0,0.8l-9,9l9,9c0.2,0.2,0.2,0.6,0,0.8c-0.2,0.2-0.6,0.2-0.8,0l-9.4-9.4c-0.2-0.2-0.2-0.6,0-0.8l9.4-9.4C16.4,2.1,16.6,2,16.7,2z"/></svg>');
+            background-size: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: translateY(-50%)
+          }
+        }
+
+      }
+
+      &.has-child > a:after {
+        content: '';
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        background: url('data:image/svg+xml; utf8, <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve"><path fill="%239a9a9a" d="M7.3,22c-0.2,0-0.3-0.1-0.4-0.2c-0.2-0.2-0.2-0.6,0-0.8l9-9l-9-9c-0.2-0.2-0.2-0.6,0-0.8c0.2-0.2,0.6-0.2,0.8,0l9.4,9.4c0.2,0.2,0.2,0.6,0,0.8l-9.4,9.4C7.6,21.9,7.4,22,7.3,22z"/></svg>');
+        background-size: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: translateY(-50%)
+      }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform .3s ease-in-out;
+    will-change: transform
+  }
+
+  &__slider > ul {
+
+    height: 100%;
+  }
+}

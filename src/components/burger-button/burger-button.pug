@@ -1,0 +1,13 @@
+include ../svg-icon/svg-icon
+
+mixin burger-button()
+  +button(type="button" variant="primary" class="burger-button")&attributes(attributes)
+    i.burger-button__icon
+      span
+      span
+      span
+
+    i.burger-button__loading
+      +svg-icon("ui--spinner")
+
+    span.burger-button__text Каталог

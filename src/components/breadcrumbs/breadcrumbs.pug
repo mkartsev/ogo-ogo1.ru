@@ -1,0 +1,17 @@
+mixin breadcrumbs()
+  nav(class="breadcrumbs" id="breadcrumbs" aria-label="breadcrumb")&attributes(attributes)
+    ol(class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList")
+      li(class="breadcrumb-item" property="itemListElement" typeof="ListItem")
+        a(href="/" property="item" typeof="WebPage")
+          span(property="name") Главная
+        meta(property="position" content="1")
+
+      li(class="breadcrumb-item" property="itemListElement" typeof="ListItem")
+        a(href="/" property="item" typeof="WebPage")
+          span(property="name") Каталог
+        meta(property="position" content="2")
+
+      li(class="breadcrumb-item active" property="itemListElement" typeof="ListItem" aria-current="page")
+        span(property="item" typeof="WebPage")
+          span(property="name")= page.title
+        meta(property="position" content="2")

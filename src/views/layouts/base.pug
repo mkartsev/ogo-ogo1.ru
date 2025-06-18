@@ -1,0 +1,219 @@
+include ../helpers/mixins
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+block vars
+  -
+    var isProduction = process.env.NODE_ENV === "production"
+
+    var template = {
+      cleanHeader: false,
+      showFooter: true,
+    }
+
+    var body = {
+      attributes: {}
+    }
+
+    var page = {
+      name: "page",
+      title: "Заголовок страницы",
+      classes: [],
+      showHeader: true,
+      showTitle: true,
+      showBreadcrumbs: true
+    }
+
+    var data = {}
+
+    var theme = {
+      colors: [
+        'primary',
+        'secondary',
+        'tertiary',
+        'success',
+        'info',
+        'warning',
+        'danger'
+      ]
+    }
+
+    function formatDate(dateString) {
+      let date = new Date(dateString);
+      let day = date.getDate().toString().padStart(2, '0');
+      let month = (date.getMonth() + 1).toString().padStart(2, '0');
+      let year = date.getFullYear().toString().slice(-2);
+      return `${day}.${month}.${year}`;
+    }
+
+    function formatNumber(number) {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    function isEmpty(obj) {
+      for (const prop in obj) {
+        if (Object.hasOwn(obj, prop)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function pluralize(number, one, two, five) {
+      number = Math.abs(number);
+      number %= 100;
+      if (number >= 5 && number <= 20) {
+        return five;
+      }
+      number %= 10;
+      if (number === 1) {
+        return one;
+      }
+      if (number >= 2 && number <= 4) {
+        return two;
+      }
+      return five;
+    }
+
+    function stringToJson(str) {
+      const result = {};
+      str?.split(',').forEach(pair => {
+        const [key, valueStr] = pair.split(':')
+        const trimmedKey = key.trim()
+        const trimmedValue = valueStr.trim()
+        let value
+        if (trimmedValue === 'true') value = true
+        else if (trimmedValue === 'false') value = false
+        else if (!isNaN(trimmedValue)) value = Number(trimmedValue)
+        else value = trimmedValue
+        result[trimmedKey] = value
+      })
+      return result
+    }
+
+    function stringToObject(str) {
+      const result = {}
+      str?.split(',').forEach(item => {
+        let [key, value] = item.split(':').map(part => part.trim())
+        if (value === 'true') value = true
+        else if (value === 'false') value = false
+        else if (!isNaN(value)) value = Number(value)
+        result[key] = value
+      })
+      return result
+    }
+
+mixin head()
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title #{page.title}
+    meta(name="theme-color" content="#fff")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+    meta(name="viewport" content="width=device-width" initial-scale=1.0)
+
+    block favicons
+      link(rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon")
+      link(rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png")
+      link(rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png")
+      link(rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png")
+      link(rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png")
+      link(rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png")
+      link(rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png")
+      link(rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png")
+      link(rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png")
+      link(rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png")
+      link(rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png")
+      link(rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png")
+      link(rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png")
+      link(rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png")
+      link(rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png")
+      //- link(rel="apple-touch-icon" sizes="1024x1024" href="/assets/img/favicons/apple-touch-icon-1024x1024.png")
+
+    block styles
+      link(rel="stylesheet" href="/assets/css/main.css")
+
+      if isProduction
+        link(rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css")
+        link(rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css")
+        link(rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css")
+        //- link(rel="stylesheet" href="/assets/js/migration/vendor/tippyjs/tippy.css")
+        //- link(rel="stylesheet" href="/assets/js/migration/vendor/swiper9/swiper-bundle.min.css")
+        //- link(rel="stylesheet" href="/assets/js/migration/vendor/swiper9/swiper-settings.css")
+        link(rel="stylesheet" href="/assets/css/migration.css")
+        link(rel="stylesheet" href="/assets/css/override.css")
+
+mixin body()
+  //- Жесть конечно, но как пробросить атрибуты из страницы в шаблон?
+  body(data-theme="ogo-clean")&attributes(Object.entries(body.attributes).reduce((accum, [key, value]) => { accum[`data-${key}`] = value; return accum; }, {}))
+    .site-wrapper
+      block header
+        if template.cleanHeader
+          +header-clean()
+        else
+          +header()
+
+      block sidebar
+        +sidebar()
+
+      block page
+
+      if template.showFooter
+        block footer
+          +footer()
+
+    block scripts
+      script.
+        window.CompareIDList = 	window.CompareIDList || ["389198", "391062", "391065"];
+        window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+        window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+        window.CartIDDict = window.CartIDDict || {"389198":1,"391062":2,"391065":1}
+
+        //Переопределение функции для скрытия прелоадера битрикса
+        var BX = BX || [];
+        BX.showWait = function(node, msg) {
+          return;
+        }
+
+      script(src="/assets/js/migration/vendor/jquery/jquery.min.js")
+      script(src="/assets/js/plugins.js")
+      script(src="/assets/js/main.js")
+
+    if (isProduction)
+      block migration
+        script(src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js")
+        //- script(src="/assets/js/migration/vendor/jquery-validation/jquery.validate.js")
+        //- script(src="/assets/js/migration/vendor/jquery-validation/additional-methods.js")
+        //- script(src="/assets/js/migration/vendor/jquery-validation/localization/messages_ru.js")
+        script(src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js")
+        script(src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js")
+        script(src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js")
+        script(src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js")
+        //- script(src="/assets/js/migration/vendor/jquery.menu-aim/jquery.menu-aim.js")
+        script(src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js")
+        script(src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js")
+        script(src="/assets/js/migration/vendor/select2/select2.min.js")
+
+        script(src="/assets/js/migration/blocks.js")
+        script(src="/assets/js/migration/element_feedback.js")
+        script(src="/assets/js/migration/element_questions.js")
+        script(src="/assets/js/migration/filter_value_autocomplete.js")
+        //- script(src="/assets/js/migration/gaming4k.js")
+        script(src="/assets/js/migration/global.js")
+        //- script(src="/assets/js/migration/header_menu.js")
+        script(src="/assets/js/migration/kladr.js")
+        script(src="/assets/js/migration/main.js")
+        script(src="/assets/js/migration/phone_validator.js")
+        script(src="/assets/js/migration/questions.js")
+        script(src="/assets/js/migration/script.js")
+        script(src="/assets/js/migration/tech.js")
+        script(src="/assets/js/migration/tooltips.js")
+
+doctype html
+html(lang="ru")
+  block head
+    +head()
+
+  block body
+    +body()

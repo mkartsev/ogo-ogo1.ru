@@ -1,0 +1,16 @@
+.callout {
+  --callout-color: #{$gray-700};
+  --callout-bg: #{$gray-200};
+
+  color: var(--callout-color);
+  font-size: var(--font-size-root, $font-size-root);
+  padding: $spacer;
+  background-color: var(--callout-bg);
+
+  // @each $state in map-keys($theme-colors) {
+  //   &--#{$state} {
+  //     --callout-color: var(--#{$state}-text-emphasis);
+  //     --callout-bg: var(--#{$state}-bg-subtle);
+  //   }
+  // }
+}

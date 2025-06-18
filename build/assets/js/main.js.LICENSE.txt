@@ -1,0 +1,6 @@
+/*!
+ * Get a random integer with a minimum and maximum value
+ * @param  {Integer} min  The minimum value
+ * @param  {Integer} max  The maximum value
+ * @return {Integer}      A random number
+ */

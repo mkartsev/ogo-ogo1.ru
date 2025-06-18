@@ -1,0 +1,26 @@
+.field {
+  &--type-file {
+    input[type="file"] {
+      @include element-invisible;
+    }
+
+    .file-input {
+      &__wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+      }
+      &__label,
+      &__remove {
+        @extend .btn;
+        @extend .btn-secondary;
+        &:hover {
+          cursor: pointer
+        }
+      }
+      &__name {}
+      &__remove {}
+      &__clear {}
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.props-list {
+  padding-left: 0;
+  list-style: none;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: $spacer * 0.5;
+    }
+  }
+
+  &__key {
+    display: inline-flex;
+    flex: 1 1 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: var(--font-size-root, $font-size-root);
+    font-weight: 300;
+    vertical-align: unset;
+    &:after {
+      display: inline-flex;
+      content: "";
+      flex: 1 1 auto;
+      margin: 0 7px 5px;
+      border-bottom: 1px dotted currentColor;
+    }
+  }
+
+  &__value {
+    display: inline-flex;
+    width: auto;
+    flex: 0 1 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: var(--body-color, $body-color);
+    font-size: var(--font-size-base, $font-size-base);
+    font-weight: normal;
+    border-bottom: none;
+    word-wrap: break-word;
+    text-align: end;
+  }
+}

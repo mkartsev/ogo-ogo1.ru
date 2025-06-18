@@ -1,0 +1,5 @@
+mixin stars(number, options = {})
+  .stars&attributes(attributes)
+    each val in [1, 2, 3, 4, 5]
+      span(class=`stars__item${val <= number ? " is-active" : ""}`)
+        +svg-icon(`ui--star-fill`, options.size ? options.size : "xs")

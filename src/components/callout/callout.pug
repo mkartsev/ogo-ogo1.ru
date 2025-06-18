@@ -1,0 +1,13 @@
+mixin callout(color)
+  -
+    const baseClass = "callout"
+    let classes = [baseClass]
+
+  -
+    if (attributes.color)
+      classes.push(`${baseClass}--${attributes.color}`)
+
+    delete attributes.color
+
+  div(class= classes)&attributes(attributes)
+    block

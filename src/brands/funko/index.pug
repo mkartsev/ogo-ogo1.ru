@@ -1,0 +1,125 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "funko"
+    page.title = "Бренд-зона Funko"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.funko
+    .funko-logo
+      img(src="./logo.png", alt="Funko logo")
+    .funko-header
+      picture.funko-header__img
+        source(srcset="./img/header_banner_s.jpg", media="(max-width: 640px)")
+        img(src="./img/header_banner.jpg", alt)
+    h2.text-center Выбор по категориям
+    .funko-grid
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/kino_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/kino.jpg", alt="Кино")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/superhero_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/superhero.jpg", alt="Супергерои")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/mutfilm_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/multfilm.jpg", alt="Мультфиьлмы")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/anime_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/anime.jpg", alt="Аниме")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/games_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/games.jpg", alt="Компьютерные игры")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/music_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/music.jpg", alt="Музыка")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/sport_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/sport.jpg", alt="Спорт")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/tvshow_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/tvshow.jpg", alt="Сериалы")
+      a(href="#").funko-card
+        picture.funko-card__img
+          source(srcset="./img/comics_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/comics.jpg", alt="Комиксы")
+      a.funko-card.funko-card--med(href="#")
+        picture.funko-card__img
+          source(srcset="./img/lichnost_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/lichnost.jpg", alt="Культовые личности")
+      a.funko-card.funko-card--big(href="#")
+        picture.funko-card__img
+          source(srcset="./img/mini_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/mini.jpg", alt="Минифигурки")
+    h2.text-center Выбор по лицензиям
+    .funko-categories
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/marvel_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/marvel.jpg", alt="Marvel")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/disney_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/disney.jpg", alt="Disney")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/harry_potter_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/harry_potter.jpg", alt="Harry Potter")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/dc_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/dc.jpg", alt="DC")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/starwars_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/starwars.jpg", alt="Star Wars")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/mandalorian_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/mandalorian.jpg", alt="Mandalorian")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/nba_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/nba.jpg", alt="NBA")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/fifa_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/fifa.jpg", alt="FIFA")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/squid_game_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/squid_game.jpg", alt="Squid game")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/jurassic_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/jurassic.jpg", alt="Jurassic Park")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/warner_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/warner.jpg", alt="Warner Bros.")
+      a.funko-category(href="#")
+        picture.funko-card__img
+          source(srcset="./img/ghostbusters_s.jpg", media="(max-width: 1024px)")
+          img(src="./img/ghostbusters.jpg", alt="Ghostusters")
+    .funko-banner
+      p.h1.text-center [стандартный баннер]
+    .funko-button
+      a(href="#") Весь ассортимент

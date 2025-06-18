@@ -1,0 +1,254 @@
+@keyframes spin1 {
+  0%,
+  100% {
+    transform: translate(0);
+    top: 20%;
+    left: 20%;
+  }
+  15% {
+    transform: translate(0);
+    top: 0;
+    left: 0;
+  }
+  30% {
+    transform: translate(250%);
+  }
+  45% {
+    transform: translate(250%, 250%);
+  }
+  60% {
+    transform: translate(0, 250%);
+  }
+  75% {
+    top: 0;
+    left: 0;
+    transform: translate(0);
+  }
+  90% {
+    transform: translate(0);
+    top: 20%;
+    left: 20%;
+  }
+}
+@keyframes spin2 {
+  0%,
+  100% {
+    transform: translate(0);
+    top: 20%;
+    right: 20%;
+  }
+  15% {
+    transform: translate(0);
+    top: 0;
+    right: 0;
+  }
+  30% {
+    transform: translate(0, 250%);
+  }
+  45% {
+    transform: translate(-250%, 250%);
+  }
+  60% {
+    transform: translate(-250%, 0);
+  }
+  75% {
+    top: 0;
+    right: 0;
+    transform: translate(0);
+  }
+  90% {
+    transform: translate(0);
+    top: 20%;
+    right: 20%;
+  }
+}
+@keyframes spin3 {
+  0%,
+  100% {
+    transform: translate(0);
+    bottom: 20%;
+    right: 20%;
+  }
+  15% {
+    transform: translate(0);
+    bottom: 0;
+    right: 0;
+  }
+  30% {
+    transform: translate(-250%, 0);
+  }
+  45% {
+    transform: translate(-250%, -250%);
+  }
+  60% {
+    transform: translate(0, -250%);
+  }
+  75% {
+    bottom: 0;
+    right: 0;
+    transform: translate(0);
+  }
+  90% {
+    transform: translate(0);
+    bottom: 20%;
+    right: 20%;
+  }
+}
+@keyframes spin4 {
+  0%,
+  100% {
+    transform: translate(0);
+    bottom: 20%;
+    left: 20%;
+  }
+  15% {
+    transform: translate(0);
+    bottom: 0;
+    left: 0;
+  }
+  30% {
+    transform: translate(0, -250%);
+  }
+  45% {
+    transform: translate(250%, -250%);
+  }
+  60% {
+    transform: translate(250%, 0);
+  }
+  75% {
+    bottom: 0;
+    left: 0;
+    transform: translate(0);
+  }
+  90% {
+    transform: translate(0);
+    bottom: 20%;
+    left: 20%;
+  }
+}
+
+// @keyframes shapes {
+//   0% {
+//     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+//   }
+
+//   33% {
+//     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+//     width: 48px;
+//     height: 48px;
+//   }
+
+//   66% {
+//     background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+//     width: 48px;
+//     height: 48px;
+//   }
+
+//   100% {
+//     background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+//   }
+// }
+
+// @keyframes dots {
+//   0% {
+//     box-shadow: 22.4px 0, -22.4px 0;
+//   }
+
+//   33% {
+//     box-shadow: 22.4px 0, -22.4px 0 rgba(220, 62, 72, 0.13);
+//     background: rgba(220, 62, 72, 0.13);
+//   }
+
+//   66% {
+//     box-shadow: 22.4px 0 rgba(220, 62, 72, 0.13), -22.4px 0;
+//     background: rgba(220, 62, 72, 0.13);
+//   }
+// }
+
+// .preloader {
+//   &.dots {
+//     display: inline-block;
+//     width: 13.4px;
+//     height: 13.4px;
+//     margin-left: 22.4px;
+//     background: var(--primary, $primary);
+//     color: var(--primary, $primary);
+//     border-radius: 50%;
+//     box-shadow: 22.4px 0, -22.4px 0;
+//     animation: dots 1s infinite linear alternate;
+//   }
+
+//   &.shapes {
+//     display: inline-block;
+//     width: 32px;
+//     height: 32px;
+//     color: var(--primary, $primary);
+//     background: linear-gradient(currentColor 0 0), linear-gradient(currentColor 0 0), linear-gradient(currentColor 0 0), linear-gradient(currentColor 0 0);
+//     background-size: 17px 17px;
+//     background-repeat: no-repeat;
+//     animation: shapes 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+//   }
+// }
+
+.preloader {
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  display: block;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+
+  &__wrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;
+    opacity: 0.3;
+    background-color: #000;
+    left: 0;
+    top: 0;
+  }
+
+  &__d {
+    border: 0;
+    margin: 0;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    border-radius: 2%;
+
+    &:first-child {
+      background: #ff849a;
+      animation-delay: -1.5s;
+      top: 20%;
+      left: 20%;
+      animation: spin1 2.5s ease infinite;
+    }
+
+    &:nth-child(2) {
+      background: #a5002d;
+      animation-delay: -1s;
+      top: 20%;
+      right: 20%;
+      animation: spin2 2.5s ease infinite;
+    }
+
+    &:nth-child(3) {
+      background: #ff6161;
+      animation-delay: -0.5s;
+      bottom: 20%;
+      right: 20%;
+      animation: spin3 2.5s ease infinite;
+    }
+
+    &:last-child {
+      background: #e8004c;
+      display: block;
+      bottom: 20%;
+      left: 20%;
+      animation: spin4 2.5s ease infinite;
+    }
+  }
+}

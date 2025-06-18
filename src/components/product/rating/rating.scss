@@ -1,0 +1,50 @@
+.product-rating {
+  padding: $spacer;
+  border-radius: var(--border-radius);
+  background: var(--secondary, $secondary);
+
+  &__score {
+    font-size: rem(42);
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__stats {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &-row {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: $spacer;
+    }
+    &-key {
+      flex: 0 0 1em;
+      color: var(--dark, $dark);
+      font-size: var(--font-size-root, $font-size-root);
+      text-align: right;
+    }
+    &-progress {
+      flex: auto;
+      color: var(--info, $info);
+      &::-webkit-progress-value {
+        background: var(--info, $info);
+      }
+      &::-moz-progress-bar {
+        background: var(--info, $info);
+      }
+      &::-ms-fill {
+        border: none;
+        background-color: var(--info, $info);
+      }
+    }
+    &-value {
+      flex: 0 0 2em;
+      color: var(--dark, $dark);
+      font-size: var(--font-size-root, $font-size-root);
+    }
+  }
+}

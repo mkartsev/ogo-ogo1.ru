@@ -1,0 +1,29 @@
+include ../svg-icon/svg-icon
+
+mixin pagination()
+  nav&attributes(attributes)
+    a(href=process.env.LISTING_URL + "?PAGEN_1=3" data-append="true" data-url="3").btn.btn-secondary.w-100.mb-3.js-show-more Показать еще
+
+    ul.pagination.justify-content-center
+      li.page-item.disabled
+        a(href=process.env.LISTING_URL + "?PAGEN_1=1").page-link
+          +svg-icon("ui--chevron-left", "sm")
+
+      li.page-item
+        a(href=process.env.LISTING_URL + "?PAGEN_1=1").page-link 1
+      li.page-item.active
+        span.page-link 2
+      li.page-item
+        a(href=process.env.LISTING_URL + "?PAGEN_1=3").page-link 3
+      li.page-item
+        a(href=process.env.LISTING_URL + "?PAGEN_1=4").page-link 4
+      li.page-item
+        a(href=process.env.LISTING_URL + "?PAGEN_1=5").page-link 5
+      li.page-item
+        a(href=process.env.LISTING_URL + "?").page-link …
+      li.page-item
+        a(href=process.env.LISTING_URL + "?PAGEN_1=25").page-link 25
+
+      li.page-item
+        a(href=process.env.LISTING_URL + "?PAGEN_1=3").page-link
+          +svg-icon("ui--chevron-right", "sm")

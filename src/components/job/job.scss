@@ -1,0 +1,43 @@
+.job {
+  &-steps {
+    display: flex;
+    flex-flow: column wrap;
+    gap: $spacer;
+    justify-content: center;
+    align-items: flex-start;
+    counter-reset: step;
+  }
+
+  &-step {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    counter-increment: step;
+
+    &:before {
+      display: flex;
+      content: '';
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 38px;
+      content: counter(step);
+      border: 2px solid var(--primary, $primary);
+      border-radius: 50%;
+    }
+
+    &__text {
+      display: block;
+      text-align: center;
+    }
+  }
+}

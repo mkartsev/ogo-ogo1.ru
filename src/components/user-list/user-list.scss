@@ -1,0 +1,21 @@
+.js-add-to-list {
+  color: var(--gray-500, $gray-500);
+
+  &[data-action="add"] {
+  }
+
+  &[data-action="del"] {
+    color: var(--primary, $primary);
+  }
+
+  &[data-action="ADD_TO_COMPARE_LIST"] {
+  }
+
+  &[data-action="DELETE_FROM_COMPARE_LIST"] {
+    color: var(--info, $info);
+  }
+
+  &[data-text]:after {
+    content: attr(data-text);
+  }
+}

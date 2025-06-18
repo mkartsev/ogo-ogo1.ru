@@ -1,0 +1,326 @@
+extends ../layouts/default
+include ../../components/hero/hero
+include ../../components/news-slider/news-slider
+include ../../components/share-buttons/share-buttons
+include ../../components/svg-icon/svg-icon
+
+append vars
+  -
+    page.name  = "events"
+    page.title = "Конструктор новостей"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.c-event
+    section.b-event-section
+      .b-event-hero
+        picture.b-event-hero__image
+          source(srcset="/assets/img/content/events/banner1-small.jpg" media="(max-width: 640px)")
+          source(srcset="/assets/img/content/events/banner1.jpg")
+          img(src="/assets/img/content/events/banner1.jpg", alt)
+
+    section.b-event-section
+      .b-event-main
+        .b-event-common
+          .b-event-date
+            i.event-icon
+              +svg-icon("ui--clock")
+            span.b-event-date__text Акция действует до
+            span.b-event-date__date 31.07.2022
+
+          .b-event-date.b-event-date--expired
+            i.event-icon
+              +svg-icon("ui--clock")
+            span.b-event-date__text Акция действует до
+            span.b-event-date__date 31.07.2022
+
+          .b-event-share
+            span.b-event-share__button.js-tooltip(data-tippy-trigger="click" data-tooltip-html="#event-share" data-tippy-interactive="true" data-tippy-placement="bottom")
+              i.event-icon
+                +svg-icon("ui--share")
+              span.b-event-share__text Поделиться
+
+          .accordion.js-accordion
+            .accordion-item.js-accordion-item
+              .accordion-header.js-accordion-header
+                i.event-icon
+                  +svg-icon("ui--document")
+                span Правила проведения акции
+              .accordion-body.js-accordion-body
+                ul
+                  li Предложение действует во всех регионах
+                  li Промокод: OGOPROMOKOD10
+                  li Акция может быть завершена досрочно при продаже всех или части товаров
+                  li Акция не распространяется на юридические лица и индивидуальных предпринимателей
+
+        .b-event-countdown
+          .b-event-timer
+            span.b-event-timer__text До завершения акции:
+            .countdown#countdown(data-date="06-08-2024" data-time="12:00")
+              .day
+                span.num
+                span.word
+              span.delimiter :
+              .hour
+                span.num
+                span.word
+              span.delimiter :
+              .min
+                span.num
+                span.word
+
+    section.b-event-section
+      .b-event-main
+        .b-event-common
+          .b-event-date
+            i.event-icon
+              +svg-icon("ui--calendar")
+            span.b-event-date__date 31.07.2022
+          .b-event-share.b-event-share--full
+            span.b-event-share__button.js-tooltip(data-tooltip-html="#event-share" data-tippy-trigger="click" data-tippy-interactive="true" data-tippy-placement="bottom")
+              i.event-icon
+                +svg-icon("ui--share")
+              span.b-event-share__text Поделиться
+
+    section.b-event-section
+      .b-event-categories-grid
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+        a.b-event-category(href="#")
+          .b-event-category__image-wrapper
+            img.b-event-category__image(src="assets/img/content/events/category-placeholder.png", alt)
+          span.b-event-category__title Название категории
+
+    section.b-event-section
+      h2.b-event-section__title Соберите выгодный комплект
+      .b-event-important
+        p
+          | Подарок будет автоматически добавлен в корзину при оформлении заказа.
+
+          br
+          | Подробную информацию смотрите в Правилах проведения акции.
+
+    section.b-event-section
+      h2.b-event-section__title Подарки
+      .b-event-presents
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="https://loremflickr.com/200/200", alt)
+          .b-event-present__text Название подарочка, который мы вам дадим
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="https://loremflickr.com/200/200", alt)
+          .b-event-present__text Название подарочка, который мы вам дадим Название подарочка, который мы вам дадим
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="https://loremflickr.com/200/200", alt)
+          .b-event-present__text Название
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="https://loremflickr.com/200/200", alt)
+          .b-event-present__text Название подарочка, который мы вам дадим
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="https://loremflickr.com/200/200", alt)
+          .b-event-present__text Название подарочка, который мы вам дадим
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="https://loremflickr.com/200/200", alt)
+          .b-event-present__text Название подарочка, который мы вам дадим
+
+    section.b-event-section
+      h2.b-event-section__title Как получить подарок
+      .b-event-steps
+        .b-event-step
+          span.b-event-step__text Добавьте в корзину товар, участвующий в акции, и оформите покупку
+        .b-event-step
+          span.b-event-step__text
+            | Зарегистрируйте покупку на странице активности
+            a(href="#") VENDOR
+            |  следуя инструкции
+        .b-event-step
+          span.b-event-step__text
+            | После регистрации
+            a(href="#") VENDOR
+            |  вышлет вам подарок почтовыми службами
+        .b-event-step
+          span.b-event-step__text Пользуйтесь с удовольствием товаром и возвращайтесь к нам за новыми покупками
+        .b-event-step
+          span.b-event-step__text Добавьте в корзину товар, участвующий в акции, и оформите покупку
+        .b-event-step
+          span.b-event-step__text
+            | Зарегистрируйте покупку на странице активности
+            a(href="#") VENDOR
+            |  следуя инструкции
+
+    section.b-event-section
+      .b-event-promocode
+        .b-event-promocode__code OGOPROMOKOD10
+        button.b-event-promocode__button.js-copy-code(type="button" data-copy-code="OGOPROMOKOD10" data-copy-code-tooltip="Промокод скопирован")
+          i.event-icon
+            +svg-icon("ui--copy")
+
+    section.b-event-section
+      .b-event-important
+        p
+          | Скопируйте промокод и введите его при оформлении заказа.
+          br
+          | Скидка применится автоматически на товары, участвующие в акции.
+
+    section.b-event-section
+      h2.b-event-section__title Название блока
+      .b-event-important
+        p В своём стремлении повысить качество жизни, они забывают, что высокотехнологичная концепция общественного уклада позволяет оценить значение новых принципов формирования материально-технической и кадровой базы.
+        p Но действия представителей оппозиции являются только методом политического участия и функционально разнесены на независимые элементы.
+        p Подробную информацию смотрите в Правилах проведения акции.
+
+    section.b-event-section
+      .b-event-advantages
+        .b-event-advantage
+          span.b-event-advantage__title 2.84 ГГц
+          span.b-event-advantage__text Мощный процессор
+        .b-event-advantage
+          span.b-event-advantage__title 177 г
+          span.b-event-advantage__text Ультралегкий сматрфон
+        .b-event-advantage
+          span.b-event-advantage__title 2.84 ГГц
+          span.b-event-advantage__text Мощный процессор
+        .b-event-advantage
+          span.b-event-advantage__title Восьмиядерный
+          span.b-event-advantage__text Тип процессора
+
+    .divider
+
+    section.b-event-section
+      +news-slider()
+
+    .divider
+
+    section.b-event-section
+      .b-event-newproducts
+        article.b-event-newproduct
+          .b-event-newproduct__body
+            h3.b-event-newproduct__title Название блока
+            p Начало повседневной работы по формированию позиции обеспечивает широкому кругу участие в формировании существующих финансовых и административных условий.
+            ul
+              li Внезапно, независимые государства являются только методом политического участия и представлены в исключительно положительном свете.
+              li Наше дело не так однозначно, как может показаться.
+              li Лишь предприниматели в сети интернет заблокированы в рамках своих собственных рациональных ограничений.
+            a.button(href="#") Волшебная кнопка
+            p.reference *В целом, конечно, внедрение современных методик требует анализа распределения внутренних резервов и ресурсов.
+          .b-event-newproduct__image-wrapper
+            img.b-event-newproduct__image(src="https://loremflickr.com/440/600")
+        article.b-event-newproduct
+          .b-event-newproduct__body
+            h3.b-event-newproduct__title Название блока
+            p Начало повседневной работы по формированию позиции обеспечивает широкому кругу участие в формировании существующих финансовых и административных условий.
+            ul
+              li Внезапно, независимые государства являются только методом политического участия и представлены в исключительно положительном свете.
+              li Наше дело не так однозначно, как может показаться.
+              li Лишь предприниматели в сети интернет заблокированы в рамках своих собственных рациональных ограничений.
+            a.button(href="#") Волшебная кнопка
+            p.reference *В целом, конечно, внедрение современных методик требует анализа распределения внутренних резервов и ресурсов.
+          .b-event-newproduct__image-wrapper
+            img.b-event-newproduct__image(src="https://loremflickr.com/440/600")
+        article.b-event-newproduct
+          .b-event-newproduct__body
+            h3.b-event-newproduct__title Название блока
+            p Начало повседневной работы по формированию позиции обеспечивает широкому кругу участие в формировании существующих финансовых и административных условий.
+            ul
+              li Внезапно, независимые государства являются только методом политического участия и представлены в исключительно положительном свете.
+              li Наше дело не так однозначно, как может показаться.
+              li Лишь предприниматели в сети интернет заблокированы в рамках своих собственных рациональных ограничений.
+            a.button(href="#") Волшебная кнопка
+            p.reference *В целом, конечно, внедрение современных методик требует анализа распределения внутренних резервов и ресурсов.
+          .b-event-newproduct__image-wrapper
+            img.b-event-newproduct__image(src="https://loremflickr.com/440/600")
+        article.b-event-newproduct
+          .b-event-newproduct__body
+            h3.b-event-newproduct__title Название блока
+            p Начало повседневной работы по формированию позиции обеспечивает широкому кругу участие в формировании существующих финансовых и административных условий.
+            ul
+              li Внезапно, независимые государства являются только методом политического участия и представлены в исключительно положительном свете.
+              li Наше дело не так однозначно, как может показаться.
+              li Лишь предприниматели в сети интернет заблокированы в рамках своих собственных рациональных ограничений.
+            a.button(href="#") Волшебная кнопка
+            p.reference *В целом, конечно, внедрение современных методик требует анализа распределения внутренних резервов и ресурсов.
+          .b-event-newproduct__image-wrapper
+            img.b-event-newproduct__image(src="https://loremflickr.com/440/600")
+
+    section.b-event-section
+      .b-event-video
+        iframe(src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)
+
+    .divider
+
+    section.b-event-section
+      .b-event-table
+        table
+          thead
+            tr
+              th Название характеристики
+              th Характеристика
+              th Характеристика
+          tbody
+            tr
+              td Невероятная мощность процессора*
+              td тут вот так
+              td тут эдак
+            tr
+              td Какая то другая характеристика
+              td во как
+              td вот это да
+      p.reference *Каждый из нас понимает очевидную вещь: начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании существующих финансовых и административных условий.
+
+    .divider
+
+    section.b-event-section
+      .b-event-simpletext
+        p Банальные, но неопровержимые выводы, а также некоторые особенности внутренней политики смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности! В своём стремлении улучшить пользовательский опыт мы упускаем, что базовые сценарии поведения пользователей набирают популярность среди определенных слоев населения, а значит, должны быть в равной степени предоставлены сами себе.
+        p Учитывая ключевые сценарии поведения, начало повседневной работы по формированию позиции предопределяет высокую востребованность форм воздействия. Мы вынуждены отталкиваться от того, что курс на социально-ориентированный национальный проект, в своём классическом представлении, допускает внедрение новых принципов формирования материально-технической и кадровой базы.
+
+    #event-share(style="display: none;")
+      +share-buttons(true)

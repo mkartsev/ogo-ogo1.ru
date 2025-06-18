@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Конфигуратор ПК</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header">
+        <a class="header-banner d-none d-lg-block" href="#"><img class="header-banner__img" src="/assets/img/content/header-banner.jpg" alt="Продукты Honor для успешного учебного года!" /></a>
+        <div class="header-top container">
+          <div class="header-top-left">
+            <a class="header-city js-city-popup" href="/ajax/new/select_city_popup.php">
+              <div class="header-city__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location-sm"></use></svg>
+              </div>
+              <span class="header-city__text">Москва</span>
+            </a>
+            <nav class="header-nav">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Доставка и оплата</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Гарантия и возврат</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Адреса магазинов</a></li>
+                <li class="header-nav__item"><a class="header-nav__link js-supplier-popup" href="/mocks/supplier">Поставщикам</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-top-right">
+            <a class="header-phone" href="tel:88002509045">
+              <div class="header-phone__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone-sm"></use></svg>
+              </div>
+              <span class="header-phone__text">8 800 250-90-45</span>
+            </a>
+            <div class="header-worktime"><span class="header-worktime__text">10:00 - 20:00</span></div>
+          </div>
+        </div>
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">онлайн гипермаркет</span>
+            </a>
+          </div>
+          <div class="header-bottom-center">
+            <button class="btn btn-primary burger-button js-button-catalog" type="button">
+              <i class="burger-button__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </i>
+              <i class="burger-button__loading">
+                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--spinner"></use></svg>
+              </i>
+              <span class="burger-button__text">Каталог</span>
+            </button>
+            <div class="header-search">
+              <form class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate>
+                <p class="form-error text-danger fw-bold" style="display: none"></p>
+                <fieldset class="position-relative">
+                  <input class="form-control" type="search" placeholder="Поиск товаров" name="q" autocomplete="off" />
+                  <button class="btn btn-link position-absolute top-50 end-0 translate-middle-y" type="submit">
+                    <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="header-bottom-right">
+            <div class="header-toolbar">
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link js-auth-popup" href="/ajax/new/authform.php">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                  </div>
+                  <span class="header-toolbar__link-text">Вход</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/compare.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-compare-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Сравнение</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/wishlist.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-favorite-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Избранное</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex js-cart-dropdown" data-products="" data-basketItems="[]">
+                <a class="header-toolbar__link" href="/cart.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-cart-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Корзина</span>
+                </a>
+                <div class="cart-dropdown">
+                  <div class="cart-dropdown__content">
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="389198">
+                          <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__discount product-card__badge badge text-bg-warning">-10%</div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="1" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-new">620 220 ₽</div></div>
+                        <div class="product-card__old"><div class="product-card__price-old">630 220 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="389198" data-tooltip-content="Удалить" onclick='cart.remove("389198")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391062">
+                          <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="2" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">534 000 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391062" data-tooltip-content="Удалить" onclick='cart.remove("391062")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391065">
+                          <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                      </div>
+                      <div class="product-card__availability">
+                        <span class="product-card__availability-title text-dark">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong-sm"></use></svg>
+                          Нет в наличии
+                        </span>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391065" data-tooltip-content="Удалить" onclick='cart.remove("391065")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="390124">
+                          <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                      </div>
+                      <div class="product-card__badges"><span class="product-card__badge badge text-bg-danger">В выбранном регионе товар не продается и будет удален из корзины</span></div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="390124" data-tooltip-content="Удалить" onclick='cart.remove("390124")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-dropdown__footer p-3">
+                    <div class="row g-3">
+                      <div class="col">Итоговая сумма:</div>
+                      <div class="col text-end">0 000 000 ₽</div>
+                      <div class="col-sm-12"><a class="btn btn-primary w-100" href="/cart.html" role="button">Перейти к оформлению</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-toolbar__item d-md-none">
+                <a class="header-toolbar__link" href="tel:88002509045">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog" data-src="/ajax/catalog.php"></div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header">
+            <nav class="breadcrumbs js-breadcrumbs" id="breadcrumbs" aria-label="breadcrumb">
+              <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Главная</span></a>
+                  <meta property="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Каталог</span></a>
+                  <meta property="position" content="2" />
+                </li>
+                <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem" aria-current="page">
+                  <span property="item" typeof="WebPage"><span property="name">Конфигуратор ПК</span></span>
+                  <meta property="position" content="2" />
+                </li>
+              </ol>
+            </nav>
+            <h1 class="page-title js-page-title">Конфигуратор ПК</h1>
+          </header>
+          <section class="content-section">
+            <div class="configurator" id="configurator">
+              <input type="hidden" name="" id="cofiguratorId" value="1600065" />
+              <div class="popup popup--md" id="popup-add-to-cart--configurator">
+                <p class="popup-title text-center">Товары добавлены в корзину!</p>
+                <div class="popup-content">
+                  <div class="popup-buttons d-flex justify-content-center align-items-center mt-4">
+                    <button class="btn btn-secondary me-3" type="button" data-fancybox-close>Продолжить покупки</button>
+                    <a class="btn btn-primary" href="/cart.html">Перейти в корзину</a>
+                  </div>
+                </div>
+              </div>
+              <div class="popup popup--md" id="popup-expert-request">
+                <p class="popup-title">Запрос оценки эксперта</p>
+                <div class="popup-content">
+                  <form class="form form-expert-request mb-3" id="form-expert-request" action="/ajax/new/configurationApplication.php" method="GET" data-reset="true" novalidate>
+                    <p class="form-error text-danger fw-bold" style="display: none"></p>
+                    <div class="row g-3 g-lg-4 mb-3">
+                      <div class="col-12 col-md-6">
+                        <div class="field field--type-text">
+                          <label class="field__label">Имя</label>
+                          <div class="field__field"><input class="form-control" type="text" value="" name="email" placeholder="Ваше имя" required="required" /></div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="field field--type-email">
+                          <label class="field__label">Электронная почта</label>
+                          <div class="field__field"><input class="form-control" type="email" value="" name="email" placeholder="Ваша электронная почта" required="required" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field field--type-checkbox">
+                      <label class="field__label">
+                        <input type="checkbox" id="expert-request-privacy" name="privacy" checked="checked" required="required" />
+                        <span class="field__check"></span>
+                        <span class="field__caption">
+                          С
+                          <a href="#">политикой обработки и защиты персональных данных</a>
+                          ознакомлен и согласен
+                        </span>
+                      </label>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Отправить</button>
+                  </form>
+                  <p>Наш эксперт проведет оценку конфигурации и после этого свяжется с вами по указанному адресу электронной почты</p>
+                  <p class="mb-1"><strong>Не выбраны обязательные компоненты:</strong></p>
+                  <ul class="configurator-required__list">
+                    <li>Корпус компьютера</li>
+                    <li>Материнская плата</li>
+                    <li>Процессор</li>
+                    <li>Оперативная память</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="popup popup--md" id="popup-configuration-mail">
+                <p class="popup-title">Отправка конфигурации на почту</p>
+                <div class="popup-content">
+                  <form class="form form-configuration-mail" id="form-configuration-mail" action="/ajax/new/configurationMail.php" method="GET" data-reset="true" novalidate>
+                    <p class="form-error text-danger fw-bold" style="display: none"></p>
+                    <div class="row g-3 g-lg-4">
+                      <div class="col-12 col-md-8">
+                        <div class="field field--type-email">
+                          <label class="field__label">Ваша электронная почта</label>
+                          <div class="field__field"><input class="form-control" type="email" name="email" placeholder="Ваша электронная почта" required="required" /></div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4"><button class="btn btn-primary mt-lg-4" type="submit">Отправить</button></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="configurator-header row g-3 mb-3">
+                <div class="col-12 col-md-8">
+                  <p>
+                    Конфигуратор не дает 100% гарантии совместимости. Наши специалисты всегда рады помочь в подборе оптимальной конфигурации.
+                    <a class="js-auth-popup" href="/ajax/new/authform.php">Авторизуйтесь</a>
+                    в личном кабинете, чтобы сохранить ваши конфигурации.
+                  </p>
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-end"><button class="btn btn-secondary js-configurator-action" type="button" data-action="newConfiguration">Новая конфигурация</button></div>
+                <div class="configurator-plate bg-info-subtle">
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><a class="js-check-strict" href="#">Проверить обязательные</a></li>
+                        <li class="list-inline-item"><a class="js-check-compatible" href="#">Проверить совместимость</a></li>
+                        <li class="list-inline-item"><a class="js-configurator-action" href="#" data-action="add" data-id="1600065">Добавить</a></li>
+                        <li class="list-inline-item"><a class="js-configurator-action" href="#" data-action="remove" data-id="1600065" data-reload="Y">Убрать</a></li>
+                        <li class="list-inline-item"><a class="js-configurator-action" href="#" data-action="addToBasket" data-id="1600065" data-reload="Y" data-type="service">Добавить все в корзину</a></li>
+                        <li class="list-inline-item"><a class="js-configurator-action" href="#" data-action="saveConfiguration" data-id="1600065">Сохранить</a></li>
+                        <li class="list-inline-item"><a class="js-configurator-action" href="#" data-action="newConfiguration">Новая конфигурация</a></li>
+                        <li class="list-inline-item"><a class="js-configurator-action" href="#" data-action="switchConfiguration" data-id="1600065">Переключить конфигурацию</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-2">
+                      <label for="test-quantity">Количество</label>
+                      <select class="js-configurator-action" id="test-quantity">
+                        <option data-action="setQuantity" data-id="1600065" data-reload="Y" data-list="configurator" data-quantity="3">3</option>
+                        <option data-action="setQuantity" data-id="1600065" data-reload="Y" data-list="configurator" data-quantity="2">2</option>
+                        <option data-action="setQuantity" data-id="1600065" data-reload="Y" data-list="configurator" data-quantity="1">1</option>
+                      </select>
+                    </div>
+                    <div class="col-2">
+                      <label for="test-os">ОС</label>
+                      <select class="js-configurator-action" id="test-os">
+                        <option value="0" data-action="remove" data-id="0" data-reload="Y" data-list="configurator" data-type="os">Нет</option>
+                        <option value="1524833" data-action="add" data-id="1524833" data-reload="Y" data-type="os">Windows 10 Pro 64bit DVD OEM ENG</option>
+                        <option value="1305852" data-action="add" data-id="1305852" data-reload="Y" data-type="os">Windows 10 Pro 64bit DVD OEM RU FQC-08909</option>
+                        <option value="1619702" data-action="add" data-id="1619702" data-reload="Y" data-type="os">Windows 11 Pro 64-bit Russian 1pk DSP OEI DVD (FQC-10547)</option>
+                        <option value="1647708" data-action="add" data-id="1647708" data-reload="Y" data-type="os">Windows 11 Pro 64bit DVD OEM ENG</option>
+                      </select>
+                    </div>
+                    <div class="col-2">
+                      <button class="btn btn-primary w-100 mt-4 js-configurator-action" type="button" data-action="add" data-id="1600065">
+                        <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-cart-sm"></use></svg>
+                        Добавить
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="configurator-body row g-3">
+                <div class="configurator-main col-12 col-lg-8">
+                  <div class="configurator-items">
+                    <div class="configurator-slot" id="korpus" data-strict="true" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--full" id="configurator-item-393525">
+                        <div class="configurator-item__category">
+                          Корпус компьютера
+                          <svg class="svg-icon svg-icon--sm text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--correct-sm"></use></svg>
+                        </div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" role="button" href="#">Изменить</a>
+                        <div class="configurator-item__product">
+                          <a class="configurator-item__link" href="#">
+                            <div class="configurator-item__image"><img src="/assets/img/content/products/393525.jpg" alt="" /></div>
+                            <span class="configurator-item__artikul">Арт. 393525</span>
+                            <span class="configurator-item__title">Корпус MicroATX Minitower AeroCool CS-110-S-BK-v1 Black</span>
+                          </a>
+                          <div class="configurator-item__badges"></div>
+                        </div>
+                        <div class="configurator-item__price">
+                          2 420&nbsp;₽
+                          <div class="configurator-item__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus"></use></svg>
+                            12&nbsp;бонусов
+                          </div>
+                        </div>
+                        <div class="configurator-item__controls">
+                          <button class="btn btn-link btn-sm js-tooltip js-add-to-list" type="button" data-id="393525" data-list="comparison" data-action="ADD_TO_COMPARE_LIST" data-tooltip-content="В сравнение">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                          </button>
+                          <button class="btn btn-link btn-sm js-tooltip js-add-to-list" type="button" data-id="393525" data-list="favorites" data-action="add" data-tooltip-content="В избранное">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                          </button>
+                          <button class="btn btn-link btn-sm js-tooltip js-configurator-action js-configurator-action" type="button" data-tooltip-content="Удалить" data-action="remove" data-id="1600065" data-reload="Y">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="block" data-strict="true" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--full" id="configurator-item-394969">
+                        <div class="configurator-item__category">
+                          Блок питания
+                          <svg class="svg-icon svg-icon--sm text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--correct-sm"></use></svg>
+                        </div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" role="button" href="#">Изменить</a>
+                        <div class="configurator-item__product">
+                          <a class="configurator-item__link" href="#">
+                            <div class="configurator-item__image"><img src="/assets/img/content/products/394969.jpg" alt="" /></div>
+                            <span class="configurator-item__artikul">Арт. 394969</span>
+                            <span class="configurator-item__title">Блок питания 600W ZALMAN ZM600-LX3</span>
+                          </a>
+                          <div class="configurator-item__badges"></div>
+                        </div>
+                        <div class="configurator-item__price">
+                          4 260&nbsp;₽
+                          <div class="configurator-item__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus"></use></svg>
+                            42&nbsp;бонуса
+                          </div>
+                        </div>
+                        <div class="configurator-item__controls">
+                          <button class="btn btn-link btn-sm js-tooltip js-add-to-list" type="button" data-id="394969" data-list="comparison" data-action="ADD_TO_COMPARE_LIST" data-tooltip-content="В сравнение">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                          </button>
+                          <button class="btn btn-link btn-sm js-tooltip js-add-to-list" type="button" data-id="394969" data-list="favorites" data-action="add" data-tooltip-content="В избранное">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                          </button>
+                          <button class="btn btn-link btn-sm js-tooltip js-configurator-action js-configurator-action" type="button" data-tooltip-content="Удалить" data-action="remove" data-id="1600065" data-reload="Y">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="materinka" data-strict="true" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">
+                          Материнская плата
+                          <div class="configurator-item__icon">
+                            <svg class="svg-icon svg-icon--sm js-tooltip" data-tooltip-content="Обязательный компонент"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info"></use></svg>
+                          </div>
+                        </div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--materinskaya-plata"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">
+                          От материнской платы зависят многие возможности компьютера - сколько видеокарт можно поставить, сколько модулей памяти, сколько и каких дисков подключить. Также на плате, как правило, интегрирован звуковой процессор.
+                        </div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="processor" data-strict="true" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">
+                          Процессор
+                          <div class="configurator-item__icon">
+                            <svg class="svg-icon svg-icon--sm js-tooltip" data-tooltip-content="Обязательный компонент"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info"></use></svg>
+                          </div>
+                        </div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--processor"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">Процессор (CPU) - мозг вашего ПК. Не забудьте, что он должен быть полностью совместим с материнской платой, иначе компьютер просто не заработает.</div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="cooler" data-strict="false" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">Кулер для процессора</div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--kuler"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">
+                          Кулер иногда поставляется вместе с процессором, но чаще его нужно выбрать отдельно. Чем мощнее процессор, тем лучше нужно продумать систему охлаждения. Для экстремальных сборок можно использовать жидкостные кулеры. Учитывайте
+                          размеры корпуса при подборе.
+                        </div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="memory" data-strict="true" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">
+                          Оперативная память
+                          <div class="configurator-item__icon">
+                            <svg class="svg-icon svg-icon--sm js-tooltip" data-tooltip-content="Обязательный компонент"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info"></use></svg>
+                          </div>
+                        </div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--operativnaya-pamyat"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">
+                          В оперативной памяти находятся все запущенные программы и работающие модули операционной системы - чем больше объем, тем комфортнее работать с компьютером. Если используется &quot;встроенная&quot; видеокарта, часть оперативной
+                          памяти используется для ее нужд и доступный обычным программам объем будет меньше.
+                        </div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="hdd" data-strict="false" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">Жесткий диск</div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--jesky-disk"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">Жесткий диск (HDD) служит для хранения ваших программ и файлов. Диски размером 3.5&quot; могут иметь объем более 10ТБ, диски размером 2.5&quot; используются в компактных корпусах.</div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="ssd" data-strict="false" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">SSD накопитель</div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--ssd"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">
+                          Твердотельные накопители (SSD) значительно превосходят по скорости жесткие диски, не шумят и потребляют меньше энергии. И, хотя их цена, как правило выше обычных дисков, лучше использовать именно SSD хотя бы для размещения
+                          операционной системы компьютера.
+                        </div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="video" data-strict="false" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">Видеокарта</div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--videokarta"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">
+                          Если будете играть на ПК в игры, без хорошей видеокарты не обойтись! А еще мощная видеокарта (GPU) поможет в работе с графическими приложениями или программировании систем искусственного интеллекта.
+                        </div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot" id="dvd" data-strict="false" data-mandatory="true" data-compatible="true">
+                      <div class="configurator-item configurator-item--empty">
+                        <div class="configurator-item__category">DVD-привод</div>
+                        <div class="configurator-item__image">
+                          <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#configurator--dvd"></use></svg>
+                        </div>
+                        <div class="configurator-item__placeholder">Оптический привод позволит читать CD или DVD диски (часть программ до сих пор на них поставляются). Также вы сможете записывать свои данные на диски для архива (резервной копии).</div>
+                        <a class="btn btn-secondary btn-sm configurator-item__button" href="#" role="button">Выбрать</a>
+                      </div>
+                    </div>
+                    <div class="configurator-slot configurator-slot--special bg-dark" id="assembly">
+                      <div class="configurator-item configurator-item--special">
+                        <div class="configurator-item__category">Сборка</div>
+                        <div class="configurator-item__custom">
+                          <div class="configurator-item__image">
+                            <svg class="svg-icon svg-icon--2xl"><use xlink:href="/assets/img/sprites/sprite.svg#ui--gear"></use></svg>
+                          </div>
+                          <div class="configurator-item__title">Сборка системного блока с водяным охлаждением</div>
+                        </div>
+                        <div class="configurator-item__price">1 990 ₽</div>
+                      </div>
+                    </div>
+                    <div class="configurator-slot configurator-slot--special bg-info" id="os">
+                      <div class="configurator-item configurator-item--special">
+                        <span class="configurator-item__category">Операционная система</span>
+                        <div class="configurator-item__custom">
+                          <div class="configurator-item__image">
+                            <svg class="svg-icon svg-icon--2xl text-white"><use xlink:href="/assets/img/sprites/sprite.svg#ui--windows"></use></svg>
+                          </div>
+                          <select class="js-configurator-action">
+                            <option value="0" data-action="remove" data-id="0" data-reload="Y" data-list="configurator" data-type="os">Нет</option>
+                            <option value="1524833" data-action="add" data-id="1524833" data-reload="Y" data-type="os">Windows 10 Pro 64bit DVD OEM ENG</option>
+                            <option value="1305852" data-action="add" data-id="1305852" data-reload="Y" data-type="os">Windows 10 Pro 64bit DVD OEM RU FQC-08909</option>
+                            <option value="1619702" data-action="add" data-id="1619702" data-reload="Y" data-type="os">Windows 11 Pro 64-bit Russian 1pk DSP OEI DVD (FQC-10547)</option>
+                            <option value="1647708" data-action="add" data-id="1647708" data-reload="Y" data-type="os">Windows 11 Pro 64bit DVD OEM ENG</option>
+                          </select>
+                        </div>
+                        <div class="configurator-item__price"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion js-accordion mb-3 mb-lg-5">
+                    <div class="accordion-item js-accordion-item">
+                      <div class="accordion-header js-accordion-header"><span class="lead">Дополнительные компоненты</span></div>
+                      <div class="accordion-body js-accordion-body">
+                        <ul class="configurator-additional__list">
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Мониторы</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Колонки</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Аксессуары для корпусов</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Мыши</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Гарнитуры для ПК</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Системы охлаждения</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Коврики для мышей</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Наушники</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Карты видеозахвата и ТВ-Тюнеры</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Клавиатуры</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Микрофоны</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Звуковые карты</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Комплекты</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Веб камеры</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Маршрутизаторы (Роутеры)</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Игровые манипуляторы</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Графические планшеты</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Wi-Fi адаптеры и карты</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">МФУ</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Приводы внешние</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Принтер</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Кресла для геймеров</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Кард ридеры внешние</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Сканеры</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">USB концентраторы (HUB)</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Программы</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Кронштейны для мониторов</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Док-станции для накопителей</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Антивирусы</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Сетевые фильтры и удлинители</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Внешние жесткие диски (HDD)</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Кресла и стулья</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">ИБП</a></li>
+                          <li class="configurator-additional__item"><a class="configurator-additional__link btn btn-secondary btn-sm w-100" href="#">Внешние накопители (SSD)</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="configurator-plate d-none d-lg-block">
+                    <ul class="configurator-estimate">
+                      <li class="configurator-estimate__item">
+                        <span class="configurator-estimate__item-name">Стоимость компонентов</span>
+                        <span class="configurator-estimate__item-cost">9 950 ₽</span>
+                      </li>
+                      <li class="configurator-estimate__item">
+                        <span class="configurator-estimate__item-name">Сборка</span>
+                        <span class="configurator-estimate__item-cost">990 ₽</span>
+                      </li>
+                    </ul>
+                    <hr />
+                    <div class="row g-3">
+                      <div class="col-12 col-lg-6">
+                        <div class="d-flex align-items-center fs-5 mb-0">
+                          <svg class="svg-icon svg-icon--sm text-success"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shield-sm"></use></svg>
+                          &ensp;Гарантия: 2 года при заказе сборки
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <div class="configurator-total">
+                          <span class="configurator-total__text">Итоговая стоимость:</span>
+                          <span class="configurator-total__price js-configurator-total">6 680&nbsp;₽</span>
+                          <div class="configurator-total__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus"></use></svg>
+                            54&nbsp;бонуса
+                          </div>
+                        </div>
+                        <button class="btn btn-primary w-100 js-configurator-action" type="button" data-action="addToBasket" data-id="1600065" data-reload="Y" data-type="service">Добавить в корзину</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="configurator-aside col-12 col-lg-4">
+                  <div class="configurator-aside__inner">
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <div class="configurator-plate">
+                          <div class="row">
+                            <div class="col-12 col-md-6 col-lg-12">
+                              <p class="fw-medium">Конфигурация</p>
+                              <div class="configurator-status alert js-configurator-status"></div>
+                              <progress class="configurator-progress mb-3 js-configurator-progress" min="0" max="100" value="0"></progress>
+                              <a class="btn btn-secondary w-100 text-center" href="#popup-expert-request" data-fancybox role="button">Бесплатная оценка специалиста</a>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-12">
+                              <hr class="d-none d-lg-block" />
+                              <ul class="configurator-estimate">
+                                <li class="configurator-estimate__item">
+                                  <span class="configurator-estimate__item-name">Стоимость компонентов</span>
+                                  <span class="configurator-estimate__item-cost">9 950 ₽</span>
+                                </li>
+                                <li class="configurator-estimate__item">
+                                  <span class="configurator-estimate__item-name">Сборка</span>
+                                  <span class="configurator-estimate__item-cost">990 ₽</span>
+                                </li>
+                              </ul>
+                              <div class="configurator-total">
+                                <span class="configurator-total__text">Итоговая стоимость:</span>
+                                <span class="configurator-total__price js-configurator-total">6 680&nbsp;₽</span>
+                                <div class="configurator-total__bonus">
+                                  <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus"></use></svg>
+                                  54&nbsp;бонуса
+                                </div>
+                              </div>
+                              <button class="btn btn-primary w-100 js-configurator-action" type="button" data-action="addToBasket" data-id="1600065" data-reload="Y" data-type="service">Добавить в корзину</button>
+                              <div class="d-flex align-items-center fs-5 mb-0 mt-3">
+                                <svg class="svg-icon svg-icon--sm text-success"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shield-sm"></use></svg>
+                                &ensp;Гарантия: 2 года при заказе сборки
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-12">
+                        <div class="configurator-plate">
+                          <p class="fw-medium">Сохранить конфигурацию</p>
+                          <form class="form form-configuration-save" id="form-configuration-save" data-reset="true" novalidate>
+                            <p class="form-error text-danger fw-bold" style="display: none"></p>
+                            <div class="field field--type-text mb-3">
+                              <div class="field__field"><input class="form-control" type="text" id="cofiguratorName" value="Конфигурация #1600065" required="required" /></div>
+                            </div>
+                            <button class="btn btn-success configurator-save js-configurator-action" type="button" data-action="saveConfiguration" data-id="1600065">Сохранить</button>
+                            <button class="btn btn-secondary js-tooltip js-copy-link" type="button" icon-size="md" data-tooltip-title="Копировать ссылку" data-copy-link-tooltip="Ссылка скопирована">
+                              <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--copy-link"></use></svg>
+                            </button>
+                            <a class="btn btn-secondary js-tooltip" href="#popup-configuration-mail" icon-size="md" data-tooltip-title="Отправить на почту" data-fancybox role="button">
+                              <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--mail"></use></svg>
+                            </a>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-12">
+                        <div class="configurator-plate">
+                          <p class="fw-medium">Мои конфигурации</p>
+                          <div class="list-group fs-4 mb-3">
+                            <a class="list-group-item list-group-item-action list-group-item-light js-configurator-action" href="#" data-action="switchConfiguration" data-id="1854327">🛠 Конфигурация #1854327</a>
+                            <a class="list-group-item list-group-item-action list-group-item-light js-configurator-action" href="#" data-action="switchConfiguration" data-id="3133769420">🍔 Конфигурация #3133769420</a>
+                            <a class="list-group-item list-group-item-action list-group-item-light js-configurator-action" href="#" data-action="switchConfiguration" data-id="4815162342">Конфигурация #4815162342</a>
+                          </div>
+                          <p class="mb-0 fs-4"><a href="/personal-configurations.html">Посмотреть все конфигурации</a></p>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="configurator-plate">
+                          <p class="fw-medium">Поделиться в соц. сетях</p>
+                          <div class="social-buttons">
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-lg-4">
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-1.svg" alt="Самовывоз сегодня" />
+                  <span class="footer-feature__title">Самовывоз сегодня</span>
+                  <span class="footer-feature__subtitle">из магазина с 10:00 до 22:00</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-2.svg" alt="Официальная гарантия" />
+                  <span class="footer-feature__title">Официальная гарантия</span>
+                  <span class="footer-feature__subtitle">на 30 225 товаров в наличии</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-3.svg" alt="Удобная доставка" />
+                  <span class="footer-feature__title">Удобная доставка</span>
+                  <span class="footer-feature__subtitle">днём и вечером ежедневно</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-4.svg" alt="Высокий рейтинг" />
+                  <span class="footer-feature__title">Высокий рейтинг</span>
+                  <span class="footer-feature__subtitle">на Я.Маркете с 2010 года</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row g-3 g-lg-4">
+              <div class="col-sm-12 col-md-4 col-lg-3 order-1">
+                <p class="mb-0"><strong>Служба поддержки</strong></p>
+                <p class="mb-2"><a class="footer-phone text-body text-decoration-none" href="tel:+7 495 133-79-84">+7 495 133-79-84</a></p>
+                <ul class="list-unstyled">
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#callback-tab-pane">Заказать звонок</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane">Задать вопрос</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#complain-tab-pane">Пожаловаться</a></li>
+                </ul>
+                <p class="footer-copyright d-none d-lg-block">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-2">
+                <p class="mb-1"><strong>Покупателям</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/news.html">Новости и акции</a></li>
+                  <li><a href="/shops.html">Адреса магазинов</a></li>
+                  <li><a href="/delivery.html">Доставка и самовывоз</a></li>
+                  <li><a href="/service.html">Гарантия и возврат</a></li>
+                  <li><a href="/bonus.html">Бонусная программа</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-3">
+                <p class="mb-1"><strong>Информация</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/job.html">Вакансии</a></li>
+                  <li><a href="/corporate.html">Корпоративным клиентам</a></li>
+                  <li><a class="js-supplier-popup" href="/ajax/new/supplier_inquiry_form.php">Поставщикам</a></li>
+                  <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-4 order-5 order-md-4 d-lg-none">
+                <p class="footer-copyright mt-4">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-3 order-4 order-md-5">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Подписывайтесь</strong></p>
+                    <div class="social-buttons mb-4">
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Принимаем к оплате</strong></p>
+                    <div class="pay-systems">
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mastercard_logo.png" alt="Mastercard" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/visa_logo.png" alt="Visa" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mir_logo.png" alt="МИР" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/sbercredit_logo.png" alt="Сберкредит" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-toolbar d-md-none">
+        <div class="container p-0">
+          <div class="row row-cols-5 g-0">
+            <div class="col">
+              <span class="footer-toolbar__item is-active">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Главная</span>
+              </span>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-catalog" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Каталог</span>
+              </button>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item" href="/cart.html">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                  <span class="fs-6 badge rounded-pill position-absolute top-0 end-0 bg-primary js-cart-counter hidden"></span>
+                </div>
+                <span class="footer-toolbar__item-text">Корзина</span>
+              </a>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item js-auth-popup" href="/ajax/new/authform.php">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Войти</span>
+              </a>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-sidebar" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Еще</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

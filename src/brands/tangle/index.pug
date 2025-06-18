@@ -1,0 +1,222 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "tangle"
+    page.title = "Бренд-зона Tangle Teezer"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.tangle
+    section.tangle-header
+      img.tangle-logo(src="./img/logo.svg", alt="tangle")
+
+    section.tangle-slider
+      .h2.text-center [cтандартный слайдер]
+
+    section.tangle-section
+      p
+        strong Tangle Teezer
+        |  — знаменитые расчески из Великобритании, покорившие своим необычным дизайном и эффективностью практически весь мир.
+      p
+        | Создатель бренда — британский стилист
+        strong Шон Палфри
+        | , у которого за плечами более тридцати лет опыта работы в индустрии.
+      p
+        strong Двухуровневая система гладких зубчиков
+        |  — уникальность, гордость и секрет Tangle Teezer, а также главное отличие от аналогов. Длинные зубчики бережно, легко и быстро распутывают волосы, избавляя от колтунов. Короткие — «запечатывают» кутикулу (верхний слой волоса), убирая лишнюю пушистость и делая пряди гладкими. Специально подобранное расстояние между зубчиками обеспечивает быстрое и бережное расчесывание.
+      p
+        | В коллекции
+        strong Tangle Teezer
+        |  — расчески для разных типов волос, а также для конкретных целей — распутывания волос, укладки и завершения образа.
+
+    section.tangle-section
+      h2.tangle-section__title Уход за кожей головы
+      .tangle-divider.tangle-divider--mint
+      p Тangle Тeezer The Scalp Exfoliator and Massager выполняет сразу две функции: очищение и массаж. Длинные гибкие зубчики помогают очистить кожу головы, удаляя ороговевшие частицы кожи и оказывая мягкое отшелушивающее действие. Короткие плотные зубчики приятно массируют кожу головы, снимая общее напряжение, а также способствуя улучшению кровообращения и росту волос. The Scalp Exfoliator and Massager и расческа Tangle Teezer The Wet Detangler — идеальная пара для ухода за волосами.
+      .row.g-3.g-lg-4
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #BCDAF5")
+              img.tangle-circle__img(src="./img/THE SCALP EXFOLIATOR MASSAGER.png", alt="THE SCALP EXFOLIATOR MASSAGER")
+            span.tangle-circle__title THE SCALP EXFOLIATOR & MASSAGER
+      br
+      .row.g-3.g-lg-4
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6365.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6366.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6367.jpg", alt)
+
+    section.tangle-section
+      h2.tangle-section__title Спреи для волос
+      .tangle-divider.tangle-divider--pink
+      p Теперь непослушные волосы — не проблема! Тangle Тeezer представляет спрей для легкого расчесывания волос Everyday Detangling Spray. Новинка помогает распутывать пряди и придает им блеск. В результате применения спрея волосы становятся более мягкими и увлажненными. Новый спрей Everyday Detangling Spray и расческа Tangle Teezer — идеальная пара для гладких и послушных волос.
+      .row.g-3.g-lg-4
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FF487D")
+              img.tangle-circle__img(src="./img/DETANGLING SPRAY FOR KIDS.png", alt="detangling spray for kids")
+            span.tangle-circle__title DETANGLING SPRAY FOR KIDS
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #A1DDA4")
+              img.tangle-circle__img(src="./img/EVERYDAY DETANGLING CREAM SPRAY.png", alt="everyday detangling cream spray")
+            span.tangle-circle__title EVERYDAY DETANGLING CREAM SPRAY
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FFCCFF")
+              img.tangle-circle__img(src="./img/EVERYDAY DETANGLING SPRAY.png", alt="everyday detangling spray")
+            span.tangle-circle__title EVERYDAY DETANGLING SPRAY
+      br
+      .row.g-3.g-lg-4
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6362.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6363.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6364.jpg", alt)
+
+    section.tangle-section
+      h2.tangle-section__title Бережное расчесывание
+      .tangle-divider.tangle-divider--pink
+      p Профессиональные расчески для бережного распутывания волос — это первый шаг к волосам вашей мечты. Благодаря уникальному строению зубчиков, расчески Tangle Teezer мягко скользят по волосам, не повреждая и не травмируя их.
+      .row.g-3.g-lg-4
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #F8EED7")
+              img.tangle-circle__img(src="./img/COMPACT STYLER.png", alt="compact styler")
+            span.tangle-circle__title COMPACT STYLER
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FF6590")
+              img.tangle-circle__img(src="./img/THE WET DETANGLER.png", alt="the wet detangler")
+            span.tangle-circle__title THE WET DETANGLER
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FDFCE8")
+              img.tangle-circle__img(src="./img/THE WET DETANGLER FINE FRAGILE.png", alt="the wet detangler fine fragile")
+            span.tangle-circle__title THE WET DETANGLER FINE & FRAGILE
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #E8F4FD")
+              img.tangle-circle__img(src="./img/THE WET DETANGLER LARGE.png", alt="the wet detangler large")
+            span.tangle-circle__title THE WET DETANGLER LARGE
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #F1D2E3")
+              img.tangle-circle__img(src="./img/THE WET DETANGLER MINI.png", alt="the wet detangler mini")
+            span.tangle-circle__title THE WET DETANGLER MINI
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #DCDBDB")
+              img.tangle-circle__img(src="./img/SALON ELITE.png", alt="salon elite")
+            span.tangle-circle__title SALON ELITE
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #EAC7CE")
+              img.tangle-circle__img(src="./img/ORIGINAL THICK CURLY.png", alt="original thick curly")
+            span.tangle-circle__title ORIGINAL THICK & CURLY
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FDE8E8")
+              img.tangle-circle__img(src="./img/KIDS ORIGINAL MINI.png", alt="kids original mini")
+            span.tangle-circle__title KID’S ORIGINAL MINI
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #F4E8FD")
+              img.tangle-circle__img(src="./img/ORIGINAL.png", alt="original")
+            span.tangle-circle__title ORIGINAL
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #E8FAFD")
+              img.tangle-circle__img(src="./img/ORIGINAL FINE FRAGILE.png", alt="original fine fragile")
+            span.tangle-circle__title ORIGINAL FINE & FRAGILE
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FDE8E8")
+              img.tangle-circle__img(src="./img/ORIGINAL MINI.png", alt="original mini")
+            span.tangle-circle__title ORIGINAL MINI
+      br
+      .row.g-3.g-lg-4
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6368.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6369.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6370.jpg", alt)
+
+    section.tangle-section
+      h2.tangle-section__title Укладка феном
+      .tangle-divider.tangle-divider--blue
+      p Быстрая укладка без вреда для волос. Выпрямить пряди, создать объемную или естественную укладку — расчески Tangle Teezer для сушки волос феном помогут просто и быстро высушить волосы и придать им желаемую форму.
+      .row.g-3.g-lg-4
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #CFCBFF")
+              img.tangle-circle__img(src="./img/EASY DRY GO.png", alt="easy dry go")
+            span.tangle-circle__title EASY DRY & GO
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #E5E4D5")
+              img.tangle-circle__img(src="./img/BLOW STYLING.png", alt="blow styling")
+            span.tangle-circle__title BLOW STYLING
+      br
+      .row.g-3.g-lg-4
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6371.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6372.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6373.jpg", alt)
+
+    section.tangle-section
+      h2.tangle-section__title ЗАВЕРШЕНИЕ ОБРАЗА
+      .tangle-divider.tangle-divider--magenta
+      p Финальный штрих в укладке. Расчески Tangle Teezer для стайлинга — все, что вам нужно для идеальной прически! Не важно, хотите ли вы придать волосам объем, текстуру или придать гладкость и блеск — запатентованные зубчики с легкостью справятся с задачей.
+      .row.g-3.g-lg-4
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FEDEED")
+              img.tangle-circle__img(src="./img/BACK-COMBING.png", alt="back-combing")
+            span.tangle-circle__title BACK-COMBING
+        .col-6.col-md-4.col-lg-2
+          a.tangle-circle(href="#")
+            .tangle-circle__img-wrapper(style="background-color: #FBB1C6")
+              img.tangle-circle__img(src="./img/THE ULTIMATE STYLER.png", alt="the ultimate styler")
+            span.tangle-circle__title THE ULTIMATE STYLER
+      br
+      .row.g-3.g-lg-4
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6374.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6375.jpg", alt)
+        .col-4
+          .tangle-tile
+            img.tangle-tile__img(src="./img/Rectangle 6376.jpg", alt)
+
+    section.tangle-section
+      a.tangle-button.w-full(href="#") Смотреть весь ассортимент

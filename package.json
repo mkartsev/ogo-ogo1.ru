@@ -1,0 +1,128 @@
+{
+  "name": "ogo_clean",
+  "type": "module",
+  "description": "Storefront for Ogo1.ru",
+  "author": "Mikhail Kartsev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ogo-int/ogo_clean.git"
+  },
+  "license": "CC-BY-NC-ND-4.0",
+  "main": "./gulpfile.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development ENABLE_MOCK_API=true gulp",
+    "dev": "cross-env NODE_ENV=development ENABLE_MOCK_API=true gulp",
+    "sprite": "gulp sprite",
+    "build": "cross-env NODE_ENV=production ENABLE_MOCK_API=false gulp build",
+    "build:scripts": "cross-env NODE_ENV=production ENABLE_MOCK_API=false gulp scripts",
+    "build:styles": "cross-env NODE_ENV=production ENABLE_MOCK_API=false gulp styles",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "lint:styles --fix": "stylelint --fix \"src/**/*.scss\"",
+    "lint:scripts": "eslint \"src/assets/scripts/**/*.js\"",
+    "lint:scripts --fix": "eslint --fix \"src/assets/scripts/**/*.js\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.23.10",
+    "@babel/plugin-proposal-optional-chaining-assign": "^7.24.7",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/register": "^7.23.7",
+    "@typescript-eslint/parser": "^8.28.0",
+    "babel-loader": "^9.1.3",
+    "browser-sync": "^3.0.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.10.0",
+    "del": "^7.1.0",
+    "dotenv": "^16.4.5",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^9.23.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^5.0.2",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^3.0.0",
+    "gulp-data": "^1.3.1",
+    "gulp-debug": "^5.0.1",
+    "gulp-favicons": "^4.0.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^9.0.0",
+    "gulp-merge-json": "^2.2.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-prettier": "^6.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^2.0.3",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-watch": "^5.0.1",
+    "gulp-webp": "^5.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "mkdirp": "^3.0.1",
+    "msw": "2.4.8",
+    "path": "^0.12.7",
+    "postcss": "^8.4.35",
+    "postcss-prefix-selector": "^1.16.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "3.5.1",
+    "require-dir": "^1.2.0",
+    "sass": "1.77.6",
+    "style-loader": "^3.3.4",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.2.1",
+    "stylelint-selector-bem-pattern": "^4.0.0",
+    "supports-color": "^10.0.0",
+    "typescript": "^5.8.2",
+    "webpack": "5.93.0",
+    "webpack-stream": "^7.0.0",
+    "yarn-upgrade-all": "^0.7.2"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.35",
+    "@grubersjoe/slide-menu": "^1.2.3",
+    "@popperjs/core": "^2.11.8",
+    "@tarekraafat/autocomplete.js": "^10.2.7",
+    "air-datepicker": "^3.5.0",
+    "bootstrap": "^5.3.3",
+    "choices.js": "^10.2.0",
+    "dayjs": "^1.11.13",
+    "es6-menu-aim": "^1.0.4",
+    "inputmask": "^5.0.8",
+    "jquery": "^3.7.1",
+    "jquery-validation": "^1.20.0",
+    "nanostores": "^0.11.4",
+    "nouislider": "^15.7.1",
+    "swiper": "11.2.6",
+    "tippy.js": "^6.3.7",
+    "toastify-js": "^1.12.0",
+    "wnumb": "^1.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.scss": [
+      "stylelint --fix --allow-empty-input"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "packageManager": "yarn@4.7.0",
+  "msw": {
+    "workerDirectory": [
+      "src"
+    ]
+  }
+}

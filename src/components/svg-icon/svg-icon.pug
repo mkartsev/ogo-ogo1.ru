@@ -1,0 +1,8 @@
+//- Иконки мы просто грузим с любыми именами в папку /assets/img/svg-sprites
+//- При сборке в спрайт вебпак меняет пробелы и знаки в именах на дефис
+//- Если иконка внутри какой-то подпапки, то в имя будет добавлен префикс с ее названием [префикс--],
+//- Например categories--avto
+
+mixin svg-icon(name, size)
+  svg(class="svg-icon" + (size ? " svg-icon--" + size : ""))&attributes(attributes)
+    use(xlink:href="/assets/img/sprites/sprite.svg#" + name)

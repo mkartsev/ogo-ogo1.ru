@@ -1,0 +1,13 @@
+mixin news-card(item)
+  article.news-card&attributes(attributes)
+    a(href="#" rel="nofollow").news-card__img-wrapper
+      img(src= item.img, alt= item.title).news-card__img
+      if (item.isDone)
+        .news-card__badge.badge.py-1.px-2.text-bg-primary Акция завершена
+    .news-card__dates
+      if item.dateFrom
+        time(datetime="YYYY-MM-DDThh:mm:ss").news-card__date-from= item.dateFrom
+      if item.dateTo
+        time(datetime="YYYY-MM-DDThh:mm:ss").news-card__date-to= item.dateTo
+    h3.news-card__title
+      a(href="#")= item.title

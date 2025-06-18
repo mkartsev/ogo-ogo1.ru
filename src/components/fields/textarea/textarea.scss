@@ -1,0 +1,15 @@
+.field {
+  &__textarea-wrapper {
+    position: relative;
+    textarea {
+      padding-bottom: 30px;
+    }
+  }
+  &__textarea-length {
+    display: inline-block;
+    position: absolute;
+    right: 24px;
+    bottom: 4px;
+    max-width: calc(100% - 48px);
+  }
+}

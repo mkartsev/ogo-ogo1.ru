@@ -1,0 +1,894 @@
+.checkout {
+}
+
+.checkout-page {
+  @extend .content-section;
+}
+
+// Предупреждения в чекауте
+.checkout-alerts {
+  display: flex;
+  flex-flow: column nowrap;
+  &__item {}
+}
+
+// Табы Физлицо/Юрлицо + Самовывоз/Доставка
+// .checkout-tabs {
+//   margin-bottom: $spacer * 2;
+// }
+
+/* Сохраненные адреса */
+.checkout-addresses {
+  max-height: 208px;
+  margin-bottom: $spacer;
+  overflow-y: auto;
+}
+// .checkout-address {}
+
+// Пункты выдачи
+.checkout-delivery {
+  &__points {
+    max-height: 500px;
+    overflow-y: auto;
+    // @include custom-scrollbar;
+  }
+
+  &__point {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    padding: $spacer;
+    font-size: var(--font-size-root);
+    margin-bottom: -1px;
+    border: 1px solid var(--border-color, $border-color);
+
+    &:hover {
+      cursor: pointer;
+      border-color: var(--info-border-subtle);
+      z-index: 1;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.checked {
+      border-color: var(--info, $info);
+      z-index: 2;
+      .checkout-delivery__point-desc {
+        display: block;
+      }
+    }
+
+    &:not(.checked) .hidden-default {
+      display: none;
+    }
+
+    &-button {
+    }
+
+    &-content {
+      display: flex;
+      position: relative;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-right: 40px;
+      gap: $spacer;
+    }
+
+    &-date {
+      display: inline-block;
+      font-size: var(--font-size-sm, $font-size-sm);
+      &-group {
+        flex-shrink: 0;
+        > select {
+          height: 2.5rem;
+        }
+      }
+      &-title {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &-desc {
+      display: none;
+      padding: $spacer 0 0;
+      margin-top: $spacer;
+      border-top: 1px solid var(--border-color, $border-color);
+    }
+
+    &-info {
+      display: flex;
+      flex-flow: column nowrap;
+      flex-shrink: 0;
+      gap: $spacer * 0.5;
+      padding-right: 14px;
+    }
+
+    &-metro {
+      position: relative;
+      padding-left: 20px;
+      line-height: 2.5rem;
+      font-weight: 300;
+      font-size: var(--font-size-root);
+
+      &-icon {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background: var(--success);
+        transform: translateY(-50%);
+      }
+    }
+
+    &-radio {
+      position: absolute !important;
+      right: $spacer;
+      top: $spacer * 2;
+      margin: 0;
+    }
+
+    &-text {
+      margin-top: $spacer;
+      font-weight: 300;
+      font-size: var(--font-size-sm);
+    }
+
+    &-type {
+      font-weight: 300;
+      font-size: var(--font-size-root);
+    }
+
+    &-payment {
+      font-size: var(--font-size-sm);
+      color: var(--primary, $primary);
+    }
+
+    &-payment-info {
+      flex-shrink: 0;
+      align-self: center;
+      width: 39%;
+      padding: 3px 0 1px;
+    }
+
+    &-price {
+      display: inline-block;
+      font-weight: 600;
+      font-size: var(--font-size-root);
+      white-space: nowrap;
+    }
+
+    &-text {
+    }
+
+    &-title {
+      font-weight: normal;
+      font-size: var(--font-size-base);
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s;
+        &:hover {
+          color: var(--info, $info);
+        }
+      }
+    }
+
+    &-worktime {
+      font-weight: 300;
+      font-size: var(--font-size-root);
+      color: var(--gray-600, $gray-600);
+    }
+
+    &--ogo {
+      .checkout-delivery__point-radio {
+        top: $spacer * 1.5;
+      }
+      @include media-breakpoint-up(md) {
+        .checkout-delivery__point-title,
+        .checkout-delivery__point-worktime,
+        .checkout-delivery__point-payment {
+          padding-left: 20px;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &-content {
+        gap: unset;
+      }
+      &-date {
+        &-group {
+          width: 45%;
+        }
+      }
+      &-info {
+        width: 55%;
+      }
+    }
+  }
+
+  &__type {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $spacer * 0.5;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    padding: $spacer;
+    color: var(--body-color);
+    border: 1px solid var(--border-color, $border-color);
+
+    &-title {
+      font-size: var(--font-size-root);
+      font-weight: 600;
+    }
+
+    &-date {
+      color: var(--dark, $dark);
+      font-size: var(--font-size-sm);
+    }
+
+    &-price {
+      color: var(--primary, $primary);
+      font-size: var(--font-size-root);
+    }
+
+    &:hover {
+      cursor: pointer;
+      border-color: var(--info, $info);
+    }
+
+    &.active,
+    &.is-active {
+      border-color: var(--info, $info);
+    }
+  }
+
+  &__service {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: $spacer;
+    color: var(--body-color);
+    font-size: var(--font-size-sm, $font-size-sm);
+    font-weight: 300;
+    border: 1px solid var(--border-color, $border-color);
+
+    &.checked {
+      border-color: var(--info, $info);
+    }
+
+    &-info {
+      align-self: center;
+      flex: 1 0 100%;
+      width: 100%;
+      padding: $spacer $spacer*2.5;
+    }
+
+    &-title {
+      font-size: var(--font-size-sm, $font-size-sm);
+      font-weight: 600;
+    }
+
+    &-payment {
+      font-weight: 300;
+      font-size: var(--font-size-xs, $font-size-xs);
+      color: var(--primary, $primary);
+      margin-top: $spacer * 0.5;
+    }
+
+    &-options {
+      display: flex;
+      position: relative;
+      flex: 1 0 100%;
+      width: 100%;
+      padding: 0 $spacer*2.5;
+      overflow: hidden;
+
+      &--single {
+        padding: 0;
+      }
+
+      &--single .checkout-delivery__service-option {
+        text-align: left;
+        width: 100%;
+        flex: 1 0 100%;
+        max-width: 100%;
+        padding: $spacer $spacer*1.5;
+      }
+    }
+
+    &-option {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      // flex: 0 0 33.3333%;
+      // max-width: 33.3333%;
+      height: auto;
+      padding: $spacer $spacer*0.25;
+      text-align: center;
+      min-height: 100px;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--secondary, $secondary);
+      }
+      &.checked {
+        background: var(--info-bg-subtle);
+      }
+    }
+
+    &-day {
+      font-size: var(--font-size-sm, $font-size-sm);
+      font-weight: 300;
+    }
+
+    &-time {
+      font-size: var(--font-size-sm, $font-size-sm);
+      font-weight: 300;
+      white-space: nowrap;
+      color: var(--dark, $dark);
+      margin-bottom: $spacer*0.5;
+    }
+
+    &-price {
+      font-size: var(--font-size-base, $font-size-base);
+      font-weight: normal;
+      white-space: nowrap;
+      color: var(--primary, $primary);
+      margin-top: $spacer*0.25;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      opacity: 1;
+      width: $spacer*2.5;
+      height: 100%;
+      transform: translateY(-50%);
+    }
+    .swiper-button-prev {
+      left: 0;
+    }
+    .swiper-button-next {
+      right: 0;
+    }
+
+    &:hover {
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: translateY(-50%);
+      }
+    }
+    @include media-breakpoint-up(md) {
+      &-info {}
+      &-options {
+
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      flex-flow: row nowrap;
+      &-info {
+        flex: 0 0 256px;
+        max-width: 256px;
+      }
+      &-options {
+        flex: 1 0 auto;
+        width: calc(100% - 256px);
+      }
+    }
+  }
+}
+
+// Товары в чекауте
+.checkout-items {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: rem(-20);
+  margin-left: rem(-20);
+  border-radius: var(--border-radius-sm, $border-radius-sm);
+  overflow: hidden;
+  &__header {
+    order: 2;
+  }
+
+  &__body {
+    order: 3;
+  }
+
+  &__footer {
+    order: 1;
+    border-right: 1px solid var(--light, $light);
+    border-top: 1px solid var(--light, $light);
+    border-left: 1px solid var(--light, $light);
+  }
+
+  @include media-breakpoint-down(md) {
+    &__footer {
+      padding: 0 12px;
+      border-right: none;
+      border-left: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-right: unset;
+    margin-left: unset;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__header {
+      order: 1;
+    }
+    &__body {
+      order: 2;
+    }
+    &__footer {
+      order: 3;
+      border-bottom: 1px solid var(--light, $light);
+    }
+  }
+}
+
+// Сайдбар с ценой и товарами
+.checkout-sidebar {
+  padding: $spacer;
+  border: 1px solid var(--light, $light);
+
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: $spacer;
+  }
+  // @include media-breakpoint-up(xl) {
+  //   border-bottom: none;
+  //   &:after {
+  //     content: '';
+  //     position: absolute;
+  //     bottom: -8px;
+  //     left: -1px;
+  //     width: 100%;
+  //     height: 8px;
+  //     background: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="8" fill="%23E0E0E0" viewBox="0 0 16 8"><path d="M8.7,7.7L16,1l0-1h-1L8.1,6.3l0,0C8,6.4,7.8,6.4,7.7,6.3l0,0L1,0L0,0v1l7.3,6.7l0,0C7.5,7.9,7.7,8,8,8C8.3,8,8.5,7.9,8.7,7.7"/></svg>');
+  //   }
+  // }
+}
+
+// Шаги чекаута
+.checkout-steps {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: $spacer * 2;
+
+  &__item {
+    display: inline-flex;
+    position: relative;
+    flex-shrink: 0;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    min-width: 25%;
+    padding: $spacer * 0.5;
+    color: var(--dark, $dark);
+    font-weight: 500;
+    font-size: var(--font-size-root);
+    line-height: 1.25;
+    background: var(--secondary, $secondary);
+    border-top: 1px solid var(--light, $light);
+    border-bottom: 1px solid var(--light, $light);
+    border-left: 1px solid var(--light, $light);
+
+    &.is-active {
+      color: var(--white, $white);
+      background: var(--info, $info);
+      border-color: var(--info, $info);
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        width: 0;
+        height: 0;
+        z-index: 1;
+      }
+      &:before {
+        left: -1px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 10px solid var(--secondary, $secondary);
+      }
+      &:after {
+        right: -10px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 10px solid var(--info, $info);
+      }
+    }
+
+    &:first-child {
+      // border-right: 1px solid var(--light, $light);
+      &:before {
+        display: none;
+      }
+    }
+    &:last-child {
+      border-right: 1px solid var(--light, $light);
+      &:after {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      min-width: 80px;
+      padding: $spacer * 0.5 $spacer * 1.25;
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-width: 120px;
+      padding: $spacer * 0.5 $spacer * 2;
+      // &.is-active {
+      //   &:after {
+      //     right: -10px;
+      //     border-top-width: 20px;
+      //     border-bottom-width: 20px;
+      //     border-left-width: 10px;
+      //   }
+      // }
+    }
+  }
+}
+
+// Итоговая стоимость
+.checkout-total {
+  &__price {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacer * 2;
+    padding-top: $spacer * 2;
+    border-top: 1px solid var(--light, $light);
+
+    &-title {
+      font-size: var(--font-size-base, $font-size-base);
+    }
+
+    &-value {
+      font-size: $h1-font-size;
+      white-space: nowrap;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: $spacer * 0.5;
+    }
+
+    &-title {
+      display: inline-flex;
+      flex: 1 1 auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: var(--font-size-root, $font-size-root);
+      font-weight: 300;
+      vertical-align: unset;
+      &:after {
+        display: inline-flex;
+        content: "";
+        flex: 1 1 auto;
+        margin: 0 7px 5px;
+        border-bottom: 1px dotted currentColor;
+      }
+    }
+
+    &-value {
+      display: inline-flex;
+      width: auto;
+      flex: 0 0 auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      color: var(--body-color, $body-color);
+      font-size: var(--font-size-base, $font-size-base);
+      font-weight: normal;
+      border-bottom: none;
+      white-space: nowrap;
+    }
+  }
+
+  &__value {
+    font-size: $h1-font-size;
+  }
+
+  &__bonus {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: $spacer * 0.5;
+    font-size: var(--font-size-sm, $font-size-sm);
+  }
+
+  &__note {
+    color: var(--dark, $dark);
+    font-size: var(--font-size-sm, $font-size-sm);
+  }
+
+  &__items {
+    margin-bottom: $spacer * 2;
+    padding-bottom: $spacer * 2;
+    border-bottom: 1px solid var(--light, $light);
+
+    @include media-breakpoint-up(lg) {
+      @include custom-scrollbar;
+      max-height: 50vh;
+      padding-right: $spacer *0.5;
+    }
+  }
+}
+
+// Инфо о покупателе
+.checkout-requisites {
+  margin-bottom: $spacer;
+  &__item {
+    margin-bottom: $spacer;
+    padding: $spacer * 0.75;
+    color: var(--body-color);
+    // font-weight: 300;
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--border-color);
+
+    &__body {
+      .checkout-requisites__item__info-wrapper {
+        padding-top: $spacer;
+        border-top: 1px solid var(--border-color);
+      }
+    }
+
+    &__title {
+      font-weight: normal;
+      font-size: var(--font-size-base);
+    }
+
+    &__info {
+      width: 100%;
+      &-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        gap: $spacer;
+        margin-top: $spacer;
+      }
+      &-title {
+        font-weight: 300;
+        font-size: var(--font-size-sm);
+        color: var(--dark);
+      }
+      &-text {
+        b, strong {
+          font-weight: 600;
+        }
+      }
+      &-date {
+        font-size: var(--font-size-sm);
+        color: var(--dark);
+        margin-top: 4px;
+      }
+      &--sm {
+        width: auto;
+      }
+      &--delivery {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: $spacer;
+    }
+  }
+}
+
+// Карта очевидно
+.checkout-map {
+  height: 400px;
+  margin-bottom: $spacer;
+}
+
+// Данные о заказе, финальный шаг
+.checkout-order {
+  &__items {}
+
+  &__item {
+    padding: $spacer 0;
+    border-bottom: 1px solid var(--border-color);
+
+    b, strong {
+      font-weight: 600;
+    }
+
+    @include media-breakpoint-up(md) {}
+    @include media-breakpoint-up(lg) {
+      padding: $spacer $spacer *4 $spacer 0;
+    }
+  }
+
+  &__total {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: $spacer*0.5 $spacer;
+    min-height: 80px;
+    padding: $spacer 0;
+    font-size: var(--font-size-sm, $font-size-sm);
+    border-bottom: 1px solid var(--border-color);
+
+    b, strong {
+      font-weight: 600;
+    }
+    // &-info {}
+    // &-title {}
+    // &-date {}
+
+    &-price {
+      align-self: center;
+      font-size: var(--font-size-base, $font-size-base);
+    }
+
+    &-discount {
+      color: var(--danger, $danger);
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr auto;
+
+      &-info {
+        grid-column: 1;
+      }
+
+      &-price {
+        grid-column: 2;
+      }
+
+      &-discount {
+        grid-column: 2;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: 64px 1fr auto;
+      padding: $spacer $spacer*4 $spacer 0;
+
+      &-info {
+        grid-column: 2;
+      }
+
+      &-price {
+        grid-column: 3;
+      }
+
+      &-discount {
+        grid-column: 3;
+      }
+    }
+  }
+
+  &__overall {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: $spacer*0.5 $spacer;
+    min-height: 80px;
+    padding: $spacer *0.5 0;
+    font-size: var(--font-size-sm, $font-size-sm);
+    border-bottom: 1px solid var(--border-color);
+
+    b, strong {
+      font-weight: 600;
+    }
+
+    &-bonus {
+      color: var(--info, $info);
+    }
+
+    &-price {
+      font-size: $h1-font-size;
+
+      &-wrapper {
+        display: flex;
+        grid-column: 1;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        align-self: flex-start;
+      }
+    }
+
+    &-title {
+      align-self: center;
+      font-size: var(--font-size-base, $font-size-base);
+    }
+
+    &-subtitle {
+      align-self: center;
+      font-size: var(--font-size-root, $font-size-root);
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr auto;
+
+      &-price-wrapper {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-items: flex-end;
+        align-self: center;
+      }
+
+      &-title,
+      &-subtitle {
+        grid-column: 1;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: 64px 1fr auto;
+      padding: $spacer $spacer *4 $spacer 0;
+      &-price-wrapper {
+        grid-column: 3;
+      }
+      &-title {
+        grid-column: 2;
+      }
+      &-subtitle {
+        grid-column: 2;
+      }
+    }
+  }
+
+  &__info {
+    margin-top: $spacer;
+
+    @include media-breakpoint-up(lg) {
+      padding-left: calc(64px + $spacer);
+    }
+  }
+}
+
+.checkout-success {
+  display: flex;
+  padding: $spacer *1.5 0;
+  gap: $spacer;
+
+  &__text {
+    flex: 1 1 auto;
+
+  }
+
+  &__image {
+    display: none;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__image {
+      display: initial;
+      min-width: 302px;
+    }
+  }
+}

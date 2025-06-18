@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+include ../../components/forms/forms
+
+append vars
+  -
+    page.name  = "auth"
+    page.title = "Авторизация"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    .row
+      .col-md-6.col-lg-4
+        +form-auth().mb-3
+        p Впервые у нас?
+          a(href=process.env.REGISTRATION_URL).js-registration-popup Зарегистрироваться

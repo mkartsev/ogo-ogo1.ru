@@ -1,0 +1,46 @@
+.popup {
+  display: none;
+  width: 100%;
+  min-width: 320px;
+  max-width: map-get($grid-breakpoints, "md");
+  font-size: var(--font-size-root, $font-size-root);
+
+  &-title {
+    // display: flex;
+    // align-items: center;
+    // gap: $spacer * 0.5;  //8px
+    margin-bottom: $spacer * 0.5; //8px
+    padding-right: 24px;
+    font-size: $h2-font-size;
+    font-weight: 600;
+  }
+
+  &-content {
+    // display: flex;
+    // flex-flow: column nowrap;
+    // align-items: flex-start;
+    width: 100%;
+  }
+
+  @each $breakpoint, $size in $grid-breakpoints {
+    &--#{$breakpoint} {
+      max-width: $size;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    min-width: 90vw;
+  }
+  @include media-breakpoint-up(md) {
+    &--sm {
+      min-width: 420px;
+    }
+    &--md {
+      min-width: 640px;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &--md {
+      min-width: 640px;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+extends ../layouts/default
+
+include ../../components/compare/compare
+include ../../components/fields/fields
+include ../../components/product-card/product-card
+append vars
+  -
+    page.name  = "compare"
+    page.title = "Сравнение товаров"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    -
+      const uniqueCategories = Object.values(
+        products.reduce((acc, { category }) => {
+          acc[category.id] = acc[category.id] || { ...category, count: 0 };
+          acc[category.id].count++;
+          return acc;
+        }, {})
+      );
+
+      const noutbuki = [...products.filter(el => el.category.id == "noutbuki")]
+      const smartfony = [...products.filter(el => el.category.id == "smartfony")]
+      const monitoryi = [...products.filter(el => el.category.id == "monitoryi")]
+
+    .compare-data
+      .compare-categories
+        .tags-list.mb-3
+          each category, index in uniqueCategories
+            .tags-item
+              button(type="button" class=`tags-link fs-4 js-compare-category-select${index == 1 ? " is-active" : ""}` data-category=category.title )= `${category.title} ${category.count}`
+
+          .tags-item
+            button(type="button" class="tags-link fs-4 js-compare-category-select" data-category="Мобильные телефоны") Мобильные телефоны 42
+          .tags-item
+            button(type="button" class="tags-link fs-4 js-compare-category-select" data-category="") Undefined
+
+      //- h2.content-section__title Ноутбуки
+      //- +compare-controls(noutbuki).mb-3
+      //- .compare-items(data-syncscroll="noutbuki")
+      //-   table
+      //-     thead(class="compare-items__group")
+      //-       tr
+      //-         for product in noutbuki
+      //-           th
+      //-             +product-card(variant="compare", product=product)
+      //- .compare-props(data-syncscroll="noutbuki")
+      //-   +compare-table(noutbuki)
+
+      h2.content-section__title Смартфоны
+      +compare-controls(smartfony).mb-3
+      .compare-items(data-syncscroll="smartfony")
+        table
+          thead(class="compare-items__group")
+            tr
+              for product in smartfony
+                th
+                  +product-card(variant="compare", product=product)
+      .compare-props(data-syncscroll="smartfony")
+        +compare-table(smartfony)
+
+      //- h2.content-section__title Мониторы
+      //- +compare-controls(monitoryi).mb-3
+      //- .compare-items(data-syncscroll="monitoryi")
+      //-   table
+      //-     thead(class="compare-items__group")
+      //-       tr
+      //-         for product in monitoryi
+      //-           th
+      //-             +product-card(variant="compare", product=product)
+      //- .compare-props(data-syncscroll="monitoryi")
+      //-   +compare-table(monitoryi)

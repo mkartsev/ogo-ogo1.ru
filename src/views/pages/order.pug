@@ -1,0 +1,52 @@
+extends ../layouts/default
+
+include ../../components/button/button
+include ../../components/checkout/checkout
+include ../../components/forms/forms
+include ../../components/product-card/product-card
+include ../../components/popup/popup
+include ../../components/pay-type/pay-type
+
+append vars
+  -
+    page.name  = "order"
+    page.title = "Чекаут"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section.checkout-page
+    +checkout-steps({step:1})
+    +checkout-steps({step:2})
+    +checkout-steps({step:3})
+    +checkout-steps({step:4})
+
+    .checkout
+      h2 Шаг 2
+      .row.g-3.g-lg-4
+        .col-lg-8
+          +form-checkout-contacts()
+        .col-lg-4
+          +checkout-sidebar({showItems: true})
+
+      hr
+
+      h2 Шаг 3
+
+      .row.g-3.g-lg-4
+        .col-lg-8
+          +form-checkout-delivery()
+        .col-lg-4
+          +checkout-sidebar({showItems: true})
+
+      hr
+
+      h2 Шаг 4
+      .checkout-final
+        +checkout-requisites()
+        +checkout-order()

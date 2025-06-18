@@ -1,0 +1,20 @@
+include ../svg-icon/svg-icon
+
+mixin shop-card(shop)
+  .shop-card&attributes(attributes)
+    a(href="#" rel="nofollow").shop-card__image-wrapper
+      img(src=shop.image, alt=shop.title).shop-card__image
+
+    a(href="#").shop-card__title
+      +svg-icon("ui--location")
+      span= shop.title
+
+    span.shop-card__address= shop.address.title
+
+    ul.shop-card__stations
+      each station in shop.address.stations
+        li.shop-card__station
+          +svg-icon(station.icon, "sm")(style="color: " + station.color)
+          span= station.title
+
+    span.shop-card__hours= shop.hours

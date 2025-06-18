@@ -1,0 +1,82 @@
+.field {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  &__field {
+    position: relative;
+  }
+
+  &__label {
+    display: block;
+    margin: 0;
+    color: var(--body-color, $body-color);
+    font-size: var(--font-size-sm, $font-size-sm);
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__required {
+    color: var(--red-600, $red-600);
+  }
+
+  &__tooltip {
+    font-weight: $font-weight-normal;
+  }
+
+  &__hint {
+    display: block;
+    color: var(--light, $light);
+    font-size: var(--font-size-sm, $font-size-sm);
+  }
+
+  &--success &__hint {
+    color: var(--success, $success);
+  }
+
+  &--warning &__hint {
+    color: var(--warning, $warning);
+  }
+
+  &--danger &__hint {
+    color: var(--danger, $danger);
+  }
+
+  &__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: $spacer;
+    color: var(--gray-500, $gray-500);
+    transform: translateY(-50%);
+  }
+
+  &--warning &__icon {
+    color: var(--warning, $warning);
+  }
+
+  &--danger &__icon {
+    color: var(--danger, $danger);
+  }
+
+  &--success &__icon {
+    color: var(--success, $success);
+  }
+
+  input,
+  textarea,
+  select {
+    &.error {
+      border-color: var(--danger, $danger);
+    }
+    // &.valid {
+    //   border-color: var(--success, $success);
+    // }
+  }
+  label.error {
+    display: block;
+    color: var(--danger, $danger);
+    font-size: var(--font-size-sm, $font-size-sm);
+    line-height: 24px;
+  }
+}

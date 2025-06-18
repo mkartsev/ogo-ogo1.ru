@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Главная</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header">
+        <a class="header-banner d-none d-lg-block" href="#"><img class="header-banner__img" src="/assets/img/content/header-banner.jpg" alt="Продукты Honor для успешного учебного года!" /></a>
+        <div class="header-top container">
+          <div class="header-top-left">
+            <a class="header-city js-city-popup" href="/ajax/new/select_city_popup.php">
+              <div class="header-city__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location-sm"></use></svg>
+              </div>
+              <span class="header-city__text">Москва</span>
+            </a>
+            <nav class="header-nav">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Доставка и оплата</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Гарантия и возврат</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Адреса магазинов</a></li>
+                <li class="header-nav__item"><a class="header-nav__link js-supplier-popup" href="/mocks/supplier">Поставщикам</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-top-right">
+            <a class="header-phone" href="tel:88002509045">
+              <div class="header-phone__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone-sm"></use></svg>
+              </div>
+              <span class="header-phone__text">8 800 250-90-45</span>
+            </a>
+            <div class="header-worktime"><span class="header-worktime__text">10:00 - 20:00</span></div>
+          </div>
+        </div>
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">онлайн гипермаркет</span>
+            </a>
+          </div>
+          <div class="header-bottom-center">
+            <button class="btn btn-primary burger-button js-button-catalog" type="button">
+              <i class="burger-button__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </i>
+              <i class="burger-button__loading">
+                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--spinner"></use></svg>
+              </i>
+              <span class="burger-button__text">Каталог</span>
+            </button>
+            <div class="header-search">
+              <form class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate>
+                <p class="form-error text-danger fw-bold" style="display: none"></p>
+                <fieldset class="position-relative">
+                  <input class="form-control" type="search" placeholder="Поиск товаров" name="q" autocomplete="off" />
+                  <button class="btn btn-link position-absolute top-50 end-0 translate-middle-y" type="submit">
+                    <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="header-bottom-right">
+            <div class="header-toolbar">
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link js-auth-popup" href="/ajax/new/authform.php">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                  </div>
+                  <span class="header-toolbar__link-text">Вход</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/compare.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-compare-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Сравнение</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/wishlist.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-favorite-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Избранное</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex js-cart-dropdown" data-products="" data-basketItems="[]">
+                <a class="header-toolbar__link" href="/cart.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-cart-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Корзина</span>
+                </a>
+                <div class="cart-dropdown">
+                  <div class="cart-dropdown__content">
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="389198">
+                          <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__discount product-card__badge badge text-bg-warning">-10%</div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="1" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-new">620 220 ₽</div></div>
+                        <div class="product-card__old"><div class="product-card__price-old">630 220 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="389198" data-tooltip-content="Удалить" onclick='cart.remove("389198")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391062">
+                          <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="2" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">534 000 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391062" data-tooltip-content="Удалить" onclick='cart.remove("391062")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391065">
+                          <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                      </div>
+                      <div class="product-card__availability">
+                        <span class="product-card__availability-title text-dark">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong-sm"></use></svg>
+                          Нет в наличии
+                        </span>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391065" data-tooltip-content="Удалить" onclick='cart.remove("391065")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="390124">
+                          <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                      </div>
+                      <div class="product-card__badges"><span class="product-card__badge badge text-bg-danger">В выбранном регионе товар не продается и будет удален из корзины</span></div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="390124" data-tooltip-content="Удалить" onclick='cart.remove("390124")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-dropdown__footer p-3">
+                    <div class="row g-3">
+                      <div class="col">Итоговая сумма:</div>
+                      <div class="col text-end">0 000 000 ₽</div>
+                      <div class="col-sm-12"><a class="btn btn-primary w-100" href="/cart.html" role="button">Перейти к оформлению</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-toolbar__item d-md-none">
+                <a class="header-toolbar__link" href="tel:88002509045">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog" data-src="/ajax/catalog.php"></div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <section class="content-section p-0">
+            <div class="hero-slider swiper">
+              <div class="hero-slider__wrapper swiper-wrapper">
+                <div class="hero-slider__slide swiper-slide">
+                  <a href="#" tabindex="-1">
+                    <picture>
+                      <source srcset="assets/img/content/hero-slider-1-small.jpg" media="(max-width: 640px)" />
+                      <source srcset="assets/img/content/hero-slider-1.jpg" />
+                      <img srcset="assets/img/content/hero-slider-1-small.jpg" />
+                    </picture>
+                  </a>
+                </div>
+                <div class="hero-slider__slide swiper-slide">
+                  <a href="#" tabindex="-1">
+                    <picture>
+                      <source srcset="assets/img/content/hero-slider-2-small.jpg" media="(max-width: 640px)" />
+                      <source srcset="assets/img/content/hero-slider-2.jpg" />
+                      <img srcset="assets/img/content/hero-slider-2-small.jpg" />
+                    </picture>
+                  </a>
+                </div>
+                <div class="hero-slider__slide swiper-slide">
+                  <a href="#" tabindex="-1">
+                    <picture>
+                      <source srcset="assets/img/content/hero-slider-3-small.jpg" media="(max-width: 640px)" />
+                      <source srcset="assets/img/content/hero-slider-3.jpg" />
+                      <img srcset="assets/img/content/hero-slider-3-small.jpg" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="hero-slider__prev swiper-button-prev"></div>
+              <div class="hero-slider__next swiper-button-next"></div>
+              <div class="hero-slider__pagination swiper-pagination"></div>
+            </div>
+          </section>
+          <section class="content-section">
+            <div class="main-banners">
+              <div class="main-banners-slider swiper">
+                <div class="main-banners-slider__wrapper swiper-wrapper">
+                  <div class="main-banners-slider__slide swiper-slide">
+                    <a class="banner-tile" href="#"><img src="/assets/img/content/banner-tile-1.jpg" alt="Здесь покупают геймеры" loading="lazy" /></a>
+                  </div>
+                  <div class="main-banners-slider__slide swiper-slide">
+                    <a class="banner-tile" href="#"><img src="/assets/img/content/banner-tile-2.jpg" alt="Брендзона Samsung" loading="lazy" /></a>
+                  </div>
+                  <div class="main-banners-slider__slide swiper-slide">
+                    <a class="banner-tile" href="#"><img src="/assets/img/content/banner-tile-3.jpg" alt="Xiaomi" loading="lazy" /></a>
+                  </div>
+                  <div class="main-banners-slider__slide swiper-slide">
+                    <a class="banner-tile" href="#"><img src="/assets/img/content/banner-tile-4.jpg" alt="Бренд-зона HEDDA" loading="lazy" /></a>
+                  </div>
+                  <div class="main-banners-slider__slide swiper-slide">
+                    <a class="banner-tile" href="#"><img src="/assets/img/content/banner-tile-5.jpg" alt="Конфигуратор ПК" loading="lazy" /></a>
+                  </div>
+                  <div class="main-banners-slider__slide swiper-slide">
+                    <a class="banner-tile" href="#"><img src="/assets/img/content/banner-tile-6.jpg" alt="LEGO" loading="lazy" /></a>
+                  </div>
+                </div>
+                <div class="main-banners-slider__pagination swiper-pagination"></div>
+              </div>
+            </div>
+          </section>
+          <section class="content-section">
+            <div class="row g-3 g-lg-4">
+              <div class="col-12 col-md-6 col-lg-4">
+                <a class="category-tile category-tile--gaming" href="#">
+                  <img class="category-tile__logo" src="/assets/img/logo-gaming.png" alt="" />
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-gaming.jpg" alt="" /></div>
+                  <span class="category-tile__title">ЗДЕСЬ ПОКУПАЮТ ГЕЙМЕРЫ</span>
+                </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-8">
+                <div class="configurator-tile">
+                  <span class="configurator-tile__title">Конфигуратор компьютера</span>
+                  <span class="configurator-tile__subtitle">с проверкой совместимости комплектующих</span>
+                  <a class="btn btn-primary" href="#" role="button">
+                    <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--gear"></use></svg>
+                    Собрать компьютер
+                  </a>
+                  <a class="btn btn-primary" href="#" role="button">
+                    Готовые сборки
+                    <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-right"></use></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="content-section">
+            <div class="content-section__header">
+              <h2 class="content-section__title">Новости и акции</h2>
+              <a class="btn btn-sm" href="/news.html" role="button">
+                Посмотреть всё
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--arrow-right"></use></svg>
+              </a>
+            </div>
+            <div class="news-slider swiper">
+              <div class="news-slider__wrapper swiper-wrapper">
+                <div class="news-slider__slide swiper-slide">
+                  <article class="news-card">
+                    <a class="news-card__img-wrapper" href="#" rel="nofollow">
+                      <img class="news-card__img" src="/assets/img/content/news-card-1.jpg" alt="Промокод на видеокарты ASUS RTX40" />
+                      <div class="news-card__badge badge py-1 px-2 text-bg-primary">Акция завершена</div>
+                    </a>
+                    <div class="news-card__dates"></div>
+                    <h3 class="news-card__title"><a href="#">Промокод на видеокарты ASUS RTX40</a></h3>
+                  </article>
+                </div>
+                <div class="news-slider__slide swiper-slide">
+                  <article class="news-card">
+                    <a class="news-card__img-wrapper" href="#" rel="nofollow"><img class="news-card__img" src="/assets/img/content/news-card-2.jpg" alt="Промокод на скидку 10% на материнские платы ASUS B550" /></a>
+                    <div class="news-card__dates"></div>
+                    <h3 class="news-card__title"><a href="#">Промокод на скидку 10% на материнские платы ASUS B550</a></h3>
+                  </article>
+                </div>
+                <div class="news-slider__slide swiper-slide">
+                  <article class="news-card">
+                    <a class="news-card__img-wrapper" href="#" rel="nofollow"><img class="news-card__img" src="/assets/img/content/news-card-3.jpg" alt="Скидка 3000 рублей на Яндекс Станция 2 с Алисой!" /></a>
+                    <div class="news-card__dates"></div>
+                    <h3 class="news-card__title"><a href="#">Скидка 3000 рублей на Яндекс Станция 2 с Алисой!</a></h3>
+                  </article>
+                </div>
+              </div>
+              <div class="news-slider__prev swiper-button-prev"></div>
+              <div class="news-slider__next swiper-button-next"></div>
+              <div class="news-slider__pagination swiper-pagination"></div>
+            </div>
+          </section>
+          <section class="content-section">
+            <div class="row g-3 g-lg-4 row-cols-2 row-cols-md-2 row-cols-lg-4">
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-1.jpg" alt="Смартфоны" /></div>
+                  <span class="category-tile__title">Смартфоны</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-2.jpg" alt="Комплектующие для ПК" /></div>
+                  <span class="category-tile__title">Комплектующие для ПК</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-3.jpg" alt="Ноутбуки" /></div>
+                  <span class="category-tile__title">Ноутбуки</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-4.jpg" alt="Печать и сканирование" /></div>
+                  <span class="category-tile__title">Печать и сканирование</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-5.jpg" alt="Детские товары" /></div>
+                  <span class="category-tile__title">Детские товары</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-6.jpg" alt="Сад и дача" /></div>
+                  <span class="category-tile__title">Сад и дача</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-7.jpg" alt="Техника для дома" /></div>
+                  <span class="category-tile__title">Техника для дома</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-8.jpg" alt="Товары для красоты" /></div>
+                  <span class="category-tile__title">Товары для красоты</span>
+                </a>
+              </div>
+              <div class="col">
+                <a class="category-tile category-tile--large js-adult-block" href="#">
+                  <div class="category-tile__img"><img src="/assets/img/content/category-tile-11.png" alt="Товары 18+" /></div>
+                  <span class="category-tile__title">Товары 18+</span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <section class="content-section">
+            <h2 class="content-section__title">Официальные бренд-зоны</h2>
+            <div class="brands-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="brands-slide js-tooltip" href="#" data-tooltip-content="&lt;div style='text-align: center'&gt;Реклама&lt;br&gt;Рекламодатель ООО “Гриффин Технолоджи”&lt;br&gt;XXXXXXXX&lt;/div&gt;">
+                    <img class="brands-slide__img" src="/assets/img/icons/samsung.png" alt="Samsung" />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/samsung.png" alt="Samsung" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/lego.png" alt="Lego" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/xiaomi.png" alt="Xiaomi" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/funko.png" alt="Funko" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/zuru.png" alt="Zuru" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/thermos.png" alt="Hedda" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/seni.png" alt="Seni" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/tangle.png" alt="Tangle teezer" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/samsung.png" alt="Samsung" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/lego.png" alt="Lego" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/xiaomi.png" alt="Xiaomi" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/funko.png" alt="Funko" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/zuru.png" alt="Zuru" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/thermos.png" alt="Hedda" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/seni.png" alt="Seni" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="brands-slide" href="#"><img class="brands-slide__img" src="/assets/img/icons/tangle.png" alt="Tangle teezer" /></a>
+                </div>
+              </div>
+              <div class="brands-slider__prev swiper-button-prev"></div>
+              <div class="brands-slider__next swiper-button-next"></div>
+              <div class="brands-slider__pagination swiper-pagination"></div>
+            </div>
+          </section>
+          <section class="content-section">
+            <h2 class="content-section__title">Наши магазины</h2>
+            <div class="shops-slider swiper">
+              <div class="shops-slider__wrapper swiper-wrapper">
+                <div class="shops-slider__slide swiper-slide">
+                  <div class="shop-card">
+                    <a class="shop-card__image-wrapper" href="#" rel="nofollow"><img class="shop-card__image" src="/assets/img/content/shop-card-1.jpg" alt="ОГО! Динамо" /></a>
+                    <a class="shop-card__title" href="#">
+                      <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                      <span>ОГО! Динамо</span>
+                    </a>
+                    <span class="shop-card__address">Москва, Театральная аллея, 3с1</span>
+                    <ul class="shop-card__stations">
+                      <li class="shop-card__station">
+                        <svg class="svg-icon svg-icon--sm" style="color: #44b85a"><use xlink:href="/assets/img/sprites/sprite.svg#ui--dot-sm"></use></svg>
+                        <span>Динамо</span>
+                      </li>
+                      <li class="shop-card__station">
+                        <svg class="svg-icon svg-icon--sm" style="color: #79cdcd"><use xlink:href="/assets/img/sprites/sprite.svg#ui--dot-sm"></use></svg>
+                        <span>Петровский парк</span>
+                      </li>
+                    </ul>
+                    <span class="shop-card__hours">Ежедневно 10:00 – 22:00</span>
+                  </div>
+                </div>
+                <div class="shops-slider__slide swiper-slide">
+                  <div class="shop-card">
+                    <a class="shop-card__image-wrapper" href="#" rel="nofollow"><img class="shop-card__image" src="/assets/img/content/shop-card-2.jpg" alt="ОГО! Площадь Ильича" /></a>
+                    <a class="shop-card__title" href="#">
+                      <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                      <span>ОГО! Площадь Ильича</span>
+                    </a>
+                    <span class="shop-card__address">Москва, Золоторожский Вал, 8</span>
+                    <ul class="shop-card__stations">
+                      <li class="shop-card__station">
+                        <svg class="svg-icon svg-icon--sm" style="color: #ffcb31"><use xlink:href="/assets/img/sprites/sprite.svg#ui--dot-sm"></use></svg>
+                        <span>Площадь Ильича</span>
+                      </li>
+                    </ul>
+                    <span class="shop-card__hours">Ежедневно 10:00 – 22:00</span>
+                  </div>
+                </div>
+                <div class="shops-slider__slide swiper-slide">
+                  <div class="shop-card">
+                    <a class="shop-card__image-wrapper" href="#" rel="nofollow"><img class="shop-card__image" src="/assets/img/content/shop-card-3.jpg" alt="ОГО! Челябинск" /></a>
+                    <a class="shop-card__title" href="#">
+                      <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                      <span>ОГО! Челябинск</span>
+                    </a>
+                    <span class="shop-card__address">Челябинск, ул. Артилерийская, 124/4</span>
+                    <ul class="shop-card__stations">
+                      <li class="shop-card__station">
+                        <svg class="svg-icon svg-icon--sm" style="color: #9a9a9a"><use xlink:href="/assets/img/sprites/sprite.svg#ui--transport-sm"></use></svg>
+                        <span>«ТРК Горки», «Киргородок»</span>
+                      </li>
+                    </ul>
+                    <span class="shop-card__hours">Ежедневно 9:00 – 21:00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="shops-slider__prev swiper-button-prev"></div>
+              <div class="shops-slider__next swiper-button-next"></div>
+              <div class="shops-slider__pagination swiper-pagination"></div>
+            </div>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-lg-4">
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-1.svg" alt="Самовывоз сегодня" />
+                  <span class="footer-feature__title">Самовывоз сегодня</span>
+                  <span class="footer-feature__subtitle">из магазина с 10:00 до 22:00</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-2.svg" alt="Официальная гарантия" />
+                  <span class="footer-feature__title">Официальная гарантия</span>
+                  <span class="footer-feature__subtitle">на 30 225 товаров в наличии</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-3.svg" alt="Удобная доставка" />
+                  <span class="footer-feature__title">Удобная доставка</span>
+                  <span class="footer-feature__subtitle">днём и вечером ежедневно</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-4.svg" alt="Высокий рейтинг" />
+                  <span class="footer-feature__title">Высокий рейтинг</span>
+                  <span class="footer-feature__subtitle">на Я.Маркете с 2010 года</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row g-3 g-lg-4">
+              <div class="col-sm-12 col-md-4 col-lg-3 order-1">
+                <p class="mb-0"><strong>Служба поддержки</strong></p>
+                <p class="mb-2"><a class="footer-phone text-body text-decoration-none" href="tel:+7 495 133-79-84">+7 495 133-79-84</a></p>
+                <ul class="list-unstyled">
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#callback-tab-pane">Заказать звонок</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane">Задать вопрос</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#complain-tab-pane">Пожаловаться</a></li>
+                </ul>
+                <p class="footer-copyright d-none d-lg-block">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-2">
+                <p class="mb-1"><strong>Покупателям</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/news.html">Новости и акции</a></li>
+                  <li><a href="/shops.html">Адреса магазинов</a></li>
+                  <li><a href="/delivery.html">Доставка и самовывоз</a></li>
+                  <li><a href="/service.html">Гарантия и возврат</a></li>
+                  <li><a href="/bonus.html">Бонусная программа</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-3">
+                <p class="mb-1"><strong>Информация</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/job.html">Вакансии</a></li>
+                  <li><a href="/corporate.html">Корпоративным клиентам</a></li>
+                  <li><a class="js-supplier-popup" href="/ajax/new/supplier_inquiry_form.php">Поставщикам</a></li>
+                  <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-4 order-5 order-md-4 d-lg-none">
+                <p class="footer-copyright mt-4">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-3 order-4 order-md-5">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Подписывайтесь</strong></p>
+                    <div class="social-buttons mb-4">
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Принимаем к оплате</strong></p>
+                    <div class="pay-systems">
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mastercard_logo.png" alt="Mastercard" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/visa_logo.png" alt="Visa" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mir_logo.png" alt="МИР" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/sbercredit_logo.png" alt="Сберкредит" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-toolbar d-md-none">
+        <div class="container p-0">
+          <div class="row row-cols-5 g-0">
+            <div class="col">
+              <span class="footer-toolbar__item is-active">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Главная</span>
+              </span>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-catalog" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Каталог</span>
+              </button>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item" href="/cart.html">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                  <span class="fs-6 badge rounded-pill position-absolute top-0 end-0 bg-primary js-cart-counter hidden"></span>
+                </div>
+                <span class="footer-toolbar__item-text">Корзина</span>
+              </a>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item js-auth-popup" href="/ajax/new/authform.php">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Войти</span>
+              </a>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-sidebar" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Еще</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

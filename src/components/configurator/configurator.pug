@@ -1,0 +1,129 @@
+include ../button/button
+include ../svg-icon/svg-icon
+
+//- Это блок на главную
+mixin configurator-tile()
+  .configurator-tile&attributes(attributes)
+    span.configurator-tile__title Конфигуратор компьютера
+    span.configurator-tile__subtitle с проверкой совместимости комплектующих
+    +button(tag="a" href="#" text="Собрать компьютер" variant="primary" icon="ui--gear")
+    +button(tag="a" href="#" text="Готовые сборки" iconRight="ui--arrow-right")
+
+//- Пустой товар
+mixin configurator-item-empty(item)
+  .configurator-item.configurator-item--empty&attributes(attributes)
+    .configurator-item__category= item.category
+      if item.strict
+        .configurator-item__icon
+          +svg-icon("ui--info", "sm")(class="js-tooltip" data-tooltip-content="Обязательный компонент")
+
+    .configurator-item__image
+      +svg-icon(item.image, "2xl")
+
+    .configurator-item__placeholder
+      =item.placeholder
+
+    +button(tag="a" href="#" variant="secondary sm" text="Выбрать" class="configurator-item__button")
+
+//- Выбранный слот
+mixin configurator-item-full(item)
+  .configurator-item.configurator-item--full(id="configurator-item-"+item.id)&attributes(attributes)
+    .configurator-item__category= item.category
+      if item.compatible
+        +svg-icon("ui--correct-sm", "sm")(class="text-info")
+      else
+        +svg-icon("ui--warning-fill-sm", "sm")(class="text-warning")
+
+    +button(tag="a" variant="secondary sm" text="Изменить" class="configurator-item__button")
+
+    .configurator-item__product
+      a(href="#").configurator-item__link
+        .configurator-item__image
+          img(src=item.image, alt="")
+        span.configurator-item__artikul= "Арт. " + item.id
+        span.configurator-item__title= item.title
+
+      .configurator-item__badges
+        if !item.compatible
+          .badge.fs-5.p-1.text-bg-warning.js-tooltip(data-tooltip-content="Не совместим с:<br/>"+item.incompatible) Не совместим
+
+    if item.quantity
+      .configurator-item__quantity
+        select(class="js-configurator-action" id="quantity-"+item.id name="quantity-"+item.id)
+          - for (var n = item.quantity, index = 1; n >= 1; n--, index++)
+            option(data-id=item.id data-reload="Y" data-list="configurator" data-action="setQuantity" data-quantity=n selected=(index === item.quantity - 1) )= n
+
+    .configurator-item__price
+      //- Хелпер formatNumber из /views/helpers/mixins отделяет тысячи нужным разделителем, по умолчанию пробел
+      +formatNumber(item.price)
+      |&nbsp;₽
+
+      .configurator-item__bonus
+        +svg-icon("ui--bonus", "sm")
+        =item.bonus
+        | &nbsp;
+        //- Хелпер pluralize из /views/helpers/mixins выбирает нужное склонение чисел
+        +pluralize(item.bonus, "бонус", "бонуса", "бонусов")
+
+    .configurator-item__controls
+      +button(type="button" variant="link sm" class="js-tooltip js-add-to-list" icon="ui--comparison" iconSize="sm" data-id=item.id data-list="comparison" data-action="ADD_TO_COMPARE_LIST" data-tooltip-content="В сравнение")
+      +button(type="button" variant="link sm" class="js-tooltip js-add-to-list" icon="ui--heart" iconSize="sm" data-id=item.id data-list="favorites" data-action="add" data-tooltip-content="В избранное")
+      +button(type="button" variant="link sm" class="js-tooltip js-configurator-action" icon="ui--cross" iconSize="sm" data-tooltip-content="Удалить" class="js-configurator-action" data-action="remove" data-id="1600065" data-reload="Y")
+
+//- Слот для товара
+mixin configurator-slot(item, isFull)
+  .configurator-slot&attributes(attributes)
+    if isFull
+      +configurator-item-full(item)
+    else
+      +configurator-item-empty(item)
+
+//- Доп компоненты
+mixin configurator-additional(array)
+  ul.configurator-additional__list&attributes(attributes)
+    each item in array
+      li.configurator-additional__item
+        a(href="#").configurator-additional__link.btn.btn-secondary.btn-sm.w-100= item
+
+//- Предварительный расчет
+mixin configurator-estimate()
+  ul.configurator-estimate&attributes(attributes)
+    li.configurator-estimate__item
+      span.configurator-estimate__item-name Стоимость компонентов
+      span.configurator-estimate__item-cost 9 950 ₽
+    //- li.configurator-estimate__item
+    //-   span.configurator-estimate__item-name Операционная система
+    //-   span.configurator-estimate__item-cost 11 990 ₽
+    li.configurator-estimate__item
+      span.configurator-estimate__item-name Сборка
+      span.configurator-estimate__item-cost 990 ₽
+
+//- Сумма всего и бонусы
+mixin configurator-total(items)
+  -
+    var total = items.reduce((acc, item) => {
+      const quantity = item.quantity || 1;
+      return {
+        price: acc.price + (item.price * quantity),
+        bonus: acc.bonus + (item.bonus * quantity)
+      };
+    }, { price: 0, bonus: 0 });
+
+  .configurator-total&attributes(attributes)
+    span.configurator-total__text Итоговая стоимость:
+    span.configurator-total__price.js-configurator-total
+      +formatNumber(total.price)
+      |&nbsp;₽
+    .configurator-total__bonus
+      +svg-icon("ui--bonus", "sm")
+      =total.bonus
+      |&nbsp;
+      +pluralize(total.bonus, "бонус", "бонуса", "бонусов")
+
+  +button(type="button" variant="primary" text="Добавить в корзину" class="w-100 js-configurator-action" data-action="addToBasket" data-id="1600065" data-reload="Y" data-type="service")
+
+//- Гарантия
+mixin configurator-guarantee()
+  .d-flex.align-items-center.fs-5.mb-0&attributes(attributes)
+    +svg-icon("ui--shield-sm", "sm").text-success
+    |&ensp;Гарантия: 2 года при заказе сборки

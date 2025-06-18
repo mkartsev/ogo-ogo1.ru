@@ -1,0 +1,25 @@
+//- Склоняем числа правильно
+mixin pluralize(number, one, two, five)
+  -
+    var pluralize = (number, one, two, five) => {
+      number = Math.abs(number);
+      number %= 100;
+      if (number >= 5 && number <= 20) {
+        return five;
+      }
+      number %= 10;
+      if (number === 1) {
+        return one;
+      }
+      if (number >= 2 && number <= 4) {
+        return two;
+      }
+      return five;
+    }
+
+  =pluralize(number, one, two, five)
+
+//- Выводим числа с нужным разделителем
+mixin formatNumber(num, separator = " ")
+  - const formatted = num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + separator);
+  =formatted

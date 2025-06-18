@@ -1,0 +1,40 @@
+.filters {
+  width: 100%;
+
+  &-group {
+    border-top: 1px solid var(--gray-200, $gray-200);
+
+    &:last-child {
+      border-bottom: 1px solid var(--gray-200, $gray-200);
+    }
+
+    &.is-disabled,
+    &[disabled] {
+      pointer-events: none;
+      color: var(--dark, $dark);
+      background: var(--light, $light);
+    }
+
+    &__header {
+      display: flex;
+      position: relative;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: $spacer * 0.5;
+      padding: $spacer $spacer*3 $spacer $spacer;
+      font-size: var(--font-size-base, $font-size-base);
+      font-weight: var(--font-weight-normal, $font-weight-normal);
+      line-height: $font-size-lg; // 1.375;
+
+      &:after {
+        right: 8px;
+      }
+    }
+
+    &__body {
+      padding: $spacer*0.25 $spacer $spacer $spacer;
+      transition: height 0.25s ease-in-out;
+      will-change: height;
+    }
+  }
+}

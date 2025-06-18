@@ -1,0 +1,15 @@
+.pay-systems {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+
+.pay-system {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.pay-system__img {
+  display: block;
+  max-height: 1.5rem;
+}

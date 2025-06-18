@@ -1,0 +1,54 @@
+include ../svg-icon/svg-icon
+
+mixin button()
+  -
+    let params = {}
+    Object.assign(params, attributes)
+
+    delete attributes.tag
+    delete attributes.text
+    delete attributes.icon
+    delete attributes.iconSize
+    delete attributes.iconRight
+    delete attributes.variant
+
+    params.tag = params.tag || "button"   //- (<tag>...</tag> || <button>...</button>)
+
+    const baseClass  = "btn"
+    let classes = [];
+    classes.push(baseClass)
+
+    const stringToArray = str => str ? str.split(" ").filter(v => v.length) : []
+
+  - if (params.variant)
+    - let variants = stringToArray(params.variant);
+    each ent in variants
+      - classes.push(baseClass + "-" + ent)
+  - else
+    - classes.push(baseClass + "-primary")
+
+  - if (params.class)
+    - classes.push(params.class)
+
+  - attributes.class = classes;
+
+  - if ( (params.tag == "button") && (!params.type) )
+    - attributes.type = "button"
+
+  - if (params.tag == "a")
+    - attributes.role = "button"
+    - if (!params.href)
+      - attributes.href = "#"
+
+  #{params.tag}&attributes(attributes)
+
+    - if (params.icon)
+      +svg-icon(params.icon, params.iconSize ? params.iconSize : "sm")
+
+    - if (params.text)
+      != params.text
+
+    - if (params.iconRight)
+      +svg-icon(params.iconRight, params.iconSize ? params.iconSize : "sm")
+
+    block

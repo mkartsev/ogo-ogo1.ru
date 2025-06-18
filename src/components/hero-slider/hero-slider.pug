@@ -1,0 +1,20 @@
+mixin hero-slider()
+  -
+    var slides = [
+      { title: "Старт продаж продукции Сбер", img: "hero-slider-1.jpg", imgSmall: "hero-slider-1-small.jpg" },
+      { title: "Промокод на скидку 10% на материнские платы ASUS B550", img: "hero-slider-2.jpg", imgSmall: "hero-slider-2-small.jpg" },
+      { title: "Промокод на видеокарты ASUS RTX40", img: "hero-slider-3.jpg", imgSmall: "hero-slider-3-small.jpg" },
+    ]
+  .hero-slider.swiper&attributes(attributes)
+    .hero-slider__wrapper.swiper-wrapper
+      for slide in slides
+        .hero-slider__slide.swiper-slide
+          a(href="#" tabindex="-1")
+            picture
+              source(srcset="assets/img/content/" + slide.imgSmall media="(max-width: 640px)")
+              source(srcset="assets/img/content/" + slide.img)
+              img(srcset="assets/img/content/" + slide.imgSmall alt= title)
+
+    .hero-slider__prev.swiper-button-prev
+    .hero-slider__next.swiper-button-next
+    .hero-slider__pagination.swiper-pagination

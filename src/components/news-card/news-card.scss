@@ -1,0 +1,98 @@
+.news-card {
+  display: flex;
+  position: relative;
+  flex-flow: column nowrap;
+  gap: $spacer * 0.5;
+  height: 100%;
+  background-color: $white;
+
+  &__img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 0.25s ease-in-out;
+
+    &-wrapper {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-height: 192px;
+      font-size: $font-size-sm;
+      border-radius: $border-radius-sm;
+      overflow: hidden;
+      aspect-ratio: 2 / 1;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: $font-size-base; //18
+    font-weight: $font-weight-normal;
+    line-height: $font-size-root * 1.5;
+    overflow: hidden;
+    a {
+      color: var(--body-color, $body-color);
+      &:hover {
+        color: var(--link-hover-color, $link-hover-color);
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__dates {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25em;
+    font-size: var(--font-size-sm, $font-size-sm); //14
+    font-weight: $font-weight-light; //300
+    // line-height: 18px;
+    color: var(--gray-500, $gray-500);
+    white-space: nowrap;
+  }
+
+  &__date {
+    &-from {
+      flex: 0 0 auto;
+    }
+    &-to {
+      flex: 0 0 auto;
+      &:before {
+        content: '— '
+      }
+    }
+  }
+
+  &:hover &__img {
+    transform: scale3d(1.03, 1.03, 1);
+  }
+
+  &--gaming {
+    background: #242424;
+    background: -moz-radial-gradient(center, ellipse cover, #242424 0%, #1d1d1d 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #242424 0%, #1d1d1d 100%);
+    background: radial-gradient(ellipse at center, #242424 0%, #1d1d1d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', endColorstr='#1d1d1d',GradientType=1 );
+    box-shadow: 6px 6px 16px black;
+    border: 1px solid transparent;
+    transition: border 0.25s ease-in-out;
+
+    &:hover {
+      border-img-slice: 1;
+      border-img-source: linear-gradient(to right, #ef7f78 0%, #e62a55 20%, #e41857 40%, #dc166e 60%, #db1875 80%, #dc3e48 100%, #df679c 100%);
+    }
+
+    .news-card__title,
+    .news-card__dates {
+      color: $white
+    }
+  }
+}

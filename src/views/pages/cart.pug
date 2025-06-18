@@ -1,0 +1,90 @@
+extends ../layouts/default
+
+include ../../components/button/button
+include ../../components/checkout/checkout
+include ../../components/product-card/product-card
+include ../../components/popup/popup
+
+include ../../components/pay-type/pay-type
+
+append vars
+  -
+    page.name  = "cart"
+    page.title = "Корзина"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.checkout-page#basket-app
+    .checkout
+      //- Шаги
+      +checkout-steps({step:1})
+
+      .row.g-3.g-lg-4
+        .col-lg-8
+          //- Предупреждения
+          +checkout-alerts()
+
+          //- Товары
+          .checkout-items
+            .checkout-items__header
+
+            .checkout-items__body
+              input(type="hidden" id="column_headers" value="")
+              input(type="hidden" id="offers_props" value="COLOR,MEMORY")
+              input(type="hidden" id="action_var" value="basketAction")
+              input(type="hidden" id="quantity_float" value="N")
+              input(type="hidden" id="count_discount_4_all_quantity" value="N")
+              input(type="hidden" id="price_vat_show_value" value="N")
+              input(type="hidden" id="hide_coupon" value="N")
+              input(type="hidden" id="use_prepayment" value="N")
+              input(type="hidden" id="auto_calculation" value="Y")
+
+              each product in products
+                +product-card(variant="cart", product=product)
+
+            .checkout-items__footer
+              .row
+                .col-md-6
+                  +button(href="#popup-find-by-article" variant="link" icon="ui--copy-link" class="text-info fs-5 js-copy-link" text="Скопировать ссылку на корзину" data-copy-link-tooltip="Ссылка скопирована")
+                .col-md-6.d-flex.justify-content-md-end
+                  +button(tag="a" href="#popup-find-by-article" variant="link" icon="ui--plus" class="text-info fs-5" text="Добавить товар по артикулу" data-fancybox)
+                  +popup-find-by-article()
+
+        .col-lg-4
+          +checkout-sidebar()
+
+    section.mt-6
+      h2.content-section__title Вам может понравиться
+
+      .alert.alert-info.mb-3
+        p Чтобы попап добавления в корзину не отображался, поведение кнопки "купить" будет отключено методом <code class="badge p-1 fs-4 text-bg-info">cart.unbindAddToCartHandler()</code>
+        p.mb-0 Тогда vue-приложение чекаута сможет использовать свой обработчик кликов по классу <code class="badge p-1 fs-4 text-bg-info">".js-add-to-cart"</code>
+
+      nav.tags.mb-3
+        -
+          const uniqueCategories = Object.values(
+            products.reduce((acc, { category }) => {
+              acc[category.id] = acc[category.id] || { ...category, count: 0 };
+              acc[category.id].count++;
+              return acc;
+            }, {})
+          );
+
+        ul.tags-list.js-slider-filter(data-slider-id="recommendations")
+          li.tags-item
+            a(href="#" data-filter="all").tags-link.is-active Все
+          each category in uniqueCategories
+            li.tags-item
+              a(href="#" data-filter=category.id).tags-link= category.title
+
+      div(class="products-slider swiper" id="recommendations" data-swiper='{"loop": false}')
+        .products-slider__wrapper.swiper-wrapper
+          each product in products
+            .products-slider__slide.swiper-slide(data-section= product.category.id)
+              +product-card(variant="default", product=product)
+        .products-slider__pagination.swiper-pagination

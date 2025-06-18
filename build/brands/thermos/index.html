@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Бренд-зона Thermos</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header">
+        <a class="header-banner d-none d-lg-block" href="#"><img class="header-banner__img" src="/assets/img/content/header-banner.jpg" alt="Продукты Honor для успешного учебного года!" /></a>
+        <div class="header-top container">
+          <div class="header-top-left">
+            <a class="header-city js-city-popup" href="/ajax/new/select_city_popup.php">
+              <div class="header-city__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location-sm"></use></svg>
+              </div>
+              <span class="header-city__text">Москва</span>
+            </a>
+            <nav class="header-nav">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Доставка и оплата</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Гарантия и возврат</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Адреса магазинов</a></li>
+                <li class="header-nav__item"><a class="header-nav__link js-supplier-popup" href="/mocks/supplier">Поставщикам</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-top-right">
+            <a class="header-phone" href="tel:88002509045">
+              <div class="header-phone__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone-sm"></use></svg>
+              </div>
+              <span class="header-phone__text">8 800 250-90-45</span>
+            </a>
+            <div class="header-worktime"><span class="header-worktime__text">10:00 - 20:00</span></div>
+          </div>
+        </div>
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">онлайн гипермаркет</span>
+            </a>
+          </div>
+          <div class="header-bottom-center">
+            <button class="btn btn-primary burger-button js-button-catalog" type="button">
+              <i class="burger-button__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </i>
+              <i class="burger-button__loading">
+                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--spinner"></use></svg>
+              </i>
+              <span class="burger-button__text">Каталог</span>
+            </button>
+            <div class="header-search">
+              <form class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate>
+                <p class="form-error text-danger fw-bold" style="display: none"></p>
+                <fieldset class="position-relative">
+                  <input class="form-control" type="search" placeholder="Поиск товаров" name="q" autocomplete="off" />
+                  <button class="btn btn-link position-absolute top-50 end-0 translate-middle-y" type="submit">
+                    <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="header-bottom-right">
+            <div class="header-toolbar">
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link js-auth-popup" href="/ajax/new/authform.php">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                  </div>
+                  <span class="header-toolbar__link-text">Вход</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/compare.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-compare-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Сравнение</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/wishlist.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-favorite-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Избранное</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex js-cart-dropdown" data-products="" data-basketItems="[]">
+                <a class="header-toolbar__link" href="/cart.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-cart-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Корзина</span>
+                </a>
+                <div class="cart-dropdown">
+                  <div class="cart-dropdown__content">
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="389198">
+                          <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__discount product-card__badge badge text-bg-warning">-10%</div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="1" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-new">620 220 ₽</div></div>
+                        <div class="product-card__old"><div class="product-card__price-old">630 220 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="389198" data-tooltip-content="Удалить" onclick='cart.remove("389198")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391062">
+                          <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="2" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">534 000 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391062" data-tooltip-content="Удалить" onclick='cart.remove("391062")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391065">
+                          <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                      </div>
+                      <div class="product-card__availability">
+                        <span class="product-card__availability-title text-dark">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong-sm"></use></svg>
+                          Нет в наличии
+                        </span>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391065" data-tooltip-content="Удалить" onclick='cart.remove("391065")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="390124">
+                          <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                      </div>
+                      <div class="product-card__badges"><span class="product-card__badge badge text-bg-danger">В выбранном регионе товар не продается и будет удален из корзины</span></div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="390124" data-tooltip-content="Удалить" onclick='cart.remove("390124")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-dropdown__footer p-3">
+                    <div class="row g-3">
+                      <div class="col">Итоговая сумма:</div>
+                      <div class="col text-end">0 000 000 ₽</div>
+                      <div class="col-sm-12"><a class="btn btn-primary w-100" href="/cart.html" role="button">Перейти к оформлению</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-toolbar__item d-md-none">
+                <a class="header-toolbar__link" href="tel:88002509045">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog" data-src="/ajax/catalog.php"></div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header">
+            <nav class="breadcrumbs js-breadcrumbs" id="breadcrumbs" aria-label="breadcrumb">
+              <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Главная</span></a>
+                  <meta property="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Каталог</span></a>
+                  <meta property="position" content="2" />
+                </li>
+                <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem" aria-current="page">
+                  <span property="item" typeof="WebPage"><span property="name">Бренд-зона Thermos</span></span>
+                  <meta property="position" content="2" />
+                </li>
+              </ol>
+            </nav>
+            <h1 class="page-title js-page-title">Бренд-зона Thermos</h1>
+          </header>
+          <section class="thermos">
+            <section class="thermos-header"><img class="thermos-logo" src="./img/logo.svg" alt="thermos" /></section>
+            <section class="thermos-slider"><div class="h2 text-center">[cтандартный слайдер]</div></section>
+            <section class="thermos-section">
+              <div class="container">
+                <div class="row g-3 g-lg-4 row-cols-2 row-cols-md-3 row-cols-lg-4">
+                  <div class="col">
+                    <a class="category-tile" href="#">
+                      <div class="category-tile__img"><img src="./img/category-termosy-dlya-napitkov.png" alt="Термосы для напитков" /></div>
+                      <span class="category-tile__title">Термосы для напитков</span>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="category-tile" href="#">
+                      <div class="category-tile__img"><img src="./img/category-termosy-dlya-edy.png" alt="Термосы для еды" /></div>
+                      <span class="category-tile__title">Термосы для еды</span>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="category-tile" href="#">
+                      <div class="category-tile__img"><img src="./img/category-universalnye-termosy.png" alt="Универсальные термосы" /></div>
+                      <span class="category-tile__title">Универсальные термосы</span>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="category-tile" href="#">
+                      <div class="category-tile__img"><img src="./img/category-termokruzhki.png" alt="Термокружки" /></div>
+                      <span class="category-tile__title">Термокружки</span>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="category-tile" href="#">
+                      <div class="category-tile__img"><img src="./img/category-detskiye-termosy.png" alt="Детские термосы" /></div>
+                      <span class="category-tile__title">Детские термосы</span>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="category-tile" href="#">
+                      <div class="category-tile__img"><img src="./img/category-termosumki.png" alt="Термосумки" /></div>
+                      <span class="category-tile__title">Термосумки</span>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="category-tile" href="#">
+                      <div class="category-tile__img"><img src="./img/category-akkumulyatory-temperatury.png" alt="Аккумуляторы температуры" /></div>
+                      <span class="category-tile__title">Аккумуляторы температуры</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="thermos-section">
+              <h2 class="thermos-section__title">О бренде thermos</h2>
+              <div class="thermos-materials">
+                <div class="thermos-material">
+                  <div class="thermos-material__content">
+                    <h2 class="thermos-section__subtitle thermos-section__subtitle--has-divider thermos-section__subtitle--left">Самый первый в мире</h2>
+                    <p>
+                      THERMOS® – всемирно известный бренд, ставший родоначальником целой отрасли по производству изотермических товаров. Благодаря успеху продукции торговой марки THERMOS бренд стал именем нарицательным, и сегодня любой сосуд, сохраняющий
+                      температуру содержимого, мы называем словом «термос». Более века компания THERMOS создает оригинальные изотермические товары для еды и напитков, обеспечивающие удобство и комфорт для здорового и полноценного питания в любых жизненных
+                      ситуациях.
+                    </p>
+                  </div>
+                  <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/brand-1.jpg" alt="Самый первый в мире" /></div>
+                </div>
+                <div class="thermos-material">
+                  <div class="thermos-material__content">
+                    <h2 class="thermos-section__subtitle thermos-section__subtitle--has-divider thermos-section__subtitle--left">Настоящему качеству – 120 лет</h2>
+                    <p>
+                      Автор идеи сохранения температурного режима с помощью вакуумной колбы – сэр Джеймс Дьюар, шотландский физик и химик конца XIX века – использовал своё изобретение исключительно в научных целях. Идея применить изотермический сосуд в
+                      бытовом назначении принадлежит его ученику, владельцу фабрики стеклянных медицинских инструментов Рейнгольду Бургеру из Мюнхена. Именно он усовершенствовал конструкцию: соединил колбу с металлическим корпусом, добавил герметичную
+                      пробку, систему амортизации и крышку-стаканчик. Рейнгольд Бургер наладил выпуск «вакуумных фляжек», впоследствии получивших название «thermos» - от древнегреческого слова «тёплый».
+                    </p>
+                  </div>
+                  <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/brand-2.jpg" alt="Настоящему качеству – 120 лет" /></div>
+                </div>
+                <div class="thermos-material">
+                  <div class="thermos-material__content">
+                    <h2 class="thermos-section__subtitle thermos-section__subtitle--has-divider thermos-section__subtitle--left">Лидер отрасли изотермических товаров</h2>
+                    <ul>
+                      <li>Более вековой опыт производства</li>
+                      <li>Собственные заводы, строгий контроль качества</li>
+                      <li>Высокие температурные характеристики</li>
+                      <li>Уникальные инновационные технологии, 250 мировых патентов на инженерные разработки</li>
+                      <li>Эко-материалы премиум класса</li>
+                      <li>Оригинальный дизайн</li>
+                      <li>Широкая ассортиментная линейка</li>
+                      <li>Сервисное обслуживание по гарантийным обязательствам</li>
+                      <li>Долгий срок службы</li>
+                      <li>Соответствие Международным стандартам качества</li>
+                      <li>Торговая марка зарегистрирована более, чем в 120 странах</li>
+                    </ul>
+                  </div>
+                  <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/brand-3.jpg" alt="Лидер отрасли изотермических товаров" /></div>
+                </div>
+                <div class="thermos-material">
+                  <div class="thermos-material__content">
+                    <h2 class="thermos-section__subtitle thermos-section__subtitle--has-divider thermos-section__subtitle--left">Уникальные инновационные технологии</h2>
+                    <p>
+                      Высокотехнологичные разработки компании THERMOS направлены на создание товаров с безупречными потребительскими свойствами, обеспечивающими максимальный комфорт в использовании. Собственные технологии позволяют делать термосы лёгкими и
+                      компактными, прочными и долговечными, сохраняющими температуру, вкус и аромат напитков и готовых блюд рекордно долгое время:
+                    </p>
+                    <ul>
+                      <li>Технология глубокой вакуумизации THERMOS® обеспечивает высокие теплоизолирующие свойства изделий.</li>
+                      <li>Технология бесшовной сварки STT делает термосы прочными, увеличивая срок их службы.</li>
+                      <li>Оригинальные конструкции термосов и деталей усиливают теплосберегающие функции изделий, обеспечивают герметичность и удобство в эксплуатации и уходе.</li>
+                    </ul>
+                  </div>
+                  <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/brand-4.jpg" alt="Уникальные инновационные технологии" /></div>
+                </div>
+                <div class="thermos-material">
+                  <div class="thermos-material__content">
+                    <h2 class="thermos-section__subtitle thermos-section__subtitle--has-divider thermos-section__subtitle--left">Безопасные материалы премиум категории</h2>
+                    <p>Все материалы, используемые в производстве термосов торговой марки THERMOS, экологически чистые и абсолютно безопасны для здоровья, не выделяют и не впитывают посторонние запахи, инертны по отношению к содержимому:</p>
+                    <ul>
+                      <li>Корпус и колба: прочная высококачественная пищевая нержавеющая сталь 18/8 AISI 304 Stainless Steel.</li>
+                      <li>
+                        Крышки, пробки, поильники - термостойкие и ударопрочные сополимеры нового поколения, не содержат бисфенол-А (BPA free) и поливинилхлорид (PVC free), устойчивые к химическому воздействию, обладают высокой механической прочностью
+                      </li>
+                      <li>Прокладки и уплотнители из инертного пищевого силикона, функционального и долговечного, гипоаллергенного и гигиеничного материала, устойчивого к высоким температурам, обеспечивают герметичность изделия.</li>
+                    </ul>
+                  </div>
+                  <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/brand-5.jpg" alt="Безопасные материалы премиум категории" /></div>
+                </div>
+              </div>
+            </section>
+            <section class="thermos-section">
+              <div class="container">
+                <h2 class="thermos-section__title">Продукция thermos</h2>
+                <h3 class="thermos-section__subtitle thermos-section__subtitle--has-divider">Термосы для напитков</h3>
+                <p class="text-center">
+                  Семейные прогулки в лесу, дружеские посиделки в парке, длительные путешествия или маршруты выходного дня, поездки на охоту или рыбалку невозможно представить без термоса. Классические и современные, лёгкие и компактные термосы THERMOS®
+                  прекрасно справляются со своими обязанностями – длительно сохраняют напитки не только горячими или холодными, но и аппетитными и ароматными.
+                </p>
+                <p class="text-center"><a class="thermos-button" href="#">Смотреть всё</a></p>
+              </div>
+              <div class="thermos-subsection">
+                <div class="container">
+                  <div class="row g-3 g-lg-4 row-cols-2">
+                    <div class="col">
+                      <a class="thermos-tile" href="#">
+                        <div class="thermos-tile__img"><img src="./img/napitki-termosy-iz-korrozionnostoykoy-stali.png" alt="Термосы из коррозионностойкой стали" /></div>
+                        <span class="thermos-tile__title">Термосы из коррозионностойкой стали</span>
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a class="thermos-tile" href="#">
+                        <div class="thermos-tile__img"><img src="./img/napitki-termosy-so-steklyannoy-kolboy.png" alt="Термосы со стеклянной колбой" /></div>
+                        <span class="thermos-tile__title">Термосы со стеклянной колбой</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thermos-subsection">
+                <div class="thermos-materials">
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия NCB</h2>
+                      <p class="thermos-section__desc">Легендарный бестселлер</p>
+                      <p>
+                        Воплощение безупречного качества и инновационных технологий THERMOS®. Легендарный термос NCB занимает лидирующие позиции по температурным характеристикам и сроку службы. Надёжный и практичный термос NCB пользуется невероятной
+                        популярностью среди путешественников, охотников и рыболовов, спортсменов и сотрудников экстренных служб. Он выдержит любые экстремальные условия – корпус и основание усилены бамперами из ударопрочного пластика, а стопперы фиксируют
+                        термос в горизонтальном положении. Складная ручка и съёмный регулируемый ремень - для удобства переноски в руке или на плече. Угостить друга можно, используя дополнительную чашку. При наливании напитка не требуется выкручивать
+                        пробку полностью – указатели на верхней части пробки подскажут направление потока жидкости.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/napitki-ncb.jpg" alt="Серия NCB" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия KING</h2>
+                      <p class="thermos-section__desc">Идеальное воплощение нержавеющей стали</p>
+                      <p>
+                        Элегантная серия KING остается самой узнаваемой и любимой во всём мире. Качественные характеристики линейки безупречны. Классический термос серии KING - уникальное сочетание дизайна в стиле американского ретро, современных
+                        технологий и материалов. Термос оснащён крышкой-чашкой из нержавеющей стали и термостойкого пластика, крепкой складной ручкой с рельефом на внутренней поверхности для удобства удержания в руке заполненного термоса, и
+                        теплосберегающей пробкой. Глубокая винтовая пробка имеет специальные пазы, позволяющие выливать напиток, не выкручивая её полностью.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/napitki-king.jpg" alt="Серия KING" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия FBB</h2>
+                      <p class="thermos-section__desc">Надёжная классика в актуальном дизайне</p>
+                      <p>
+                        Классические термосы серии FBB – визитная карточка компании THERMOS. Модели знаменитой серии показывают самые высокие результаты в испытаниях на прочность и уверенно держат лидирующие показатели по продолжительности удержания
+                        температур, выгодно отличаются от «одноклассников» лёгкостью, функциональностью, практичностью, а также длительным сроком службы. Благодаря своей популярности во всём мире модель выпускается уже более пяти десятилетий.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/napitki-fbb.jpg" alt="Серия FBB" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Cерия FFX</h2>
+                      <p class="thermos-section__desc">Признанный лидер</p>
+                      <p>
+                        Термос разработан специально для любителей экстремальных видов спорта и отдыха. Модель отличается облегчённой конструкцией и компактной формой – вес термоса составляет всего лишь 390 г при полезном объёме 900 мл. Поэтому термос
+                        комфортно носить в рюкзаке или сумке. Двойная винтовая пробка позволяет наливать напиток, не выкручивая её полностью, так как в ней предусмотрены специальные направляющие пазы для выливания содержимого – достаточно повернуть
+                        внутреннюю пробку на пол-оборота.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/napitki-ffx.jpg" alt="Cерия FFX" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <h3 class="thermos-section__subtitle thermos-section__subtitle--has-divider">Термосы для еды</h3>
+                <p class="text-center">
+                  Идеальное решение для полноценного питания вне дома – в офисе, школе или в пути – прочные и долговечные термосы с широким горлышком. Они подходят для хранения горячих и холодных первых или вторых блюд. А еще они умеют готовить, например,
+                  гарниры и каши, которые можно заваривать кипятком. Большинство моделей оснащены складной ложкой из нержавеющей стали для удобства приёма пищи в любом месте и в нужное время.
+                </p>
+                <p class="text-center"><a class="thermos-button" href="#">Смотреть всё</a></p>
+              </div>
+              <div class="thermos-subsection">
+                <div class="container">
+                  <div class="row g-3 g-lg-4">
+                    <div class="col">
+                      <div class="thermos-tile">
+                        <div class="thermos-tile__img"><img src="./img/eda-termosy-dlya-edy.png" alt="Термосы для еды" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thermos-subsection">
+                <div class="thermos-materials">
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия GUARDIAN</h2>
+                      <p class="thermos-section__desc">Накормит всех</p>
+                      <p>
+                        Здоровый образ жизни начинается… с термоса! Функциональные термосы GUARDIAN состоят из двух секций – ёмкости из пищевой нержавеющей стали и контейнера из термостойкого пищевого пластика, которые надёжно крепятся друг к другу. Термос
+                        с вакуумной изоляцией можно использовать для горячих и холодных блюд, а нижняя чаша пригодится для хранения овощей или фруктов, крекеров, орешков и других любимых закусок. Чтобы пообедать в нужное время и в любом месте, в комплект
+                        входит стальная ложка из нержавеющей стали. Для её гигиеничного хранения предусмотрена специальная ниша в пробке термоса, поэтому ложка никогда не потеряется. Термосы объёмом 0,5 или 0,8 л обеспечат вас запасом еды на весь активный
+                        день.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/eda-guardian.jpg" alt="Серия GUARDIAN" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия KING</h2>
+                      <p class="thermos-section__desc">Везде как дома</p>
+                      <p>
+                        Термосы со складной ложкой позволят пообедать или перекусить вкусной домашней едой в нужное время и в любом месте: в офисе, в школе или в пути. Заслуженную популярность термосы для еды серии KING получили благодаря высоким
+                        температурным показателям и комфортному использованию. Стильные новинки отличаются не только цветовой гаммой матового покрытия. Модели глубоких природных цветов дополнены усовершенствованной крышкой-пробкой, обеспечивающей
+                        дополнительное удобство при использовании термоса. Обновлённая конструкция крышки-пробки с системой сброса давления облегчает открывание термоса с горячим содержимым.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/eda-king.jpg" alt="Серия KING" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <h3 class="thermos-section__subtitle thermos-section__subtitle--has-divider">Универсальные термосы</h3>
+                <p class="text-center">
+                  Классические универсальные термосы пользуются особой популярностью благодаря сочетанию функциональности и высоких температурных характеристик. Термосы с широким комбинированным горлышком предназначены как для хранения еды, так и напитков.
+                  Надёжные и вместительные, они идеально подходят для семейных выездов на природу, незаменимы для путешественников, охотников и рыболовов, специалистов экстренных служб, профессиональных водителей и всех, кто длительное время находится в
+                  дороге.
+                </p>
+                <p class="text-center"><a class="thermos-button" href="#">Смотреть всё</a></p>
+              </div>
+              <div class="thermos-subsection">
+                <div class="container">
+                  <div class="row g-3 g-lg-4">
+                    <div class="col">
+                      <div class="thermos-tile">
+                        <div class="thermos-tile__img"><img src="./img/universal-universalnye-termosy.png" alt="Универсальные термосы" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thermos-subsection">
+                <div class="thermos-materials">
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия FDH</h2>
+                      <p class="thermos-section__desc">Функциональный универсал</p>
+                      <p>
+                        Благодаря широкому комбинированному горлышку термос удобно использовать как для напитков, так и для первых или вторых блюд. Оригинальная конструкция крышки-пробки позволяет пить непосредственно из термоса и легко открывать и
+                        закрывать его одной рукой. От случайного открывания защищает специальное блокировочное кольцо. Для удобства переноски предусмотрены съёмный регулируемый по длине ремень и складная ручка, а корпус усилен элементами из ударопрочного
+                        пластика.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/universal-fhd.jpg" alt="Серия FDH" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <h3 class="thermos-section__subtitle thermos-section__subtitle--has-divider">Термокружки</h3>
+                <p class="text-center">
+                  Ещё недавно термос воспринимался как атрибут охотника, рыболова или путешественника, и, соответственно, использовался от случая к случаю. Современные инновационные технологии производства THERMOS позволяют создавать суперлёгкие и
+                  компактные термосы сити-формата с сохранением высоких температурных характеристик, которые предназначены для ежедневного и круглогодичного использования. Сегодня термосы THERMOS уверенно занимают свои места не только в рюкзаках, но и в
+                  деловых и школьных портфелях, в спортивных сумках и в дамских сумочках.
+                </p>
+                <p class="text-center"><a class="thermos-button" href="#">Смотреть всё</a></p>
+              </div>
+              <div class="thermos-subsection">
+                <div class="container">
+                  <div class="row g-3 g-lg-4">
+                    <div class="col">
+                      <div class="thermos-tile">
+                        <div class="thermos-tile__img"><img src="./img/mugs-termokruzhki.png" alt="Термокружки" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thermos-subsection">
+                <div class="thermos-materials thermos-materials--reverse">
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия JNL</h2>
+                      <p class="thermos-section__desc">Всесезонный хит</p>
+                      <p>
+                        Благодаря широкому комбинированному горлышку термос удобно использовать как для напитков, так и для первых или вторых блюд. Оригинальная конструкция крышки-пробки позволяет пить непосредственно из термоса и легко открывать и
+                        закрывать его одной рукой. От случайного открывания защищает специальное блокировочное кольцо. Для удобства переноски предусмотрены съёмный регулируемый по длине ремень и складная ручка, а корпус усилен элементами из ударопрочного
+                        пластика.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/mugs-jnl.jpg" alt="Серия JNL" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия FJM</h2>
+                      <p class="thermos-section__desc">Большим и маленьким</p>
+                      <p>
+                        Разнообразие в линейку термосов сити-формата внесли модели термокружек с трубочкой серии FJM. Миниатюрные термосы разработаны специально для активных и подвижных – даже если термос упадёт, из него не выльется ни капли напитка.
+                        Поэтому он идеально подойдёт для детишек, а также любителей спорта и фитнеса. Термокружка легко открывается в одно касание – достаточно нажать на клавишу на фронтальной части крышки-пробки. При этом крышка откидывается, фиксируется
+                        в открытом положении и не опрокидывается при питье. Размер термокружки удобен для удержания взрослой или детской рукой, подходит для подстаканников автомобиля и держателей велосипедов.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/mugs-fjm.jpg" alt="Серия FJM" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия FJK</h2>
+                      <p class="thermos-section__desc">Больше газа</p>
+                      <p>
+                        Теперь и для газированных напитков есть свой термос. Термобутылка FJK – настоящий подарок для любителей газированных напитков. Особая конструкция крышки-пробки позволяет безопасно открывать заполненный термос даже после его
+                        случайного встряхивания - пробка не вылетит и напиток не выльется стремительно через край. Крышка-пробка состоит из двух деталей с системой сброса давления, образующегося в закрытой ёмкости при хранении газированных жидкостей. На
+                        корпусе термоса не образуется конденсат от холодных жидкостей, поэтому термобутылка не скользит в руке. Скругленный край горлышка обеспечивает дополнительный комфорт при питье из термобутылки. Великолепный вид термобутылок создают
+                        уникальные покрытия с эффектом лёгкого мерцания.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/mugs-fjk.jpg" alt="Серия FJK" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия FFM</h2>
+                      <p class="thermos-section__desc">Два в одном: термос + термокружка</p>
+                      <p>
+                        Компактный термос серии FFM – современная версия классического термоса в сочетании с лучшими функциями термокружки сити-формата. Пить можно непосредственно из термоса благодаря удобному поильнику, не откручивая пробку при каждом
+                        использовании, а угостить напитком собеседника можно, используя крышку как чашку. Термос открывается одним нажатием на кнопку в верхней части крышки-пробки. Надёжная система блокировки защищает от её случайного открывания. Лёгкий и
+                        компактный термос станет великолепным стильным подарком для ценителей изящества и функциональности.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/mugs-ffm.jpg" alt="Серия FFM" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия JOO</h2>
+                      <p class="thermos-section__desc">Микс свободы и спорт-шика</p>
+                      <p>
+                        Стильные новинки на российском рынке – термокружки серии JOO, выполненные в спортивном дизайне. Эффектная термокружка пригодится не только во время активного отдыха, занятий спортом и фитнесом, но и в школе, офисе или институте.
+                        Термокружка проста в использовании и подойдет в том числе и детям. Она легко открывается и закрывается одним поворотом. Из термокружки комфортно пить благодаря скруглённому краю горлышка. Для удобства переноски в руке или крепления
+                        к рюкзаку или сумке крышка-пробка оснащена прочной откидной петлёй, надёжно прикреплённой к корпусу крышки. В сложенном виде петля интегрируется в поверхность крышки и плотно к ней прилегает. Компактные размеры термокружки позволяют
+                        размещать её в большинстве автомобильных подстаканников и велосипедных держателях.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/mugs-joo.jpg" alt="Серия JOO" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия JOJ</h2>
+                      <p class="thermos-section__desc">Самый миниатюрный термос в мире</p>
+                      <p>
+                        Серия JOJ – оригинальная линейка самых маленьких и мобильных термокружек в истории термосов. Каждая из них легко умещается на ладони, а носить мини-термосы можно не только в компактной сумочке, но даже в кармане. При этом они
+                        отличаются надёжностью и герметичностью – простая винтовая крышка-пробка с термостойкой силиконовой прокладкой плотно закрывается и защищает от случайных протеканий жидкостей. Открывается термокружка с пол-оборота. Термос приятно
+                        держать в руках, из него легко пить – диаметр горлышка составляет 3 см. Покрытия разных расцветок отличаются износостойкостью и сохранят первоначальный вид изделия на многие годы.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/mugs-joj.jpg" alt="Серия JOJ" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <h3 class="thermos-section__subtitle thermos-section__subtitle--has-divider">Детские термосы</h3>
+                <p class="text-center">
+                  Такие же как у взрослых, только лучше! В линейке KIDS представлены уникальные модели для разных возрастных групп – для малышей и тех, кто постарше. Небьющиеся и практически невесомые термокружки и термосы для еды сделаны так, чтобы
+                  ребёнку было максимально комфортно ими пользоваться: просто открывать и закрывать, удобно держать в руке или разместить в рюкзачке. Термокружки оснащены поильниками плавной формы или трубочками для питья, а яркие расцветки приведут в
+                  восторг любого малыша.
+                </p>
+                <p class="text-center">
+                  Расписание жизни современных детей ни в чём не уступает взрослому таймингу - уроки и дополнительные занятия, танцы и футбол, английский и театральная студия. Теперь обеспечить полноценное питание ребёнка вне дома и соблюдение им питьевого
+                  режима, что необходимо для здоровья и правильного развития дочки или сыночка, стало намного проще с детскими термосами THERMOS®.
+                </p>
+                <p class="text-center"><a class="thermos-button" href="#">Смотреть всё</a></p>
+              </div>
+              <div class="thermos-subsection">
+                <div class="container">
+                  <div class="row g-3 g-lg-4">
+                    <div class="col">
+                      <div class="thermos-tile">
+                        <div class="thermos-tile__img"><img src="./img/child-detskiye-termosy.png" alt="Детские термосы" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <h3 class="thermos-section__subtitle thermos-section__subtitle--has-divider">Термосумки</h3>
+                <p class="text-center">
+                  Изотермические сумки THERMOS® нашли широкое применение в повседневной жизни – их использование стало привычным в быту и на отдыхе. Термосумки THERMOS® выполняют не только функцию автономного портативного холодильника – они способны
+                  сохранять высокие температуры горячего содержимого в течение длительного времени. Поэтому термосумку можно использовать круглый год – в жаркое и холодное время года. Высокие температурные характеристики обеспечиваются благодаря
+                  технологиям многослойной термоизоляции IsoTec® и Flex-A-Guard®, а долгий срок службы, лёгкость, гигиеничность – за счёт прочных, износостойких и водонепроницаемых материалов, пригодных для контакта с пищевыми продуктами.
+                </p>
+                <p class="text-center"><a class="thermos-button" href="#">Смотреть всё</a></p>
+              </div>
+              <div class="thermos-subsection">
+                <div class="container">
+                  <div class="row g-3 g-lg-4">
+                    <div class="col">
+                      <div class="thermos-tile">
+                        <div class="thermos-tile__img"><img src="./img/bags-termosumki.png" alt="Термосумки" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thermos-subsection">
+                <div class="thermos-materials thermos-materials--reverse">
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия NESTING</h2>
+                      <p class="thermos-section__desc">Термос может быть сумкой</p>
+                      <p>
+                        Идеальный вариант для транспортировки продуктов и напитков из супермаркета в жару и в холод, для поездки на дачу или для отдыха на природе – сумка с многослойной термоизоляцией, защищающей содержимое от влияния температуры
+                        окружающей среды. Специальное покрытие ткани из термопластичного полиуретана (ТПУ) обладает водоотталкивающим эффектом, устойчивостью к воздействию ультрафиолета, жиров и масел. Для удобства переноски термосумки оснащены широкими
+                        ремнями, регулируемыми по длине. Благодаря боковым карабинам ремень легко отстёгивается в случае необходимости. Дополнительный комфорт обеспечивает качественная фурнитура, а благодаря потайным застёжкам-молниям с двумя бегунками
+                        термосумка быстро открывается и закрывается в любом направлении.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/bags-nesting.jpg" alt="Серия NESTING" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия ELEMENT 5</h2>
+                      <p class="thermos-section__desc">Совершенная термоизоляция</p>
+                      <p>
+                        Современная линейка ELEMENT 5 представлена широким разнообразием термосумок по объёму, форме и функционалу. И компактные, и вместительные термосумки оснащены регулируемыми по длине ремнями для удобства переноски в руке или на плече,
+                        а также карманами для полезных мелочей. Во многих моделях предусмотрены откидные клапаны для быстрого доступа к содержимому термосумки. Ряд моделей, состоящих из нескольких автономных изотермических отделений, позволяют использовать
+                        термосумку одновременно для хранения охлаждённых продуктов и подогретых блюд. Стильный дизайн подчеркивается сочетанием тканей нескольких оттенков благородного серого цвета.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/bags-element-5.jpg" alt="Серия ELEMENT 5" /></div>
+                  </div>
+                  <div class="thermos-material">
+                    <div class="thermos-material__content">
+                      <h2 class="thermos-section__subtitle thermos-section__subtitle--left">Серия VALUE</h2>
+                      <p class="thermos-section__desc">На пикник и не только</p>
+                      <p>
+                        Классические термосумки популярной серии отличаются лёгкостью и практичностью. Модельный ряд широк: от миниатюрных термосумок для ланч-боксов до объёмных – для продуктового шоппинга. Термосумка незаменима для похода в супермаркет –
+                        это экономичная и экологичная замена полиэтиленовым пакетам. Термосумки легко складываются и не занимают много места при хранении, а благодаря рефлексивным свойствам материалов также легко восстанавливают свою первоначальную форму.
+                        Прочные, водостойкие материалы не впитывают и не выделяют посторонние запахи, обеспечивают длительный срок службы изделия.
+                      </p>
+                      <a class="thermos-button" href="#">Купить</a>
+                    </div>
+                    <div class="thermos-material__img-wrapper"><img class="thermos-material__img" src="./img/bags-value.jpg" alt="Серия VALUE" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <h3 class="thermos-section__subtitle thermos-section__subtitle--has-divider">Аккумуляторы температуры</h3>
+                <p class="text-center">
+                  Аккумуляторы температуры различаются по функционалу, размеру, форме и наполнителю. Они могут использоваться как для поддержания холода, так и тепла. В двух режимах работают мягкие и гибкие аккумуляторы температуры, наполнителем в которых
+                  является гелевый раствор с антибактериальной добавкой. Герметичные хладоэлементы, заполненные солевым раствором, имеют максимально плоскую форму для удобства размещения в морозилке, а затем – в термосумке. Это практичный заменитель льда,
+                  позволяющий существенно увеличить срок хранения замороженных продуктов или холодных напитков в требуемом температурном режиме. Оба вида аккумуляторов температуры – многократного использования и имеют неограниченное количество циклов
+                  заморозки-разморозки.
+                </p>
+                <p class="text-center"><a class="thermos-button" href="#">Смотреть всё</a></p>
+              </div>
+              <div class="thermos-subsection">
+                <div class="container">
+                  <div class="row g-3 g-lg-4">
+                    <div class="col">
+                      <div class="thermos-tile">
+                        <div class="thermos-tile__img"><img src="./img/accum-akkumulyatory-temperatury.png" alt="Аккумуляторы температуры" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-lg-4">
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-1.svg" alt="Самовывоз сегодня" />
+                  <span class="footer-feature__title">Самовывоз сегодня</span>
+                  <span class="footer-feature__subtitle">из магазина с 10:00 до 22:00</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-2.svg" alt="Официальная гарантия" />
+                  <span class="footer-feature__title">Официальная гарантия</span>
+                  <span class="footer-feature__subtitle">на 30 225 товаров в наличии</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-3.svg" alt="Удобная доставка" />
+                  <span class="footer-feature__title">Удобная доставка</span>
+                  <span class="footer-feature__subtitle">днём и вечером ежедневно</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-4.svg" alt="Высокий рейтинг" />
+                  <span class="footer-feature__title">Высокий рейтинг</span>
+                  <span class="footer-feature__subtitle">на Я.Маркете с 2010 года</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row g-3 g-lg-4">
+              <div class="col-sm-12 col-md-4 col-lg-3 order-1">
+                <p class="mb-0"><strong>Служба поддержки</strong></p>
+                <p class="mb-2"><a class="footer-phone text-body text-decoration-none" href="tel:+7 495 133-79-84">+7 495 133-79-84</a></p>
+                <ul class="list-unstyled">
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#callback-tab-pane">Заказать звонок</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane">Задать вопрос</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#complain-tab-pane">Пожаловаться</a></li>
+                </ul>
+                <p class="footer-copyright d-none d-lg-block">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-2">
+                <p class="mb-1"><strong>Покупателям</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/news.html">Новости и акции</a></li>
+                  <li><a href="/shops.html">Адреса магазинов</a></li>
+                  <li><a href="/delivery.html">Доставка и самовывоз</a></li>
+                  <li><a href="/service.html">Гарантия и возврат</a></li>
+                  <li><a href="/bonus.html">Бонусная программа</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-3">
+                <p class="mb-1"><strong>Информация</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/job.html">Вакансии</a></li>
+                  <li><a href="/corporate.html">Корпоративным клиентам</a></li>
+                  <li><a class="js-supplier-popup" href="/ajax/new/supplier_inquiry_form.php">Поставщикам</a></li>
+                  <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-4 order-5 order-md-4 d-lg-none">
+                <p class="footer-copyright mt-4">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-3 order-4 order-md-5">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Подписывайтесь</strong></p>
+                    <div class="social-buttons mb-4">
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Принимаем к оплате</strong></p>
+                    <div class="pay-systems">
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mastercard_logo.png" alt="Mastercard" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/visa_logo.png" alt="Visa" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mir_logo.png" alt="МИР" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/sbercredit_logo.png" alt="Сберкредит" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-toolbar d-md-none">
+        <div class="container p-0">
+          <div class="row row-cols-5 g-0">
+            <div class="col">
+              <span class="footer-toolbar__item is-active">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Главная</span>
+              </span>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-catalog" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Каталог</span>
+              </button>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item" href="/cart.html">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                  <span class="fs-6 badge rounded-pill position-absolute top-0 end-0 bg-primary js-cart-counter hidden"></span>
+                </div>
+                <span class="footer-toolbar__item-text">Корзина</span>
+              </a>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item js-auth-popup" href="/ajax/new/authform.php">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Войти</span>
+              </a>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-sidebar" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Еще</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

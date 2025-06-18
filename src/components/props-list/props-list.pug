@@ -1,0 +1,6 @@
+mixin props-list(data)
+  ul.props-list&attributes(attributes)
+    each item in data
+      li.props-list__item
+        span.props-list__key= item.key
+        span.props-list__value= item.value

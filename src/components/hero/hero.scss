@@ -1,0 +1,30 @@
+.hero {
+  display: block;
+  margin-right: rem(-20);
+  margin-left: rem(-20);
+  margin-bottom: $spacer;
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    img,
+    source {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--narrow {
+    height: 280px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-right: 0;
+    margin-left: 0;
+    &--narrow {
+      height: 150px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+extends ../layouts/default
+
+include ../../components/shops-map/shops-map
+
+append vars
+  -
+    page.name  = "shops"
+    page.title = "Адреса магазинов ОГО!"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+
+block content
+  section.content-section
+    .shops-map
+      ul(class="nav nav-tabs" id="shops" role="tablist")
+        li(class="nav-item" role="presentation")
+          button(class="nav-link active shops-map__city" id="4011-tab" data-coords="55.755864, 37.617698" data-bs-toggle="tab" data-bs-target="#4011-tab-pane" type="button" role="tab" aria-controls="4011-tab-pane" aria-selected="true")
+            | Москва
+        li(class="nav-item" role="presentation")
+          button(class="nav-link shops-map__city" id="3958-tab" data-coords="55.1655267, 61.4327291" data-bs-toggle="tab" data-bs-target="#3958-tab-pane" type="button" role="tab" aria-controls="3958-tab-pane" aria-selected="false")
+            | Челябинск
+
+      .row.g-3.g-lg-4
+        .col-sm-12.col-md-4.col-lg-3.order-sm-2.order-md-1
+          .shops-map-items
+            div(class="tab-content py-3" id="shops-content")
+              div(class="tab-pane fade show active" id="4011-tab-pane" role="tabpanel" aria-labelledby="4011-tab" tabindex="0")
+                +shops-map-item(shops[0].title, shops[0].address, shops[0].phone, shops[0].hours)(data-coords="55.7932, 37.559724" data-link="/shops-inner.html")
+                +shops-map-item(shops[1].title, shops[1].address, shops[1].phone, shops[1].hours)(data-coords="55.751910, 37.685875" data-link="/shops-inner.html")
+
+              div(class="tab-pane fade" id="3958-tab-pane" role="tabpanel" aria-labelledby="3958-tab" tabindex="0")
+                +shops-map-item(shops[2].title, shops[2].address, shops[2].phone, shops[2].hours)(data-coords="55.1655267, 61.4327291" data-link="/shops-inner.html")
+
+        .col-sm-12.col-md-8.col-lg-9.order-sm-1.order-md-2
+          .ymap
+            .ymap__map(style="width: 100%; height: 700px" data-center="55.7932, 37.559724")

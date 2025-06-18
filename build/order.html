@@ -1,0 +1,2336 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Чекаут</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header">
+        <a class="header-banner d-none d-lg-block" href="#"><img class="header-banner__img" src="/assets/img/content/header-banner.jpg" alt="Продукты Honor для успешного учебного года!" /></a>
+        <div class="header-top container">
+          <div class="header-top-left">
+            <a class="header-city js-city-popup" href="/ajax/new/select_city_popup.php">
+              <div class="header-city__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location-sm"></use></svg>
+              </div>
+              <span class="header-city__text">Москва</span>
+            </a>
+            <nav class="header-nav">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Доставка и оплата</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Гарантия и возврат</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Адреса магазинов</a></li>
+                <li class="header-nav__item"><a class="header-nav__link js-supplier-popup" href="/mocks/supplier">Поставщикам</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-top-right">
+            <a class="header-phone" href="tel:88002509045">
+              <div class="header-phone__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone-sm"></use></svg>
+              </div>
+              <span class="header-phone__text">8 800 250-90-45</span>
+            </a>
+            <div class="header-worktime"><span class="header-worktime__text">10:00 - 20:00</span></div>
+          </div>
+        </div>
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">онлайн гипермаркет</span>
+            </a>
+          </div>
+          <div class="header-bottom-center">
+            <button class="btn btn-primary burger-button js-button-catalog" type="button">
+              <i class="burger-button__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </i>
+              <i class="burger-button__loading">
+                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--spinner"></use></svg>
+              </i>
+              <span class="burger-button__text">Каталог</span>
+            </button>
+            <div class="header-search">
+              <form class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate>
+                <p class="form-error text-danger fw-bold" style="display: none"></p>
+                <fieldset class="position-relative">
+                  <input class="form-control" type="search" placeholder="Поиск товаров" name="q" autocomplete="off" />
+                  <button class="btn btn-link position-absolute top-50 end-0 translate-middle-y" type="submit">
+                    <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="header-bottom-right">
+            <div class="header-toolbar">
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link js-auth-popup" href="/ajax/new/authform.php">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                  </div>
+                  <span class="header-toolbar__link-text">Вход</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/compare.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-compare-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Сравнение</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/wishlist.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-favorite-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Избранное</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex js-cart-dropdown" data-products="" data-basketItems="[]">
+                <a class="header-toolbar__link" href="/cart.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-cart-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Корзина</span>
+                </a>
+                <div class="cart-dropdown">
+                  <div class="cart-dropdown__content">
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="389198">
+                          <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__discount product-card__badge badge text-bg-warning">-10%</div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="1" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-new">620 220 ₽</div></div>
+                        <div class="product-card__old"><div class="product-card__price-old">630 220 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="389198" data-tooltip-content="Удалить" onclick='cart.remove("389198")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391062">
+                          <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="2" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">534 000 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391062" data-tooltip-content="Удалить" onclick='cart.remove("391062")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391065">
+                          <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                      </div>
+                      <div class="product-card__availability">
+                        <span class="product-card__availability-title text-dark">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong-sm"></use></svg>
+                          Нет в наличии
+                        </span>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391065" data-tooltip-content="Удалить" onclick='cart.remove("391065")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="390124">
+                          <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                      </div>
+                      <div class="product-card__badges"><span class="product-card__badge badge text-bg-danger">В выбранном регионе товар не продается и будет удален из корзины</span></div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="390124" data-tooltip-content="Удалить" onclick='cart.remove("390124")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-dropdown__footer p-3">
+                    <div class="row g-3">
+                      <div class="col">Итоговая сумма:</div>
+                      <div class="col text-end">0 000 000 ₽</div>
+                      <div class="col-sm-12"><a class="btn btn-primary w-100" href="/cart.html" role="button">Перейти к оформлению</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-toolbar__item d-md-none">
+                <a class="header-toolbar__link" href="tel:88002509045">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog" data-src="/ajax/catalog.php"></div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header">
+            <nav class="breadcrumbs js-breadcrumbs" id="breadcrumbs" aria-label="breadcrumb">
+              <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Главная</span></a>
+                  <meta property="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Каталог</span></a>
+                  <meta property="position" content="2" />
+                </li>
+                <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem" aria-current="page">
+                  <span property="item" typeof="WebPage"><span property="name">Чекаут</span></span>
+                  <meta property="position" content="2" />
+                </li>
+              </ol>
+            </nav>
+            <h1 class="page-title js-page-title">Чекаут</h1>
+          </header>
+          <section class="content-section checkout-page">
+            <div class="checkout-steps">
+              <div class="checkout-steps__item is-active">
+                <span class="d-none d-md-inline">Корзина</span>
+                <span class="d-md-none">Шаг 1</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Получатель</span>
+                <span class="d-md-none">Шаг 2</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Получение</span>
+                <span class="d-md-none">Шаг 3</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Подтверждение</span>
+                <span class="d-md-none">Шаг 4</span>
+              </div>
+            </div>
+            <div class="checkout-steps">
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Корзина</span>
+                <span class="d-md-none">Шаг 1</span>
+              </div>
+              <div class="checkout-steps__item is-active">
+                <span class="d-none d-md-inline">Получатель</span>
+                <span class="d-md-none">Шаг 2</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Получение</span>
+                <span class="d-md-none">Шаг 3</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Подтверждение</span>
+                <span class="d-md-none">Шаг 4</span>
+              </div>
+            </div>
+            <div class="checkout-steps">
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Корзина</span>
+                <span class="d-md-none">Шаг 1</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Получатель</span>
+                <span class="d-md-none">Шаг 2</span>
+              </div>
+              <div class="checkout-steps__item is-active">
+                <span class="d-none d-md-inline">Получение</span>
+                <span class="d-md-none">Шаг 3</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Подтверждение</span>
+                <span class="d-md-none">Шаг 4</span>
+              </div>
+            </div>
+            <div class="checkout-steps">
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Корзина</span>
+                <span class="d-md-none">Шаг 1</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Получатель</span>
+                <span class="d-md-none">Шаг 2</span>
+              </div>
+              <div class="checkout-steps__item">
+                <span class="d-none d-md-inline">Получение</span>
+                <span class="d-md-none">Шаг 3</span>
+              </div>
+              <div class="checkout-steps__item is-active">
+                <span class="d-none d-md-inline">Подтверждение</span>
+                <span class="d-md-none">Шаг 4</span>
+              </div>
+            </div>
+            <div class="checkout">
+              <h2>Шаг 2</h2>
+              <div class="row g-3 g-lg-4">
+                <div class="col-lg-8">
+                  <form class="form form-checkout-contacts" id="form-checkout-contacts" method="POST" data-validate="false" data-ajax-submit="false">
+                    <div class="btn-group mb-5">
+                      <button class="btn btn-outline-info active" type="button">Физическое лицо</button>
+                      <button class="btn btn-outline-info" type="button">Юридическое лицо</button>
+                    </div>
+                    <div class="alert alert-light fs-4 ps-6 position-relative">
+                      <svg class="svg-icon svg-icon--sm position-absolute ms-3 top-50 start-0 translate-middle-y text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill"></use></svg>
+                      Если вы зарегистрированы,
+                      <a href="/ajax/new/authform.php" class="js-auth-popup">авторизуйтесь</a>
+                      , и вам не придется вводить данные о себе.
+                    </div>
+                    <fieldset class="mb-3">
+                      <a class="btn btn-outline-info btn-sm mb-3" href="#popup-select-my-requisites" data-fancybox role="button">Выбрать из сохраненных реквизитов</a>
+                      <div class="popup popup--md" id="popup-select-my-requisites">
+                        <p class="popup-title">Сохранённые реквизиты</p>
+                        <div class="popup-content">
+                          <div class="js-accordion">
+                            <div class="checkout-requisites__item js-accordion-item">
+                              <div class="checkout-requisites__item__header js-accordion-header">
+                                <div class="checkout-requisites__item__title">Организация</div>
+                                <div class="checkout-requisites__item__info-wrapper">
+                                  <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                                    <div class="checkout-requisites__item__info-title">Телефон</div>
+                                    <div class="checkout-requisites__item__info-text">+7 (915) 367-73-43</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                                    <div class="checkout-requisites__item__info-title">E-mail</div>
+                                    <div class="checkout-requisites__item__info-text">mkartsev0@gmail.com</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="checkout-requisites__item__body js-accordion-body">
+                                <div class="checkout-requisites__item__info-wrapper">
+                                  <div class="checkout-requisites__item__info">
+                                    <div class="checkout-requisites__item__info-title">Контактное лицо</div>
+                                    <div class="checkout-requisites__item__info-text">Михаил</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                                    <div class="checkout-requisites__item__info-title">ИНН</div>
+                                    <div class="checkout-requisites__item__info-text">111111111111</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                                    <div class="checkout-requisites__item__info-title">КПП</div>
+                                    <div class="checkout-requisites__item__info-text">2222222222222222222222222222222222</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info">
+                                    <div class="checkout-requisites__item__info-title">Название организации</div>
+                                    <div class="checkout-requisites__item__info-text">Организация</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info">
+                                    <div class="checkout-requisites__item__info-title">Юридический адрес</div>
+                                    <div class="checkout-requisites__item__info-text">Юридический адрес</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info">
+                                    <div class="checkout-requisites__item__info-title">Фактический адрес</div>
+                                    <div class="checkout-requisites__item__info-text">Фактический адрес</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info">
+                                    <div class="checkout-requisites__item__info-title">Название банка</div>
+                                    <div class="checkout-requisites__item__info-text">Название банка</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                                    <div class="checkout-requisites__item__info-title">Расчетный счет</div>
+                                    <div class="checkout-requisites__item__info-text">33333333333333333333</div>
+                                  </div>
+                                  <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                                    <div class="checkout-requisites__item__info-title">Корреспондентский счет</div>
+                                    <div class="checkout-requisites__item__info-text">44444444444444444444</div>
+                                  </div>
+                                </div>
+                                <button class="btn btn-secondary btn-sm mt-3" type="button">Выбрать</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row g-3 mb-3">
+                        <div class="col-lg-4">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_5">Имя</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_5" name="ORDER_PROP_5" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="field field--type-tel field--icon">
+                            <label class="field__label" for="ORDER_PROP_26">Телефон</label>
+                            <div class="field__field">
+                              <input
+                                class="form-control"
+                                type="tel"
+                                id="ORDER_PROP_26"
+                                name="ORDER_PROP_26"
+                                inputmode="tel"
+                                placeholder="+7 (___) ___-__-__"
+                                maxlength="18"
+                                required="required"
+                                data-msg-required="Укажите телефон"
+                                data-rule-phone="true"
+                                data-msg-phone="Введите корректный номер телефона" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="field field--type-email">
+                            <label class="field__label" for="ORDER_PROP_8">E-mail</label>
+                            <div class="field__field"><input class="form-control" type="email" id="ORDER_PROP_8" name="ORDER_PROP_8" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_19">ИНН</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_19" name="ORDER_PROP_19" inputmode="numeric" pattern="[0-9]*" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_20">КПП</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_20" name="ORDER_PROP_20" inputmode="numeric" pattern="[0-9]*" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_17">Название организации</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_17" name="ORDER_PROP_17" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_18">Юридический адрес</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_18" name="ORDER_PROP_18" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_25">Фактический адрес</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_25" name="ORDER_PROP_25" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_21">Название банка организации</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_21" name="ORDER_PROP_21" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_22">Расчетный счет</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_22" name="ORDER_PROP_22" inputmode="numeric" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_23">Корреспондентский счет</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_23" name="ORDER_PROP_23" inputmode="numeric" pattern="[0-9]*" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_24">БИК</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_24" name="ORDER_PROP_24" inputmode="numeric" pattern="[0-9]*" required="required" /></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row g-3 mb-3">
+                        <div class="col-md-4">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_xPASSPORT_NO">Серия и номер паспорта</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_xPASSPORT_NO" name="ORDER_PROP_xPASSPORT_NO" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="field field--type-datepicker field--icon">
+                            <label class="field__label" for="ORDER_PROP_xPASSPORT_DATE">Дата выдачи</label>
+                            <div class="field__field">
+                              <input class="form-control js-datepicker js-input-mask" type="text" id="ORDER_PROP_xPASSPORT_DATE" name="ORDER_PROP_xPASSPORT_DATE" data-inputmask="'mask': '99.99.9999'" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--calendar"></use></svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_xPASSPORT_TEXT">Кем выдан</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_xPASSPORT_TEXT" name="ORDER_PROP_xPASSPORT_TEXT" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_xREGISTER_ADDRESS">Адрес регистрации</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_xREGISTER_ADDRESS" name="ORDER_PROP_xREGISTER_ADDRESS" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3">
+                          <div class="field field--type-text">
+                            <label class="field__label" for="ORDER_PROP_xPERSON_INN">ИНН</label>
+                            <div class="field__field"><input class="form-control" type="text" id="ORDER_PROP_xPERSON_INN" name="ORDER_PROP_xPERSON_INN" inputmode="numeric" pattern="[0-9]*" /></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="alert alert-light fs-4 ps-6 position-relative">
+                        <svg class="svg-icon svg-icon--sm position-absolute ms-3 top-50 start-0 translate-middle-y text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill"></use></svg>
+                        Данные паспорта, ИНН и адрес прописки требуются для таможенного оформления. Если указать некорректных данные, товар может не пройти таможню и оплату вернуть не получится.
+                      </div>
+                    </fieldset>
+                    <fieldset class="mb-3">
+                      <div class="field field--type-checkbox">
+                        <label class="field__label">
+                          <input type="checkbox" id="preorder-privacy" name="privacy" checked="checked" required="required" />
+                          <span class="field__check"></span>
+                          <span class="field__caption">Подписаться на рассылку</span>
+                        </label>
+                      </div>
+                      <div class="field field--type-checkbox">
+                        <label class="field__label">
+                          <input type="checkbox" id="preorder-privacy" name="privacy" checked="checked" required="required" />
+                          <span class="field__check"></span>
+                          <span class="field__caption">
+                            С
+                            <a href="#">политикой обработки и защиты персональных данных</a>
+                            ознакомлен и согласен
+                          </span>
+                        </label>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="row g-3 g-lg-4 mb-3">
+                        <div class="col-4 col-lg-6">
+                          <button class="btn btn-secondary btn-sm" type="button">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                            Назад
+                          </button>
+                        </div>
+                        <div class="col-8 col-lg-6 d-flex justify-content-end">
+                          <button class="btn btn-primary btn-sm" disabled type="button">
+                            Способ получения
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-right"></use></svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="form-text">На следующем этапе выберите пункт самовывоза или оформите доставку</div>
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="col-lg-4">
+                  <div class="checkout-sidebar">
+                    <p class="checkout-sidebar__title">Состав заказа</p>
+                    <div class="checkout-total__items">
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="389198">
+                            <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">1 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="391062">
+                            <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                        </div>
+                        <span class="product-card__count">2 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="391065">
+                            <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                        </div>
+                        <span class="product-card__count">0 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390124">
+                            <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">4 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="387892">
+                            <img class="product-card__image" src="/assets/img/content/products/387892.jpg" alt='Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" WQXGA/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="387892" target="_blank">Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; WQXGA/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">5 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="391065">
+                            <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                        </div>
+                        <span class="product-card__count">6 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390124">
+                            <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">7 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="387892">
+                            <img class="product-card__image" src="/assets/img/content/products/387892.jpg" alt='Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" WQXGA/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="387892" target="_blank">Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; WQXGA/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">8 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388628">
+                            <img class="product-card__image" src="/assets/img/content/products/388628.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388628" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)</a></div>
+                        <span class="product-card__count">9 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388629">
+                            <img class="product-card__image" src="/assets/img/content/products/388629.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Violet (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388629" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Violet (EAC)</a></div>
+                        <span class="product-card__count">10 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388630">
+                            <img class="product-card__image" src="/assets/img/content/products/388630.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388630" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Gray (EAC)</a></div>
+                        <span class="product-card__count">0 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388631">
+                            <img class="product-card__image" src="/assets/img/content/products/388631.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Black (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388631" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Black (EAC)</a></div>
+                        <span class="product-card__count">11 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388620">
+                            <img class="product-card__image" src="/assets/img/content/products/388620.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Yellow (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388620" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Yellow (EAC)</a></div>
+                        <span class="product-card__count">12 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388622">
+                            <img class="product-card__image" src="/assets/img/content/products/388622.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388622" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Gray (EAC)</a></div>
+                        <span class="product-card__count">13 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388621">
+                            <img class="product-card__image" src="/assets/img/content/products/388621.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Violet (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388621" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Violet (EAC)</a></div>
+                        <span class="product-card__count">14 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="380273">
+                            <img class="product-card__image" src="/assets/img/content/products/380273.jpg" alt="Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Lavender (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="380273" target="_blank">Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Lavender (EAC)</a></div>
+                        <span class="product-card__count">15 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="380275">
+                            <img class="product-card__image" src="/assets/img/content/products/380275.jpg" alt="Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Beige (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="380275" target="_blank">Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Beige (EAC)</a></div>
+                        <span class="product-card__count">16 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388614">
+                            <img class="product-card__image" src="/assets/img/content/products/388614.jpg" alt="Смартфон Samsung Galaxy S24+ SM-S926B 12/256Gb Marble Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388614" target="_blank">Смартфон Samsung Galaxy S24+ SM-S926B 12/256Gb Marble Gray (EAC)</a></div>
+                        <span class="product-card__count">17 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388458">
+                            <img class="product-card__image" src="/assets/img/content/products/388458.jpg" alt='Монитор 24" Xiaomi Mi Monitor A24i IPS 1920x1080 6ms HDMI, VGA' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388458" target="_blank">Монитор 24&quot; Xiaomi Mi Monitor A24i IPS 1920x1080 6ms HDMI, VGA</a></div>
+                        <span class="product-card__count">18 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390528">
+                            <img class="product-card__image" src="/assets/img/content/products/390528.jpg" alt='Монитор 55" Samsung Odyssey Ark S55CG97WNI Curved VA 3840x2160 1ms HDMI, DisplayPort' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="390528" target="_blank">Монитор 55&quot; Samsung Odyssey Ark S55CG97WNI Curved VA 3840x2160 1ms HDMI, DisplayPort</a></div>
+                        <span class="product-card__count">19 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390530">
+                            <img class="product-card__image" src="/assets/img/content/products/390530.jpg" alt='Монитор 57" Samsung Odyssey Neo G9 S57CG952NI VA 7680x2160 1ms HDMI, DisplayPort' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="390530" target="_blank">Монитор 57&quot; Samsung Odyssey Neo G9 S57CG952NI VA 7680x2160 1ms HDMI, DisplayPort</a></div>
+                        <span class="product-card__count">0 шт.</span>
+                      </div>
+                    </div>
+                    <div class="checkout-total__row">
+                      <div class="checkout-total__row-title">Стоимость товаров</div>
+                      <div class="checkout-total__row-value">47 790 ₽</div>
+                    </div>
+                    <div class="checkout-total__row">
+                      <div class="checkout-total__row-title">Скидка</div>
+                      <div class="checkout-total__row-value text-primary">-2 340 ₽</div>
+                    </div>
+                    <div class="checkout-total__price">
+                      <span class="checkout-total__price-title">Итоговая стоимость:</span>
+                      <span class="checkout-total__price-value">47 790 ₽</span>
+                    </div>
+                    <div class="checkout-total__bonus">
+                      <svg class="svg-icon svg-icon--xs text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus"></use></svg>
+                      120 бонусов
+                    </div>
+                    <button class="btn btn-primary checkout-total__btn w-100 mt-5 mb-3" type="button">Оформить заказ</button>
+                    <div class="form-text">Наличие в магазинах, доступные способы доставки и оплаты можно выбрать на следующем этапе</div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <h2>Шаг 3</h2>
+              <div class="row g-3 g-lg-4">
+                <div class="col-lg-8">
+                  <form class="form form-checkout-delivery" id="form-checkout-delivery" method="POST" data-validate="false" data-ajax-submit="false">
+                    <div class="btn-group mb-5">
+                      <button class="btn btn-outline-info active" type="button">Самовывоз</button>
+                      <button class="btn btn-outline-info" type="button">Доставка</button>
+                    </div>
+                    <fieldset class="mb-3">
+                      <legend>Пункты выдачи заказов</legend>
+                      <div class="checkout-select-city mb-3">
+                        <div class="row">
+                          <div class="col-12 col-lg-5">
+                            <h4 class="mb-2">Населенный пункт</h4>
+                            <div class="dropdown">
+                              <button class="btn btn-outline-info btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="inside outside" role="button" type="button">Москва</button>
+                              <div class="dropdown-menu mt-1">
+                                <input type="hidden" :name="" :value="currentcity.FIAS" />
+                                <input class="form-control-sm w-100 border-top-0 border-start-0 border-end-0 shadow-none js-select-city" type="text" placeholder="Ваш город..." data-src="/ajax/new/getCities.php" />
+                                <ul class="checkout-select-city-predefined list-unstyled">
+                                  <li><a class="dropdown-item fs-4" href="#">Москва</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Санкт-Петербург</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Челябинск</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Екатеринбург</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Казань</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Новосибирск</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Уфа</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="alert alert-light fs-4 ps-6 position-relative">
+                        <svg class="svg-icon svg-icon--sm position-absolute ms-3 top-50 start-0 translate-middle-y text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill"></use></svg>
+                        В выбранном вами населенном пункте нет доступных пунктов самовывоза, воспользуйтесь
+                        <a href="#delivery">страницей доставки</a>
+                      </div>
+                      <div class="row row-cols-1 row-cols-md-2 align-items-stretch g-3 mb-5">
+                        <div class="col">
+                          <a class="checkout-delivery__type is-active" href="#points-ogo">
+                            <span class="checkout-delivery__type-title">Гипермаркеты и пункты выдачи ОГО!</span>
+                            <span class="checkout-delivery__type-date">Среда 20.11</span>
+                            <span class="checkout-delivery__type-price">бесплатно</span>
+                          </a>
+                        </div>
+                        <div class="col">
+                          <a class="checkout-delivery__type" href="#points-pvz">
+                            <span class="checkout-delivery__type-title">Постаматы и ПВЗ</span>
+                            <span class="checkout-delivery__type-date">Понедельник 25.11</span>
+                            <span class="checkout-delivery__type-price">от 725 ₽</span>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <h4 class="mb-2">Вы выбрали:</h4>
+                        <div class="fs-4">
+                          м. Динамо, Театральная аллея, д.3, стр.1, Гипермаркеты ОГО!
+                          <br />
+                          <b>20.11 после 10:00</b>
+                        </div>
+                      </div>
+                      <div class="btn-group btn-group-sm mb-3">
+                        <button class="btn btn-outline-info active" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                          На карте
+                        </button>
+                        <button class="btn btn-outline-info" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-burger"></use></svg>
+                          Списком
+                        </button>
+                      </div>
+                      <div class="checkout-map">
+                        <div class="ymap"><div class="ymap__map" style="width: 100%" data-center="55.7932, 37.559724"></div></div>
+                      </div>
+                      <div class="checkout-delivery__points">
+                        <div class="checkout-delivery__point checkout-delivery__point--pvz checked">
+                          <div class="field field--type-radio checkout-delivery__point-radio">
+                            <label class="field__label">
+                              <input type="radio" name="checkout-delivery-pvz" checked="checked" />
+                              <span class="field__check"></span>
+                            </label>
+                          </div>
+                          <div class="checkout-delivery__point-content">
+                            <div class="checkout-delivery__point-info">
+                              <div class="checkout-delivery__point-type">Терминалы CDEK</div>
+                              <div class="checkout-delivery__point-title">Тверской проспект, 13</div>
+                            </div>
+                            <div class="checkout-delivery__point-payment-info">
+                              <div class="checkout-delivery__point-price">435 ₽</div>
+                              <div class="checkout-delivery__point-date">после 02 января</div>
+                            </div>
+                          </div>
+                          <div class="checkout-delivery__point-desc">
+                            <div class="checkout-delivery__point-payment">
+                              Банковский перевод
+                              <br />
+                              Онлайн
+                            </div>
+                            <div class="checkout-delivery__point-text">Войти в отделение банка Совкомбанк через центральный вход, на 1 этаже расположен постамат.</div>
+                          </div>
+                        </div>
+                        <div class="checkout-delivery__point checkout-delivery__point--pvz">
+                          <div class="field field--type-radio checkout-delivery__point-radio">
+                            <label class="field__label">
+                              <input type="radio" name="checkout-delivery-pvz" />
+                              <span class="field__check"></span>
+                            </label>
+                          </div>
+                          <div class="checkout-delivery__point-content">
+                            <div class="checkout-delivery__point-info">
+                              <div class="checkout-delivery__point-type">Терминалы CDEK</div>
+                              <div class="checkout-delivery__point-title">ул. Дачная, 76</div>
+                            </div>
+                            <div class="checkout-delivery__point-payment-info">
+                              <div class="checkout-delivery__point-price">435 ₽</div>
+                              <div class="checkout-delivery__point-date">после 02 января</div>
+                            </div>
+                          </div>
+                          <div class="checkout-delivery__point-desc">
+                            <div class="checkout-delivery__point-payment">
+                              Банковский перевод
+                              <br />
+                              Онлайн
+                            </div>
+                            <div class="checkout-delivery__point-text">Войти в супермаркет Магнит Косметик через центральный вход, на 1 этаже расположен постамат.</div>
+                          </div>
+                        </div>
+                        <div class="checkout-delivery__point checkout-delivery__point--pvz">
+                          <div class="field field--type-radio checkout-delivery__point-radio">
+                            <label class="field__label">
+                              <input type="radio" name="checkout-delivery-pvz" />
+                              <span class="field__check"></span>
+                            </label>
+                          </div>
+                          <div class="checkout-delivery__point-content">
+                            <div class="checkout-delivery__point-info">
+                              <div class="checkout-delivery__point-type">Терминалы CDEK</div>
+                              <div class="checkout-delivery__point-title">ул. Ерофеева, 2</div>
+                            </div>
+                            <div class="checkout-delivery__point-payment-info">
+                              <div class="checkout-delivery__point-price">435 ₽</div>
+                              <div class="checkout-delivery__point-date">после 02 января</div>
+                            </div>
+                          </div>
+                          <div class="checkout-delivery__point-desc">
+                            <div class="checkout-delivery__point-payment">
+                              Банковский перевод
+                              <br />
+                              Онлайн
+                            </div>
+                            <div class="checkout-delivery__point-text">Ост. Площадь Капошвара, рядом с автозаправкой Роснефть.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="checkout-delivery__points">
+                        <div class="checkout-delivery__point checkout-delivery__point--ogo checked">
+                          <div class="field field--type-radio checkout-delivery__point-radio">
+                            <label class="field__label">
+                              <input type="radio" name="checkout-delivery-ogo" checked="checked" />
+                              <span class="field__check"></span>
+                            </label>
+                          </div>
+                          <div class="checkout-delivery__point-content">
+                            <div class="checkout-delivery__point-info">
+                              <div class="checkout-delivery__point-metro">
+                                <span class="checkout-delivery__point-metro-icon" style="background-color: #4baf4f"></span>
+                                Динамо
+                              </div>
+                              <div class="checkout-delivery__point-title hidden-default">Театральная аллея, д.3, стр.1</div>
+                              <div class="checkout-delivery__point-worktime hidden-default">Ежедневно 10:00 - 22:00</div>
+                              <div class="checkout-delivery__point-payment hidden-default">При получении</div>
+                            </div>
+                            <div class="checkout-delivery__point-date-group">
+                              <select>
+                                <option selected>сегодня после 20:00</option>
+                                <option>завтра после 10:00</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="checkout-delivery__point checkout-delivery__point--ogo">
+                          <div class="field field--type-radio checkout-delivery__point-radio">
+                            <label class="field__label">
+                              <input type="radio" name="checkout-delivery-ogo" />
+                              <span class="field__check"></span>
+                            </label>
+                          </div>
+                          <div class="checkout-delivery__point-content">
+                            <div class="checkout-delivery__point-info">
+                              <div class="checkout-delivery__point-metro">
+                                <span class="checkout-delivery__point-metro-icon" style="background-color: #ffcb31"></span>
+                                Площадь Ильича
+                              </div>
+                              <div class="checkout-delivery__point-title hidden-default">Золоторожский Вал, д. 8</div>
+                              <div class="checkout-delivery__point-worktime hidden-default">Ежедневно 10:00 - 22:00</div>
+                              <div class="checkout-delivery__point-payment hidden-default">При получении</div>
+                            </div>
+                            <div class="checkout-delivery__point-date-group">
+                              <select>
+                                <option>сегодня после 19:00</option>
+                                <option>завтра после 10:00</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="mb-3">
+                      <legend>Адрес доставки</legend>
+                      <a class="btn btn-outline-info btn-sm mb-3" href="#popup-select-my-address" data-fancybox role="button">Выбрать из сохраненных адресов</a>
+                      <div class="popup popup--md" id="popup-select-my-address">
+                        <p class="popup-title">Ваши адреса</p>
+                        <div class="popup-content">
+                          <div class="checkout-addresses">
+                            <div class="field field--type-radio-block">
+                              <label class="field__label">
+                                <input type="radio" name="checkout-addresses-options" id="checkout-address-1" />
+                                <span class="field__check"></span>
+                                <span class="field__caption">Москва, Театральная аллея, д.3, стр.1</span>
+                              </label>
+                            </div>
+                            <div class="field field--type-radio-block">
+                              <label class="field__label">
+                                <input type="radio" name="checkout-addresses-options" id="checkout-address-2" />
+                                <span class="field__check"></span>
+                                <span class="field__caption">Москва, Золоторожский Вал, д. 8</span>
+                              </label>
+                            </div>
+                            <button class="btn btn-secondary btn-sm mt-3" type="button">Выбрать</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-text mb-3">Введите адрес, чтобы увидеть сроки и стоимость</div>
+                      <p class="mb-3 fs-4">
+                        <span>Электросталь</span>
+                        <span>мира</span>
+                        <span>д. 1</span>
+                        <span>корп. 1</span>
+                        <span>кв. 1</span>
+                        <button class="btn btn-outline-ino btn-xs ms-3" type="button">Изменить</button>
+                      </p>
+                      <div class="checkout-select-city mb-3">
+                        <div class="row">
+                          <div class="col-12 col-lg-5">
+                            <h4 class="mb-2">Населенный пункт</h4>
+                            <div class="dropdown">
+                              <button class="btn btn-outline-info btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="inside outside" role="button" type="button">Москва</button>
+                              <div class="dropdown-menu mt-1">
+                                <input type="hidden" :name="" :value="currentcity.FIAS" />
+                                <input class="form-control-sm w-100 border-top-0 border-start-0 border-end-0 shadow-none js-select-city" type="text" placeholder="Ваш город..." data-src="/ajax/new/getCities.php" />
+                                <ul class="checkout-select-city-predefined list-unstyled">
+                                  <li><a class="dropdown-item fs-4" href="#">Москва</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Санкт-Петербург</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Челябинск</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Екатеринбург</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Казань</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Новосибирск</a></li>
+                                  <li><a class="dropdown-item fs-4" href="#">Уфа</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row g-3 mb-3">
+                        <div class="col-lg-6">
+                          <div class="field field--type-text">
+                            <label class="field__label">Улица</label>
+                            <div class="field__field"><input class="form-control" type="text" /></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row g-3 mb-3">
+                        <div class="col-md-4 col-lg-2">
+                          <div class="field field--type-text">
+                            <label class="field__label">Дом</label>
+                            <div class="field__field"><input class="form-control" type="text" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-lg-2">
+                          <div class="field field--type-text">
+                            <label class="field__label">Корпус</label>
+                            <div class="field__field"><input class="form-control" type="text" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-lg-2">
+                          <div class="field field--type-text">
+                            <label class="field__label">Квартира</label>
+                            <div class="field__field"><input class="form-control" type="text" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-lg-2">
+                          <div class="field field--type-text">
+                            <label class="field__label">Домофон</label>
+                            <div class="field__field"><input class="form-control" type="text" /></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-lg-2">
+                          <div class="field field--type-text">
+                            <label class="field__label">Этаж</label>
+                            <div class="field__field"><input class="form-control" type="text" /></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row g-3">
+                        <div class="col-lg-5"><button class="btn btn-secondary btn-sm" type="button">Рассчитать стоимость доставки</button></div>
+                      </div>
+                      <h4 class="mb-2">Служба доставки</h4>
+                      <div class="checkout-delivery__service checked">
+                        <div class="checkout-delivery__service-info">
+                          <div class="checkout-delivery__service-title">Служба КурьерСервисЭкспресс</div>
+                          <div class="checkout-delivery__service-payment">
+                            Банковский перевод
+                            <br />
+                            Онлайн
+                          </div>
+                        </div>
+                        <div class="checkout-delivery__service-options delivery-service-slider swiper">
+                          <div class="checkout-delivery__service-option swiper-slide">
+                            <div class="checkout-delivery__service-day">
+                              Ожидаемая дата доставки
+                              <b>31.01</b>
+                            </div>
+                            <div class="checkout-delivery__service-price">654&nbsp;₽</div>
+                          </div>
+                          <div class="checkout-delivery__service-option swiper-slide checked">
+                            <div class="checkout-delivery__service-day">
+                              Ожидаемая дата доставки
+                              <b>1.02</b>
+                            </div>
+                            <div class="checkout-delivery__service-price">654&nbsp;₽</div>
+                          </div>
+                          <div class="checkout-delivery__service-option swiper-slide">
+                            <div class="checkout-delivery__service-day">
+                              Ожидаемая дата доставки
+                              <b>2.02</b>
+                            </div>
+                            <div class="checkout-delivery__service-price">654&nbsp;₽</div>
+                          </div>
+                          <div class="checkout-delivery__service-option swiper-slide">
+                            <div class="checkout-delivery__service-day">
+                              Ожидаемая дата доставки
+                              <b>2.02</b>
+                            </div>
+                            <div class="checkout-delivery__service-price">654&nbsp;₽</div>
+                          </div>
+                          <div class="checkout-delivery__service-option swiper-slide">
+                            <div class="checkout-delivery__service-day">
+                              Ожидаемая дата доставки
+                              <b>2.02</b>
+                            </div>
+                            <div class="checkout-delivery__service-price">654&nbsp;₽</div>
+                          </div>
+                          <div class="checkout-delivery__service-option swiper-slide">
+                            <div class="checkout-delivery__service-day">
+                              Ожидаемая дата доставки
+                              <b>2.02</b>
+                            </div>
+                            <div class="checkout-delivery__service-price">654&nbsp;₽</div>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="row g-3 g-lg-4 mb-3">
+                        <div class="col-4 col-lg-6">
+                          <button class="btn btn-secondary btn-sm" type="button">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                            Назад
+                          </button>
+                        </div>
+                        <div class="col-8 col-lg-6 d-flex justify-content-end">
+                          <button class="btn btn-primary btn-sm" disabled type="button">
+                            Оформить заказ
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-right"></use></svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="form-text">На следующем этапе проверьте все данные и подтвердите заказ</div>
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="col-lg-4">
+                  <div class="checkout-sidebar">
+                    <p class="checkout-sidebar__title">Состав заказа</p>
+                    <div class="checkout-total__items">
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="389198">
+                            <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">1 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="391062">
+                            <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                        </div>
+                        <span class="product-card__count">2 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="391065">
+                            <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                        </div>
+                        <span class="product-card__count">0 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390124">
+                            <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">4 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="387892">
+                            <img class="product-card__image" src="/assets/img/content/products/387892.jpg" alt='Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" WQXGA/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="387892" target="_blank">Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; WQXGA/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">5 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="391065">
+                            <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                        </div>
+                        <span class="product-card__count">6 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390124">
+                            <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">7 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="387892">
+                            <img class="product-card__image" src="/assets/img/content/products/387892.jpg" alt='Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" WQXGA/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title" href="/product.html" data-id="387892" target="_blank">Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; WQXGA/Win11 Black</a>
+                        </div>
+                        <span class="product-card__count">8 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388628">
+                            <img class="product-card__image" src="/assets/img/content/products/388628.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388628" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)</a></div>
+                        <span class="product-card__count">9 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388629">
+                            <img class="product-card__image" src="/assets/img/content/products/388629.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Violet (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388629" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Violet (EAC)</a></div>
+                        <span class="product-card__count">10 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388630">
+                            <img class="product-card__image" src="/assets/img/content/products/388630.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388630" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Gray (EAC)</a></div>
+                        <span class="product-card__count">0 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388631">
+                            <img class="product-card__image" src="/assets/img/content/products/388631.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Black (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388631" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Black (EAC)</a></div>
+                        <span class="product-card__count">11 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388620">
+                            <img class="product-card__image" src="/assets/img/content/products/388620.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Yellow (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388620" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Yellow (EAC)</a></div>
+                        <span class="product-card__count">12 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388622">
+                            <img class="product-card__image" src="/assets/img/content/products/388622.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388622" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Gray (EAC)</a></div>
+                        <span class="product-card__count">13 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388621">
+                            <img class="product-card__image" src="/assets/img/content/products/388621.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Violet (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388621" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Violet (EAC)</a></div>
+                        <span class="product-card__count">14 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="380273">
+                            <img class="product-card__image" src="/assets/img/content/products/380273.jpg" alt="Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Lavender (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="380273" target="_blank">Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Lavender (EAC)</a></div>
+                        <span class="product-card__count">15 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="380275">
+                            <img class="product-card__image" src="/assets/img/content/products/380275.jpg" alt="Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Beige (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="380275" target="_blank">Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Beige (EAC)</a></div>
+                        <span class="product-card__count">16 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388614">
+                            <img class="product-card__image" src="/assets/img/content/products/388614.jpg" alt="Смартфон Samsung Galaxy S24+ SM-S926B 12/256Gb Marble Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388614" target="_blank">Смартфон Samsung Galaxy S24+ SM-S926B 12/256Gb Marble Gray (EAC)</a></div>
+                        <span class="product-card__count">17 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="388458">
+                            <img class="product-card__image" src="/assets/img/content/products/388458.jpg" alt='Монитор 24" Xiaomi Mi Monitor A24i IPS 1920x1080 6ms HDMI, VGA' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="388458" target="_blank">Монитор 24&quot; Xiaomi Mi Monitor A24i IPS 1920x1080 6ms HDMI, VGA</a></div>
+                        <span class="product-card__count">18 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390528">
+                            <img class="product-card__image" src="/assets/img/content/products/390528.jpg" alt='Монитор 55" Samsung Odyssey Ark S55CG97WNI Curved VA 3840x2160 1ms HDMI, DisplayPort' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="390528" target="_blank">Монитор 55&quot; Samsung Odyssey Ark S55CG97WNI Curved VA 3840x2160 1ms HDMI, DisplayPort</a></div>
+                        <span class="product-card__count">19 шт.</span>
+                      </div>
+                      <div class="product-card product-card--cart-total">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link" href="/product.html" data-id="390530">
+                            <img class="product-card__image" src="/assets/img/content/products/390530.jpg" alt='Монитор 57" Samsung Odyssey Neo G9 S57CG952NI VA 7680x2160 1ms HDMI, DisplayPort' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title" href="/product.html" data-id="390530" target="_blank">Монитор 57&quot; Samsung Odyssey Neo G9 S57CG952NI VA 7680x2160 1ms HDMI, DisplayPort</a></div>
+                        <span class="product-card__count">0 шт.</span>
+                      </div>
+                    </div>
+                    <div class="checkout-total__row">
+                      <div class="checkout-total__row-title">Стоимость товаров</div>
+                      <div class="checkout-total__row-value">47 790 ₽</div>
+                    </div>
+                    <div class="checkout-total__row">
+                      <div class="checkout-total__row-title">Скидка</div>
+                      <div class="checkout-total__row-value text-primary">-2 340 ₽</div>
+                    </div>
+                    <div class="checkout-total__price">
+                      <span class="checkout-total__price-title">Итоговая стоимость:</span>
+                      <span class="checkout-total__price-value">47 790 ₽</span>
+                    </div>
+                    <div class="checkout-total__bonus">
+                      <svg class="svg-icon svg-icon--xs text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus"></use></svg>
+                      120 бонусов
+                    </div>
+                    <button class="btn btn-primary checkout-total__btn w-100 mt-5 mb-3" type="button">Оформить заказ</button>
+                    <div class="form-text">Наличие в магазинах, доступные способы доставки и оплаты можно выбрать на следующем этапе</div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <h2>Шаг 4</h2>
+              <div class="checkout-final">
+                <div class="checkout-requisites">
+                  <h4 class="mb-2">Заказ получит</h4>
+                  <div class="checkout-requisites__item checkout-requisites__item--simple">
+                    <div class="checkout-requisites__item__header">
+                      <div class="checkout-requisites__item__title">Михаил</div>
+                      <div class="checkout-requisites__item__info-wrapper">
+                        <div class="checkout-requisites__item__info checkout-requisites__item__info--sm"><div class="checkout-requisites__item__info-text">+7 (915) 367-73-43</div></div>
+                        <div class="checkout-requisites__item__info checkout-requisites__item__info--sm"><div class="checkout-requisites__item__info-text">mkartsev0@gmail.com</div></div>
+                        <div class="checkout-requisites__item__info checkout-requisites__item__info--delivery">
+                          <div class="checkout-requisites__item__info-text">
+                            <b>Самовывоз:</b>
+                            Гипермаркеты ОГО! Театральная аллея, д.3, стр.1
+                          </div>
+                          <div class="checkout-requisites__item__info-date">30.01 после 15:00</div>
+                          <div class="checkout-requisites__item__info-text">
+                            <b>Доставка:</b>
+                            стоимость и способ доставки будут уточнены позднее
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="js-accordion">
+                    <div class="checkout-requisites__item js-accordion-item">
+                      <div class="checkout-requisites__item__header js-accordion-header">
+                        <div class="checkout-requisites__item__title">Организация</div>
+                        <div class="checkout-requisites__item__info-wrapper">
+                          <div class="checkout-requisites__item__info checkout-requisites__item__info--sm"><div class="checkout-requisites__item__info-text">+7 (915) 367-73-43</div></div>
+                          <div class="checkout-requisites__item__info checkout-requisites__item__info--sm"><div class="checkout-requisites__item__info-text">mkartsev0@gmail.com</div></div>
+                        </div>
+                      </div>
+                      <div class="checkout-requisites__item__body js-accordion-body">
+                        <div class="checkout-requisites__item__info-wrapper">
+                          <div class="checkout-requisites__item__info">
+                            <div class="checkout-requisites__item__info-title">Контактное лицо</div>
+                            <div class="checkout-requisites__item__info-text">Михаил</div>
+                          </div>
+                          <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                            <div class="checkout-requisites__item__info-title">ИНН</div>
+                            <div class="checkout-requisites__item__info-text">111111111111</div>
+                          </div>
+                          <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                            <div class="checkout-requisites__item__info-title">КПП</div>
+                            <div class="checkout-requisites__item__info-text">2222222222222222222222222222222222</div>
+                          </div>
+                          <div class="checkout-requisites__item__info">
+                            <div class="checkout-requisites__item__info-title">Название организации</div>
+                            <div class="checkout-requisites__item__info-text">Организация</div>
+                          </div>
+                          <div class="checkout-requisites__item__info">
+                            <div class="checkout-requisites__item__info-title">Юридический адрес</div>
+                            <div class="checkout-requisites__item__info-text">Юридический адрес</div>
+                          </div>
+                          <div class="checkout-requisites__item__info">
+                            <div class="checkout-requisites__item__info-title">Фактический адрес</div>
+                            <div class="checkout-requisites__item__info-text">Фактический адрес</div>
+                          </div>
+                          <div class="checkout-requisites__item__info">
+                            <div class="checkout-requisites__item__info-title">Название банка</div>
+                            <div class="checkout-requisites__item__info-text">Название банка</div>
+                          </div>
+                          <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                            <div class="checkout-requisites__item__info-title">Расчетный счет</div>
+                            <div class="checkout-requisites__item__info-text">33333333333333333333</div>
+                          </div>
+                          <div class="checkout-requisites__item__info checkout-requisites__item__info--sm">
+                            <div class="checkout-requisites__item__info-title">Корреспондентский счет</div>
+                            <div class="checkout-requisites__item__info-text">44444444444444444444</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout-order">
+                  <h4 class="mb-2">Ваш заказ</h4>
+                  <div class="checkout-order__items">
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="389198">
+                            <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 389198</span>
+                        <span class="product-card__count">1 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">620 220 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1234 бонуса
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="391062">
+                            <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="391062" target="_blank">
+                            Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey
+                          </a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 391062</span>
+                        <span class="product-card__count">2 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">534 000 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            200 бонусов
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="391065">
+                            <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="391065" target="_blank">
+                            Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue
+                          </a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 391065</span>
+                        <span class="product-card__count">0 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">457 700 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            3000 бонусов
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="390124">
+                            <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 390124</span>
+                        <span class="product-card__count">4 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1634 бонуса
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="387892">
+                            <img class="product-card__image" src="/assets/img/content/products/387892.jpg" alt='Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" WQXGA/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="387892" target="_blank">
+                            Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; WQXGA/Win11 Black
+                          </a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 387892</span>
+                        <span class="product-card__count">5 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">419 550 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1635 бонусов
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="391065">
+                            <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="391065" target="_blank">
+                            Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue
+                          </a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 391065</span>
+                        <span class="product-card__count">6 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">457 700 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1636 бонусов
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="390124">
+                            <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 390124</span>
+                        <span class="product-card__count">7 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1234 бонуса
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="387892">
+                            <img class="product-card__image" src="/assets/img/content/products/387892.jpg" alt='Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" WQXGA/Win11 Black' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="387892" target="_blank">
+                            Ноутбук ASUS ROG Zephyrus Duo 16 GX650PY-NM085W AMD Ryzen 9 7945HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; WQXGA/Win11 Black
+                          </a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 387892</span>
+                        <span class="product-card__count">8 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">419 550 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1637 бонусов
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388628">
+                            <img class="product-card__image" src="/assets/img/content/products/388628.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388628" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Yellow (EAC)</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 388628</span>
+                        <span class="product-card__count">9 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">167 990 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1640 бонусов
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388629">
+                            <img class="product-card__image" src="/assets/img/content/products/388629.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Violet (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388629" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Violet (EAC)</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 388629</span>
+                        <span class="product-card__count">10 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">167 990 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388630">
+                            <img class="product-card__image" src="/assets/img/content/products/388630.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388630" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Gray (EAC)</a></div>
+                        <span class="product-card__artikul">Арт. 388630</span>
+                        <span class="product-card__count">0 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">167 990 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388631">
+                            <img class="product-card__image" src="/assets/img/content/products/388631.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Black (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388631" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/1Tb Titanium Black (EAC)</a></div>
+                        <span class="product-card__artikul">Арт. 388631</span>
+                        <span class="product-card__count">11 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">167 990 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1234 бонуса
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388620">
+                            <img class="product-card__image" src="/assets/img/content/products/388620.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Yellow (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388620" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Yellow (EAC)</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 388620</span>
+                        <span class="product-card__count">12 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">133 990 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1234 бонуса
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388622">
+                            <img class="product-card__image" src="/assets/img/content/products/388622.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388622" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Gray (EAC)</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 388622</span>
+                        <span class="product-card__count">13 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">133 990 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388621">
+                            <img class="product-card__image" src="/assets/img/content/products/388621.jpg" alt="Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Violet (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388621" target="_blank">Смартфон Samsung Galaxy S24 Ultra SM-S928B 12/256Gb Titanium Violet (EAC)</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 388621</span>
+                        <span class="product-card__count">14 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">133 990 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="380273">
+                            <img class="product-card__image" src="/assets/img/content/products/380273.jpg" alt="Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Lavender (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="380273" target="_blank">Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Lavender (EAC)</a></div>
+                        <span class="product-card__artikul">Арт. 380273</span>
+                        <span class="product-card__count">15 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">98 990 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="380275">
+                            <img class="product-card__image" src="/assets/img/content/products/380275.jpg" alt="Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Beige (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="380275" target="_blank">Смартфон Samsung Galaxy Z Flip 5 SM-F731B 8/512Gb Beige (EAC)</a></div>
+                        <span class="product-card__artikul">Арт. 380275</span>
+                        <span class="product-card__count">16 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">98 990 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388614">
+                            <img class="product-card__image" src="/assets/img/content/products/388614.jpg" alt="Смартфон Samsung Galaxy S24+ SM-S926B 12/256Gb Marble Gray (EAC)" loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388614" target="_blank">Смартфон Samsung Galaxy S24+ SM-S926B 12/256Gb Marble Gray (EAC)</a></div>
+                        <span class="product-card__artikul">Арт. 388614</span>
+                        <span class="product-card__count">17 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">95 990 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1234 бонуса
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="388458">
+                            <img class="product-card__image" src="/assets/img/content/products/388458.jpg" alt='Монитор 24" Xiaomi Mi Monitor A24i IPS 1920x1080 6ms HDMI, VGA' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption"><a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="388458" target="_blank">Монитор 24&quot; Xiaomi Mi Monitor A24i IPS 1920x1080 6ms HDMI, VGA</a></div>
+                        <span class="product-card__artikul">Арт. 388458</span>
+                        <span class="product-card__count">18 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">10 790 ₽</div></div>
+                          <div class="product-card__bonus">
+                            <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                            1234 бонуса
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="390528">
+                            <img class="product-card__image" src="/assets/img/content/products/390528.jpg" alt='Монитор 55" Samsung Odyssey Ark S55CG97WNI Curved VA 3840x2160 1ms HDMI, DisplayPort' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="390528" target="_blank">Монитор 55&quot; Samsung Odyssey Ark S55CG97WNI Curved VA 3840x2160 1ms HDMI, DisplayPort</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 390528</span>
+                        <span class="product-card__count">19 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">251 650 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="checkout-order__item">
+                      <div class="product-card product-card--checkout">
+                        <div class="product-card__image-wrapper">
+                          <a class="product-card__image-link js-product-preview" href="/ajax/new/catalog_card.php" data-id="390530">
+                            <img class="product-card__image" src="/assets/img/content/products/390530.jpg" alt='Монитор 57" Samsung Odyssey Neo G9 S57CG952NI VA 7680x2160 1ms HDMI, DisplayPort' loading="lazy" />
+                          </a>
+                        </div>
+                        <div class="product-card__caption">
+                          <a class="product-card__title js-product-preview" href="/ajax/new/catalog_card.php" data-id="390530" target="_blank">Монитор 57&quot; Samsung Odyssey Neo G9 S57CG952NI VA 7680x2160 1ms HDMI, DisplayPort</a>
+                        </div>
+                        <span class="product-card__artikul">Арт. 390530</span>
+                        <span class="product-card__count">0 шт.</span>
+                        <div class="product-card__price-wrapper">
+                          <div class="product-card__price"><div class="product-card__price-current">246 250 ₽</div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout-order__items">
+                    <div class="checkout-order__total">
+                      <div class="checkout-order__total-info">
+                        <div class="checkout-order__total-title">
+                          <b>Доставка CDEK:</b>
+                          Москва, ул Мира, д. 1, корп. 1, квар. 1
+                        </div>
+                        <div class="checkout-order__total-date">
+                          <b>Дата получения заказа:</b>
+                          В четверг, 30.01.2025 с 10 до 19
+                        </div>
+                      </div>
+                      <div class="checkout-order__total-price">бесплатно</div>
+                    </div>
+                    <div class="checkout-order__total">
+                      <div class="checkout-order__total-info">
+                        <div class="checkout-order__total-title">
+                          <b>Доставка:</b>
+                          стоимость и способ доставки будут уточнены позднее
+                        </div>
+                      </div>
+                      <div class="checkout-order__total-price">0 ₽</div>
+                    </div>
+                    <div class="checkout-order__total">
+                      <div class="checkout-order__total-info">
+                        <div class="checkout-order__total-title"><b>Ожидаемая пошлина</b></div>
+                      </div>
+                      <div class="checkout-order__total-price">1 000 ₽</div>
+                    </div>
+                    <div class="checkout-order__total">
+                      <div class="checkout-order__total-info">
+                        <div class="checkout-order__total-title"><b>Скидка</b></div>
+                      </div>
+                      <div class="checkout-order__total-price checkout-order__total-discount">-1 000 ₽</div>
+                    </div>
+                    <div class="checkout-order__overall">
+                      <div class="checkout-order__overall-title">Итоговая стоимость:</div>
+                      <div class="checkout-order__overall-price-wrapper">
+                        <div class="checkout-order__overall-price">8&nbsp;990&nbsp;₽</div>
+                        <div class="checkout-order__overall-bonus">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--bonus-sm"></use></svg>
+                          24 бонуса
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout-order__info">
+                    <div class="row mb-3">
+                      <div class="col-lg-5">
+                        <div class="row row-cols-1 g-3">
+                          <div class="col">
+                            <div class="pay-type">
+                              <input class="pay-type__input" type="radio" id="pay-online" name="PAY_TYPE" />
+                              <label class="pay-type__inner" for="pay-online">
+                                <span class="pay-type__icon">
+                                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--card"></use></svg>
+                                </span>
+                                <span class="pay-type__title">Онлайн</span>
+                                <span class="pay-type__desc">Банковской картой, системой быстрых платежей, частями или в кредит</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="pay-type">
+                              <input class="pay-type__input" type="radio" id="pay-cash" name="PAY_TYPE" />
+                              <label class="pay-type__inner" for="pay-cash">
+                                <span class="pay-type__icon">
+                                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wallet"></use></svg>
+                                </span>
+                                <span class="pay-type__title">При получении</span>
+                                <span class="pay-type__desc">Наличными или банковской картой</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="pay-type">
+                              <input class="pay-type__input" type="radio" id="pay-invoice" name="PAY_TYPE" />
+                              <label class="pay-type__inner" for="pay-invoice">
+                                <span class="pay-type__title">Банковский перевод</span>
+                                <span class="pay-type__desc">Выставим счет для оплаты через перевод в банке</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-sm-12 col-md-6 col-lg-3 mb-3 mb-md-0">
+                        <div class="field field--type-text">
+                          <label class="field__label">У меня есть промокод</label>
+                          <div class="field__field"><input class="form-control form-control-sm" type="text" placeholder="Введите промокод" /></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-4 col-lg-2 pt-md-4"><button class="btn btn-secondary w-100" type="button">Применить</button></div>
+                      <div class="col-12">
+                        <div class="form-text text-info">Промокод успешно применен!</div>
+                        <div class="form-text text-danger">Такого промокода не существует.</div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-10 col-lg-6">
+                        <div class="field field--type-textarea">
+                          <label class="field__label">Комментарий к заказу</label>
+                          <div class="field__field"><textarea class="form-control form-control-sm" rows="3" placeholder="Оставьте ваш комментарий"></textarea></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col col-lg-8">
+                        <div class="checkout-alerts">
+                          <div class="alert alert-light fs-4 ps-6 position-relative">
+                            <svg class="svg-icon svg-icon--sm position-absolute ms-3 top-50 start-0 translate-middle-y text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill"></use></svg>
+                            Стоимость товаров из-за рубежа превышает 200€, заказ облагается пошлиной.
+                            <a href="#popup-foreign-overpriced" data-fancybox>Подробнее</a>
+                            <div class="popup popup--md" id="popup-foreign-overpriced">
+                              <p class="popup-title">Стоимость товаров из-за рубежа в заказе более 200 €</p>
+                              <div class="popup-content">
+                                <p>С 1 апреля 2024 пошлина уплачивается с заказов свыше 200 € или 31 кг на одну посылку. Размер пошлины — 15% от суммы превышения, но не меньше 2 €</p>
+                                <p>Рекомендуем разделить заказ на несколько и оформить их на разных членов семьи</p>
+                                <p>
+                                  Больше информации можно найти в разделе
+                                  <a href="/pages/foreign/" target="_blank">Международная доставка</a>
+                                </p>
+                                <button class="btn btn-secondary" data-fancybox-close type="button">Понятно</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="alert alert-light fs-4 ps-6 position-relative">
+                            <svg class="svg-icon svg-icon--sm position-absolute ms-3 top-50 start-0 translate-middle-y text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill"></use></svg>
+                            Некоторые из товаров в корзине находятся на складе в Москве.
+                            <br />
+                            Они приедут к вам быстрее, если оформить отдельный заказ на товары из-за рубежа.
+                          </div>
+                          <div class="alert alert-light fs-4 ps-6 position-relative">
+                            <svg class="svg-icon svg-icon--sm position-absolute ms-3 top-50 start-0 translate-middle-y text-info"><use xlink:href="/assets/img/sprites/sprite.svg#ui--info-fill"></use></svg>
+                            В корзине более трёх одинаковых товаров из-за рубежа.
+                            <a href="#popup-foreign-many" data-fancybox>Подробнее</a>
+                            <div class="popup popup--md" id="popup-foreign-many">
+                              <p class="popup-title">В заказе более трёх одинаковых товаров из-за рубежа</p>
+                              <div class="popup-content">
+                                <p>Не рекомендуем заказывать более трёх одинаковых товаров в одной посылке. Такой заказ считается оптовым и конфискуется таможней.</p>
+                                <p>Если закажите одинаковые товары в разных посылках, на таможню они придут в одно время и будут считаться оптовой партией. Предлагаем оформить два заказа на разных членов семьи</p>
+                                <p>
+                                  Больше информации можно найти в разделе
+                                  <a href="/pages/foreign/" target="_blank">Международная доставка</a>
+                                </p>
+                                <button class="btn btn-secondary" data-fancybox-close type="button">Понятно</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary w-100 w-lg-auto mt-5 mb-3" type="button">Подтвердить</button>
+                    <div class="form-text">Нажимая эту кнопку, вы подтверждаете заказ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-lg-4">
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-1.svg" alt="Самовывоз сегодня" />
+                  <span class="footer-feature__title">Самовывоз сегодня</span>
+                  <span class="footer-feature__subtitle">из магазина с 10:00 до 22:00</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-2.svg" alt="Официальная гарантия" />
+                  <span class="footer-feature__title">Официальная гарантия</span>
+                  <span class="footer-feature__subtitle">на 30 225 товаров в наличии</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-3.svg" alt="Удобная доставка" />
+                  <span class="footer-feature__title">Удобная доставка</span>
+                  <span class="footer-feature__subtitle">днём и вечером ежедневно</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-4.svg" alt="Высокий рейтинг" />
+                  <span class="footer-feature__title">Высокий рейтинг</span>
+                  <span class="footer-feature__subtitle">на Я.Маркете с 2010 года</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row g-3 g-lg-4">
+              <div class="col-sm-12 col-md-4 col-lg-3 order-1">
+                <p class="mb-0"><strong>Служба поддержки</strong></p>
+                <p class="mb-2"><a class="footer-phone text-body text-decoration-none" href="tel:+7 495 133-79-84">+7 495 133-79-84</a></p>
+                <ul class="list-unstyled">
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#callback-tab-pane">Заказать звонок</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane">Задать вопрос</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#complain-tab-pane">Пожаловаться</a></li>
+                </ul>
+                <p class="footer-copyright d-none d-lg-block">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-2">
+                <p class="mb-1"><strong>Покупателям</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/news.html">Новости и акции</a></li>
+                  <li><a href="/shops.html">Адреса магазинов</a></li>
+                  <li><a href="/delivery.html">Доставка и самовывоз</a></li>
+                  <li><a href="/service.html">Гарантия и возврат</a></li>
+                  <li><a href="/bonus.html">Бонусная программа</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-3">
+                <p class="mb-1"><strong>Информация</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/job.html">Вакансии</a></li>
+                  <li><a href="/corporate.html">Корпоративным клиентам</a></li>
+                  <li><a class="js-supplier-popup" href="/ajax/new/supplier_inquiry_form.php">Поставщикам</a></li>
+                  <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-4 order-5 order-md-4 d-lg-none">
+                <p class="footer-copyright mt-4">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-3 order-4 order-md-5">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Подписывайтесь</strong></p>
+                    <div class="social-buttons mb-4">
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Принимаем к оплате</strong></p>
+                    <div class="pay-systems">
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mastercard_logo.png" alt="Mastercard" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/visa_logo.png" alt="Visa" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mir_logo.png" alt="МИР" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/sbercredit_logo.png" alt="Сберкредит" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-toolbar d-md-none">
+        <div class="container p-0">
+          <div class="row row-cols-5 g-0">
+            <div class="col">
+              <span class="footer-toolbar__item is-active">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Главная</span>
+              </span>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-catalog" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Каталог</span>
+              </button>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item" href="/cart.html">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                  <span class="fs-6 badge rounded-pill position-absolute top-0 end-0 bg-primary js-cart-counter hidden"></span>
+                </div>
+                <span class="footer-toolbar__item-text">Корзина</span>
+              </a>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item js-auth-popup" href="/ajax/new/authform.php">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Войти</span>
+              </a>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-sidebar" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Еще</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

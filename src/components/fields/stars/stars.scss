@@ -1,0 +1,36 @@
+.field {
+  $block: &;
+
+  &--type-stars {
+    display: block;
+
+    input {
+      @include element-invisible;
+
+      &:checked ~ #{$block}__star,
+      & + #{$block}__star:hover,
+      & + #{$block}__star:hover ~ #{$block}__star {
+        color: var(--warning, $warning);
+      }
+    }
+
+    #{$block}__stars {
+      display: flex;
+      flex-flow: row nowrap;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    #{$block}__star {
+      display: inline-flex;
+      line-height: 1;
+      color: var(--gray-400, $gray-400);
+
+      &:hover {
+        color: var(--warning, $warning);
+        cursor: pointer;
+      }
+    }
+  }
+}

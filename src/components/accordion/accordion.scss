@@ -1,0 +1,90 @@
+.accordion {
+  width: 100%;
+
+  &-header {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: $spacer * 0.5;
+    padding: $spacer $spacer * 4 $spacer $spacer * 1.5;
+    font-size: var(--font-size-base, $font-size-base);
+    font-weight: var(--font-weight-normal, $font-weight-normal);
+    line-height: $font-size-lg; // 1.375;
+  }
+
+  &-body {
+    display: none;
+    padding: $spacer $spacer $spacer $spacer * 1.5;
+  }
+
+  &-item {
+    border: 1px solid var(--gray-200, $gray-200);
+    border-bottom: none;
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+    &:last-child {
+      border-bottom: 1px solid var(--gray-200, $gray-200);
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+    &[disabled] {
+      pointer-events: none;
+      color: var(--dark, $dark);
+      background: var(--light, $light);
+    }
+  }
+
+  &-item.is-active > &-body {
+    display: block;
+  }
+}
+
+.js-accordion {
+  &-header {
+    position: relative;
+    padding-right: $spacer * 3;
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: $spacer * 2;
+      height: $spacer * 2;
+      top: 50%;
+      right: $spacer * 0.5;
+      margin: 0;
+      font-size: 0;
+      line-height: 1;
+      color: var(--dark, $dark);
+      transform: translate3d(0, -50%, 0);
+      transition: transform ease-in-out 0.2s;
+      background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='%239e9e9e' xmlns='http://www.w3.org/2000/svg'><path d='M4,8.3C4,8.1,4,8,4.1,7.9c0.2-0.2,0.5-0.2,0.7,0L12,15l7.1-7.1c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L4.1,8.6C4,8.5,4,8.4,4,8.3z'/></svg>");
+      background-position: center;
+      background-size: $spacer * 1.5;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+    &:hover {
+      color: var(--primary, $primary);
+      cursor: pointer;
+    }
+    &:hover:after {
+      background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='%23DC3E48' xmlns='http://www.w3.org/2000/svg'><path d='M4,8.3C4,8.1,4,8,4.1,7.9c0.2-0.2,0.5-0.2,0.7,0L12,15l7.1-7.1c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L4.1,8.6C4,8.5,4,8.4,4,8.3z'/></svg>");
+    }
+    &:focus-visible {
+      color: var(--primary, $primary);
+      outline: 2px solid var(--primary, $primary);
+    }
+  }
+  &-body {
+    display: none;
+  }
+  &-item.is-active > &-header:after {
+    transform: translate3d(0, -50%, 0) rotate(180deg);
+  }
+  &-item.is-active > &-body {
+    display: block;
+  }
+}

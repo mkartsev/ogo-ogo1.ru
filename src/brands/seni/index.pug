@@ -1,0 +1,151 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "seni"
+    page.title = "Бренд-зона Seni"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.seni
+    nav.seni-nav
+      img.seni-logo(src="./img/logo.svg", alt="seni")
+
+    section.seni-slider
+      .h2.text-center [Стандартный слайдер]
+
+    section.seni-section
+      h2.seni-section__title О бренде Seni
+      p Современная продукция бренда Seni – это широкий ассортимент впитывающих изделий (урологические прокладки, вкладыши для мужчин, подгузники и специальные трусики), предназначенных для людей с недержанием, огромный выбор специализированных косметических средств гигиены для лежачих больных и масса дополнительной продукции.
+      p Самыми первыми изделиями, выпущенными под польской маркой, стали подгузники для защиты от инконтиненции в трех размерных вариантах. Впитывающая продукция оказалась крайне востребованной, что сподвигло производителей на создание серии анатомических подгузников для взрослых людей. В 2001 году интенсивное развитие продолжилось. Были выпущены: урологические прокладки, подгузники повышенной впитываемости, первые пенки для ванной и крема для ухода за кожей, подверженной воздействию раздражающих факторов.
+      p В 2003 году для бренда Seni наступил переломный момент. Были разработаны первые подгузники с уникальным «дышащим» слоем. С 2007 по 2010 годы специалисты занимались дальнейшим модифицированием продукции. Добавление гидрофобных бортиков и эластичных застежек-липучек сделало впитывающие изделия Seni более надежными и комфортными.
+      p На сегодняшний день такие группы товаров, как подгузники, пеленки и урологические прокладки для женщин, имеют свое производство также и в России на заводе ООО «БЕЛЛА»
+
+    section.seni-section
+      .seni-cards
+        a.seni-card(href="#")
+          .seni-card__cover
+            img.seni-card__img(src="./img/super.jpg", alt="Super Seni")
+          .seni-card__content
+            img.seni-card__goods(src="./img/super-goods.png", alt="Подгузники для взрослых")
+            span.seni-card__title Super Seni
+            span.seni-card__subtitle Подгузники для взрослых
+        a.seni-card(href="#")
+          .seni-card__cover
+            img.seni-card__img(src="./img/active.jpg", alt="Seni Active")
+          .seni-card__content
+            img.seni-card__goods(src="./img/active-goods.png", alt="Урологические трусы")
+            span.seni-card__title Seni Active
+            span.seni-card__subtitle Урологические трусы
+        a.seni-card(href="#")
+          .seni-card__cover
+            img.seni-card__img(src="./img/lady.jpg", alt="Seni Lady")
+          .seni-card__content
+            img.seni-card__goods(src="./img/lady-goods.png", alt="Урологические прокладки для женщин")
+            span.seni-card__title Seni Lady
+            span.seni-card__subtitle Урологические прокладки для женщин
+        a.seni-card(href="#")
+          .seni-card__cover
+            img.seni-card__img(src="./img/man.jpg", alt="Seni Man")
+          .seni-card__content
+            img.seni-card__goods(src="./img/man-goods.png", alt="Вкладыши для мужчин")
+            span.seni-card__title Seni Man
+            span.seni-card__subtitle Вкладыши для мужчин
+        a.seni-card(href="#")
+          .seni-card__cover
+            img.seni-card__img(src="./img/soft.jpg", alt="Seni Soft")
+          .seni-card__content
+            img.seni-card__goods(src="./img/soft-goods.png", alt="Гигиенические пеленки")
+            span.seni-card__title Seni Soft
+            span.seni-card__subtitle Гигиенические пеленки
+
+    section.seni-section
+      h2.seni-section__title Преимущества продукции Seni
+      .row.g-3.g-lg-4
+        .col-12.col-md-6.col-lg-4
+          .seni-advantage
+            img.seni-advantage__img(src="./img/advantage-1.png", alt="Широкий ассортимент")
+            span.seni-advantage__title Широкий ассортимент
+            .seni-advantage__text
+              | Впитывающие изделия и косметические средства для людей с инконтиненцией (подгузники для взрослых, пеленки, впитывающие трусы, урологические прокладки для женщин и прочее).
+
+        .col-12.col-md-6.col-lg-4
+          .seni-advantage
+            img.seni-advantage__img(src="./img/advantage-2.png", alt="Безопасность")
+            span.seni-advantage__title Безопасность
+            .seni-advantage__text
+              | Впитывающие изделия Seni производятся из высококачественных, безопасных и проверенных материалов, дерматологически проверены, не содержат латекс и позволяют коже «дышать».
+
+        .col-12.col-md-6.col-lg-4
+          .seni-advantage
+            img.seni-advantage__img(src="./img/advantage-3.png", alt="Подходит всем")
+            span.seni-advantage__title Подходит всем
+            .seni-advantage__text
+              | Каждая линейка изделий Seni доступна в широком диапазоне размеров, что дает возможность выбрать продукт, соответствующий индивидуальным потребностям.
+
+        .col-12.col-md-6.col-lg-4
+          .seni-advantage
+            img.seni-advantage__img(src="./img/advantage-4.png", alt="Опыт")
+            span.seni-advantage__title Опыт
+            .seni-advantage__text
+              | Многолетний опыт в изготовлении продуктов для защиты при инконтиненции. Бренд Seni присутствует на рынке с 1997 года.
+
+        .col-12.col-md-6.col-lg-4
+          .seni-advantage
+            img.seni-advantage__img(src="./img/advantage-5.png", alt="Комфорт")
+            span.seni-advantage__title Комфорт
+            .seni-advantage__text
+              | Продукция Seni изготавливается из материалов, мягких и приятных на ощупь, чтобы обеспечить удобство и комфорт при использовании.
+
+        .col-12.col-md-6.col-lg-4
+          .seni-advantage
+            img.seni-advantage__img(src="./img/advantage-6.png", alt="Экономия")
+            span.seni-advantage__title Экономия
+            .seni-advantage__text
+              | Наличие нескольких уровней впитывающей способности продукции Seni позволяет выбрать нужный продукт и избежать ненужных расходов.
+
+    section.seni-section
+      .row.g-3.g-lg-4
+        .col-12.col-md-6
+          a.seni-feature.seni-feature--violet(href="#")
+            img.seni-feature__img(src="./img/feature-1.png", alt="Хиты продаж")
+            span.seni-feature__title Хиты продаж
+        .col-12.col-md-6
+          a.seni-feature.seni-feature--blue(href="#")
+            img.seni-feature__img(src="./img/feature-2.png", alt="Новые поступления")
+            span.seni-feature__title Новые поступления
+
+    section.seni-section
+      h2.seni-section__title Видео
+      .seni-videos
+        .row.g-3.g-lg-4
+          .col-12.col-md-6.col-lg-4
+            a.seni-video(href="https://www.youtube.com/watch?v=XHTrLYShBRQ")
+              .seni-video__img-wrapper
+                img.seni-video__img(src="./img/maxresdefault 1.jpg", alt="Комплексный уход за кожей")
+                span.seni-video__play
+              span.seni-video__title Комплексный уход за кожей
+          .col-12.col-md-6.col-lg-4
+            a.seni-video(href="https://www.youtube.com/watch?v=XHTrLYShBRQ")
+              .seni-video__img-wrapper
+                img.seni-video__img(src="./img/maxresdefault 2.jpg", alt="Мужское решение деликатной проблемы")
+                span.seni-video__play
+              span.seni-video__title Мужское решение деликатной проблемы
+          .col-12.col-md-6.col-lg-4
+            a.seni-video(href="https://www.youtube.com/watch?v=XHTrLYShBRQ")
+              .seni-video__img-wrapper
+                img.seni-video__img(src="./img/maxresdefault 3.jpg", alt="Впитывающие трусы Seni Active")
+                span.seni-video__play
+              span.seni-video__title Впитывающие трусы Seni Active
+
+    section.seni-section
+      a.seni-button(href="#") Смотерть весь ассортимент

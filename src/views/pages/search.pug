@@ -1,0 +1,26 @@
+extends ../layouts/default
+
+include ../../components/forms/forms
+include ../../components/categories-grid/categories-grid
+include ../../components/listing/listing
+
+append vars
+  -
+    page.name  = "search"
+    page.title = "Lorem ipsum - результаты поиска в онлайн-гипермаркете ОГО!"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section.mb-3
+    +form-search()
+
+  section.content-section.mb-5
+    +categories-grid()
+
+  section.content-section.mb-0.p-0
+    +listing-section(filters=true, columns=3)

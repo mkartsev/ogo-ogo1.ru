@@ -1,0 +1,384 @@
+include ../button/button
+include ../svg-icon/svg-icon
+
+mixin product-card(variant, product, options)
+  -
+    variant = attributes.variant || 'default'
+    product = attributes.product || {}
+    options = stringToObject(attributes.options) || {}
+
+    const baseClass = "product-card"
+    let classes = [baseClass]
+    let defaults = {
+      badges: true,
+      compareButton: true,
+      deleteFromCartButton: false,
+      deleteFromCompareButton: false,
+      favoriteButton: true,
+      icons: false,
+      label: false,
+      mod: false,
+      previewButton: false,
+      previewTitle: false,
+      previewImage: false,
+      param: false,
+      priceOld: true,
+      priceNote: false,
+      discount: false,
+      discontinued: false,
+      bonus: true
+    }
+
+    let settings = Object.assign(defaults, options)
+
+    switch (variant) {
+      case "accessory":
+        settings.label = true
+        settings.mod = true
+        settings.bonus = false
+        break
+
+      case "added-to-cart":
+        settings.bonus = false
+        break
+
+      case "cart":
+        settings.deleteFromCartButton = true
+        settings.compareButton = false
+        break
+
+      case "cart-dropdown":
+        settings.bonus = false
+        settings.compareButton = false
+        settings.favoriteButton = false
+        settings.deleteFromCartButton = true
+        settings.discount = true
+        settings.discontinued = true
+        break
+
+      case "cart-total":
+        settings.badges = false
+        settings.priceOld = false
+        break
+
+      case "checkout":
+        settings.previewTitle = true
+        settings.previewImage = true
+        settings.priceOld = false
+        break
+
+      case "compare":
+        settings.bonus = false
+        settings.compareButton = false
+        settings.previewButton = true
+        settings.priceOld = false
+        break
+
+      case "find-by-article":
+        settings.mod = true
+        break
+
+      default:
+        settings.icons = true
+        settings.label = true
+        settings.mod = true
+        settings.param = true
+        settings.previewButton = true
+        settings.priceNote = true
+    }
+
+    const { id, category, availability, quantity, title, image, price, price_old, price_note, discount, discontinued, param, rating, bonus, label, mod, badges, icons } = product
+
+    function addTooltip(tooltip) {
+      const { title, content, settings } = tooltip
+      if (title) this['data-tooltip-title'] = title
+      if (content) this['data-tooltip-content'] = content
+      if (settings) {
+        for (const [key, value] of Object.entries(settings)) {
+          this[`data-tippy-${key}`] = `${value}`
+        }
+      }
+    }
+
+    if (variant !== "default") classes.push(`${baseClass}--${variant}`)
+    if (settings.mod && mod) classes.push(`${baseClass}--${mod}`)
+
+    delete attributes.variant
+    delete attributes.product
+    delete attributes.options
+
+  mixin __artikul()
+    span.product-card__artikul= "Арт. " + id
+
+  mixin __availability(showTitle=true, showText=false)
+    -
+      const tooltip = availability?.tooltip
+      let textClass = availability.available ? "text-success" : "text-dark"
+      let icon = availability.available ? "ui--check-sm" : "ui--wrong-sm"
+
+      if (tooltip) {
+        textClass += " js-tooltip"
+        addTooltip.call(attributes, tooltip)
+      }
+
+      delete attributes.showTitle
+      delete attributes.showText
+
+    .product-card__availability
+      if showTitle && availability.title
+        span(class="product-card__availability-title" class= textClass)&attributes(attributes)
+          +svg-icon(icon, "sm")
+          =availability.title
+      if showText && availability.text
+        span(class="product-card__availability-text" class= textClass)&attributes(attributes)
+          =availability.text
+
+  mixin __badge(badge)
+    -
+      const baseClass = "product-card__badge badge"
+      let classes = [baseClass]
+      const tooltip = badge?.tooltip
+
+      classes.push("text-bg-" + badge?.variant)
+
+      if (tooltip) {
+        classes.push("js-tooltip")
+        addTooltip.call(attributes, tooltip)
+      }
+
+    span(class= classes)&attributes(attributes)
+      if (badge.icon)
+        +svg-icon(badge.icon, "xs")
+      !=badge.text
+
+  mixin __badges()
+    if settings.badges && badges
+      .product-card__badges
+        each badge in badges
+          +__badge(badge)
+        block
+
+  mixin __bonus()
+
+    .product-card__bonus
+      +svg-icon("ui--bonus-sm", "sm")
+      =bonus + pluralize(bonus, " бонус", " бонуса", " бонусов")
+
+  mixin __caption()
+    - const link = settings.previewTitle ? process.env.PRODUCT_PREVIEW_URL : "/product.html"
+
+    .product-card__caption
+      a(href=link class=`product-card__title${settings.previewTitle ? " js-product-preview" : ""}` data-id=id target="_blank")= title
+
+  mixin __controls()
+    .product-card__controls&attributes(attributes)
+      if (settings.deleteFromCompareButton)
+        +button(type="button" variant="link sm" class="position-absolute top-0 end-0 js-tooltip js-compare-delete-item" icon="ui--cross" iconSize="sm" data-id=id data-static-icon data-action="DELETE_FROM_COMPARE_RESULT" data-tooltip-content="Удалить из сравнения")
+      if (settings.deleteFromCartButton)
+        +button(type="button" variant="link sm" class="js-tooltip js-remove-from-cart" icon="ui--cross" iconSize="sm" data-id=id data-tooltip-content="Удалить" onclick=`cart.remove("${id}")`)
+      if (settings.compareButton)
+        +button(type="button" variant="link sm" class="js-tooltip js-add-to-list" icon="ui--comparison" iconSize="sm" data-id=id data-list="comparison" data-action="ADD_TO_COMPARE_LIST" data-tooltip-content="В сравнение")
+      if (settings.favoriteButton)
+        +button(type="button" variant="link sm" class="js-tooltip js-add-to-list" icon="ui--heart" iconSize="sm" data-id=id data-list="favorites" data-action="add" data-tooltip-content="В избранное")
+
+  mixin __count()
+    span.product-card__count= quantity + " шт."
+
+  mixin __discount()
+    if settings.discount && discount
+      .product-card__discount.product-card__badge.badge.text-bg-warning=  discount
+
+  mixin __discontinued()
+    if settings.discontinued && discontinued
+      .product-card__discontinued В выбранном регионе товар не продается и будет удален из корзины
+
+  mixin __icon(icon)
+    -
+      const baseClass = "product-card__icon"
+      let classes = [baseClass]
+      const tooltip = icon?.tooltip
+
+      classes.push(`${baseClass}--${icon?.variant}`)
+
+      if (tooltip) {
+        classes.push("js-tooltip")
+        addTooltip.call(attributes, tooltip)
+      }
+
+    span(class= classes)&attributes(attributes)= icon.text
+
+  mixin __icons()
+    if settings.icons && icons
+      .product-card__icons
+        each icon in icons
+          +__icon(icon)
+
+  mixin __image()
+    - const link = settings.previewImage ? process.env.PRODUCT_PREVIEW_URL : "/product.html"
+
+    .product-card__image-wrapper
+      a(href=link class=`product-card__image-link${settings.previewImage ? " js-product-preview" : ""}` data-id=id)
+        img(src=image, alt=title loading="lazy").product-card__image
+
+      if settings.previewButton
+        a(href= process.env.PRODUCT_PREVIEW_URL data-id=id).product-card__preview.js-product-preview
+          +svg-icon("ui--search-sm", "sm")
+
+      if settings.icons && icons
+        +__icons(icons)
+
+  mixin __label()
+    if settings.label && label
+      div(class=`product-card__label${label.variant ? " product-card__label--" + label.variant : ""}`)= label.text
+
+  mixin __rating()
+    .product-card__rating
+      each val in [1, 2, 3, 4, 5]
+        span(class=`product-card__rating__item${val <= rating ? " is-active" : ""}`)
+          +svg-icon(`ui--star-fill-sm`, "xs")
+
+  mixin __price()
+    .product-card__price-wrapper
+      .product-card__price
+        div(class=`product-card__price-${settings.priceOld && price_old ? "new" : "current"}`)= formatNumber(price) + " ₽" 
+      if settings.priceOld && price_old
+        .product-card__old
+          .product-card__price-old= formatNumber(price_old) + " ₽"
+          if settings.priceNote && price_note
+            .product-card__price-note= price_note
+      if settings.bonus && bonus
+        +__bonus()
+
+  mixin __param(param)
+    if settings.param && param
+      .product-card__param
+        ul.product-card__param-list
+          each prop in param
+            li.product-card__param-item
+              span.product-card__param-key= prop.key + ": "
+              span.product-card__param-value= prop.value
+
+  mixin __quantity()
+    .product-card__quantity.input-group.input-group-xs
+      +button(variant="secondary" icon="ui--minus-sm" iconSize="sm")
+      input(type="number" value=quantity).form-control.text-center.text-truncate
+      +button(variant="secondary" icon="ui--plus-sm" iconSize="sm")
+
+  div(class= classes)&attributes(attributes)
+    case variant
+      when "accessory"
+        +__label()
+        .product-card__header
+          +__rating()
+          +__artikul()
+        .product-card__body
+          +__image()
+          +__caption()
+          if availability.available
+            +__price()
+            +__bonus()
+          else
+            +__availability()
+        if availability.available
+          .product-card__footer
+            +__price()
+            +button(tag="a" href="#" variant="primary sm" text="Купить" icon="ui--plus-sm" data-id=id data-accessories="false").product-card__buy.js-add-to-cart
+            +__controls()
+            .product-card__total Итого с этим товаром:
+              br
+              span.text-body= formatNumber(price) + " ₽"
+
+      when "added-to-cart"
+        +__image()
+        +__caption()
+        +__price()
+
+      when "cart"
+        .product-card__header
+          +__image()
+        .product-card__body
+          +__artikul()
+          +__caption()
+          +__badges()
+            span.product-card__badge.badge.text-bg-primary В выбранном регионе товар не продается и будет удален из корзины
+        .product-card__footer
+          if (availability.available)
+            +__price()
+            +__quantity()
+          else
+            +__availability(true, true)
+          +__controls()
+
+      when "cart-dropdown"
+        +__image()
+        +__discount()
+        +__caption()
+        if discontinued
+          .product-card__badges
+            +__badge({variant: "danger", text: "В выбранном регионе товар не продается и будет удален из корзины"})
+        if availability.available
+          if !discontinued
+            +__quantity()
+          +__price()
+        else
+          +__availability()
+        +__controls()
+
+      when "cart-total"
+        +__image()
+        +__caption()
+        +__count()
+
+      when "checkout"
+        +__image()
+        +__caption()
+        +__artikul()
+        +__count()
+        +__price()
+
+      when "compare"
+        .product-card__header
+          +__artikul()
+          //- Внимание! Тут другой класс и data-action для удаления из сравнения
+          +button(type="button" variant="link sm" class="position-absolute top-0 end-0 js-tooltip js-compare-delete-item" icon="ui--cross" iconSize="sm" data-id=id data-static-icon data-action="DELETE_FROM_COMPARE_RESULT" data-tooltip-content="Удалить из сравнения")
+        .product-card__body
+          +__image()
+          +__caption()
+          if availability.available
+            +__price()
+        .product-card__footer
+          if availability.available
+            +button(tag="a" href="#" variant="primary sm" text="Купить" class="product-card__buy js-add-to-cart" icon="ui--shopping-cart-sm" data-id=id)
+          else
+            +__availability()
+          +__controls()
+
+      when "find-by-article"
+        +__artikul()
+        +__controls()
+        +__image()
+        +__availability()
+        +__rating()
+        +__caption()
+        .product-card__footer
+          if availability.available
+            +__price()
+            +button(tag="a" href="#" variant="primary sm" text="Купить" class="product-card__buy js-add-to-cart" icon="ui--shopping-cart-sm" data-id=id)
+
+      default
+        .product-card__body
+          +__label()
+          .product-card__header
+            +__rating()
+            +__artikul()
+          +__image()
+          +__availability()
+          +__caption()
+          +__param(param.short)
+          +__badges()
+
+        .product-card__footer
+          if availability.available
+            +__price()
+            +button(tag="a" href="#" variant="primary sm" text="Купить" class="product-card__buy js-add-to-cart" icon="ui--shopping-cart-sm" data-id=id)
+          +__controls()

@@ -1,0 +1,302 @@
+include ./select/select
+
+include ../svg-icon/svg-icon
+include ../button/button
+include ../tooltip/tooltip
+include ../tooltip-icon/tooltip-icon
+
+//- Универсальный компонент для полей форм
+
+mixin field()
+  -
+    const baseClass = "field"
+
+    var params = {}
+    Object.assign(params, attributes)
+
+    //- const uniqId = (prefix = "field") => prefix + '-' + Math.random().toString(36).substr(2, 9)
+    const stringContains = (string, substring) => String(string).indexOf(substring) !== -1
+    const stringToArray = str => str ? str.split(" ").filter(v => v.length) : []
+
+    //- attributes.id = attributes.id ? attributes.id : (attributes.label || attributes.placeholder) ? uniqId() : false
+    attributes.id = attributes.id ? attributes.id : false
+
+    if (attributes.type === "slot")
+      attributes.id = false
+
+    let classes = [baseClass]
+
+    attributes.checked      = attributes.checked  ? "checked"  : false
+    attributes.disabled     = attributes.disabled ? "disabled" : false
+    attributes.multiple     = attributes.multiple ? "multiple" : false
+    attributes.required     = attributes.required ? "required" : false
+    attributes.autocomplete = attributes.autocomplete ? "autocomplete" : false
+
+    //- const validatorMsg = {
+    //-   required: "Необходимо заполнить",
+    //-   email: "Неправильный формат Email",
+    //-   password: "Пароль должен содержать символов - не менее 8, цифр - не менее 1, строчных букв - не менее 1, прописных букв - не менее 1, не менее 1 символов, не являющихся буквами и цифрами, например таких как *, - или #.",
+    //-   tel: "Требуется телефонный номер",
+    //-   minlength: "Поле должно быть не менее ${1} символов длиной",
+    //-   equal: "Поля должны быть одинаковыми",
+    //-   min: "Минимальное допустимое значение - ${1}",
+    //-   max: "Максимально допустимое значение - ${1}",
+    //-   lowercase: "Допустимы только строчные буквы"
+    //- }
+
+    //- if (attributes.required)
+
+    //-   if (!attributes["data-validator-required-message"])
+    //-     attributes["data-validator-required-message"] = validatorMsg.required
+
+    //-   if ((attributes.type === "email") && !attributes["data-validator-email-message"])
+    //-     attributes["data-validator-email-message"] = validatorMsg.email
+
+    //-   if ((attributes.type === "password") && !attributes["data-validator-password-message"])
+    //-     attributes["data-validator-password-message"] = validatorMsg.password
+
+    //-   if ((attributes.type === "tel") && !attributes["data-validator-tel-message"])
+    //-     attributes["data-validator-tel-message"] = validatorMsg.tel
+
+    //-   if (attributes.minlength && !attributes["data-validator-minlength-message"])
+    //-     attributes["data-validator-minlength-message"] = validatorMsg.minlength
+
+    //-   if (attributes["data-validator-min"] && !attributes["data-validator-min-message"])
+    //-     attributes["data-validator-min-message"] = validatorMsg.min
+
+    //-   if (attributes["data-validator-max"] && !attributes["data-validator-max-message"])
+    //-     attributes["data-validator-max-message"] = validatorMsg.max
+
+    //-   if (attributes["data-validator-lowercase"] && !attributes["data-validator-lowercase-message"])
+    //-     attributes["data-validator-lowercase-message"] = validatorMsg.lowercase
+
+    //-   if (attributes["data-validator-equal"] && !attributes["data-validator-equal-message"])
+    //-     attributes["data-validator-equal-message"] = validatorMsg.equal
+
+    if (params.type)
+      classes.push(baseClass + "--type-" + params.type)
+
+  - if (params.mod)
+    - var mods = stringToArray(params.mod)
+    each ent in mods
+      - classes.push(baseClass + "--" + ent)
+
+  -
+    if (params.disabled)
+      classes.push(baseClass + "--disabled")
+
+    if (params.icon)
+      classes.push(baseClass + "--icon")
+
+    if (params.class)
+      classes.push(params.class)
+
+    delete attributes.class
+    delete attributes.mod
+    delete attributes.label
+    delete attributes.hint
+    delete attributes.labelHidden
+    delete attributes.icon
+    delete attributes.plugin
+    delete attributes.captcha
+    delete attributes.viewButton
+    delete attributes.controlClass
+    //- delete attributes.svgIcon
+    delete attributes.caption
+    delete attributes.tooltip
+
+  mixin __field-wrapper()
+    div(class=classes)
+      +__field-label()
+      div(class=baseClass + "__field")
+        block
+      +__field-hint()
+
+  mixin __field-label()
+    - if (params.label)
+      - var extraClass = params.label_hidden ? " visually-hidden" : ""
+      label(for=params.id, class=baseClass + "__label" + extraClass)
+        != params.label
+        - if (params.tooltip)
+          +tooltip(data-tooltip-content=params.tooltip data-tippy-placement="top" class=baseClass + "__tooltip")
+            +tooltip-icon()
+
+    - else if (params.placeholder)
+      label(for=params.id, class=baseClass + "__label visually-hidden")
+        != params.placeholder
+
+  mixin __field-hint()
+    - if (params.hint)
+      div(class=baseClass + "__hint")!= params.hint
+
+  - attributes.class = params.controlClass
+
+  case params.type
+    when "text"
+    when "tel"
+    when "email"
+    when "search"
+    when "password"
+    when "url"
+    when "number"
+      +__field-wrapper()
+        input(class="form-control")&attributes(attributes)
+
+        - if (params.icon)
+          +svg-icon(params.icon)(class=baseClass + "__icon")
+
+        - if ((params.type === "password") && params.viewButton)
+          button(type="button" class="btn " + baseClass + "__show-password" title="Показать/Скрыть пароль")
+            +svg-icon("ui--eye-close")
+            +svg-icon("ui--eye-open")
+
+    when "textarea"
+      - delete attributes.type
+
+      +__field-wrapper()
+        textarea(class="form-control" rows="3")&attributes(attributes)
+
+    when "checkbox"
+    when "radio"
+      div(class = classes)
+        label(class=baseClass + "__label")
+          input()&attributes(attributes)
+          span(class=baseClass + "__check")
+          - if (params.label)
+            span(class=baseClass + "__caption")!=params.label
+
+    when "radio-block"
+      - attributes.type = "radio"
+      - delete attributes["data-search"]
+      div(class = classes, data-search=params["data-search"])
+        label(class=baseClass + "__label")
+          input()&attributes(attributes)
+          span(class=baseClass + "__check")
+          - if (params.label)
+            span(class=baseClass + "__caption")!=params.label
+          block
+
+    when "checkbox-block"
+      - attributes.type = "checkbox"
+      - delete attributes["data-search"]
+      div(class = classes, data-search=params["data-search"])
+        label(class=baseClass + "__label")
+          input()&attributes(attributes)
+          span(class=baseClass + "__check")
+          - if (params.label)
+            span(class=baseClass + "__caption")!=params.label
+          block
+
+    when "radio-button"
+      - attributes.type = "radio"
+
+      div(class = classes)
+        label(class=baseClass + "__label")
+          input()&attributes(attributes)
+          - if (params.label)
+            span(class=baseClass + "__caption")!=params.label
+
+    //- when "toggle"
+    //-   -
+    //-     attributes.id = params.id ? params.id : false
+    //-     attributes.type = "checkbox"
+    //-     if (stringContains(params.mod,"radio"))
+    //-       attributes.type = "radio"
+
+    //-   div(class = classes)
+    //-     label(class=baseClass + "__label")
+    //-       input()&attributes(attributes)
+    //-       span(class=baseClass + "__check" title=params.label)
+    //-       - if (params.label)
+    //-         span(class=baseClass + "__caption")!=params.label
+
+    when "select"
+      - delete attributes.type
+
+      +__field-wrapper()
+        +select()&attributes(attributes)
+
+    when "multiselect"
+      -
+        attributes.multiple = ""
+        attributes.size = params.size ? params.size : 5
+        attributes.type = "select"
+
+      +__field-wrapper()
+        select()&attributes(attributes)
+          - if (Array.isArray(params.value))
+            each ent, num in params.value
+              - if (params["selected-index"] == num)
+                option(value=num, label!=ent, selected)!= ent
+              - else
+                option(value=num, label!=ent)!= ent
+          - else
+            option(value=0, label!=params.value)!= params.value
+
+    when "datepicker"
+      -
+        attributes.type = "text"
+        attributes['data-inputmask']  = "'mask': '99.99.9999'"
+
+      +__field-wrapper()
+        input.form-control.js-datepicker.js-input-mask()&attributes(attributes)
+        - if (params.icon)
+          +svg-icon(params.icon)(class=baseClass + "__icon")
+
+    when "quantity"
+      -
+        attributes.type = "number"
+        attributes.value = attributes.value || 1
+        attributes.min = attributes.min || 1
+        attributes.step = attributes.step || 1
+
+      +__field-wrapper()
+        div(class=baseClass + "__frame")
+          - if (params.caption)
+            span(class=baseClass + "__caption")!= params.caption
+          input(size="1")&attributes(attributes)
+          - if (params.postfix)
+            span(class=baseClass + "__postfix")!= params.postfix
+          div(class=baseClass + "__up-down")
+            button(class=baseClass + "__plus" type="button")
+              +svg-icon("arrow-up2")
+            button(class=baseClass + "__minus" type="button")
+              +svg-icon("arrow-down2")
+
+    when "file"
+      -
+        delete attributes["button-caption"]
+        delete attributes["remove-caption"]
+        delete attributes.placeholder
+
+      +__field-wrapper()
+        input(class="js-input-file" data-button-caption=params["button-caption"] data-remove-caption=params["remove-caption"])&attributes(attributes)
+        //- span(class=baseClass + "__file")!= params.placeholder
+        //- button(type="button" class=baseClass + "__btn btn btn-secondary")!= params["button-caption"]
+
+    when "stars"
+      -
+        attributes.type = "radio"
+        baseId = attributes.id || "stars"
+
+      div(class=classes)
+        - if (params.label)
+          label(class=baseClass + "__label")!=params.label
+
+        fieldset(class=baseClass + "__stars")
+          each val in [5, 4, 3, 2, 1]
+            - const inputId = `${baseId}-${val}`
+            input(type="radio" name=attributes.name id=inputId value=val)
+            label(for=inputId class=`${baseClass}__star`)
+              +svg-icon("ui--star-fill", "xl")
+
+    when "switch"
+      -
+        attributes.id = params.id ? params.id : false
+        attributes.type = "radio"
+
+      div(class= classes)
+        label(class=baseClass + "__label")
+          input()&attributes(attributes)
+          span(class=baseClass + "__icon")
+            +svg-icon(params.icon)

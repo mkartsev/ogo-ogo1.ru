@@ -1,0 +1,113 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "inglesina-showroom"
+    page.title = "Бренд-зона Inglesina"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.inglesina
+
+    section.inglesina-section
+      .inglesina-logo
+        img(src="./img/logo.png", alt)
+
+    section.inglesina-section
+      .b-event-important
+        h2.inglesina-section__title В нашем флагманском магазине на Динамо открылся шоу-рум детских товаров известного итальянского бренда Inglesina
+        p Первая поездка домой, первая прогулка, первые достижения – высокая миссия компании Inglesina, к которой мы вместе относимся с большой ответственностью. Inglesina c 1963 создает продукцию для детей, которая предоставляет максимальный комфорт для ежедневных прогулок и путешествий. Кроме всего прочего, коляски бренда очень стильные и прекрасно вписываются в жизнь большого города для самых активных родителей.
+
+    section.inglesina-section
+      .b-event-hero
+        picture.b-event-hero__image
+          source(srcset="./img/inglesina-banner-small.jpg", media="(max-width: 640px)")
+          source(srcset="./img/inglesina-banner.jpg")
+          img(src="./img/inglesina-banner.jpg", alt)
+
+    section.inglesina-section
+      h2.inglesina-section__title
+        | Только в шоу-руме: ТЕСТ-ДРАЙВ любой коляски Inglesina!
+        br
+        | Специальные предложения для наших покупателей:
+      .b-event-advantages
+        .b-event-advantage
+          img.b-event-advantage__image(src="./img/inglesina-adv1.png", alt)
+          span.b-event-advantage__text
+            | Скидка на все товары
+            br
+            | Inglesina
+        .b-event-advantage
+          img.b-event-advantage__image(src="./img/inglesina-adv2.png", alt)
+          span.b-event-advantage__text
+            | скидка на все витринные
+            br
+            | образцы товаров Inglesina
+        .b-event-advantage
+          img.b-event-advantage__image(src="./img/inglesina-adv3.png", alt)
+          span.b-event-advantage__text
+            | бесплатная доставка
+            br
+            | на выделенный ассортимент
+
+    section.inglesina-section
+      p.text-center Подарки при покупке товаров Inglesina.
+      .b-event-presents
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="./img/inglesina-present1.png", alt)
+          .b-event-present__text
+            | Игрушка-подвеска
+            br
+            | с вибрацией "Жирафик"
+        .b-event-present
+          .b-event-present__image-wrapper
+            img.b-event-present__image(src="./img/inglesina-present2.png", alt)
+          .b-event-present__text
+            | Косметичка с вкладышами
+            br
+            | для груди и шапочкой
+
+    section.inglesina-section
+      .b-event-important.text-center
+        p В нашем шоу-руме мы хотим показать нашим гостям все модели колясок, автокресел и линию для дома. Мы оборудовали максимально понятное и удобное пространство чтобы помочь вам с выбором таких важных вещей в такой ответственный период жизни. Наши менеджеры прошли обучение у экспертов бренда, мы готовы ответить на все вопросы, показать все нюансы каждой модели. Посетители могут не спеша протестировать любую коляску, выбрать самый красивый цвет и подобрать все необходимые аксессуары. Также всех покупателей ждут скидки и приятные мелочи от нашего магазина.
+
+    section.inglesina-section
+      .inglesina-grid.inglesina-grid--square(data-gallery)
+        a.inglesina-card(href="img/inglesina07.jpg")
+          img.inglesina-card__img(src="./img/inglesina07-small.jpg", alt="Коляски")
+        a.inglesina-card(href="img/inglesina08.jpg")
+          img.inglesina-card__img(src="./img/inglesina08-small.jpg", alt="Коляски")
+        a.inglesina-card(href="img/inglesina09.jpg")
+          img.inglesina-card__img(src="./img/inglesina09-small.jpg", alt="Коляски")
+        a.inglesina-card(href="img/inglesina10.jpg")
+          img.inglesina-card__img(src="./img/inglesina10-small.jpg", alt="Коляски")
+        a.inglesina-card(href="img/inglesina11.jpg")
+          img.inglesina-card__img(src="./img/inglesina11-small.jpg", alt="Коляски")
+        a.inglesina-card(href="img/inglesina12.jpg")
+          img.inglesina-card__img(src="./img/inglesina12-small.jpg", alt="Коляски")
+
+    section.inglesina-section
+      .b-event-important.text-center
+        p Также мы предоставляем услугу бесплатной доставки выбранной модели. На нашем складе есть несколько вариантов расцветок, забрать покупку можно сразу, но можно заказать бесплатную доставку любой модели в любом цвете, на покупку в таком формате также действует скидка 5%.
+        p Мы подготовили для вас возможность выбрать сопутствующие товары: матрасик-кокон, ванночки, увлажнители воздуха, игрушки и многое другое.
+
+    section.inglesina-footer
+      p
+        | Ждем вас в уютном шоу-руме с 10:00 до 22:00 ежедневно
+        br
+        | по адресу г. Москва, Театральная аллея, д.3, стр.1, гипермаркет "ОГО!".
+      br
+      p
+        | Уточнить наличие моделей и заказать в нужном цвете
+        br
+        | можно по телефону +7 495 133-79-84.

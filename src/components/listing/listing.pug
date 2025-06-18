@@ -1,0 +1,118 @@
+include ../button/button
+include ../forms/forms
+include ../svg-icon/svg-icon
+include ../product-card/product-card
+include ../pagination/pagination
+include ../tags/tags
+include ../products-slider/products-slider
+
+mixin listing-grid(columns, cards = "default")
+  -
+    var params = {}
+    Object.assign(params, attributes)
+
+    delete attributes.columns
+    delete attributes.cards
+
+  .listing-grid(style="--columns: " + params.columns)&attributes(attributes)
+    for product in products
+      +product-card(variant=cards, product=product)
+
+mixin listing-controls(options)
+  -
+    var params = {
+      pagination: options.pagination !== false,
+      quantity:   options.quantity !== false,
+      sort:       options.sort !== false,
+      view:       options.view !== false,
+      filters:    options.filters !== false
+    }
+
+    Object.assign(params, attributes)
+
+    delete attributes.pagination
+    delete attributes.quantity
+    delete attributes.sort
+    delete attributes.view
+    delete attributes.filters
+
+  .listing-controls&attributes(attributes)
+    if (params.pagination)
+      nav.listing-controls__pagination
+        a(href=process.env.LISTING_URL + "?set_filter=Y&PAGEN_1=1").listing-controls__pagination-item
+          +svg-icon("ui--chevron-left-sm", "sm")
+        a(href=process.env.LISTING_URL + "?set_filter=Y&PAGEN_1=1").listing-controls__pagination-item 1
+        span.listing-controls__pagination-item.is-active 2
+        a(href=process.env.LISTING_URL + "?set_filter=Y&PAGEN_1=3").listing-controls__pagination-item 3
+        a(href=process.env.LISTING_URL + "?set_filter=Y&PAGEN_1=4").listing-controls__pagination-item 4
+        a(href=process.env.LISTING_URL + "?set_filter=Y&PAGEN_1=5").listing-controls__pagination-item 5
+        a(href=process.env.LISTING_URL + "?set_filter=Y&PAGEN_1=3").listing-controls__pagination-item
+          +svg-icon("ui--chevron-right-sm", "sm")
+
+    if (params.quantity)
+      .listing-controls__qty
+        span.listing-controls__qty-label Выводить по:
+        ul.listing-controls__qty-list
+          li.listing-controls__qty-item
+            a(href=process.env.LISTING_URL + "?PAGESIZE=45").listing-controls__qty-link.is-active 45
+          li.listing-controls__qty-item
+            a(href=process.env.LISTING_URL + "?PAGESIZE=60").listing-controls__qty-link 60
+
+    if (params.sort)
+      .listing-controls__sort
+        span.listing-controls__sort-label Сортировать по:
+        select(name="").listing-controls__sort-select
+          option(value=process.env.LISTING_URL + "?SORT=POPULAR&ORDER=ASC") Релевантности
+          option(value=process.env.LISTING_URL + "?SORT=NEW&ORDER=DESC") Новизне
+          option(value=process.env.LISTING_URL + "?SORT=PRICE&ORDER=ASC") Цене (возрастание)
+          option(value=process.env.LISTING_URL + "?SORT=PRICE&ORDER=DESC") Цене (убывание)
+
+    if (params.view)
+      .listing-controls__view
+        span.listing-controls__view-label Вид:
+        +button(type="button" variant="sm" class="listing-controls__view-button js-listing-view-control js-tooltip" data-view="list" data-tooltip-title="Список")
+        +button(type="button" variant="sm" class="listing-controls__view-button js-listing-view-control js-tooltip is-active" data-view="grid" data-tooltip-title="Сетка")
+
+    if (params.filters)
+      .listing-controls__filter
+        +button(type="button" variant="sm outline-secondary" text!="<span class='d-none d-md-inline'>Фильтр</span>" icon="ui--filter" iconSize="md" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-filters" aria-controls="offcanvas-filters")
+
+mixin listing-section()
+  -
+    var params = {
+      controls:   attributes.controls || {"pagination": true, "quantity": true, "sort": true, "view": true, "filters": true},
+      filters:    attributes.filters !== false,
+      pagination: attributes.pagination !== false,
+      columns:    attributes.columns || 3,
+      tags:       attributes.tags || false
+    }
+
+    Object.assign(params, attributes)
+
+    delete attributes.controls
+    delete attributes.filters
+    delete attributes.pagination
+    delete attributes.columns
+    delete attributes.tags
+
+  if (params.controls)
+    +listing-controls(params.controls)
+
+  .row.g-0
+    div(class="col-12 p-2 p-lg-3 bg-secondary align-self-start" + (params.filters ? " col-lg-9" : ""))&attributes(attributes)
+      +listing-grid(columns=params.columns id="listing-grid").listing-grid--view-grid
+
+      if (params.pagination)
+        +pagination().mt-3.py-6.bg-white
+
+    if (params.filters)
+      .col-lg-3.bg-white.align-self-start
+        div(class="offcanvas-lg offcanvas-end" id="offcanvas-filters" tabindex="-1")
+          .offcanvas-header
+            p.h3.mb-0 Фильтр
+            button(type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-filters" aria-label="Закрыть")
+          .offcanvas-body
+            +form-filters().w-100
+
+  if (params.tags)
+    +tags().p-3.bg-white.js-brands-block

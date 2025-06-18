@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+append vars
+  -
+    page.name  = "404"
+    page.title = "Ошибка 404. Страница не найдена"
+    page.showBreadcrumbs = false
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section.notfound
+    h2.notfound__title 404
+    h3.notfound__subtitle Страница не найдена

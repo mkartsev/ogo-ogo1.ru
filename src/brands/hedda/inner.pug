@@ -1,0 +1,442 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "hedda"
+    page.title = "Бренд-зона Hedda"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.hedda
+    section.hedda-header
+      img.hedda-logo(src="./img/logo.svg", alt="Hedda")
+      hedda-button.hedda-burger(type="hedda-button")
+        span
+        span
+        span
+      nav.hedda-menu
+        ul
+          li
+            a.hedda-menu__toggle.is-active(href="#") Верхняя одежда
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимние комбинезоны HEDDA EDD4
+              li
+                a(href="#") Зимние комбинезоны HEDDA EDD6
+              li
+                a(href="#") Зимние парки Hedda
+              li
+                a(href="#") Зимние утепленные брюки HEDDA
+              li
+                a(href="#") Демисезонная одежда Hedda
+          li
+            a.hedda-menu__toggle(href="#") Второй слой
+            ul.hedda-menu__inner
+              li
+                a(href="#") Толстовка с капюшоном
+              li
+                a(href="#") Толстовка на молнии
+              li
+                a(href="#") Брюки флисовые
+              li
+                a(href="#") Комбинезоны флисовые
+          li
+            a.hedda-menu__toggle(href="#") Для мальчиков
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимняя верхняя одежда
+              li
+                a(href="#") Демисезонная одежда
+              li
+                a(href="#") Флисовая одежда
+              li
+                a(href="#") Манишки флисовые
+              li
+                a(href="#") Краги
+          li
+            a.hedda-menu__toggle(href="#") Для девочек
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимняя верхняя одежда
+              li
+                a(href="#") Демисезонная одежда
+              li
+                a(href="#") Флисовая одежда
+              li
+                a(href="#") Манишки флисовые
+              li
+                a(href="#") Краги
+          li
+            a.hedda-menu__toggle(href="#") Аксессуары
+            ul.hedda-menu__inner
+              li
+                a(href="#") Манишки
+              li
+                a(href="#") Краги
+              li
+                a(href="#") Шапки
+              li
+                a(href="#") Снуды
+
+    section.hedda-section
+      h2.hedda-inner__title.hedda-inner__title--red Верхняя одежда
+      .hedda-categories
+        a.hedda-category.js-smooth-scroll(href="#zimniye-kombezy")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/01-zimniye-kombezy.jpg", alt="Зимние комбинезоны")
+          span.hedda-category__title Зимние комбинезоны
+        a.hedda-category.js-smooth-scroll(href="#zimniye-kurtki")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/02-zimniye-kurtki.jpg", alt="Зимние куртки")
+          span.hedda-category__title Зимние куртки
+        a.hedda-category.js-smooth-scroll(href="#zimniye-bryuki")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/03-zimniye-bryuki.jpg", alt="Утеплённые брюки")
+          span.hedda-category__title Утеплённые брюки
+        a.hedda-category.js-smooth-scroll(href="#demisezon-kombezy")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/04-demisezon-kombezy.jpg", alt="Демисезонные комбинезоны")
+          span.hedda-category__title Демисезонные комбинезоны
+        a.hedda-category.js-smooth-scroll(href="#demisezon-kurtki")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/05-demisezon-kurtki.jpg", alt="Демисезонные куртки")
+          span.hedda-category__title Демисезонные куртки
+
+    section.hedda-section#zimniye-kombezy
+      h2.hedda-inner__title Зимние комбинезоны
+      p
+        b Детский зимний комбинезон HEDDA
+        |  — это отличный выбор для зимнего отдыха и активного времяпровождения на свежем воздухе. Основной материал — износостойкая мембрана последнего поколения. Проклеенные швы и непромокаемая молния защищают от влаги, дождя и снега. Удобный крой не сковывает движения ребенка. Капюшон с натуральным мехом. Универсальные расцветки комбинезона подходят для мальчиков и девочек.
+      .hedda-advantages
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-1.svg", alt="Синтетический утеплитель HOLCON 200г/м² до -25°C")
+          span.hedda-advantage__title
+            | Синтетический утеплитель HOLCON 200г/м² до
+            b -25°C
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-2.svg", alt="Тёплая флисовая подкладка на спинке сохраняет тепло")
+          span.hedda-advantage__title
+            | Тёплая
+            b флисовая подкладка
+            |  на спинке сохраняет тепло
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-3.svg", alt="Водоотталкивающая мембрана 5000, непромокаемый")
+          span.hedda-advantage__title
+            | Водоотталкивающая мембрана 5000,
+            b непромокаемый
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-4.svg", alt="Проклееные швы и водонепроницаемая молния")
+          span.hedda-advantage__title
+            b Проклееные швы
+            |  и водонепроницаемая молния
+      article.hedda-item
+        h3.hedda-item__title Зимний комбинезон HEDDA EDD4
+        .hedda-item__gallery
+          img#zk-edd4(src="./img/zk-edd4-purple-slice.jpg", alt="Зимний комбинезон HEDDA EDD4")
+        .hedda-item__colors
+          h4.hedda-item__subtitle Цвета
+          .hedda-item__thumbs
+            a.hedda-item__thumb.is-active(href="./img/zk-edd4-purple-slice.jpg", data-target-img="zk-edd4")
+              img(src="./img/zk-edd4-purple-slice-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd4-nautical.jpg", data-target-img="zk-edd4")
+              img(src="./img/zk-edd4-nautical-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd4-fog-slice.jpg", data-target-img="zk-edd4")
+              img(src="./img/zk-edd4-fog-slice-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd4-banana.jpg", data-target-img="zk-edd4")
+              img(src="./img/zk-edd4-banana-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd4-azalea.jpg", data-target-img="zk-edd4")
+              img(src="./img/zk-edd4-azalea-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd4-oliva-green.jpg", data-target-img="zk-edd4")
+              img(src="./img/zk-edd4-oliva-green-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd4-atlantic-green.jpg", data-target-img="zk-edd4")
+              img(src="./img/zk-edd4-atlantic-green-thumb.png", alt)
+        .hedda-item__sizes
+          h4.hedda-item__subtitle
+            | Размерный ряд 
+            a.hedda-button.hedda-button--small.hedda-button--gray(href="#zk-edd4-modal" data-fancybox) Таблица размеров
+
+          div(style="display: none;")
+            .b-enter-modal#zk-edd4-modal
+              .b-enter-modal__header
+                .b-enter-modal__title Таблица размеров
+              .b-enter-modal__content-holder
+                .text-center
+                  img.hedda-img(src="./img/zimniye-kombezy.jpg", alt="Зимний комбинезон")
+                .hedda-table
+                  table
+                    thead
+                      tr
+                        th
+                        th 92
+                        th 98
+                        th 104
+                        th 110
+                        th 116
+                        th 122
+                        th 128
+                        th 134
+                        th 140
+                    tbody
+                      tr
+                        td.text-nowrap
+                          span.text-brand A
+                          |  Длина рукава
+                        td 48
+                        td 50
+                        td 52
+                        td 54
+                        td 57
+                        td 59
+                        td 61
+                        td 64
+                        td 69
+                      tr
+                        td.text-nowrap
+                          span.text-brand B
+                          |  Ширина по груди
+                        td 42
+                        td 43
+                        td 44
+                        td 45
+                        td 46
+                        td 47
+                        td 48
+                        td 49
+                        td 50
+                      tr
+                        td.text-nowrap
+                          span.text-brand C
+                          |  Длина по спинке
+                        td 91
+                        td 98
+                        td 103
+                        td 108
+                        td 114
+                        td 120
+                        td 126
+                        td 131
+                        td 137
+                      tr
+                        td.text-nowrap
+                          span.text-brand D
+                          |  Длина шагового шва
+                        td 32
+                        td 37
+                        td 41
+                        td 44
+                        td 48
+                        td 51
+                        td 55
+                        td 58
+                        td 62
+
+          .mt-3
+            div
+              small Низ на резинке
+            .hedda-item__sizes-grid
+              span 92
+              span 98
+              span 104
+              span 110
+              span 116
+            div
+              a.hedda-button(href="#") Выбрать
+          .mt-3
+            div
+              small Низ прямой
+            .hedda-item__sizes-grid
+              span 122
+              span 128
+              span 134
+              span 140
+            div
+              a.hedda-button(href="#") Выбрать
+
+      article.hedda-item
+        h3.hedda-item__title Зимний комбинезон HEDDA EDD6
+        .hedda-item__gallery
+          img#zk-edd6(src="./img/zk-edd6-blue-drops.jpg", alt="Зимний комбинезон HEDDA EDD6")
+        .hedda-item__colors
+          h4.hedda-item__subtitle Цвета
+          .hedda-item__thumbs
+            a.hedda-item__thumb.is-active(href="./img/zk-edd6-blue-drops.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-blue-drops-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd6-grey-drops.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-grey-drops-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd6-red-wine.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-red-wine-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd6-banana.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-banana-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd6-carrot.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-carrot-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd6-azalea.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-azalea-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd6-oliva-green.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-oliva-green-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zk-edd6-atlantic-green.jpg", data-target-img="zk-edd6")
+              img(src="./img/zk-edd6-atlantic-green-thumb.png", alt)
+        .hedda-item__sizes
+          h4.hedda-item__subtitle
+            | Размерный ряд 
+            a.hedda-button.hedda-button--small.hedda-button--gray(href="#") Таблица размеров
+          .mt-3
+            div
+              small Низ на резинке
+            .hedda-item__sizes-grid
+              span 92
+              span 98
+              span 104
+              span 110
+              span 116
+            div
+              a.hedda-button(href="#") Выбрать
+          .mt-3
+            div
+              small Низ прямой
+            .hedda-item__sizes-grid
+              span 122
+              span 128
+              span 134
+              span 140
+            div
+              a.hedda-button(href="#") Выбрать
+
+    section.hedda-section#zimniye-kurtki
+      h2.hedda-inner__title Зимние куртки
+      p
+        b Детские зимние куртки Hedda
+        |  — это идеальное решение для прогулок на улице в зимнее время года. Изготовленные из 5000 мембранной ткани, что обеспечивает защиту от ветра и ветра, не ограничивая движений ребенка. Основной материал — мембрана последнего поколения. Проклеенные швы и непромокаемая молния защищают от влаги, дождя и снега. Удобный крой не сковывает движения ребенка. Светоотражающие элементы сделают ребенка заметным в темное время суток. Лямки позволяют регулировать размер и посадку штанов. Благодаря нескользящим манжетам брюки плотно прилегают к ноге и штанины не задираются. Прочная молния и усиленные нити в местах активного трения штанин
+      .hedda-advantages
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-1.svg", alt="Синтетический утеплитель HOLCON 200г/м² до -25°C")
+          span.hedda-advantage__title
+            | Синтетический утеплитель HOLCON 200г/м² до
+            b -25°C
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-3.svg", alt="Водоотталкивающая мембрана 5000, непромокаемый")
+          span.hedda-advantage__title
+            | Водоотталкивающая мембрана 5000,
+            b непромокаемый
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-4.svg", alt="Проклееные швы и водонепроницаемая молния")
+          span.hedda-advantage__title
+            b Проклееные швы
+            |  и водонепроницаемая молния
+      article.hedda-item
+        h3.hedda-item__title Зимняя куртка HEDDA
+        .hedda-item__gallery
+          img#zima-kurtka(src="./img/zima-kurtka-carrot.jpg", alt="Зимняя куртка HEDDA")
+        .hedda-item__colors
+          h4.hedda-item__subtitle Цвета
+          .hedda-item__thumbs
+            a.hedda-item__thumb.is-active(href="./img/zima-kurtka-carrot.jpg", data-target-img="zima-kurtka")
+              img(src="./img/zima-kurtka-carrot-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zima-kurtka-olive-green.jpg", data-target-img="zima-kurtka")
+              img(src="./img/zima-kurtka-olive-green-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/zima-kurtka-black.jpg", data-target-img="zima-kurtka")
+              img(src="./img/zima-kurtka-black-thumb.png", alt)
+        .hedda-item__sizes
+          h4.hedda-item__subtitle
+            | Размерный ряд 
+            a.hedda-button.hedda-button--small.hedda-button--gray(href="#") Таблица размеров
+          .mt-3
+            .hedda-item__sizes-grid
+              span 122
+              span 128
+              span 134
+              span 140
+            div
+              a.hedda-button(href="#") Выбрать
+
+    section.hedda-section#zimniye-bryuki
+      h2.hedda-inner__title Утеплённые брюки
+      p
+        b Детские зимние брюки Hedda
+        |  — это идеальное решение для прогулок на улице в зимнее время года. Изготовленные из 5000 мембранной ткани, что обеспечивает защиту от ветра и ветра, не ограничивая движений ребенка. Основной материал — мембрана последнего поколения. Проклеенные швы и непромокаемая молния защищают от влаги, дождя и снега. Удобный крой не сковывает движения ребенка. Светоотражающие элементы сделают ребенка заметным в темное время суток. Лямки позволяют регулировать размер и посадку штанов. Благодаря нескользящим манжетам брюки плотно прилегают к ноге и штанины не задираются. Прочная молния и усиленные нити в местах активного трения штанин
+      .hedda-advantages
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-1.svg", alt="Синтетический утеплитель HOLCON 200г/м² до -25°C")
+          span.hedda-advantage__title
+            | Синтетический утеплитель HOLCON 200г/м² до
+            b -25°C
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-3.svg", alt="Водоотталкивающая мембрана 5000, непромокаемый")
+          span.hedda-advantage__title
+            | Водоотталкивающая мембрана 5000,
+            b непромокаемый
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-4.svg", alt="Проклееные швы и водонепроницаемая молния")
+          span.hedda-advantage__title
+            b Проклееные швы
+            |  и водонепроницаемая молния
+
+    section.hedda-section#demisezon-kombezy
+      h2.hedda-inner__title Демисезонные комбинезоны
+      p
+        b Детский демисезонный комбинезон HEDDA
+        |  — это отличным выбором для маленьких модников и модниц. Основной материал — ткань SoftShell, которая обеспечивает ветро и влаго защиту. Непромокаемая ткань защищает от влаги, дождя и снега. Удобный крой не сковывает движения ребенка. ветоотражающие элементы обеспечивают безопасность вашего ребенка в темное время суток. Яркие, стильные и модные цвета подойдут для мальчиков и девочек.
+      .hedda-advantages
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-6.svg", alt="Температурный режим -2°C…+15°C")
+          span.hedda-advantage__title
+            | Температурный режим
+            br
+            b -2°C…+15°C
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-5.svg", alt="Ткань SoftShell защищает от ветра и влаги")
+          span.hedda-advantage__title
+            b Ткань SoftShell
+            |  защищает от ветра и влаги
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-3.svg", alt="Водоотталкивающая мембрана 3000, непромокаемый")
+          span.hedda-advantage__title
+            | Водоотталкивающая мембрана 3000,
+            b непромокаемый
+
+    section.hedda-section#demisezon-kurtki
+    h2.hedda-inner__title Демисезонные куртки
+    p
+      b Детские демисезонные куртки HEDDA
+      |  — это отличный выбор для вашего ребенка. Куртка имеет яркие, стильные и модные расцветки, которые подойдут как мальчикам, так и девочкам в возрасте от 3 до 7 лет. Куртка оснащена капюшоном, который не отстегивается, что защитит вашего ребенка от ветра и холода. Кроме того, куртка имеет вместительные карманы, где можно хранить мелкие предметы. Светоотражающие элементы обеспечивают безопасность вашего ребенка в темное время суток.
+    .hedda-advantages
+      .hedda-advantage
+        .hedda-advantage__icon
+          img(src="./img/advantage-6.svg", alt="Температурный режим -2°C…+15°C")
+        span.hedda-advantage__title
+          | Температурный режим
+          br
+          b -2°C…+15°C
+      .hedda-advantage
+        .hedda-advantage__icon
+          img(src="./img/advantage-5.svg", alt="Ткань SoftShell защищает от ветра и влаги")
+        span.hedda-advantage__title
+          b Ткань SoftShell
+          |  защищает от ветра и влаги
+      .hedda-advantage
+        .hedda-advantage__icon
+          img(src="./img/advantage-3.svg", alt="Водоотталкивающая мембрана 3000, непромокаемый")
+        span.hedda-advantage__title
+          | Водоотталкивающая мембрана 3000,
+          b непромокаемый

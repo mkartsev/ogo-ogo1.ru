@@ -1,0 +1,11 @@
+.nav-tabs {
+  width: 100%;
+  margin-bottom: calc($spacer * 1.5);
+
+  .nav-link {
+    padding-bottom: var(--nav-link-padding-x);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+}

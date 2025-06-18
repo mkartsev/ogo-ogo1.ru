@@ -1,0 +1,259 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "hedda"
+    page.title = "Бренд-зона Hedda"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.hedda
+    section.hedda-header
+      img.hedda-logo(src="./img/logo.svg", alt="Hedda")
+      button.hedda-burger(type="button")
+        span
+        span
+        span
+      nav.hedda-menu
+        ul
+          li
+            a.hedda-menu__toggle(href="#") Верхняя одежда
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимние комбинезоны HEDDA EDD4
+              li
+                a(href="#") Зимние комбинезоны HEDDA EDD6
+              li
+                a(href="#") Зимние парки Hedda
+              li
+                a(href="#") Зимние утепленные брюки HEDDA
+              li
+                a(href="#") Демисезонная одежда Hedda
+          li
+            a.hedda-menu__toggle(href="#") Второй слой
+            ul.hedda-menu__inner
+              li
+                a(href="#") Толстовка с капюшоном
+              li
+                a(href="#") Толстовка на молнии
+              li
+                a(href="#") Брюки флисовые
+              li
+                a(href="#") Комбинезоны флисовые
+          li
+            a.hedda-menu__toggle(href="#") Для мальчиков
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимняя верхняя одежда
+              li
+                a(href="#") Демисезонная одежда
+              li
+                a(href="#") Флисовая одежда
+              li
+                a(href="#") Манишки флисовые
+              li
+                a(href="#") Краги
+          li
+            a.hedda-menu__toggle(href="#") Для девочек
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимняя верхняя одежда
+              li
+                a(href="#") Демисезонная одежда
+              li
+                a(href="#") Флисовая одежда
+              li
+                a(href="#") Манишки флисовые
+              li
+                a(href="#") Краги
+          li
+            a.hedda-menu__toggle(href="#") Аксессуары
+            ul.hedda-menu__inner
+              li
+                a(href="#") Манишки
+              li
+                a(href="#") Краги
+              li
+                a(href="#") Шапки
+              li
+                a(href="#") Снуды
+
+    section.hedda-slider
+      h2.hedda-section__title.text-center [cтандартный слайдер]
+
+    section.hedda-section
+      .hedda-categories
+        a.hedda-category.hedda-category--large(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/boys.png", alt="Для мальчиков")
+          span.hedda-category__title
+            | для
+            span.hedda-category__title-accent мальчиков
+          span.hedda-button.hedda-button--pill Смотреть все
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/boys_winter.jpg", alt="Зимняя верхняя одежда")
+          span.hedda-category__title Зимняя верхняя одежда
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/boys_demiseason.jpg", alt="Демисезонная одежда")
+          span.hedda-category__title Демисезонная одежда
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/boys-flis.jpg", alt="Флисовая одежда")
+          span.hedda-category__title Флисовая одежда
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/boys-manishki.jpg", alt="Манишки флисовые")
+          span.hedda-category__title Манишки флисовые
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/boys-kragi.jpg", alt="Краги")
+          span.hedda-category__title Краги
+
+    section.hedda-section
+      .hedda-categories
+        a.hedda-category.hedda-category--large(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/girls.png", alt="Для девочек")
+          span.hedda-category__title
+            | для
+            span.hedda-category__title-accent девочек
+          span.hedda-button.hedda-button--pill Смотреть все
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/girls-winter.jpg", alt="Зимняя верхняя одежда")
+          span.hedda-category__title Зимняя верхняя одежда
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/girls-demiseason.jpg", alt="Демисезонная одежда")
+          span.hedda-category__title Демисезонная одежда
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/girls-flis.jpg", alt="Флисовая одежда")
+          span.hedda-category__title Флисовая одежда
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/girls-manishki.jpg", alt="Манишки флисовые")
+          span.hedda-category__title Манишки флисовые
+        a.hedda-category(href="#")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/girls-kragi.jpg", alt="Краги")
+          span.hedda-category__title Краги
+
+    section.hedda-section
+      .row.gy-3.gy-lg-4
+        .col-12.col-lg-6
+          a.hedda-category(href="#")
+            .hedda-category__img-wrapper
+              img.hedda-category__img(src="./img/verkhnyaya-odezhda.jpg", alt="Верхняя одежда")
+            span.hedda-button.hedda-button--pill Верхняя одежда
+        .col-12.col-lg-6
+          a.hedda-category(href="#")
+            .hedda-category__img-wrapper
+              img.hedda-category__img(src="./img/vtoroy-sloy.jpg", alt="Второй слой")
+            span.hedda-button.hedda-button--pill Второй слой
+
+    section.hedda-section
+      .hedda-material
+        .hedda-material__content
+          h2.hedda-section__title
+            span.text-brand HEDDA
+            |  — это комфорт, качество и безопасность
+          p HEDDA — российская марка одежды для детей от 3 до 9 лет. В ассортименте производителя: детские зимние и демисезонные комбинезоны с флисом и начесом, куртки, штаны, парки, трикотажные толстовки, свитшоты, краги и манишки.
+          p Каждый день HEDDA работает над тем, чтобы дети с удовольствием носили одежду, а взрослые не переживали за их комфорт и безопасность.
+          p Команда профессиональных дизайнеров следит за трендами и создает уникальные образы с учетом всех потребностей и запросов маленьких клиентов и их родителей. Технологи прорабатывают мельчайшие детали моделей, чтобы они были практичными и функциональными.
+        .hedda-material__img-wrapper
+          img.hedda-material__img(src="./img/comfort.jpg", alt="HEDDA — это комфорт, качество и безопасность")
+
+    section.hedda-section
+      h2.hedda-section__title
+        | Внимание
+        span.text-brand
+          | к деталям, практичность, комфорт
+          br
+          | и безопасность
+        |  в каждом изделии HEDDA
+      .hedda-features
+        .hedda-feature
+          .hedda-feature__img-wrapper
+            img.hedda-feature__img(src="./img/Ellipse 1.png", alt="Влагостойкая молния")
+          span.hedda-feature__title Влагостойкая молния
+        .hedda-feature
+          .hedda-feature__img-wrapper
+            img.hedda-feature__img(src="./img/Ellipse 2.png", alt="HEDDA TEC технология проклейки швов")
+          span.hedda-feature__title HEDDA TEC технология проклейки швов
+        .hedda-feature
+          .hedda-feature__img-wrapper
+            img.hedda-feature__img(src="./img/Ellipse 3.png", alt="Силиконовые штрипки")
+          span.hedda-feature__title Силиконовые штрипки
+        .hedda-feature
+          .hedda-feature__img-wrapper
+            img.hedda-feature__img(src="./img/Ellipse 4.png", alt="Манжеты прямые и на резинке")
+          span.hedda-feature__title Манжеты прямые и на резинке
+        .hedda-feature
+          .hedda-feature__img-wrapper
+            img.hedda-feature__img(src="./img/Ellipse 5.png", alt="Светоотражающие элементы")
+          span.hedda-feature__title Светоотражающие элементы
+        .hedda-feature
+          .hedda-feature__img-wrapper
+            img.hedda-feature__img(src="./img/Ellipse 6.png", alt="Лямки внутри комбинезона")
+          span.hedda-feature__title Лямки внутри комбинезона
+
+    section.hedda-section
+      h2.hedda-section__title
+        | В коллекциях HEDDA используются
+        span.text-brand современные материалы
+        |  последнего поколения
+      .hedda-materials
+        .hedda-material
+          .hedda-material__img-wrapper
+            img.hedda-material__img(src="./img/material-1.jpg", alt)
+          .hedda-material__content
+            h2.hedda-section__subtitle Мембрана
+            ul
+              li Микропоры позволяют ткани дышать, но не пропускают воду и ветер
+              li Износостойкая и долговечная
+              li Легко моется и быстро сохнет
+              li Можно стирать в стиральной машине при 30℃
+        .hedda-material
+          .hedda-material__img-wrapper
+            img.hedda-material__img(src="./img/material-2.jpg", alt)
+          .hedda-material__content
+            h2.hedda-section__subtitle Синтетический утеплитель
+            ul
+              li Легкий и теплый материал
+              li Быстро сохнет, не впитывает воду и не теряет теплоизоляционные свойства при намокании
+              li Гипоаллергенный
+              li Можно стирать в стиральной машине при температуре до 30℃
+        .hedda-material
+          .hedda-material__img-wrapper
+            img.hedda-material__img(src="./img/material-3.jpg", alt)
+          .hedda-material__content
+            h2.hedda-section__subtitle Ткань софтшелл
+            ul
+              li Благодаря дополнительному слою мембраны сохраняет тепло и защищает от ветра и воды
+              li Позволяет коже дышать
+              li Нейлон и эластан в составе делают материал прочным, износостойким и долговечным
+              li Можно стирать в стиральной машине при 30℃
+
+    section.hedda-section
+      h2.hedda-section__title
+        | Производство
+        span.text-brand в России
+      .row.gy-3.gy-lg-4
+        .col-12
+          p.mb-0 Одежду HEDDA производят в России на высокотехнологичном предприятии полного цикла, оборудованного лучшим европейским оборудованием, что позволяет выпускать одежду наилучшего качества по последним технологиям.
+        .col-12.col-md-6
+          img(src="./img/production-1.jpg", alt="Производство в России")
+        .col-12.col-md-6
+          img(src="./img/production-2.jpg", alt="Производство в России")

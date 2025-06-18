@@ -1,0 +1,42 @@
+/* 8 mar */
+.b-plate-product__icon.b-plate-product__icon--discount {
+  color: #fff !important;
+  width: 49px !important;
+  height: 41px !important;
+  margin-left: -6px;
+  padding: 0 !important;
+  line-height: 36px !important;
+  border-radius: 0 !important;
+  background: url('../img/decor/8mar/heart.png')no-repeat center !important;
+}
+
+.b-filter-scale .ui-slider-handle {
+  position: relative;
+  width: 7px !important;
+  height: 6px !important;
+  margin: -16px 0 0 0 !important;
+  background-color: transparent !important;
+}
+.b-filter-scale .ui-slider-handle:before {
+  position: absolute;
+  content: '';
+  width: 28px;
+  height: 23px;
+  top: 50%;
+  background: url('../img/decor/8mar/heart.png')no-repeat center;
+  background-size: 28px 23px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+@media screen and (min-width: 1041px) {
+  .c-catalog {
+    background: url('../img/decor/8mar/flowers.png')no-repeat right 40px bottom #f8f8f8;
+  }
+}
+.shops .shops__info-count {
+  color: #fff !important;
+  background: url('../img/decor/8mar/heart@2x.png')no-repeat center / contain  !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+/* 8 mar */

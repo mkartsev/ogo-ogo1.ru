@@ -1,0 +1,2058 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Каталог товаров в онлайн-гипермаркете ОГО!</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header">
+        <a class="header-banner d-none d-lg-block" href="#"><img class="header-banner__img" src="/assets/img/content/header-banner.jpg" alt="Продукты Honor для успешного учебного года!" /></a>
+        <div class="header-top container">
+          <div class="header-top-left">
+            <a class="header-city js-city-popup" href="/ajax/new/select_city_popup.php">
+              <div class="header-city__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location-sm"></use></svg>
+              </div>
+              <span class="header-city__text">Москва</span>
+            </a>
+            <nav class="header-nav">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Доставка и оплата</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Гарантия и возврат</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="#">Адреса магазинов</a></li>
+                <li class="header-nav__item"><a class="header-nav__link js-supplier-popup" href="/mocks/supplier">Поставщикам</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-top-right">
+            <a class="header-phone" href="tel:88002509045">
+              <div class="header-phone__icon">
+                <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone-sm"></use></svg>
+              </div>
+              <span class="header-phone__text">8 800 250-90-45</span>
+            </a>
+            <div class="header-worktime"><span class="header-worktime__text">10:00 - 20:00</span></div>
+          </div>
+        </div>
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">онлайн гипермаркет</span>
+            </a>
+          </div>
+          <div class="header-bottom-center">
+            <button class="btn btn-primary burger-button js-button-catalog" type="button">
+              <i class="burger-button__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </i>
+              <i class="burger-button__loading">
+                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--spinner"></use></svg>
+              </i>
+              <span class="burger-button__text">Каталог</span>
+            </button>
+            <div class="header-search">
+              <form class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate>
+                <p class="form-error text-danger fw-bold" style="display: none"></p>
+                <fieldset class="position-relative">
+                  <input class="form-control" type="search" placeholder="Поиск товаров" name="q" autocomplete="off" />
+                  <button class="btn btn-link position-absolute top-50 end-0 translate-middle-y" type="submit">
+                    <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="header-bottom-right">
+            <div class="header-toolbar">
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link js-auth-popup" href="/ajax/new/authform.php">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                  </div>
+                  <span class="header-toolbar__link-text">Вход</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/compare.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-compare-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Сравнение</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex">
+                <a class="header-toolbar__link" href="/wishlist.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-favorite-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Избранное</span>
+                </a>
+              </div>
+              <div class="header-toolbar__item d-none d-md-inline-flex js-cart-dropdown" data-products="" data-basketItems="[]">
+                <a class="header-toolbar__link" href="/cart.html">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                    <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-primary js-cart-counter hidden"></span>
+                  </div>
+                  <span class="header-toolbar__link-text">Корзина</span>
+                </a>
+                <div class="cart-dropdown">
+                  <div class="cart-dropdown__content">
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="389198">
+                          <img class="product-card__image" src="/assets/img/content/products/389198.jpg" alt='Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18" UHD+/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__discount product-card__badge badge text-bg-warning">-10%</div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="389198" target="_blank">Ноутбук MSI Titan 18 HX A14VIG-211RU Core i9 14900HX/64Gb/3Tb SSD/NV RTX4090 16Gb/18&quot; UHD+/Win11 Black</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="1" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-new">620 220 ₽</div></div>
+                        <div class="product-card__old"><div class="product-card__price-old">630 220 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="389198" data-tooltip-content="Удалить" onclick='cart.remove("389198")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391062">
+                          <img class="product-card__image" src="/assets/img/content/products/391062.jpg" alt='Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11Pro Grey' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391062" target="_blank">Ноутбук MSI Creator 16 AI Studio A1VIG-060RU Core i9 185H/64Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11Pro Grey</a>
+                      </div>
+                      <div class="product-card__quantity input-group input-group-xs">
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--minus-sm"></use></svg>
+                        </button>
+                        <input class="form-control text-center text-truncate" type="number" value="2" />
+                        <button class="btn btn-secondary" type="button">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--plus-sm"></use></svg>
+                        </button>
+                      </div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">534 000 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391062" data-tooltip-content="Удалить" onclick='cart.remove("391062")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="391065">
+                          <img class="product-card__image" src="/assets/img/content/products/391065.jpg" alt='Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD+/Win11 Dark Blue' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="391065" target="_blank">Ноутбук MSI Stealth 16 AI Studio A1VIG-062RU Core i9 185H/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD+/Win11 Dark Blue</a>
+                      </div>
+                      <div class="product-card__availability">
+                        <span class="product-card__availability-title text-dark">
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--wrong-sm"></use></svg>
+                          Нет в наличии
+                        </span>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="391065" data-tooltip-content="Удалить" onclick='cart.remove("391065")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-card product-card--cart-dropdown">
+                      <div class="product-card__image-wrapper">
+                        <a class="product-card__image-link" href="/product.html" data-id="390124">
+                          <img class="product-card__image" src="/assets/img/content/products/390124.jpg" alt='Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16" UHD/Win11 Black' loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="product-card__caption">
+                        <a class="product-card__title" href="/product.html" data-id="390124" target="_blank">Ноутбук MSI Raider GE68 HX 14VIG-473RU Core i9 14900HX/32Gb/2Tb SSD/NV RTX4090 16Gb/16&quot; UHD/Win11 Black</a>
+                      </div>
+                      <div class="product-card__badges"><span class="product-card__badge badge text-bg-danger">В выбранном регионе товар не продается и будет удален из корзины</span></div>
+                      <div class="product-card__price-wrapper">
+                        <div class="product-card__price"><div class="product-card__price-current">429 460 ₽</div></div>
+                      </div>
+                      <div class="product-card__controls">
+                        <button class="btn btn-link btn-sm js-tooltip js-remove-from-cart" type="button" data-id="390124" data-tooltip-content="Удалить" onclick='cart.remove("390124")'>
+                          <svg class="svg-icon svg-icon--sm"><use xlink:href="/assets/img/sprites/sprite.svg#ui--cross"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-dropdown__footer p-3">
+                    <div class="row g-3">
+                      <div class="col">Итоговая сумма:</div>
+                      <div class="col text-end">0 000 000 ₽</div>
+                      <div class="col-sm-12"><a class="btn btn-primary w-100" href="/cart.html" role="button">Перейти к оформлению</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-toolbar__item d-md-none">
+                <a class="header-toolbar__link" href="tel:88002509045">
+                  <div class="header-toolbar__link-icon">
+                    <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog" data-src="/ajax/catalog.php"></div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header">
+            <nav class="breadcrumbs js-breadcrumbs" id="breadcrumbs" aria-label="breadcrumb">
+              <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Главная</span></a>
+                  <meta property="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+                  <a href="/" property="item" typeof="WebPage"><span property="name">Каталог</span></a>
+                  <meta property="position" content="2" />
+                </li>
+                <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem" aria-current="page">
+                  <span property="item" typeof="WebPage"><span property="name">Каталог товаров в онлайн-гипермаркете ОГО!</span></span>
+                  <meta property="position" content="2" />
+                </li>
+              </ol>
+            </nav>
+            <h1 class="page-title js-page-title">Каталог товаров в онлайн-гипермаркете ОГО!</h1>
+          </header>
+          <section class="content-section">
+            <div class="categories-grid categories-grid--columns">
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Товары из-за рубежа" /></div>
+                  <span class="category-tile__title">Товары из-за рубежа</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li><a href="/pages/foreign/">Международная доставка</a></li>
+                    <li>
+                      <a href="/market/smartphone-gadget-foreign/">Смартфоны и гаджеты</a>
+                      <ul>
+                        <li><a href="/market/smartphone-foreign/">Смартфоны</a></li>
+                        <li><a href="/market/tablet-foreign/">Планшеты</a></li>
+                        <li><a href="/market/garnituryi-foreign/">Bluetooth гарнитуры</a></li>
+                        <li><a href="/market/smart-watch-foreign/">Умные часы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/gamer-foreign/">Товары для геймеров</a>
+                      <ul>
+                        <li><a href="/market/game-console-foreign/">Игровые приставки</a></li>
+                        <li><a href="/market/gamepad-foreign/">Геймпады для приставок</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/computer-foreign/">Комплектующие ПК и Ноутбуки</a>
+                      <ul>
+                        <li><a href="/market/notebook-foreign/">Ноутбуки</a></li>
+                        <li><a href="/market/ssd-foreign/">SSD</a></li>
+                        <li><a href="/market/hdd-sata-foreign/">Жесткие диски SATA</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/external-foreign/">Периферия</a>
+                      <ul>
+                        <li><a href="/market/vneshnie-hdd-foreign/">Внешние жесткие диски</a></li>
+                        <li><a href="/market/external-ssd-foreign/">Внешние SSD</a></li>
+                        <li><a href="/market/usb-flash-foreign/">USB Flash накопители</a></li>
+                        <li><a href="/market/micro-sd-foreign/">Карты памяти</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/networking-foreign/">Сетевое обурудование</a>
+                      <ul>
+                        <li><a href="/market/network-foreign/">Беспроводное сетевое оборудование</a></li>
+                        <li><a href="/market/wired-network-foreign/">Проводное сетевое оборудование</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/beauty-foreign/">Техника для красоты</a>
+                      <ul>
+                        <li><a href="/market/feny-foreign/">Фены</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Смартфоны и гаджеты" /></div>
+                  <span class="category-tile__title">Смартфоны и гаджеты</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li><a href="/brands/samsung/">Бренд-зона Samsung</a></li>
+                    <li><a href="/brands/xiaomi/">Бренд-зона Xiaomi</a></li>
+                    <li>
+                      <a href="/market/mobilnie_telefonu/">Мобильные телефоны и смартфоны</a>
+                      <ul>
+                        <li><a href="/market/smartfony/">Смартфоны</a></li>
+                        <li><a href="/market/chekhly_dlya_smartfonov/">Чехлы для смартфонов</a></li>
+                        <li><a href="/market/zashchitnye_stekla_dlya_smartfonov/">Защитные стекла для смартфонов</a></li>
+                        <li><a href="/market/ochki_virtualnoy_realnosti/">Очки виртуальной реальности</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/planshetu/">Планшеты</a>
+                      <ul>
+                        <li><a href="/market/planshetyi/">Планшеты</a></li>
+                        <li><a href="/market/chekhly_dlya_planshetov/">Чехлы для планшетов</a></li>
+                        <li><a href="/market/zashchitnye_stekla_dlya_planshetov/">Защитные стекла для планшетов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/smart_watch_treker_btasletu/">Носимая электроника</a>
+                      <ul>
+                        <li><a href="/market/unmue_chasu_smart_watch/">Умные часы</a></li>
+                        <li><a href="/market/detskie_umnye_chasy/">Детские умные часы</a></li>
+                        <li><a href="/market/aksessuary_dlya_umnykh_chasov/">Аксессуары для умных часов</a></li>
+                        <li><a href="/market/aksessuary_dlya_fitnes_brasletov_i_umnykh_chasov/">Аксессуары для Фитнес-браслетов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/akustika_dlya_mobilnykh_ustroystv/">Акустика, наушники и гарнитуры</a>
+                      <ul>
+                        <li><a href="/market/bluetooth_naushniki/">Наушники</a></li>
+                        <li><a href="/market/garnituryi/">Гарнитуры для компьютера</a></li>
+                        <li><a href="/market/portable_akustik/">Портативная акустика</a></li>
+                        <li><a href="/market/kompyuternye_kolonki/">Колонки для компьютера</a></li>
+                        <li><a href="/market/mikrofony/">Микрофоны</a></li>
+                        <li><a href="/market/chekhly_dlya_naushnikov/">Чехлы для наушников</a></li>
+                        <li><a href="/market/muzykalnyye_tsentry/">Музыкальные центры и саундбары</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/kabeli_i_zaryadnyye_ustroystvasva/">Кабели и зарядные устройства</a>
+                      <ul>
+                        <li><a href="/market/usb_firewire_kabeli/">Кабели синхронизации</a></li>
+                        <li><a href="/market/audio_kabeli_dlya_mobilnykh_ustroystv/">Аудио кабели</a></li>
+                        <li><a href="/market/perehodniki/">Переходники и разветвители</a></li>
+                        <li><a href="/market/vneshnie_akkumulyatoru/">Внешние аккумуляторы</a></li>
+                        <li><a href="/market/setevyye_zu/">Сетевые ЗУ</a></li>
+                        <li><a href="/market/avtomobilnyye_zu/">Автомобильные ЗУ</a></li>
+                        <li><a href="/market/besprovodnyye_zu/">Беспроводные ЗУ</a></li>
+                        <li><a href="/market/nastolnyye_zu/">Настольные ЗУ</a></li>
+                        <li><a href="/market/adaptery_perekhodniki/">Адаптеры-переходники</a></li>
+                        <li><a href="/market/materialu_dlya_montaja/">Крепеж для кабелей</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/aksessuary_dlya_mobilnykh_ustroystv/">Аксессуары для мобильной техники</a>
+                      <ul>
+                        <li><a href="/market/memory_cards/">Карты памяти</a></li>
+                        <li><a href="/market/otg_flash_nakopaciteli/">OTG Flash накопители</a></li>
+                        <li><a href="/market/monopody/">Моноподы</a></li>
+                        <li><a href="/market/derzhateli_dlya_telefonov_v_mashinu/">Держатели для телефонов в машину</a></li>
+                        <li><a href="/market/pen_tab/">Стилусы</a></li>
+                        <li><a href="/market/brelki_i_nakleiki_dlya_telefonov/">Брелоки и наклейки</a></li>
+                        <li><a href="/market/perchatki_dlya_mobilnoy_tekhniki/">Перчатки для сенсорных дисплеев</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Компьютерная техника" /></div>
+                  <span class="category-tile__title">Компьютерная техника</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li><a href="/configurator/">Конфигуратор ПК</a></li>
+                    <li>
+                      <a href="/market/komplektuyushchie_dlya_pk/">Комплектующие для ПК</a>
+                      <ul>
+                        <li><a href="/market/bloki_pitaniya/">Блоки питания</a></li>
+                        <li><a href="/market/videokartu/">Видеокарты</a></li>
+                        <li><a href="/market/processoru/">Процессоры</a></li>
+                        <li><a href="/market/pamyat_dimm/">Оперативная память</a></li>
+                        <li><a href="/market/materinskie__platu/">Материнские платы</a></li>
+                        <li><a href="/market/korpusa_dlya_kompyuterov/">Корпуса для компьютеров</a></li>
+                        <li><a href="/market/aksessuary_dlya_korpusov/">Аксессуары для корпусов</a></li>
+                        <li><a href="/market/kulery_dlya_processorov/">Кулеры для процессоров</a></li>
+                        <li><a href="/market/sistemy_ohlazhdeniya_kompyutera/">Системы охлаждения компьютера</a></li>
+                        <li><a href="/market/aksessuary_dlya_ohlazhdeniya_pk/">Аксессуары для охлаждения ПК</a></li>
+                        <li><a href="/market/zhestkie_diski/">Жесткие диски</a></li>
+                        <li><a href="/market/ssd/">SSD</a></li>
+                        <li><a href="/market/sound_cards/">Звуковые карты</a></li>
+                        <li><a href="/market/karty_videozahvata/">Карты видеозахвата</a></li>
+                        <li><a href="/market/wifi_adaptery_i_karty/">Wi-Fi адаптеры и карты</a></li>
+                        <li><a href="/market/kontrolleru/">Контроллеры</a></li>
+                        <li><a href="/market/opticheskie_privody/">Оптические приводы</a></li>
+                        <li><a href="/market/salazki_dlya_hdd_ssd/">Салазки для HDD/SSD</a></li>
+                        <li><a href="/market/salazki_optibay/">Салазки (Optibay)</a></li>
+                        <li><a href="/market/termopasta/">Термопаста</a></li>
+                        <li><a href="/market/vnutrennie_kabeli_dlya_pk/">Внутренние кабели для ПК</a></li>
+                        <li><a href="/market/floppi_diskovody/">Флоппи дисководы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/kumpyteru/">Настольные компьютеры</a>
+                      <ul>
+                        <li><a href="/market/komputer_ogo/">Настольные ПК</a></li>
+                        <li><a href="/market/monobloki/">Моноблоки</a></li>
+                        <li><a href="/market/sbornue_nettopu/">Сборные платформы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/noutbuki_aksessuaru/">Ноутбуки</a>
+                      <ul>
+                        <li><a href="/market/noutbuki/">Ноутбуки</a></li>
+                        <li><a href="/market/sumki_dlya_noutbukov/">Сумки для ноутбуков</a></li>
+                        <li><a href="/market/ohlajdayshie_podstavki/">Охлаждающие подставки</a></li>
+                        <li><a href="/market/stoli_dlya_noutbukov/">Столы для ноутбуков</a></li>
+                        <li><a href="/market/pamyat_so_dimm/">Оперативная память SO-DIMM</a></li>
+                        <li><a href="/market/ssd/">SSD для ноутбуков</a></li>
+                        <li><a href="/market/hdd_dlya_noutbukov/">Жесткие диски для ноутбуков</a></li>
+                        <li><a href="/market/salazki_optibay/">Салазки (Optibay)</a></li>
+                        <li><a href="/market/adapteru_pitaniya/">Адаптеры питания</a></li>
+                        <li><a href="/market/chistyaschie_sredstva_dlya_foto/">Чистящие средства</a></li>
+                        <li><a href="/market/drugie_aksessuaru/">Другое</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/setevoe_oborudovanie/">Сетевое оборудование</a>
+                      <ul>
+                        <li><a href="/market/wi_fi_routery/">Wi-Fi роутеры</a></li>
+                        <li><a href="/market/tochki_dostupa/">Точки доступа</a></li>
+                        <li><a href="/market/power_line_oborudovanie/">Powerline адаптеры</a></li>
+                        <li><a href="/market/wifi_povtoriteli/">Wi-Fi повторители</a></li>
+                        <li><a href="/market/adapter_bt_wifi/">Wi-Fi адаптеры</a></li>
+                        <li><a href="/market/wifi_antennu/">Wi-Fi антенны</a></li>
+                        <li><a href="/market/wi_fi_cards/">Wi-Fi карты</a></li>
+                        <li><a href="/market/setevue_kartu/">Сетевые карты</a></li>
+                        <li><a href="/market/setevyie_hranilischa/">Сетевые хранилища (NAS)</a></li>
+                        <li><a href="/market/mobile_3g4g_tochki_dostupa/">3G/4G модемы и роутеры</a></li>
+                        <li><a href="/market/kommutator_svitch/">Коммутаторы (Свитчи)</a></li>
+                        <li><a href="/market/provodnue_marshrutizatoru/">Проводные маршрутизаторы</a></li>
+                        <li><a href="/market/patch_kordy/">Патч-корды</a></li>
+                        <li><a href="/market/setevye_kabeli_v_buhtah/">Сетевые кабели в бухтах</a></li>
+                        <li><a href="/market/konnektoru/">Коннекторы</a></li>
+                        <li><a href="/market/patch_paneli/">Патч-панели и стойки</a></li>
+                        <li><a href="/market/setevue_rozetki/">Сетевые розетки</a></li>
+                        <li><a href="/market/materialu_dlya_montaja/">Материалы для монтажа</a></li>
+                        <li><a href="/market/instrumentu_dlya_montaja/">Инструменты для монтажа</a></li>
+                        <li><a href="/market/zapasnyye_chasti_i_bloki_pitaniya_dlya_setevogo_oborudovaniya/">Запасные части и блоки питания для сетевого оборудования</a></li>
+                        <li><a href="/market/transsiveru/">Трансиверы</a></li>
+                        <li><a href="/market/poe-adapter/">PoE адаптеры</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/programnoe_po/">Программное обеспечение</a>
+                      <ul>
+                        <li><a href="/market/antivirusyi/">Антивирусы</a></li>
+                        <li><a href="/market/software-os/">Операционные системы</a></li>
+                        <li><a href="/market/software-office/">Офисные пакеты</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/mining/">Майнинг</a>
+                      <ul>
+                        <li><a href="/market/aksessuary_dlya_mayninga/">Оборудование для майнинга</a></li>
+                        <li><a href="/market/videokarty_dlya_mayninga/">Видеокарты для майнинга</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/server_oborudovanie/">Серверное оборудование</a>
+                      <ul>
+                        <li><a href="/market/servernye_zhestkie_diski/">Серверные жесткие диски</a></li>
+                        <li><a href="/market/korpusa_dlya_serverov/">Корпуса</a></li>
+                        <li><a href="/market/operativnaya_pamyat_dlya_serverov/">Оперативная память для серверов</a></li>
+                        <li><a href="/market/servernye_platformy/">Серверные платформы</a></li>
+                        <li><a href="/market/aksessuary_dlya_sserverov/">Аксессуары серверов</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Товары для геймеров" /></div>
+                  <span class="category-tile__title">Товары для геймеров</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/igrovye-kompjutery/">Игровые компьютеры</a>
+                      <ul>
+                        <li><a href="/market/gamer_pc/">Игровые настольные ПК</a></li>
+                        <li><a href="/market/gamer_noutbuki/">Игровые ноутбуки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/komplektujushhie-gaming/">Комплектующие для игровых ПК</a>
+                      <ul>
+                        <li><a href="/market/gamer_video/">Игровые видеокарты</a></li>
+                        <li><a href="/market/gamer_materinskie_platu/">Игровые материнские платы</a></li>
+                        <li><a href="/market/gamer_bloki_pitaniya/">Блоки питания для игровых ПК</a></li>
+                        <li><a href="/market/gamer_protsessory/">Игровые процессоры</a></li>
+                        <li><a href="/market/gamer_pamyat_dimm/">Игровые модули памяти</a></li>
+                        <li><a href="/market/gamer_sistemy_okhlazhdeniya/">Системы охлаждения компьютера</a></li>
+                        <li><a href="/market/gamer_sound_cards/">Игровые звуковые карты</a></li>
+                        <li><a href="/market/gamer_ssd_nakopiteli/">Игровые SSD</a></li>
+                        <li><a href="/market/gamer_hdd_vnutrennie/">Игровые HDD</a></li>
+                        <li><a href="/market/gamer_korpusa/">Корпуса для компьютеров</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/periferija-gaming/">Игровая периферия</a>
+                      <ul>
+                        <li><a href="/market/gamer_myishi/">Игровые мыши</a></li>
+                        <li><a href="/market/gamer_kovriki_dlya_myishi/">Игровые коврики для мыши</a></li>
+                        <li><a href="/market/gamer_klaviaturyi/">Игровые клавиатуры</a></li>
+                        <li><a href="/market/gamer_manipulyatoryi/">Игровые манипуляторы</a></li>
+                        <li><a href="/market/gamer_garnituryi/">Игровые гарнитуры</a></li>
+                        <li><a href="/market/gamer_veb-kamery_dlya_striming/">Веб-камеры для стриминга</a></li>
+                        <li><a href="/market/gamer_mikrofony_dlya_striming/">Микрофоны для стриминга</a></li>
+                        <li><a href="/market/gamer_monitoryi/">Игровые мониторы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/igrovue_pristavki/">Игровые консоли</a>
+                      <ul>
+                        <li><a href="/market/sony_playstation_4/">Консоли Sony PlayStation</a></li>
+                        <li><a href="/market/prochie_igrovue_consoli/">Другие консоли</a></li>
+                        <li><a href="/market/aks_for_console/">Аксессуары для консолей</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/mebel-dlja-gejmerov/">Мебель для геймеров</a>
+                      <ul>
+                        <li><a href="/market/gamer_kresla/">Кресла для геймеров</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Периферия" /></div>
+                  <span class="category-tile__title">Периферия</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/monitory_i_shlemy/">Мониторы и LED панели</a>
+                      <ul>
+                        <li><a href="/market/monitoryi/">Мониторы</a></li>
+                        <li><a href="/market/led_paneli_dlya_konferenc_zalov/">LED панели</a></li>
+                        <li><a href="/market/aks_monitor/">Кронштейны для мониторов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/ustroistvo_vvoda/">Устройства ввода</a>
+                      <ul>
+                        <li><a href="/market/kompyuternye_myshi/">Компьютерные мыши</a></li>
+                        <li><a href="/market/klaviaturyi/">Клавиатуры</a></li>
+                        <li><a href="/market/komplekty_klaviatura_mysh/">Комплекты клавиатура + мышь</a></li>
+                        <li><a href="/market/igrovyie_manipulyatoryi/">Игровые манипуляторы</a></li>
+                        <li><a href="/market/graficheskie_planshetyi/">Графические планшеты</a></li>
+                        <li><a href="/market/web_kameryi/">Веб камеры</a></li>
+                        <li><a href="/market/prezentery/">Презентеры</a></li>
+                        <li><a href="/market/kovriki_dlya_myishi/">Коврики для мышей</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/oborudovanie_dlya_striminga/">Оборудование для стриминга</a>
+                      <ul>
+                        <li><a href="/market/mikrofony_dlya_striminga/">Микрофоны для стриминга</a></li>
+                        <li><a href="/market/kamery_dlya_striminga/">Камеры для стриминга</a></li>
+                        <li><a href="/market/ustrojstvo_zahvata_video/">Устройство захвата видео</a></li>
+                        <li><a href="/market/aksessuary_dlya_striminga/">Аксессуары для стриминга</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/nakopiteli_informacii/">Внешние накопители данных</a>
+                      <ul>
+                        <li><a href="/market/vneshnie_zhesstkie_diski/">Внешние жесткие диски</a></li>
+                        <li><a href="/market/vneshnie_ssd/">Внешние SSD</a></li>
+                        <li><a href="/market/usb_flash_nakopiteli/">USB Flash накопители</a></li>
+                        <li><a href="/market/memory_cards/">Карты памяти</a></li>
+                        <li><a href="/market/setevyie_hranilischa/">Сетевые хранилища (NAS)</a></li>
+                        <li><a href="/market/cd_dvd_br_bolvanki/">CD/DVD/BR накопители</a></li>
+                        <li><a href="/market/chehly_dlia_hdd/">Чехлы для внешних накопителей</a></li>
+                        <li><a href="/market/vneshnie_opticheskie_privody/">Внешние оптические приводы</a></li>
+                        <li><a href="/market/usb_habyi/">USB концентраторы (HUB)</a></li>
+                        <li><a href="/market/dok_stantsii_dlya_nakopiteley/">Док-станции для накопителей</a></li>
+                        <li><a href="/market/vneshnie_korpusa_dlya_hdd/">Внешние боксы для накопителей</a></li>
+                        <li><a href="/market/floppi_diskovody/">Флоппи дисководы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/cable_perehodniki_prochee/">Кабели и переходники</a>
+                      <ul>
+                        <li><a href="/market/usb_firewire_kabeli/">USB кабели</a></li>
+                        <li><a href="/market/usb_perekhodniki/">USB переходники</a></li>
+                        <li><a href="/market/audio_kabeli/">Аудио кабели и переходники</a></li>
+                        <li><a href="/market/hdmi_cable/">Кабели HDMI</a></li>
+                        <li><a href="/market/vga_scart_rca/">Кабели VGA и RCA</a></li>
+                        <li><a href="/market/kabeli_displayport/">Кабели DisplayPort и DVI</a></li>
+                        <li><a href="/market/video_perekhodniki/">Видео переходники</a></li>
+                        <li><a href="/market/patch_kordy/">Патч-корды</a></li>
+                        <li><a href="/market/cateli_i_razvetviteli/">Переключатели (KVM/DKVM)</a></li>
+                        <li><a href="/market/setevye_kabeli_v_buhtah/">Сетевые кабели в бухтах</a></li>
+                        <li><a href="/market/konnektoru/">Коннекторы</a></li>
+                        <li><a href="/market/vnutrennie_kabeli_dlya_pk/">Внутренние кабели для ПК</a></li>
+                        <li><a href="/market/materialu_dlya_montaja/">Крепеж для кабелей</a></li>
+                        <li><a href="/market/instrumentu_dlya_montaja/">Инструменты для кабелей</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/istochniki_pitaniya/">Источники питания</a>
+                      <ul>
+                        <li><a href="/market/istochniki_bespereboynogo_pitaniya/">ИБП</a></li>
+                        <li><a href="/market/akb_ibp/">Аккумуляторы для ИБП</a></li>
+                        <li><a href="/market/setevye_filtry/">Сетевые фильтры</a></li>
+                        <li><a href="/market/batareyki_akkumulyatoryi_zaryadnyie_ustroystva/">Батарейки и зарядные устройства</a></li>
+                        <li><a href="/market/stabilizatoryi_napryajeniya/">Стабилизаторы напряжения</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="ТВ и аудио" /></div>
+                  <span class="category-tile__title">ТВ и аудио</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/televizory/">Телевизоры</a>
+                      <ul>
+                        <li><a href="/market/televizoru_jk_plazma/">Телевизоры</a></li>
+                        <li><a href="/market/kranshtein_tv/">Кронштейны для ТВ</a></li>
+                        <li><a href="/market/tv_resivery/">Ресиверы для ТВ</a></li>
+                        <li><a href="/market/mediapleeru/">Медиаплееры</a></li>
+                        <li><a href="/market/sputnik_tv_adapter/">Цифровое и спутниковое ТВ</a></li>
+                        <li><a href="/market/pult_du/">Пульты ДУ</a></li>
+                        <li><a href="/market/stojki_dlya_tv/">Стойки для ТВ</a></li>
+                        <li><a href="/market/televizionnye_antenny/">Телевизионные антенны</a></li>
+                        <li><a href="/market/antennyye_kabeli/">Антенные кабели</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/igrovue_pristavki/">Игровые консоли</a>
+                      <ul>
+                        <li><a href="/market/sony_playstation_4/">Консоли Sony PlayStation</a></li>
+                        <li><a href="/market/prochie_igrovue_consoli/">Другие консоли</a></li>
+                        <li><a href="/market/gamer_manipulyatoryi/">Игровые манипуляторы</a></li>
+                        <li><a href="/market/aks_for_console/">Аксессуары для консолей</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/proekcionnoe_oborudovanie/">Презентационное оборудование</a>
+                      <ul>
+                        <li><a href="/market/projector/">Проекторы</a></li>
+                        <li><a href="/market/stend_projector/">Экраны для проекторов</a></li>
+                        <li><a href="/market/kran_proektor/">Кронштейны для проекторов</a></li>
+                        <li><a href="/market/prezentery/">Презентеры</a></li>
+                        <li><a href="/market/vga_scart_rca/">Кабели VGA и RCA</a></li>
+                        <li><a href="/market/hdmi_cable/">Кабели HDMI</a></li>
+                        <li><a href="/market/video_perekhodniki/">Видео переходники</a></li>
+                        <li><a href="/market/interaktivnyye_paneli/">Интерактивные панели</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/akustika_i_garnitura/">Акустика, наушники и гарнитуры</a>
+                      <ul>
+                        <li><a href="/market/bluetooth_naushniki/">Наушники</a></li>
+                        <li><a href="/market/garnituryi/">Гарнитуры для компьютера</a></li>
+                        <li><a href="/market/portable_akustik/">Портативная акустика</a></li>
+                        <li><a href="/market/kompyuternye_kolonki/">Колонки для компьютера</a></li>
+                        <li><a href="/market/mikrofonyi/">Микрофоны</a></li>
+                        <li><a href="/market/chekhly_dlya_naushnikov/">Чехлы для наушников</a></li>
+                        <li><a href="/market/muzykalnyye_tsentry/">Музыкальные центры и саундбары</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/kabeli_dlya_tv/">Аксессуары для ТВ и аудио</a>
+                      <ul>
+                        <li><a href="/market/usb_firewire_kabeli/">USB кабели</a></li>
+                        <li><a href="/market/usb_perekhodniki/">USB переходники</a></li>
+                        <li><a href="/market/video_kabeli/">Видео кабели</a></li>
+                        <li><a href="/market/video_perekhodniki/">Видео переходники</a></li>
+                        <li><a href="/market/audio_kabeli/">Аудио кабели и переходники</a></li>
+                        <li><a href="/market/patch_kordy/">Патч-корды</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Печать и офис" /></div>
+                  <span class="category-tile__title">Печать и офис</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/pechat_i_skanirovaniye/">Печать и сканирование</a>
+                      <ul>
+                        <li><a href="/market/mfu/">МФУ</a></li>
+                        <li><a href="/market/printeryi/">Принтеры</a></li>
+                        <li><a href="/market/skaneryi/">Сканеры</a></li>
+                        <li><a href="/market/option_pechat/">Опции для печатной техники</a></li>
+                        <li><a href="/market/printeru_etiketok/">Принтеры для этикеток</a></li>
+                        <li><a href="/market/skanery_shtrihcoda_i_tsd/">Сканеры штрихкодов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/rashod_material/">Расходные материалы</a>
+                      <ul>
+                        <li><a href="/market/bumaga/">Бумага</a></li>
+                        <li><a href="/market/kartridzhi_dlya_printerov/">Картриджи для принтеров</a></li>
+                        <li><a href="/market/plenki_dlya_laminirovaniya/">Пленки для ламинаторов</a></li>
+                        <li><a href="/market/prujinu_dlya_perepletchikov/">Пружины для переплетчиков</a></li>
+                        <li><a href="/market/oblojki_dlya_perepletchikov/">Обложки для переплетчиков</a></li>
+                        <li><a href="/market/batareyki_akkumulyatoryi_zaryadnyie_ustroystva/">Батарейки и зарядные устройства</a></li>
+                        <li><a href="/market/cd_dvd_br_bolvanki/">CD/DVD/BR накопители</a></li>
+                        <li><a href="/market/chistyaschie_sredstva/">Чистящие средства</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/telefoniya/">Телефония</a>
+                      <ul>
+                        <li><a href="/market/telefony_sistemnyi/">Системные телефоны</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/proekcionnoe_oborudovanie/">Презентационное оборудование</a>
+                      <ul>
+                        <li><a href="/market/projector/">Проекторы</a></li>
+                        <li><a href="/market/stend_projector/">Экраны для проекторов</a></li>
+                        <li><a href="/market/kran_proektor/">Кронштейны для проекторов</a></li>
+                        <li><a href="/market/prezentery/">Презентеры</a></li>
+                        <li><a href="/market/vga_scart_rca/">Кабели VGA и RCA</a></li>
+                        <li><a href="/market/hdmi_cable/">Кабели HDMI</a></li>
+                        <li><a href="/market/video_perekhodniki/">Видео переходники</a></li>
+                        <li><a href="/market/interaktivnyye_paneli/">Интерактивные панели</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/vedeo_bezopasnost/">Видеонаблюдение и СКУД</a>
+                      <ul>
+                        <li><a href="/market/security_videoreg/">Видеорегистраторы</a></li>
+                        <li><a href="/market/security_videocam/">Камеры видеонаблюдения</a></li>
+                        <li><a href="/market/ip_camera/">IP камеры видеонаблюдения</a></li>
+                        <li><a href="/market/istochniki_bespereboynogo_pitaniya/">ИБП</a></li>
+                        <li><a href="/market/akb_ibp/">Аккумуляторы для ИБП</a></li>
+                        <li><a href="/market/stabilizatoryi_napryajeniya/">Стабилизаторы напряжения</a></li>
+                        <li><a href="/market/setevye_filtry/">Сетевые фильтры</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/office_and_bank_oborudovanie/">Офисное оборудование и мебель</a>
+                      <ul>
+                        <li><a href="/market/ofisnye_kresla/">Офисные кресла</a></li>
+                        <li><a href="/market/napolnye_kovriki_pod_kreslo/">Напольные коврики под кресло</a></li>
+                        <li><a href="/market/destroer_bumagi/">Уничтожители бумаги</a></li>
+                        <li><a href="/market/perepletchiki/">Переплетчики</a></li>
+                        <li><a href="/market/laminatoru/">Ламинаторы</a></li>
+                        <li><a href="/market/rezaki/">Резаки</a></li>
+                        <li><a href="/market/kalkulyatori/">Калькуляторы</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Техника для дома" /></div>
+                  <span class="category-tile__title">Техника для дома</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/tekhnika_dlya_uborki/">Техника для уборки</a>
+                      <ul>
+                        <li><a href="/market/pylesosy/">Пылесосы</a></li>
+                        <li><a href="/market/pulesosu_robotu/">Роботы-пылесосы</a></li>
+                        <li><a href="/market/parovyye_shvabry/">Паровые швабры</a></li>
+                        <li><a href="/market/paroochistiteli/">Пароочистители</a></li>
+                        <li><a href="/market/stekloochistiteli/">Стеклоочистители</a></li>
+                        <li><a href="/market/aks_pulesos/">Аксессуары для пылесосов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/glazhka_i_sushka/">Глажка и сушка</a>
+                      <ul>
+                        <li><a href="/market/utyugi/">Утюги</a></li>
+                        <li><a href="/market/gladilnyye_stantsii/">Утюги с парогенератором</a></li>
+                        <li><a href="/market/parogeneratoru/">Отпариватели</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/klimaticheskay_tehnika/">Климатическая техника</a>
+                      <ul>
+                        <li><a href="/market/konvectori/">Конвекторы</a></li>
+                        <li><a href="/market/teploventilator/">Тепловентиляторы</a></li>
+                        <li><a href="/market/infrakrasnie_obogrevateli/">Инфракрасные обогреватели</a></li>
+                        <li><a href="/market/maslenie_obogrevateli/">Масляные обогреватели</a></li>
+                        <li><a href="/market/teplovie_zavesi/">Тепловые завесы</a></li>
+                        <li><a href="/market/ochistiteli_i_uvlazhniteli_vozduha/">Увлажнители воздуха</a></li>
+                        <li><a href="/market/air_purifiers/">Очистители воздуха</a></li>
+                        <li><a href="/market/moyki_vozdukha/">Мойки воздуха</a></li>
+                        <li><a href="/market/accessories_climate/">Аксессуары для климатической техники</a></li>
+                        <li><a href="/market/teplovie_pushki/">Тепловые пушки</a></li>
+                        <li><a href="/market/electricheskie_kamini/">Электрические камины</a></li>
+                        <li><a href="/market/polotencesushiteli/">Полотенцесушители</a></li>
+                        <li><a href="/market/ventilyatory_vytyazhnye/">Вентиляторы вытяжные</a></li>
+                        <li><a href="/market/vodonagrevateli/">Водонагреватели</a></li>
+                        <li><a href="/market/kondicionery/">Кондиционеры</a></li>
+                        <li><a href="/market/ventilyatory_napolnye/">Вентиляторы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/umnyy_dom/">Умный дом и экосистемы</a>
+                      <ul>
+                        <li><a href="/market/datchiki_dlya_umnogo_doma/">Датчики и системы управления умным домом</a></li>
+                        <li><a href="/market/ip_kamery_dlya_umnogo_doma/">IP-камеры для умного дома</a></li>
+                        <li><a href="/market/osveshchenie_dlya_umnogo_doma/">Освещение для умного дома</a></li>
+                        <li><a href="/market/umnye-kormushki/">Умные кормушки для домашних животных</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Для кухни" /></div>
+                  <span class="category-tile__title">Для кухни</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/prigotovleniye_blyud/">Приготовление блюд</a>
+                      <ul>
+                        <li><a href="/market/multivarki/">Мультиварки</a></li>
+                        <li><a href="/market/parovarki/">Пароварки</a></li>
+                        <li><a href="/market/mikrovolnovaya_pech/">Микроволновые печи</a></li>
+                        <li><a href="/market/elektrogrili/">Электрогрили</a></li>
+                        <li><a href="/market/aerogrili/">Аэрогрили</a></li>
+                        <li><a href="/market/elektropechi/">Мини-печи</a></li>
+                        <li><a href="/market/electroplitu/">Настольные плитки</a></li>
+                        <li><a href="/market/hlebopechki/">Хлебопечки</a></li>
+                        <li><a href="/market/tostery/">Тостеры</a></li>
+                        <li><a href="/market/ehlektroshashlychnicy/">Электрошашлычницы</a></li>
+                        <li><a href="/market/frityurnicy/">Фритюрницы</a></li>
+                        <li><a href="/market/prochaya_tekhnika_dlya_kukhni/">Сушилки для овощей, фруктов и грибов</a></li>
+                        <li><a href="/market/yogurtnici/">Йогуртницы</a></li>
+                        <li><a href="/market/morojenici/">Мороженицы</a></li>
+                        <li><a href="/market/vafelnici/">Вафельницы</a></li>
+                        <li><a href="/market/blinnici/">Блинницы</a></li>
+                        <li><a href="/market/vesu_kuhonnue/">Кухонные весы</a></li>
+                        <li><a href="/market/aks/">Аксессуары для мультиварок и мультипекаря</a></li>
+                        <li><a href="/market/pribori_dlya_progotovleniya_sladkoy_vati/">Приготовление сладкой ваты</a></li>
+                        <li><a href="/market/nabori_dlya_fondy/">Прочая кухонная техника</a></li>
+                        <li><a href="/market/su-vid/">Су-вид</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/izmelcheniye_i_smeshivaniye/">Измельчение и смешивание</a>
+                      <ul>
+                        <li><a href="/market/kuhonnie_kombainy/">Кухонные комбайны</a></li>
+                        <li><a href="/market/myasorubki/">Мясорубки</a></li>
+                        <li><a href="/market/blendery/">Блендеры</a></li>
+                        <li><a href="/market/miksery/">Миксеры</a></li>
+                        <li><a href="/market/izmelchiteli/">Измельчители</a></li>
+                        <li><a href="/market/ovoshcherezki/">Овощерезки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/prigotovleniye_napitkov/">Приготовление напитков</a>
+                      <ul>
+                        <li><a href="/market/chayniki/">Чайники</a></li>
+                        <li><a href="/market/termopoty/">Термопоты</a></li>
+                        <li><a href="/market/sokovyzhimalki/">Соковыжималки</a></li>
+                        <li><a href="/market/filtry_dlya_vody/">Фильтры для воды</a></li>
+                        <li><a href="/market/icemakers/">Льдогенераторы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/kofevarki_kofemashini/">Кофемашины и кофеварки</a>
+                      <ul>
+                        <li><a href="/market/kofemashinu/">Кофемашины</a></li>
+                        <li><a href="/market/kapsulnie_kofemashinu/">Капсульные кофеварки</a></li>
+                        <li><a href="/market/kofemashinu_rojkovue/">Рожковые кофеварки</a></li>
+                        <li><a href="/market/kofevarki_kapelnie/">Капельные кофеварки</a></li>
+                        <li><a href="/market/kofevarki_geyzernyye/">Гейзерные кофеварки</a></li>
+                        <li><a href="/market/kofemolki/">Кофемолки</a></li>
+                        <li><a href="/market/aksessuari_i_uhod/">Аксессуары для кофемашин</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/coffe/">Кофе и чай</a>
+                      <ul>
+                        <li><a href="/market/cofe_v_zernah/">Кофе в зернах</a></li>
+                        <li><a href="/market/ground_coffee/">Кофе молотый</a></li>
+                        <li><a href="/market/cofe_v_capsulah/">Кофе в капсулах</a></li>
+                        <li><a href="/market/cacao/">Какао</a></li>
+                        <li><a href="/market/tea/">Чай</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/vstraevuemaya_butovaya_tehnika/">Встраиваемая техника</a>
+                      <ul>
+                        <li><a href="/market/varochnyye_paneli/">Варочные панели</a></li>
+                        <li><a href="/market/dukhovyye_shkafy/">Духовые шкафы</a></li>
+                        <li><a href="/market/vstraivaemye_vytyazhki/">Встраиваемые вытяжки</a></li>
+                        <li><a href="/market/aksessuary_dlya_vytyazhek/">Аксессуары для вытяжек</a></li>
+                        <li><a href="/market/izmelchiteli_poshevih_othodov/">Измельчители пищевых отходов</a></li>
+                        <li><a href="/market/filtry_tonkoy_ochistki/">Фильтры тонкой очистки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/krupnaya_bytovaya_tekhnika/">Крупная бытовая техника</a>
+                      <ul>
+                        <li><a href="/market/vinnye_shkafy/">Винные шкафы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/aksessuary_i_vspomogatelnaya_tekhnika/">Аксессуары и вспомогательная техника</a>
+                      <ul>
+                        <li><a href="/market/vakuumnyye_upakovshchiki/">Вакуумные упаковщики</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Техника для красоты и здоровья" /></div>
+                  <span class="category-tile__title">Техника для красоты и здоровья</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/gigiyena_i_kosmetika/">Гигиена и косметика</a>
+                      <ul>
+                        <li><a href="/market/kosmeticheskie_pribory/">Косметические приборы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/strizhka_i_epilyatsiya/">Стрижка и эпиляция</a>
+                      <ul>
+                        <li><a href="/market/electrobritvu/">Электробритвы</a></li>
+                        <li><a href="/market/smennie_bloki_dlya_britv/">Аксессуары для электробритв</a></li>
+                        <li><a href="/market/mashinki_dlya_strizhki/">Машинки для стрижки</a></li>
+                        <li><a href="/market/trimmery/">Триммеры</a></li>
+                        <li><a href="/market/epilyatory/">Эпиляторы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/zavivka_i_ukladka/">Завивка и укладка</a>
+                      <ul>
+                        <li><a href="/market/feny/">Фены</a></li>
+                        <li><a href="/market/fen_shchetki/">Фен-щетки</a></li>
+                        <li><a href="/market/vypryamiteli_dlya_volos/">Выпрямители</a></li>
+                        <li><a href="/market/shchipcy_dlya_zavivki/">Щипцы для завивки</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Медицина и здоровье" /></div>
+                  <span class="category-tile__title">Медицина и здоровье</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/medicinskoe_oborudovanie/">Медицинские приборы</a>
+                      <ul>
+                        <li><a href="/market/napolnye_vesy/">Напольные весы</a></li>
+                        <li><a href="/market/ingalyatoru/">Ингаляторы и аксессуары</a></li>
+                        <li><a href="/market/vibro/">Массажеры и миостимуляторы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/ukhod_za_polostyu_rta/">Уход за полостью рта</a>
+                      <ul>
+                        <li><a href="/market/zubnye_shchetki/">Электрические зубные щетки</a></li>
+                        <li><a href="/market/irrigators/">Ирригаторы</a></li>
+                        <li><a href="/market/nasadki_dlya_zubnih_shetok_irigatorov/">Аксессуары для зубных щеток и ирригаторов</a></li>
+                        <li><a href="/market/zubnyye_pasty/">Зубные пасты</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/medicinskie-izdelija/">Медицинские изделия</a>
+                      <ul>
+                        <li><a href="/market/medicinskie-maski-i-antiseptiki/">Маски и шапочки</a></li>
+                        <li><a href="/market/medicinskie_perchatki/">Медицинские перчатки</a></li>
+                        <li><a href="/market/ginekologicheskie-nabory/">Зеркала и наборы гинекологические</a></li>
+                        <li><a href="/market/diagnosticheskie-testy/">Медицинские диагностические тесты</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/sredstva_po_uhodu_za_bolnymi/">Уход за больными</a>
+                      <ul>
+                        <li><a href="/market/podguzniki_dlya_vzroslyh/">Одноразовые подгузники, пеленки и трусы для взрослых</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/ortopedicheskie_izdeliya_i_reabilitaciya/">Ортопедические изделия</a>
+                      <ul>
+                        <li><a href="/market/bandazhi_korrektory_i_korsety/">Бандажи, ортезы, корсеты и корректоры осанки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/dezinficirujushhie-sredstva/">Дезинфицирующие средства</a>
+                      <ul>
+                        <li><a href="/market/dezinfekcija-poverhnostej/">Для обработки поверхностей и предметов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/dlja-meduchrezhdenij/">Оборудование для медучреждений</a>
+                      <ul>
+                        <li><a href="/market/baktericidnye-obluchateli-recirkulyatory/">Бактерицидные облучатели, рециркуляторы</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Сад и дача" /></div>
+                  <span class="category-tile__title">Сад и дача</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/sadovaya_tehnika/">Садовая техника</a>
+                      <ul>
+                        <li><a href="/market/trimmeri/">Триммеры</a></li>
+                        <li><a href="/market/gazonokosilki/">Газонокосилки</a></li>
+                        <li><a href="/market/kustorezi/">Кусторезы</a></li>
+                        <li><a href="/market/drovokoly/">Дровоколы</a></li>
+                        <li><a href="/market/apparatu_vusokogo_davleniya/">Мойки высокого давления</a></li>
+                        <li><a href="/market/opryskivateli/">Опрыскиватели</a></li>
+                        <li><a href="/market/nasosy/">Насосы</a></li>
+                        <li><a href="/market/sadovie_izmelchiteli/">Измельчители садовые</a></li>
+                        <li><a href="/market/sadovye_pylesosy/">Садовые пылесосы</a></li>
+                        <li><a href="/market/sadovyye_pily/">Пилы цепные</a></li>
+                        <li><a href="/market/aehratory/">Аэраторы</a></li>
+                        <li><a href="/market/kultivatory/">Культиваторы</a></li>
+                        <li><a href="/market/generatori/">Генераторы</a></li>
+                        <li><a href="/market/snegouborochnaya_tehnika/">Снегоуборочная техника</a></li>
+                        <li><a href="/market/benzoburi_motoburi/">Бензобуры и мотобуры</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/garden_tools/">Садовый инструмент</a>
+                      <ul>
+                        <li><a href="/market/suchkorezy/">Сучкорезы</a></li>
+                        <li><a href="/market/axe/">Топоры</a></li>
+                        <li><a href="/market/lopaty/">Лопаты</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/mangaly_grili_i_koptilni/">Мангалы, грили и коптильни</a>
+                      <ul>
+                        <li><a href="/market/mangali/">Мангалы</a></li>
+                        <li><a href="/market/koptilni/">Коптильни</a></li>
+                        <li><a href="/market/grili/">Грили</a></li>
+                        <li><a href="/market/sredstva_dlya_rozzhiga/">Средства для розжига</a></li>
+                        <li><a href="/market/shampury/">Шампуры</a></li>
+                        <li><a href="/market/reshetki_dlya_grilya/">Решетки</a></li>
+                        <li><a href="/market/aksessuary_dlya_prigotovleniya_myasa/">Аксессуары для приготовления мяса</a></li>
+                        <li><a href="/market/nabory_dlya_piknika/">Наборы для пикника</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/sistemy_poliva_i_orosheniya_sada/">Системы полива</a>
+                      <ul>
+                        <li><a href="/market/dozhdevateli_i_razbryzgivateli/">Разбрызгиватели</a></li>
+                        <li><a href="/market/sadovyye_shlangi/">Шланги</a></li>
+                        <li><a href="/market/pistolety_dlya_poliva/">Пистолеты для полива</a></li>
+                        <li><a href="/market/konnektory_i_soyediniteli/">Коннекторы и соединители</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/tovari_dlya_dachi/">Отдых на даче</a>
+                      <ul>
+                        <li><a href="/market/naduvnye_bassejny/">Бассейны</a></li>
+                        <li><a href="/market/nabory_dlya_piknika/">Наборы для пикника</a></li>
+                        <li><a href="/market/batuti/">Батуты</a></li>
+                        <li><a href="/market/zashchita_ot_nasekomykh/">Защита от насекомых</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/dlya_doma/">Для дачи</a>
+                      <ul>
+                        <li><a href="/market/jidkosti_dlya_biotualetov/">Аксессуары для биотуалетов</a></li>
+                        <li><a href="/market/borba_s_vreditelyami/">Борьба с вредителями</a></li>
+                        <li><a href="/market/stabilizatoryi_napryajeniya/">Стабилизаторы напряжения</a></li>
+                        <li><a href="/market/setevye_filtry/">Сетевые фильтры</a></li>
+                        <li><a href="/market/chasy_i_budilniki/">Часы и будильники</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/aksessuary_i_raskhodnyye_materialy/">Аксессуары и расходные материалы</a>
+                      <ul>
+                        <li><a href="/market/masla_i_kanistry/">Масла</a></li>
+                        <li><a href="/market/dlya_trimmerov/">Для триммеров</a></li>
+                        <li><a href="/market/dlya_moyek_vysokogo_davleniya/">Для моек высокого давления</a></li>
+                        <li><a href="/market/dlya_nasosov_i_motopomp/">Для насосов и мотопомп</a></li>
+                        <li><a href="/market/zashchitnyye_sredstva/">Защитные средства</a></li>
+                        <li><a href="/market/jidkosti_dlya_biotualetov/">Для биотуалетов</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Инструменты и материалы" /></div>
+                  <span class="category-tile__title">Инструменты и материалы</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/instrumentu/">Электроинструменты</a>
+                      <ul>
+                        <li><a href="/market/gaikoverti/">Гайковерты</a></li>
+                        <li><a href="/market/shurupovertu/">Шуруповерты</a></li>
+                        <li><a href="/market/dreli/">Дрели</a></li>
+                        <li><a href="/market/perforators/">Перфораторы</a></li>
+                        <li><a href="/market/shtroborezy/">Штроборезы</a></li>
+                        <li><a href="/market/frezeri/">Фрезеры</a></li>
+                        <li><a href="/market/lobziki/">Лобзики</a></li>
+                        <li><a href="/market/gravery/">Граверы</a></li>
+                        <li><a href="/market/mnogofunktsionalnyy_instrument/">Реноваторы / многофункциональный инструмент</a></li>
+                        <li><a href="/market/shlifmashinu/">Шлифмашины</a></li>
+                        <li><a href="/market/rubanki/">Рубанки</a></li>
+                        <li><a href="/market/stepler/">Степлеры</a></li>
+                        <li><a href="/market/kraskoraspiliteli/">Краскораспылители</a></li>
+                        <li><a href="/market/stroitelnie_fenu/">Технические фены</a></li>
+                        <li><a href="/market/stroitelnie_pilesosi/">Пылесосы строительные</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/stolyarno_slesarnyy_instrument/">Ручные инструменты</a>
+                      <ul>
+                        <li><a href="/market/nabory_ruchnogo_instrumenta/">Наборы ручного инструмента</a></li>
+                        <li><a href="/market/otvertki/">Отвертки</a></li>
+                        <li><a href="/market/instrumenty_sharnirno_gubtsevyye/">Шарнирно-губцевые инструменты</a></li>
+                        <li><a href="/market/instrumentu_dlya_montaja/">Монтажный инструмент для сетей</a></li>
+                        <li><a href="/market/hranenie_instrumenta_i_accessory/">Хранение инструмента</a></li>
+                        <li><a href="/market/tiski/">Зажимной инструмент</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/izmeritelniy_oborudovaniye/">Измерительные инструменты</a>
+                      <ul>
+                        <li><a href="/market/niveliri/">Лазерные нивелиры</a></li>
+                        <li><a href="/market/izmeriteli_temperatuir/">Пирометры</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/payalnoe_oborudovanie/">Паяльное оборудование</a>
+                      <ul>
+                        <li><a href="/market/payalniki/">Паяльники</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/pilu/">Пилы</a>
+                      <ul>
+                        <li><a href="/market/pily_sabelnyye/">Сабельные пилы</a></li>
+                        <li><a href="/market/pily_diskovyye/">Дисковые пилы</a></li>
+                        <li><a href="/market/pily_tortsovochnyye/">Торцовочные пилы</a></li>
+                        <li><a href="/market/sadovyye_pily/">Цепные пилы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/raskhodnyye_materialy_dlya_dachi_i_remonta/">Аксессуары и оснастка</a>
+                      <ul>
+                        <li><a href="/market/universalnyye_nabory/">Наборы оснастки</a></li>
+                        <li><a href="/market/aksessuary_dlya_ehlektroinstrumenta/">Аксессуары для электроинструмента</a></li>
+                        <li><a href="/market/aksessuary_dlya_pilnyh_instrumentov/">Аксессуары для пильных инструментов</a></li>
+                        <li><a href="/market/aksessuary_dlya_ushm/">Аксессуары для УШМ</a></li>
+                        <li><a href="/market/aksessuary_dlya_kompressorov/">Аксессуары для компрессоров</a></li>
+                        <li><a href="/market/udliniteli_i_razvetviteli/">Силовые удлинители</a></li>
+                        <li><a href="/market/koronki/">Коронки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/stroitelnoe_oborudovanie/">Строительное оборудование</a>
+                      <ul>
+                        <li><a href="/market/benzoburi_motoburi/">Бензобуры и мотобуры</a></li>
+                        <li><a href="/market/otbojnie_molotoki/">Отбойные молотки</a></li>
+                        <li><a href="/market/rezchiki/">Резчики</a></li>
+                        <li><a href="/market/stremyanki/">Стремянки</a></li>
+                        <li><a href="/market/workbenches/">Верстаки</a></li>
+                        <li><a href="/market/kompressory/">Компрессоры</a></li>
+                        <li><a href="/market/pnevmokraskoraspyliteli/">Пневмокраскораспылители</a></li>
+                        <li><a href="/market/pnevmopistolety/">Пневмопистолеты</a></li>
+                        <li><a href="/market/pnevmoshlifmashiny/">Пневмошлифмашины</a></li>
+                        <li><a href="/market/nabory_ruchnogo_instrumenta/">Наборы инструмента</a></li>
+                        <li><a href="/market/aksessuary_dlya_sborki_pnevmosistemy/">Аксессуары для сборки пневмосистемы</a></li>
+                        <li><a href="/market/hopper-kovshi/">Ковши Хоппер</a></li>
+                        <li><a href="/market/generatori/">Генераторы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/stanki/">Станки</a>
+                      <ul>
+                        <li><a href="/market/tochilno_shlifovalnyye_stanki/">Точильно-шлифовальные станки</a></li>
+                        <li><a href="/market/sverlilnyye_stanki/">Сверлильные станки</a></li>
+                        <li><a href="/market/zatochnyye_stanki/">Заточные станки</a></li>
+                        <li><a href="/market/drovokoly/">Дровоколы</a></li>
+                        <li><a href="/market/raspilovochnyye_stanki/">Распиловочные станки</a></li>
+                        <li><a href="/market/reysmusno_fugovalnyye_stanki/">Рейсмусно-фуговальные станки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/svarochnoe_oborudovanie/">Сварочное оборудование</a>
+                      <ul>
+                        <li><a href="/market/svarochnyye_invertory/">Сварочные инверторы</a></li>
+                        <li><a href="/market/svarochnyye_poluavtomaty/">Сварочные полуавтоматы</a></li>
+                        <li><a href="/market/apparaty_dlya_svarki_polipropilenovykh_trub/">Сварочные аппараты для труб</a></li>
+                        <li><a href="/market/svarochnyye_maski/">Сварочные маски</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Строительство и ремонт" /></div>
+                  <span class="category-tile__title">Строительство и ремонт</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/elektrika/">Электрика</a>
+                      <ul>
+                        <li><a href="/market/osveshhenie-dlja-doma/">Освещение для дома</a></li>
+                        <li><a href="/market/svetodiodnye_lampy/">Светодиодные лампы и прожекторы</a></li>
+                        <li><a href="/market/elektropitanie/">Электропитание</a></li>
+                        <li><a href="/market/teplye-poly/">Теплые полы</a></li>
+                        <li><a href="/market/rozetki_i_vyklyuchateli/">Розетки и выключатели</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/elektropitaniye_i_zashchita/">Электропитание и защита</a>
+                      <ul>
+                        <li><a href="/market/stabilizatoryi_napryajeniya/">Стабилизаторы напряжения</a></li>
+                        <li><a href="/market/setevye_filtry/">Сетевые фильтры</a></li>
+                        <li><a href="/market/istochniki_bespereboynogo_pitaniya/">ИБП</a></li>
+                        <li><a href="/market/akb_ibp/">Аккумуляторы для ИБП</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/kabeli_rozetki_i_klemy/">Кабели, розетки и клемы</a>
+                      <ul>
+                        <li><a href="/market/cabel_electricheskiy_silovoy/">Силовые кабели</a></li>
+                        <li><a href="/market/instrumentu_dlya_montaja/">Инструменты для монтажа</a></li>
+                        <li><a href="/market/materialu_dlya_montaja/">Материалы для монтажа</a></li>
+                        <li><a href="/market/setevye_kabeli_v_buhtah/">Сетевые кабели в бухтах</a></li>
+                        <li><a href="/market/setevue_rozetki/">Сетевые розетки</a></li>
+                        <li><a href="/market/konnektoru/">Коннекторы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/santehnika_dlya_kuhni/">Кухня</a>
+                      <ul>
+                        <li><a href="/market/kuhonnie_moiki/">Кухонные мойки</a></li>
+                        <li><a href="/market/smesiteli_dlya_kuhni/">Смесители для кухни</a></li>
+                        <li><a href="/market/izmelchiteli_poshevih_othodov/">Измельчители отходов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/unitazy_i_bide/">Унитазы и биде</a>
+                      <ul>
+                        <li><a href="/market/smivnie_klavishi/">Смывные клавиши</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/vanny_i_mebel/">Ванны и мебель</a>
+                      <ul>
+                        <li><a href="/market/mebel_dlya_vanni/">Мебель для ванны</a></li>
+                        <li><a href="/market/smesiteli_dlya_vanny/">Смесители для ванны</a></li>
+                        <li><a href="/market/smesiteli_dlya_rakoviny/">Смесители для раковины</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/dush/">Душ</a>
+                      <ul>
+                        <li><a href="/market/smesiteli_dlya_dusha/">Смесители для душа</a></li>
+                        <li><a href="/market/dushevyye_ograzhdeniya/">Душевые ограждения</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/aksessuary_i_raskhodnyye_materialy_dlya_santekhniki/">Аксессуары и расходные материалы</a>
+                      <ul>
+                        <li><a href="/market/vodosnabzheniye/">Водоснабжение</a></li>
+                        <li><a href="/market/polotencesushiteli/">Полотенцесушители</a></li>
+                        <li><a href="/market/aks_dlya_santehniki/">Аксессуары для сантехники</a></li>
+                        <li><a href="/market/sushilki_dlya_ruk/">Сушилки для рук</a></li>
+                        <li><a href="/market/filtry_tonkoy_ochistki/">Фильтры тонкой очистки</a></li>
+                        <li><a href="/market/derzhateli_i_kryuchki/">Держатели и крючки</a></li>
+                        <li><a href="/market/mylnicy_stakany_dozatory/">Мыльницы, стаканы, дозаторы</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Товары для дома" /></div>
+                  <span class="category-tile__title">Товары для дома</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/posuda/">Посуда и кухонные принадлежности</a>
+                      <ul>
+                        <li><a href="/market/skovorodki/">Сковороды и сотейники</a></li>
+                        <li><a href="/market/cauldron/">Казаны</a></li>
+                        <li><a href="/market/kastryli/">Кастрюли и ковши</a></li>
+                        <li><a href="/market/kryshki_dlya_skovorodok/">Крышки для посуды</a></li>
+                        <li><a href="/market/containers_food/">Хранение продуктов</a></li>
+                        <li><a href="/market/posuda_dlya_prigotovleniya_napitkov/">Приготовление напитков</a></li>
+                        <li><a href="/market/termosu/">Термосы и термокружки</a></li>
+                        <li><a href="/market/kuhonnue_noji/">Ножи и разделочные доски</a></li>
+                        <li><a href="/market/kukhonnaya_utvar/">Кухонные принадлежности</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/uborka_i_stirka/">Инвентарь для уборки</a>
+                      <ul>
+                        <li><a href="/market/perchatki_dlya_uborki/">Перчатки для уборки</a></li>
+                        <li><a href="/market/shvabry/">Швабры и насадки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/uhod_za_obuvyu/">Уход за одеждой и обувью</a>
+                      <ul>
+                        <li><a href="/market/gladilnie_doski/">Гладильные доски</a></li>
+                        <li><a href="/market/laundry_dryer/">Сушилки для белья</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Бытовая химия" /></div>
+                  <span class="category-tile__title">Бытовая химия</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/sredstva_dlya_stirki/">Стирка и глажение</a>
+                      <ul>
+                        <li><a href="/market/stiralnyy_poroshok/">Стиральный порошок</a></li>
+                        <li><a href="/market/pyatnovyvoditeli_otbelivateli/">Отбеливатели и пятновыводители</a></li>
+                        <li><a href="/market/geli_dlya_stirki/">Гели и жидкие средства для стирки</a></li>
+                        <li><a href="/market/tabletki_i_kapsuly_dlya_stirki/">Капсулы, таблетки, пластины для стирки</a></li>
+                        <li><a href="/market/konditsioner_dlya_belya/">Кондиционеры и ополаскиватели для белья</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/lichnaja-gigiena/">Предметы личной гигиены</a>
+                      <ul>
+                        <li><a href="/market/vatnyye_palochki_i_diski/">Ватные палочки и диски</a></li>
+                        <li><a href="/market/tualetnaya_bumaga/">Туалетная бумага</a></li>
+                        <li><a href="/market/gigienicheskie_prokladki_i_tampony/">Гигиенические прокладки и тампоны</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/sredstva-dlja-posudy/">Средства для посуды</a>
+                      <ul>
+                        <li><a href="/market/chemistry_dish/">Средства для мытья посуды</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/%D1%81histjashhie-sredstva/">Чистящие средства</a>
+                      <ul>
+                        <li><a href="/market/uhod-za-bytovoj-tehnikoj/">Средства для ухода за бытовой техникой</a></li>
+                        <li><a href="/market/chemicals_cleaning/">Средства для мебели, ковров и напольных покрытий</a></li>
+                        <li><a href="/market/chemicals_plumbing/">Средства для сантехники</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Товары для красоты" /></div>
+                  <span class="category-tile__title">Товары для красоты</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/gigiyena_ukhod_i_mytye/">Средства по уходу за телом</a>
+                      <ul>
+                        <li><a href="/market/dezodaranty/">Дезодоранты</a></li>
+                        <li><a href="/market/zhidkoye_mylo/">Туалетное и жидкое мыло</a></li>
+                        <li><a href="/market/geli_dlya_dusha/">Средства для душа</a></li>
+                        <li><a href="/market/kremy/">Кремы</a></li>
+                        <li><a href="/market/sredstva_dlya_uhoda_do_i_posle_zagara/">Средства для загара и защиты от солнца</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/epilyatsiya_i_britye/">Косметика и средства для бритья</a>
+                      <ul>
+                        <li><a href="/market/stanki_dlya_britya/">Бритвы и лезвия</a></li>
+                        <li><a href="/market/sredstva_dlya_britya/">Средства для бритья</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/instrumenty_dlya_makiyazha_i_uhoda/">Макияж</a>
+                      <ul>
+                        <li><a href="/market/kisti_dlya_makiyazha/">Для лица</a></li>
+                        <li><a href="/market/sponzhi/">Для глаз</a></li>
+                        <li><a href="/market/sredstva_dlya_chistki_sponzhej/">Для губ</a></li>
+                        <li><a href="/market/makiyazh_brovej_i_resnic/">Для бровей</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/uhod-za-licom/">Уход за лицом</a>
+                      <ul>
+                        <li><a href="/market/aziatskaja-kosmetika/">Азиатская косметика</a></li>
+                        <li><a href="/market/nabory-dlya-uhoda/">Наборы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/uhod-za-volosami/">Средства для ухода за волосами</a>
+                      <ul>
+                        <li><a href="/market/rascheski_i_shchetki/">Расчески и аксессуары для волос</a></li>
+                        <li><a href="/market/shampuni_dlya_volos/">Шампуни</a></li>
+                        <li><a href="/market/kondicioner_dlya_volos/">Бальзамы, ополаскиватели и кондиционеры для волос</a></li>
+                        <li><a href="/market/vosk_dlya_ukladki_volos/">Укладка и стайлинг</a></li>
+                        <li><a href="/market/kraska_dlya_volos/">Окрашивание</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Детские товары" /></div>
+                  <span class="category-tile__title">Детские товары</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li><a href="/market/lego_all_series/">Конструкторы LEGO</a></li>
+                    <li><a href="/market/zuru/">Игрушки Zuru</a></li>
+                    <li><a href="/brands/funko/">Фигурки Funko</a></li>
+                    <li>
+                      <a href="/market/kolyaski_detskie/">Коляски</a>
+                      <ul>
+                        <li><a href="/market/all_kolyaski/">Все коляски</a></li>
+                        <li><a href="/market/ryukzaki_kenguru/">Кенгуру и слинги</a></li>
+                        <li><a href="/market/kolyaski_3_v_1/">Коляски 3 в 1</a></li>
+                        <li><a href="/market/kolyaski_2_v_1/">Коляски 2 в 1</a></li>
+                        <li><a href="/market/progulochnyye_kolyaski/">Прогулочные коляски</a></li>
+                        <li><a href="/market/aksessuary_dlya_kolyasok/">Аксессуары для колясок</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/detskiye_avtokresla/">Автомобильные кресла</a>
+                      <ul>
+                        <li><a href="/market/vse_avtokresla/">Детские автокресла</a></li>
+                        <li><a href="/market/busteri/">Бустеры</a></li>
+                        <li><a href="/market/aksessuary_dlya_avtokresel/">Аксессуары для автокресел</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/detskiy_transport/">Детский спорт и активный отдых</a>
+                      <ul>
+                        <li><a href="/market/detskie_samokaty/">Детские самокаты</a></li>
+                        <li><a href="/market/begoveli/">Беговелы</a></li>
+                        <li><a href="/market/detskie_velosipedy/">Детские велосипеды</a></li>
+                        <li><a href="/market/rolikovye_konki/">Роликовые коньки</a></li>
+                        <li><a href="/market/detskie_ehlektromobili/">Электромобили</a></li>
+                        <li><a href="/market/skejtbordy/">Скейтборды</a></li>
+                        <li><a href="/market/giroskutery/">Гироскутеры</a></li>
+                        <li><a href="/market/detskaya_zashchitnaya_ehkipirovka/">Детская защитная экипировка</a></li>
+                        <li><a href="/market/aksessuary_dlya_samokatov_i_begovelov/">Аксессуары для велосипедов и самокатов</a></li>
+                        <li><a href="/market/sanki_i_snegokaty/">Зимний транспорт</a></li>
+                        <li><a href="/market/igry_na_ulice/">Игры на улице</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/kormleniye/">Детская комната и кормление</a>
+                      <ul>
+                        <li><a href="/market/detskaya-mebel/">Детская мебель</a></li>
+                        <li><a href="/market/matrasy/">Матрасы</a></li>
+                        <li><a href="/market/mobili/">Мобили</a></li>
+                        <li><a href="/market/stulchiki_dlya_kormleniya/">Стульчики для кормления и шезлонги</a></li>
+                        <li><a href="/market/poilniki/">Поильники, посуда</a></li>
+                        <li><a href="/market/pribory_dlya_prigotovlenie_pishchi/">Приготовление пищи</a></li>
+                        <li><a href="/market/dlya-mam/">Для мам</a></li>
+                        <li><a href="/market/gigiena-i-uhod/">Гигиена и уход</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/bezopasnost_rebenka/">Безопасность</a>
+                      <ul>
+                        <li><a href="/market/bezopasnost_doma_dlya_detej/">Безопасность дома для детей</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/gadzhety_dlya_detskoy/">Гаджеты</a>
+                      <ul>
+                        <li><a href="/market/detskie_umnye_chasy/">Умные часы и браслеты</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/igrushki/">Игрушки</a>
+                      <ul>
+                        <li><a href="/market/lego_all_series/">Конструкторы LEGO</a></li>
+                        <li><a href="/market/konstruktory/">Конструкторы, мозаики, паззлы</a></li>
+                        <li><a href="/market/kukly/">Куклы и аксессуары</a></li>
+                        <li><a href="/market/geroi-multfilmov-i-figurki/">Герои мультфиьльмов и фигурки</a></li>
+                        <li><a href="/market/zuru/">Игрушки Zuru</a></li>
+                        <li><a href="/market/kollekcionnye_figurki_funko_pop/">Фигурки Funko</a></li>
+                        <li><a href="/market/detskie_nabory_instrumentov/">Сюжетно-ролевые игры</a></li>
+                        <li><a href="/market/igrushechnye_mashinki/">Треки и машинки</a></li>
+                        <li><a href="/market/interaktivnyye_igrushki/">Интерактивные игрушки</a></li>
+                        <li><a href="/market/myagkiye_igrushki/">Мягкие игрушки</a></li>
+                        <li><a href="/market/radioupravlyaemye_mashinki/">Радиоуправляемые игрушки</a></li>
+                        <li><a href="/market/zheleznyye_dorogi/">Железная дорога</a></li>
+                        <li><a href="/market/igrushechnoye_oruzhiye/">Игрушечное оружие</a></li>
+                        <li><a href="/market/nabory_dlya_detskogo_tvorchestva/">Товары для исследований и творчества</a></li>
+                        <li><a href="/market/razvivayushchiye_igrushki/">Игрушки для самых маленьких</a></li>
+                        <li><a href="/market/nastolnie_igri/">Настольные игры</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Спорт и Туризм" /></div>
+                  <span class="category-tile__title">Спорт и Туризм</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/letniy_transport/">Летний транспорт</a>
+                      <ul>
+                        <li><a href="/market/detskiye_velosipedy/">Детские велосипеды</a></li>
+                        <li><a href="/market/detskie_samokaty/">Детские самокаты</a></li>
+                        <li><a href="/market/rolikovye_konki/">Роликовые коньки</a></li>
+                        <li><a href="/market/giroskutery/">Гироскутеры</a></li>
+                        <li><a href="/market/skejtbordy/">Скейтборды и роллерсерфы</a></li>
+                        <li><a href="/market/detskaya_zashchitnaya_ehkipirovka/">Детская защитная экипировка</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/zimniye_tovary/">Зимний транспорт</a>
+                      <ul>
+                        <li><a href="/market/sanki_i_snegokaty/">Зимний транспорт</a></li>
+                        <li><a href="/market/aksessuary_k_sankam_i_snegokatam/">Аксессуары для санок и снегокатов</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/sportivnyye_gadzhety/">Спортивные гаджеты</a>
+                      <ul>
+                        <li><a href="/market/aksessuary_dlya_fitnes_brasletov_i_umnykh_chasov/">Аксессуары для Фитнес-браслетов</a></li>
+                        <li><a href="/market/unmue_chasu_smart_watch/">Умные часы</a></li>
+                        <li><a href="/market/aksessuary_dlya_umnykh_chasov/">Аксессуары для умных часов</a></li>
+                        <li><a href="/market/napolnye_vesy/">Напольные весы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/tovary_dlya_turizma/">Товары для туризма</a>
+                      <ul>
+                        <li><a href="/market/fonari/">Фонари</a></li>
+                        <li><a href="/market/termosu/">Термосы</a></li>
+                        <li><a href="/market/zonty/">Зонты</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/ehlektrotransport/">Электротранспорт</a>
+                      <ul>
+                        <li><a href="/market/giroskutery/">Гироскутеры</a></li>
+                        <li><a href="/market/ehlektrosamokaty/">Электросамокаты</a></li>
+                        <li><a href="/market/segvej/">Сегвей</a></li>
+                        <li><a href="/market/ehlektrovelosipedy/">Электровелосипеды</a></li>
+                        <li><a href="/market/aksessuary_dlya_ehlektrotransporta/">Аксессуары для электротранспорта</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Авто" /></div>
+                  <span class="category-tile__title">Авто</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/avtomobilnaya_electronika/">Автомобильная электроника</a>
+                      <ul>
+                        <li><a href="/market/mobile_3g4g_tochki_dostupa/">3G/4G модемы и роутеры</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/avtomobilnaya_khimiya/">Автомобильная химия</a>
+                      <ul>
+                        <li><a href="/market/omyvayka/">Незамерзающая жидкость</a></li>
+                        <li><a href="/market/avto_masla/">Масла для автомобилей</a></li>
+                        <li><a href="/market/tormoznaya_zhidkost/">Тормозная жидкость</a></li>
+                        <li><a href="/market/antifriz/">Антифриз</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/avto_zapasnue_chasti/">Автозапчасти</a>
+                      <ul>
+                        <li><a href="/market/shetki_stekloochistiteley/">Щетки стеклоочистителя</a></li>
+                        <li><a href="/market/galogennyye_lampy_golovnogo_sveta/">Галогенные лампы головного света</a></li>
+                        <li><a href="/market/lampy_podsvetki/">Лампы подсветки</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/avto_instrumentu/">Инструменты для авто</a>
+                      <ul>
+                        <li><a href="/market/kompressoru_manometru/">Компрессоры и манометры</a></li>
+                        <li><a href="/market/avto_naboru_instrumentov/">Наборы инструментов</a></li>
+                        <li><a href="/market/otvertki/">Отвертки</a></li>
+                        <li><a href="/market/puskozaryadnie_ustroistva_dlya_avto/">Пуско-зарядные, пусковые и зарядные устройства</a></li>
+                        <li><a href="/market/trosy/">Тросы</a></li>
+                        <li><a href="/market/fonari/">Фонари</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/ukhod_za_avtomobilem/">Уход за автомобилем</a>
+                      <ul>
+                        <li><a href="/market/apparatu_vusokogo_davleniya/">Мойки высокого давления</a></li>
+                        <li><a href="/market/shchetki_skrebki_lopaty/">Щетки-скребки и лопаты</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/bagazhnyye_sistemy/">Хранение и перевозка</a>
+                      <ul>
+                        <li><a href="/market/krepleniya_dlya_sportivnogo_oborudovaniya/">Крепления для спортивного оборудования</a></li>
+                        <li><a href="/market/termosu/">Термосы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/detskiye_avtokresla/">Детские автокресла</a>
+                      <ul>
+                        <li><a href="/market/busteri/">Бустеры</a></li>
+                        <li><a href="/market/aksessuary_dlya_avtokresel/">Аксессуары для автокресел</a></li>
+                        <li><a href="/market/vse_avtokresla/">Все автокресла</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/avto_accessory/">Аксессуары для авто</a>
+                      <ul>
+                        <li><a href="/market/znaki_i_nakleyki/">Знаки и наклейки</a></li>
+                        <li><a href="/market/poleznie_melochi_dlya_avro/">Полезные мелочи</a></li>
+                        <li><a href="/market/derjateli/">Держатели для мобильных устройств</a></li>
+                        <li><a href="/market/avto_zaryadnie_ustroystva/">Автомобильные ЗУ</a></li>
+                        <li><a href="/market/termosu/">Термосы</a></li>
+                        <li><a href="/market/fonari/">Фонари</a></li>
+                        <li><a href="/market/svetootrazhateli_dlya_detey_i_peshekhodov/">Светоотражатели</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Товары для взрослых" /></div>
+                  <span class="category-tile__title">Товары для взрослых</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/smazki_i_geli/">Смазки и гели</a>
+                      <ul>
+                        <li><a href="/market/massazhnye-masla-i-svechi/">Массажные масла и свечи</a></li>
+                        <li><a href="/market/smazki-na-vodnoj-osnove/">На водной основе</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/zhenskaya_stimulyaciya/">Женская стимуляция</a>
+                      <ul>
+                        <li><a href="/market/vibratory/">Вибраторы</a></li>
+                        <li><a href="/market/stimulyaciya_klitora/">Стимуляция клитора</a></li>
+                        <li><a href="/market/trenazhery_kegelya/">Тренажеры Кегеля</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/vaginy_i_masturbatory/">Вагины и мастурбаторы</a>
+                      <ul>
+                        <li><a href="/market/vaginy_i_anusy/">Вагины и анусы</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/eroticheskie_stimulyatory/">Эротические стимуляторы</a>
+                      <ul>
+                        <li><a href="/market/vakuumnye_i_gidro_pompy/">Вакуумные и гидро помпы</a></li>
+                        <li><a href="/market/koltsa_i_nasadki_na_penis/">Кольца и насадки на пенис</a></li>
+                        <li><a href="/market/massazhery_prostaty/">Массажеры простаты</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Товары для праздника" /></div>
+                  <span class="category-tile__title">Товары для праздника</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/novy_god/">Новогодние товары</a>
+                      <ul>
+                        <li><a href="/market/elki_iskustvennie_novogodnie/">Ёлки</a></li>
+                        <li><a href="/market/year_decoration/">Ёлочные игрушки</a></li>
+                        <li><a href="/market/girlyandi/">Гирлянды</a></li>
+                        <li><a href="/market/gadgety/">Брелоки и сувениры</a></li>
+                        <li><a href="/market/rozhdestvenskie_kalendari/">Рождественские календари</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="categories-grid__item">
+                <a class="category-tile category-tile--wide category-tile--wide mb-3" href="#">
+                  <div class="category-tile__img"><img src="https://placehold.jp/552x606.png" alt="Продукты" /></div>
+                  <span class="category-tile__title">Продукты</span>
+                </a>
+                <div class="categories-grid__sub">
+                  <ul>
+                    <li>
+                      <a href="/market/maslo_specii_sahar/">Масло, специи, сахар</a>
+                      <ul>
+                        <li><a href="/market/rastitelnoe_maslo/">Растительное масло</a></li>
+                        <li><a href="/market/sahar/">Сахар</a></li>
+                        <li><a href="/market/specii/">Специи</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/coffe/">Кофе и чай</a>
+                      <ul>
+                        <li><a href="/market/cofe_v_zernah/">Кофе в зернах</a></li>
+                        <li><a href="/market/ground_coffee/">Кофе молотый</a></li>
+                        <li><a href="/market/cofe_v_capsulah/">Кофе в капсулах</a></li>
+                        <li><a href="/market/cacao/">Какао</a></li>
+                        <li><a href="/market/tea/">Чай</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/market/konservy/">Консервы</a>
+                      <ul>
+                        <li><a href="/market/ovoshhnye_konservy/">Овощные консервы</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 g-lg-4">
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-1.svg" alt="Самовывоз сегодня" />
+                  <span class="footer-feature__title">Самовывоз сегодня</span>
+                  <span class="footer-feature__subtitle">из магазина с 10:00 до 22:00</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-2.svg" alt="Официальная гарантия" />
+                  <span class="footer-feature__title">Официальная гарантия</span>
+                  <span class="footer-feature__subtitle">на 30 225 товаров в наличии</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-3.svg" alt="Удобная доставка" />
+                  <span class="footer-feature__title">Удобная доставка</span>
+                  <span class="footer-feature__subtitle">днём и вечером ежедневно</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-feature">
+                  <img class="footer-feature__img" src="/assets/img/footer-feature-4.svg" alt="Высокий рейтинг" />
+                  <span class="footer-feature__title">Высокий рейтинг</span>
+                  <span class="footer-feature__subtitle">на Я.Маркете с 2010 года</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row g-3 g-lg-4">
+              <div class="col-sm-12 col-md-4 col-lg-3 order-1">
+                <p class="mb-0"><strong>Служба поддержки</strong></p>
+                <p class="mb-2"><a class="footer-phone text-body text-decoration-none" href="tel:+7 495 133-79-84">+7 495 133-79-84</a></p>
+                <ul class="list-unstyled">
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#callback-tab-pane">Заказать звонок</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#question-tab-pane">Задать вопрос</a></li>
+                  <li><a class="text-decoration-none js-feedback-popup" href="/ajax/new/feedback_form_popup.php" data-show-tab="#complain-tab-pane">Пожаловаться</a></li>
+                </ul>
+                <p class="footer-copyright d-none d-lg-block">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-2">
+                <p class="mb-1"><strong>Покупателям</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/news.html">Новости и акции</a></li>
+                  <li><a href="/shops.html">Адреса магазинов</a></li>
+                  <li><a href="/delivery.html">Доставка и самовывоз</a></li>
+                  <li><a href="/service.html">Гарантия и возврат</a></li>
+                  <li><a href="/bonus.html">Бонусная программа</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-3 order-3">
+                <p class="mb-1"><strong>Информация</strong></p>
+                <ul class="footer-links">
+                  <li><a href="/job.html">Вакансии</a></li>
+                  <li><a href="/corporate.html">Корпоративным клиентам</a></li>
+                  <li><a class="js-supplier-popup" href="/ajax/new/supplier_inquiry_form.php">Поставщикам</a></li>
+                  <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-4 order-5 order-md-4 d-lg-none">
+                <p class="footer-copyright mt-4">
+                  © 2010–2023
+                  <br />
+                  ООО «Гриффин Технолоджи»
+                  <br />
+                  ОГРН: 1117746304884
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-3 order-4 order-md-5">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Подписывайтесь</strong></p>
+                    <div class="social-buttons mb-4">
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                      <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-12">
+                    <p class="mb-2"><strong>Принимаем к оплате</strong></p>
+                    <div class="pay-systems">
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mastercard_logo.png" alt="Mastercard" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/visa_logo.png" alt="Visa" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/mir_logo.png" alt="МИР" /></div>
+                      <div class="pay-system"><img class="pay-system__img" src="/assets/img/icons/sbercredit_logo.png" alt="Сберкредит" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-toolbar d-md-none">
+        <div class="container p-0">
+          <div class="row row-cols-5 g-0">
+            <div class="col">
+              <span class="footer-toolbar__item is-active">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--home"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Главная</span>
+              </span>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-catalog" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-catalog"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Каталог</span>
+              </button>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item" href="/cart.html">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--shopping-bag"></use></svg>
+                  <span class="fs-6 badge rounded-pill position-absolute top-0 end-0 bg-primary js-cart-counter hidden"></span>
+                </div>
+                <span class="footer-toolbar__item-text">Корзина</span>
+              </a>
+            </div>
+            <div class="col">
+              <a class="footer-toolbar__item js-auth-popup" href="/ajax/new/authform.php">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--user"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Войти</span>
+              </a>
+            </div>
+            <div class="col">
+              <button class="footer-toolbar__item js-button-sidebar" type="button">
+                <div class="footer-toolbar__item-icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--menu-more"></use></svg>
+                </div>
+                <span class="footer-toolbar__item-text">Еще</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

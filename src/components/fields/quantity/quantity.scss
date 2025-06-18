@@ -1,0 +1,79 @@
+.field {
+  $block: &;
+
+  &--type-quantity {
+    display: block;
+
+    #{$block}__frame {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      height: 50px;
+      background-color: #fff;
+      border: 1px solid $color-dark-30;
+      border-radius: 8px;
+      padding: 4px 15px;
+
+      input {
+        flex: 0 1 auto;
+        width: 1em;
+        min-width: 1em;
+        display: block;
+        height: 40px;
+        appearance: none;
+        background: none;
+        border: none;
+        resize: none;
+        color: $color-text-light;
+        font-family: $font-family;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 0;
+        margin: 0 10px;
+      }
+    }
+
+    #{$block}__caption,
+    #{$block}__postfix {
+      flex: 0 0 auto;
+      display: inline-block;
+      color: $color-dark-60;
+      font-family: $font-family;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    #{$block}__postfix {
+      margin-right: 10px;
+      margin-left: -8px;
+    }
+
+    #{$block}__up-down {
+      flex: 0 0 auto;
+    }
+
+    #{$block}__minus,
+    #{$block}__plus {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+
+      .svg-icon {
+        // size: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+
+      &:hover {
+        color: $color-blue-70;
+      }
+    }
+  }
+}

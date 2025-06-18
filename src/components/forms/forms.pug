@@ -1,0 +1,741 @@
+include ../button/button
+include ../callout/callout
+include ../fields/fields
+include ../filters/filters
+include ../social-buttons/social-buttons
+
+mixin form-auth()
+  form(class="form form-auth" id="form-auth" action=process.env.AUTH_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    +field(type="email" label="Электронная почта" id="auth-email" name="USER_LOGIN" placeholder="Введите email" required=true).mb-3
+    +field(type="password" label="Пароль" id="auth-password" name="USER_PASSWORD" placeholder="Введите пароль" autocomplete="on" viewButton=true required=true).mb-3
+    +button(type="submit" variant="primary" text="Войти" class="w-100 mb-3")
+    p.mb-4 Забыли пароль?
+      a(href=process.env.RECOVERY_URL).js-recovery-popup Восстановить
+    p
+      strong Войти через социальные сети
+    +social-buttons()
+
+mixin form-callback()
+  form(class="form form-callback" id="form-callback" action=process.env.CALLBACK_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row
+      .col-12.col-lg-6
+        +field(type="text" label="Имя" id="callback-name" name="name" placeholder="Ваше имя" required=true).mb-3
+        +field(type="tel" label="Телефон" id="callback-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" icon="ui--phone" tooltip="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-rule-phone="true" required=true).mb-3
+        +field(type="checkbox" label!="С <a href='/privacy.html'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="callback-privacy" name="privacy" checked=true required=true).mb-3
+        +button(type="submit" variant="primary" text="Отправить" class="w-100")
+
+      .col-12.col-lg-6
+        +callout().mt-4
+          | Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами по интересующему вопросу
+
+mixin form-city()
+  form(class="form form-city" id="form-city" action=process.env.SET_CITY_URL method="POST" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    +field(type="text" controlClass="js-select-city" name="city" id="city" placeholder="Начните вводить название…" icon="ui--location" spellcheck="false" inputmode="search" data-src="/data/cities-ru.json").mb-3
+    p.mb-0 Есть магазины и точки выдачи ОГО!
+    ul.list-inline.fs-4
+      li.list-inline-item
+        a(href="#" data-city="4011").js-change-city Москва
+      li.list-inline-item
+        a(href="#" data-city="3958").js-change-city Челябинск
+    p.mb-0 Популярные
+    ul.list-inline.fs-4
+      li.list-inline-item
+        a(href="#" data-city="4011").js-change-city Москва
+      li.list-inline-item
+        a(href="#" data-city="4016").js-change-city Санкт-Петербург
+      li.list-inline-item
+        a(href="#" data-city="3828").js-change-city Екатеринбург
+      li.list-inline-item
+        a(href="#" data-city="2997").js-change-city Казань
+      li.list-inline-item
+        a(href="#" data-city="3651").js-change-city Новосибирск
+      li.list-inline-item
+        a(href="#" data-city="2883").js-change-city Уфа
+
+mixin form-complain()
+  form(class="form form-complain" id="form-complain" action=process.env.COMPLAIN_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row.mb-3
+      .col-12.col-lg-6
+        +field(type="text" label="Имя" id="complain-name" name="name" placeholder="Ваше имя" required=true).mb-3
+        +field(type="tel" label="Телефон" id="complain-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" icon="ui--phone" tooltip="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-rule-phone="true" required=true).mb-3
+        +field(type="email" label="Электронная почта" id="complain-email" name="email" placeholder="Введите email" required=true).mb-3
+
+      .col-12.col-lg-6
+        +callout().mt-4
+          | Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами по интересующему вопросу
+
+    .row.mb-3
+      .col
+        +field(type="textarea" label="Сообщение" id="complain-comment" name="comment" required=true)
+
+    .row.mb-3
+      .col
+        +field(type="checkbox" label!="С <a href='#'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="complain-privacy" name="privacy" checked=true required=true)
+
+    .row.mb-3
+      .col-8
+        +field(type="file" label="Прикрепить файл" id="complain-file" name="file")
+
+      .col-4
+        +button(type="submit" variant="primary" text="Отправить" class="w-100 mt-4")
+
+mixin form-question()
+  -
+    var formQuestionSubjects = [
+      {value: 5, text: "Задать вопрос о товаре"},
+      {value: 3, text: "Предложение о поставке товара"},
+      {value: 2, text: "Рекламное предложение"},
+      {value: 11, text: "Обратный звонок"},
+      {value: 1, text: "О магазине"},
+      {value: 53, text: "Информация о соискателе от работодателя"},
+      {value: 6, text: "Сообщить об ошибке"},
+      {value: 26, text: "Пожаловаться"},
+      {value: 4, text: "Работа в ОГО!"}
+    ]
+
+  form(class="form form-question" id="form-question" action=process.env.QUESTION_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row.mb-3
+      .col
+        +field(type="select" label="Тема сообщения" id="question-theme" name="theme" placeholder="Тема сообщения" options=formQuestionSubjects required=true)
+
+    .row.mb-3
+      .col-12.col-lg-6
+        +field(type="text" label="Имя" id="question-name" name="name" placeholder="Ваше имя" required=true).mb-3
+        +field(type="tel" label="Телефон" id="question-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" icon="ui--phone" tooltip="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-rule-phone="true" required=true).mb-3
+        +field(type="email" label="Электронная почта" id="question-email" name="email" required=true).mb-3
+
+      .col-12.col-lg-6
+        +callout().mt-4
+          | Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами
+
+    .row.mb-3
+      .col
+        +field(type="textarea" label="Сообщение" id="question-comment" name="comment" required=true)
+
+    .row.mb-3
+      .col
+        +field(type="checkbox" label!="С <a href='#'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="question-privacy" name="privacy" checked=true required=true)
+
+    .row.mb-3
+      .col-8
+        +field(type="file" label="Прикрепить файл" id="question-file" name="file" mod="button" button-caption="Загрузить документ")
+      .col-4
+        +button(type="submit" variant="primary" text="Отправить" class="w-100 mt-4")
+
+mixin form-recovery()
+  form(class="form form-recovery" id="form-recovery" action=process.env.RECOVERY_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p Введите E-mail, указанный при регистрации, и мы отправим ссылку для восстановления пароля.
+    p(style="display: none").form-error.text-danger.fw-bold
+    +field(type="email" label="Электронная почта" id="recovery-email" name="USER_EMAIL" placeholder="Введите email" required=true).mb-3
+    +button(type="submit" variant="primary" text="Отправить")
+
+mixin form-registration(hasSidebar=true)
+  form(class="form form-registration" id="form-registration" action=process.env.REGISTRATION_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    input(type="hidden" id="registration-login" name="REGISTER[LOGIN]")
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row
+      .col
+        +field(type="email" label="Электронная почта" data-sync-value-to="#registration-login" id="registration-email" name="REGISTER[EMAIL]" placeholder="Введите email" required=true).mb-3
+        +field(type="text" label="Имя" id="registration-name" name="REGISTER[FIRST_NAME]" placeholder="Ваше имя" required=true).mb-3
+        +field(type="text" label="Фамилия" id="registration-lastname" name="REGISTER[LAST_NAME]" placeholder="Ваша фамилия" required=true).mb-3
+        +field(type="tel" label="Телефон" id="registration-phone" name="REGISTER[PERSONAL_PHONE]" placeholder="+7 (___) ___-__-__" inputmode="tel" icon="ui--phone" tooltip="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-rule-phone="true" required=true).mb-3
+        +field(type="password" label="Придумайте пароль" id="registration-password" name="REGISTER[PASSWORD]" viewButton=true autocomplete="off").mb-3
+        +field(type="password" label="Повторите пароль" id="registration-confirm-password" name="REGISTER[CONFIRM_PASSWORD]" viewButton=true data-rule-equalTo="#registration-password" autocomplete="off").mb-3
+        +field(type="checkbox" label!="Принимаю условия <a href='#'>Публичной оферты</a>" id="registration-confirm" name="REGISTER[CONFIRM]" checked=true required=true).mb-3
+        +button(type="submit" variant="primary" text="Зарегистрироваться" class="w-100" name="register_submit_button" value="on")
+      if hasSidebar
+        .col
+          p
+            strong Войти через социальные сети
+          +social-buttons().mb-3
+          +callout()
+            p.h3 Обещаем, спама не будет!
+            p Мы рассылаем смс только о статусах заказов и изменениях бонусного счета. Мы не осуществляем рекламные смс-рассылки и не передаем телефоны наших клиентов третьим лицам.
+
+mixin form-search()
+  form(class="form form-search" id="form-search" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    input(type="hidden" name="how" value="r")
+
+    p.mb-3.d-flex.align-items-center
+      +svg-icon("ui--search", "sm").me-2
+      | Результаты поиска по запросу:
+
+    fieldset.position-relative.mb-3
+      input(type="search" placeholder="Поиск товаров" name="q" value="Lorem ipsum" autocomplete="off").form-control
+      +button(type="submit" variant="link" icon="ui--search" iconSize="md" class="position-absolute top-50 end-0 translate-middle-y")
+        //- +svg-icon("ui--search"," md")
+
+    +field(type="checkbox" label!="Искать только товары в наличии" name="only_available" value="N" checked=true required=false )
+
+mixin form-searchbox()
+  form(class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    fieldset.position-relative
+      input(type="search" placeholder="Поиск товаров" name="q" autocomplete="off").form-control
+      +button(type="submit" variant="link" icon="ui--search" iconSize="md" class="position-absolute top-50 end-0 translate-middle-y")
+        //- +svg-icon("ui--search"," md")
+
+mixin form-supplier()
+  form(class="form form-supplier" id="form-supplier" action=process.env.SUPPLIER_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    +field(type="text" label="Компания" id="supplier-company" name="company" placeholder="Ваше имя" required=true).mb-3
+    +field(type="text" label="Имя" id="supplier-name" name="name" placeholder="Ваше имя" required=true).mb-3
+    +field(type="tel" label="Телефон / WhatsApp" id="supplier-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" icon="ui--phone" tooltip="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-rule-phoneint="true" required=true).mb-3
+    +field(type="email" label="Электронная почта" id="supplier-email" name="email" required=true).mb-3
+    +field(type="comment" label="Сообщение" id="supplier-comment" name="comment" required=true).mb-3
+    +field(type="checkbox" label!="С <a href='#'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" name="supplier-agree" id="supplier-agree" checked=true required=true).mb-3
+    +button(type="submit" variant="primary" text="Отправить" class="w-100")
+
+mixin form-adult()
+  form(class="form form-adult" id="form-adult" action=process.env.ADULT_CONFIRM_URL method="POST")&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    input(type="hidden" name="CONFIRM_ADULT" value="true")
+    p.text-center.text-primary.display-3
+      +svg-icon("ui--adult")(style="width: 1.5em; height: 1.5em")
+    p.fs-3 Данный раздел предназначен только для посетителей, достигших возраста 18 лет!
+    div
+      +button(type="button" variant="primary" text="Да, мне есть 18 лет" class="js-adult-confirm")
+      +button(type="button" variant="secondary" text="Нет, я младше" class="js-adult-notconfirm")
+
+mixin form-service-check()
+  form(class="form form-service-check" id="form-service-check" action=process.env.SERVICE_CHECK_URL method="POST" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row.g-3.g-lg-4.justify-content-center
+      .col-12.col-lg-5
+        h2.mb-2 Сдали товар по гарантии?
+        p.mb-0 Проверьте статус гарантийного обслуживания.
+      .col-12.col-lg-5
+        .row.g-2
+          .col-8
+            +field(type="text" id="service-check" name="id" placeholder="Номер документа" required=true)
+          .col-4
+            +button(type="submit" variant="primary" text="Проверить" class="w-100")
+
+mixin form-fast-buy(productId)
+  form(class="form form-fast-buy" id="form-fast-buy" action=process.env.FAST_BUY_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    input(type="hidden" name="product" id="fast-buy-id" value=productId)
+    .row
+      .col-12.col-lg-6
+        +field(type="text" label="Имя" id="fast-buy-name" name="name" placeholder="Ваше имя" required=true).mb-3
+        +field(type="tel" label="Телефон" id="fast-buy-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" icon="ui--phone" tooltip="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-rule-phone="true" required=true).mb-3
+        +field(type="checkbox" label!="С <a href='/privacy.html'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="fast-buy-privacy" name="privacy" checked=true required=true).mb-3
+        +button(type="submit" variant="primary" text="Отправить" class="w-100")
+
+      .col-12.col-lg-6
+        +callout().mt-4
+          | Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами для оформления товара
+
+mixin form-user-wish()
+  form(class="form form-user-wish" id="form-user-wish" action=process.env.USER_WISH_URL method="POST" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    input(type="hidden" name="AJAX_TOKEN" value="1711465991:c3e6349e9a118453a36207cf7e343084")
+    +field(type="textarea" label="" id="product-request" name="PRODUCT_REQUEST" required=true).mb-3
+    +button(type="submit" variant="primary" text="Отправить")
+
+mixin form-filters()
+  //- action нам будет нужен пустым, а пока замокаем его на /listing.html
+  - var action = process.env.NODE_ENV === "production" ?  "" : process.env.LISTING_URL
+
+  form(class="form form-filters js-filters" id="form-filters" action=action method="GET" data-validate="false" data-ajax-submit="false" novalidate)&attributes(attributes)
+    //- input(type="hidden" name="q" value="Lorem ipsum - результаты поиска в онлайн-гипермаркете ОГО!")
+    input(type="hidden" name="SECTION_CODE" value="smartfony")
+    input(type="hidden" name="PAGESIZE" value="45")
+    input(type="hidden" name="SORT" value="ID")
+    input(type="hidden" name="ORDER" value="DESC")
+    input(type="hidden" name="ONLY_AVAILABLE" value="")
+    input(type="hidden" name="EXACT_SEARCH" value="")
+    input(type="hidden" name="set_filter" value="Y")
+    //- input(type="hidden" id="view_mode" name="view" value="plate")
+
+    div.p-3
+      +button(type="submit" variant="primary" class="w-100 mb-2" text="Показать результат")
+        span.js-count-items
+      +button(tag="a" href=process.env.LISTING_URL variant="secondary" class="w-100 js-clear-filter" text="Очистить фильтр")
+
+    +filters()
+
+    div.p-3
+      +button(type="submit" variant="primary" class="w-100 mb-2" text="Показать результат")
+        span.js-count-items
+      +button(tag="a" href=process.env.LISTING_URL variant="secondary" class="w-100 mb-2 js-clear-filter" text="Очистить фильтр")
+      a(href=process.env.USER_WISH_FORM_URL class="btn btn-outline-info w-100 fs-4 js-user-wish-popup") Здесь нет того, что мне нужно
+
+mixin form-configuration-save()
+  form(class="form form-configuration-save" id="form-configuration-save" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    +field(type="text" label="" id="cofiguratorName" value="Конфигурация #1600065" required=true).mb-3
+    +button(type="button" variant="success" text="Сохранить" class="configurator-save js-configurator-action" data-action="saveConfiguration" data-id="1600065")
+    +button(type="button" variant="secondary" class="js-tooltip js-copy-link" icon="ui--copy-link" icon-size="md" data-tooltip-title="Копировать ссылку" data-copy-link-tooltip="Ссылка скопирована")
+    +button(tag="a" href="#popup-configuration-mail" variant="secondary" class="js-tooltip" icon="ui--mail" icon-size="md" data-tooltip-title="Отправить на почту" data-fancybox)
+
+mixin form-configuration-mail()
+  form(class="form form-configuration-mail" id="form-configuration-mail" action=process.env.CONFIGURATOR_MAIL method="GET" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row.g-3.g-lg-4
+      .col-12.col-md-8
+        +field(type="email" label="Ваша электронная почта" name="email" placeholder="Ваша электронная почта" required=true)
+      .col-12.col-md-4
+        +button(type="submit" variant="primary" text="Отправить" class="mt-lg-4")
+
+mixin form-expert-request()
+  form(class="form form-expert-request" id="form-expert-request" action=process.env.CONFIGURATOR_EXPERT method="GET" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row.g-3.g-lg-4.mb-3
+      .col-12.col-md-6
+        +field(type="text" label="Имя" value="" name="email" placeholder="Ваше имя" required=true)
+      .col-12.col-md-6
+        +field(type="email" label="Электронная почта" value="" name="email" placeholder="Ваша электронная почта" required=true)
+
+    +field(type="checkbox" label!="С <a href='#'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="expert-request-privacy" name="privacy" checked=true required=true)
+    +button(type="submit" variant="primary" text="Отправить")
+
+  p Наш эксперт проведет оценку конфигурации и после этого свяжется с вами по указанному адресу электронной почты
+
+  p.mb-1
+    strong Не выбраны обязательные компоненты:
+
+  ul.configurator-required__list
+    li Корпус компьютера
+    li Материнская плата
+    li Процессор
+    li Оперативная память
+
+mixin form-find-by-article()
+  form(class="form form-find-by-article" id="form-find-by-article" action=process.env.FIND_BY_ARTICLE method="GET" data-reset="true" novalidate)&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+
+    .alert.alert-info
+      p 123 - не найдется
+      p 456 - нет в наличии
+      p.mb-0 111 - Ошибка 500
+
+    .row.g-3.g-lg-4
+      .col-7.col-md-8
+        +field(type="number" label="Артикул" name="article" placeholder="Артикул" required=true)
+      .col-5.col-md-4
+        +button(type="submit" variant="secondary" text="Найти товар" class="w-100 mt-4")
+
+    .form-request-result.mt-3
+
+mixin form-product-review()
+  form(class="form form-product-review" id="form-product-review" action=process.env.PRODUCT_REVIEWS_URL method="POST" data-reset="true")&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+
+    .bg-info-subtle.p-3.fs-4.mb-3 Имя "user" для удачной отправки
+
+    .row.g-3.g-lg-4
+      .col-md-6
+        +field(type="text" name="NAME" label="Имя" placeholder="Ваше имя" required=true)
+      .col-md-6
+        +field(type="text" name="ORDER_ID" label="Номер заказа" placeholder="Номер заказа" required=true)
+      .col-12
+        +field(type="stars" name="RATING" label="Оценка")
+      .col-12
+        +field(type="textarea" name="REVIEW_TEXT" label="Отзыв" placeholder="Оставьте отзыв" required=true)
+      .col-12
+        +field(type="checkbox" label!="С <a href='#'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="product-review-privacy" name="privacy" checked=true required=true)
+      .col-auto
+        +button(type="submit" text="Отправить отзыв" icon="ui--send")
+
+mixin form-product-question()
+  form(class="form form-product-question" id="form-product-question" action=process.env.PRODUCT_QUESTIONS_URL method="POST" data-reset="true")&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    input(type="hidden" name="ELEMENT" value="275731")
+
+    .bg-info-subtle.p-3.fs-4.mb-3 Имя "user" для удачной отправки
+
+    +field(type="text" name="NAME" label="Имя" placeholder="Ваше имя" required=true)
+    +field(type="textarea" name="QUESTION" label="Вопрос" placeholder="Задайте вопрос" required=true).mb-3
+
+    +button(type="submit" text="Задать вопрос" class="w-100")
+
+mixin form-product-preorder()
+  form(class="form form-product-preorder" id="form-product-preorder" action=process.env.PRODUCT_PREORDER_URL method="POST" data-reset="true")&attributes(attributes)
+    p(style="display: none").form-error.text-danger.fw-bold
+    .row.mb-3
+      .col-12.col-lg-6
+        +field(type="text" label="Имя" id="preorder-name" name="USER_NAME" placeholder="Ваше имя" required=true).mb-3
+        +field(type="tel" label="Телефон" id="preorder-phone" name="USER_PHONE" placeholder="+7 (___) ___-__-__" inputmode="tel" icon="ui--phone" tooltip="Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами по интересующему вопросу" data-rule-phone="true" required=true).mb-3
+        +field(type="email" label="Электронная почта" id="preorder-email" name="USER_EMAIL" placeholder="Введите email" required=true).mb-3
+
+      .col-12.col-lg-6
+        +callout().mt-4
+          | Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами по интересующему вопросу
+
+    .row.mb-3
+      .col
+        +field(type="checkbox" label!="С <a href='#'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="preorder-privacy" name="privacy" checked=true required=true)
+
+    .row.mb-3
+      .col-4
+        +button(type="submit" variant="primary" text="Отправить" class="w-100 mt-4")
+
+mixin form-checkout-contacts()
+  -
+    var contactsTypes = [
+      {name: "Физическое лицо", active: true},
+      {name: "Юридическое лицо", active: false}
+    ]
+
+  form(class="form form-checkout-contacts" id="form-checkout-contacts" method="POST" data-validate="false" data-ajax-submit="false")&attributes(attributes)
+    +checkout-tabs(contactsTypes).mb-5
+
+    +checkout-alert()
+      |Если вы зарегистрированы, <a href="#{process.env.AUTH_URL}" class="js-auth-popup">авторизуйтесь</a>, и вам не придется вводить данные о себе.
+
+    fieldset.mb-3
+      +button(tag="a" href="#popup-select-my-requisites" variant="outline-info sm" text="Выбрать из сохраненных реквизитов" class="mb-3" data-fancybox)
+      +popup-select-my-requisites()
+
+      .row.g-3.mb-3
+        .col-lg-4
+          +field(type="text" label="Имя" id="ORDER_PROP_5" name="ORDER_PROP_5" required="required")
+        .col-lg-4
+          +field(type="tel" label="Телефон" icon="ui--phone" id="ORDER_PROP_26" name="ORDER_PROP_26" inputmode="tel" placeholder="+7 (___) ___-__-__" maxlength="18" required="required" data-msg-required="Укажите телефон" data-rule-phone="true" data-msg-phone="Введите корректный номер телефона")
+        .col-lg-4
+          +field(type="email" label="E-mail" id="ORDER_PROP_8" name="ORDER_PROP_8" required="required")
+        .col-md-3
+          +field(type="text" label="ИНН" id="ORDER_PROP_19" name="ORDER_PROP_19" inputmode="numeric" pattern="[0-9]*" required="required")
+        .col-md-3
+          +field(type="text" label="КПП" id="ORDER_PROP_20" name="ORDER_PROP_20" inputmode="numeric" pattern="[0-9]*" required="required")
+        .col-md-6
+          +field(type="text" label="Название организации" id="ORDER_PROP_17" name="ORDER_PROP_17" required="required")
+        .col-md-6
+          +field(type="text" label="Юридический адрес" id="ORDER_PROP_18" name="ORDER_PROP_18" required="required")
+        .col-md-6
+          +field(type="text" label="Фактический адрес" id="ORDER_PROP_25" name="ORDER_PROP_25")
+        .col-md-6
+          +field(type="text" label="Название банка организации" id="ORDER_PROP_21" name="ORDER_PROP_21" required="required")
+        .col-md-6
+          +field(type="text" label="Расчетный счет" id="ORDER_PROP_22" name="ORDER_PROP_22" inputmode="numeric" required="required")
+        .col-md-6
+          +field(type="text" label="Корреспондентский счет" id="ORDER_PROP_23" name="ORDER_PROP_23" inputmode="numeric" pattern="[0-9]*" required="required")
+        .col-md-6
+          +field(type="text" label="БИК" id="ORDER_PROP_24" name="ORDER_PROP_24" inputmode="numeric" pattern="[0-9]*" required="required")
+
+      .row.g-3.mb-3
+        .col-md-4
+          +field(type="text" label="Серия и номер паспорта" id="ORDER_PROP_xPASSPORT_NO" name="ORDER_PROP_xPASSPORT_NO")
+        .col-md-4
+          +field(type="datepicker" label="Дата выдачи" icon="ui--calendar" id="ORDER_PROP_xPASSPORT_DATE" name="ORDER_PROP_xPASSPORT_DATE")
+        .col-12
+          +field(type="text" label="Кем выдан" id="ORDER_PROP_xPASSPORT_TEXT" name="ORDER_PROP_xPASSPORT_TEXT")
+        .col-md-8
+          +field(type="text" label="Адрес регистрации" id="ORDER_PROP_xREGISTER_ADDRESS" name="ORDER_PROP_xREGISTER_ADDRESS")
+        .col-md-4.col-lg-3
+          +field(type="text" label="ИНН" id="ORDER_PROP_xPERSON_INN" name="ORDER_PROP_xPERSON_INN" inputmode="numeric" pattern="[0-9]*")
+
+      +checkout-alert()
+        |Данные паспорта, ИНН и адрес прописки требуются для таможенного оформления. Если указать некорректных данные, товар может не пройти таможню и оплату вернуть не получится.
+
+    fieldset.mb-3
+      +field(type="checkbox" label="Подписаться на рассылку" id="preorder-privacy" name="privacy" checked=true required=true)
+      +field(type="checkbox" label!="С <a href='#'>политикой обработки и защиты персональных данных</a> ознакомлен и согласен" id="preorder-privacy" name="privacy" checked=true required=true)
+
+    fieldset
+      .row.g-3.g-lg-4.mb-3
+        .col-4.col-lg-6
+          +button(variant="secondary sm" text="Назад" icon="ui--chevron-left")
+        .col-8.col-lg-6.d-flex.justify-content-end
+          +button(variant="primary sm" text="Способ получения" iconRight="ui--chevron-right" disabled)
+      .form-text На следующем этапе выберите пункт самовывоза или оформите доставку
+
+mixin form-checkout-delivery()
+  -
+    var deliveryTypes = [
+      {name: "Самовывоз", active: true},
+      {name: "Доставка", active: false}
+    ]
+
+    var PICKUP_POINTS_LIST = [
+      {
+        "type": "OGO",
+        "coords": [
+          "55.7932",
+          "37.559724"
+        ],
+        "title": "Театральная аллея, д.3, стр.1",
+        "pointType": "Гипермаркеты ОГО!",
+        "metro": "Динамо",
+        "metroColor": "#4BAF4F",
+        "worktime": "Ежедневно 10:00 - 22:00",
+        "payment": {
+          "PRIVATE": "При получении",
+          "LEGAL": ""
+        },
+        "date": "доставим сегодня к 20:00",
+        "options": [
+        {
+          "SELECTED": true,
+          "value": "сегодня после 20:00",
+          "timestamp": "1735146000"
+          },
+        {
+          "SELECTED": false,
+          "value": "завтра после 10:00",
+          "timestamp": "1735196400"
+          }
+        ],
+        "price": "0",
+        "deliveryID": "120",
+        "timestamp": 1735146000,
+        "DELIVERY_TYPE": "ogopickup",
+        "uidstore": "66170b46-eb94-11e1-9f21-003048d9cfd1",
+        "uidsection": "66170b45-eb94-11e1-9f21-003048d9cfd1",
+        "item_stock_uid": "{\"1649628\":\"654b664f-d33b-4d87-a21b-a86ccb5156ad\"}",
+        "cityid": "none",
+        "address": "Театральная аллея, д. 3, стр. 1",
+        "seeMoreLink": "\/ajax\/new\/storeDetail.php?storeCode=dinamo",
+        "storeLink": "\/shops\/dinamo\/",
+        "ID": "6f9d6ff2ee8182eec6c3135045c9c856",
+        "dateText": "<b>Сегодня<\/b> 25.12",
+        "dateAfter": "после 25 декабря",
+        "RANDOM_KEY": "Yx4N4F3A48",
+        "signedData": "a:25:{s:4:\"type\";s:3:\"OGO\";s:6:\"coords\";a:2:{i:0;s:7:\"55.7932\";i:1;s:9:\"37.559724\";}s:5:\"title\";s:49:\"Театральная аллея, д.3, стр.1\";s:9:\"pointType\";s:32:\"Гипермаркеты ОГО!\";s:5:\"metro\";s:12:\"Динамо\";s:10:\"metroColor\";s:7:\"#4BAF4F\";s:8:\"worktime\";s:32:\"Ежедневно 10:00 - 22:00\";s:7:\"payment\";a:2:{s:7:\"PRIVATE\";s:25:\"При получении\";s:5:\"LEGAL\";s:0:\"\";}s:4:\"date\";s:40:\"доставим сегодня к 20:00\";s:7:\"options\";a:2:{i:0;a:3:{s:8:\"SELECTED\";b:1;s:5:\"value\";s:31:\"сегодня после 20:00\";s:9:\"timestamp\";s:10:\"1735146000\";}i:1;a:3:{s:8:\"SELECTED\";b:0;s:5:\"value\";s:29:\"завтра после 10:00\";s:9:\"timestamp\";s:10:\"1735196400\";}}s:5:\"price\";s:1:\"0\";s:10:\"deliveryID\";s:3:\"120\";s:9:\"timestamp\";i:1735146000;s:13:\"DELIVERY_TYPE\";s:9:\"ogopickup\";s:8:\"uidstore\";s:36:\"66170b46-eb94-11e1-9f21-003048d9cfd1\";s:10:\"uidsection\";s:36:\"66170b45-eb94-11e1-9f21-003048d9cfd1\";s:14:\"item_stock_uid\";s:50:\"{\"1649628\":\"654b664f-d33b-4d87-a21b-a86ccb5156ad\"}\";s:6:\"cityid\";s:4:\"none\";s:7:\"address\";s:51:\"Театральная аллея, д. 3, стр. 1\";s:11:\"seeMoreLink\";s:42:\"\/ajax\/new\/storeDetail.php?storeCode=dinamo\";s:9:\"storeLink\";s:14:\"\/shops\/dinamo\/\";s:2:\"ID\";s:32:\"6f9d6ff2ee8182eec6c3135045c9c856\";s:8:\"dateText\";s:27:\"<b>Сегодня<\/b> 25.12\";s:9:\"dateAfter\";s:28:\"после 25 декабря\";s:10:\"RANDOM_KEY\";s:10:\"Yx4N4F3A48\";}.48a82675ca0f5a52146adcf24fc74647b06a039797ce1ee1c486de39c88dbaab"
+      },
+      {
+        "type": "OGO",
+        "coords": [
+          "55.751910",
+          "37.685875"
+        ],
+        "title": "Золоторожский Вал, д. 8",
+        "pointType": "Гипермаркеты ОГО!",
+        "metro": "Площадь Ильича",
+        "metroColor": "#ffcb31",
+        "worktime": "Ежедневно 10:00 - 22:00",
+        "payment": {
+          "PRIVATE": "При получении",
+          "LEGAL": ""
+        },
+        "date": "доставим сегодня к 19:00",
+        "options": [
+          {
+            "SELECTED": false,
+            "value": "сегодня после 19:00",
+            "timestamp": "1735142400"
+          },
+          {
+            "SELECTED": false,
+            "value": "завтра после 10:00",
+            "timestamp": "1735196400"
+          }
+        ],
+        "price": "0",
+        "deliveryID": "121",
+        "timestamp": 1735142400,
+        "DELIVERY_TYPE": "ogopickup",
+        "uidstore": "e64b3c86-2dbc-11df-bca8-003048d9cfd1",
+        "uidsection": "e64b3c85-2dbc-11df-bca8-003048d9cfd1",
+        "item_stock_uid": "{\"1649628\":\"654b664f-d33b-4d87-a21b-a86ccb5156ad\"}",
+        "cityid": "none",
+        "address": "Золоторожский Вал, д. 8",
+        "seeMoreLink": "\/ajax\/new\/storeDetail.php?storeCode=ploschad-ilyicha",
+        "storeLink": "\/shops\/ploschad-ilyicha\/",
+        "ID": "d69f44e92b3c496578135f8222b93043",
+        "dateText": "<b>Сегодня<\/b> 25.12",
+        "dateAfter": "после 25 декабря",
+        "RANDOM_KEY": "UTYc9W647M",
+        "signedData": "a:25:{s:4:\"type\";s:3:\"OGO\";s:6:\"coords\";a:2:{i:0;s:9:\"55.751910\";i:1;s:9:\"37.685875\";}s:5:\"title\";s:40:\"Золоторожский Вал, д. 8\";s:9:\"pointType\";s:32:\"Гипермаркеты ОГО!\";s:5:\"metro\";s:27:\"Площадь Ильича\";s:10:\"metroColor\";s:7:\"#ffcb31\";s:8:\"worktime\";s:32:\"Ежедневно 10:00 - 22:00\";s:7:\"payment\";a:2:{s:7:\"PRIVATE\";s:25:\"При получении\";s:5:\"LEGAL\";s:0:\"\";}s:4:\"date\";s:40:\"доставим сегодня к 19:00\";s:7:\"options\";a:2:{i:0;a:3:{s:8:\"SELECTED\";b:0;s:5:\"value\";s:31:\"сегодня после 19:00\";s:9:\"timestamp\";s:10:\"1735142400\";}i:1;a:3:{s:8:\"SELECTED\";b:0;s:5:\"value\";s:29:\"завтра после 10:00\";s:9:\"timestamp\";s:10:\"1735196400\";}}s:5:\"price\";s:1:\"0\";s:10:\"deliveryID\";s:3:\"121\";s:9:\"timestamp\";i:1735142400;s:13:\"DELIVERY_TYPE\";s:9:\"ogopickup\";s:8:\"uidstore\";s:36:\"e64b3c86-2dbc-11df-bca8-003048d9cfd1\";s:10:\"uidsection\";s:36:\"e64b3c85-2dbc-11df-bca8-003048d9cfd1\";s:14:\"item_stock_uid\";s:50:\"{\"1649628\":\"654b664f-d33b-4d87-a21b-a86ccb5156ad\"}\";s:6:\"cityid\";s:4:\"none\";s:7:\"address\";s:40:\"Золоторожский Вал, д. 8\";s:11:\"seeMoreLink\";s:52:\"\/ajax\/new\/storeDetail.php?storeCode=ploschad-ilyicha\";s:9:\"storeLink\";s:24:\"\/shops\/ploschad-ilyicha\/\";s:2:\"ID\";s:32:\"d69f44e92b3c496578135f8222b93043\";s:8:\"dateText\";s:27:\"<b>Сегодня<\/b> 25.12\";s:9:\"dateAfter\";s:28:\"после 25 декабря\";s:10:\"RANDOM_KEY\";s:10:\"UTYc9W647M\";}.b4fe5a5edae7ec148af3d1d394dc741c18e75a1810629bf9cdec549ccc1189b1"
+      },
+      {
+        "DELIVERY_TYPE": "СДЭК",
+        "PERIOD_DELIVERY": "2-3",
+        "type": "PVZ",
+        "API_CODE": "TVR48",
+        "coords": [
+          "56.840631",
+          "35.912893"
+        ],
+        "title": "Тверской проспект, 13",
+        "pointType": "Терминалы CDEK",
+        "metro": "",
+        "worktime": "Пн-Пт 09:00-21:00, Сб 09:00-17:00",
+        "payment": {
+          "PRIVATE": "Банковский перевод<br>Онлайн",
+          "LEGAL": "Безналичный расчет"
+        },
+        "date": "02.01",
+        "options": null,
+        "deliveryID": "99",
+        "serviceUID": "9b813e58-7c20-11e2-a59f-003048d9cfd0",
+        "price": "435&nbsp;₽",
+        "note": "Войти в отделение банка Совкомбанк через центральный вход, на 1 этаже расположен постамат.",
+        "timestamp": 1735765200,
+        "uidstore": "e64b3c86-2dbc-11df-bca8-003048d9cfd1",
+        "uidsection": "e64b3c85-2dbc-11df-bca8-003048d9cfd1",
+        "cityid": "245",
+        "address": "Тверской проспект, 13",
+        "ID": "24f7073611cf1217ced9544d0e72d71a",
+        "PRICE_VALUE": "435",
+        "dateText": "Четверг 02.01",
+        "dateAfter": "после 02 января",
+        "RANDOM_KEY": "OCr3z4oBsr",
+        "signedData": "a:26:{s:13:\"DELIVERY_TYPE\";s:8:\"СДЭК\";s:15:\"PERIOD_DELIVERY\";s:3:\"2-3\";s:4:\"type\";s:3:\"PVZ\";s:8:\"API_CODE\";s:5:\"TVR48\";s:6:\"coords\";a:2:{i:0;s:9:\"56.840631\";i:1;s:9:\"35.912893\";}s:5:\"title\";s:37:\"Тверской проспект, 13\";s:9:\"pointType\";s:23:\"Терминалы CDEK\";s:5:\"metro\";s:0:\"\";s:8:\"worktime\";s:39:\"Пн-Пт 09:00-21:00, Сб 09:00-17:00\";s:7:\"payment\";a:2:{s:7:\"PRIVATE\";s:51:\"Банковский перевод<br>Онлайн\";s:5:\"LEGAL\";s:35:\"Безналичный расчет\";}s:4:\"date\";s:5:\"02.01\";s:7:\"options\";N;s:10:\"deliveryID\";s:2:\"99\";s:10:\"serviceUID\";s:36:\"9b813e58-7c20-11e2-a59f-003048d9cfd0\";s:5:\"price\";s:12:\"435&nbsp;₽\";s:4:\"note\";s:165:\"Войти в отделение банка Совкомбанк через центральный вход, на 1 этаже расположен постамат.\";s:9:\"timestamp\";i:1735765200;s:8:\"uidstore\";s:36:\"e64b3c86-2dbc-11df-bca8-003048d9cfd1\";s:10:\"uidsection\";s:36:\"e64b3c85-2dbc-11df-bca8-003048d9cfd1\";s:6:\"cityid\";s:3:\"245\";s:7:\"address\";s:37:\"Тверской проспект, 13\";s:2:\"ID\";s:32:\"24f7073611cf1217ced9544d0e72d71a\";s:11:\"PRICE_VALUE\";s:3:\"435\";s:8:\"dateText\";s:20:\"Четверг 02.01\";s:9:\"dateAfter\";s:26:\"после 02 января\";s:10:\"RANDOM_KEY\";s:10:\"OCr3z4oBsr\";}.8716df1d71fb69c8232feb486c356d59fa4243a51022d9ee75b8baead9490367"
+      },
+      {
+        "DELIVERY_TYPE": "СДЭК",
+        "PERIOD_DELIVERY": "2-3",
+        "type": "PVZ",
+        "API_CODE": "TVR52",
+        "coords": [
+          "56.891042",
+          "35.908438"
+        ],
+        "title": "ул. Дачная, 76",
+        "pointType": "Терминалы CDEK",
+        "metro": "",
+        "worktime": "Пн-Вс 09:00-20:00",
+        "payment": {
+          "PRIVATE": "Банковский перевод<br>Онлайн",
+          "LEGAL": "Безналичный расчет"
+        },
+        "date": "02.01",
+        "options": null,
+        "deliveryID": "99",
+        "serviceUID": "9b813e58-7c20-11e2-a59f-003048d9cfd0",
+        "price": "435&nbsp;₽",
+        "note": "Войти в супермаркет Магнит Косметик через центральный вход, на 1 этаже расположен постамат.",
+        "timestamp": 1735765200,
+        "uidstore": "e64b3c86-2dbc-11df-bca8-003048d9cfd1",
+        "uidsection": "e64b3c85-2dbc-11df-bca8-003048d9cfd1",
+        "cityid": "245",
+        "address": "ул. Дачная, 76",
+        "ID": "d84a28fd714e36acde64da08a52cf4c6",
+        "PRICE_VALUE": "435",
+        "dateText": "Четверг 02.01",
+        "dateAfter": "после 02 января",
+        "RANDOM_KEY": "mKiDO5l1O5",
+        "signedData": "a:26:{s:13:\"DELIVERY_TYPE\";s:8:\"СДЭК\";s:15:\"PERIOD_DELIVERY\";s:3:\"2-3\";s:4:\"type\";s:3:\"PVZ\";s:8:\"API_CODE\";s:5:\"TVR52\";s:6:\"coords\";a:2:{i:0;s:9:\"56.891042\";i:1;s:9:\"35.908438\";}s:5:\"title\";s:22:\"ул. Дачная, 76\";s:9:\"pointType\";s:23:\"Терминалы CDEK\";s:5:\"metro\";s:0:\"\";s:8:\"worktime\";s:21:\"Пн-Вс 09:00-20:00\";s:7:\"payment\";a:2:{s:7:\"PRIVATE\";s:51:\"Банковский перевод<br>Онлайн\";s:5:\"LEGAL\";s:35:\"Безналичный расчет\";}s:4:\"date\";s:5:\"02.01\";s:7:\"options\";N;s:10:\"deliveryID\";s:2:\"99\";s:10:\"serviceUID\";s:36:\"9b813e58-7c20-11e2-a59f-003048d9cfd0\";s:5:\"price\";s:12:\"435&nbsp;₽\";s:4:\"note\";s:167:\"Войти в супермаркет Магнит Косметик через центральный вход, на 1 этаже расположен постамат.\";s:9:\"timestamp\";i:1735765200;s:8:\"uidstore\";s:36:\"e64b3c86-2dbc-11df-bca8-003048d9cfd1\";s:10:\"uidsection\";s:36:\"e64b3c85-2dbc-11df-bca8-003048d9cfd1\";s:6:\"cityid\";s:3:\"245\";s:7:\"address\";s:22:\"ул. Дачная, 76\";s:2:\"ID\";s:32:\"d84a28fd714e36acde64da08a52cf4c6\";s:11:\"PRICE_VALUE\";s:3:\"435\";s:8:\"dateText\";s:20:\"Четверг 02.01\";s:9:\"dateAfter\";s:26:\"после 02 января\";s:10:\"RANDOM_KEY\";s:10:\"mKiDO5l1O5\";}.5ecf9deaf7a3a2253e915382ab348cf6c5ce6af34ddd994bbf3ae8d3d676bfbf"
+      },
+      {
+        "DELIVERY_TYPE": "СДЭК",
+        "PERIOD_DELIVERY": "2-3",
+        "type": "PVZ",
+        "API_CODE": "TVR20",
+        "coords": [
+          "56.846115",
+          "35.906668"
+        ],
+        "title": "ул. Ерофеева, 2",
+        "pointType": "Терминалы CDEK",
+        "metro": "",
+        "worktime": "Пн-Пт 10:00-20:00, Сб-Вс 10:00-18:00",
+        "payment": {
+          "PRIVATE": "Банковский перевод<br>Онлайн",
+          "LEGAL": "Безналичный расчет"
+        },
+        "date": "02.01",
+        "options": null,
+        "deliveryID": "99",
+        "serviceUID": "9b813e58-7c20-11e2-a59f-003048d9cfd0",
+        "price": "435&nbsp;₽",
+        "note": "Ост. Площадь Капошвара, рядом с автозаправкой Роснефть.",
+        "timestamp": 1735765200,
+        "uidstore": "e64b3c86-2dbc-11df-bca8-003048d9cfd1",
+        "uidsection": "e64b3c85-2dbc-11df-bca8-003048d9cfd1",
+        "cityid": "245",
+        "address": "ул. Ерофеева, 2",
+        "ID": "20fbee9ac5cde9fde27287e94ff08aa1",
+        "PRICE_VALUE": "435",
+        "dateText": "Четверг 02.01",
+        "dateAfter": "после 02 января",
+        "RANDOM_KEY": "uUQgMjnrrw",
+        "signedData": "a:26:{s:13:\"DELIVERY_TYPE\";s:8:\"СДЭК\";s:15:\"PERIOD_DELIVERY\";s:3:\"2-3\";s:4:\"type\";s:3:\"PVZ\";s:8:\"API_CODE\";s:5:\"TVR20\";s:6:\"coords\";a:2:{i:0;s:9:\"56.846115\";i:1;s:9:\"35.906668\";}s:5:\"title\";s:25:\"ул. Ерофеева, 2\";s:9:\"pointType\";s:23:\"Терминалы CDEK\";s:5:\"metro\";s:0:\"\";s:8:\"worktime\";s:44:\"Пн-Пт 10:00-20:00, Сб-Вс 10:00-18:00\";s:7:\"payment\";a:2:{s:7:\"PRIVATE\";s:51:\"Банковский перевод<br>Онлайн\";s:5:\"LEGAL\";s:35:\"Безналичный расчет\";}s:4:\"date\";s:5:\"02.01\";s:7:\"options\";N;s:10:\"deliveryID\";s:2:\"99\";s:10:\"serviceUID\";s:36:\"9b813e58-7c20-11e2-a59f-003048d9cfd0\";s:5:\"price\";s:12:\"435&nbsp;₽\";s:4:\"note\";s:101:\"Ост. Площадь Капошвара, рядом с автозаправкой Роснефть.\";s:9:\"timestamp\";i:1735765200;s:8:\"uidstore\";s:36:\"e64b3c86-2dbc-11df-bca8-003048d9cfd1\";s:10:\"uidsection\";s:36:\"e64b3c85-2dbc-11df-bca8-003048d9cfd1\";s:6:\"cityid\";s:3:\"245\";s:7:\"address\";s:25:\"ул. Ерофеева, 2\";s:2:\"ID\";s:32:\"20fbee9ac5cde9fde27287e94ff08aa1\";s:11:\"PRICE_VALUE\";s:3:\"435\";s:8:\"dateText\";s:20:\"Четверг 02.01\";s:9:\"dateAfter\";s:26:\"после 02 января\";s:10:\"RANDOM_KEY\";s:10:\"uUQgMjnrrw\";}.c9229e11986ae7679f1fd26f1ff0e0d601517c0dba6245cfaa4c3ded0efb5a0a"
+      }
+    ]
+
+    var deliveryOGO = PICKUP_POINTS_LIST.filter((point) => point.type == "OGO")
+    var deliveryPVZ = PICKUP_POINTS_LIST.filter((point) => point.type == "PVZ")
+
+  form(class="form form-checkout-delivery" id="form-checkout-delivery" method="POST" data-validate="false" data-ajax-submit="false")&attributes(attributes)
+    +checkout-tabs(deliveryTypes).mb-5
+
+    fieldset.mb-3
+      legend Пункты выдачи заказов
+
+      +checkout-select-city().mb-3
+
+      +checkout-alert()
+        |В выбранном вами населенном пункте нет доступных пунктов самовывоза, воспользуйтесь <a href="#delivery">страницей доставки</a>
+
+      .row.row-cols-1.row-cols-md-2.align-items-stretch.g-3.mb-5
+        .col
+          a(href="#points-ogo").checkout-delivery__type.is-active
+            span.checkout-delivery__type-title Гипермаркеты и пункты выдачи ОГО!
+            span.checkout-delivery__type-date Среда 20.11
+            span.checkout-delivery__type-price бесплатно
+        .col
+          a(href="#points-pvz").checkout-delivery__type
+            span.checkout-delivery__type-title Постаматы и ПВЗ
+            span.checkout-delivery__type-date Понедельник 25.11
+            span.checkout-delivery__type-price от 725 ₽
+
+      .mb-3
+        h4.mb-2 Вы выбрали:
+        .fs-4 м. Динамо, Театральная аллея, д.3, стр.1, Гипермаркеты ОГО!<br><b>20.11 после 10:00</b>
+
+      .btn-group.btn-group-sm.mb-3
+        +button(variant="outline-info" text="На карте" class="active" icon="ui--location" iconSize="sm")
+        +button(variant="outline-info" text="Списком" icon="ui--menu-burger" iconSize="sm")
+
+      .checkout-map
+        .ymap
+          .ymap__map(style="width: 100%" data-center="55.7932, 37.559724")
+
+      +checkout-delivery-points(deliveryPVZ)
+      +checkout-delivery-points(deliveryOGO)
+
+    fieldset.mb-3
+      legend Адрес доставки
+
+      +button(tag="a" href="#popup-select-my-address" variant="outline-info sm" text="Выбрать из сохраненных адресов" class="mb-3" data-fancybox)
+      +popup-select-my-address()
+
+      .form-text.mb-3 Введите адрес, чтобы увидеть сроки и стоимость
+
+      p.mb-3.fs-4
+        span Электросталь
+        span мира
+        span д. 1
+        span корп. 1
+        span кв. 1
+        +button(variant="outline-ino xs" text="Изменить" class="ms-3")
+
+      +checkout-select-city().mb-3
+
+      .row.g-3.mb-3
+        .col-lg-6
+          +field(type="text" label="Улица")
+      .row.g-3.mb-3
+        .col-md-4.col-lg-2
+          +field(type="text" label="Дом")
+        .col-md-4.col-lg-2
+          +field(type="text" label="Корпус")
+        .col-md-4.col-lg-2
+          +field(type="text" label="Квартира")
+        .col-md-4.col-lg-2
+          +field(type="text" label="Домофон")
+        .col-md-4.col-lg-2
+          +field(type="text" label="Этаж")
+      .row.g-3
+        .col-lg-5
+          +button(type="button" variant="secondary sm" text="Рассчитать стоимость доставки")
+
+      h4.mb-2 Служба доставки
+      +checkout-delivery-service(true)
+
+    fieldset
+      .row.g-3.g-lg-4.mb-3
+        .col-4.col-lg-6
+          +button(variant="secondary sm" text="Назад" icon="ui--chevron-left")
+        .col-8.col-lg-6.d-flex.justify-content-end
+          +button(variant="primary sm" text="Оформить заказ" iconRight="ui--chevron-right" disabled)
+      .form-text На следующем этапе проверьте все данные и подтвердите заказ

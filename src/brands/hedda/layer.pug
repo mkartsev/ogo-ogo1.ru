@@ -1,0 +1,228 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "hedda"
+    page.title = "Бренд-зона Hedda"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.hedda
+    section.hedda-header
+      img.hedda-logo(src="./img/logo.svg", alt="Hedda")
+      button.hedda-burger(type="button")
+        span
+        span
+        span
+      nav.hedda-menu
+        ul
+          li
+            a.hedda-menu__toggle(href="#") Верхняя одежда
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимние комбинезоны HEDDA EDD4
+              li
+                a(href="#") Зимние комбинезоны HEDDA EDD6
+              li
+                a(href="#") Зимние парки Hedda
+              li
+                a(href="#") Зимние утепленные брюки HEDDA
+              li
+                a(href="#") Демисезонная одежда Hedda
+          li
+            a.hedda-menu__toggle.is-active(href="#") Второй слой
+            ul.hedda-menu__inner
+              li
+                a(href="#") Толстовка с капюшоном
+              li
+                a(href="#") Толстовка на молнии
+              li
+                a(href="#") Брюки флисовые
+              li
+                a(href="#") Комбинезоны флисовые
+          li
+            a.hedda-menu__toggle(href="#") Для мальчиков
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимняя верхняя одежда
+              li
+                a(href="#") Демисезонная одежда
+              li
+                a(href="#") Флисовая одежда
+              li
+                a(href="#") Манишки флисовые
+              li
+                a(href="#") Краги
+          li
+            a.hedda-menu__toggle(href="#") Для девочек
+            ul.hedda-menu__inner
+              li
+                a(href="#") Зимняя верхняя одежда
+              li
+                a(href="#") Демисезонная одежда
+              li
+                a(href="#") Флисовая одежда
+              li
+                a(href="#") Манишки флисовые
+              li
+                a(href="#") Краги
+          li
+            a.hedda-menu__toggle(href="#") Аксессуары
+            ul.hedda-menu__inner
+              li
+                a(href="#") Манишки
+              li
+                a(href="#") Краги
+              li
+                a(href="#") Шапки
+              li
+                a(href="#") Снуды
+
+    section.hedda-section
+      h2.hedda-inner__title.hedda-inner__title--red Второй слой
+      .hedda-categories
+        a.hedda-category.js-smooth-scroll(href="#tolstovka-na-molnii")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/tolstovka-na-molnii.jpg", alt="Толстовка на молнии")
+          span.hedda-category__title Толстовка на молнии
+        a.hedda-category.js-smooth-scroll(href="#tolstovka-s-kapushonom")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/tolstovka-s-kapushonom.jpg", alt="Толстовка с капюшоном")
+          span.hedda-category__title Толстовка с капюшоном
+        a.hedda-category.js-smooth-scroll(href="#bryuki-flis")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/bryuki-flis.jpg", alt="Брюки флисовые")
+          span.hedda-category__title Брюки флисовые
+        a.hedda-category.js-smooth-scroll(href="#kombinezony-flis")
+          .hedda-category__img-wrapper
+            img.hedda-category__img(src="./img/kombinezony-flis.jpg", alt="Комбинезон флисовый")
+          span.hedda-category__title Комбинезон флисовый
+
+    section.hedda-section
+      p
+        b Детская одежда из флиса HEDDA
+        |  выполнена из высококачественного материала и произведена в России. Преимущества одежды из флиса для детей очевидны: она легкая, мягкая и удобная, не сковывает движения ребенка и обеспечивает надежную защиту от холода. Флис отлично сохраняет тепло, но при этом хорошо вентилируется и быстро высыхает. Уход за изделиями из флиса очень простой. Они могут легко стираться в стиральной машине в домашних условиях при температуре не выше 30 градусов.
+      .hedda-advantages
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-7.svg", alt="Всесезонная")
+          span.hedda-advantage__title Всесезонная
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-8.svg", alt="Дышащий материал")
+          span.hedda-advantage__title Дышащий материал
+        .hedda-advantage
+          .hedda-advantage__icon
+            img(src="./img/advantage-9.svg", alt="Не сковывает движения")
+          span.hedda-advantage__title Не сковывает движения
+
+    section.hedda-section#tolstovka-na-molnii
+      article.hedda-item
+        h3.hedda-item__title Толстовка на молнии HEDDA
+        .hedda-item__gallery
+          img#flis-tolstovka-na-molnii(src="./img/flis-tolstovka-na-molnii-deep-blue.jpg", alt="Толстовка на молнии HEDDA")
+        .hedda-item__colors
+          h4.hedda-item__subtitle Цвета
+          .hedda-item__thumbs
+            a.hedda-item__thumb.is-active(href="./img/flis-tolstovka-na-molnii-deep-blue.jpg", data-target-img="flis-tolstovka-na-molnii")
+              img(src="./img/flis-tolstovka-na-molnii-deep-blue-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/flis-tolstovka-na-molnii-lila.jpg", data-target-img="flis-tolstovka-na-molnii")
+              img(src="./img/flis-tolstovka-na-molnii-lila-thumb.png", alt)
+        .hedda-item__sizes
+          h4.hedda-item__subtitle
+            | Размерный ряд 
+            a.hedda-button.hedda-button--small.hedda-button--gray(href="#") Таблица размеров
+          .mt-3
+            .hedda-item__sizes-grid
+              span 92
+              span 98
+              span 104
+              span 110
+              span 116
+            div
+              a.hedda-button(href="#") Выбрать
+
+    section.hedda-section#tolstovka-s-kapushonom
+      article.hedda-item
+        h3.hedda-item__title Толстовка с капюшоном HEDDA
+        .hedda-item__gallery
+          img#flis-tolstovka-s-kapushonom(src="./img/flis-tolstovka-s-kapushonom-lila.jpg", alt="Толстовка с капюшоном HEDDA")
+        .hedda-item__colors
+          h4.hedda-item__subtitle Цвета
+          .hedda-item__thumbs
+            a.hedda-item__thumb.is-active(href="./img/flis-tolstovka-s-kapushonom-lila.jpg", data-target-img="flis-tolstovka-s-kapushonom")
+              img(src="./img/flis-tolstovka-s-kapushonom-lila-thumb.png", alt)
+        .hedda-item__sizes
+          h4.hedda-item__subtitle
+            | Размерный ряд 
+            a.hedda-button.hedda-button--small.hedda-button--gray(href="#") Таблица размеров
+          .mt-3
+            .hedda-item__sizes-grid
+              span 92
+              span 98
+              span 104
+              span 110
+              span 116
+            div
+              a.hedda-button(href="#") Выбрать
+
+    section.hedda-section#bryuki-flis
+      article.hedda-item
+        h3.hedda-item__title Брюки флисовые HEDDA
+        .hedda-item__gallery
+          img#flis-bryuki(src="./img/flis-bryuki-deep-blue.jpg", alt="Брюки флисовые HEDDA")
+        .hedda-item__colors
+          h4.hedda-item__subtitle Цвета
+          .hedda-item__thumbs
+            a.hedda-item__thumb.is-active(href="./img/flis-bryuki-deep-blue.jpg", data-target-img="flis-bryuki")
+              img(src="./img/flis-bryuki-deep-blue-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/flis-bryuki-lila.jpg", data-target-img="flis-bryuki")
+              img(src="./img/flis-bryuki-lila-thumb.png", alt)
+        .hedda-item__sizes
+          h4.hedda-item__subtitle
+            | Размерный ряд 
+            a.hedda-button.hedda-button--small.hedda-button--gray(href="#") Таблица размеров
+          .mt-3
+            .hedda-item__sizes-grid
+              span 92
+              span 98
+              span 104
+              span 110
+              span 116
+            div
+              a.hedda-button(href="#") Выбрать
+
+    section.hedda-section#kombinezony-flis
+      article.hedda-item
+        h3.hedda-item__title Комбинезон флисовый HEDDA
+        .hedda-item__gallery
+          img#flis-kombinezony(src="./img/flis-kombinezony-lila.jpg", alt="Комбинезон флисовый HEDDA")
+        .hedda-item__colors
+          h4.hedda-item__subtitle Цвета
+          .hedda-item__thumbs
+            a.hedda-item__thumb.is-active(href="./img/flis-kombinezony-lila.jpg", data-target-img="flis-kombinezony")
+              img(src="./img/flis-kombinezony-lila-thumb.png", alt)
+            a.hedda-item__thumb(href="./img/flis-kombinezony-deep-blue.jpg", data-target-img="flis-kombinezony")
+              img(src="./img/flis-kombinezony-deep-blue-thumb.png", alt)
+        .hedda-item__sizes
+          h4.hedda-item__subtitle
+            | Размерный ряд 
+            a.hedda-button.hedda-button--small.hedda-button--gray(href="#") Таблица размеров
+          .mt-3
+            .hedda-item__sizes-grid
+              span 92
+              span 98
+              span 104
+              span 110
+              span 116
+            div
+              a.hedda-button(href="#") Выбрать

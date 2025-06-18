@@ -1,0 +1,46 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "inglesina"
+    page.title = "Бренд-зона Inglesina"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.inglesina
+    .inglesina-logo
+      img(src="./img/logo.png", alt)
+    .inglesina-banner
+      .h2.text-center [стандартный баннер]
+    .inglesina-grid
+      a.inglesina-card(href="#")
+        img.inglesina-card__img(srcset="./img/inglesina01.jpg, ./img/inglesina01@2x.jpg 2x", src="./img/inglesina01.jpg", alt="Коляски классические")
+        span.inglesina-card__title Коляски классические
+      a.inglesina-card(href="#")
+        img.inglesina-card__img(srcset="./img/inglesina02.jpg, ./img/inglesina02@2x.jpg 2x", src="./img/inglesina02.jpg", alt="Коляски 4 в 1")
+        span.inglesina-card__title Коляски 4 в 1
+      a.inglesina-card(href="#")
+        img.inglesina-card__img(srcset="./img/inglesina03.jpg, ./img/inglesina03@2x.jpg 2x", src="./img/inglesina03.jpg", alt="Коляски 2 в 1")
+        span.inglesina-card__title Коляски 2 в 1
+      a.inglesina-card(href="#")
+        img.inglesina-card__img(srcset="./img/inglesina04.jpg, ./img/inglesina04@2x.jpg 2x", src="./img/inglesina04.jpg", alt="Коляски прогулочные")
+        span.inglesina-card__title Коляски прогулочные
+      a.inglesina-card(href="#")
+        img.inglesina-card__img(srcset="./img/inglesina05.jpg, ./img/inglesina05@2x.jpg 2x", src="./img/inglesina05.jpg", alt="линия для дома")
+        span.inglesina-card__title линия для дома
+      a.inglesina-card(href="#")
+        img.inglesina-card__img(srcset="./img/inglesina06.jpg, ./img/inglesina06@2x.jpg 2x", src="./img/inglesina06.jpg", alt="автокресла")
+        span.inglesina-card__title автокресла
+    .inglesina-categories
+      a.inglesina-category(href="#") Сумки для колясок
+      a.inglesina-category(href="#") Переноски-кенгуру
+      a.inglesina-category(href="#") Аксессуары к коляскам
+      a.inglesina-category(href="#") Аксессуары к автокреслам

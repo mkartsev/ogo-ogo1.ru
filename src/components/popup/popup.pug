@@ -1,0 +1,245 @@
+include ../button/button
+include ../forms/forms
+include ../listing/listing
+include ../product/product
+include ../product-card/product-card
+include ../shops-map/shops-map
+include ../pickup-map/pickup-map
+
+mixin popup(id, title)
+  .popup(id= id)&attributes(attributes)
+    p.popup-title= title
+    .popup-content
+      block
+
+mixin popup-auth()
+  .popup(class="popup--sm" id="popup-auth")&attributes(attributes)
+    p.popup-title Войти
+    .popup-content
+      +form-auth().w-100.order-2
+      p.mb-3.order-1 Впервые у нас?
+        a(href=process.env.REGISTRATION_URL).js-registration-popup Зарегистрироваться
+
+mixin popup-registration()
+  .popup(class="popup--md" id="popup-registration")&attributes(attributes)
+    p.popup-title Регистрация
+    .popup-content
+      +form-registration().order-2
+      p.mb-3.order-1
+        a(href=process.env.AUTH_URL).js-auth-popup Войти
+
+mixin popup-recovery()
+  .popup(class="popup--sm" id="popup-recovery")&attributes(attributes)
+    p.popup-title Восстановить пароль
+    .popup-content
+      +form-recovery()
+
+mixin popup-complain()
+  .popup(class="popup--md" id="popup-complain")&attributes(attributes)
+    p.popup-title Пожаловаться
+    .popup-content
+      +form-complain()
+
+mixin popup-callback()
+  .popup(class="popup--md" id="popup-callback")&attributes(attributes)
+    p.popup-title Заказать звонок
+    .popup-content
+      +form-callback()
+
+mixin popup-question()
+  .popup(class="popup--md" id="popup-question")&attributes(attributes)
+    p.popup-title Задать вопрос
+    .popup-content
+      +form-question()
+
+mixin popup-city()
+  .popup(class="popup--md" id="popup-city")&attributes(attributes)
+    p.popup-title Выберите ваш город
+    .popup-content
+      +form-city()
+
+mixin popup-feedback()
+  .popup(class="popup--md" id="popup-feedback")&attributes(attributes)
+    p.popup-title Обратная связь
+    .popup-content
+      ul(class="nav nav-tabs" id="feedback-tabs" role="tablist")
+        li(class="nav-item" role="presentation")
+          button(class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question-tab-pane" type="button" role="tab" aria-controls="question-tab" aria-selected="false") Отправить вопрос
+        li(class="nav-item" role="presentation")
+          button(class="nav-link" id="callback-tab" data-bs-toggle="tab" data-bs-target="#callback-tab-pane" type="button" role="tab" aria-controls="callback-tab-pane" aria-selected="false") Заказать звонок
+        li(class="nav-item" role="presentation")
+          button(class="nav-link" id="complain-tab" data-bs-toggle="tab" data-bs-target="#complain-tab-pane" type="button" role="tab" aria-controls="complain-tab-pane" aria-selected="false") Пожаловаться
+
+      div(class="tab-content" id="feedback-tabs-content")
+        div(class="tab-pane fade" id="question-tab-pane" role="tabpanel" aria-labelledby="question-tab" tabindex="0")
+          +form-question()
+        div(class="tab-pane fade" id="callback-tab-pane" role="tabpanel" aria-labelledby="callback-tab" tabindex="0")
+          +form-callback()
+        div(class="tab-pane fade" id="complain-tab-pane" role="tabpanel" aria-labelledby="complain-tab" tabindex="0")
+          +form-complain()
+
+mixin popup-supplier()
+  .popup(class="popup--md" id="popup-supplier")&attributes(attributes)
+    p.popup-title Поставщикам
+    .popup-content
+      +form-supplier()
+
+mixin popup-adult()
+  .popup(class="popup--md" id="popup-adult")&attributes(attributes)
+    p.popup-title Подтвердите свой возраст
+    .popup-content
+      +form-adult()
+
+mixin popup-add-to-cart()
+  .popup(class="popup--lg" id="popup-add-to-cart")&attributes(attributes)
+    p.popup-title.text-center Товар добавлен в корзину!
+    .popup-content
+      #added-product.my-6
+        +product-card(variant="added-to-cart", product=products[0], options="oldPrice: false, bonus: false")
+
+      .popup-buttons.d-flex.justify-content-center.align-items-center.mb-6
+        button(type="button" data-fancybox-close).btn.btn-secondary.me-3 Продолжить покупки
+        a(href="/cart.html").btn.btn-primary Перейти в корзину
+
+      #added-product-accessories
+        p.h3.mb-4.text-center Добавить аксессуары
+
+        .listing-grid(style="--columns: 3").mb-3
+          +product-card(variant="accessory", product=products[0], options="label: true, mod: true, oldPrice: false, bonus: false")
+          +product-card(variant="accessory", product=products[1], options="label: true, mod: true, oldPrice: false, bonus: false")
+          +product-card(variant="accessory", product=products[2], options="label: true, mod: true, oldPrice: false, bonus: false")
+
+        +button(tag="a" variant="secondary" text="Показать еще 3" iconRight="ui--chevron-down-sm" data-id=products[0].id data-page=3).w-100.text-dark.js-more-accessories
+
+mixin popup-add-to-cart--configurator()
+  .popup(class="popup--md" id="popup-add-to-cart--configurator")&attributes(attributes)
+    p.popup-title.text-center Товары добавлены в корзину!
+    .popup-content
+      .popup-buttons.d-flex.justify-content-center.align-items-center.mt-4
+        button(type="button" data-fancybox-close).btn.btn-secondary.me-3 Продолжить покупки
+        a(href="/cart.html").btn.btn-primary Перейти в корзину
+
+mixin popup-fast-buy()
+  .popup(class="popup--md" id="popup-fast-buy")&attributes(attributes)
+    p.popup-title Купить в 1 клик
+    .popup-content
+      +form-fast-buy()
+
+mixin popup-product-preview()
+  .popup(class="popup--lg" id="popup-product-preview-" + products[0].id)&attributes(attributes)
+    +product-preview(products[0])
+
+mixin popup-configuration-mail()
+  .popup(class="popup--md" id="popup-configuration-mail")&attributes(attributes)
+    p.popup-title Отправка конфигурации на почту
+    .popup-content
+      +form-configuration-mail()
+
+mixin popup-expert-request()
+  .popup(class="popup--md" id="popup-expert-request")&attributes(attributes)
+    p.popup-title Запрос оценки эксперта
+    .popup-content
+      +form-expert-request().mb-3
+
+mixin popup-duplicate-configuration()
+  .popup(class="popup--lg" id="popup-add-to-cart--configurator")&attributes(attributes)
+    p.popup-title.text-center Ошибка
+    .popup-content
+      p Конфигурация с таким названием уже существует!
+
+mixin popup-find-by-article()
+  .popup(class="popup--md" id="popup-find-by-article")&attributes(attributes)
+    p.popup-title Добавить товар по артикулу
+    .popup-content
+      +form-find-by-article()
+
+mixin popup-product-review()
+  .popup(class="popup--md" id="popup-product-review")&attributes(attributes)
+    p.popup-title Оставьте свой отзыв
+    .popup-content
+      +form-product-review()
+
+mixin popup-pickup()
+  .popup(class="popup--lg" id="popup-pickup")&attributes(attributes)
+    p.popup-title Самовывоз из гипермаркетов
+    .popup-content
+      +pickup-map()
+
+mixin popup-product-preorder()
+  .popup(class="popup--md" id="popup-product-preorder")&attributes(attributes)
+    p.popup-title Предзака
+    .popup-content
+      +form-product-preorder()
+
+mixin popup-foreign-many()
+  .popup(class="popup--md" id="popup-foreign-many")&attributes(attributes)
+    p.popup-title В заказе более трёх одинаковых товаров из-за рубежа
+    .popup-content
+      p Не рекомендуем заказывать более трёх одинаковых товаров в одной посылке. Такой заказ считается оптовым и конфискуется таможней.
+      p Если закажите одинаковые товары в разных посылках, на таможню они придут в одно время и будут считаться оптовой партией. Предлагаем оформить два заказа на разных членов семьи
+      p Больше информации можно найти в разделе <a href="/pages/foreign/" target="_blank">Международная доставка</a>
+      +button(variant="secondary" text="Понятно" data-fancybox-close)
+
+mixin popup-foreign-overpriced()
+  .popup(class="popup--md" id="popup-foreign-overpriced")&attributes(attributes)
+    p.popup-title Стоимость товаров из-за рубежа в заказе более 200 €
+    .popup-content
+      p С 1 апреля 2024 пошлина уплачивается с заказов свыше 200 € или 31 кг на одну посылку. Размер пошлины — 15% от суммы превышения, но не меньше 2 €
+      p Рекомендуем разделить заказ на несколько и оформить их на разных членов семьи
+      p Больше информации можно найти в разделе <a href="/pages/foreign/" target="_blank">Международная доставка</a>
+      +button(variant="secondary" text="Понятно" data-fancybox-close)
+
+mixin popup-select-my-requisites()
+  .popup(class="popup--md" id="popup-select-my-requisites")&attributes(attributes)
+    p.popup-title Сохранённые реквизиты
+    .popup-content
+      .js-accordion
+        .checkout-requisites__item.js-accordion-item
+          .checkout-requisites__item__header.js-accordion-header
+            .checkout-requisites__item__title Организация
+            .checkout-requisites__item__info-wrapper
+              .checkout-requisites__item__info.checkout-requisites__item__info--sm
+                .checkout-requisites__item__info-title Телефон
+                .checkout-requisites__item__info-text +7 (915) 367-73-43
+              .checkout-requisites__item__info.checkout-requisites__item__info--sm
+                .checkout-requisites__item__info-title E-mail
+                .checkout-requisites__item__info-text mkartsev0@gmail.com
+          .checkout-requisites__item__body.js-accordion-body
+            .checkout-requisites__item__info-wrapper
+              .checkout-requisites__item__info
+                .checkout-requisites__item__info-title Контактное лицо
+                .checkout-requisites__item__info-text Михаил
+              .checkout-requisites__item__info.checkout-requisites__item__info--sm
+                .checkout-requisites__item__info-title ИНН
+                .checkout-requisites__item__info-text 111111111111
+              .checkout-requisites__item__info.checkout-requisites__item__info--sm
+                .checkout-requisites__item__info-title КПП
+                .checkout-requisites__item__info-text 2222222222222222222222222222222222
+              .checkout-requisites__item__info
+                .checkout-requisites__item__info-title Название организации
+                .checkout-requisites__item__info-text Организация
+              .checkout-requisites__item__info
+                .checkout-requisites__item__info-title Юридический адрес
+                .checkout-requisites__item__info-text Юридический адрес
+              .checkout-requisites__item__info
+                .checkout-requisites__item__info-title Фактический адрес
+                .checkout-requisites__item__info-text Фактический адрес
+              .checkout-requisites__item__info
+                .checkout-requisites__item__info-title Название банка
+                .checkout-requisites__item__info-text Название банка
+              .checkout-requisites__item__info.checkout-requisites__item__info--sm
+                .checkout-requisites__item__info-title Расчетный счет
+                .checkout-requisites__item__info-text 33333333333333333333
+              .checkout-requisites__item__info.checkout-requisites__item__info--sm
+                .checkout-requisites__item__info-title Корреспондентский счет
+                .checkout-requisites__item__info-text 44444444444444444444
+            +button(variant="secondary sm" text="Выбрать" class="mt-3")
+
+mixin popup-select-my-address()
+  .popup(class="popup--md" id="popup-select-my-address")&attributes(attributes)
+    p.popup-title Ваши адреса
+    .popup-content
+      .checkout-addresses
+        +field(type="radio-block" label="Москва, Театральная аллея, д.3, стр.1" name="checkout-addresses-options" id="checkout-address-1")
+        +field(type="radio-block" label="Москва, Золоторожский Вал, д. 8" name="checkout-addresses-options" id="checkout-address-2")
+        +button(variant="secondary sm" text="Выбрать" class="mt-3")

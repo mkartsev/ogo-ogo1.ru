@@ -1,0 +1,44 @@
+mixin pickup-map()
+  .pickup-map&attributes(attributes)
+    .row.g-3.g-lg-4
+      .col-sm-12.col-md-4
+        .pickup-map__points
+          +pickup-map__point(shops[0].title, shops[0].address, shops[0].hours, shops[0].pickup)(data-coords="55.7932, 37.559724")
+          +pickup-map__point(shops[1].title, shops[1].address, shops[1].hours, shops[1].pickup)(data-coords="55.751910, 37.685875")
+          +pickup-map__point(shops[2].title, shops[2].address, shops[2].hours, shops[2].pickup)(data-coords="55.1655267, 61.4327291")
+          +pickup-map__point(shops[0].title, shops[0].address, shops[0].hours, shops[0].pickup)(data-coords="55.7932, 37.559724")
+          +pickup-map__point(shops[1].title, shops[1].address, shops[1].hours, shops[1].pickup)(data-coords="55.751910, 37.685875")
+          +pickup-map__point(shops[2].title, shops[2].address, shops[2].hours, shops[2].pickup)(data-coords="55.1655267, 61.4327291")
+          +pickup-map__point(shops[0].title, shops[0].address, shops[0].hours, shops[0].pickup)(data-coords="55.7932, 37.559724")
+          +pickup-map__point(shops[1].title, shops[1].address, shops[1].hours, shops[1].pickup)(data-coords="55.751910, 37.685875")
+          +pickup-map__point(shops[2].title, shops[2].address, shops[2].hours, shops[2].pickup)(data-coords="55.1655267, 61.4327291")
+          +pickup-map__point(shops[0].title, shops[0].address, shops[0].hours, shops[0].pickup)(data-coords="55.7932, 37.559724")
+          +pickup-map__point(shops[1].title, shops[1].address, shops[1].hours, shops[1].pickup)(data-coords="55.751910, 37.685875")
+          +pickup-map__point(shops[2].title, shops[2].address, shops[2].hours, shops[2].pickup)(data-coords="55.1655267, 61.4327291")
+
+      .col-sm-12.col-md-8
+        .ymap
+          .ymap__map(style="width: 100%" data-center="55.7932, 37.559724")
+
+mixin pickup-map__point(title, address, hours, pickup)
+  div(class="pickup-map__point")&attributes(attributes)
+    .ymap__balloon.d-none
+      .ymap__balloon-title= title
+      .ymap__balloon-address= address.title
+      .ymap__balloon-metro
+        ul.pickup-map__point-stations
+          each station in address.stations
+            li.pickup-map__point-station
+              +svg-icon(station.icon, "sm")(style="color: " + station.color)
+              span= station.title
+      .ymap__balloon-pickup= pickup.time
+      .ymap__balloon-price= pickup.price
+      .ymap__balloon-hours= hours
+
+    ul.pickup-map__point-stations
+      each station in address.stations
+        li.pickup-map__point-station
+          +svg-icon(station.icon, "sm")(style="color: " + station.color)
+          span= station.title
+
+    span.pickup-map__point-pickup <b>#{pickup.time}</b>, #{pickup.price}

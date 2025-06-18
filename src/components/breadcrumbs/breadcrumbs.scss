@@ -1,0 +1,11 @@
+.breadcrumbs {
+  font-size: var(--font-size-sm, $font-size-sm);
+
+  a {
+    color: var(--gray-500, $gray-500);
+
+    &:hover {
+      color: var(--primary, $primary)
+    }
+  }
+}

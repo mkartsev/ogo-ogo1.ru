@@ -1,0 +1,285 @@
+extends ../layouts/default
+
+include ../../components/brands-slider/brands-slider
+include ../../components/categories-grid/categories-grid
+include ../../components/hero-slider/hero-slider
+include ../../components/hero/hero
+include ../../components/listing/listing
+include ../../components/main-banners/main-banners
+include ../../components/news-card/news-card
+include ../../components/news-slider/news-slider
+include ../../components/popup/popup
+include ../../components/product/product
+include ../../components/product-card/product-card
+include ../../components/products-slider/products-slider
+include ../../components/shop-card/shop-card
+include ../../components/shops-slider/shops-slider
+include ../../components/svg-icon/svg-icon
+
+append vars
+  -
+    template.cleanHeader = true
+    template.showFooter = false
+    page.name = "ui-components"
+    page.title = "Библиотека компонентов"
+    page.showBreadcrumbs = false
+
+prepend scripts
+  //- Скрипты только для этой страницы
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+
+block content
+  section.content-section
+    style.
+      .nav-pills > .nav-link { text-align: left !important }
+      .nav-pills > .nav-link:not(.active):hover { background: #f1f1f1 }
+
+    mixin tab-pill(id, title, isActive)
+      button(class=`nav-link ${isActive ? "active" : ""}` id=`ui-nav-${id}-tab` data-bs-toggle="pill", data-bs-target=`#ui-nav-${id}`, type="button" role="tab", aria-controls=`ui-nav-${id}`, aria-selected= isActive ? true : false)= title
+
+    mixin tab-pane(id, title, isActive)
+      div(class=`tab-pane fade${isActive ? " show active" : ""}` id=`ui-nav-${id}` role="tabpanel" aria-labelledby=`ui-nav-${id}-tab`)
+        h2.content-section__title= title
+        block
+
+    .row.g-3-g-lg-4
+      .col-12.col-md-3(style="@media screen and (min-width: 1024px) { position: sticky; top: 1rem; align-self: flex-start }")
+        .nav.nav-pills.nav-justified.flex-column.ms-n3#ui-nav-tab(role="tablist" aria-orientation="vertical")
+          +tab-pill("popups", "Всплывающие окна", false)
+          +tab-pill("sliders", "Cлайдеры", false)
+          +tab-pill("banners", "Баннеры", false)
+          +tab-pill("product-card", "Карточка товара", true)
+          +tab-pill("categories-grid", "Карточка категории", false)
+          +tab-pill("news-card", "Карточка новости", false)
+          +tab-pill("shop-card", "Карточка магазина", false)
+          //- +tab-pill("product-preview", "Превью товара", false)
+
+      .col-12.col-md-9
+        .tab-content#ui-nav-tabContent
+          +tab-pane("popups", "Всплывающие окна", false)
+            ul.list-inline
+              li.list-inline-item
+                a(href=process.env.AUTH_URL).js-auth-popup Вход
+              li.list-inline-item
+                a(href=process.env.REGISTRATION_URL).js-registration-popup Регистрация
+              li.list-inline-item
+                a(href=process.env.RECOVERY_URL).js-recovery-popup Забыл пароль
+              li.list-inline-item
+                a(href=process.env.FEEDBACK_FORM_URL data-show-tab="#question-tab-pane").js-feedback-popup Обратная связь - вопрос
+              li.list-inline-item
+                a(href=process.env.FEEDBACK_FORM_URL data-show-tab="#callback-tab-pane").js-feedback-popup Обратная связь - звонок
+              li.list-inline-item
+                a(href=process.env.FEEDBACK_FORM_URL data-show-tab="#complain-tab-pane").js-feedback-popup Обратная связь - пожаловаться
+              li.list-inline-item
+                a(href=process.env.COMPLAIN_URL).js-complain-popup Пожаловаться
+              li.list-inline-item
+                a(href=process.env.QUESTION_URL).js-question-popup Задать вопрос
+              li.list-inline-item
+                a(href=process.env.CALLBACK_URL).js-callback-popup Перезвоните мне
+              li.list-inline-item
+                a(href=process.env.SUPPLIER_FORM_URL).js-supplier-popup Поставщикам
+              li.list-inline-item
+                a(href=process.env.SELECT_CITY_URL).js-city-popup Выбор города
+              li.list-inline-item
+                a(href=process.env.FAST_BUY_FORM_URL data-id=products[0].id).js-fast-buy-popup Купить в 1 клик
+              li.list-inline-item
+                a(href=process.env.PRODUCT_PREVIEW_URL data-id=products[0].id).js-product-preview Превью товара
+              li.list-inline-item
+                a(href=process.env.ADULT_FORM_URL data-fancybox data-type="ajax") Раздел 18+
+              li.list-inline-item
+                a(href="#popup-find-by-article-static" data-fancybox) Добавить по артикулу
+              li.list-inline-item
+                a(href="#").js-product-pickup Карта доставки
+
+            hr
+            p.h3 В корзину
+
+            +button(tag="a" href="#popup-add-to-cart-static" variant="primary sm" text="Статика" data-fancybox)
+            +button(tag="a" href=process.env.ADD_TO_CART_URL variant="success sm" text="Все удачно" data-id="389708").js-add-to-cart
+            +button(tag="a" href=process.env.ADD_TO_CART_URL variant="danger sm" text="Не удалось" data-id="382239").js-add-to-cart
+            +button(tag="a" href=process.env.ADD_TO_CART_URL variant="warning sm" text="Аксессы вернули ошибку" data-id="389198").js-add-to-cart
+            +button(tag="a" href=process.env.ADD_TO_CART_URL variant="info sm" text="Аксессы не запрашиваются" data-id="389708" data-accessories="false").js-add-to-cart
+
+            .hidden
+              +popup-add-to-cart(id="popup-add-to-cart-static")
+              +popup-find-by-article(id="popup-find-by-article-static")
+              +popup-pickup()
+
+          +tab-pane("sliders", "Слайдеры", false)
+            h3 Основной слайдер
+            +hero-slider()
+            hr
+
+            h3 Слайдер товаров
+            +products-slider()
+            hr
+
+            h3 Слайдер новостей
+            +news-slider()
+            hr
+
+            h3 Слайдер магазинов
+            +shops-slider()
+            hr
+
+            h3 Слайдер брендов
+            +brands-slider()
+            hr
+
+            h3 Слайдер мини-баннеров
+            +main-banners--slider()
+
+          +tab-pane("banners", "Баннеры", false)
+            h3 Простой баннер
+            +hero()
+
+            hr
+            h3 Узкий вариант
+            +hero().hero--narrow
+
+            hr
+            h3 Самый узкий вариант
+            +hero("/assets/img/content/hero-slim.jpg", "/assets/img/content/hero-slim-small.jpg").hero--slim
+
+            hr
+            h3 Баннер над шапкой
+            +header-banner('/assets/img/content/header-banner.jpg', 'Продукты Honor для успешного учебного года!').d-none.d-lg-block
+
+            hr
+            h3 Сетка мини-баннеров
+            +main-banners--grid()
+
+          +tab-pane("product-card", "Карточка товара", true)
+            h3 Стандартная в каталог
+            .listing-controls
+              .listing-controls__view
+                span.listing-controls__view-label Вид:
+                +button(type="button" variant="sm" class="listing-controls__view-button js-listing-view-control js-tooltip" data-view="list" data-tooltip-title="Список")
+                +button(type="button" variant="sm" class="listing-controls__view-button js-listing-view-control js-tooltip is-active" data-view="grid" data-tooltip-title="Сетка")
+            .listing-grid(class="listing-grid--view-grid mb-6" id="listing-grid" style="--columns: 3")&attributes(attributes)
+              +product-card(variant="default", product=products[0])
+              +product-card(variant="default", product=products[1])
+              +product-card(variant="default", product=products[2])
+              +product-card(variant="default", product=products[3])
+              +product-card(variant="default", product=products[4])
+              +product-card(variant="default", product=products[5])
+
+            h3 В списке сравнения
+            .row.g-3.mb-6
+              .col
+                +product-card(variant="compare", product=products[0])
+              .col
+                +product-card(variant="compare", product=products[1])
+              .col
+                +product-card(variant="compare", product=products[2])
+              .col
+                +product-card(variant="compare", product=products[3])
+
+            h3 В попапе добавления в корзину
+            .row.g-3.mb-6
+              .col-12
+                +product-card(variant="added-to-cart", product=products[0])
+              .col-12
+                +product-card(variant="added-to-cart", product=products[1])
+              .col-12
+                +product-card(variant="added-to-cart", product=products[2])
+
+            h3 Аксеcсуар в попапе добавления в корзину
+            .listing-grid(style="--columns: 3").mb-3
+              +product-card(variant="accessory", product=products[0])
+              +product-card(variant="accessory", product=products[1])
+              +product-card(variant="accessory", product=products[2])
+
+            .listing-grid(style="--columns: 3").mb-3
+              +product-card(variant="accessory", product=products[3])
+              +product-card(variant="accessory", product=products[4])
+              +product-card(variant="accessory", product=products[5])
+              +product-card(variant="accessory", product=products[6])
+              +product-card(variant="accessory", product=products[7])
+              +product-card(variant="accessory", product=products[8])
+
+            h3 В корзине
+            .row.g-3.mb-6
+              .col
+                .checkout-items
+                  +product-card(variant="cart", product=products[0])
+                  +product-card(variant="cart", product=products[1])
+                  +product-card(variant="cart", product=products[2])
+                  +product-card(variant="cart", product=products[3])
+                  +product-card(variant="cart", product=products[4])
+                  +product-card(variant="cart", product=products[5])
+
+            h3 В чекаут
+            .row.g-3.mb-6
+              .col
+                .checkout-order__items
+                  .checkout-order__item
+                    +product-card(variant="checkout", product=products[0])
+                  .checkout-order__item
+                    +product-card(variant="checkout", product=products[1])
+                  .checkout-order__item
+                    +product-card(variant="checkout", product=products[2])
+                  .checkout-order__item
+                    +product-card(variant="checkout", product=products[3])
+                  .checkout-order__item
+                    +product-card(variant="checkout", product=products[4])
+                  .checkout-order__item
+                    +product-card(variant="checkout", product=products[5])
+
+            h3 В сайдбаре корзины
+            .row.g-3.mb-6
+              .col
+                +product-card(variant="cart-total", product=products[0])
+                +product-card(variant="cart-total", product=products[1])
+                +product-card(variant="cart-total", product=products[2])
+                +product-card(variant="cart-total", product=products[3])
+                +product-card(variant="cart-total", product=products[4])
+                +product-card(variant="cart-total", product=products[5])
+
+            h3 Для поиска по артикулу
+            .row.g-3.mb-6
+              .col
+                +product-card(variant="find-by-article", product=products[0])
+                +product-card(variant="find-by-article", product=products[1])
+                +product-card(variant="find-by-article", product=products[2])
+                +product-card(variant="find-by-article", product=products[3])
+                +product-card(variant="find-by-article", product=products[4])
+                +product-card(variant="find-by-article", product=products[5])
+
+            h3 В дропдаун в хедер
+            .row.g-3
+              .col-6
+                +product-card(variant="cart-dropdown", product=products[0])
+                +product-card(variant="cart-dropdown", product=products[1])
+                +product-card(variant="cart-dropdown", product=products[2])
+                +product-card(variant="cart-dropdown", product=products[3])
+                +product-card(variant="cart-dropdown", product=products[4])
+                +product-card(variant="cart-dropdown", product=products[5])
+
+          +tab-pane("categories-grid", "Карточка категории", false)
+            h3 Стандартные
+            +categories-grid(cols_lg=4)
+
+            hr
+
+            h3 Большие
+            +categories-grid--large()
+
+            hr
+
+            h3 18+
+            +categories-grid--adult(cols_lg=4)
+
+          +tab-pane("news-card", "Карточка новости", false)
+            .row
+              .col-6.col-md-4
+                +news-card(news[0])
+
+          +tab-pane("shop-card", "Карточка магазина", false)
+            .row.g-3.g-lg-4
+              .col-6.col-md-4
+                +shop-card(shops[0])
+
+          //- +tab-pane("product-preview", "Превью товара", false)
+          //-   for product in products
+          //-     +product-preview(product)

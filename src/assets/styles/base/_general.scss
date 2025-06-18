@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+label {
+  display: block;
+}
+
+ul, ol {
+  padding-left: 1rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+  width: auto;
+  fill: currentColor;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+}

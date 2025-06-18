@@ -1,0 +1,23 @@
+.share-buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $spacer;
+  padding-top: $spacer * 0.5;
+  padding-bottom: $spacer * 0.5;
+}
+.share-button {
+  display: inline-flex;
+  gap: rem(8);
+  align-items: center;
+  color: var(--body-color, $body-color);
+
+  &__img {
+    display: block;
+    max-width: rem(24);
+    max-height: rem(24);
+  }
+
+  &:hover {
+    color: var(--primary, $primary)
+  }
+}

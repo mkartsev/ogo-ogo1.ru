@@ -1,0 +1,121 @@
+.product-reviews {
+  &__controls {
+    margin-bottom: $spacer;
+  }
+
+  &__status {
+    padding: $spacer * 0.75 $spacer;
+    font-size: var(--font-size-root, $font-size-root);
+    line-height: 1;
+    text-align: center;
+    border-radius: var(--border-radius);
+    background: var(--secondary, $secondary);
+  }
+}
+
+.product-review {
+  display: flex;
+  position: relative;
+  flex-flow: column nowrap;
+  padding: $spacer;
+  gap: $spacer;
+  font-size: var(--font-size-root, $font-size-root);
+  border: 1px solid var(--gray-300, $gray-300);
+  border-radius: var(--border-radius);
+
+  &__author {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: $spacer * 0.25;
+    min-height: $spacer * 3;
+    padding-left: $spacer * 4;
+
+    &-placeholder,
+    &-image {
+      display: flex;
+      position: absolute;
+      max-width: $spacer * 3;
+      max-height: $spacer * 3;
+      width: $spacer * 3;
+      height: $spacer * 3;
+      top: 0;
+      left: 0;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &-placeholder {
+      color: var(--white);
+      font-size: $h2-font-size;
+      font-weight: 300;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: var(--gray-300, $gray-300);
+    }
+
+    &-name {
+      color: var(--gray-700, $gray-700);
+      font-size: $h2-font-size;
+      font-weight: 300;
+      line-height: 1;
+    }
+  }
+
+  &__pubdate {
+    color: var(--gray-500);
+    font-size: var(--font-size-sm);
+    line-height: 1;
+  }
+
+  &__body {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $spacer * 0.5;
+    word-break: break-word;
+  }
+
+  &__pros,
+  &__cons,
+  &__text {
+  }
+
+  &__external {
+    max-height: 1rem;
+    img {
+      display: block;
+      height: 1rem;
+      object-fit: contain;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: $spacer;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $spacer * 0.5;
+  }
+
+  @include media-breakpoint-up(md) {
+    &__body {
+      padding-left: $spacer * 4;
+    }
+
+    &__rating {
+      padding-left: $spacer * 4;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+  }
+}

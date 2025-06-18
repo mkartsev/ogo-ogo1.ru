@@ -1,0 +1,68 @@
+extends ../layouts/default
+
+include ../../components/shop-thumbs/shop-thumbs
+
+append vars
+  -
+    page.name  = "shops-inner"
+    page.title = "ОГО! Динамо"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+prepend scripts
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+
+block content
+  section.content-section
+    .shop-card
+      span.shop-card__address.fs-3= shops[0].address.title
+
+      ul.shop-card__stations
+        each station in shops[0].address.stations
+          li.shop-card__station
+            +svg-icon(station.icon, "sm")(style="color: " + station.color)
+            span= station.title
+
+      span.shop-card__hours.text-body.fs-3= shops[0].hours
+
+      a(href="tel:" + shops[0].phone).shop-phone.fs-3= shops[0].phone
+
+      ul.shop-card__services
+        each service in shops[0].services
+          li.shop-card__service
+            +svg-icon("ui--correct-sm", "sm").text-dark
+            span= service
+
+  section.content-section
+    div(class="ymap")
+      // data-center ставь таким же как у точки ↓
+      .ymap__map(style="width: 100%; height: 400px" data-center="55.7932, 37.559724")
+      ul.ymap__points
+        li(class="ymap__point" data-coords="55.7932, 37.559724" data-no-detail=true)
+          .ymap__point-title= shops[0].title
+          .ymap__point-address= shops[0].address.title
+          .ymap__point-description= shops[0].address.description
+          .ymap__point-phone= shops[0].phone
+          .ymap__point-hours= shops[0].hours
+
+    +shop-thumbs().js-shop-gallery
+
+  section.content-section
+    h2.content-section__title Как добраться
+    p
+      strong От станции метро «Динамо»
+    p Выход №1 на Ленинградский проспект, к стадиону «Динамо» и Петровскому парку (первый вагон из центра).
+
+    .row.g-3.g-lg-4.mb-5
+      .col-12.col-lg-6
+        .ratio.ratio-16x9
+          iframe(src="https://www.youtube.com/embed/jfKfPfyJRdk?rel=0" title="YouTube video" allowfullscreen)
+
+    p
+      strong От станции метро «Петровский парк»
+    p Выход №4 к Петровско-Разумовской аллее и Петровскому парку.
+    .row.g-3.g-lg-4
+      .col-12.col-lg-6
+        .ratio.ratio-16x9
+          iframe(src="https://www.youtube.com/embed/rUxyKA_-grg?rel=0" title="YouTube video" allowfullscreen)

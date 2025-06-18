@@ -1,0 +1,37 @@
+.countdown {
+  display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: 20px;
+
+  .delimiter {
+    color: var(--body-color, $body-color);
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .num {
+    display: block;
+    color: var(--primary, $primary);
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 67px;
+    text-align: center;
+  }
+
+  .word {
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .day,
+  .hour,
+  .min,
+  .sec {
+    padding: 0 16px;
+    text-align: center;
+  }
+}

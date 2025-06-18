@@ -1,0 +1,13 @@
+mixin hero(img, imgSmall, href)
+  if href
+    a.hero(href=href)&attributes(attributes)
+      picture.hero__img
+        source(srcset= imgSmall ? imgSmall : "/assets/img/content/banner-delivery-small.jpg" media="(max-width: 640px)")
+        source(srcset= img ? img : "/assets/img/content/banner-delivery.jpg")
+        img(src= img ? img : "/assets/img/content/banner-delivery.jpg" alt="")
+  else
+    .hero&attributes(attributes)
+      picture.hero__img
+        source(srcset= imgSmall ? imgSmall : "/assets/img/content/banner-delivery-small.jpg" media="(max-width: 640px)")
+        source(srcset= img ? img : "/assets/img/content/banner-delivery.jpg")
+        img(src= img ? img : "/assets/img/content/banner-delivery.jpg" alt="")

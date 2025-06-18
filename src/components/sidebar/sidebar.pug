@@ -1,0 +1,41 @@
+mixin sidebar()
+  aside.sidebar#sidebar&attributes(attributes)
+    nav.sidebar-menu
+      ul
+        li
+          a(href="#").sidebar-menu__close
+            span.sidebar-menu__icon
+              +svg-icon("ui--chevron-left")
+            span Вернуться назад
+        li
+          a(href=process.env.SELECT_CITY_URL).sidebar-menu__link.js-city-popup
+            span.sidebar-menu__icon
+              +svg-icon("ui--location")
+            span.sidebar-city Город:
+              span.sidebar-city__text Москва
+        li
+          a(href="#").sidebar-menu__link
+            span.sidebar-menu__icon
+              +svg-icon("ui--heart")
+              span.badge.fs-6.rounded-pill.position-absolute.top-0.end-0.bg-danger.js-favorite-counter.hidden 2
+            span Избранное
+        li
+          a(href="#").sidebar-menu__link
+            span.sidebar-menu__icon
+              +svg-icon("ui--comparison")
+              span.badge.fs-6.rounded-pill.position-absolute.top-0.end-0.bg-danger.js-compare-counter.hidden 4
+            span Сравнение
+        li
+          a(href="#").sidebar-menu__misc Доставка и оплата
+        li
+          a(href="#").sidebar-menu__misc Гарантия и возврат
+        li
+          a(href="#").sidebar-menu__misc Адреса магазинов
+        li
+          .sidebar-phone
+            span.sidebar-phone__icon
+              +svg-icon("ui--phone")
+            a(href="tel:+7 495 133-79-84").sidebar-phone__number +7 495 133-79-84
+            span.sidebar-phone__worktime с 10:00 до 22:00
+        li
+          a(href="#").btn.btn-primary.w-100 Позвонить

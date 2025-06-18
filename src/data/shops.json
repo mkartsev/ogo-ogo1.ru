@@ -1,0 +1,56 @@
+[
+  {
+    "id": "dinamo",
+    "title": "ОГО! Динамо",
+    "image": "/assets/img/content/shop-card-1.jpg",
+    "phone": "+7 495 133-79-84",
+    "address": {
+      "title": "Москва, Театральная аллея, 3с1",
+      "description": "Подземная парковка. 30 минут - бесплатно, далее 200 руб./час",
+      "stations": [
+        { "title": "Динамо", "icon": "ui--dot-sm", "color": "#44B85A" },
+        { "title": "Петровский парк", "icon": "ui--dot-sm", "color": "#79CDCD" }
+      ]
+    },
+    "hours": "Ежедневно 10:00 – 22:00",
+    "services": ["Сервис-центр", "Оплата картами"],
+    "pickup": {
+      "time": "20.10 после 20:00",
+      "price": "бесплатно"
+    }
+  },
+  {
+    "id": "ploshad",
+    "title": "ОГО! Площадь Ильича",
+    "image": "/assets/img/content/shop-card-2.jpg",
+    "phone": "+7 495 133-79-84",
+    "address": {
+      "title": "Москва, Золоторожский Вал, 8",
+      "description": "Парковка городская ~40 руб./час",
+      "stations": [{ "title": "Площадь Ильича", "icon": "ui--dot-sm", "color": "#FFCB31" }]
+    },
+    "hours": "Ежедневно 10:00 – 22:00",
+    "services": ["Оплата картами"],
+    "pickup": {
+      "time": "20.10 после 20:00",
+      "price": "бесплатно"
+    }
+  },
+  {
+    "id": "chelyabinsk",
+    "title": "ОГО! Челябинск",
+    "image": "/assets/img/content/shop-card-3.jpg",
+    "phone": "+7 351 247-00-77",
+    "address": {
+      "title": "Челябинск, ул. Артилерийская, 124/4",
+      "description": "Бесплатная парковка",
+      "stations": [{ "title": "«ТРК Горки», «Киргородок»", "icon": "ui--transport-sm", "color": "#9A9A9A" }]
+    },
+    "hours": "Ежедневно 9:00 – 21:00",
+    "services": ["Сервис-центр", "Оплата картами"],
+    "pickup": {
+      "time": "20.10 после 20:00",
+      "price": "бесплатно"
+    }
+  }
+]

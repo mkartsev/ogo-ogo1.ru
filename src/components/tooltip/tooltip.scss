@@ -1,0 +1,123 @@
+.tippy-box[data-theme~=ogo] {
+  color: var(--body-color, $body-color);
+  line-height: 1.5;
+  border-radius: 0;
+  border: 1px solid var(--light, $light);
+  background-color: var(--white, $white);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+  transition-property: transform, visibility, opacity;
+
+  &[data-inertia][data-state='visible'] {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &[data-placement^="top"] > .tippy-arrow {
+    bottom: 0;
+
+    &:before {
+      bottom: -10px;
+      left: 0;
+      border-width: 10px 10px 0;
+      border-top-color: var(--light, $light);
+      transform-origin: center top;
+    }
+
+    &:after {
+      bottom: -9px;
+      left: 0;
+      border-width: 10px 10px 0;
+      border-top-color: var(--white, $white);
+      transform-origin: center top;
+    }
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow {
+    top: 0;
+
+    &:before {
+      top: -10px;
+      left: 0;
+      border-width: 0 10px 10px;
+      border-bottom-color: var(--light, $light);
+      transform-origin: center bottom;
+    }
+
+    &:after {
+      top: -9px;
+      left: 0;
+      border-width: 0 10px 10px;
+      border-bottom-color: var(--white, $white);
+      transform-origin: center bottom;
+    }
+  }
+
+  &[data-placement^="left"] > .tippy-arrow {
+    right: 0;
+
+    &:before {
+      right: -10px;
+      border-width: 10px 0 10px 10px;
+      border-left-color: var(--light, $light);
+      transform-origin: center left;
+    }
+
+    &:after {
+      right: -9px;
+      border-width: 10px 0 10px 10px;
+      border-left-color: var(--white, $white);
+      transform-origin: center left;
+    }
+  }
+
+  &[data-placement^="right"] > .tippy-arrow {
+    left: 0;
+
+    &:before {
+      left: -10px;
+      border-width: 10px 10px 10px 0;
+      border-right-color: var(--light, $light);
+      transform-origin: center right;
+    }
+
+    &:after {
+      left: -9px;
+      border-width: 10px 10px 10px 0;
+      border-right-color: var(--white, $white);
+      transform-origin: center right;
+    }
+  }
+
+  .tippy-arrow {
+    width: 16px;
+    height: 16px;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+
+  .tippy-title {
+    font-size: var(--font-size-root, $font-size-root);
+    line-height: 22px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tippy-close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .tippy-close + .tippy-title {
+    padding-right: 10px
+  }
+
+  .tippy-content {
+    min-width: unset;
+    padding: calc($spacer * 0.5) $spacer;
+    font-size: var(--font-size-sm, $font-size-sm);
+  }
+}

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/* Главная страница */
+.c-main-page__news {
+  padding: 30px 40px;
+  background-color: #f8f8f8;
+}
+
+.c-main-page__pickpoints {
+  padding: 30px 30px 40px;
+  border-top: 1px solid #efefef;
+}
+
+.c-main-page__pickpoints:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.c-main-page__pickpoint {
+  float: left;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.c-main-page__categories-holder {
+  padding: 40px;
+  border-top: 1px solid #f8f8f8;
+}
+
+.c-main-page__category-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c-main-page__category-item {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.c-main-page__category-item:first-child {
+  margin-top: 0;
+}
+
+.c-main-page__category-item:last-child {
+  margin-bottom: 0;
+}
+
+.c-main-page__recent-products {
+  padding: 40px;
+}
+
+.c-main-page__recent-products .b-small-product-slider__prev,
+.c-main-page__recent-products .b-small-product-slider__next {
+  border: 1px solid #f1f1f1;
+}
+
+.c-main-page__recent-products .b-tags__tag {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.c-main-page__shops {
+  height: 310px;
+  padding-top: 100px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url("../img/content/shop-bg.jpg");
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .c-main-page__shops {
+    background-image: url("../img/content/shop-bg@2x.jpg");
+  }
+}
+
+.c-main-page__shops-title {
+  font-size: 350%;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.09;
+  color: #fff;
+}
+
+.c-main-page__shops-remark {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 112.5%;
+  font-weight: 400;
+  line-height: 1.22;
+  text-align: center;
+  color: #fff;
+}
+
+.c-main-page__shops-remark:first-child {
+  margin-top: 0;
+}
+
+.c-main-page__shops-remark:last-child {
+  margin-bottom: 0;
+}
+
+.c-main-page__advantages-holder {
+  background-color: #f8f8f8;
+  padding: 0 40px 40px;
+}
+
+.c-main-page__advantages {
+  background-color: #fff;
+}

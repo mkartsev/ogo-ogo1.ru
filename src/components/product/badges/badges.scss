@@ -1,0 +1,30 @@
+.product-badges {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  gap: $spacer * 0.5;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  &__item {
+    --badge-padding-x: 0.5rem;
+    --badge-padding-y: 0.25rem;
+    --badge-border-radius: 2px;
+    --badge-font-size: var(--font-size-sm, $font-size-sm);
+
+    &:last-child {
+      margin-right: $spacer;
+    }
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

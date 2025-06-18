@@ -1,0 +1,408 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "samsung"
+    page.title = "Бренд-зона Samsung"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+
+block content
+  section.samsung
+    header.samsung-header
+      .samsung__logo
+        img(src="./img/samsung-logo.png", alt="samsung logo")
+      nav.samsung-nav.samsung-nav--top(role="complementary")
+        a.samsung-nav__link(href="/market/smartfony/tag_samsung/")
+          span.samsung-nav__text Смартфоны
+        a.samsung-nav__link(href="/market/planshetyi/samsung/")
+          span.samsung-nav__text Планшеты
+        a.samsung-nav__link(href="/market/unmue_chasu_smart_watch/samsung/")
+          span.samsung-nav__text Умные часы
+        a.samsung-nav__link(href="/market/bluetooth_naushniki/tag_audio-samsung/")
+          span.samsung-nav__text Наушники
+        a.samsung-nav__link(href="/market/besprovodnyye_zu/tag_charger-samsung/")
+          span.samsung-nav__text Зарядные устройства
+        a.samsung-nav__link(href="/market/chekhly_dlya_smartfonov/tag_samsung/")
+          span.samsung-nav__text Чехлы для смартфонов
+      section.samsung-slider
+        .h2.text-center [Стандартный слайдер]
+      nav.samsung-nav(role="complementary")
+        a.samsung-nav__link(href="/market/smartfony/tag_samsung/")
+          img.samsung-nav__image(src="./img/smartphone-2.jpg")
+          span.samsung-nav__text Смартфоны
+        a.samsung-nav__link(href="/market/planshetyi/samsung/")
+          img.samsung-nav__image(src="./img/notepad2.jpg")
+          span.samsung-nav__text Планшеты
+        a.samsung-nav__link(href="/market/unmue_chasu_smart_watch/samsung/")
+          img.samsung-nav__image(src="./img/watch4_sm.jpg")
+          span.samsung-nav__text Умные часы
+        a.samsung-nav__link(href="/market/bluetooth_naushniki/tag_audio-samsung/")
+          img.samsung-nav__image(src="./img/audio.jpg")
+          span.samsung-nav__text Наушники
+        a.samsung-nav__link(href="/market/besprovodnyye_zu/tag_charger-samsung/")
+          img.samsung-nav__image(src="./img/charger-2.jpg")
+          span.samsung-nav__text Зарядные устройства
+        a.samsung-nav__link(href="/market/chekhly_dlya_smartfonov/tag_samsung/")
+          img.samsung-nav__image(src="./img/case-2.jpg")
+          span.samsung-nav__text Чехлы для смартфонов
+
+    section.samsung-content
+      section.samsung-section
+        .samsung-section__header
+          h3.samsung-section__title Смартфоны
+          h4.samsung-section__subtitle
+            | Samsung Galaxy с интеллектуальными камерами
+            br
+            | и потрясающим экраном Infinity
+        .samsung__galaxy.lg-4.md-2.sm-1
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img._mobile(src="./img/galaxy_z.jpg", alt="Samsung Galaxy Z")
+            .samsung__galaxy-title Galaxy Z
+            a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_galaxy_z/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img._mobile(src="./img/galaxy_s22.jpg", alt="Samsung Galaxy S")
+            .samsung__galaxy-title Galaxy S
+            a.samsung__galaxy-link(href="/market/smartfony/tag_samsung-galaxy-s/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img._mobile(src="./img/galaxy_a.jpg", alt="Samsung Galaxy A")
+            .samsung__galaxy-title Galaxy A
+            a.samsung__galaxy-link(href="/market/smartfony/tag_samsung-galaxy-a/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img._mobile(src="./img/galaxy_m32.jpg", alt="Samsung Galaxy M")
+            .samsung__galaxy-title Galaxy M
+            a.samsung__galaxy-link(href="/market/smartfony/tag_galaxy_m/") СМОТРЕТЬ ВСЕ
+        .samsung-grid
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy_z_fold_3.jpg", alt="Samsung Galaxy Z Fold3")
+            .samsung-block__text.moon1.samsung__note-mobile
+              a(href="#").samsung-block__title Galaxy Z Fold3
+              .samsung-block__texts
+                p Домашний кинотеатр, рабочее место, игровая комната и все это в ваших руках
+                ul
+                  li Премиальный дизайн
+                  li Из смартфона в планшет одним движением
+                  li Одновременная работа в трех приложениях
+                  li Поддержка S Pen — удобство обычной ручки с уникальными возможностями
+                  li Третье поколение складных смартфонов. Теперь с защитой от воды
+              a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_galaxy_z_fold3/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy-s22-ultra.jpg", alt="Samsung Galaxy S22 Ultra")
+            .samsung-block__text
+              a(href="#").samsung-block__title Galaxy S22 Ultra
+              .samsung-block__texts
+                p Первый среди сильных
+                ul
+                  li
+                    | Каждый кадр — шедевр. Даже в темноте. Лучшая камера в Galaxy
+                    sup *
+                  li Мощный аккумулятор (5 000 мАч), готовый работать день и ночь
+                  li
+                    | Первый 4 нм процессор
+                    sup *
+                    | . Скорость — его стихия.
+                  li Встроенный S pen для творчества и решения задач.
+                  li Самые сочные цвета. С самым ярким дисплеем Dynamic Amoled 2X.
+                p.small * Среди линейки смартфонов Samsung Galaxy на февраль 2022 года. Гэлакси
+              a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_s22ultra/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy-s22-s22plus.jpg", alt="Samsung Galaxy S22 | S22+")
+            .samsung-block__text.moon1.samsung__note-mobile
+              a(href="#").samsung-block__title Galaxy S22 | S22+
+              .samsung-block__texts
+                p Новая форма самовыражения
+                ul
+                  li Ночь в твоей власти. Лучшие снимки даже ночью — в твоих руках
+                  li Мощный аккумулятор. Заряжается быстро, работает долго
+                  li Первый 4 нм процессор*. Быстрее еще не было
+                  li Самые сочные цвета. С самым ярким дисплеем Dynamic Amoled 2X
+                p.small * Среди линейки смартфонов Samsung Galaxy на февраль 2022 года. Гэлакси
+              a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_s22/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy_z_flip_3.jpg", alt="Samsung Galaxy Z Flip3")
+            .samsung-block__text
+              a(href="#").samsung-block__title Galaxy Z Flip3
+              .samsung-block__texts
+                p Новый способ выразить себя
+                ul
+                  li Стильный дизайн, подчеркивающий твою индивидуальность
+                  li Режим камеры hands-free для свободы творчества
+                  li Передовой процессор для решения любых задач
+                  li Третье поколение складных смартфонов. Теперь с защитой от воды
+              a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_galaxy_z_flip3/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy-s21-fe.jpg", alt="Samsung Galaxy S21 FE")
+            .samsung-block__text.moon1.samsung__note-mobile
+              a(href="#").samsung-block__title Galaxy S21 FE
+              .samsung-block__texts
+                p
+                  | Лучшие
+                  sup *
+                  |  флагманские возможности S21 по более доступной цене.
+                ul
+                  li Обновлённый дизайн с гармоничным набором цветовой палитры
+                  li
+                    | Суперплавный экран
+                    sup **
+                    | : cкроллинг еще никогда не был таким плавным и быстрым
+                  li Профессиональная камера: каждый кадр — миллион лайков
+                  li Процессор на максималках: новейший 8-ми ядерный процессор
+                p.small
+                  sup *
+                  |  По сравнению с линейкой Galaxy
+                  br
+                  sup **
+                  |  Плавный экран, частота обновления 120 Гц
+              a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_s21fe/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy_a22.jpg", alt="Samsung Galaxy A22")
+            .samsung-block__text
+              a(href="#").samsung-block__title Galaxy A22
+              .samsung-block__texts
+                p Потрясающий экран и производительность
+                ul
+                  li Современный дизайн
+                  li Безграничный экран 6.4 дюйма
+                  li 4 AI-камеры, основная — 48МП
+                  li Аккумулятор 5000 мА·ч5 + быстрая зарядка 15 Вт
+              a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_galaxy_a22/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy_m32_big.jpg", alt="Samsung Galaxy M32")
+            .samsung-block__text.moon1.samsung__note-mobile
+              a(href="#").samsung-block__title Galaxy M32
+              .samsung-block__texts
+                ul
+                  li Безграничный и яркий sAMOLED экран 6,4 дюйма
+                  li 4 AI-камеры, основная 64 Мп
+                  li Aккумулятор 5000 мАч и супербыстрая зарядка 26 Вт
+              a.samsung__galaxy-link(href="/market/smartfony/tag_samsung_galaxy_m32/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+
+      section.samsung-section
+        .samsung-section__header
+          h3.samsung-section__title Планшеты
+          h4.samsung-section__subtitle.text-large Работайте эффективнее, достигайте большего
+          h4.samsung-section__subtitle Компактные, высокопроизводительные планшеты с безграничным AMOLED экраном, расширяемой памятью и режимом многозадачности просто созданы для комфортной, продуктивной работы.
+        .samsung__galaxy.lg-3.md-3.sm-1
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img._tab(src="./img/galaxy-tab-s7.jpg", alt="Galaxy Tab S")
+            .samsung__galaxy-title Galaxy Tab S
+            .samsung__galaxy-text Планшеты для работы и учебы
+            a.samsung__galaxy-link(href="/market/planshetyi/tag_samsung-galaxy-tab-s/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img._tab(src="./img/galaxy-tab-a.jpg", alt="Galaxy Tab A")
+            .samsung__galaxy-title Galaxy Tab A
+            .samsung__galaxy-text Планшеты для развлечений
+            a.samsung__galaxy-link(href="/market/planshetyi/tag_samsung-galaxy-tab-a/") СМОТРЕТЬ ВСЕ
+        .samsung-grid
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy_tab_a8_big.jpg", alt="Galaxy Tab A8", loading="lazy")
+            .samsung-block__text
+              a(href="#").samsung-block__title Galaxy Tab A8
+              .samsung-block__texts
+                p Для комфортного пользования каждый день
+                ul
+                  li Стильный минималистичный дизайн
+                  li 10.5” экран с эффектом полного погружения
+                  li 4 динамика с поддержкой Dolby Atmos
+                  li Аккумулятор 7040 мАч
+              a.samsung__galaxy-link(href="/market/planshetyi/tag_samsung_galaxy_tab_a8/?SORT=PRICE&ORDER=DESC") СМОТРЕТЬ ВСЕ
+          .samsung-block
+            .samsung-block__img
+              img(src="./img/galaxy-tab-s7-fe.jpg", alt="Galaxy Tab S7 FE", loading="lazy")
+            .samsung-block__text
+              a(href="#").samsung-block__title Galaxy Tab S7 FE
+              .samsung-block__texts
+                p Удовольствие от привычных дел
+                ul
+                  li Элегантный дизайн и 4 стильных цвета
+                  li Электронное перо S Pen со сверхнизкой задержкой при письме
+                  li 4 стереодинамика от AKG с поддержкой технологии Dolby Atmos
+              a.samsung__galaxy-link(href="/market/planshetyi/tag_samsung_galaxy_tab_s7_s7plus/") СМОТРЕТЬ ВСЕ
+
+      section.samsung-section
+        .samsung-section__header
+          h3.samsung-section__title Мобильные аксессуары
+          h4.samsung-section__subtitle.text-large Расширяйте возможности своего устройства
+          h4.samsung-section__subtitle Независимо от ваших предпочтений — функциональность, удобство или стиль — у нас есть аксессуары на любой вкус.
+        .samsung__galaxy.lg-4.md-2.sm-1
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img(src="./img/galaxy_watch4_sm.jpg", alt="Samsung Galaxy Watch4")
+            .samsung__galaxy-title Galaxy Watch4
+            a.samsung__galaxy-link(href="/market/unmue_chasu_smart_watch/tag_samsung_watch4/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img(src="./img/buds2_sm.jpg", alt="Samsung Galaxy Buds2")
+            .samsung__galaxy-title Galaxy Buds2
+            a.samsung__galaxy-link(href="/market/bluetooth_naushniki/tag_samsung_galaxy_buds2/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img(src="./img/buds_pro_sm.jpg", alt="Samsung Buds Pro")
+            .samsung__galaxy-title Galaxy Buds Pro
+            a.samsung__galaxy-link(href="/market/bluetooth_naushniki/tag_galaxy_buds_pro/") СМОТРЕТЬ ВСЕ
+        .samsung-grid
+          .samsung-block.sams_min
+            .samsung-block__img
+              img(src="./img/watch4_big.jpg", alt="Galaxy Watch4", loading="lazy")
+            .samsung-block__text.moon1.samsung__note-mobile
+              a(href="#").samsung-block__title Galaxy Watch4 | Watch4 Classic
+              .samsung-block__texts
+                p Устройство, которое знает вас лучше всех
+                ul
+                  li Стильный и лаконичный дизайн
+                  li Определение состава тела
+                  li Измерение ЭКГ и артериального давления
+                  li Новая ОС с поддержкой Google сервисов
+                  li Мощный процессор и быстрая зарядка
+              a.samsung__galaxy-link(href="/market/unmue_chasu_smart_watch/tag_samsung_watch4/") СМОТРЕТЬ ВСЕ
+          .samsung-block.sams_min
+            .samsung-block__img
+              img(src="./img/galaxy_buds_pro.jpg", alt="Galaxy Buds Pro", loading="lazy")
+            .samsung-block__text.moon1.samsung__note-mobile
+              a(href="#").samsung-block__title Galaxy Buds Pro
+              .samsung-block__texts
+                p Устройство, которое меняет восприятие звука и музыки
+                ul
+                  li Двухполосные динамики и премиум-звук от AKG
+                  li Технология интеллектуального активного шумоподавления
+                  li До 18 часов воспроизведения музыки
+                  li Защита от влаги (IPX7)
+              a.samsung__galaxy-link(href="/market/bluetooth_naushniki/328644/") КУПИТЬ
+          .samsung-block.sams_min
+            .samsung-block__img
+              img(src="./img/galaxy_buds2.jpg", alt="Galaxy Buds2", loading="lazy")
+            .samsung-block__text.moon1.samsung__note-mobile
+              a(href="#").samsung-block__title Galaxy Buds2
+              .samsung-block__texts
+                p Galaxy Buds2. И твой мир оживает
+                ul
+                  li Захватывающий объемный звук
+                  li Технология активного шумоподавления
+                  li Комфортная и надёжная посадка
+                  li Продолжительное время работы
+              a.samsung__galaxy-link(href="/market/bluetooth_naushniki/tag_samsung_galaxy_buds2/") СМОТРЕТЬ ВСЕ
+        .samsung__galaxy.lg-4.md-2.sm-1
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img(src="./img/charger-all.jpg", alt="Зарядные устройства Samsung")
+            .samsung__galaxy-title Зарядные устройства
+            a.samsung__galaxy-link(href="/market/besprovodnyye_zu/tag_charger-samsung/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img(src="./img/case-all.jpg", alt="Чехлы для смартфонов Samsung")
+            .samsung__galaxy-title Чехлы для смартфонов
+            a.samsung__galaxy-link(href="/market/case_telefon/tag_samsung/") СМОТРЕТЬ ВСЕ
+          .samsung__galaxy-block
+            .samsung__galaxy-img
+              img.samsung__img(src="./img/sams9.png", alt="Аудиоустройства Samsung")
+            .samsung__galaxy-title Аудиоустройства
+            a.samsung__galaxy-link(href="/market/bluetooth_naushniki/tag_audio-samsung/") СМОТРЕТЬ ВСЕ
+
+      section.samsung-news
+        .samsung-video-slider.swiper
+          .samsung-video-slider__header
+            .samsung-video-slider__title Видео
+            .samsung-video-slider__arrows
+              .samsung-video-slider__prev.swiper-button-prev
+              .samsung-video-slider__next.swiper-button-next
+          .swiper-wrapper.samsung-gallery
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=99fOhPkhEmo&mute=0", data-poster="https://img.youtube.com/vi/99fOhPkhEmo/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/video-s22-preview.jpg", alt="Galaxy S22 Ultra | Первый среди сильных")
+                .samsung-card__body
+                  h3.samsung-card__title Galaxy S22 Ultra | Первый среди сильных
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=vi0BQ_8nqag&mute=0", data-poster="https://img.youtube.com/vi/vi0BQ_8nqag/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/watch4-preview.jpg", alt="Главные фишки Galaxy Watch4")
+                .samsung-card__body
+                  h3.samsung-card__title Главные фишки Galaxy Watch4
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=wsqiuqNBp04&mute=0", data-poster="https://img.youtube.com/vi/wsqiuqNBp04/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/flip3_fold3-preview.jpg", alt="Складные смартфоны Samsung Galaxy Z")
+                .samsung-card__body
+                  h3.samsung-card__title Складные смартфоны Samsung Galaxy Z
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=v9zVC_4zo-Y&mute=0", data-poster="https://img.youtube.com/vi/v9zVC_4zo-Y/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/buds2-preview.jpg", alt="Откройте новый звук Samsung Galaxy Buds2")
+                .samsung-card__body
+                  h3.samsung-card__title Откройте новый звук Samsung Galaxy Buds2
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=v9zVC_4zo-Y&mute=0", data-poster="https://img.youtube.com/vi/v9zVC_4zo-Y/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/galaxy-z-fold3-preview.jpg", alt="Главные фишки Galaxy Z Fold3")
+                .samsung-card__body
+                  h3.samsung-card__title Главные фишки Galaxy Z Fold3
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=tJNC_pWs4zQ&mute=0", data-poster="https://img.youtube.com/vi/tJNC_pWs4zQ/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/galaxy-z-flip3-preview.jpg", alt="Главные фишки Galaxy Z Flip3")
+                .samsung-card__body
+                  h3.samsung-card__title Главные фишки Galaxy Z Flip3
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=vH06o_kfdjE&mute=0", data-poster="https://img.youtube.com/vi/vH06o_kfdjE/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/Note20_video.jpg", alt="Galaxy Note20 | Note20 Ultra")
+                .samsung-card__body
+                  h3.samsung-card__title Galaxy Note20 | Note20 Ultra
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=mNtcT-hHZoI&mute=0", data-poster="https://img.youtube.com/vi/mNtcT-hHZoI/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/watch3_video.jpg", alt="Встречайте Galaxy Watch3")
+                .samsung-card__body
+                  h3.samsung-card__title Встречайте Galaxy Watch3
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=ovahye45PF4&mute=0", data-poster="https://img.youtube.com/vi/ovahye45PF4/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/samsung__video1.jpg", alt="Galaxy S20 Ultra и камера 108 МП")
+                .samsung-card__body
+                  h3.samsung-card__title Galaxy S20 Ultra и камера 108 МП
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=Fk1SqqAiHLk&mute=0", data-poster="https://img.youtube.com/vi/Fk1SqqAiHLk/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/samsung__video2.jpg", alt="Встречайте новые Galaxy Buds+")
+                .samsung-card__body
+                  h3.samsung-card__title Встречайте новые Galaxy Buds+
+            .swiper-slide
+              a.samsung-card.samsung-gallery-item(href="#", data-src="https://www.youtube.com/watch?v=PYxRvE15ZqQ&mute=0", data-poster="https://img.youtube.com/vi/PYxRvE15ZqQ/maxresdefault.jpg")
+                .samsung-card__header
+                  .samsung-card__image-wrapper
+                    img.samsung-card__image(src="/brands/samsung/./img/samsung__video4.jpg", alt="Наша #СтранаКосмос")
+                .samsung-card__body
+                  h3.samsung-card__title Наша #СтранаКосмос
+          .samsung-video-slider__pagination.swiper-pagination

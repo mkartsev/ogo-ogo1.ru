@@ -1,0 +1,60 @@
+select {
+  width: 100%;
+  height: 3rem;
+  padding-right: 2.25rem;
+  padding-left: 1rem;
+  color: var(--body-color, $body-color);
+  border-color: var(--border-color, $border-color);
+  border-radius: var(--border-radius-sm, $border-radius-sm);
+  background-size: 20px 20px;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%239a9a9a" fill-rule="evenodd" d="M1.646 7.646a.5.5 0 0 1 .708 0L12 17.293l9.646-9.647a.5.5 0 0 1 .708.708l-10 10a.5.5 0 0 1-.708 0l-10-10a.5.5 0 0 1 0-.708Z" clip-rule="evenodd"/></svg>');
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+
+  &:hover {
+    cursor: pointer;
+    border-color: var(--gray-400, $gray-400);
+  }
+  &:focus-visible {
+    outline: none;
+    border-color: var(--gray-500, $gray-500);
+  }
+}
+
+.form-select {
+  padding-right: 2rem;
+  &-xs {
+    height: rem(32);
+    min-width: rem(32);
+    font-size: var(--font-size-sm);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.25rem;
+  }
+
+  &-sm {
+    height: rem(40);
+    min-width: rem(40);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  &-md {
+    height: rem(48);
+    min-width: rem(48);
+  }
+
+  &-lg {
+    height: rem(56);
+    min-width: rem(56);
+  }
+
+  &-xl {
+    height: rem(64);
+    min-width: rem(64);
+  }
+}

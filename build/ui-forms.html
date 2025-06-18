@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Поля и формы</title>
+    <meta name="theme-color" content="#fff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/favicons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/js/migration/vendor/select2/select2.min.css" />
+    <link rel="stylesheet" href="/assets/css/migration.css" />
+    <link rel="stylesheet" href="/assets/css/override.css" />
+  </head>
+  <body data-theme="ogo-clean">
+    <div class="site-wrapper">
+      <header class="header header--clean">
+        <div class="header-bottom container">
+          <div class="header-bottom-left">
+            <a class="header-logo" href="/">
+              <img class="header-logo__img" src="/assets/img/logo.svg" alt="" />
+              <span class="header-logo__text">библиотека компонентов</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-menu">
+          <ul>
+            <li>
+              <a class="sidebar-menu__close" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--chevron-left"></use></svg>
+                </span>
+                <span>Вернуться назад</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link js-city-popup" href="/ajax/new/select_city_popup.php">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                </span>
+                <span class="sidebar-city">
+                  Город:
+                  <span class="sidebar-city__text">Москва</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--heart"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-favorite-counter hidden">2</span>
+                </span>
+                <span>Избранное</span>
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-menu__link" href="#">
+                <span class="sidebar-menu__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--comparison"></use></svg>
+                  <span class="badge fs-6 rounded-pill position-absolute top-0 end-0 bg-danger js-compare-counter hidden">4</span>
+                </span>
+                <span>Сравнение</span>
+              </a>
+            </li>
+            <li><a class="sidebar-menu__misc" href="#">Доставка и оплата</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Гарантия и возврат</a></li>
+            <li><a class="sidebar-menu__misc" href="#">Адреса магазинов</a></li>
+            <li>
+              <div class="sidebar-phone">
+                <span class="sidebar-phone__icon">
+                  <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                </span>
+                <a class="sidebar-phone__number" href="tel:+7 495 133-79-84">+7 495 133-79-84</a>
+                <span class="sidebar-phone__worktime">с 10:00 до 22:00</span>
+              </div>
+            </li>
+            <li><a class="btn btn-primary w-100" href="#">Позвонить</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main">
+        <article class="content">
+          <header class="content-header"><h1 class="page-title js-page-title">Поля и формы</h1></header>
+          <section class="content-section">
+            <style>
+              .nav-pills > .nav-link {
+                text-align: left !important;
+              }
+              .nav-pills > .nav-link:not(.active):hover {
+                background: #f1f1f1;
+              }
+            </style>
+            <div class="row g-3-g-lg-4">
+              <div class="col-12 col-md-3" style="@media screen and (min-width: 1024px) {position: sticky; top: 1rem; align-self: flex-start}">
+                <div class="nav nav-pills nav-justified flex-column" id="ui-nav-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active" id="ui-nav-searchbox-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-searchbox" type="button" role="tab" aria-controls="ui-nav-searchbox" aria-selected>Поиск</button>
+                  <button class="nav-link" id="ui-nav-city-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-city" type="button" role="tab" aria-controls="ui-nav-city">Выбрать город</button>
+                  <button class="nav-link" id="ui-nav-question-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-question" type="button" role="tab" aria-controls="ui-nav-question">Отправить вопрос</button>
+                  <button class="nav-link" id="ui-nav-callback-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-callback" type="button" role="tab" aria-controls="ui-nav-callback">Заказать звонок</button>
+                  <button class="nav-link" id="ui-nav-complain-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-complain" type="button" role="tab" aria-controls="ui-nav-complain">Пожаловаться</button>
+                  <button class="nav-link" id="ui-nav-auth-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-auth" type="button" role="tab" aria-controls="ui-nav-auth">Логин</button>
+                  <button class="nav-link" id="ui-nav-registration-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-registration" type="button" role="tab" aria-controls="ui-nav-registration">Регистрация</button>
+                  <button class="nav-link" id="ui-nav-recovery-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-recovery" type="button" role="tab" aria-controls="ui-nav-recovery">Восстановить пароль</button>
+                  <button class="nav-link" id="ui-nav-supplier-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-supplier" type="button" role="tab" aria-controls="ui-nav-supplier">Поставщикам</button>
+                  <button class="nav-link" id="ui-nav-adult-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-adult" type="button" role="tab" aria-controls="ui-nav-adult">Возраст 18+</button>
+                  <button class="nav-link" id="ui-nav-service-check-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-service-check" type="button" role="tab" aria-controls="ui-nav-service-check">Гарантия</button>
+                  <button class="nav-link" id="ui-nav-fast-buy-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-fast-buy" type="button" role="tab" aria-controls="ui-nav-fast-buy">Купить в 1 клик</button>
+                  <button class="nav-link" id="ui-nav-user-wish-tab" data-bs-toggle="pill" data-bs-target="#ui-nav-user-wish" type="button" role="tab" aria-controls="ui-nav-user-wish">Здесь нет того, что мне нужно</button>
+                </div>
+              </div>
+              <div class="col-12 col-md-9">
+                <div class="tab-content" id="ui-nav-tabContent">
+                  <div class="tab-pane fade show active" id="ui-nav-searchbox" role="tabpanel" aria-labelledby="ui-nav-searchbox-tab">
+                    <h2 class="content-section__title">Поиск</h2>
+                    <form class="form form-searchbox" id="form-searchbox" action="/ajax/search.php" method="GET" data-ajax-submit="false" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <fieldset class="position-relative">
+                        <input class="form-control" type="search" placeholder="Поиск товаров" name="q" autocomplete="off" />
+                        <button class="btn btn-link position-absolute top-50 end-0 translate-middle-y" type="submit">
+                          <svg class="svg-icon svg-icon--md"><use xlink:href="/assets/img/sprites/sprite.svg#ui--search"></use></svg>
+                        </button>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-city" role="tabpanel" aria-labelledby="ui-nav-city-tab">
+                    <h2 class="content-section__title">Выбрать город</h2>
+                    <div class="alert alert-info">Выберите Москву для удачного выполнения, иначе ошибка в консоли</div>
+                    <form class="form form-city" id="form-city" action="/ajax/new/setCity.php" method="POST" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="field field--type-text field--icon mb-3">
+                        <label class="field__label visually-hidden" for="city">Начните вводить название…</label>
+                        <div class="field__field">
+                          <input class="form-control js-select-city" type="text" name="city" id="city" placeholder="Начните вводить название…" spellcheck="false" inputmode="search" data-src="/data/cities-ru.json" />
+                          <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--location"></use></svg>
+                        </div>
+                      </div>
+                      <p class="mb-0">Есть магазины и точки выдачи ОГО!</p>
+                      <ul class="list-inline fs-4">
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="4011">Москва</a></li>
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="3958">Челябинск</a></li>
+                      </ul>
+                      <p class="mb-0">Популярные</p>
+                      <ul class="list-inline fs-4">
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="4011">Москва</a></li>
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="4016">Санкт-Петербург</a></li>
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="3828">Екатеринбург</a></li>
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="2997">Казань</a></li>
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="3651">Новосибирск</a></li>
+                        <li class="list-inline-item"><a class="js-change-city" href="#" data-city="2883">Уфа</a></li>
+                      </ul>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-question" role="tabpanel" aria-labelledby="ui-nav-question-tab">
+                    <h2 class="content-section__title">Отправить вопрос</h2>
+                    <div class="alert alert-info">
+                      Имя для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-question" data-values='{"name": "user"}'>user</span>
+                    </div>
+                    <form class="form form-question" id="form-question" action="/ajax/new/newCallback.php" method="POST" data-reset="true" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="field field--type-select">
+                            <label class="field__label" for="question-theme">Тема сообщения</label>
+                            <div class="field__field">
+                              <select class="form-select" id="question-theme" name="theme" required="required">
+                                <option value="" disabled selected hidden>Тема сообщения</option>
+                                <option value="5">Задать вопрос о товаре</option>
+                                <option value="3">Предложение о поставке товара</option>
+                                <option value="2">Рекламное предложение</option>
+                                <option value="11">Обратный звонок</option>
+                                <option value="1">О магазине</option>
+                                <option value="53">Информация о соискателе от работодателя</option>
+                                <option value="6">Сообщить об ошибке</option>
+                                <option value="26">Пожаловаться</option>
+                                <option value="4">Работа в ОГО!</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-12 col-lg-6">
+                          <div class="field field--type-text mb-3">
+                            <label class="field__label" for="question-name">Имя</label>
+                            <div class="field__field"><input class="form-control" type="text" id="question-name" name="name" placeholder="Ваше имя" required="required" /></div>
+                          </div>
+                          <div class="field field--type-tel field--icon mb-3">
+                            <label class="field__label" for="question-phone">
+                              Телефон
+                              <span class="js-tooltip field__tooltip" data-tooltip-content="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-tippy-placement="top">
+                                <span class="tooltip-icon badge rounded-pill bg-light">?</span>
+                              </span>
+                            </label>
+                            <div class="field__field">
+                              <input class="form-control" type="tel" id="question-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" data-rule-phone="true" required="required" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                            </div>
+                          </div>
+                          <div class="field field--type-email mb-3">
+                            <label class="field__label" for="question-email">Электронная почта</label>
+                            <div class="field__field"><input class="form-control" type="email" id="question-email" name="email" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-6"><div class="callout mt-4">Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами</div></div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="field field--type-textarea">
+                            <label class="field__label" for="question-comment">Сообщение</label>
+                            <div class="field__field"><textarea class="form-control" rows="3" id="question-comment" name="comment" required="required"></textarea></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="field field--type-checkbox">
+                            <label class="field__label">
+                              <input type="checkbox" id="question-privacy" name="privacy" checked="checked" required="required" />
+                              <span class="field__check"></span>
+                              <span class="field__caption">
+                                С
+                                <a href="#">политикой обработки и защиты персональных данных</a>
+                                ознакомлен и согласен
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-8">
+                          <div class="field field--type-file field--button">
+                            <label class="field__label" for="question-file">Прикрепить файл</label>
+                            <div class="field__field"><input class="js-input-file" data-button-caption="Загрузить документ" type="file" id="question-file" name="file" /></div>
+                          </div>
+                        </div>
+                        <div class="col-4"><button class="btn btn-primary w-100 mt-4" type="submit">Отправить</button></div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-callback" role="tabpanel" aria-labelledby="ui-nav-callback-tab">
+                    <h2 class="content-section__title">Заказать звонок</h2>
+                    <div class="alert alert-info">
+                      Имя для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-callback" data-values='{"name": "user"}'>user</span>
+                    </div>
+                    <form class="form form-callback" id="form-callback" action="/ajax/new/newCallback.php" method="POST" data-reset="true" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="row">
+                        <div class="col-12 col-lg-6">
+                          <div class="field field--type-text mb-3">
+                            <label class="field__label" for="callback-name">Имя</label>
+                            <div class="field__field"><input class="form-control" type="text" id="callback-name" name="name" placeholder="Ваше имя" required="required" /></div>
+                          </div>
+                          <div class="field field--type-tel field--icon mb-3">
+                            <label class="field__label" for="callback-phone">
+                              Телефон
+                              <span class="js-tooltip field__tooltip" data-tooltip-content="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-tippy-placement="top">
+                                <span class="tooltip-icon badge rounded-pill bg-light">?</span>
+                              </span>
+                            </label>
+                            <div class="field__field">
+                              <input class="form-control" type="tel" id="callback-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" data-rule-phone="true" required="required" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                            </div>
+                          </div>
+                          <div class="field field--type-checkbox mb-3">
+                            <label class="field__label">
+                              <input type="checkbox" id="callback-privacy" name="privacy" checked="checked" required="required" />
+                              <span class="field__check"></span>
+                              <span class="field__caption">
+                                С
+                                <a href="/privacy.html">политикой обработки и защиты персональных данных</a>
+                                ознакомлен и согласен
+                              </span>
+                            </label>
+                          </div>
+                          <button class="btn btn-primary w-100" type="submit">Отправить</button>
+                        </div>
+                        <div class="col-12 col-lg-6"><div class="callout mt-4">Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами по интересующему вопросу</div></div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-complain" role="tabpanel" aria-labelledby="ui-nav-complain-tab">
+                    <h2 class="content-section__title">Пожаловаться</h2>
+                    <div class="alert alert-info">
+                      Имя для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-complain" data-values='{"name": "user"}'>user</span>
+                    </div>
+                    <form class="form form-complain" id="form-complain" action="/ajax/new/newCallback.php" method="POST" data-reset="true" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="row mb-3">
+                        <div class="col-12 col-lg-6">
+                          <div class="field field--type-text mb-3">
+                            <label class="field__label" for="complain-name">Имя</label>
+                            <div class="field__field"><input class="form-control" type="text" id="complain-name" name="name" placeholder="Ваше имя" required="required" /></div>
+                          </div>
+                          <div class="field field--type-tel field--icon mb-3">
+                            <label class="field__label" for="complain-phone">
+                              Телефон
+                              <span class="js-tooltip field__tooltip" data-tooltip-content="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-tippy-placement="top">
+                                <span class="tooltip-icon badge rounded-pill bg-light">?</span>
+                              </span>
+                            </label>
+                            <div class="field__field">
+                              <input class="form-control" type="tel" id="complain-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" data-rule-phone="true" required="required" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                            </div>
+                          </div>
+                          <div class="field field--type-email mb-3">
+                            <label class="field__label" for="complain-email">Электронная почта</label>
+                            <div class="field__field"><input class="form-control" type="email" id="complain-email" name="email" placeholder="Введите email" required="required" /></div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-6"><div class="callout mt-4">Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами по интересующему вопросу</div></div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="field field--type-textarea">
+                            <label class="field__label" for="complain-comment">Сообщение</label>
+                            <div class="field__field"><textarea class="form-control" rows="3" id="complain-comment" name="comment" required="required"></textarea></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="field field--type-checkbox">
+                            <label class="field__label">
+                              <input type="checkbox" id="complain-privacy" name="privacy" checked="checked" required="required" />
+                              <span class="field__check"></span>
+                              <span class="field__caption">
+                                С
+                                <a href="#">политикой обработки и защиты персональных данных</a>
+                                ознакомлен и согласен
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-8">
+                          <div class="field field--type-file">
+                            <label class="field__label" for="complain-file">Прикрепить файл</label>
+                            <div class="field__field"><input class="js-input-file" type="file" id="complain-file" name="file" /></div>
+                          </div>
+                        </div>
+                        <div class="col-4"><button class="btn btn-primary w-100 mt-4" type="submit">Отправить</button></div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-auth" role="tabpanel" aria-labelledby="ui-nav-auth-tab">
+                    <h2 class="content-section__title">Логин</h2>
+                    <div class="alert alert-info">На этой форме ошибка по таймауту</div>
+                    <form class="form form-auth" id="form-auth" action="/ajax/new/authform.php" method="POST" data-reset="true" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="field field--type-email mb-3">
+                        <label class="field__label" for="auth-email">Электронная почта</label>
+                        <div class="field__field"><input class="form-control" type="email" id="auth-email" name="USER_LOGIN" placeholder="Введите email" required="required" /></div>
+                      </div>
+                      <div class="field field--type-password mb-3">
+                        <label class="field__label" for="auth-password">Пароль</label>
+                        <div class="field__field">
+                          <input class="form-control" type="password" id="auth-password" name="USER_PASSWORD" placeholder="Введите пароль" autocomplete="autocomplete" required="required" />
+                          <button class="btn field__show-password" type="button" title="Показать/Скрыть пароль">
+                            <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-close"></use></svg><svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-open"></use></svg>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary w-100 mb-3" type="submit">Войти</button>
+                      <p class="mb-4">
+                        Забыли пароль?
+                        <a class="js-recovery-popup" href="/ajax/new/forgot_password_popup.php">Восстановить</a>
+                      </p>
+                      <p><strong>Войти через социальные сети</strong></p>
+                      <div class="social-buttons">
+                        <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                        <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                        <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                        <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                        <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-registration" role="tabpanel" aria-labelledby="ui-nav-registration-tab">
+                    <h2 class="content-section__title">Регистрация</h2>
+                    <div class="alert alert-info">
+                      Имя для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-registration" data-values='{"REGISTER[FIRST_NAME]": "user"}'>user</span>
+                    </div>
+                    <form class="form form-registration" id="form-registration" action="/ajax/new/register_popup.php" method="POST" data-reset="true" novalidate>
+                      <input type="hidden" id="registration-login" name="REGISTER[LOGIN]" />
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="row">
+                        <div class="col">
+                          <div class="field field--type-email mb-3">
+                            <label class="field__label" for="registration-email">Электронная почта</label>
+                            <div class="field__field"><input class="form-control" type="email" data-sync-value-to="#registration-login" id="registration-email" name="REGISTER[EMAIL]" placeholder="Введите email" required="required" /></div>
+                          </div>
+                          <div class="field field--type-text mb-3">
+                            <label class="field__label" for="registration-name">Имя</label>
+                            <div class="field__field"><input class="form-control" type="text" id="registration-name" name="REGISTER[FIRST_NAME]" placeholder="Ваше имя" required="required" /></div>
+                          </div>
+                          <div class="field field--type-text mb-3">
+                            <label class="field__label" for="registration-lastname">Фамилия</label>
+                            <div class="field__field"><input class="form-control" type="text" id="registration-lastname" name="REGISTER[LAST_NAME]" placeholder="Ваша фамилия" required="required" /></div>
+                          </div>
+                          <div class="field field--type-tel field--icon mb-3">
+                            <label class="field__label" for="registration-phone">
+                              Телефон
+                              <span class="js-tooltip field__tooltip" data-tooltip-content="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-tippy-placement="top">
+                                <span class="tooltip-icon badge rounded-pill bg-light">?</span>
+                              </span>
+                            </label>
+                            <div class="field__field">
+                              <input class="form-control" type="tel" id="registration-phone" name="REGISTER[PERSONAL_PHONE]" placeholder="+7 (___) ___-__-__" inputmode="tel" data-rule-phone="true" required="required" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                            </div>
+                          </div>
+                          <div class="field field--type-password mb-3">
+                            <label class="field__label" for="registration-password">Придумайте пароль</label>
+                            <div class="field__field">
+                              <input class="form-control" type="password" id="registration-password" name="REGISTER[PASSWORD]" autocomplete="autocomplete" />
+                              <button class="btn field__show-password" type="button" title="Показать/Скрыть пароль">
+                                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-close"></use></svg><svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-open"></use></svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="field field--type-password mb-3">
+                            <label class="field__label" for="registration-confirm-password">Повторите пароль</label>
+                            <div class="field__field">
+                              <input class="form-control" type="password" id="registration-confirm-password" name="REGISTER[CONFIRM_PASSWORD]" data-rule-equalTo="#registration-password" autocomplete="autocomplete" />
+                              <button class="btn field__show-password" type="button" title="Показать/Скрыть пароль">
+                                <svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-close"></use></svg><svg class="svg-icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--eye-open"></use></svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="field field--type-checkbox mb-3">
+                            <label class="field__label">
+                              <input type="checkbox" id="registration-confirm" name="REGISTER[CONFIRM]" checked="checked" required="required" />
+                              <span class="field__check"></span>
+                              <span class="field__caption">
+                                Принимаю условия
+                                <a href="#">Публичной оферты</a>
+                              </span>
+                            </label>
+                          </div>
+                          <button class="btn btn-primary w-100" type="submit" name="register_submit_button" value="on">Зарегистрироваться</button>
+                        </div>
+                        <div class="col">
+                          <p><strong>Войти через социальные сети</strong></p>
+                          <div class="social-buttons mb-3">
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/vk.svg" alt="vk" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tg.svg" alt="telegram" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/google.svg" alt="google" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/tinkoffId.svg" alt="tinkoffId" /></a>
+                            <a class="social-button" href="#"><img class="social-button__img" src="/assets/img/icons/yandex.svg" alt="yandex" /></a>
+                          </div>
+                          <div class="callout">
+                            <p class="h3">Обещаем, спама не будет!</p>
+                            <p>Мы рассылаем смс только о статусах заказов и изменениях бонусного счета. Мы не осуществляем рекламные смс-рассылки и не передаем телефоны наших клиентов третьим лицам.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-recovery" role="tabpanel" aria-labelledby="ui-nav-recovery-tab">
+                    <h2 class="content-section__title">Восстановить пароль</h2>
+                    <div class="alert alert-info">
+                      Email для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-recovery" data-values='{"USER_EMAIL": "user@user.com"}'>user@user.com</span>
+                    </div>
+                    <form class="form form-recovery" id="form-recovery" action="/ajax/new/forgot_password_popup.php" method="POST" data-reset="true" novalidate>
+                      <p>Введите E-mail, указанный при регистрации, и мы отправим ссылку для восстановления пароля.</p>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="field field--type-email mb-3">
+                        <label class="field__label" for="recovery-email">Электронная почта</label>
+                        <div class="field__field"><input class="form-control" type="email" id="recovery-email" name="USER_EMAIL" placeholder="Введите email" required="required" /></div>
+                      </div>
+                      <button class="btn btn-primary" type="submit">Отправить</button>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-supplier" role="tabpanel" aria-labelledby="ui-nav-supplier-tab">
+                    <h2 class="content-section__title">Поставщикам</h2>
+                    <div class="alert alert-info">
+                      Имя для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-supplier" data-values='{"name": "user"}'>user</span>
+                    </div>
+                    <form class="form form-supplier" id="form-supplier" action="/ajax/new/supplier_inquiry.php" method="POST" data-reset="true" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="field field--type-text mb-3">
+                        <label class="field__label" for="supplier-company">Компания</label>
+                        <div class="field__field"><input class="form-control" type="text" id="supplier-company" name="company" placeholder="Ваше имя" required="required" /></div>
+                      </div>
+                      <div class="field field--type-text mb-3">
+                        <label class="field__label" for="supplier-name">Имя</label>
+                        <div class="field__field"><input class="form-control" type="text" id="supplier-name" name="name" placeholder="Ваше имя" required="required" /></div>
+                      </div>
+                      <div class="field field--type-tel field--icon mb-3">
+                        <label class="field__label" for="supplier-phone">
+                          Телефон / WhatsApp
+                          <span class="js-tooltip field__tooltip" data-tooltip-content="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-tippy-placement="top">
+                            <span class="tooltip-icon badge rounded-pill bg-light">?</span>
+                          </span>
+                        </label>
+                        <div class="field__field">
+                          <input class="form-control" type="tel" id="supplier-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" data-rule-phoneint="true" required="required" />
+                          <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                        </div>
+                      </div>
+                      <div class="field field--type-email mb-3">
+                        <label class="field__label" for="supplier-email">Электронная почта</label>
+                        <div class="field__field"><input class="form-control" type="email" id="supplier-email" name="email" required="required" /></div>
+                      </div>
+                      <div class="field field--type-checkbox mb-3">
+                        <label class="field__label">
+                          <input type="checkbox" name="supplier-agree" id="supplier-agree" checked="checked" required="required" />
+                          <span class="field__check"></span>
+                          <span class="field__caption">
+                            С
+                            <a href="#">политикой обработки и защиты персональных данных</a>
+                            ознакомлен и согласен
+                          </span>
+                        </label>
+                      </div>
+                      <button class="btn btn-primary w-100" type="submit">Отправить</button>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-adult" role="tabpanel" aria-labelledby="ui-nav-adult-tab">
+                    <h2 class="content-section__title">Возраст 18+</h2>
+                    <div class="alert alert-info">
+                      <div>
+                        Кнопка подтверждения должна быть внутри формы
+                        <code class="badge bg-dark">.js-adult-form</code>
+                      </div>
+                      <div>
+                        Для теста можно
+                        <a href="#" class="js-populate-form" data-form="form-adult" data-values='{"CONFIRM_ADULT": "false"}'>поставить</a>
+                        значение скрытого инпута
+                        <code class="badge bg-dark">CONFIRM_ADULT=false</code>
+                        тогда мок-сервис отправит
+                        <code class="badge bg-dark">{result: "error"}</code>
+                        и будет переход на главную страницу
+                      </div>
+                    </div>
+                    <form class="form form-adult" id="form-adult" action="/ajax/new/confirmVisitorAdult.php" method="POST">
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <input type="hidden" name="CONFIRM_ADULT" value="true" />
+                      <p class="text-center text-primary display-3">
+                        <svg class="svg-icon" style="width: 1.5em; height: 1.5em"><use xlink:href="/assets/img/sprites/sprite.svg#ui--adult"></use></svg>
+                      </p>
+                      <p class="fs-3">Данный раздел предназначен только для посетителей, достигших возраста 18 лет!</p>
+                      <div>
+                        <button class="btn btn-primary js-adult-confirm" type="button">Да, мне есть 18 лет</button>
+                        <button class="btn btn-secondary js-adult-notconfirm" type="button">Нет, я младше</button>
+                      </div>
+                    </form>
+                    <hr />
+                    <div class="row g-3 g-lg-4">
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <a class="category-tile js-adult-block" href="#">
+                          <div class="category-tile__img"><img src="/assets/img/content/category-tile-11.png" alt="Товары 18+" /></div>
+                          <span class="category-tile__title">Товары 18+</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-service-check" role="tabpanel" aria-labelledby="ui-nav-service-check-tab">
+                    <h2 class="content-section__title">Проверить гарантию</h2>
+                    <div class="alert alert-info">
+                      ID для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-service-check" data-values='{"id": "ОБ000001287"}'>ОБ000001287</span>
+                    </div>
+                    <form class="form form-service-check" id="form-service-check" action="/ajax/new/repair_status.php" method="POST" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <div class="row g-3 g-lg-4 justify-content-center">
+                        <div class="col-12 col-lg-5">
+                          <h2 class="mb-2">Сдали товар по гарантии?</h2>
+                          <p class="mb-0">Проверьте статус гарантийного обслуживания.</p>
+                        </div>
+                        <div class="col-12 col-lg-5">
+                          <div class="row g-2">
+                            <div class="col-8">
+                              <div class="field field--type-text">
+                                <label class="field__label visually-hidden" for="service-check">Номер документа</label>
+                                <div class="field__field"><input class="form-control" type="text" id="service-check" name="id" placeholder="Номер документа" required="required" /></div>
+                              </div>
+                            </div>
+                            <div class="col-4"><button class="btn btn-primary w-100" type="submit">Проверить</button></div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-fast-buy" role="tabpanel" aria-labelledby="ui-nav-fast-buy-tab">
+                    <h2 class="content-section__title">Купить в 1 клик</h2>
+                    <div class="alert alert-info">
+                      Имя для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-fast-buy" data-values='{"name": "user"}'>user</span>
+                    </div>
+                    <form class="form form-fast-buy" id="form-fast-buy" action="/ajax/new/fastBuy.php" method="POST" data-reset="true" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <input type="hidden" name="product" id="fast-buy-id" />
+                      <div class="row">
+                        <div class="col-12 col-lg-6">
+                          <div class="field field--type-text mb-3">
+                            <label class="field__label" for="fast-buy-name">Имя</label>
+                            <div class="field__field"><input class="form-control" type="text" id="fast-buy-name" name="name" placeholder="Ваше имя" required="required" /></div>
+                          </div>
+                          <div class="field field--type-tel field--icon mb-3">
+                            <label class="field__label" for="fast-buy-phone">
+                              Телефон
+                              <span class="js-tooltip field__tooltip" data-tooltip-content="Мы отправляем смс при начислении бонусов, но никогда не рассылаем смс-спам своим клиентам" data-tippy-placement="top">
+                                <span class="tooltip-icon badge rounded-pill bg-light">?</span>
+                              </span>
+                            </label>
+                            <div class="field__field">
+                              <input class="form-control" type="tel" id="fast-buy-phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" data-rule-phone="true" required="required" />
+                              <svg class="svg-icon field__icon"><use xlink:href="/assets/img/sprites/sprite.svg#ui--phone"></use></svg>
+                            </div>
+                          </div>
+                          <div class="field field--type-checkbox mb-3">
+                            <label class="field__label">
+                              <input type="checkbox" id="fast-buy-privacy" name="privacy" checked="checked" required="required" />
+                              <span class="field__check"></span>
+                              <span class="field__caption">
+                                С
+                                <a href="/privacy.html">политикой обработки и защиты персональных данных</a>
+                                ознакомлен и согласен
+                              </span>
+                            </label>
+                          </div>
+                          <button class="btn btn-primary w-100" type="submit">Отправить</button>
+                        </div>
+                        <div class="col-12 col-lg-6"><div class="callout mt-4">Пожалуйста, представьтесь и оставьте ваш номер телефона, чтобы менеджер связался с вами для оформления товара</div></div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="ui-nav-user-wish" role="tabpanel" aria-labelledby="ui-nav-user-wish-tab">
+                    <h2 class="content-section__title">Здесь нет того, что мне нужно</h2>
+                    <div class="alert alert-info">
+                      Текст для удачного выполнения:
+                      <span class="badge bg-primary js-populate-form" data-form="form-user-wish" data-values='{"PRODUCT_REQUEST": "test"}'>test</span>
+                    </div>
+                    <form class="form form-user-wish" id="form-user-wish" action="/ajax/new/productRequest.php" method="POST" data-reset="true" novalidate>
+                      <p class="form-error text-danger fw-bold" style="display: none"></p>
+                      <input type="hidden" name="AJAX_TOKEN" value="1711465991:c3e6349e9a118453a36207cf7e343084" />
+                      <div class="field field--type-textarea mb-3">
+                        <div class="field__field"><textarea class="form-control" rows="3" id="product-request" name="PRODUCT_REQUEST" required="required"></textarea></div>
+                      </div>
+                      <button class="btn btn-primary" type="submit">Отправить</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
+    <script>
+      window.CompareIDList = window.CompareIDList || ["389198", "391062", "391065"];
+      window.FavoriteIDList = window.FavoriteIDList || ["389198", "391062", "391065"];
+      window.CartIDList = window.CartIDList || ["389198", "391062", "391065"];
+      window.CartIDDict = window.CartIDDict || { 389198: 1, 391062: 2, 391065: 1 };
+
+      //Переопределение функции для скрытия прелоадера битрикса
+      var BX = BX || [];
+      BX.showWait = function (node, msg) {
+        return;
+      };
+    </script>
+    <script src="/assets/js/migration/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.livequery/jquery.livequery.min.js"></script>
+    <script src="/assets/js/migration/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.mousewheel/jquery.mousewheel.pack.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.placeholder/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/migration/vendor/jquery.form/jquery.form.min.js"></script>
+    <script src="/assets/js/migration/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/migration/blocks.js"></script>
+    <script src="/assets/js/migration/element_feedback.js"></script>
+    <script src="/assets/js/migration/element_questions.js"></script>
+    <script src="/assets/js/migration/filter_value_autocomplete.js"></script>
+    <script src="/assets/js/migration/global.js"></script>
+    <script src="/assets/js/migration/kladr.js"></script>
+    <script src="/assets/js/migration/main.js"></script>
+    <script src="/assets/js/migration/phone_validator.js"></script>
+    <script src="/assets/js/migration/questions.js"></script>
+    <script src="/assets/js/migration/script.js"></script>
+    <script src="/assets/js/migration/tech.js"></script>
+    <script src="/assets/js/migration/tooltips.js"></script>
+  </body>
+</html>

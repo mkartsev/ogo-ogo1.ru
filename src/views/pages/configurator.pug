@@ -1,0 +1,373 @@
+extends ../layouts/default
+
+include ../../components/configurator/configurator
+include ../../components/forms/forms
+include ../../components/popup/popup
+include ../../components/social-buttons/social-buttons
+
+append vars
+  -
+    page.name  = "configurator"
+    page.title = "Конфигуратор ПК"
+    //- page.showHeader = true
+    //- page.showTitle = true
+    //- page.showBreadcrumbs = true
+
+    fullItems = [
+      {
+        id: "393525",
+        category: "Корпус компьютера",
+        categoryID: "korpus",
+        title: "Корпус MicroATX Minitower AeroCool CS-110-S-BK-v1 Black",
+        image: "/assets/img/content/products/393525.jpg",
+        price: 2420,
+        bonus: 12,
+        strict: true,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        id: "394969",
+        category: "Блок питания",
+        categoryID: "block",
+        title: "Блок питания 600W ZALMAN ZM600-LX3",
+        image: "/assets/img/content/products/394969.jpg",
+        price: 4260,
+        bonus: 42,
+        strict: true,
+        mandatory: true,
+        compatible: true,
+      },
+      //- {
+      //-   id: "232361",
+      //-   category: "Материнская плата",
+      //-   categoryID: "materinka",
+      //-   title: "Материнская плата ASUS Prime H310M-K R2.0 H310 Socket-1151v2 2xDDR4, 4xSATA3, 1xPCI-E16x, 2xUSB3.1, D-Sub, DVI-D, Glan, mATX",
+      //-   image: "/assets/img/content/products/232361.jpg",
+      //-   price: 6010,
+      //-   bonus: 30,
+      //-   strict: true,
+      //-   mandatory: true,
+      //-   compatible: false,
+      //-   incompatible: "Процессор Intel Core i5-8400, 2.8ГГц, (Turbo 4ГГц), 6-ядерный, L3 9МБ, LGA1151v2, OEM",
+      //- },
+      //- {
+      //-   id: "215648",
+      //-   category: "Процессор",
+      //-   categoryID: "processor",
+      //-   title: "Процессор Intel Core i5-8400, 2.8ГГц, (Turbo 4ГГц), 6-ядерный, L3 9МБ, LGA1151v2, OEM",
+      //-   image: "/assets/img/content/products/215648.jpg",
+      //-   price: 14740,
+      //-   bonus: 73,
+      //-   strict: true,
+      //-   mandatory: true,
+      //-   compatible: false,
+      //-   incompatible: "Материнская плата ASUS Prime H310M-K R2.0 H310 Socket-1151v2 2xDDR4, 4xSATA3, 1xPCI-E16x, 2xUSB3.1, D-Sub, DVI-D, Glan, mATX"
+      //- },
+      //- {
+      //-   id: "239240",
+      //-   category: "Оперативная память",
+      //-   categoryID: "memory",
+      //-   title: "Модуль памяти DIMM 8Gb DDR4 PC21300 2666MHz PATRIOT (PSD48G266681)",
+      //-   image: "/assets/img/content/products/239240.jpg",
+      //-   price: 1900,
+      //-   bonus: 9,
+      //-   strict: true,
+      //-   mandatory: true,
+      //-   compatible: true,
+      //-   quantity: 3
+      //- },
+    ]
+
+    emptyItems = [
+      //- {
+      //-   category: "Корпус компьютера",
+      //-   categoryID: "korpus",
+      //-   image: "configurator--korpus-pc",
+      //-   placeholder: "От корпуса зависит внешний вид компьютера. Корпус следует выбирать с учетом форм-фактора материнской платы. Корпуса бывают как с встроенным блоком питания, так и без. В последнем случае необходимо подобрать блок питания отдельно.",
+      //-   mandatory: true,
+      //-   strict: true,
+      //-   compatible: true
+      //- },
+      //- {
+      //-   category: "Блок питания",
+      //-   categoryID: "block",
+      //-   image: "configurator--blok-pitaniya",
+      //-   placeholder: "Блок питания потребуется, если в корпусе нет встроенного. Мощность блока нужно подбирать исходя из набора остальных комплектующих - в основном, процессора и видеокарты.",
+      //-   mandatory: true,
+      //-   strict: true,
+      //-   compatible: true
+      //- },
+      {
+        category: "Материнская плата",
+        categoryID: "materinka",
+        image: "configurator--materinskaya-plata",
+        placeholder: "От материнской платы зависят многие возможности компьютера - сколько видеокарт можно поставить, сколько модулей памяти, сколько и каких дисков подключить. Также на плате, как правило, интегрирован звуковой процессор.",
+        strict: true,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        category: "Процессор",
+        categoryID: "processor",
+        image: "configurator--processor",
+        placeholder: "Процессор (CPU) - мозг вашего ПК. Не забудьте, что он должен быть полностью совместим с материнской платой, иначе компьютер просто не заработает.",
+        strict: true,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        category: "Кулер для процессора",
+        categoryID: "cooler",
+        image: "configurator--kuler",
+        placeholder: "Кулер иногда поставляется вместе с процессором, но чаще его нужно выбрать отдельно. Чем мощнее процессор, тем лучше нужно продумать систему охлаждения. Для экстремальных сборок можно использовать жидкостные кулеры. Учитывайте размеры корпуса при подборе.",
+        strict: false,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        category: "Оперативная память",
+        categoryID: "memory",
+        image: "configurator--operativnaya-pamyat",
+        placeholder: "В оперативной памяти находятся все запущенные программы и работающие модули операционной системы - чем больше объем, тем комфортнее работать с компьютером. Если используется \"встроенная\" видеокарта, часть оперативной памяти используется для ее нужд и доступный обычным программам объем будет меньше.",
+        strict: true,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        category: "Жесткий диск",
+        categoryID: "hdd",
+        image: "configurator--jesky-disk",
+        placeholder: "Жесткий диск (HDD) служит для хранения ваших программ и файлов. Диски размером 3.5\" могут иметь объем более 10ТБ, диски размером 2.5\" используются в компактных корпусах.",
+        strict: false,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        category: "SSD накопитель",
+        categoryID: "ssd",
+        image: "configurator--ssd",
+        placeholder: "Твердотельные накопители (SSD) значительно превосходят по скорости жесткие диски, не шумят и потребляют меньше энергии. И, хотя их цена, как правило выше обычных дисков, лучше использовать именно SSD хотя бы для размещения операционной системы компьютера.",
+        strict: false,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        category: "Видеокарта",
+        categoryID: "video",
+        image: "configurator--videokarta",
+        placeholder: "Если будете играть на ПК в игры, без хорошей видеокарты не обойтись! А еще мощная видеокарта (GPU) поможет в работе с графическими приложениями или программировании систем искусственного интеллекта.",
+        strict: false,
+        mandatory: true,
+        compatible: true
+      },
+      {
+        category: "DVD-привод",
+        categoryID: "dvd",
+        image: "configurator--dvd",
+        placeholder: "Оптический привод позволит читать CD или DVD диски (часть программ до сих пор на них поставляются). Также вы сможете записывать свои данные на диски для архива (резервной копии).",
+        strict: false,
+        mandatory: true,
+        compatible: true
+      }
+    ]
+
+    additionalItems = [
+      "Мониторы",
+      "Колонки",
+      "Аксессуары для корпусов",
+      "Мыши",
+      "Гарнитуры для ПК",
+      "Системы охлаждения",
+      "Коврики для мышей",
+      "Наушники",
+      "Карты видеозахвата и ТВ-Тюнеры",
+      "Клавиатуры",
+      "Микрофоны",
+      "Звуковые карты",
+      "Комплекты",
+      "Веб камеры",
+      "Маршрутизаторы (Роутеры)",
+      "Игровые манипуляторы",
+      "Графические планшеты",
+      "Wi-Fi адаптеры и карты",
+      "МФУ",
+      "Приводы внешние",
+      "Принтер",
+      "Кресла для геймеров",
+      "Кард ридеры внешние",
+      "Сканеры",
+      "USB концентраторы (HUB)",
+      "Программы",
+      "Кронштейны для мониторов",
+      "Док-станции для накопителей",
+      "Антивирусы",
+      "Сетевые фильтры и удлинители",
+      "Внешние жесткие диски (HDD)",
+      "Кресла и стулья",
+      "ИБП",
+      "Внешние накопители (SSD)"
+    ]
+
+    //- OSList = [
+    //-   {value: "-1", text: "Без системы"},
+    //-   {value: "win10", text: "Windows 10"},
+    //-   {value: "win11", text: "Windows 11"},
+    //-   {value: "Ubuntu", text: "Ubuntu 24.04"}
+    //- ]
+
+prepend scripts
+  //- Скрипты только для этой страницы
+
+block content
+  section.content-section
+    .configurator#configurator
+      input(type="hidden" name="" id="cofiguratorId" value="1600065")
+
+      +popup-add-to-cart--configurator()
+      +popup-expert-request()
+      +popup-configuration-mail()
+
+      .configurator-header.row.g-3.mb-3
+        .col-12.col-md-8
+          p Конфигуратор не дает 100% гарантии совместимости. Наши специалисты всегда рады помочь в подборе оптимальной конфигурации.
+            a(href=process.env.AUTH_URL class="js-auth-popup") Авторизуйтесь
+            | в личном кабинете, чтобы сохранить ваши конфигурации.
+
+        .col-12.col-md-4.d-flex.justify-content-end
+          +button(type="button" variant="secondary" text="Новая конфигурация" class="js-configurator-action" data-action="newConfiguration")
+
+        .configurator-plate.bg-info-subtle
+          .row.g-3
+            .col-6
+              ul.list-inline
+                li.list-inline-item
+                  a(href="#" class="js-check-strict") Проверить обязательные
+                li.list-inline-item
+                  a(href="#" class="js-check-compatible") Проверить совместимость
+                li.list-inline-item
+                  a(href="#" class="js-configurator-action" data-action="add" data-id="1600065") Добавить
+                li.list-inline-item
+                  a(href="#" class="js-configurator-action" data-action="remove" data-id="1600065" data-reload="Y") Убрать
+                li.list-inline-item
+                  a(href="#" class="js-configurator-action" data-action="addToBasket" data-id="1600065" data-reload="Y" data-type="service") Добавить все в корзину
+                li.list-inline-item
+                  a(href="#" class="js-configurator-action" data-action="saveConfiguration" data-id="1600065") Сохранить
+                li.list-inline-item
+                  a(href="#" class="js-configurator-action" data-action="newConfiguration") Новая конфигурация
+                li.list-inline-item
+                  a(href="#" class="js-configurator-action" data-action="switchConfiguration" data-id="1600065") Переключить конфигурацию
+            .col-2
+              label(for="test-quantity") Количество
+              select.js-configurator-action#test-quantity
+                option(data-action="setQuantity" data-id="1600065" data-reload="Y" data-list="configurator" data-quantity="3") 3
+                option(data-action="setQuantity" data-id="1600065" data-reload="Y" data-list="configurator" data-quantity="2") 2
+                option(data-action="setQuantity" data-id="1600065" data-reload="Y" data-list="configurator" data-quantity="1") 1
+            .col-2
+              label(for="test-os") ОС
+              select.js-configurator-action#test-os
+                option(value="0" data-action="remove" data-id="0" data-reload="Y" data-list="configurator" data-type="os") Нет
+                option(value="1524833" data-action="add" data-id="1524833" data-reload="Y" data-type="os") Windows 10 Pro 64bit DVD OEM ENG
+                option(value="1305852" data-action="add" data-id="1305852" data-reload="Y" data-type="os") Windows 10 Pro 64bit DVD OEM RU FQC-08909
+                option(value="1619702" data-action="add" data-id="1619702" data-reload="Y" data-type="os") Windows 11 Pro 64-bit Russian 1pk DSP OEI DVD (FQC-10547)
+                option(value="1647708" data-action="add" data-id="1647708" data-reload="Y" data-type="os") Windows 11 Pro 64bit DVD OEM ENG
+            .col-2
+              +button(type="button" variant="primary" text="Добавить" icon="ui--shopping-cart-sm" iconSize="sm" class="w-100 mt-4 js-configurator-action" data-action="add" data-id="1600065")
+
+      .configurator-body.row.g-3
+        //- Основное
+        .configurator-main.col-12.col-lg-8
+          //- Товары
+          .configurator-items
+            each item in fullItems
+              +configurator-slot(item, true)(id=item.categoryID  data-strict=item.strict ? "true" : "false" data-mandatory=item.mandatory ? "true" : "false" data-compatible=item.compatible ? "true" : "false")
+
+            each item in emptyItems
+              +configurator-slot(item, false)(id=item.categoryID data-strict=item.strict ? "true" : "false" data-mandatory=item.mandatory ? "true" : "false" data-compatible=item.compatible ? "true" : "false")
+
+            //- Слот для сборки
+            .configurator-slot.configurator-slot--special.bg-dark#assembly
+              .configurator-item.configurator-item--special
+                .configurator-item__category Сборка
+                .configurator-item__custom
+                  .configurator-item__image
+                    +svg-icon("ui--gear", "2xl")
+                  .configurator-item__title Сборка системного блока с водяным охлаждением
+                .configurator-item__price 1 990 ₽
+
+            //- Слот для ОС
+            .configurator-slot.configurator-slot--special.bg-info#os
+              .configurator-item.configurator-item--special
+                span.configurator-item__category Операционная система
+                .configurator-item__custom
+                  .configurator-item__image
+                    +svg-icon("ui--windows", "2xl").text-white
+                  select.js-configurator-action
+                    option(value="0" data-action="remove" data-id="0" data-reload="Y" data-list="configurator" data-type="os") Нет
+                    option(value="1524833" data-action="add" data-id="1524833" data-reload="Y" data-type="os") Windows 10 Pro 64bit DVD OEM ENG
+                    option(value="1305852" data-action="add" data-id="1305852" data-reload="Y" data-type="os") Windows 10 Pro 64bit DVD OEM RU FQC-08909
+                    option(value="1619702" data-action="add" data-id="1619702" data-reload="Y" data-type="os") Windows 11 Pro 64-bit Russian 1pk DSP OEI DVD (FQC-10547)
+                    option(value="1647708" data-action="add" data-id="1647708" data-reload="Y" data-type="os") Windows 11 Pro 64bit DVD OEM ENG
+                .configurator-item__price
+
+          //- Аккордеон допов
+          .accordion.js-accordion.mb-3.mb-lg-5
+            .accordion-item.js-accordion-item
+              .accordion-header.js-accordion-header
+                span.lead Дополнительные компоненты
+              .accordion-body.js-accordion-body
+                //- Дополнительные компоненты
+                +configurator-additional(additionalItems)
+
+          //- Футер
+          .configurator-plate.d-none.d-lg-block
+            +configurator-estimate()
+            hr
+            .row.g-3
+              .col-12.col-lg-6
+                +configurator-guarantee()
+              .col-12.col-lg-6
+                +configurator-total(fullItems)
+
+        //- Сайдбар
+        .configurator-aside.col-12.col-lg-4
+          .configurator-aside__inner
+            .row.g-3
+              .col-12
+                //- Прогресс, стоимость, итого
+                .configurator-plate
+                  .row
+                    .col-12.col-md-6.col-lg-12
+                      p.fw-medium Конфигурация
+                      .configurator-status.alert.js-configurator-status
+                      progress(class="configurator-progress mb-3 js-configurator-progress" min="0" max="100" value="0")
+                      +button(tag="a" href="#popup-expert-request" variant="secondary" text="Бесплатная оценка специалиста" class="w-100 text-center" data-fancybox)
+
+                    .col-12.col-md-6.col-lg-12
+                      hr.d-none.d-lg-block
+                      +configurator-estimate()
+                      +configurator-total(fullItems)
+                      +configurator-guarantee().mt-3
+
+              .col-12.col-md-6.col-lg-12
+                //- Сохранить
+                .configurator-plate
+                  p.fw-medium Сохранить конфигурацию
+                  +form-configuration-save()
+
+              .col-12.col-md-6.col-lg-12
+                //- Мои конфигурации
+                .configurator-plate
+                  p.fw-medium Мои конфигурации
+                  .list-group.fs-4.mb-3
+                    a(href="#" data-action="switchConfiguration" data-id="1854327").list-group-item.list-group-item-action.list-group-item-light.js-configurator-action 🛠 Конфигурация #1854327
+                    a(href="#" data-action="switchConfiguration" data-id="3133769420").list-group-item.list-group-item-action.list-group-item-light.js-configurator-action 🍔 Конфигурация #3133769420
+                    a(href="#" data-action="switchConfiguration" data-id="4815162342").list-group-item.list-group-item-action.list-group-item-light.js-configurator-action Конфигурация #4815162342
+                  p.mb-0.fs-4
+                    a(href="/personal-configurations.html") Посмотреть все конфигурации
+
+              .col-12
+                //- Поделиться
+                .configurator-plate
+                  p.fw-medium Поделиться в соц. сетях
+                  +social-buttons()

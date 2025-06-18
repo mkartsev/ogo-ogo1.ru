@@ -1,0 +1,235 @@
+extends ../../views/layouts/default
+
+append vars
+  -
+    page.name  = "samsung"
+    page.title = "Бренд-зона Samsung"
+    //- page.showHeader = true
+    page.showTitle = false
+    //- page.showBreadcrumbs = true
+
+//- Скрипты только для этой страницы
+append scripts
+  script(src="./js/script.js")
+
+append styles
+  link(rel="stylesheet" href="./css/style.css")
+  link(rel="stylesheet" href="./css/service.css")
+
+block content
+  section.samsung
+    header.samsung-header
+      .samsung__logo
+        img(src="./img/samsung-logo.png", alt="samsung logo")
+      .samsung-hero
+        span.samsung-hero__title Узнайте больше о преимуществах и удобстве наших сервисов и приложений
+        img.samsung-hero__image(src="./img/samsung-hero.png", alt="Samsung")
+      nav.samsung-nav.samsung-nav--service
+        a.samsung-nav__link(href="#pay") Samsung Pay
+        a.samsung-nav__link(href="#care") Samsung Care+
+        a.samsung-nav__link(href="#centers") Сервисные центры
+        a.samsung-nav__link(href="#premier") Премьер сервис
+        a.samsung-nav__link(href="#smartswitch") Smart switch
+        a.samsung-nav__link(href="#oneui")
+          span.show-for-large Интерфейс One
+          | UI 4.0
+        a.samsung-nav__link(href="#knox") Knox
+
+    section.samsung-content
+      section.samsung-section.samsung-section--pay#pay
+        .samsung-section__header
+          img.samsung-section__logo(src="./img/pay-logo.png", alt="Samsung Pay")
+          h2.samsung-section__title Samsung Pay
+          h3.samsung-section__subtitle Больше чем просто бумажник
+        .samsung-advantages.samsung-advantages--blue1
+          .samsung-advantage
+            .samsung-advantage__icon
+              img(src="./img/pay-icon1.png", alt)
+              span ПРОСТО
+            .samsung-advantage__content
+              | Добавьте ваши банковские и бонусные карты в Samsung Pay и оплачивайте покупки смартфоном. В Samsung Pay можно добавить карты платежной системы «Мир»
+              sup 1
+              |  и до 100 карт лояльности.
+          .samsung-advantage
+            .samsung-advantage__icon
+              img(src="./img/pay-icon2.png", alt)
+              span Удобно
+            .samsung-advantage__content Вы можете запустить Samsung Pay свайпом от нижней грани смартфона вверх, даже на выключенном экране. Интернет для проведения оплаты не нужен.
+          .samsung-advantage
+            .samsung-advantage__icon
+              img(src="./img/pay-icon3.png", alt)
+              span Безопасно
+            .samsung-advantage__content Данные ваших карт не хранятся ни на устройстве, ни на серверах Samsung. Вы контролируете каждую попытку оплаты: платеж можно совершить только после подтверждения транзакции отпечатком пальца или PIN-кодом. Платите, ни о чем не беспокоясь.
+
+      section.samsung-section.samsung-section--care#care
+        .samsung-section__header
+          img.samsung-section__logo(src="./img/care-logo.png", alt="Samsung Care+")
+          h2.samsung-section__title Samsung Care+
+          h3.samsung-section__subtitle Программы дополнительного сервисного обслуживания при покупке устройств Galaxy
+        .samsung-section__hero
+          picture
+            source(srcset="./img/care-hero-small.jpg", media="(max-width: 720px)")
+            source(srcset="./img/care-hero-large.jpg", media="(min-width: 721px)")
+            img(src="./img/care-hero-large.jpg", alt="Samsung Care+")
+        .samsung-advantages.samsung-advantages--blue2
+          .samsung-advantage
+            .samsung-advantage__icon
+              img(src="./img/care-icon1.png", alt)
+              span.samsung-color-blue3
+                | Что включено в программу
+                sup 3
+            .samsung-advantage__content
+              ul.samsung-list
+                li Замена экрана или задней панели
+                li
+                  | Замена аккумулятора
+                  sup 2
+                li Продление гарантии
+          .samsung-advantage
+            .samsung-advantage__icon
+              img(src="./img/care-icon2.png", alt)
+              span почему samsung care+
+            .samsung-advantage__content
+              ul.samsung-list
+                li Обслуживание в сервисных центрах Samsung
+                li
+                  | Выезд специалистов «Samsung Премьер Cервис»
+                  sup 3
+                li Оригинальные комплектующие
+          .samsung-advantage
+            .samsung-advantage__icon
+              img(src="./img/care-icon3.png", alt)
+              span Свяжитесь с нами
+            .samsung-advantage__content Проверить статус и детали программы или узнать адреса сервисных центров: Тел. 8-800-555-55-55
+
+      section.samsung-section.samsung-section--centers#centers
+        .samsung-centers
+          picture.samsung-centers__logo
+            source(srcset="./img/centers-logo-small.png", media="(max-width: 720px)")
+            source(srcset="./img/centers-logo-large.png", media="(min-width: 721px)")
+            img(src="./img/centers-logo-large.png", alt="Samsung centers")
+          //
+            <div class="samsung-centers__back">
+                      <img src="./img/centers-back.jpg" alt="">
+                    </div>
+          .samsung-centers__data
+            .samsung-centers__item
+              img.samsung-centers__item-icon(src="./img/centers-icon1.png", alt)
+              span.samsung-centers__item-text
+                | Информационный центр:
+                br
+                strong 8-800-555-55-55
+            .samsung-centers__item
+              img.samsung-centers__item-icon(src="./img/centers-icon2.png", alt)
+              span.samsung-centers__item-text с 09 до 21 часа / 7 дней в неделю для всех категорий продуктов
+
+      section.samsung-section.samsung-section--service.samsung-section--half
+        .samsung-section__header
+          img.samsung-section__logo(src="./img/care-logo.png", alt="Сервисные центры Samsung")
+          h2.samsung-section__title.samsung-section__title
+            | Сервисные центры
+            br.show-for-large
+            | Samsung
+          .samsung-advantages
+            .samsung-advantage
+              .samsung-advantage__content
+                ul.samsung-list-blue
+                  li Сервисная поддержка в течение всего срока службы
+                  li Большая сервисная сеть
+                  li Скорость и качество ремонта
+                  li Высокая квалификация мастеров
+
+      section.samsung-section.samsung-section--premier.samsung-section--half#premier
+        .samsung-section__header
+          img.samsung-section__logo(src="./img/premier-logo.png", alt="Samsung Премьер Сервис")
+          h2.samsung-section__title.samsung-section__title Samsung Премьер Сервис
+          h3.samsung-section__subtitle.samsung-section__subtitle
+            | Мобильные сервисные центры
+            sup 4
+        .samsung-advantages
+          .samsung-advantage
+            .samsung-advantage__content
+              ul.samsung-list-green
+                li Минивены, оснащенные всем необходимым для обслуживания смартфонов
+                li
+                  | Диагностика техники и ремонт любой сложности в течение 1-2 часов
+                  sup 5
+
+      section.samsung-section.samsung-section--switch#smartswitch
+        .samsung-section__header
+          img.samsung-section__logo(src="./img/pay-logo.png", alt="Smart Switch")
+          h2.samsung-section__title Smart Switch
+          h3.samsung-section__subtitle Надежный и безопасный спос об перенести контент на устройство Galaxy
+        .samsung-advantages.samsung-advantages--blue3
+          .samsung-advantage
+            .samsung-advantage__icon
+              img.samsung-advantage__icon(src="./img/switch-icon1.png", alt)
+              span Переход с Android на Galaxy
+            .samsung-advantage__content Просто запустите приложение Smart Switch и следуйте пошаговым инструкциям на экране.
+          .samsung-advantage
+            .samsung-advantage__icon
+              img.samsung-advantage__icon(src="./img/switch-icon2.png", alt)
+              span Переход с iOS на Galaxy
+            .samsung-advantage__content
+              | Вы можете перемещать фотографии, видео, контакты, события календаря, заметки и многое другое со своего iPhone или iPad на устройство Galaxy. Вы даже можете перенести свои данные из iCloud.
+              sup 6
+          .samsung-advantage
+            .samsung-advantage__icon
+              img.samsung-advantage__icon(src="./img/switch-icon1.png", alt)
+              span Перенос вашей истории WhatsApp на новый Galaxy
+            .samsung-advantage__content
+              | Теперь вы можете перенести чаты и фотографии WhatsApp со своего iOS устройства на новый Samsung Galaxy. Достаточно лишь кабеля USB-C/Lightning.
+              sup 7
+
+      section.samsung-section.samsung-section--oneui#oneui
+        .samsung-section__header
+          img.samsung-section__logo(src="./img/oneui-logo.png", alt="ONE UI 4.0")
+          h2.samsung-section__title ONE UI 4.0
+          h3.samsung-section__subtitle Наслаждайтесь основными приложениями и сервисами Galaxy в рамках интерфейса One UI 4.1
+        .samsung-section__poster
+          picture
+            source(srcset="./img/oneui-hero-small.jpg", media="(max-width: 720px)")
+            source(srcset="./img/oneui-hero-large.jpg", media="(min-width: 721px)")
+            img(src="./img/oneui-hero-large.jpg", alt="ONE UI 4.0")
+      section.samsung-section.samsung-section--knox#knox
+        .samsung-section__header
+          img.samsung-section__logo(src="./img/knox-logo.png", alt="Samsung Knox")
+          h2.samsung-section__title Samsung Knox
+          h3.samsung-section__subtitle Ваши данные под надежной защитой
+        .samsung-advantages.samsung-advantages--blue4
+          .samsung-advantage
+            .samsung-advantage__icon
+              img.samsung-advantage__icon(src="./img/knox-icon1.png", alt)
+              span ПОЧЕМУ knox
+            .samsung-advantage__content Платформа безопасности Knox обеспечивает высокий уровень защищенности вашего телефона на аппаратном уровне и гарантирует конфиденциальность ваших данных и доступа к приложениям.
+          .samsung-advantage
+            .samsung-advantage__icon
+              img.samsung-advantage__icon(src="./img/knox-icon2.png", alt)
+              span ПРЕИМУЩЕСТВА
+            .samsung-advantage__content
+              ul.samsung-list
+                li Обеспечивает постоянное шифрование информации о банковских картах в отдельном хранилище для Samsung Pay. Для оплаты приложение создает цифровой код, а личные данные при этом не передаются.
+                li Шифрует и защищает биометрические данные для технологии аутентификации Samsung Pass.
+                li Knox блокирует доступ к зашифрованным данным и оплату через Samsung Pay при попытке взломать смартфон.
+          .samsung-advantage
+            .samsung-advantage__icon
+              img.samsung-advantage__icon(src="./img/knox-icon3.png", alt)
+              span НОВАЯ ПАНЕЛЬ УПРАВЛЕНИЯ
+            .samsung-advantage__content
+              | Теперь вы можете перенести чаты и фотографии WhatsApp со своего iOS устройства на новый Samsung Galaxy. Достаточно лишь кабеля USB-C/Lightning.
+              sup 7
+
+    footer.samsung-footer
+      p
+        | Информационный центр тел.:
+        span.font-weight-800 8-800- 555-55-55
+        | , с 09 до 21 часа / 7 дней в неделю для всех категорий продуктовю. Для технической консультации просим Вас находиться рядом с техникой, так наши специалисты помогут быстрее.
+      ol
+        li Карты «Мир» можно добавить в Samsung Pay только на оригинальных смартфонах Samsung, предназначенненных для распространения на территории Российской Федерации и Республики Беларусь. Добавить карту «Мир» в Samsung Pay на носимом устройстве в настоящее время пока невозможно. Оплата Samsung Pay картами Мир в приложениях и онлайн пока не поддерживается.
+        li Замена аккумулятора производится сервисным центром, если остаточная емкость аккумулятора ниже установленной нормы.
+        li В зависимости от типа приобретаемого сертификата.
+        li Услуга предоставляется в Москве (в пределах МКАД), Санкт-Петербурге (в пределах КАД) при наличии технической возможности и отсутствии других заявок в указанное пользователем время. Окончательное решение о соответствии заявки условиям обслуживания мобильного сервисного центра принимается специалистом компании Samsung. Заявка может быть отклонена включая, но не ограничиваясь по причине невозможности устранения дефекта в указанном формате обслуживания, а также при необходимости существенных временных затрат, требуемых для устранения дефекта, связанных с необходимостью проведения длительной диагностики или тестирования оборудования. Услуга предоставляется бесплатно владельцам смартфонов с действующей гарантией. Стоимость выезда по негарантийным ремонтам - 0 рублей внутри МКАД/КАД. Cтоимость услуг по негарантийному обслуживанию можно уточнить в службе поддержки.
+        li Среднее время ремонта в мобильном сервисном центре.
+        li Для подключения ваших устройств используйте совместимые кабели или адаптеры Lightning-to-USB-C или USB-C-to-USB-C.
+        li Требуется последняя версия Smart Switch на смартфонах Samsung Galaxy и последняя версия WhatsApp на устройствах iOS. Доступно на устройствах под управлением iOS 10.0 или более поздней версии и Android 10 или более поздней версии. Переход на устройства под управлением Android 10 или более поздней версии, за исключением Flip3/Fold3, до 2021 года. Историю чатов WhatsApp можно перенести только до входа в WhatsApp на новом устройстве. Если войти в WhatsApp до переноса или до завершения передачи данных в SmartSwitch, перенос будет невозможен. Требуется кабель USB-C/Lightning. Вы можете загрузить последнюю версию Smart Switch из магазина Galaxy Store или Google Play Маркет.
+        li История использования разрешений поддерживается One UI 4.0 и выше.

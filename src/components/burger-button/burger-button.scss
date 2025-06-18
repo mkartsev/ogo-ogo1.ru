@@ -1,0 +1,92 @@
+.burger-button {
+  &:hover {
+    cursor: pointer;
+    color: var(--white);
+  }
+
+  &:active,
+  &:focus {
+    color: var(--white, $white);
+  }
+
+  &__text {
+    display: none;
+  }
+
+  &__loading {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    animation: spin 1.5s infinite linear;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    color: var(--white, $white);
+  }
+
+  &__icon {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 16px;
+      left: 4px;
+      border-radius: 2px;
+      background-color: currentColor;
+      transition: all 0.5s;
+      transition: top 0.15s 0.15s, transform 0.15s;
+      &:first-child {
+        top: 5px;
+      }
+      &:nth-child(2) {
+        top: 11px;
+      }
+      &:nth-child(3) {
+        top: 17px;
+      }
+    }
+  }
+
+  &.is-loading &__loading {
+    display: inline-flex;
+  }
+
+  &.is-loading &__icon {
+    display: none;
+  }
+
+  &.is-active &__loading {
+    display: none;
+  }
+
+  &.is-active &__icon span {
+    &:first-child {
+      top: 11px;
+      transform: rotate(45deg);
+      transition: top 0.15s, transform 0.15s 0.15s;
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 11px;
+      transform: rotate(-45deg);
+      transition: top 0.15s, transform 0.15s 0.15s;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: var(--btn-padding-y, $btn-padding-y) var(--btn-padding-x, $btn-padding-x);
+    &__text {
+      display: inline-flex;
+    }
+  }
+}

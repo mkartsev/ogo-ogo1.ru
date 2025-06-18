@@ -1,0 +1,100 @@
+include ../burger-button/burger-button
+include ../catalog/catalog
+include ../cart/cart
+include ../svg-icon/svg-icon
+include ../forms/forms
+include ../sidebar/sidebar
+include ../select-city/select-city
+
+//-  Чистый хедер для UI-кита
+mixin header-clean()
+  header.header.header--clean&attributes(attributes)
+    .header-bottom.container
+      .header-bottom-left
+        a(href="/").header-logo
+          img(src="/assets/img/logo.svg" alt="").header-logo__img
+          span.header-logo__text библиотека компонентов
+
+mixin header()
+  header.header&attributes(attributes)
+    +header-banner("/assets/img/content/header-banner.jpg", "Продукты Honor для успешного учебного года!").d-none.d-lg-block
+
+    .header-top.container
+      .header-top-left
+        a(href=process.env.SELECT_CITY_URL).header-city.js-city-popup
+          .header-city__icon
+            +svg-icon("ui--location-sm", "sm")
+          span.header-city__text Москва
+
+        nav.header-nav
+          ul.header-nav__list
+            li.header-nav__item
+              a(href="#").header-nav__link Доставка и оплата
+            li.header-nav__item
+              a(href="#").header-nav__link Гарантия и возврат
+            li.header-nav__item
+              a(href="#").header-nav__link Адреса магазинов
+            li.header-nav__item
+              a(href="/mocks/supplier").header-nav__link.js-supplier-popup Поставщикам
+
+      .header-top-right
+        a(href="tel:88002509045").header-phone
+          .header-phone__icon
+            +svg-icon("ui--phone-sm", "sm")
+          span.header-phone__text 8 800 250-90-45
+
+        .header-worktime
+          span.header-worktime__text 10:00 - 20:00
+
+    .header-bottom.container
+      .header-bottom-left
+        a(href="/").header-logo
+          img(src="/assets/img/logo.svg" alt="").header-logo__img
+          span.header-logo__text онлайн гипермаркет
+
+      .header-bottom-center
+        +burger-button().js-button-catalog
+
+        .header-search
+          +form-searchbox()
+
+      .header-bottom-right
+        .header-toolbar
+          .header-toolbar__item.d-none.d-md-inline-flex
+            a(href=process.env.AUTH_URL).header-toolbar__link.js-auth-popup
+              .header-toolbar__link-icon
+                +svg-icon("ui--user")
+              span.header-toolbar__link-text Вход
+
+          .header-toolbar__item.d-none.d-md-inline-flex
+            a(href="/compare.html").header-toolbar__link
+              .header-toolbar__link-icon
+                +svg-icon("ui--comparison")
+                span.badge.rounded-pill.position-absolute.top-0.start-100.translate-middle.bg-primary.js-compare-counter.hidden
+              span.header-toolbar__link-text Сравнение
+
+          .header-toolbar__item.d-none.d-md-inline-flex
+            a(href="/wishlist.html").header-toolbar__link
+              .header-toolbar__link-icon
+                +svg-icon("ui--heart")
+                span.badge.rounded-pill.position-absolute.top-0.start-100.translate-middle.bg-primary.js-favorite-counter.hidden
+              span.header-toolbar__link-text Избранное
+
+          .header-toolbar__item.d-none.d-md-inline-flex.js-cart-dropdown(data-products="" data-basketItems=[])
+            a(href="/cart.html").header-toolbar__link
+              .header-toolbar__link-icon
+                +svg-icon("ui--shopping-bag")
+                span.badge.rounded-pill.position-absolute.top-0.start-100.translate-middle.bg-primary.js-cart-counter.hidden
+              span.header-toolbar__link-text Корзина
+            +cart-dropdown()
+
+          .header-toolbar__item.d-md-none
+            a(href="tel:88002509045").header-toolbar__link
+              .header-toolbar__link-icon
+                +svg-icon("ui--phone")
+
+    +catalog()
+
+mixin header-banner(img, alt)
+  a.header-banner(href="#")&attributes(attributes)
+    img(src= img alt= alt).header-banner__img

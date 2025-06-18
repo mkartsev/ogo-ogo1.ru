@@ -1,0 +1,3654 @@
+{
+  "catalog": [
+    {
+      "title": "Товары из-за рубежа",
+      "url": "/market/import/",
+      "id": "88335",
+      "icon": "import",
+      "sub": [
+        {
+          "brands": [
+            {
+              "title": "Lego",
+              "url": "/brands/lego/",
+              "img": "/assets/img/icons/lego.svg"
+            },
+            {
+              "title": "Funko",
+              "url": "/brands/funko/",
+              "img": "/assets/img/icons/funko.svg"
+            },
+            {
+              "title": "Xiaomi",
+              "url": "/brands/xiaomi/",
+              "img": "/assets/img/icons/xiaomi.svg"
+            },
+            {
+              "title": "Zuru",
+              "url": "/brands/zuru/",
+              "img": "/assets/img/icons/zuru.svg"
+            },
+            {
+              "title": "Samsung",
+              "url": "/brands/samsung/",
+              "img": "/assets/img/icons/samsung.png"
+            }
+          ]
+        },
+        {
+          "title": "Международная доставка",
+          "url": "/pages/foreign/",
+          "img": "/assets/img/icons/ww_delivery.png"
+        },
+        {
+          "title": "Смартфоны и гаджеты",
+          "url": "/market/smartphone-gadget-foreign/",
+          "sub": [
+            {
+              "title": "Смартфоны",
+              "url": "/market/smartphone-foreign/"
+            },
+            {
+              "title": "Планшеты",
+              "url": "/market/tablet-foreign/"
+            },
+            {
+              "title": "Bluetooth гарнитуры",
+              "url": "/market/garnituryi-foreign/"
+            },
+            {
+              "title": "Умные часы",
+              "url": "/market/smart-watch-foreign/"
+            }
+          ]
+        },
+        {
+          "title": "Товары для геймеров",
+          "url": "/market/gamer-foreign/",
+          "sub": [
+            {
+              "title": "Игровые приставки",
+              "url": "/market/game-console-foreign/"
+            },
+            {
+              "title": "Геймпады для приставок",
+              "url": "/market/gamepad-foreign/"
+            }
+          ]
+        },
+        {
+          "title": "Комплектующие ПК и Ноутбуки",
+          "url": "/market/computer-foreign/",
+          "sub": [
+            {
+              "title": "Ноутбуки",
+              "url": "/market/notebook-foreign/"
+            },
+            {
+              "title": "SSD",
+              "url": "/market/ssd-foreign/"
+            },
+            {
+              "title": "Жесткие диски SATA",
+              "url": "/market/hdd-sata-foreign/"
+            }
+          ]
+        },
+        {
+          "title": "Периферия",
+          "url": "/market/external-foreign/",
+          "sub": [
+            {
+              "title": "Внешние жесткие диски",
+              "url": "/market/vneshnie-hdd-foreign/"
+            },
+            {
+              "title": "Внешние SSD",
+              "url": "/market/external-ssd-foreign/"
+            },
+            {
+              "title": "USB Flash накопители",
+              "url": "/market/usb-flash-foreign/"
+            },
+            {
+              "title": "Карты памяти",
+              "url": "/market/micro-sd-foreign/"
+            }
+          ]
+        },
+        {
+          "title": "Сетевое обурудование",
+          "url": "/market/networking-foreign/",
+          "sub": [
+            {
+              "title": "Беспроводное сетевое оборудование",
+              "url": "/market/network-foreign/"
+            },
+            {
+              "title": "Проводное сетевое оборудование",
+              "url": "/market/wired-network-foreign/"
+            }
+          ]
+        },
+        {
+          "title": "Техника для красоты",
+          "url": "/market/beauty-foreign/",
+          "sub": [
+            {
+              "title": "Фены",
+              "url": "/market/feny-foreign/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Смартфоны и гаджеты",
+      "url": "/market/portable_tehnika_i_foto/",
+      "id": "85846",
+      "icon": "portable_tehnika_i_foto",
+      "sub": [
+        {
+          "title": "Бренд-зона Samsung",
+          "url": "/brands/samsung/",
+          "img": "/assets/img/icons/samsung.png"
+        },
+        {
+          "title": "Бренд-зона Xiaomi",
+          "url": "/brands/xiaomi/",
+          "img": "/assets/img/icons/xiaomi.svg"
+        },
+        {
+          "title": "Мобильные телефоны и смартфоны",
+          "url": "/market/mobilnie_telefonu/",
+          "sub": [
+            {
+              "title": "Смартфоны",
+              "url": "/market/smartfony/"
+            },
+            {
+              "title": "Чехлы для смартфонов",
+              "url": "/market/chekhly_dlya_smartfonov/"
+            },
+            {
+              "title": "Защитные стекла для смартфонов",
+              "url": "/market/zashchitnye_stekla_dlya_smartfonov/"
+            },
+            {
+              "title": "Очки виртуальной реальности",
+              "url": "/market/ochki_virtualnoy_realnosti/"
+            }
+          ]
+        },
+        {
+          "title": "Планшеты",
+          "url": "/market/planshetu/",
+          "sub": [
+            {
+              "title": "Планшеты",
+              "url": "/market/planshetyi/"
+            },
+            {
+              "title": "Чехлы для планшетов",
+              "url": "/market/chekhly_dlya_planshetov/"
+            },
+            {
+              "title": "Защитные стекла для планшетов",
+              "url": "/market/zashchitnye_stekla_dlya_planshetov/"
+            }
+          ]
+        },
+        {
+          "title": "Носимая электроника",
+          "url": "/market/smart_watch_treker_btasletu/",
+          "sub": [
+            {
+              "title": "Умные часы",
+              "url": "/market/unmue_chasu_smart_watch/"
+            },
+            {
+              "title": "Детские умные часы",
+              "url": "/market/detskie_umnye_chasy/"
+            },
+            {
+              "title": "Аксессуары для умных часов",
+              "url": "/market/aksessuary_dlya_umnykh_chasov/"
+            },
+            {
+              "title": "Аксессуары для Фитнес-браслетов",
+              "url": "/market/aksessuary_dlya_fitnes_brasletov_i_umnykh_chasov/"
+            }
+          ]
+        },
+        {
+          "title": "Акустика, наушники и гарнитуры",
+          "url": "/market/akustika_dlya_mobilnykh_ustroystv/",
+          "sub": [
+            {
+              "title": "Наушники",
+              "url": "/market/bluetooth_naushniki/"
+            },
+            {
+              "title": "Гарнитуры для компьютера",
+              "url": "/market/garnituryi/"
+            },
+            {
+              "title": "Портативная акустика",
+              "url": "/market/portable_akustik/"
+            },
+            {
+              "title": "Колонки для компьютера",
+              "url": "/market/kompyuternye_kolonki/"
+            },
+            {
+              "title": "Микрофоны",
+              "url": "/market/mikrofony/"
+            },
+            {
+              "title": "Чехлы для наушников",
+              "url": "/market/chekhly_dlya_naushnikov/"
+            },
+            {
+              "title": "Музыкальные центры и саундбары",
+              "url": "/market/muzykalnyye_tsentry/"
+            }
+          ]
+        },
+        {
+          "title": "Кабели и зарядные устройства",
+          "url": "/market/kabeli_i_zaryadnyye_ustroystvasva/",
+          "sub": [
+            {
+              "title": "Кабели синхронизации",
+              "url": "/market/usb_firewire_kabeli/"
+            },
+            {
+              "title": "Аудио кабели",
+              "url": "/market/audio_kabeli_dlya_mobilnykh_ustroystv/"
+            },
+            {
+              "title": "Переходники и разветвители",
+              "url": "/market/perehodniki/"
+            },
+            {
+              "title": "Внешние аккумуляторы",
+              "url": "/market/vneshnie_akkumulyatoru/"
+            },
+            {
+              "title": "Сетевые ЗУ",
+              "url": "/market/setevyye_zu/"
+            },
+            {
+              "title": "Автомобильные ЗУ",
+              "url": "/market/avtomobilnyye_zu/"
+            },
+            {
+              "title": "Беспроводные ЗУ",
+              "url": "/market/besprovodnyye_zu/"
+            },
+            {
+              "title": "Настольные ЗУ",
+              "url": "/market/nastolnyye_zu/"
+            },
+            {
+              "title": "Адаптеры-переходники",
+              "url": "/market/adaptery_perekhodniki/"
+            },
+            {
+              "title": "Крепеж для кабелей",
+              "url": "/market/materialu_dlya_montaja/"
+            }
+          ]
+        },
+        {
+          "title": "Аксессуары для мобильной техники",
+          "url": "/market/aksessuary_dlya_mobilnykh_ustroystv/",
+          "sub": [
+            {
+              "title": "Карты памяти",
+              "url": "/market/memory_cards/"
+            },
+            {
+              "title": "OTG Flash накопители",
+              "url": "/market/otg_flash_nakopaciteli/"
+            },
+            {
+              "title": "Моноподы",
+              "url": "/market/monopody/"
+            },
+            {
+              "title": "Держатели для телефонов в машину",
+              "url": "/market/derzhateli_dlya_telefonov_v_mashinu/"
+            },
+            {
+              "title": "Стилусы",
+              "url": "/market/pen_tab/"
+            },
+            {
+              "title": "Брелоки и наклейки",
+              "url": "/market/brelki_i_nakleiki_dlya_telefonov/"
+            },
+            {
+              "title": "Перчатки для сенсорных дисплеев",
+              "url": "/market/perchatki_dlya_mobilnoy_tekhniki/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Компьютерная техника",
+      "url": "/market/computer/",
+      "id": "84989",
+      "icon": "computer",
+      "sub": [
+        {
+          "title": "Конфигуратор ПК",
+          "url": "/configurator/",
+          "img_s": "/assets/img/icons/gear.svg"
+        },
+        {
+          "title": "Комплектующие для ПК",
+          "url": "/market/komplektuyushchie_dlya_pk/",
+          "sub": [
+            {
+              "title": "Блоки питания",
+              "url": "/market/bloki_pitaniya/"
+            },
+            {
+              "title": "Видеокарты",
+              "url": "/market/videokartu/"
+            },
+            {
+              "title": "Процессоры",
+              "url": "/market/processoru/"
+            },
+            {
+              "title": "Оперативная память",
+              "url": "/market/pamyat_dimm/"
+            },
+            {
+              "title": "Материнские платы",
+              "url": "/market/materinskie__platu/"
+            },
+            {
+              "title": "Корпуса для компьютеров",
+              "url": "/market/korpusa_dlya_kompyuterov/"
+            },
+            {
+              "title": "Аксессуары для корпусов",
+              "url": "/market/aksessuary_dlya_korpusov/"
+            },
+            {
+              "title": "Кулеры для процессоров",
+              "url": "/market/kulery_dlya_processorov/"
+            },
+            {
+              "title": "Системы охлаждения компьютера",
+              "url": "/market/sistemy_ohlazhdeniya_kompyutera/"
+            },
+            {
+              "title": "Аксессуары для охлаждения ПК",
+              "url": "/market/aksessuary_dlya_ohlazhdeniya_pk/"
+            },
+            {
+              "title": "Жесткие диски",
+              "url": "/market/zhestkie_diski/"
+            },
+            {
+              "title": "SSD",
+              "url": "/market/ssd/"
+            },
+            {
+              "title": "Звуковые карты",
+              "url": "/market/sound_cards/"
+            },
+            {
+              "title": "Карты видеозахвата",
+              "url": "/market/karty_videozahvata/"
+            },
+            {
+              "title": "Wi-Fi адаптеры и карты",
+              "url": "/market/wifi_adaptery_i_karty/"
+            },
+            {
+              "title": "Контроллеры",
+              "url": "/market/kontrolleru/"
+            },
+            {
+              "title": "Оптические приводы",
+              "url": "/market/opticheskie_privody/"
+            },
+            {
+              "title": "Салазки для HDD/SSD",
+              "url": "/market/salazki_dlya_hdd_ssd/"
+            },
+            {
+              "title": "Салазки (Optibay)",
+              "url": "/market/salazki_optibay/"
+            },
+            {
+              "title": "Термопаста",
+              "url": "/market/termopasta/"
+            },
+            {
+              "title": "Внутренние кабели для ПК",
+              "url": "/market/vnutrennie_kabeli_dlya_pk/"
+            },
+            {
+              "title": "Флоппи дисководы",
+              "url": "/market/floppi_diskovody/"
+            }
+          ]
+        },
+        {
+          "title": "Настольные компьютеры",
+          "url": "/market/kumpyteru/",
+          "sub": [
+            {
+              "title": "Настольные ПК",
+              "url": "/market/komputer_ogo/"
+            },
+            {
+              "title": "Моноблоки",
+              "url": "/market/monobloki/"
+            },
+            {
+              "title": "Сборные платформы",
+              "url": "/market/sbornue_nettopu/"
+            }
+          ]
+        },
+        {
+          "title": "Ноутбуки",
+          "url": "/market/noutbuki_aksessuaru/",
+          "sub": [
+            {
+              "title": "Ноутбуки",
+              "url": "/market/noutbuki/"
+            },
+            {
+              "title": "Сумки для ноутбуков",
+              "url": "/market/sumki_dlya_noutbukov/"
+            },
+            {
+              "title": "Охлаждающие подставки",
+              "url": "/market/ohlajdayshie_podstavki/"
+            },
+            {
+              "title": "Столы для ноутбуков",
+              "url": "/market/stoli_dlya_noutbukov/"
+            },
+            {
+              "title": "Оперативная память SO-DIMM",
+              "url": "/market/pamyat_so_dimm/"
+            },
+            {
+              "title": "SSD для ноутбуков",
+              "url": "/market/ssd/"
+            },
+            {
+              "title": "Жесткие диски для ноутбуков",
+              "url": "/market/hdd_dlya_noutbukov/"
+            },
+            {
+              "title": "Салазки (Optibay)",
+              "url": "/market/salazki_optibay/"
+            },
+            {
+              "title": "Адаптеры питания",
+              "url": "/market/adapteru_pitaniya/"
+            },
+            {
+              "title": "Чистящие средства",
+              "url": "/market/chistyaschie_sredstva_dlya_foto/"
+            },
+            {
+              "title": "Другое",
+              "url": "/market/drugie_aksessuaru/"
+            }
+          ]
+        },
+        {
+          "title": "Сетевое оборудование",
+          "url": "/market/setevoe_oborudovanie/",
+          "sub": [
+            {
+              "title": "Wi-Fi роутеры",
+              "url": "/market/wi_fi_routery/"
+            },
+            {
+              "title": "Точки доступа",
+              "url": "/market/tochki_dostupa/"
+            },
+            {
+              "title": "Powerline адаптеры",
+              "url": "/market/power_line_oborudovanie/"
+            },
+            {
+              "title": "Wi-Fi повторители",
+              "url": "/market/wifi_povtoriteli/"
+            },
+            {
+              "title": "Wi-Fi адаптеры",
+              "url": "/market/adapter_bt_wifi/"
+            },
+            {
+              "title": "Wi-Fi антенны",
+              "url": "/market/wifi_antennu/"
+            },
+            {
+              "title": "Wi-Fi карты",
+              "url": "/market/wi_fi_cards/"
+            },
+            {
+              "title": "Сетевые карты",
+              "url": "/market/setevue_kartu/"
+            },
+            {
+              "title": "Сетевые хранилища (NAS)",
+              "url": "/market/setevyie_hranilischa/"
+            },
+            {
+              "title": "3G/4G модемы и роутеры",
+              "url": "/market/mobile_3g4g_tochki_dostupa/"
+            },
+            {
+              "title": "Коммутаторы (Свитчи)",
+              "url": "/market/kommutator_svitch/"
+            },
+            {
+              "title": "Проводные маршрутизаторы",
+              "url": "/market/provodnue_marshrutizatoru/"
+            },
+            {
+              "title": "Патч-корды",
+              "url": "/market/patch_kordy/"
+            },
+            {
+              "title": "Сетевые кабели в бухтах",
+              "url": "/market/setevye_kabeli_v_buhtah/"
+            },
+            {
+              "title": "Коннекторы",
+              "url": "/market/konnektoru/"
+            },
+            {
+              "title": "Патч-панели и стойки",
+              "url": "/market/patch_paneli/"
+            },
+            {
+              "title": "Сетевые розетки",
+              "url": "/market/setevue_rozetki/"
+            },
+            {
+              "title": "Материалы для монтажа",
+              "url": "/market/materialu_dlya_montaja/"
+            },
+            {
+              "title": "Инструменты для монтажа",
+              "url": "/market/instrumentu_dlya_montaja/"
+            },
+            {
+              "title": "Запасные части и блоки питания для сетевого оборудования",
+              "url": "/market/zapasnyye_chasti_i_bloki_pitaniya_dlya_setevogo_oborudovaniya/"
+            },
+            {
+              "title": "Трансиверы",
+              "url": "/market/transsiveru/"
+            },
+            {
+              "title": "PoE адаптеры",
+              "url": "/market/poe-adapter/"
+            }
+          ]
+        },
+        {
+          "title": "Программное обеспечение",
+          "url": "/market/programnoe_po/",
+          "sub": [
+            {
+              "title": "Антивирусы",
+              "url": "/market/antivirusyi/"
+            },
+            {
+              "title": "Операционные системы",
+              "url": "/market/software-os/"
+            },
+            {
+              "title": "Офисные пакеты",
+              "url": "/market/software-office/"
+            }
+          ]
+        },
+        {
+          "title": "Майнинг",
+          "url": "/market/mining/",
+          "sub": [
+            {
+              "title": "Оборудование для майнинга",
+              "url": "/market/aksessuary_dlya_mayninga/"
+            },
+            {
+              "title": "Видеокарты для майнинга",
+              "url": "/market/videokarty_dlya_mayninga/"
+            }
+          ]
+        },
+        {
+          "title": "Серверное оборудование",
+          "url": "/market/server_oborudovanie/",
+          "sub": [
+            {
+              "title": "Серверные жесткие диски",
+              "url": "/market/servernye_zhestkie_diski/"
+            },
+            {
+              "title": "Корпуса",
+              "url": "/market/korpusa_dlya_serverov/"
+            },
+            {
+              "title": "Оперативная память для серверов",
+              "url": "/market/operativnaya_pamyat_dlya_serverov/"
+            },
+            {
+              "title": "Серверные платформы",
+              "url": "/market/servernye_platformy/"
+            },
+            {
+              "title": "Аксессуары серверов",
+              "url": "/market/aksessuary_dlya_sserverov/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Товары для геймеров",
+      "url": "/market/dlja-gejmerov/",
+      "id": "88319",
+      "icon": "dlja-gejmerov",
+      "sub": [
+        {
+          "title": "Игровые компьютеры",
+          "url": "/market/igrovye-kompjutery/",
+          "sub": [
+            {
+              "title": "Игровые настольные ПК",
+              "url": "/market/gamer_pc/"
+            },
+            {
+              "title": "Игровые ноутбуки",
+              "url": "/market/gamer_noutbuki/"
+            }
+          ]
+        },
+        {
+          "title": "Комплектующие для игровых ПК",
+          "url": "/market/komplektujushhie-gaming/",
+          "sub": [
+            {
+              "title": "Игровые видеокарты",
+              "url": "/market/gamer_video/"
+            },
+            {
+              "title": "Игровые материнские платы",
+              "url": "/market/gamer_materinskie_platu/"
+            },
+            {
+              "title": "Блоки питания для игровых ПК",
+              "url": "/market/gamer_bloki_pitaniya/"
+            },
+            {
+              "title": "Игровые процессоры",
+              "url": "/market/gamer_protsessory/"
+            },
+            {
+              "title": "Игровые модули памяти",
+              "url": "/market/gamer_pamyat_dimm/"
+            },
+            {
+              "title": "Системы охлаждения компьютера",
+              "url": "/market/gamer_sistemy_okhlazhdeniya/"
+            },
+            {
+              "title": "Игровые звуковые карты",
+              "url": "/market/gamer_sound_cards/"
+            },
+            {
+              "title": "Игровые SSD",
+              "url": "/market/gamer_ssd_nakopiteli/"
+            },
+            {
+              "title": "Игровые HDD",
+              "url": "/market/gamer_hdd_vnutrennie/"
+            },
+            {
+              "title": "Корпуса для компьютеров",
+              "url": "/market/gamer_korpusa/"
+            }
+          ]
+        },
+        {
+          "title": "Игровая периферия",
+          "url": "/market/periferija-gaming/",
+          "sub": [
+            {
+              "title": "Игровые мыши",
+              "url": "/market/gamer_myishi/"
+            },
+            {
+              "title": "Игровые коврики для мыши",
+              "url": "/market/gamer_kovriki_dlya_myishi/"
+            },
+            {
+              "title": "Игровые клавиатуры",
+              "url": "/market/gamer_klaviaturyi/"
+            },
+            {
+              "title": "Игровые манипуляторы",
+              "url": "/market/gamer_manipulyatoryi/"
+            },
+            {
+              "title": "Игровые гарнитуры",
+              "url": "/market/gamer_garnituryi/"
+            },
+            {
+              "title": "Веб-камеры для стриминга",
+              "url": "/market/gamer_veb-kamery_dlya_striming/"
+            },
+            {
+              "title": "Микрофоны для стриминга",
+              "url": "/market/gamer_mikrofony_dlya_striming/"
+            },
+            {
+              "title": "Игровые мониторы",
+              "url": "/market/gamer_monitoryi/"
+            }
+          ]
+        },
+        {
+          "title": "Игровые консоли",
+          "url": "/market/igrovue_pristavki/",
+          "sub": [
+            {
+              "title": "Консоли Sony PlayStation",
+              "url": "/market/sony_playstation_4/"
+            },
+            {
+              "title": "Другие консоли",
+              "url": "/market/prochie_igrovue_consoli/"
+            },
+            {
+              "title": "Аксессуары для консолей",
+              "url": "/market/aks_for_console/"
+            }
+          ]
+        },
+        {
+          "title": "Мебель для геймеров",
+          "url": "/market/mebel-dlja-gejmerov/",
+          "sub": [
+            {
+              "title": "Кресла для геймеров",
+              "url": "/market/gamer_kresla/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Периферия",
+      "url": "/market/piriferiya/",
+      "id": "85841",
+      "icon": "piriferiya",
+      "sub": [
+        {
+          "title": "Мониторы и LED панели",
+          "url": "/market/monitory_i_shlemy/",
+          "sub": [
+            {
+              "title": "Мониторы",
+              "url": "/market/monitoryi/"
+            },
+            {
+              "title": "LED панели",
+              "url": "/market/led_paneli_dlya_konferenc_zalov/"
+            },
+            {
+              "title": "Кронштейны для мониторов",
+              "url": "/market/aks_monitor/"
+            }
+          ]
+        },
+        {
+          "title": "Устройства ввода",
+          "url": "/market/ustroistvo_vvoda/",
+          "sub": [
+            {
+              "title": "Компьютерные мыши",
+              "url": "/market/kompyuternye_myshi/"
+            },
+            {
+              "title": "Клавиатуры",
+              "url": "/market/klaviaturyi/"
+            },
+            {
+              "title": "Комплекты клавиатура + мышь",
+              "url": "/market/komplekty_klaviatura_mysh/"
+            },
+            {
+              "title": "Игровые манипуляторы",
+              "url": "/market/igrovyie_manipulyatoryi/"
+            },
+            {
+              "title": "Графические планшеты",
+              "url": "/market/graficheskie_planshetyi/"
+            },
+            {
+              "title": "Веб камеры",
+              "url": "/market/web_kameryi/"
+            },
+            {
+              "title": "Презентеры",
+              "url": "/market/prezentery/"
+            },
+            {
+              "title": "Коврики для мышей",
+              "url": "/market/kovriki_dlya_myishi/"
+            }
+          ]
+        },
+        {
+          "title": "Оборудование для стриминга",
+          "url": "/market/oborudovanie_dlya_striminga/",
+          "sub": [
+            {
+              "title": "Микрофоны для стриминга",
+              "url": "/market/mikrofony_dlya_striminga/"
+            },
+            {
+              "title": "Камеры для стриминга",
+              "url": "/market/kamery_dlya_striminga/"
+            },
+            {
+              "title": "Устройство захвата видео",
+              "url": "/market/ustrojstvo_zahvata_video/"
+            },
+            {
+              "title": "Аксессуары для стриминга",
+              "url": "/market/aksessuary_dlya_striminga/"
+            }
+          ]
+        },
+        {
+          "title": "Внешние накопители данных",
+          "url": "/market/nakopiteli_informacii/",
+          "sub": [
+            {
+              "title": "Внешние жесткие диски",
+              "url": "/market/vneshnie_zhesstkie_diski/"
+            },
+            {
+              "title": "Внешние SSD",
+              "url": "/market/vneshnie_ssd/"
+            },
+            {
+              "title": "USB Flash накопители",
+              "url": "/market/usb_flash_nakopiteli/"
+            },
+            {
+              "title": "Карты памяти",
+              "url": "/market/memory_cards/"
+            },
+            {
+              "title": "Сетевые хранилища (NAS)",
+              "url": "/market/setevyie_hranilischa/"
+            },
+            {
+              "title": "CD/DVD/BR накопители",
+              "url": "/market/cd_dvd_br_bolvanki/"
+            },
+            {
+              "title": "Чехлы для внешних накопителей",
+              "url": "/market/chehly_dlia_hdd/"
+            },
+            {
+              "title": "Внешние оптические приводы",
+              "url": "/market/vneshnie_opticheskie_privody/"
+            },
+            {
+              "title": "USB концентраторы (HUB)",
+              "url": "/market/usb_habyi/"
+            },
+            {
+              "title": "Док-станции для накопителей",
+              "url": "/market/dok_stantsii_dlya_nakopiteley/"
+            },
+            {
+              "title": "Внешние боксы для накопителей",
+              "url": "/market/vneshnie_korpusa_dlya_hdd/"
+            },
+            {
+              "title": "Флоппи дисководы",
+              "url": "/market/floppi_diskovody/"
+            }
+          ]
+        },
+        {
+          "title": "Кабели и переходники",
+          "url": "/market/cable_perehodniki_prochee/",
+          "sub": [
+            {
+              "title": "USB кабели",
+              "url": "/market/usb_firewire_kabeli/"
+            },
+            {
+              "title": "USB переходники",
+              "url": "/market/usb_perekhodniki/"
+            },
+            {
+              "title": "Аудио кабели и переходники",
+              "url": "/market/audio_kabeli/"
+            },
+            {
+              "title": "Кабели HDMI",
+              "url": "/market/hdmi_cable/"
+            },
+            {
+              "title": "Кабели VGA и RCA",
+              "url": "/market/vga_scart_rca/"
+            },
+            {
+              "title": "Кабели DisplayPort и DVI",
+              "url": "/market/kabeli_displayport/"
+            },
+            {
+              "title": "Видео переходники",
+              "url": "/market/video_perekhodniki/"
+            },
+            {
+              "title": "Патч-корды",
+              "url": "/market/patch_kordy/"
+            },
+            {
+              "title": "Переключатели (KVM/DKVM)",
+              "url": "/market/cateli_i_razvetviteli/"
+            },
+            {
+              "title": "Сетевые кабели в бухтах",
+              "url": "/market/setevye_kabeli_v_buhtah/"
+            },
+            {
+              "title": "Коннекторы",
+              "url": "/market/konnektoru/"
+            },
+            {
+              "title": "Внутренние кабели для ПК",
+              "url": "/market/vnutrennie_kabeli_dlya_pk/"
+            },
+            {
+              "title": "Крепеж для кабелей",
+              "url": "/market/materialu_dlya_montaja/"
+            },
+            {
+              "title": "Инструменты для кабелей",
+              "url": "/market/instrumentu_dlya_montaja/"
+            }
+          ]
+        },
+        {
+          "title": "Источники питания",
+          "url": "/market/istochniki_pitaniya/",
+          "sub": [
+            {
+              "title": "ИБП",
+              "url": "/market/istochniki_bespereboynogo_pitaniya/"
+            },
+            {
+              "title": "Аккумуляторы для ИБП",
+              "url": "/market/akb_ibp/"
+            },
+            {
+              "title": "Сетевые фильтры",
+              "url": "/market/setevye_filtry/"
+            },
+            {
+              "title": "Батарейки и зарядные устройства",
+              "url": "/market/batareyki_akkumulyatoryi_zaryadnyie_ustroystva/"
+            },
+            {
+              "title": "Стабилизаторы напряжения",
+              "url": "/market/stabilizatoryi_napryajeniya/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ТВ и аудио",
+      "url": "/market/televizoru/",
+      "id": "85849",
+      "icon": "televizoru",
+      "sub": [
+        {
+          "title": "Телевизоры",
+          "url": "/market/televizory/",
+          "sub": [
+            {
+              "title": "Телевизоры",
+              "url": "/market/televizoru_jk_plazma/"
+            },
+            {
+              "title": "Кронштейны для ТВ",
+              "url": "/market/kranshtein_tv/"
+            },
+            {
+              "title": "Ресиверы для ТВ",
+              "url": "/market/tv_resivery/"
+            },
+            {
+              "title": "Медиаплееры",
+              "url": "/market/mediapleeru/"
+            },
+            {
+              "title": "Цифровое и спутниковое ТВ",
+              "url": "/market/sputnik_tv_adapter/"
+            },
+            {
+              "title": "Пульты ДУ",
+              "url": "/market/pult_du/"
+            },
+            {
+              "title": "Стойки для ТВ",
+              "url": "/market/stojki_dlya_tv/"
+            },
+            {
+              "title": "Телевизионные антенны",
+              "url": "/market/televizionnye_antenny/"
+            },
+            {
+              "title": "Антенные кабели",
+              "url": "/market/antennyye_kabeli/"
+            }
+          ]
+        },
+        {
+          "title": "Игровые консоли",
+          "url": "/market/igrovue_pristavki/",
+          "sub": [
+            {
+              "title": "Консоли Sony PlayStation",
+              "url": "/market/sony_playstation_4/"
+            },
+            {
+              "title": "Другие консоли",
+              "url": "/market/prochie_igrovue_consoli/"
+            },
+            {
+              "title": "Игровые манипуляторы",
+              "url": "/market/gamer_manipulyatoryi/"
+            },
+            {
+              "title": "Аксессуары для консолей",
+              "url": "/market/aks_for_console/"
+            }
+          ]
+        },
+        {
+          "title": "Презентационное оборудование",
+          "url": "/market/proekcionnoe_oborudovanie/",
+          "sub": [
+            {
+              "title": "Проекторы",
+              "url": "/market/projector/"
+            },
+            {
+              "title": "Экраны для проекторов",
+              "url": "/market/stend_projector/"
+            },
+            {
+              "title": "Кронштейны для проекторов",
+              "url": "/market/kran_proektor/"
+            },
+            {
+              "title": "Презентеры",
+              "url": "/market/prezentery/"
+            },
+            {
+              "title": "Кабели VGA и RCA",
+              "url": "/market/vga_scart_rca/"
+            },
+            {
+              "title": "Кабели HDMI",
+              "url": "/market/hdmi_cable/"
+            },
+            {
+              "title": "Видео переходники",
+              "url": "/market/video_perekhodniki/"
+            },
+            {
+              "title": "Интерактивные панели",
+              "url": "/market/interaktivnyye_paneli/"
+            }
+          ]
+        },
+        {
+          "title": "Акустика, наушники и гарнитуры",
+          "url": "/market/akustika_i_garnitura/",
+          "sub": [
+            {
+              "title": "Наушники",
+              "url": "/market/bluetooth_naushniki/"
+            },
+            {
+              "title": "Гарнитуры для компьютера",
+              "url": "/market/garnituryi/"
+            },
+            {
+              "title": "Портативная акустика",
+              "url": "/market/portable_akustik/"
+            },
+            {
+              "title": "Колонки для компьютера",
+              "url": "/market/kompyuternye_kolonki/"
+            },
+            {
+              "title": "Микрофоны",
+              "url": "/market/mikrofonyi/"
+            },
+            {
+              "title": "Чехлы для наушников",
+              "url": "/market/chekhly_dlya_naushnikov/"
+            },
+            {
+              "title": "Музыкальные центры и саундбары",
+              "url": "/market/muzykalnyye_tsentry/"
+            }
+          ]
+        },
+        {
+          "title": "Аксессуары для ТВ и аудио",
+          "url": "/market/kabeli_dlya_tv/",
+          "sub": [
+            {
+              "title": "USB кабели",
+              "url": "/market/usb_firewire_kabeli/"
+            },
+            {
+              "title": "USB переходники",
+              "url": "/market/usb_perekhodniki/"
+            },
+            {
+              "title": "Видео кабели",
+              "url": "/market/video_kabeli/"
+            },
+            {
+              "title": "Видео переходники",
+              "url": "/market/video_perekhodniki/"
+            },
+            {
+              "title": "Аудио кабели и переходники",
+              "url": "/market/audio_kabeli/"
+            },
+            {
+              "title": "Патч-корды",
+              "url": "/market/patch_kordy/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Печать и офис",
+      "url": "/market/office/",
+      "id": "85340",
+      "icon": "office",
+      "sub": [
+        {
+          "title": "Печать и сканирование",
+          "url": "/market/pechat_i_skanirovaniye/",
+          "sub": [
+            {
+              "title": "МФУ",
+              "url": "/market/mfu/"
+            },
+            {
+              "title": "Принтеры",
+              "url": "/market/printeryi/"
+            },
+            {
+              "title": "Сканеры",
+              "url": "/market/skaneryi/"
+            },
+            {
+              "title": "Опции для печатной техники",
+              "url": "/market/option_pechat/"
+            },
+            {
+              "title": "Принтеры для этикеток",
+              "url": "/market/printeru_etiketok/"
+            },
+            {
+              "title": "Сканеры штрихкодов",
+              "url": "/market/skanery_shtrihcoda_i_tsd/"
+            }
+          ]
+        },
+        {
+          "title": "Расходные материалы",
+          "url": "/market/rashod_material/",
+          "sub": [
+            {
+              "title": "Бумага",
+              "url": "/market/bumaga/"
+            },
+            {
+              "title": "Картриджи для принтеров",
+              "url": "/market/kartridzhi_dlya_printerov/"
+            },
+            {
+              "title": "Пленки для ламинаторов",
+              "url": "/market/plenki_dlya_laminirovaniya/"
+            },
+            {
+              "title": "Пружины для переплетчиков",
+              "url": "/market/prujinu_dlya_perepletchikov/"
+            },
+            {
+              "title": "Обложки для переплетчиков",
+              "url": "/market/oblojki_dlya_perepletchikov/"
+            },
+            {
+              "title": "Батарейки и зарядные устройства",
+              "url": "/market/batareyki_akkumulyatoryi_zaryadnyie_ustroystva/"
+            },
+            {
+              "title": "CD/DVD/BR накопители",
+              "url": "/market/cd_dvd_br_bolvanki/"
+            },
+            {
+              "title": "Чистящие средства",
+              "url": "/market/chistyaschie_sredstva/"
+            }
+          ]
+        },
+        {
+          "title": "Телефония",
+          "url": "/market/telefoniya/",
+          "sub": [
+            {
+              "title": "Системные телефоны",
+              "url": "/market/telefony_sistemnyi/"
+            }
+          ]
+        },
+        {
+          "title": "Презентационное оборудование",
+          "url": "/market/proekcionnoe_oborudovanie/",
+          "sub": [
+            {
+              "title": "Проекторы",
+              "url": "/market/projector/"
+            },
+            {
+              "title": "Экраны для проекторов",
+              "url": "/market/stend_projector/"
+            },
+            {
+              "title": "Кронштейны для проекторов",
+              "url": "/market/kran_proektor/"
+            },
+            {
+              "title": "Презентеры",
+              "url": "/market/prezentery/"
+            },
+            {
+              "title": "Кабели VGA и RCA",
+              "url": "/market/vga_scart_rca/"
+            },
+            {
+              "title": "Кабели HDMI",
+              "url": "/market/hdmi_cable/"
+            },
+            {
+              "title": "Видео переходники",
+              "url": "/market/video_perekhodniki/"
+            },
+            {
+              "title": "Интерактивные панели",
+              "url": "/market/interaktivnyye_paneli/"
+            }
+          ]
+        },
+        {
+          "title": "Видеонаблюдение и СКУД",
+          "url": "/market/vedeo_bezopasnost/",
+          "sub": [
+            {
+              "title": "Видеорегистраторы",
+              "url": "/market/security_videoreg/"
+            },
+            {
+              "title": "Камеры видеонаблюдения",
+              "url": "/market/security_videocam/"
+            },
+            {
+              "title": "IP камеры видеонаблюдения",
+              "url": "/market/ip_camera/"
+            },
+            {
+              "title": "ИБП",
+              "url": "/market/istochniki_bespereboynogo_pitaniya/"
+            },
+            {
+              "title": "Аккумуляторы для ИБП",
+              "url": "/market/akb_ibp/"
+            },
+            {
+              "title": "Стабилизаторы напряжения",
+              "url": "/market/stabilizatoryi_napryajeniya/"
+            },
+            {
+              "title": "Сетевые фильтры",
+              "url": "/market/setevye_filtry/"
+            }
+          ]
+        },
+        {
+          "title": "Офисное оборудование и мебель",
+          "url": "/market/office_and_bank_oborudovanie/",
+          "sub": [
+            {
+              "title": "Офисные кресла",
+              "url": "/market/ofisnye_kresla/"
+            },
+            {
+              "title": "Напольные коврики под кресло",
+              "url": "/market/napolnye_kovriki_pod_kreslo/"
+            },
+            {
+              "title": "Уничтожители бумаги",
+              "url": "/market/destroer_bumagi/"
+            },
+            {
+              "title": "Переплетчики",
+              "url": "/market/perepletchiki/"
+            },
+            {
+              "title": "Ламинаторы",
+              "url": "/market/laminatoru/"
+            },
+            {
+              "title": "Резаки",
+              "url": "/market/rezaki/"
+            },
+            {
+              "title": "Калькуляторы",
+              "url": "/market/kalkulyatori/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Техника для дома",
+      "url": "/market/tekhnika_dlya_doma/",
+      "id": "85909",
+      "icon": "tekhnika_dlya_doma",
+      "sub": [
+        {
+          "title": "Техника для уборки",
+          "url": "/market/tekhnika_dlya_uborki/",
+          "sub": [
+            {
+              "title": "Пылесосы",
+              "url": "/market/pylesosy/"
+            },
+            {
+              "title": "Роботы-пылесосы",
+              "url": "/market/pulesosu_robotu/"
+            },
+            {
+              "title": "Паровые швабры",
+              "url": "/market/parovyye_shvabry/"
+            },
+            {
+              "title": "Пароочистители",
+              "url": "/market/paroochistiteli/"
+            },
+            {
+              "title": "Стеклоочистители",
+              "url": "/market/stekloochistiteli/"
+            },
+            {
+              "title": "Аксессуары для пылесосов",
+              "url": "/market/aks_pulesos/"
+            }
+          ]
+        },
+        {
+          "title": "Глажка и сушка",
+          "url": "/market/glazhka_i_sushka/",
+          "sub": [
+            {
+              "title": "Утюги",
+              "url": "/market/utyugi/"
+            },
+            {
+              "title": "Утюги с парогенератором",
+              "url": "/market/gladilnyye_stantsii/"
+            },
+            {
+              "title": "Отпариватели",
+              "url": "/market/parogeneratoru/"
+            }
+          ]
+        },
+        {
+          "title": "Климатическая техника",
+          "url": "/market/klimaticheskay_tehnika/",
+          "sub": [
+            {
+              "title": "Конвекторы",
+              "url": "/market/konvectori/"
+            },
+            {
+              "title": "Тепловентиляторы",
+              "url": "/market/teploventilator/"
+            },
+            {
+              "title": "Инфракрасные обогреватели",
+              "url": "/market/infrakrasnie_obogrevateli/"
+            },
+            {
+              "title": "Масляные обогреватели",
+              "url": "/market/maslenie_obogrevateli/"
+            },
+            {
+              "title": "Тепловые завесы",
+              "url": "/market/teplovie_zavesi/"
+            },
+            {
+              "title": "Увлажнители воздуха",
+              "url": "/market/ochistiteli_i_uvlazhniteli_vozduha/"
+            },
+            {
+              "title": "Очистители воздуха",
+              "url": "/market/air_purifiers/"
+            },
+            {
+              "title": "Мойки воздуха",
+              "url": "/market/moyki_vozdukha/"
+            },
+            {
+              "title": "Аксессуары для климатической техники",
+              "url": "/market/accessories_climate/"
+            },
+            {
+              "title": "Тепловые пушки",
+              "url": "/market/teplovie_pushki/"
+            },
+            {
+              "title": "Электрические камины",
+              "url": "/market/electricheskie_kamini/"
+            },
+            {
+              "title": "Полотенцесушители",
+              "url": "/market/polotencesushiteli/"
+            },
+            {
+              "title": "Вентиляторы вытяжные",
+              "url": "/market/ventilyatory_vytyazhnye/"
+            },
+            {
+              "title": "Водонагреватели",
+              "url": "/market/vodonagrevateli/"
+            },
+            {
+              "title": "Кондиционеры",
+              "url": "/market/kondicionery/"
+            },
+            {
+              "title": "Вентиляторы",
+              "url": "/market/ventilyatory_napolnye/"
+            }
+          ]
+        },
+        {
+          "title": "Умный дом и экосистемы",
+          "url": "/market/umnyy_dom/",
+          "sub": [
+            {
+              "title": "Датчики и системы управления умным домом",
+              "url": "/market/datchiki_dlya_umnogo_doma/"
+            },
+            {
+              "title": "IP-камеры для умного дома",
+              "url": "/market/ip_kamery_dlya_umnogo_doma/"
+            },
+            {
+              "title": "Освещение для умного дома",
+              "url": "/market/osveshchenie_dlya_umnogo_doma/"
+            },
+            {
+              "title": "Умные кормушки для домашних животных",
+              "url": "/market/umnye-kormushki/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Для кухни",
+      "url": "/market/kuhnya/",
+      "id": "85912",
+      "icon": "kuhnya",
+      "sub": [
+        {
+          "title": "Приготовление блюд",
+          "url": "/market/prigotovleniye_blyud/",
+          "sub": [
+            {
+              "title": "Мультиварки",
+              "url": "/market/multivarki/"
+            },
+            {
+              "title": "Пароварки",
+              "url": "/market/parovarki/"
+            },
+            {
+              "title": "Микроволновые печи",
+              "url": "/market/mikrovolnovaya_pech/"
+            },
+            {
+              "title": "Электрогрили",
+              "url": "/market/elektrogrili/"
+            },
+            {
+              "title": "Аэрогрили",
+              "url": "/market/aerogrili/"
+            },
+            {
+              "title": "Мини-печи",
+              "url": "/market/elektropechi/"
+            },
+            {
+              "title": "Настольные плитки",
+              "url": "/market/electroplitu/"
+            },
+            {
+              "title": "Хлебопечки",
+              "url": "/market/hlebopechki/"
+            },
+            {
+              "title": "Тостеры",
+              "url": "/market/tostery/"
+            },
+            {
+              "title": "Электрошашлычницы",
+              "url": "/market/ehlektroshashlychnicy/"
+            },
+            {
+              "title": "Фритюрницы",
+              "url": "/market/frityurnicy/"
+            },
+            {
+              "title": "Сушилки для овощей, фруктов и грибов",
+              "url": "/market/prochaya_tekhnika_dlya_kukhni/"
+            },
+            {
+              "title": "Йогуртницы",
+              "url": "/market/yogurtnici/"
+            },
+            {
+              "title": "Мороженицы",
+              "url": "/market/morojenici/"
+            },
+            {
+              "title": "Вафельницы",
+              "url": "/market/vafelnici/"
+            },
+            {
+              "title": "Блинницы",
+              "url": "/market/blinnici/"
+            },
+            {
+              "title": "Кухонные весы",
+              "url": "/market/vesu_kuhonnue/"
+            },
+            {
+              "title": "Аксессуары для мультиварок и мультипекаря",
+              "url": "/market/aks/"
+            },
+            {
+              "title": "Приготовление сладкой ваты",
+              "url": "/market/pribori_dlya_progotovleniya_sladkoy_vati/"
+            },
+            {
+              "title": "Прочая кухонная техника",
+              "url": "/market/nabori_dlya_fondy/"
+            },
+            {
+              "title": "Су-вид",
+              "url": "/market/su-vid/"
+            }
+          ]
+        },
+        {
+          "title": "Измельчение и смешивание",
+          "url": "/market/izmelcheniye_i_smeshivaniye/",
+          "sub": [
+            {
+              "title": "Кухонные комбайны",
+              "url": "/market/kuhonnie_kombainy/"
+            },
+            {
+              "title": "Мясорубки",
+              "url": "/market/myasorubki/"
+            },
+            {
+              "title": "Блендеры",
+              "url": "/market/blendery/"
+            },
+            {
+              "title": "Миксеры",
+              "url": "/market/miksery/"
+            },
+            {
+              "title": "Измельчители",
+              "url": "/market/izmelchiteli/"
+            },
+            {
+              "title": "Овощерезки",
+              "url": "/market/ovoshcherezki/"
+            }
+          ]
+        },
+        {
+          "title": "Приготовление напитков",
+          "url": "/market/prigotovleniye_napitkov/",
+          "sub": [
+            {
+              "title": "Чайники",
+              "url": "/market/chayniki/"
+            },
+            {
+              "title": "Термопоты",
+              "url": "/market/termopoty/"
+            },
+            {
+              "title": "Соковыжималки",
+              "url": "/market/sokovyzhimalki/"
+            },
+            {
+              "title": "Фильтры для воды",
+              "url": "/market/filtry_dlya_vody/"
+            },
+            {
+              "title": "Льдогенераторы",
+              "url": "/market/icemakers/"
+            }
+          ]
+        },
+        {
+          "title": "Кофемашины и кофеварки",
+          "url": "/market/kofevarki_kofemashini/",
+          "sub": [
+            {
+              "title": "Кофемашины",
+              "url": "/market/kofemashinu/"
+            },
+            {
+              "title": "Капсульные кофеварки",
+              "url": "/market/kapsulnie_kofemashinu/"
+            },
+            {
+              "title": "Рожковые кофеварки",
+              "url": "/market/kofemashinu_rojkovue/"
+            },
+            {
+              "title": "Капельные кофеварки",
+              "url": "/market/kofevarki_kapelnie/"
+            },
+            {
+              "title": "Гейзерные кофеварки",
+              "url": "/market/kofevarki_geyzernyye/"
+            },
+            {
+              "title": "Кофемолки",
+              "url": "/market/kofemolki/"
+            },
+            {
+              "title": "Аксессуары для кофемашин",
+              "url": "/market/aksessuari_i_uhod/"
+            }
+          ]
+        },
+        {
+          "title": "Кофе и чай",
+          "url": "/market/coffe/",
+          "sub": [
+            {
+              "title": "Кофе в зернах",
+              "url": "/market/cofe_v_zernah/"
+            },
+            {
+              "title": "Кофе молотый",
+              "url": "/market/ground_coffee/"
+            },
+            {
+              "title": "Кофе в капсулах",
+              "url": "/market/cofe_v_capsulah/"
+            },
+            {
+              "title": "Какао",
+              "url": "/market/cacao/"
+            },
+            {
+              "title": "Чай",
+              "url": "/market/tea/"
+            }
+          ]
+        },
+        {
+          "title": "Встраиваемая техника",
+          "url": "/market/vstraevuemaya_butovaya_tehnika/",
+          "sub": [
+            {
+              "title": "Варочные панели",
+              "url": "/market/varochnyye_paneli/"
+            },
+            {
+              "title": "Духовые шкафы",
+              "url": "/market/dukhovyye_shkafy/"
+            },
+            {
+              "title": "Встраиваемые вытяжки",
+              "url": "/market/vstraivaemye_vytyazhki/"
+            },
+            {
+              "title": "Аксессуары для вытяжек",
+              "url": "/market/aksessuary_dlya_vytyazhek/"
+            },
+            {
+              "title": "Измельчители пищевых отходов",
+              "url": "/market/izmelchiteli_poshevih_othodov/"
+            },
+            {
+              "title": "Фильтры тонкой очистки",
+              "url": "/market/filtry_tonkoy_ochistki/"
+            }
+          ]
+        },
+        {
+          "title": "Крупная бытовая техника",
+          "url": "/market/krupnaya_bytovaya_tekhnika/",
+          "sub": [
+            {
+              "title": "Винные шкафы",
+              "url": "/market/vinnye_shkafy/"
+            }
+          ]
+        },
+        {
+          "title": "Аксессуары и вспомогательная техника",
+          "url": "/market/aksessuary_i_vspomogatelnaya_tekhnika/",
+          "sub": [
+            {
+              "title": "Вакуумные упаковщики",
+              "url": "/market/vakuumnyye_upakovshchiki/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Техника для красоты и здоровья",
+      "url": "/market/krasota_i_zdorovie/",
+      "id": "85915",
+      "icon": "krasota_i_zdorovie",
+      "sub": [
+        {
+          "title": "Гигиена и косметика",
+          "url": "/market/gigiyena_i_kosmetika/",
+          "sub": [
+            {
+              "title": "Косметические приборы",
+              "url": "/market/kosmeticheskie_pribory/"
+            }
+          ]
+        },
+        {
+          "title": "Стрижка и эпиляция",
+          "url": "/market/strizhka_i_epilyatsiya/",
+          "sub": [
+            {
+              "title": "Электробритвы",
+              "url": "/market/electrobritvu/"
+            },
+            {
+              "title": "Аксессуары для электробритв",
+              "url": "/market/smennie_bloki_dlya_britv/"
+            },
+            {
+              "title": "Машинки для стрижки",
+              "url": "/market/mashinki_dlya_strizhki/"
+            },
+            {
+              "title": "Триммеры",
+              "url": "/market/trimmery/"
+            },
+            {
+              "title": "Эпиляторы",
+              "url": "/market/epilyatory/"
+            }
+          ]
+        },
+        {
+          "title": "Завивка и укладка",
+          "url": "/market/zavivka_i_ukladka/",
+          "sub": [
+            {
+              "title": "Фены",
+              "url": "/market/feny/"
+            },
+            {
+              "title": "Фен-щетки",
+              "url": "/market/fen_shchetki/"
+            },
+            {
+              "title": "Выпрямители",
+              "url": "/market/vypryamiteli_dlya_volos/"
+            },
+            {
+              "title": "Щипцы для завивки",
+              "url": "/market/shchipcy_dlya_zavivki/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Медицина и здоровье",
+      "url": "/market/medicine_i_zdorovie/",
+      "id": "88294",
+      "icon": "medicine_i_zdorovie",
+      "sub": [
+        {
+          "title": "Медицинские приборы",
+          "url": "/market/medicinskoe_oborudovanie/",
+          "sub": [
+            {
+              "title": "Напольные весы",
+              "url": "/market/napolnye_vesy/"
+            },
+            {
+              "title": "Ингаляторы и аксессуары",
+              "url": "/market/ingalyatoru/"
+            },
+            {
+              "title": "Массажеры и миостимуляторы",
+              "url": "/market/vibro/"
+            }
+          ]
+        },
+        {
+          "title": "Уход за полостью рта",
+          "url": "/market/ukhod_za_polostyu_rta/",
+          "sub": [
+            {
+              "title": "Электрические зубные щетки",
+              "url": "/market/zubnye_shchetki/"
+            },
+            {
+              "title": "Ирригаторы",
+              "url": "/market/irrigators/"
+            },
+            {
+              "title": "Аксессуары для зубных щеток и ирригаторов",
+              "url": "/market/nasadki_dlya_zubnih_shetok_irigatorov/"
+            },
+            {
+              "title": "Зубные пасты",
+              "url": "/market/zubnyye_pasty/"
+            }
+          ]
+        },
+        {
+          "title": "Медицинские изделия",
+          "url": "/market/medicinskie-izdelija/",
+          "sub": [
+            {
+              "title": "Маски и шапочки",
+              "url": "/market/medicinskie-maski-i-antiseptiki/"
+            },
+            {
+              "title": "Медицинские перчатки",
+              "url": "/market/medicinskie_perchatki/"
+            },
+            {
+              "title": "Зеркала и наборы гинекологические",
+              "url": "/market/ginekologicheskie-nabory/"
+            },
+            {
+              "title": "Медицинские диагностические тесты",
+              "url": "/market/diagnosticheskie-testy/"
+            }
+          ]
+        },
+        {
+          "title": "Уход за больными",
+          "url": "/market/sredstva_po_uhodu_za_bolnymi/",
+          "sub": [
+            {
+              "title": "Одноразовые подгузники, пеленки и трусы для взрослых",
+              "url": "/market/podguzniki_dlya_vzroslyh/"
+            }
+          ]
+        },
+        {
+          "title": "Ортопедические изделия",
+          "url": "/market/ortopedicheskie_izdeliya_i_reabilitaciya/",
+          "sub": [
+            {
+              "title": "Бандажи, ортезы, корсеты и корректоры осанки",
+              "url": "/market/bandazhi_korrektory_i_korsety/"
+            }
+          ]
+        },
+        {
+          "title": "Дезинфицирующие средства",
+          "url": "/market/dezinficirujushhie-sredstva/",
+          "sub": [
+            {
+              "title": "Для обработки поверхностей и предметов",
+              "url": "/market/dezinfekcija-poverhnostej/"
+            }
+          ]
+        },
+        {
+          "title": "Оборудование для медучреждений",
+          "url": "/market/dlja-meduchrezhdenij/",
+          "sub": [
+            {
+              "title": "Бактерицидные облучатели, рециркуляторы",
+              "url": "/market/baktericidnye-obluchateli-recirkulyatory/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Сад и дача",
+      "url": "/market/remont_i_dacha/",
+      "id": "85002",
+      "icon": "remont_i_dacha",
+      "sub": [
+        {
+          "title": "Садовая техника",
+          "url": "/market/sadovaya_tehnika/",
+          "sub": [
+            {
+              "title": "Триммеры",
+              "url": "/market/trimmeri/"
+            },
+            {
+              "title": "Газонокосилки",
+              "url": "/market/gazonokosilki/"
+            },
+            {
+              "title": "Кусторезы",
+              "url": "/market/kustorezi/"
+            },
+            {
+              "title": "Дровоколы",
+              "url": "/market/drovokoly/"
+            },
+            {
+              "title": "Мойки высокого давления",
+              "url": "/market/apparatu_vusokogo_davleniya/"
+            },
+            {
+              "title": "Опрыскиватели",
+              "url": "/market/opryskivateli/"
+            },
+            {
+              "title": "Насосы",
+              "url": "/market/nasosy/"
+            },
+            {
+              "title": "Измельчители садовые",
+              "url": "/market/sadovie_izmelchiteli/"
+            },
+            {
+              "title": "Садовые пылесосы",
+              "url": "/market/sadovye_pylesosy/"
+            },
+            {
+              "title": "Пилы цепные",
+              "url": "/market/sadovyye_pily/"
+            },
+            {
+              "title": "Аэраторы",
+              "url": "/market/aehratory/"
+            },
+            {
+              "title": "Культиваторы",
+              "url": "/market/kultivatory/"
+            },
+            {
+              "title": "Генераторы",
+              "url": "/market/generatori/"
+            },
+            {
+              "title": "Снегоуборочная техника",
+              "url": "/market/snegouborochnaya_tehnika/"
+            },
+            {
+              "title": "Бензобуры и мотобуры",
+              "url": "/market/benzoburi_motoburi/"
+            }
+          ]
+        },
+        {
+          "title": "Садовый инструмент",
+          "url": "/market/garden_tools/",
+          "sub": [
+            {
+              "title": "Сучкорезы",
+              "url": "/market/suchkorezy/"
+            },
+            {
+              "title": "Топоры",
+              "url": "/market/axe/"
+            },
+            {
+              "title": "Лопаты",
+              "url": "/market/lopaty/"
+            }
+          ]
+        },
+        {
+          "title": "Мангалы, грили и коптильни",
+          "url": "/market/mangaly_grili_i_koptilni/",
+          "sub": [
+            {
+              "title": "Мангалы",
+              "url": "/market/mangali/"
+            },
+            {
+              "title": "Коптильни",
+              "url": "/market/koptilni/"
+            },
+            {
+              "title": "Грили",
+              "url": "/market/grili/"
+            },
+            {
+              "title": "Средства для розжига",
+              "url": "/market/sredstva_dlya_rozzhiga/"
+            },
+            {
+              "title": "Шампуры",
+              "url": "/market/shampury/"
+            },
+            {
+              "title": "Решетки",
+              "url": "/market/reshetki_dlya_grilya/"
+            },
+            {
+              "title": "Аксессуары для приготовления мяса",
+              "url": "/market/aksessuary_dlya_prigotovleniya_myasa/"
+            },
+            {
+              "title": "Наборы для пикника",
+              "url": "/market/nabory_dlya_piknika/"
+            }
+          ]
+        },
+        {
+          "title": "Системы полива",
+          "url": "/market/sistemy_poliva_i_orosheniya_sada/",
+          "sub": [
+            {
+              "title": "Разбрызгиватели",
+              "url": "/market/dozhdevateli_i_razbryzgivateli/"
+            },
+            {
+              "title": "Шланги",
+              "url": "/market/sadovyye_shlangi/"
+            },
+            {
+              "title": "Пистолеты для полива",
+              "url": "/market/pistolety_dlya_poliva/"
+            },
+            {
+              "title": "Коннекторы и соединители",
+              "url": "/market/konnektory_i_soyediniteli/"
+            }
+          ]
+        },
+        {
+          "title": "Отдых на даче",
+          "url": "/market/tovari_dlya_dachi/",
+          "sub": [
+            {
+              "title": "Бассейны",
+              "url": "/market/naduvnye_bassejny/"
+            },
+            {
+              "title": "Наборы для пикника",
+              "url": "/market/nabory_dlya_piknika/"
+            },
+            {
+              "title": "Батуты",
+              "url": "/market/batuti/"
+            },
+            {
+              "title": "Защита от насекомых",
+              "url": "/market/zashchita_ot_nasekomykh/"
+            }
+          ]
+        },
+        {
+          "title": "Для дачи",
+          "url": "/market/dlya_doma/",
+          "sub": [
+            {
+              "title": "Аксессуары для биотуалетов",
+              "url": "/market/jidkosti_dlya_biotualetov/"
+            },
+            {
+              "title": "Борьба с вредителями",
+              "url": "/market/borba_s_vreditelyami/"
+            },
+            {
+              "title": "Стабилизаторы напряжения",
+              "url": "/market/stabilizatoryi_napryajeniya/"
+            },
+            {
+              "title": "Сетевые фильтры",
+              "url": "/market/setevye_filtry/"
+            },
+            {
+              "title": "Часы и будильники",
+              "url": "/market/chasy_i_budilniki/"
+            }
+          ]
+        },
+        {
+          "title": "Аксессуары и расходные материалы",
+          "url": "/market/aksessuary_i_raskhodnyye_materialy/",
+          "sub": [
+            {
+              "title": "Масла",
+              "url": "/market/masla_i_kanistry/"
+            },
+            {
+              "title": "Для триммеров",
+              "url": "/market/dlya_trimmerov/"
+            },
+            {
+              "title": "Для моек высокого давления",
+              "url": "/market/dlya_moyek_vysokogo_davleniya/"
+            },
+            {
+              "title": "Для насосов и мотопомп",
+              "url": "/market/dlya_nasosov_i_motopomp/"
+            },
+            {
+              "title": "Защитные средства",
+              "url": "/market/zashchitnyye_sredstva/"
+            },
+            {
+              "title": "Для биотуалетов",
+              "url": "/market/jidkosti_dlya_biotualetov/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Инструменты и материалы",
+      "url": "/market/instrumenty_i_materialy/",
+      "id": "85476",
+      "icon": "instrumenty_i_materialy",
+      "sub": [
+        {
+          "title": "Электроинструменты",
+          "url": "/market/instrumentu/",
+          "sub": [
+            {
+              "title": "Гайковерты",
+              "url": "/market/gaikoverti/"
+            },
+            {
+              "title": "Шуруповерты",
+              "url": "/market/shurupovertu/"
+            },
+            {
+              "title": "Дрели",
+              "url": "/market/dreli/"
+            },
+            {
+              "title": "Перфораторы",
+              "url": "/market/perforators/"
+            },
+            {
+              "title": "Штроборезы",
+              "url": "/market/shtroborezy/"
+            },
+            {
+              "title": "Фрезеры",
+              "url": "/market/frezeri/"
+            },
+            {
+              "title": "Лобзики",
+              "url": "/market/lobziki/"
+            },
+            {
+              "title": "Граверы",
+              "url": "/market/gravery/"
+            },
+            {
+              "title": "Реноваторы / многофункциональный инструмент",
+              "url": "/market/mnogofunktsionalnyy_instrument/"
+            },
+            {
+              "title": "Шлифмашины",
+              "url": "/market/shlifmashinu/"
+            },
+            {
+              "title": "Рубанки",
+              "url": "/market/rubanki/"
+            },
+            {
+              "title": "Степлеры",
+              "url": "/market/stepler/"
+            },
+            {
+              "title": "Краскораспылители",
+              "url": "/market/kraskoraspiliteli/"
+            },
+            {
+              "title": "Технические фены",
+              "url": "/market/stroitelnie_fenu/"
+            },
+            {
+              "title": "Пылесосы строительные",
+              "url": "/market/stroitelnie_pilesosi/"
+            }
+          ]
+        },
+        {
+          "title": "Ручные инструменты",
+          "url": "/market/stolyarno_slesarnyy_instrument/",
+          "sub": [
+            {
+              "title": "Наборы ручного инструмента",
+              "url": "/market/nabory_ruchnogo_instrumenta/"
+            },
+            {
+              "title": "Отвертки",
+              "url": "/market/otvertki/"
+            },
+            {
+              "title": "Шарнирно-губцевые инструменты",
+              "url": "/market/instrumenty_sharnirno_gubtsevyye/"
+            },
+            {
+              "title": "Монтажный инструмент для сетей",
+              "url": "/market/instrumentu_dlya_montaja/"
+            },
+            {
+              "title": "Хранение инструмента",
+              "url": "/market/hranenie_instrumenta_i_accessory/"
+            },
+            {
+              "title": "Зажимной инструмент",
+              "url": "/market/tiski/"
+            }
+          ]
+        },
+        {
+          "title": "Измерительные инструменты",
+          "url": "/market/izmeritelniy_oborudovaniye/",
+          "sub": [
+            {
+              "title": "Лазерные нивелиры",
+              "url": "/market/niveliri/"
+            },
+            {
+              "title": "Пирометры",
+              "url": "/market/izmeriteli_temperatuir/"
+            }
+          ]
+        },
+        {
+          "title": "Паяльное оборудование",
+          "url": "/market/payalnoe_oborudovanie/",
+          "sub": [
+            {
+              "title": "Паяльники",
+              "url": "/market/payalniki/"
+            }
+          ]
+        },
+        {
+          "title": "Пилы",
+          "url": "/market/pilu/",
+          "sub": [
+            {
+              "title": "Сабельные пилы",
+              "url": "/market/pily_sabelnyye/"
+            },
+            {
+              "title": "Дисковые пилы",
+              "url": "/market/pily_diskovyye/"
+            },
+            {
+              "title": "Торцовочные пилы",
+              "url": "/market/pily_tortsovochnyye/"
+            },
+            {
+              "title": "Цепные пилы",
+              "url": "/market/sadovyye_pily/"
+            }
+          ]
+        },
+        {
+          "title": "Аксессуары и оснастка",
+          "url": "/market/raskhodnyye_materialy_dlya_dachi_i_remonta/",
+          "sub": [
+            {
+              "title": "Наборы оснастки",
+              "url": "/market/universalnyye_nabory/"
+            },
+            {
+              "title": "Аксессуары для электроинструмента",
+              "url": "/market/aksessuary_dlya_ehlektroinstrumenta/"
+            },
+            {
+              "title": "Аксессуары для пильных инструментов",
+              "url": "/market/aksessuary_dlya_pilnyh_instrumentov/"
+            },
+            {
+              "title": "Аксессуары для УШМ",
+              "url": "/market/aksessuary_dlya_ushm/"
+            },
+            {
+              "title": "Аксессуары для компрессоров",
+              "url": "/market/aksessuary_dlya_kompressorov/"
+            },
+            {
+              "title": "Силовые удлинители",
+              "url": "/market/udliniteli_i_razvetviteli/"
+            },
+            {
+              "title": "Коронки",
+              "url": "/market/koronki/"
+            }
+          ]
+        },
+        {
+          "title": "Строительное оборудование",
+          "url": "/market/stroitelnoe_oborudovanie/",
+          "sub": [
+            {
+              "title": "Бензобуры и мотобуры",
+              "url": "/market/benzoburi_motoburi/"
+            },
+            {
+              "title": "Отбойные молотки",
+              "url": "/market/otbojnie_molotoki/"
+            },
+            {
+              "title": "Резчики",
+              "url": "/market/rezchiki/"
+            },
+            {
+              "title": "Стремянки",
+              "url": "/market/stremyanki/"
+            },
+            {
+              "title": "Верстаки",
+              "url": "/market/workbenches/"
+            },
+            {
+              "title": "Компрессоры",
+              "url": "/market/kompressory/"
+            },
+            {
+              "title": "Пневмокраскораспылители",
+              "url": "/market/pnevmokraskoraspyliteli/"
+            },
+            {
+              "title": "Пневмопистолеты",
+              "url": "/market/pnevmopistolety/"
+            },
+            {
+              "title": "Пневмошлифмашины",
+              "url": "/market/pnevmoshlifmashiny/"
+            },
+            {
+              "title": "Наборы инструмента",
+              "url": "/market/nabory_ruchnogo_instrumenta/"
+            },
+            {
+              "title": "Аксессуары для сборки пневмосистемы",
+              "url": "/market/aksessuary_dlya_sborki_pnevmosistemy/"
+            },
+            {
+              "title": "Ковши Хоппер",
+              "url": "/market/hopper-kovshi/"
+            },
+            {
+              "title": "Генераторы",
+              "url": "/market/generatori/"
+            }
+          ]
+        },
+        {
+          "title": "Станки",
+          "url": "/market/stanki/",
+          "sub": [
+            {
+              "title": "Точильно-шлифовальные станки",
+              "url": "/market/tochilno_shlifovalnyye_stanki/"
+            },
+            {
+              "title": "Сверлильные станки",
+              "url": "/market/sverlilnyye_stanki/"
+            },
+            {
+              "title": "Заточные станки",
+              "url": "/market/zatochnyye_stanki/"
+            },
+            {
+              "title": "Дровоколы",
+              "url": "/market/drovokoly/"
+            },
+            {
+              "title": "Распиловочные станки",
+              "url": "/market/raspilovochnyye_stanki/"
+            },
+            {
+              "title": "Рейсмусно-фуговальные станки",
+              "url": "/market/reysmusno_fugovalnyye_stanki/"
+            }
+          ]
+        },
+        {
+          "title": "Сварочное оборудование",
+          "url": "/market/svarochnoe_oborudovanie/",
+          "sub": [
+            {
+              "title": "Сварочные инверторы",
+              "url": "/market/svarochnyye_invertory/"
+            },
+            {
+              "title": "Сварочные полуавтоматы",
+              "url": "/market/svarochnyye_poluavtomaty/"
+            },
+            {
+              "title": "Сварочные аппараты для труб",
+              "url": "/market/apparaty_dlya_svarki_polipropilenovykh_trub/"
+            },
+            {
+              "title": "Сварочные маски",
+              "url": "/market/svarochnyye_maski/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Строительство и ремонт",
+      "url": "/market/electrika_i_remont/",
+      "id": "85523",
+      "icon": "electrika_i_remont",
+      "sub": [
+        {
+          "title": "Электрика",
+          "url": "/market/elektrika/",
+          "sub": [
+            {
+              "title": "Освещение для дома",
+              "url": "/market/osveshhenie-dlja-doma/"
+            },
+            {
+              "title": "Светодиодные лампы и прожекторы",
+              "url": "/market/svetodiodnye_lampy/"
+            },
+            {
+              "title": "Электропитание",
+              "url": "/market/elektropitanie/"
+            },
+            {
+              "title": "Теплые полы",
+              "url": "/market/teplye-poly/"
+            },
+            {
+              "title": "Розетки и выключатели",
+              "url": "/market/rozetki_i_vyklyuchateli/"
+            }
+          ]
+        },
+        {
+          "title": "Электропитание и защита",
+          "url": "/market/elektropitaniye_i_zashchita/",
+          "sub": [
+            {
+              "title": "Стабилизаторы напряжения",
+              "url": "/market/stabilizatoryi_napryajeniya/"
+            },
+            {
+              "title": "Сетевые фильтры",
+              "url": "/market/setevye_filtry/"
+            },
+            {
+              "title": "ИБП",
+              "url": "/market/istochniki_bespereboynogo_pitaniya/"
+            },
+            {
+              "title": "Аккумуляторы для ИБП",
+              "url": "/market/akb_ibp/"
+            }
+          ]
+        },
+        {
+          "title": "Кабели, розетки и клемы",
+          "url": "/market/kabeli_rozetki_i_klemy/",
+          "sub": [
+            {
+              "title": "Силовые кабели",
+              "url": "/market/cabel_electricheskiy_silovoy/"
+            },
+            {
+              "title": "Инструменты для монтажа",
+              "url": "/market/instrumentu_dlya_montaja/"
+            },
+            {
+              "title": "Материалы для монтажа",
+              "url": "/market/materialu_dlya_montaja/"
+            },
+            {
+              "title": "Сетевые кабели в бухтах",
+              "url": "/market/setevye_kabeli_v_buhtah/"
+            },
+            {
+              "title": "Сетевые розетки",
+              "url": "/market/setevue_rozetki/"
+            },
+            {
+              "title": "Коннекторы",
+              "url": "/market/konnektoru/"
+            }
+          ]
+        },
+        {
+          "title": "Кухня",
+          "url": "/market/santehnika_dlya_kuhni/",
+          "sub": [
+            {
+              "title": "Кухонные мойки",
+              "url": "/market/kuhonnie_moiki/"
+            },
+            {
+              "title": "Смесители для кухни",
+              "url": "/market/smesiteli_dlya_kuhni/"
+            },
+            {
+              "title": "Измельчители отходов",
+              "url": "/market/izmelchiteli_poshevih_othodov/"
+            }
+          ]
+        },
+        {
+          "title": "Унитазы и биде",
+          "url": "/market/unitazy_i_bide/",
+          "sub": [
+            {
+              "title": "Смывные клавиши",
+              "url": "/market/smivnie_klavishi/"
+            }
+          ]
+        },
+        {
+          "title": "Ванны и мебель",
+          "url": "/market/vanny_i_mebel/",
+          "sub": [
+            {
+              "title": "Мебель для ванны",
+              "url": "/market/mebel_dlya_vanni/"
+            },
+            {
+              "title": "Смесители для ванны",
+              "url": "/market/smesiteli_dlya_vanny/"
+            },
+            {
+              "title": "Смесители для раковины",
+              "url": "/market/smesiteli_dlya_rakoviny/"
+            }
+          ]
+        },
+        {
+          "title": "Душ",
+          "url": "/market/dush/",
+          "sub": [
+            {
+              "title": "Смесители для душа",
+              "url": "/market/smesiteli_dlya_dusha/"
+            },
+            {
+              "title": "Душевые ограждения",
+              "url": "/market/dushevyye_ograzhdeniya/"
+            }
+          ]
+        },
+        {
+          "title": "Аксессуары и расходные материалы",
+          "url": "/market/aksessuary_i_raskhodnyye_materialy_dlya_santekhniki/",
+          "sub": [
+            {
+              "title": "Водоснабжение",
+              "url": "/market/vodosnabzheniye/"
+            },
+            {
+              "title": "Полотенцесушители",
+              "url": "/market/polotencesushiteli/"
+            },
+            {
+              "title": "Аксессуары для сантехники",
+              "url": "/market/aks_dlya_santehniki/"
+            },
+            {
+              "title": "Сушилки для рук",
+              "url": "/market/sushilki_dlya_ruk/"
+            },
+            {
+              "title": "Фильтры тонкой очистки",
+              "url": "/market/filtry_tonkoy_ochistki/"
+            },
+            {
+              "title": "Держатели и крючки",
+              "url": "/market/derzhateli_i_kryuchki/"
+            },
+            {
+              "title": "Мыльницы, стаканы, дозаторы",
+              "url": "/market/mylnicy_stakany_dozatory/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Товары для дома",
+      "url": "/market/vse_dlya_doma/",
+      "id": "85853",
+      "icon": "vse_dlya_doma",
+      "sub": [
+        {
+          "title": "Посуда и кухонные принадлежности",
+          "url": "/market/posuda/",
+          "sub": [
+            {
+              "title": "Сковороды и сотейники",
+              "url": "/market/skovorodki/"
+            },
+            {
+              "title": "Казаны",
+              "url": "/market/cauldron/"
+            },
+            {
+              "title": "Кастрюли и ковши",
+              "url": "/market/kastryli/"
+            },
+            {
+              "title": "Крышки для посуды",
+              "url": "/market/kryshki_dlya_skovorodok/"
+            },
+            {
+              "title": "Хранение продуктов",
+              "url": "/market/containers_food/"
+            },
+            {
+              "title": "Приготовление напитков",
+              "url": "/market/posuda_dlya_prigotovleniya_napitkov/"
+            },
+            {
+              "title": "Термосы и термокружки",
+              "url": "/market/termosu/"
+            },
+            {
+              "title": "Ножи и разделочные доски",
+              "url": "/market/kuhonnue_noji/"
+            },
+            {
+              "title": "Кухонные принадлежности",
+              "url": "/market/kukhonnaya_utvar/"
+            }
+          ]
+        },
+        {
+          "title": "Инвентарь для уборки",
+          "url": "/market/uborka_i_stirka/",
+          "sub": [
+            {
+              "title": "Перчатки для уборки",
+              "url": "/market/perchatki_dlya_uborki/"
+            },
+            {
+              "title": "Швабры и насадки",
+              "url": "/market/shvabry/"
+            }
+          ]
+        },
+        {
+          "title": "Уход за одеждой и обувью",
+          "url": "/market/uhod_za_obuvyu/",
+          "sub": [
+            {
+              "title": "Гладильные доски",
+              "url": "/market/gladilnie_doski/"
+            },
+            {
+              "title": "Сушилки для белья",
+              "url": "/market/laundry_dryer/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Бытовая химия",
+      "url": "/market/bytovaya_khimiya_i_produkty/",
+      "id": "87564",
+      "icon": "bytovaya_khimiya_i_produkty",
+      "sub": [
+        {
+          "title": "Стирка и глажение",
+          "url": "/market/sredstva_dlya_stirki/",
+          "sub": [
+            {
+              "title": "Стиральный порошок",
+              "url": "/market/stiralnyy_poroshok/"
+            },
+            {
+              "title": "Отбеливатели и пятновыводители",
+              "url": "/market/pyatnovyvoditeli_otbelivateli/"
+            },
+            {
+              "title": "Гели и жидкие средства для стирки",
+              "url": "/market/geli_dlya_stirki/"
+            },
+            {
+              "title": "Капсулы, таблетки, пластины для стирки",
+              "url": "/market/tabletki_i_kapsuly_dlya_stirki/"
+            },
+            {
+              "title": "Кондиционеры и ополаскиватели для белья",
+              "url": "/market/konditsioner_dlya_belya/"
+            }
+          ]
+        },
+        {
+          "title": "Предметы личной гигиены",
+          "url": "/market/lichnaja-gigiena/",
+          "sub": [
+            {
+              "title": "Ватные палочки и диски",
+              "url": "/market/vatnyye_palochki_i_diski/"
+            },
+            {
+              "title": "Туалетная бумага",
+              "url": "/market/tualetnaya_bumaga/"
+            },
+            {
+              "title": "Гигиенические прокладки и тампоны",
+              "url": "/market/gigienicheskie_prokladki_i_tampony/"
+            }
+          ]
+        },
+        {
+          "title": "Средства для посуды",
+          "url": "/market/sredstva-dlja-posudy/",
+          "sub": [
+            {
+              "title": "Средства для мытья посуды",
+              "url": "/market/chemistry_dish/"
+            }
+          ]
+        },
+        {
+          "title": "Чистящие средства",
+          "url": "/market/%D1%81histjashhie-sredstva/",
+          "sub": [
+            {
+              "title": "Средства для ухода за бытовой техникой",
+              "url": "/market/uhod-za-bytovoj-tehnikoj/"
+            },
+            {
+              "title": "Средства для мебели, ковров и напольных покрытий",
+              "url": "/market/chemicals_cleaning/"
+            },
+            {
+              "title": "Средства для сантехники",
+              "url": "/market/chemicals_plumbing/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Товары для красоты",
+      "url": "/market/zdorove_i_uhod/",
+      "id": "87990",
+      "icon": "zdorove_i_uhod",
+      "sub": [
+        {
+          "title": "Средства по уходу за телом",
+          "url": "/market/gigiyena_ukhod_i_mytye/",
+          "sub": [
+            {
+              "title": "Дезодоранты",
+              "url": "/market/dezodaranty/"
+            },
+            {
+              "title": "Туалетное и жидкое мыло",
+              "url": "/market/zhidkoye_mylo/"
+            },
+            {
+              "title": "Средства для душа",
+              "url": "/market/geli_dlya_dusha/"
+            },
+            {
+              "title": "Кремы",
+              "url": "/market/kremy/"
+            },
+            {
+              "title": "Средства для загара и защиты от солнца",
+              "url": "/market/sredstva_dlya_uhoda_do_i_posle_zagara/"
+            }
+          ]
+        },
+        {
+          "title": "Косметика и средства для бритья",
+          "url": "/market/epilyatsiya_i_britye/",
+          "sub": [
+            {
+              "title": "Бритвы и лезвия",
+              "url": "/market/stanki_dlya_britya/"
+            },
+            {
+              "title": "Средства для бритья",
+              "url": "/market/sredstva_dlya_britya/"
+            }
+          ]
+        },
+        {
+          "title": "Макияж",
+          "url": "/market/instrumenty_dlya_makiyazha_i_uhoda/",
+          "sub": [
+            {
+              "title": "Для лица",
+              "url": "/market/kisti_dlya_makiyazha/"
+            },
+            {
+              "title": "Для глаз",
+              "url": "/market/sponzhi/"
+            },
+            {
+              "title": "Для губ",
+              "url": "/market/sredstva_dlya_chistki_sponzhej/"
+            },
+            {
+              "title": "Для бровей",
+              "url": "/market/makiyazh_brovej_i_resnic/"
+            }
+          ]
+        },
+        {
+          "title": "Уход за лицом",
+          "url": "/market/uhod-za-licom/",
+          "sub": [
+            {
+              "title": "Азиатская косметика",
+              "url": "/market/aziatskaja-kosmetika/"
+            },
+            {
+              "title": "Наборы",
+              "url": "/market/nabory-dlya-uhoda/"
+            }
+          ]
+        },
+        {
+          "title": "Средства для ухода за волосами",
+          "url": "/market/uhod-za-volosami/",
+          "sub": [
+            {
+              "title": "Расчески и аксессуары для волос",
+              "url": "/market/rascheski_i_shchetki/"
+            },
+            {
+              "title": "Шампуни",
+              "url": "/market/shampuni_dlya_volos/"
+            },
+            {
+              "title": "Бальзамы, ополаскиватели и кондиционеры для волос",
+              "url": "/market/kondicioner_dlya_volos/"
+            },
+            {
+              "title": "Укладка и стайлинг",
+              "url": "/market/vosk_dlya_ukladki_volos/"
+            },
+            {
+              "title": "Окрашивание",
+              "url": "/market/kraska_dlya_volos/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Детские товары",
+      "url": "/market/detskiye-tovary/",
+      "id": "88297",
+      "icon": "detskiye-tovary",
+      "sub": [
+        {
+          "title": "Конструкторы LEGO",
+          "url": "/market/lego_all_series/",
+          "img": "/assets/img/icons/lego.svg"
+        },
+        {
+          "title": "Игрушки Zuru",
+          "url": "/market/zuru/",
+          "img": "/assets/img/icons/zuru.svg"
+        },
+        {
+          "title": "Фигурки Funko",
+          "url": "/brands/funko/",
+          "img": "/assets/img/icons/funko.svg"
+        },
+        {
+          "title": "Коляски",
+          "url": "/market/kolyaski_detskie/",
+          "sub": [
+            {
+              "title": "Все коляски",
+              "url": "/market/all_kolyaski/"
+            },
+            {
+              "title": "Кенгуру и слинги",
+              "url": "/market/ryukzaki_kenguru/"
+            },
+            {
+              "title": "Коляски 3 в 1",
+              "url": "/market/kolyaski_3_v_1/"
+            },
+            {
+              "title": "Коляски 2 в 1",
+              "url": "/market/kolyaski_2_v_1/"
+            },
+            {
+              "title": "Прогулочные коляски",
+              "url": "/market/progulochnyye_kolyaski/"
+            },
+            {
+              "title": "Аксессуары для колясок",
+              "url": "/market/aksessuary_dlya_kolyasok/"
+            }
+          ]
+        },
+        {
+          "title": "Автомобильные кресла",
+          "url": "/market/detskiye_avtokresla/",
+          "sub": [
+            {
+              "title": "Детские автокресла",
+              "url": "/market/vse_avtokresla/"
+            },
+            {
+              "title": "Бустеры",
+              "url": "/market/busteri/"
+            },
+            {
+              "title": "Аксессуары для автокресел",
+              "url": "/market/aksessuary_dlya_avtokresel/"
+            }
+          ]
+        },
+        {
+          "title": "Детский спорт и активный отдых",
+          "url": "/market/detskiy_transport/",
+          "sub": [
+            {
+              "title": "Детские самокаты",
+              "url": "/market/detskie_samokaty/"
+            },
+            {
+              "title": "Беговелы",
+              "url": "/market/begoveli/"
+            },
+            {
+              "title": "Детские велосипеды",
+              "url": "/market/detskie_velosipedy/"
+            },
+            {
+              "title": "Роликовые коньки",
+              "url": "/market/rolikovye_konki/"
+            },
+            {
+              "title": "Электромобили",
+              "url": "/market/detskie_ehlektromobili/"
+            },
+            {
+              "title": "Скейтборды",
+              "url": "/market/skejtbordy/"
+            },
+            {
+              "title": "Гироскутеры",
+              "url": "/market/giroskutery/"
+            },
+            {
+              "title": "Детская защитная экипировка",
+              "url": "/market/detskaya_zashchitnaya_ehkipirovka/"
+            },
+            {
+              "title": "Аксессуары для велосипедов и самокатов",
+              "url": "/market/aksessuary_dlya_samokatov_i_begovelov/"
+            },
+            {
+              "title": "Зимний транспорт",
+              "url": "/market/sanki_i_snegokaty/"
+            },
+            {
+              "title": "Игры на улице",
+              "url": "/market/igry_na_ulice/"
+            }
+          ]
+        },
+        {
+          "title": "Детская комната и кормление",
+          "url": "/market/kormleniye/",
+          "sub": [
+            {
+              "title": "Детская мебель",
+              "url": "/market/detskaya-mebel/"
+            },
+            {
+              "title": "Матрасы",
+              "url": "/market/matrasy/"
+            },
+            {
+              "title": "Мобили",
+              "url": "/market/mobili/"
+            },
+            {
+              "title": "Стульчики для кормления и шезлонги",
+              "url": "/market/stulchiki_dlya_kormleniya/"
+            },
+            {
+              "title": "Поильники, посуда",
+              "url": "/market/poilniki/"
+            },
+            {
+              "title": "Приготовление пищи",
+              "url": "/market/pribory_dlya_prigotovlenie_pishchi/"
+            },
+            {
+              "title": "Для мам",
+              "url": "/market/dlya-mam/"
+            },
+            {
+              "title": "Гигиена и уход",
+              "url": "/market/gigiena-i-uhod/"
+            }
+          ]
+        },
+        {
+          "title": "Безопасность",
+          "url": "/market/bezopasnost_rebenka/",
+          "sub": [
+            {
+              "title": "Безопасность дома для детей",
+              "url": "/market/bezopasnost_doma_dlya_detej/"
+            }
+          ]
+        },
+        {
+          "title": "Гаджеты",
+          "url": "/market/gadzhety_dlya_detskoy/",
+          "sub": [
+            {
+              "title": "Умные часы и браслеты",
+              "url": "/market/detskie_umnye_chasy/"
+            }
+          ]
+        },
+        {
+          "title": "Игрушки",
+          "url": "/market/igrushki/",
+          "sub": [
+            {
+              "title": "Конструкторы LEGO",
+              "url": "/market/lego_all_series/"
+            },
+            {
+              "title": "Конструкторы, мозаики, паззлы",
+              "url": "/market/konstruktory/"
+            },
+            {
+              "title": "Куклы и аксессуары",
+              "url": "/market/kukly/"
+            },
+            {
+              "title": "Герои мультфиьльмов и фигурки",
+              "url": "/market/geroi-multfilmov-i-figurki/"
+            },
+            {
+              "title": "Игрушки Zuru",
+              "url": "/market/zuru/"
+            },
+            {
+              "title": "Фигурки Funko",
+              "url": "/market/kollekcionnye_figurki_funko_pop/"
+            },
+            {
+              "title": "Сюжетно-ролевые игры",
+              "url": "/market/detskie_nabory_instrumentov/"
+            },
+            {
+              "title": "Треки и машинки",
+              "url": "/market/igrushechnye_mashinki/"
+            },
+            {
+              "title": "Интерактивные игрушки",
+              "url": "/market/interaktivnyye_igrushki/"
+            },
+            {
+              "title": "Мягкие игрушки",
+              "url": "/market/myagkiye_igrushki/"
+            },
+            {
+              "title": "Радиоуправляемые игрушки",
+              "url": "/market/radioupravlyaemye_mashinki/"
+            },
+            {
+              "title": "Железная дорога",
+              "url": "/market/zheleznyye_dorogi/"
+            },
+            {
+              "title": "Игрушечное оружие",
+              "url": "/market/igrushechnoye_oruzhiye/"
+            },
+            {
+              "title": "Товары для исследований и творчества",
+              "url": "/market/nabory_dlya_detskogo_tvorchestva/"
+            },
+            {
+              "title": "Игрушки для самых маленьких",
+              "url": "/market/razvivayushchiye_igrushki/"
+            },
+            {
+              "title": "Настольные игры",
+              "url": "/market/nastolnie_igri/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Спорт и Туризм",
+      "url": "/market/sport_turizm/",
+      "id": "85799",
+      "icon": "sport_turizm",
+      "sub": [
+        {
+          "title": "Летний транспорт",
+          "url": "/market/letniy_transport/",
+          "sub": [
+            {
+              "title": "Детские велосипеды",
+              "url": "/market/detskiye_velosipedy/"
+            },
+            {
+              "title": "Детские самокаты",
+              "url": "/market/detskie_samokaty/"
+            },
+            {
+              "title": "Роликовые коньки",
+              "url": "/market/rolikovye_konki/"
+            },
+            {
+              "title": "Гироскутеры",
+              "url": "/market/giroskutery/"
+            },
+            {
+              "title": "Скейтборды и роллерсерфы",
+              "url": "/market/skejtbordy/"
+            },
+            {
+              "title": "Детская защитная экипировка",
+              "url": "/market/detskaya_zashchitnaya_ehkipirovka/"
+            }
+          ]
+        },
+        {
+          "title": "Зимний транспорт",
+          "url": "/market/zimniye_tovary/",
+          "sub": [
+            {
+              "title": "Зимний транспорт",
+              "url": "/market/sanki_i_snegokaty/"
+            },
+            {
+              "title": "Аксессуары для санок и снегокатов",
+              "url": "/market/aksessuary_k_sankam_i_snegokatam/"
+            }
+          ]
+        },
+        {
+          "title": "Спортивные гаджеты",
+          "url": "/market/sportivnyye_gadzhety/",
+          "sub": [
+            {
+              "title": "Аксессуары для Фитнес-браслетов",
+              "url": "/market/aksessuary_dlya_fitnes_brasletov_i_umnykh_chasov/"
+            },
+            {
+              "title": "Умные часы",
+              "url": "/market/unmue_chasu_smart_watch/"
+            },
+            {
+              "title": "Аксессуары для умных часов",
+              "url": "/market/aksessuary_dlya_umnykh_chasov/"
+            },
+            {
+              "title": "Напольные весы",
+              "url": "/market/napolnye_vesy/"
+            }
+          ]
+        },
+        {
+          "title": "Товары для туризма",
+          "url": "/market/tovary_dlya_turizma/",
+          "sub": [
+            {
+              "title": "Фонари",
+              "url": "/market/fonari/"
+            },
+            {
+              "title": "Термосы",
+              "url": "/market/termosu/"
+            },
+            {
+              "title": "Зонты",
+              "url": "/market/zonty/"
+            }
+          ]
+        },
+        {
+          "title": "Электротранспорт",
+          "url": "/market/ehlektrotransport/",
+          "sub": [
+            {
+              "title": "Гироскутеры",
+              "url": "/market/giroskutery/"
+            },
+            {
+              "title": "Электросамокаты",
+              "url": "/market/ehlektrosamokaty/"
+            },
+            {
+              "title": "Сегвей",
+              "url": "/market/segvej/"
+            },
+            {
+              "title": "Электровелосипеды",
+              "url": "/market/ehlektrovelosipedy/"
+            },
+            {
+              "title": "Аксессуары для электротранспорта",
+              "url": "/market/aksessuary_dlya_ehlektrotransporta/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Авто",
+      "url": "/market/avto/",
+      "id": "85717",
+      "icon": "avto",
+      "sub": [
+        {
+          "title": "Автомобильная электроника",
+          "url": "/market/avtomobilnaya_electronika/",
+          "sub": [
+            {
+              "title": "3G/4G модемы и роутеры",
+              "url": "/market/mobile_3g4g_tochki_dostupa/"
+            }
+          ]
+        },
+        {
+          "title": "Автомобильная химия",
+          "url": "/market/avtomobilnaya_khimiya/",
+          "sub": [
+            {
+              "title": "Незамерзающая жидкость",
+              "url": "/market/omyvayka/"
+            },
+            {
+              "title": "Масла для автомобилей",
+              "url": "/market/avto_masla/"
+            },
+            {
+              "title": "Тормозная жидкость",
+              "url": "/market/tormoznaya_zhidkost/"
+            },
+            {
+              "title": "Антифриз",
+              "url": "/market/antifriz/"
+            }
+          ]
+        },
+        {
+          "title": "Автозапчасти",
+          "url": "/market/avto_zapasnue_chasti/",
+          "sub": [
+            {
+              "title": "Щетки стеклоочистителя",
+              "url": "/market/shetki_stekloochistiteley/"
+            },
+            {
+              "title": "Галогенные лампы головного света",
+              "url": "/market/galogennyye_lampy_golovnogo_sveta/"
+            },
+            {
+              "title": "Лампы подсветки",
+              "url": "/market/lampy_podsvetki/"
+            }
+          ]
+        },
+        {
+          "title": "Инструменты для авто",
+          "url": "/market/avto_instrumentu/",
+          "sub": [
+            {
+              "title": "Компрессоры и манометры",
+              "url": "/market/kompressoru_manometru/"
+            },
+            {
+              "title": "Наборы инструментов",
+              "url": "/market/avto_naboru_instrumentov/"
+            },
+            {
+              "title": "Отвертки",
+              "url": "/market/otvertki/"
+            },
+            {
+              "title": "Пуско-зарядные, пусковые и зарядные устройства",
+              "url": "/market/puskozaryadnie_ustroistva_dlya_avto/"
+            },
+            {
+              "title": "Тросы",
+              "url": "/market/trosy/"
+            },
+            {
+              "title": "Фонари",
+              "url": "/market/fonari/"
+            }
+          ]
+        },
+        {
+          "title": "Уход за автомобилем",
+          "url": "/market/ukhod_za_avtomobilem/",
+          "sub": [
+            {
+              "title": "Мойки высокого давления",
+              "url": "/market/apparatu_vusokogo_davleniya/"
+            },
+            {
+              "title": "Щетки-скребки и лопаты",
+              "url": "/market/shchetki_skrebki_lopaty/"
+            }
+          ]
+        },
+        {
+          "title": "Хранение и перевозка",
+          "url": "/market/bagazhnyye_sistemy/",
+          "sub": [
+            {
+              "title": "Крепления для спортивного оборудования",
+              "url": "/market/krepleniya_dlya_sportivnogo_oborudovaniya/"
+            },
+            {
+              "title": "Термосы",
+              "url": "/market/termosu/"
+            }
+          ]
+        },
+        {
+          "title": "Детские автокресла",
+          "url": "/market/detskiye_avtokresla/",
+          "sub": [
+            {
+              "title": "Бустеры",
+              "url": "/market/busteri/"
+            },
+            {
+              "title": "Аксессуары для автокресел",
+              "url": "/market/aksessuary_dlya_avtokresel/"
+            },
+            {
+              "title": "Все автокресла",
+              "url": "/market/vse_avtokresla/"
+            }
+          ]
+        },
+        {
+          "title": "Аксессуары для авто",
+          "url": "/market/avto_accessory/",
+          "sub": [
+            {
+              "title": "Знаки и наклейки",
+              "url": "/market/znaki_i_nakleyki/"
+            },
+            {
+              "title": "Полезные мелочи",
+              "url": "/market/poleznie_melochi_dlya_avro/"
+            },
+            {
+              "title": "Держатели для мобильных устройств",
+              "url": "/market/derjateli/"
+            },
+            {
+              "title": "Автомобильные ЗУ",
+              "url": "/market/avto_zaryadnie_ustroystva/"
+            },
+            {
+              "title": "Термосы",
+              "url": "/market/termosu/"
+            },
+            {
+              "title": "Фонари",
+              "url": "/market/fonari/"
+            },
+            {
+              "title": "Светоотражатели",
+              "url": "/market/svetootrazhateli_dlya_detey_i_peshekhodov/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Товары для взрослых",
+      "url": "/market/dlya_dvoih/",
+      "id": "88234",
+      "icon": "dlya_dvoih",
+      "sub": [
+        {
+          "title": "Смазки и гели",
+          "url": "/market/smazki_i_geli/",
+          "sub": [
+            {
+              "title": "Массажные масла и свечи",
+              "url": "/market/massazhnye-masla-i-svechi/"
+            },
+            {
+              "title": "На водной основе",
+              "url": "/market/smazki-na-vodnoj-osnove/"
+            }
+          ]
+        },
+        {
+          "title": "Женская стимуляция",
+          "url": "/market/zhenskaya_stimulyaciya/",
+          "sub": [
+            {
+              "title": "Вибраторы",
+              "url": "/market/vibratory/"
+            },
+            {
+              "title": "Стимуляция клитора",
+              "url": "/market/stimulyaciya_klitora/"
+            },
+            {
+              "title": "Тренажеры Кегеля",
+              "url": "/market/trenazhery_kegelya/"
+            }
+          ]
+        },
+        {
+          "title": "Вагины и мастурбаторы",
+          "url": "/market/vaginy_i_masturbatory/",
+          "sub": [
+            {
+              "title": "Вагины и анусы",
+              "url": "/market/vaginy_i_anusy/"
+            }
+          ]
+        },
+        {
+          "title": "Эротические стимуляторы",
+          "url": "/market/eroticheskie_stimulyatory/",
+          "sub": [
+            {
+              "title": "Вакуумные и гидро помпы",
+              "url": "/market/vakuumnye_i_gidro_pompy/"
+            },
+            {
+              "title": "Кольца и насадки на пенис",
+              "url": "/market/koltsa_i_nasadki_na_penis/"
+            },
+            {
+              "title": "Массажеры простаты",
+              "url": "/market/massazhery_prostaty/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Товары для праздника",
+      "url": "/market/tovary_dlya_prazdnika/",
+      "id": "85827",
+      "icon": "tovary_dlya_prazdnika",
+      "sub": [
+        {
+          "title": "Новогодние товары",
+          "url": "/market/novy_god/",
+          "sub": [
+            {
+              "title": "Ёлки",
+              "url": "/market/elki_iskustvennie_novogodnie/"
+            },
+            {
+              "title": "Ёлочные игрушки",
+              "url": "/market/year_decoration/"
+            },
+            {
+              "title": "Гирлянды",
+              "url": "/market/girlyandi/"
+            },
+            {
+              "title": "Брелоки и сувениры",
+              "url": "/market/gadgety/"
+            },
+            {
+              "title": "Рождественские календари",
+              "url": "/market/rozhdestvenskie_kalendari/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Продукты",
+      "url": "/market/produkty/",
+      "id": "88025",
+      "icon": "produkty",
+      "sub": [
+        {
+          "title": "Масло, специи, сахар",
+          "url": "/market/maslo_specii_sahar/",
+          "sub": [
+            {
+              "title": "Растительное масло",
+              "url": "/market/rastitelnoe_maslo/"
+            },
+            {
+              "title": "Сахар",
+              "url": "/market/sahar/"
+            },
+            {
+              "title": "Специи",
+              "url": "/market/specii/"
+            }
+          ]
+        },
+        {
+          "title": "Кофе и чай",
+          "url": "/market/coffe/",
+          "sub": [
+            {
+              "title": "Кофе в зернах",
+              "url": "/market/cofe_v_zernah/"
+            },
+            {
+              "title": "Кофе молотый",
+              "url": "/market/ground_coffee/"
+            },
+            {
+              "title": "Кофе в капсулах",
+              "url": "/market/cofe_v_capsulah/"
+            },
+            {
+              "title": "Какао",
+              "url": "/market/cacao/"
+            },
+            {
+              "title": "Чай",
+              "url": "/market/tea/"
+            }
+          ]
+        },
+        {
+          "title": "Консервы",
+          "url": "/market/konservy/",
+          "sub": [
+            {
+              "title": "Овощные консервы",
+              "url": "/market/ovoshhnye_konservy/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

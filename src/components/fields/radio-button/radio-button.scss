@@ -1,0 +1,41 @@
+.field {
+  $block: &;
+
+  &--type-radio-button {
+    display: inline-block;
+    width: auto;
+    transition: all 0.2s ease;
+
+    input {
+      @include element-invisible;
+    }
+
+    #{$block}__label {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      margin: 0;
+    }
+
+    #{$block}__caption {
+      display: inline-block;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+    }
+
+    &:hover #{$block}__caption {
+    }
+
+    input:checked + #{$block}__caption {
+    }
+
+    input:focus-visible + #{$block}__caption {
+    }
+
+    input:disabled + #{$block}__caption,
+    &#{$block}--disabled #{$block}__caption {
+    }
+  }
+}
